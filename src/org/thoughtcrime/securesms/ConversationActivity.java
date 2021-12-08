@@ -1574,7 +1574,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   // in-chat search
 
   private int beforeSearchComposeVisibility = View.VISIBLE;
-  private int beforeSearchAttachVisibility = View.GONE;
 
   private Menu  searchMenu = null;
   private int[] searchResult = {};
@@ -1600,16 +1599,12 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     beforeSearchComposeVisibility = composePanel.getVisibility();
     composePanel.setVisibility(View.GONE);
 
-    beforeSearchAttachVisibility = attachmentManager.getVisibility();
-    attachmentManager.setVisibility(View.GONE);
-
     ConversationActivity.this.makeSearchMenuVisible(menu, searchItem, true);
   }
 
   private void searchCollapse(final Menu menu, final MenuItem searchItem) {
     searchMenu = null;
     composePanel.setVisibility(beforeSearchComposeVisibility);
-    attachmentManager.setVisibility(beforeSearchAttachVisibility);
 
     ConversationActivity.this.makeSearchMenuVisible(menu, searchItem, false);
   }
