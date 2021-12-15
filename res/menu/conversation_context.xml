@@ -39,11 +39,11 @@
         android:id="@+id/menu_context_reply_privately"
         app:showAsAction="never" />
 
-    <item android:title="@string/remove_desktop"
+    <item android:title="@string/group_remove_member"
         android:id="@+id/menu_context_remove_contact"
         app:showAsAction="never" />
 
-    <item android:title="@string/add_contact_desktop"
+    <item android:title="@string/group_add_member"
         android:id="@+id/menu_context_add_contact"
         app:showAsAction="never" />
 
