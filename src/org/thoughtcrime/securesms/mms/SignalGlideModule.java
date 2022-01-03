@@ -1,6 +1,7 @@
 package org.thoughtcrime.securesms.mms;
 
 import android.content.Context;
+import android.graphics.drawable.PictureDrawable;
 
 import androidx.annotation.NonNull;
 import android.util.Log;
@@ -15,10 +16,14 @@ import com.bumptech.glide.annotation.GlideModule;
 import com.bumptech.glide.load.model.UnitModelLoader;
 import com.bumptech.glide.module.AppGlideModule;
 
+import com.caverock.androidsvg.SVG;
+
 import org.thoughtcrime.securesms.contacts.avatars.ContactPhoto;
 import org.thoughtcrime.securesms.glide.ContactPhotoLoader;
 import org.thoughtcrime.securesms.glide.lottie.LottieDecoder;
 import org.thoughtcrime.securesms.glide.lottie.LottieDrawableTranscoder;
+import org.thoughtcrime.securesms.glide.svg.SvgDecoder;
+import org.thoughtcrime.securesms.glide.svg.SvgDrawableTranscoder;
 import org.thoughtcrime.securesms.mms.DecryptableStreamUriLoader.DecryptableUri;
 
 import java.io.File;
@@ -58,5 +63,9 @@ public class SignalGlideModule extends AppGlideModule {
     registry
         .register(LottieComposition.class, LottieDrawable.class, new LottieDrawableTranscoder())
         .append(InputStream.class, LottieComposition.class, new LottieDecoder());
+
+    registry
+        .register(SVG.class, PictureDrawable.class, new SvgDrawableTranscoder())
+        .append(InputStream.class, SVG.class, new SvgDecoder());
   }
 }
