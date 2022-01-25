@@ -102,7 +102,7 @@ android {
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        versionCode 622
+        versionCode 623
         versionName "1.27.2-beta2"
 
         applicationId "com.b44t.messenger"
