@@ -1,9 +1,13 @@
 package org.thoughtcrime.securesms;
 
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 import android.webkit.WebSettings;
+import android.webkit.WebView;
 
 import androidx.appcompat.app.AlertDialog;
 
@@ -19,6 +23,7 @@ import java.lang.ref.WeakReference;
 public class FullMsgActivity extends WebViewActivity
 {
   public static final String MSG_ID_EXTRA = "msg_id";
+  private String imageUrl;
   private int msgId;
   private DcContext dcContext;
   private boolean loadRemoteContent = false;
@@ -33,6 +38,7 @@ public class FullMsgActivity extends WebViewActivity
   protected void onCreate(Bundle state, boolean ready) {
     super.onCreate(state, ready);
 
+    registerForContextMenu(webView);
     loadRemoteContent = Prefs.getAlwaysLoadRemoteContent(this);
     webView.getSettings().setBlockNetworkLoads(!loadRemoteContent);
 
@@ -60,6 +66,41 @@ public class FullMsgActivity extends WebViewActivity
     getSupportActionBar().setTitle(title);
 
     loadHtmlAsync(new WeakReference<>(this));
+  }
+
+  @Override
+  public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+    if (v instanceof WebView) {
+      WebView.HitTestResult result = ((WebView) v).getHitTestResult();
+      if (result != null) {
+        int type = result.getType();
+        if (type == WebView.HitTestResult.IMAGE_TYPE || type == WebView.HitTestResult.SRC_IMAGE_ANCHOR_TYPE) {
+          imageUrl = result.getExtra();
+          if (!imageUrl.startsWith("data:")) {
+            super.onCreateContextMenu(menu, v, menuInfo);
+            this.getMenuInflater().inflate(R.menu.web_view_context, menu);
+            menu.setHeaderIcon(android.R.drawable.ic_menu_gallery);
+            menu.setHeaderTitle(imageUrl);
+            menu.findItem(R.id.action_export_image).setVisible(false);
+          }
+        }
+      }
+    }
+  }
+
+  @Override
+  public boolean onContextItemSelected(MenuItem item) {
+    switch (item.getItemId()) {
+      case R.id.action_export_image:
+        // TODO: extract image from "data:" link or download URL
+        return true;
+      case R.id.action_copy_link:
+        Util.writeTextToClipboard(this, imageUrl);
+        Toast.makeText(this, getString(R.string.copied_to_clipboard), Toast.LENGTH_SHORT).show();
+        return true;
+      default:
+        return super.onContextItemSelected(item);
+    }
   }
 
   private static void loadHtmlAsync(final WeakReference<FullMsgActivity> activityReference) {
