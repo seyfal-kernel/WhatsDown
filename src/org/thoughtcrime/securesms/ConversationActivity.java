@@ -332,6 +332,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       initializeDraft();
       doReinitializeDraft = false;
     }
+
+    attachmentManager.onResume();
   }
 
   @Override
