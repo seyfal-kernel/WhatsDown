@@ -102,7 +102,6 @@ public abstract class MessageSelectorFragment
     }
     SaveAttachmentTask saveTask = new SaveAttachmentTask(getContext());
     saveTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, attachments);
-    if (actionMode != null) actionMode.finish();
   }
 
   protected void handleShowInChat(final DcMsg dcMsg) {
