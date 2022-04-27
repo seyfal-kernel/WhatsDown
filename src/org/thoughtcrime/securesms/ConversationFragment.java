@@ -501,6 +501,20 @@ public class ConversationFragment extends MessageSelectorFragment
         dcContext.addContactToChat((int)chatId, msg.getFromId());
     }
 
+    private void handleResendMessage(final Set<DcMsg> dcMsgsSet) {
+        int[] ids = DcMsg.msgSetToIds(dcMsgsSet);
+        if (dcContext.resendMsgs(ids)) {
+            actionMode.finish();
+            Toast.makeText(getContext(), R.string.sending, Toast.LENGTH_SHORT).show();
+        } else {
+            new AlertDialog.Builder(getContext())
+                .setMessage(dcContext.getLastError())
+                .setCancelable(false)
+                .setPositiveButton(android.R.string.ok, null)
+                .show();
+        }
+    }
+
     private void reloadList() {
         reloadList(false);
     }
@@ -965,6 +979,9 @@ public class ConversationFragment extends MessageSelectorFragment
                 case R.id.menu_context_add_contact:
                     handleAddContact(getSelectedMessageRecord(getListAdapter().getSelectedItems()));
                     actionMode.finish();
+                    return true;
+                case R.id.menu_resend:
+                    handleResendMessage(getListAdapter().getSelectedItems());
                     return true;
             }
 

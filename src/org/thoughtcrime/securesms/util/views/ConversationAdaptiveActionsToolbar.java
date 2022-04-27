@@ -27,6 +27,7 @@ public class ConversationAdaptiveActionsToolbar extends Toolbar {
   private static final int ID_NEVER_SHOW_AS_ACTION_2 = R.id.menu_context_save_attachment;
   private static final int ID_NEVER_SHOW_AS_ACTION_3 = R.id.menu_context_remove_contact;
   private static final int ID_NEVER_SHOW_AS_ACTION_4 = R.id.menu_context_add_contact;
+  private static final int ID_NEVER_SHOW_AS_ACTION_5 = R.id.menu_resend;
   private static final int ID_ALWAYS_SHOW_AS_ACTION = R.id.menu_context_forward;
 
   private int   maxShown;
@@ -83,7 +84,8 @@ public class ConversationAdaptiveActionsToolbar extends Toolbar {
       boolean neverShowAsAction = item.getItemId() == ID_NEVER_SHOW_AS_ACTION_1
                                || item.getItemId() == ID_NEVER_SHOW_AS_ACTION_2
                                || item.getItemId() == ID_NEVER_SHOW_AS_ACTION_3
-                               || item.getItemId() == ID_NEVER_SHOW_AS_ACTION_4;
+                               || item.getItemId() == ID_NEVER_SHOW_AS_ACTION_4
+                               || item.getItemId() == ID_NEVER_SHOW_AS_ACTION_5;
       boolean alwaysShowAsAction = item.getItemId() == ID_ALWAYS_SHOW_AS_ACTION;
 
       if (alwaysShowAsAction) continue;
