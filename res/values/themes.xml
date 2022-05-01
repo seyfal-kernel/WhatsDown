@@ -77,7 +77,7 @@
         <item name="ic_circle_checkbox">@drawable/ic_circle_checkbox</item>
         <item name="send_button_bg">@drawable/send_button_bg</item>
         <item name="button_bg">@drawable/button_bg</item>
-        <item name="secondary_button_fg">@color/delta_primary</item>
+        <item name="secondary_button_fg">@color/def_primary</item>
         <item name="floating_mini_bg">@drawable/floating_mini_bg_light</item>
 
         <item name="fab_color">@color/def_primary_lite</item>
