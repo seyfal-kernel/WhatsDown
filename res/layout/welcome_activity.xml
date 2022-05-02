@@ -49,6 +49,7 @@
             android:paddingLeft="24dp"
             android:paddingRight="24dp"
             android:layout_marginBottom="16dp"
+            android:background="@drawable/button_bg"
             android:text="@string/login_header"/>
 
         <Button
@@ -59,7 +60,6 @@
             android:paddingLeft="24dp"
             android:paddingRight="24dp"
             android:layout_marginBottom="16dp"
-            android:textColor="?attr/colorAccent"
             android:text="@string/import_backup_title"/>
 
         <Button
@@ -69,7 +69,6 @@
             android:layout_height="wrap_content"
             android:paddingLeft="24dp"
             android:paddingRight="24dp"
-            android:textColor="?attr/colorAccent"
             android:text="@string/scan_invitation_code"/>
 
     </LinearLayout>
