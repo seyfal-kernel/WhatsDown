@@ -4,7 +4,7 @@ DeltaLab is a [Delta Chat](https://delta.chat/) client for Android.
 
 DeltaLab uses a [modified](https://github.com/adbenitez/deltalab-core) version of the [Delta Chat Core Library](https://github.com/deltachat/deltachat-core-rust).
 
-<img alt="Screenshot Chat List" src="docs/images/2020-08-chatlist.jpg" width="298" /> <img alt="Screenshot Chat View" src="docs/images/2020-08-chat.jpg" width="298" />
+<img alt="Screenshot Chat List" src="fastlane/metadata/android/en-US/images/phoneScreenshots/02.jpg" width="298" /> <img alt="Screenshot Chat View" src="fastlane/metadata/android/en-US/images/phoneScreenshots/04.jpg" width="298" />
 
 # Credits
 

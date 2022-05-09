@@ -1,0 +1,25 @@
+<i>DeltaLab</i> is a friendly fork of <i>Delta Chat</i> messenger, a chat app compatible with the existing e-mail infrastructure.
+
+DeltaLab was created with a focus on saving data plan and comes with different defaults settings optimized for the users that want to use it as their only e-mail client without having to manually keep the INBOX clean to avoid exceeding quotas etc. Also the app usually experiments with new features and alternative paths of development that eventually might get added to the official Delta Chat client.
+
+<b>Main differences with official Delta Chat client:</b>
+
+<ul>
+<li>Markdown support</li>
+<li>Support for stickers with Lottie animations</li>
+<li>Pseudo-online status indicator to easily know when a peer was seen recently (doesn't leak online status, it is based on the last time an e-mail was received from the contact)</li>
+<li>Support for SVG images previews</li>
+<li>Multiple color themes/skins</li>
+<li>Option to delete/clear all messages in a chat</li>
+<li>Videochat instance set by default</li>
+<li>Incoming groups and mailing lists are muted by default</li>
+<li>Replies to your messages in muted groups trigger notifications</li>
+<li>More Kaomoji emoticons</li>
+<li>Verified icon is shown in the chat list for verified contacts and the "Device Messages" chat</li>
+<li>Videos are played in loop, useful for short GIF videos</li>
+<li>It is possible to click <b>OPENPGP4FPR:</b> and <b>mumble:</b> links in messages</li>
+<li>Option to disable the auto-generated e-mail Subject set by Delta Chat</li>
+<li>When you select a message you have additional options to remove/add the sender from the current group easily</li>
+<li>Voice messages have more compression / lower quality to save data plan</li>
+<li>Default configuration changed: all e-mails are shown by default, messages are deleted from INBOX immediately to keep INBOX clean, media quality set to worse to save data plan, automatic download of messages limited to 160KB, only the INBOX folder is watched</li>
+</ul>
