@@ -6,7 +6,7 @@ DeltaLab was created with a focus on saving data plan and comes with different d
 
 <ul>
 <li>Markdown support</li>
-<li>Support for stickers with Lottie animations</li>
+<li>Support for Telegram's animated stickers (.tgs files)</li>
 <li>Pseudo-online status indicator to easily know when a peer was seen recently (doesn't leak online status, it is based on the last time an e-mail was received from the contact)</li>
 <li>Support for SVG images previews</li>
 <li>Multiple color themes/skins</li>
