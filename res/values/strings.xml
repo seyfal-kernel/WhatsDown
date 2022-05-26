@@ -262,6 +262,7 @@
     <string name="unpin">Unpin</string>
     <string name="ConversationFragment_quoted_message_not_found">Original message not found</string>
     <string name="reply_privately">Reply Privately</string>
+    <string name="source_code">Source Code</string>
 
     <string name="mute_for_one_hour">Mute for 1 hour</string>
     <string name="mute_for_two_hours">Mute for 2 hours</string>
@@ -903,7 +904,7 @@
 
     <!-- iOS specific strings, developers: please take care to remove strings that are no longer used! -->
     <string name="stop_sharing_location">Stop sharing location</string>
-    <string name="a11y_voice_message_hint_ios">After recording double-tap to send. To discard the recording scrub left-right with two fingers.</string>
+    <string name="a11y_voice_message_hint_ios">After recording double-tap to send. To discard the recording scrub with two fingers.</string>
     <string name="a11y_connectivity_hint">Double tap to view connectivity details.</string>
     <string name="login_error_no_internet_connection">No internet connection, login failed.</string>
     <string name="share_account_not_configured">Account is not configured.</string>
@@ -913,7 +914,7 @@
     <string name="open_settings">Open Settings</string>
     <!-- iOS device contact alert -->
     <string name="import_device_contacts">Import device contacts</string>
-    <string name="import_device_contacts_hint">To chat with contacts from your device open Settings and enable Contacts.</string>
+    <string name="import_device_contacts_hint">To chat with contacts from your device open Settings and enable \"Contacts\".</string>
     <!-- iOS notification settings -->
     <string name="disabled_in_dc">Disabled in Delta Chat</string>
     <string name="disabled_in_system_settings">Disabled in system settings</string>
@@ -926,6 +927,8 @@
     <!-- iOS permissions, copy from "deltachat-ios/Info.plist", which is used on missing translations in "deltachat-ios/LANG.lproj/InfoPlist.strings" -->
     <string name="InfoPlist_NSCameraUsageDescription">DeltaLab uses your camera to take and send photos and videos and to scan QR codes.</string>
     <string name="InfoPlist_NSContactsUsageDescription">DeltaLab uses your contacts to show a list of e-mail addresses you can write to. DeltaLab has no server, your contacts are not sent anywhere.</string>
+    <string name="InfoPlist_NSLocationAlwaysAndWhenInUseUsageDescription">DeltaLab needs the location permission in order to share your location for the timespan you have enabled location sharing.</string>
+    <string name="InfoPlist_NSLocationWhenInUseUsageDescription">DeltaLab needs the location permission in order to share your location for the timespan you have enabled location sharing.</string>
     <string name="InfoPlist_NSMicrophoneUsageDescription">DeltaLab uses your microphone to record and send voice messages and videos with sound.</string>
     <string name="InfoPlist_NSPhotoLibraryUsageDescription">DeltaLab will let you choose which photos from your library to send.</string>
     <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">DeltaLab wants to save images to your photo library.</string>
