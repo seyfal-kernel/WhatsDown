@@ -120,6 +120,12 @@
         <item quantity="one">%d vastaanottaja</item>
         <item quantity="other">%d vastaanottajaa</item>
     </plurals>
+    <!-- short title, used for "N Chats Selected" or "N Messages Selected", however, requires a shorter form, eg. "N Selected" in english -->
+    <plurals name="n_selected">
+        <item quantity="one">%d valittu</item>
+        <item quantity="other">%d valittu</item>
+    </plurals>
+
     <string name="self">Minä</string>
     <string name="draft">Luonnos</string>
     <string name="image">Kuva</string>
@@ -143,7 +149,7 @@
     <!-- "capture" here means "start a video recording" or "take a photo"; eg. the description of the "shutter button" in the camera controls -->
     <string name="capture">Kuvaa</string>
     <string name="switch_camera">Vaihda kamera</string>
-    <string name="toggle_fullscreen">Kytke koko näytön tila</string>
+    <string name="toggle_fullscreen">Koko näytön tila</string>
     <string name="location">Sijainti</string>
     <string name="gallery">Galleria</string>
     <string name="images_and_videos">Kuvat ja videot</string>
@@ -287,7 +293,6 @@
     <string name="videochat_instance">Videokeskustelun tarjoaja</string>
     <string name="videochat_instance_placeholder">Videokeskustelusi tarjoaja</string>
     <string name="videochat_instance_example">Esimerkkejä: https://meet.jit.si/$ROOM tai basicwebrtc:https://sinun-palvelimesi</string>
-    <string name="videochat_instance_explain">Jos videokeskustelun tarjoaja määritellään, voit aloittaa videokeskustelun mistä tahansa keskustelusta. Videokeskustelu vaatii molemmilta yhteensopivan sovelluksen tai selaimen.\n\nEsimerkkejä: https://meet.jit.si/$ROOM tai basicwebrtc:https://sinun-palvelimesi</string>
     <string name="videochat_instance_explain_2">Jos videokeskustelu on kytketty päälle, voit aloittaa videokeskustelun mistä tahansa keskustelusta. Videokeskustelu vaatii molemmilta yhteensopivan sovelluksen tai selaimen.</string>
     <string name="videochat_instance_from_qr">Käytä \"%1$s\" videokeskustelupyyntöihin?\n\nTämän jälkeen voit aloittaa videokeskustelun mistä tahansa keskustelusta. Tämä korvaa edellisen videokeskusteluasetuksen, jos sellainen on.</string>
     <string name="videochat_invitation">Videokeskustelukutsu</string>
@@ -429,7 +434,6 @@
     <string name="profile_shared_chats">Jaetut keskustelut</string>
     <string name="tab_contact">Yhteystieto</string>
     <string name="tab_group">Ryhmä</string>
-    <string name="tab_members">Jäsenet</string>
     <string name="tab_gallery">Galleria</string>
     <string name="tab_docs">Asiakirjat</string>
     <string name="tab_links">Linkit</string>
@@ -585,7 +589,6 @@
     <string name="pref_use_system_emoji">Käytä järjestelmän emojeja</string>
     <string name="pref_use_system_emoji_explain">Kytke pois Delta Chatin sisäänrakennettu emoji-tuki</string>
     <string name="pref_app_access">Pääsy sovellukseen</string>
-    <string name="pref_communication">Viestintä</string>
     <string name="pref_chats">Keskustelut</string>
     <string name="pref_in_chat_sounds">Keskustelun äänet</string>
     <string name="pref_message_text_size">Viestin fonttikoko</string>
@@ -611,9 +614,7 @@
     <string name="pref_background_btn_gallery">Valitse galleriasta</string>
     <string name="pref_imap_folder_handling">IMAP-kansioiden käsittely</string>
     <string name="pref_imap_folder_warn_disable_defaults">Jos poistat tämän asetuksen käytöstä, varmista, että palvelimessasi ja muissa asiakasohjelmissasi on oikeat asetukset.\n\nMuuten ne eivät ehkä toimi ollenkaan.</string>
-    <string name="pref_watch_inbox_folder">Tarkkaile Saapuneet-kansiota</string>
     <string name="pref_watch_sent_folder">Tarkkaile Lähetetyt-kansiota</string>
-    <string name="pref_watch_mvbox_folder">Tarkkaile DeltaChat-kansiota</string>
     <string name="pref_send_copy_to_self">Lähetä kopio itselle</string>
     <string name="pref_send_copy_to_self_explain">Vaaditaan käytettäessä tiliä usealla laitteella.</string>
     <string name="pref_auto_folder_moves">Siirrä automaattisesti DeltaChat-kansioon</string>
@@ -638,7 +639,6 @@
     <string name="up_to_x">Korkeintaan %1$s</string>
     <string name="up_to_x_most_worse_quality_images">Korkeintaan %1$s, suurin osa alhaisen laadun kuvista</string>
     <string name="up_to_x_most_balanced_quality_images">Korkeintaan %1$s, suurin osa tasapainoisen laadun kuvista</string>
-    <string name="no_limit">Ei rajaa</string>
     <string name="download_failed">Lataus epäonnistui</string>
     <!-- %1$s will be replaced by a human-readable number of bytes, eg. 32 KiB, 1 MiB. Resulting string eg. "1 MiB message" -->
     <string name="n_bytes_message">%1$s viesti</string>
@@ -955,8 +955,6 @@
 
 
     <!-- device messages for updates -->
-    <string name="update_1_28_android">1.28 Nostot:\n\n🔒Salaus: Uusi kokeellinen valinta yhteystietojen, salausavainten ja tekstiviestien säilyttämiseksi salattuina latteellasi. Saatavilla ainoastaan tilin luomisen ja varmuuskopioiden tuomisen yhteydessä.\n\n📫 Kirjoita sähköpostilistoille.\n\n💫 Nopeampi asetusten luonti monille sähköpostipalvelimille ja yksinkertaistetut verkkoasetukset virheellisten asetusten ehkäisemiseksi\n\n🐜 Paljon käyttäjien raportoimien ongelmien korjauksia.</string>
-    <string name="update_1_28_ios_extra_line">... ja nyt voit vaihtaa taustakuvan: \"Asetukset / Taustakuva\" :)</string>
     <string name="update_1_30">Nopeampi. Vakaampi.\n\n1.30-versioissa keskityimme nopeuteen ja luotettavuuteen, ja korjasimme kasan bugeja ja virheitä. Tarkista muutoslokistamme korjasimmeko sinusta tärkeimmän: https://get.delta.chat/#changelogs 🚀</string>
 
 </resources>

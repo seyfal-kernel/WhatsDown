@@ -294,7 +294,6 @@
     <string name="videochat_tap_to_open">Appuyez pour ouvrir</string>
     <string name="videochat_instance">Instance de discussion vidéo</string>
     <string name="videochat_instance_placeholder">Votre instance de discussion vidéo</string>
-    <string name="videochat_instance_explain">Si une instance de discussion vidéo est définie, vous pouvez démarrer une discussion vidéo depuis chaque discussion privée. Une discussion vidéo nécessite une application compatible ou un navigateur web compatible des deux côtés.\n\nExemples : https://meet.jit.si/$ROOM ou basicwebrtc:https://votre-serveur</string>
     <string name="videochat_instance_from_qr">Utiliser « %1$s » pour inviter les autres à des discussions vidéos ?\n\nUne fois configuré, vous pouvez démarrer une discussion vidéo depuis chaque discussion privée. Ceci va remplacer la précédente configuration pour les discussions vidéos, s\'il y en a une.</string>
     <string name="videochat_invitation">Invitation de discussion vidéo</string>
     <string name="videochat_invitation_body">Vous êtes invité à une discussion vidéo, cliquez sur %1$s pour la rejoindre.</string>
@@ -440,7 +439,6 @@
     <string name="profile_shared_chats">Discussions partagées</string>
     <string name="tab_contact">Contact</string>
     <string name="tab_group">Groupe</string>
-    <string name="tab_members">Membres</string>
     <string name="tab_gallery">Gallerie</string>
     <string name="tab_docs">Documents</string>
     <string name="tab_links">Liens</string>
@@ -478,7 +476,7 @@
     <string name="scan_invitation_code">Scanner le code d\'invitation</string>
     <string name="welcome_intro1_message">Le messager avec le plus large public au monde. Libre et indépendant.</string>
     <string name="login_title">Connexion</string>
-    <string name="login_header">Connexion vers votre serveur</string>
+    <string name="login_header">Se connecter au compte</string>
     <string name="login_explain">Se connecter avec un compte de courriel existant.</string>
     <string name="login_subheader">Pour les fournisseurs de courriel connus, des paramètres supplémentaires sont automatiquement configurés. Parfois, IMAP doit être activé dans l\'interface Web. Consultez votre fournisseur de courriel ou vos amis pour obtenir de l\'aide.</string>
     <string name="login_no_servers_hint">Il n\'y a pas de serveur Delta Chat, vos données restent sur votre appareil !</string>
@@ -590,7 +588,6 @@
     <string name="pref_use_system_emoji">Utiliser les émojis système</string>
     <string name="pref_use_system_emoji_explain">Désactiver la prise en charge des émojis intégrés de Delta Chat</string>
     <string name="pref_app_access">Accès à l\'application</string>
-    <string name="pref_communication">Communication</string>
     <string name="pref_chats">Discussions</string>
     <string name="pref_in_chat_sounds">Sons de messages entrants</string>
     <string name="pref_message_text_size">Taille de police des messages</string>
@@ -616,9 +613,7 @@
     <string name="pref_background_btn_gallery">Sélectionner depuis la galerie</string>
     <string name="pref_imap_folder_handling">Gestion de dossier IMAP</string>
     <string name="pref_imap_folder_warn_disable_defaults">Si vous désactivez cette option, assurez-vous que votre serveur et vos autres clients sont configurés en conséquence.\n\nSinon les choses pourraient ne pas fonctionner du tout.</string>
-    <string name="pref_watch_inbox_folder">Regarder le dossier Boîte de réception</string>
     <string name="pref_watch_sent_folder">Regarder le dossier Messages envoyés</string>
-    <string name="pref_watch_mvbox_folder">Regarder le dossier DeltaChat</string>
     <string name="pref_send_copy_to_self">M\'envoyer une copie</string>
     <string name="pref_auto_folder_moves">Déplacer automatiquement vers le dossier DeltaChat</string>
     <string name="pref_auto_folder_moves_explain">Les discussions sont déplacées pour éviter d\'encombrer le dossier Boîte de réception</string>
@@ -642,7 +637,6 @@
     <string name="up_to_x">Jusqu\'à %1$s</string>
     <string name="up_to_x_most_worse_quality_images">Jusqu\'à %1$s, plus mauvaise qualité d\'image</string>
     <string name="up_to_x_most_balanced_quality_images">Jusqu\'à %1$s, qualité d\'image raisonnable </string>
-    <string name="no_limit">Pas de limite</string>
     <string name="download_failed">Échec du téléchargement</string>
     <!-- %1$s will be replaced by a human-readable number of bytes, eg. 32 KiB, 1 MiB. Resulting string eg. "1 MiB message" -->
     <string name="n_bytes_message">%1$s message</string>
@@ -942,8 +936,6 @@
 
 
     <!-- device messages for updates -->
-    <string name="update_1_28_android">1.28 Changements marquants:\n\n🔒 Chiffrement: Une nouvelle option expérimentale pour garder vos contacts, vos secrets de chiffrement et vos messages texte chiffrés sur votre appareil. Disponible seulement lors de la création de compte et l\'import de fichiers de sauvegardes\n\n📫 Envoi de messages à une liste de distribution\n\n💫 Configuration initiale plus rapide pour davantage de serveurs mail et options réseaux éclaircies pour éviter d\'accidentelles mauvaises configurations\n\n🐜 Beaaaaaucoup de problèmes rapportés par les utilisateurs corrigés</string>
-    <string name="update_1_28_ios_extra_line">... et vous pouvez désormais sélectionner un arrière-plan dans \"Configuration / Arrière-plan\" :)</string>
     <string name="update_1_30">Plus rapide. Plus stable.\n\nPour la version 1.30, nous nous sommes focalisés sur la vitesse et la fiabilité, pour fixer des dizaines de bogues. Vérifiez le journal des changements voir si votre bogue favori a été corrigé : https://get.delta.chat/#changelogs 🚀</string>
 
 </resources>

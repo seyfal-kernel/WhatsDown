@@ -261,7 +261,6 @@
     <string name="videochat_tap_to_open">Bakstelėkite norėdami atverti</string>
     <string name="videochat_instance">Vaizdo pokalbio egzempliorius</string>
     <string name="videochat_instance_placeholder">Jūsų vaizdo pokalbio egzempliorius</string>
-    <string name="videochat_instance_explain">Jei yra apibrėžtas vaizdo pokalbių egzempliorius, kiekviename pokalbyje galite pradėti vaizdo pokalbį. Vaizdo pokalbiai reikalauja, kad abi pusės turėtų suderinamą programėlę arba suderinamą naršyklę.\n\nPavyzdžiai: https://meet.jit.si/$ROOM arba basicwebrtc:https://jūsų-serveris</string>
     <string name="videochat_invitation">Pakvietimas į vaizdo pokalbį</string>
     <string name="videochat_invitation_body">Jūs esate kviečiami į vaizdo pokalbį. Spustelėkite %1$s jei norite prisijungti.</string>
 
@@ -374,7 +373,6 @@
     <string name="profile_shared_chats">Bendrinami pokalbiai</string>
     <string name="tab_contact">Adresatas</string>
     <string name="tab_group">Grupė</string>
-    <string name="tab_members">Dalyviai</string>
     <string name="tab_gallery">Galerija</string>
     <string name="tab_docs">Dokumentai</string>
     <string name="tab_links">Nuorodos</string>
@@ -507,7 +505,6 @@
     <string name="pref_use_system_emoji">Naudoti sistemos šypsniukus</string>
     <string name="pref_use_system_emoji_explain">Išjungti Delta Chat įtaisytąjį šypsniukų palaikymą</string>
     <string name="pref_app_access">Prieiga prie programėlės</string>
-    <string name="pref_communication">Bendravimas</string>
     <string name="pref_chats">Pokalbiai</string>
     <string name="pref_in_chat_sounds">Garsai pokalbiuose</string>
     <string name="pref_message_text_size">Žinučių šrifto dydis</string>
@@ -533,9 +530,7 @@
     <string name="pref_background_btn_gallery">Pasirinkti iš galerijos</string>
     <string name="pref_imap_folder_handling">IMAP aplanko apdorojimas</string>
     <string name="pref_imap_folder_warn_disable_defaults">Jeigu išjungiate šį parametrą, įsitikinkite, kad jūsų serveris ir kiti klientai yra sukonfigūruoti atitinkamai.\n\nPriešingu atveju, tai gali iš viso neveikti.</string>
-    <string name="pref_watch_inbox_folder">Stebėti gautųjų aplanką</string>
     <string name="pref_watch_sent_folder">Stebėti išsiųstųjų aplanką</string>
-    <string name="pref_watch_mvbox_folder">Stebėti DeltaChat aplanką</string>
     <string name="pref_send_copy_to_self">Siųsti kopiją sau pačiam</string>
     <string name="pref_auto_folder_moves">Automatiniai perkėlimai į DeltaChat aplanką</string>
     <string name="pref_auto_folder_moves_explain">Pokalbiai yra perkeliami, kad nebūtų sujauktas Gautųjų aplankas</string>
@@ -554,7 +549,6 @@
     <string name="up_to_x">Iki %1$s</string>
     <string name="up_to_x_most_worse_quality_images">Iki %1$s, iš esmės, blogos kokybės paveikslus</string>
     <string name="up_to_x_most_balanced_quality_images">Iki %1$s, iš esmės, subalansuotos kokybės paveikslus</string>
-    <string name="no_limit">Be ribos</string>
     <string name="download_failed">Atsiuntimas nepavyko</string>
     <!-- %1$s will be replaced by a human-readable number of bytes, eg. 32 KiB, 1 MiB. Resulting string eg. "1 MiB message" -->
     <string name="n_bytes_message">%1$s žinutė</string>
