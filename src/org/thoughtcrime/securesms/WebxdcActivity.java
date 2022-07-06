@@ -27,6 +27,7 @@ import org.json.JSONObject;
 import org.thoughtcrime.securesms.connect.DcEventCenter;
 import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.util.JsonUtils;
+import org.thoughtcrime.securesms.util.MediaUtil;
 import org.thoughtcrime.securesms.util.Prefs;
 import org.thoughtcrime.securesms.util.Util;
 
@@ -119,6 +120,10 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
       // internal page, continue loading in the WebView
       return false;
     }
+    if (url.startsWith("mailto:")) {
+      return super.openOnlineUrl(url);
+    }
+
     Toast.makeText(this, "Please embed needed resources.", Toast.LENGTH_LONG).show();
     return true; // returning `true` causes the WebView to abort loading
   }
@@ -139,7 +144,7 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
         if (blob == null) {
           throw new Exception("\"" + path + "\" not found");
         }
-        String ext = MimeTypeMap.getFileExtensionFromUrl(path);
+        String ext = MediaUtil.getFileExtensionFromUrl(path);
         String mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(ext);
         if (mimeType == null) {
           switch (ext) {
