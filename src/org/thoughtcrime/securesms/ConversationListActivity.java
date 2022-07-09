@@ -103,9 +103,9 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
     msg.setText(getString(R.string.update_1_24_bots));
     dcContext.addDeviceMsg("update_1_24_bots", msg);
 
-    msg = new DcMsg(dcContext, DcMsg.DC_MSG_TEXT);
-    msg.setText(getString(R.string.update_1_30));
-    dcContext.addDeviceMsg("update_1_30u_android", msg); // addDeviceMessage() makes sure, messages with the same id are not added twice
+    //msg = new DcMsg(dcContext, DcMsg.DC_MSG_TEXT);
+    //msg.setText(getString(R.string.update_1_30));
+    //dcContext.addDeviceMsg("update_1_30u_android", msg); // addDeviceMessage() makes sure, messages with the same id are not added twice
 
     // create view
     setContentView(R.layout.conversation_list_activity);
