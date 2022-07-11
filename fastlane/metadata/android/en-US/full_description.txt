@@ -22,4 +22,5 @@ DeltaLab was created with a focus on saving data plan and comes with some differ
 <li>When you select a message you have additional options to remove/add the sender from the current group easily</li>
 <li>Voice messages have more compression / lower quality to save data plan</li>
 <li>Default configuration changed: all e-mails are shown by default, automatic download of messages limited to 160KB</li>
+<li>Messages in groups are ignored if the sender is not a group member</li>
 </ul>
