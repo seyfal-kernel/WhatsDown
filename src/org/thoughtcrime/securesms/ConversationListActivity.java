@@ -220,7 +220,13 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
       title.setText(isForwarding(this) ? R.string.forward_to : R.string.chat_share_with_title);
       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     } else {
-      title.setText(DcHelper.getConnectivitySummary(this, R.string.app_name));
+      DcContext dcContext = DcHelper.getContext(this);
+      DcContact self = dcContext.getContact(DcContact.DC_CONTACT_ID_SELF);
+      String name = dcContext.getConfig("displayname");
+      if (TextUtils.isEmpty(name)) {
+        name = self.getAddr();
+      }
+      title.setText(DcHelper.getConnectivitySummary(this, name));
       getSupportActionBar().setDisplayHomeAsUpEnabled(false);
     }
   }
@@ -246,6 +252,7 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
     dynamicTheme.onResume(this);
     dynamicLanguage.onResume(this);
 
+    refreshTitle();
     DirectShareUtil.triggerRefreshDirectShare(this);
   }
 

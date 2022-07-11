@@ -23,4 +23,5 @@ DeltaLab was created with a focus on saving data plan and comes with some differ
 <li>Voice messages have more compression / lower quality to save data plan</li>
 <li>Default configuration changed: all e-mails are shown by default, automatic download of messages limited to 160KB</li>
 <li>Messages in groups are ignored if the sender is not a group member</li>
+<li>Account's display name is shown in the app's title bar instead of the name of the app</li>
 </ul>

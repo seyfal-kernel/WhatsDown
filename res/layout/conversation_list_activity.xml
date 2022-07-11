@@ -38,7 +38,7 @@
                 tools:src="@drawable/ic_contact_picture"
                 android:contentDescription="@string/pref_profile_info_headline" />
 
-            <TextView style="@style/TextSecure.TitleTextStyle"
+            <org.thoughtcrime.securesms.components.emoji.EmojiTextView style="@style/TextSecure.TitleTextStyle"
                       android:id="@+id/toolbar_title"
                       android:layout_width="0dp"
                       android:layout_height="wrap_content"
