@@ -391,6 +391,8 @@
 
     <!-- mailing lists -->
     <string name="mailing_list">Mailing List</string>
+    <string name="super_group">Super Group</string>
+    <string name="channel">Channel</string>
     <string name="mailing_list_profile_info">Changes to mailing list name and image apply on this device only.</string>
 
     <!-- webxdc -->

@@ -84,10 +84,13 @@ public class ConversationTitleView extends RelativeLayout {
     boolean isOnline = false;
     int[] chatContacts = dcContext.getChatContacts(chatId);
     if (dcChat.isMailingList()) {
-      if (profileView) {
-        subtitleStr = dcChat.getMailinglistAddr();
-      } else {
-        subtitleStr = context.getString(R.string.mailing_list);
+      subtitleStr = dcChat.getMailinglistAddr();
+      if (!profileView) {
+        if (TextUtils.isEmpty(subtitleStr)) {
+          subtitleStr = context.getString(R.string.channel);
+        } else {
+          subtitleStr = context.getString(R.string.super_group);
+        }
       }
     } else if (dcChat.isBroadcast()) {
       if (!profileView) {

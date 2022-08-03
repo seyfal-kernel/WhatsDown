@@ -404,6 +404,8 @@
 
     <!-- mailing lists -->
     <string name="mailing_list">Lista de correo</string>
+    <string name="super_group">Súper Grupo</string>
+    <string name="channel">Canal</string>
     <string name="mailing_list_profile_info">Los cambios en el nombre y la imagen de la lista de correo solo se aplican a este dispositivo.</string>
 
     <!-- webxdc -->
