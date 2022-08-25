@@ -77,7 +77,7 @@ public class ContactSelectionListItem extends LinearLayout implements RecipientM
       }
     }
     this.avatar.setAvatar(glideRequests, recipient, false);
-    this.avatar.setStatusEnabled(contact!=null? contact.isOnline() : false);
+    this.avatar.setSeenRecently(contact!=null? contact.isSeenRecently() : false);
 
     setText(name, number, label, contact);
     setEnabled(enabled);
@@ -144,7 +144,7 @@ public class ContactSelectionListItem extends LinearLayout implements RecipientM
       Util.runOnMain(() -> {
         avatar.setAvatar(glideRequests, recipient, false);
         DcContact contact = recipient.getDcContact();
-        avatar.setStatusEnabled(contact!=null? contact.isOnline() : false);
+        avatar.setSeenRecently(contact!=null? contact.isSeenRecently() : false);
         nameView.setText(recipient.toShortString());
       });
     }

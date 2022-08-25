@@ -50,7 +50,7 @@ public class DcContact {
         return getAddr();
     }
 
-    public boolean isOnline() {
+    public boolean isSeenRecently() {
         return DateUtils.isWithin(getLastSeen(), 10, TimeUnit.MINUTES);
     }
 

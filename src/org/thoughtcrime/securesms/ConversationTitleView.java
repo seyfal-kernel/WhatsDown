@@ -113,7 +113,7 @@ public class ConversationTitleView extends RelativeLayout {
         if (dcContact.isVerified()) {
           imgRight = R.drawable.ic_verified;
         }
-        isOnline = dcContact.isOnline();
+        isOnline = dcContact.isSeenRecently();
       }
     }
 
@@ -121,6 +121,7 @@ public class ConversationTitleView extends RelativeLayout {
     avatar.setStatusEnabled(isOnline);
 
     avatar.setAvatar(glideRequests, new Recipient(getContext(), dcChat), false);
+    avatar.setSeenRecently(isOnline);
     title.setCompoundDrawablesWithIntrinsicBounds(imgLeft, 0, imgRight, 0);
     if (!TextUtils.isEmpty(subtitleStr)) {
       subtitle.setText(subtitleStr);
@@ -135,21 +136,15 @@ public class ConversationTitleView extends RelativeLayout {
   public void setTitle(@NonNull GlideRequests glideRequests, @NonNull DcContact contact) {
     avatar.setStatusEnabled(contact.isOnline());
     avatar.setAvatar(glideRequests, new Recipient(getContext(), contact), false);
+    avatar.setSeenRecently(contact.isSeenRecently());
     title.setText(contact.getDisplayName());
     title.setCompoundDrawablesWithIntrinsicBounds(0, 0, contact.isVerified()? R.drawable.ic_verified : 0, 0);
     subtitle.setText(contact.getAddr());
     subtitle.setVisibility(View.VISIBLE);
   }
 
-  public void updateStatus(DcContext dcContext, int chatId) {
-    boolean isOnline = false;
-    if(!dcContext.getChat(chatId).isMultiUser()) {
-      int[] members = dcContext.getChatContacts(chatId);
-      if(members.length>=1) {
-        isOnline = dcContext.getContact(members[0]).isOnline();
-      }
-    }
-    avatar.setStatusEnabled(isOnline);
+  public void setSeenRecently(boolean seenRecently) {
+    avatar.setSeenRecently(seenRecently);
   }
 
   public void hideAvatar() {
@@ -159,13 +154,13 @@ public class ConversationTitleView extends RelativeLayout {
   @Override
   public void setOnClickListener(@Nullable OnClickListener listener) {
     this.content.setOnClickListener(listener);
-    this.avatar.setOnAvatarClickListener(listener);
+    this.avatar.setAvatarClickListener(listener);
   }
 
   @Override
   public void setOnLongClickListener(@Nullable OnLongClickListener listener) {
     this.content.setOnLongClickListener(listener);
-    this.avatar.setOnAvatarLongClickListener(listener);
+    this.avatar.setAvatarLongClickListener(listener);
   }
 
   public void setOnBackClickedListener(@Nullable OnClickListener listener) {

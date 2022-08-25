@@ -172,16 +172,12 @@ public class ConversationListItem extends RelativeLayout
       imgRight = R.drawable.ic_verified;
     }
 
-    if (recipient.isMultiUserRecipient()) {
-      avatar.setStatusEnabled(false);
+    DcContact contact = recipient.getDcContact();
+    if (contact == null) {
+      avatar.setSeenRecently(false);
     } else {
-      DcContext dcContext = DcHelper.getContext(getContext());
-      int[] members = dcContext.getChatContacts((int)chatId);
-      DcContact contact = dcContext.getContact(members.length>=1? members[0] : 0);
-
-      avatar.setStatusEnabled(contact.isOnline());
-
-      if (contact.isVerified() || dcContext.getChat((int)chatId).isDeviceTalk()) {
+      avatar.setSeenRecently(contact.isSeenRecently());
+      if (contact.isVerified() || DcHelper.getContext(getContext()).getChat((int)chatId).isDeviceTalk()) {
         imgRight = R.drawable.ic_verified;
       }
     }
@@ -214,7 +210,7 @@ public class ConversationListItem extends RelativeLayout
 
     setBatchState(false);
     avatar.setAvatar(glideRequests, recipient, false);
-    avatar.setStatusEnabled(contact.isOnline());
+    avatar.setSeenRecently(contact.isSeenRecently());
   }
 
   public void bind(@NonNull  DcMsg         messageResult,
@@ -247,7 +243,7 @@ public class ConversationListItem extends RelativeLayout
 
     setBatchState(false);
     avatar.setAvatar(glideRequests, recipient, false);
-    avatar.setStatusEnabled(false);
+    avatar.setSeenRecently(false);
   }
 
   @Override

@@ -16,7 +16,7 @@ import org.thoughtcrime.securesms.recipients.Recipient;
 public class AvatarView extends ConstraintLayout {
 
   private AvatarImageView     avatarImage;
-  private ImageView           statusIndicator;
+  private ImageView           seenRecentlyIndicator;
 
   public AvatarView(Context context) {
     super(context);
@@ -36,24 +36,24 @@ public class AvatarView extends ConstraintLayout {
   private void init() {
     inflate(getContext(), R.layout.avatar_view, this);
 
-    avatarImage       = findViewById(R.id.avatar_image);
-    statusIndicator   = findViewById(R.id.status_indicator);
+    avatarImage             = findViewById(R.id.avatar_image);
+    seenRecentlyIndicator   = findViewById(R.id.status_indicator);
   }
 
   public void setAvatar(@NonNull GlideRequests requestManager, @Nullable Recipient recipient, boolean quickContactEnabled) {
     avatarImage.setAvatar(requestManager, recipient, quickContactEnabled);
   }
 
-  public void setOnAvatarClickListener(OnClickListener listener) {
+  public void setAvatarClickListener(OnClickListener listener) {
     avatarImage.setOnClickListener(listener);
   }
 
-  public void setOnAvatarLongClickListener(OnLongClickListener listener) {
+  public void setAvatarLongClickListener(OnLongClickListener listener) {
     avatarImage.setOnLongClickListener(listener);
   }
 
-  public void setStatusEnabled(boolean enabled) {
-    statusIndicator.setVisibility(enabled? View.VISIBLE : View.GONE);
+  public void setSeenRecently(boolean enabled) {
+    seenRecentlyIndicator.setVisibility(enabled? View.VISIBLE : View.GONE);
   }
 
   public void clear(@NonNull GlideRequests glideRequests) {

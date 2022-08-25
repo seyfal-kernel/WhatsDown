@@ -1557,30 +1557,21 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
   @Override
   public void handleEvent(@NonNull DcEvent event) {
-    switch (event.getId()) {
-      case DcContext.DC_EVENT_CHAT_MODIFIED:
-      case DcContext.DC_EVENT_CHAT_EPHEMERAL_TIMER_MODIFIED:
-        if (event.getData1Int() == chatId) {
-          dcChat = dcContext.getChat(chatId);
-          titleView.setTitle(glideRequests, dcChat);
-          initializeSecurity(isSecureText, isDefaultSms);
-          setComposePanelVisibility();
-          initializeContactRequest();
-        }
-        break;
-      case DcContext.DC_EVENT_CONTACTS_CHANGED:
-        titleView.setTitle(glideRequests, dcContext.getChat(chatId));
-        initializeSecurity(isSecureText, isDefaultSms);
-        setComposePanelVisibility();
-        initializeContactRequest();
-        break;
-      case DcContext.DC_EVENT_INCOMING_MSG:
-      case DcContext.DC_EVENT_MSG_READ:
-      case DcContext.DC_EVENT_MSG_DELIVERED:
-        if (event.getData1Int() == chatId) {
-          titleView.updateStatus(dcContext, chatId);
-        }
-        break;
+    int eventId = event.getId();
+    if ((eventId == DcContext.DC_EVENT_CHAT_MODIFIED && event.getData1Int() == chatId)
+     || (eventId == DcContext.DC_EVENT_CHAT_EPHEMERAL_TIMER_MODIFIED && event.getData1Int() == chatId)
+     || eventId == DcContext.DC_EVENT_CONTACTS_CHANGED) {
+      dcChat = dcContext.getChat(chatId);
+      titleView.setTitle(glideRequests, dcChat);
+      initializeSecurity(isSecureText, isDefaultSms);
+      setComposePanelVisibility();
+      initializeContactRequest();
+    } else if ((eventId == DcContext.DC_EVENT_INCOMING_MSG
+                || eventId == DcContext.DC_EVENT_MSG_READ
+                || eventId == DcContext.DC_EVENT_MSG_DELIVERED)
+               && event.getData1Int() == chatId) {
+        DcContact contact = recipient.getDcContact();
+        titleView.setSeenRecently(contact!=null? contact.isSeenRecently() : false);
     }
   }
 
