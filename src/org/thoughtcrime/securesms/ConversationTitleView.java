@@ -118,7 +118,6 @@ public class ConversationTitleView extends RelativeLayout {
     }
 
     subtitle.setText(subtitleStr);
-    avatar.setStatusEnabled(isOnline);
 
     avatar.setAvatar(glideRequests, new Recipient(getContext(), dcChat), false);
     avatar.setSeenRecently(isOnline);
@@ -134,7 +133,6 @@ public class ConversationTitleView extends RelativeLayout {
   }
 
   public void setTitle(@NonNull GlideRequests glideRequests, @NonNull DcContact contact) {
-    avatar.setStatusEnabled(contact.isOnline());
     avatar.setAvatar(glideRequests, new Recipient(getContext(), contact), false);
     avatar.setSeenRecently(contact.isSeenRecently());
     title.setText(contact.getDisplayName());
