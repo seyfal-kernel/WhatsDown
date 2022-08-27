@@ -176,7 +176,7 @@ public class ConversationListItem extends RelativeLayout
     if (contact == null) {
       avatar.setSeenRecently(false);
     } else {
-      avatar.setSeenRecently(contact.isSeenRecently());
+      avatar.setSeenRecently(contact.wasSeenRecently());
       if (contact.isVerified() || DcHelper.getContext(getContext()).getChat((int)chatId).isDeviceTalk()) {
         imgRight = R.drawable.ic_verified;
       }
@@ -210,7 +210,7 @@ public class ConversationListItem extends RelativeLayout
 
     setBatchState(false);
     avatar.setAvatar(glideRequests, recipient, false);
-    avatar.setSeenRecently(contact.isSeenRecently());
+    avatar.setSeenRecently(contact.wasSeenRecently());
   }
 
   public void bind(@NonNull  DcMsg         messageResult,

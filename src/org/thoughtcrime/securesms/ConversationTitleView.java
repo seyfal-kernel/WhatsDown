@@ -113,7 +113,7 @@ public class ConversationTitleView extends RelativeLayout {
         if (dcContact.isVerified()) {
           imgRight = R.drawable.ic_verified;
         }
-        isOnline = dcContact.isSeenRecently();
+        isOnline = dcContact.wasSeenRecently();
       }
     }
 
@@ -134,7 +134,7 @@ public class ConversationTitleView extends RelativeLayout {
 
   public void setTitle(@NonNull GlideRequests glideRequests, @NonNull DcContact contact) {
     avatar.setAvatar(glideRequests, new Recipient(getContext(), contact), false);
-    avatar.setSeenRecently(contact.isSeenRecently());
+    avatar.setSeenRecently(contact.wasSeenRecently());
     title.setText(contact.getDisplayName());
     title.setCompoundDrawablesWithIntrinsicBounds(0, 0, contact.isVerified()? R.drawable.ic_verified : 0, 0);
     subtitle.setText(contact.getAddr());
