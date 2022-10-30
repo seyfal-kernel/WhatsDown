@@ -593,7 +593,7 @@ public class ConversationItem extends BaseConversationItem
     }
 
     if(bottomLeft != 0 && bottomRight !=0) {
-      if(current.isOutgoing()) {
+      if((current.isOutgoing() && ViewUtil.isLtr(this)) || (!current.isOutgoing() && ViewUtil.isRtl(this))) {
         bottomRight = 0;
       }
       else {
