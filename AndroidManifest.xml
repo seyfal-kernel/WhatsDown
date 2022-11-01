@@ -64,7 +64,7 @@
               android:taskAffinity=""
               android:windowSoftInputMode="stateHidden"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"
-              android:exported="false">
+              android:exported="true">
 
         <intent-filter>
             <action android:name="android.intent.action.SEND" />
@@ -177,7 +177,7 @@
               android:theme="@style/TextSecure.LightNoActionBar"
               android:windowSoftInputMode="stateHidden"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"
-              android:exported="false">
+              android:exported="true">
 
         <intent-filter>
             <data android:scheme="mailto"/>
@@ -202,7 +202,7 @@
               android:launchMode="singleTask"
               android:theme="@style/TextSecure.LightNoActionBar"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"
-              android:exported="false">
+              android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.VIEW"/>
             <category android:name="android.intent.category.DEFAULT"/>
@@ -223,7 +223,7 @@
               android:launchMode="singleTask"
               android:windowSoftInputMode="stateUnchanged"
               android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout|screenSize"
-              android:exported="false">
+              android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.VIEW" />
             <category android:name="android.intent.category.DEFAULT" />
@@ -411,7 +411,7 @@
     </provider>
 
     <receiver android:name=".service.BootReceiver"
-        android:exported="false">
+        android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.BOOT_COMPLETED"/>
             <action android:name="org.thoughtcrime.securesms.RESTART"/>
