@@ -11,8 +11,8 @@ DeltaLab was created with a focus on saving data plan and comes with some differ
 <li>Multiple color themes/skins</li>
 <li>Option to delete/clear all messages in a chat</li>
 <li>A videochat instance is set by default</li>
-<li>Incoming groups and mailing lists are muted by default</li>
 <li>Replies to your messages in muted groups trigger notifications</li>
+<li>Backup filenames contain the account's address</li>
 <li>More Kaomoji emoticons</li>
 <li>Verified icon is shown in the chat list for verified contacts and the "Device Messages" chat</li>
 <li>Videos are played in loop, useful for short GIF videos</li>
