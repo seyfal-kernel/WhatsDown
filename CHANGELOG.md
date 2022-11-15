@@ -1,5 +1,21 @@
 # Delta Chat Android Changelog
 
+## v1.34.4
+2022-11
+
+* fix opening chats for android4 (bug introduced with 1.34.3)
+* fix adding notifications on some android versions
+* update translations
+* using core98
+
+
+## v1.34.3
+2022-10
+
+* fix Share-to-Delta and calling Delta otherwise for android12
+* using core98
+
+
 ## v1.34.2
 2022-10
 
