@@ -16,8 +16,6 @@ jobs:
           submodules: recursive
       - name: Validate Fastlane Metadata
         uses: ashutoshgngwr/validate-fastlane-supply-metadata@v2
-      - run: cp jni/deltachat-core-rust/rust-toolchain .
-      - uses: actions-rs/toolchain@v1
       - uses: Swatinem/rust-cache@v1
         with:
           working-directory: jni/deltachat-core-rust
