@@ -161,7 +161,7 @@ public class ConversationListItem extends RelativeLayout
         thread.isSendingLocations()? R.drawable.ic_location_chatlist : 0, 0
     );
 
-    setStatusIcons(thread.getVisibility(), state, unreadCount, thread.isContactRequest());
+    setStatusIcons(thread.getVisibility(), state, unreadCount, thread.isContactRequest(), thread.isMuted() || chatId == DcChat.DC_CHAT_ID_ARCHIVED_LINK);
     setBatchState(batchMode);
     setBgColor(thread);
 
@@ -262,41 +262,22 @@ public class ConversationListItem extends RelativeLayout
     return msgId;
   }
 
-  private void setStatusIcons(int visibility, int state, int unreadCount, boolean isContactRequest) {
+  private void setStatusIcons(int visibility, int state, int unreadCount, boolean isContactRequest, boolean isMuted) {
     if (visibility==DcChat.DC_CHAT_VISIBILITY_ARCHIVED)
     {
       archivedBadgeView.setVisibility(View.VISIBLE);
       requestBadgeView.setVisibility(isContactRequest ? View.VISIBLE : View.GONE);
       deliveryStatusIndicator.setNone();
-      unreadIndicator.setVisibility(View.GONE);
     }
     else if (isContactRequest) {
       requestBadgeView.setVisibility(View.VISIBLE);
       archivedBadgeView.setVisibility(View.GONE);
       deliveryStatusIndicator.setNone();
-      unreadIndicator.setVisibility(View.GONE);
     }
     else
     {
       requestBadgeView.setVisibility(View.GONE);
       archivedBadgeView.setVisibility(View.GONE);
-
-      if(unreadCount==0) {
-        unreadIndicator.setVisibility(View.GONE);
-      } else {
-        final TypedArray attrs = getContext().obtainStyledAttributes(new int[] {
-                 R.attr.conversation_list_item_unreadcount_color,
-          });
-        unreadIndicator.setImageDrawable(TextDrawable.builder()
-                .beginConfig()
-                .width(ViewUtil.dpToPx(getContext(), 24))
-                .height(ViewUtil.dpToPx(getContext(), 24))
-                .textColor(Color.WHITE)
-                .bold()
-                .endConfig()
-                .buildRound(String.valueOf(unreadCount), attrs.getColor(0, Color.BLACK)));
-        unreadIndicator.setVisibility(View.VISIBLE);
-      }
 
       if (state == DcMsg.DC_STATE_OUT_FAILED) {
         deliveryStatusIndicator.setFailed();
@@ -317,6 +298,29 @@ public class ConversationListItem extends RelativeLayout
       } else {
         deliveryStatusIndicator.resetTint();
       }
+    }
+
+    if(unreadCount==0 || isContactRequest) {
+      unreadIndicator.setVisibility(View.GONE);
+    } else {
+      final int color;
+      if(isMuted){
+        color = getResources().getColor(ThemeUtil.isDarkTheme(getContext()) ? R.color.unread_count_muted_dark : R.color.unread_count_muted);
+      } else {
+        final TypedArray attrs = getContext().obtainStyledAttributes(new int[] {
+                 R.attr.conversation_list_item_unreadcount_color,
+          });
+        color = attrs.getColor(0, Color.BLACK);
+      }
+      unreadIndicator.setImageDrawable(TextDrawable.builder()
+        .beginConfig()
+        .width(ViewUtil.dpToPx(getContext(), 24))
+        .height(ViewUtil.dpToPx(getContext(), 24))
+        .textColor(Color.WHITE)
+        .bold()
+        .endConfig()
+        .buildRound(String.valueOf(unreadCount), color));
+      unreadIndicator.setVisibility(View.VISIBLE);
     }
   }
 
