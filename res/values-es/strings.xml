@@ -293,6 +293,7 @@
     <string name="share_location_for_one_hour">Por 1 hora</string>
     <string name="share_location_for_two_hours">Por 2 horas</string>
     <string name="share_location_for_six_hours">Por 6 horas</string>
+    <string name="share_location_for_12_hours">Por 12 horas</string>
 
     <plurals name="ask_send_following_n_files_to">
         <item quantity="one">¿Enviar el  archivo a %s?</item>

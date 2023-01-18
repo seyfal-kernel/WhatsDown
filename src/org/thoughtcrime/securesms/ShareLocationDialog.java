@@ -19,6 +19,7 @@ public class ShareLocationDialog {
         case 2:  shareLocationUnit =     60 * 60; break;
         case 3:  shareLocationUnit = 2 * 60 * 60; break;
         case 4:  shareLocationUnit = 6 * 60 * 60; break;
+        case 5:  shareLocationUnit = 12 * 60 * 60; break;
       }
 
       listener.onSelected(shareLocationUnit);
