@@ -106,7 +106,7 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
       dcContext.addDeviceMsg("update_1_34_10_android", msg2);
     }
     DcMsg msg = new DcMsg(dcContext, DcMsg.DC_MSG_TEXT);
-    msg.setText(getString(R.string.update_1_33_tips));
+    msg.setText(getString(R.string.device_msg_tips));
     dcContext.addDeviceMsg("update_1_34a_tips", msg);
 
     msg = new DcMsg(dcContext, DcMsg.DC_MSG_TEXT);
