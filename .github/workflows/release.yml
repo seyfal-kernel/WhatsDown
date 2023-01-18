@@ -26,7 +26,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: recursive
-      - uses: actions-rs/toolchain@v1
       - uses: Swatinem/rust-cache@v1
         with:
           working-directory: jni/deltachat-core-rust
