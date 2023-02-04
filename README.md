@@ -2,8 +2,6 @@
 
 DeltaLab is a [Delta Chat](https://delta.chat/) client for Android.
 
-DeltaLab uses a [modified](https://github.com/adbenitez/deltalab-core) version of the [Delta Chat Core Library](https://github.com/deltachat/deltachat-core-rust).
-
 [<img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png"
      alt="Get it on IzzyOnDroid"
      height="80">](https://apt.izzysoft.de/fdroid/index/apk/chat.delta.lite)
@@ -16,6 +14,7 @@ Or get the latest APK from the [Releases section](https://github.com/adbenitez/d
 
 DeltaLab is based on the [official Delta Chat client](https://github.com/deltachat/deltachat-android) with some small improvements.
 
+DeltaLab uses a [modified](https://github.com/adbenitez/deltalab-core) version of the [Delta Chat Core Library](https://github.com/deltachat/deltachat-core-rust).
 
 # License
 
