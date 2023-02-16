@@ -1031,6 +1031,6 @@
 
     <!-- device messages for updates -->
     <string name="device_msg_tips">**💡 TIPS**\n\n\n**🤖 Public bots list:**\nhttps://deltachat-bot.github.io/public-bots/\n\n\n[**🎮 Games List**](mailto:juegos@buzon.uy?body=/list)\n\n\n[**💬 Public super groups and channels list**](mailto:groupsbot@hispanilandia.net?body=/list) (the super groups are anonymous your email address is not revealed to members!)</string>
-    <string name="update_1_34_android">What\'s new in 1.34?\n\n🤗 Friendlier contact lists: Ordered by last seen\n\n📑 New pages in chat profiles: \"Audio\" and \"Private Apps\"\n\n\n Backup names now include the email address\n\n Your avatar will be sent in super groups, allowing other group members to see it\n\n Added support for SOCKS5 proxy\n\n Added option to share location for 12 hours</string>
+    <string name="update_1_34_android">What\'s new in 1.34.13?\n\nYou will receive notifications for all your accounts at the same time\n\nShow full messages: do not load remote content for contact requests automatically\n\nSeveral bug fixes and small improvements</string>
 
 </resources>
