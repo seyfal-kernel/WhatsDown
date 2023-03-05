@@ -97,17 +97,21 @@ public class ProfileActivity extends PassphraseRequiredActionBarActivity
 
     setSupportActionBar(this.toolbar);
     ActionBar supportActionBar = getSupportActionBar();
-    supportActionBar.setDisplayHomeAsUpEnabled(false);
-    supportActionBar.setCustomView(R.layout.conversation_title_view);
-    supportActionBar.setDisplayShowCustomEnabled(true);
-    supportActionBar.setDisplayShowTitleEnabled(false);
-    Toolbar parent = (Toolbar) supportActionBar.getCustomView().getParent();
-    parent.setPadding(0,0,0,0);
-    parent.setContentInsetsAbsolute(0,0);
-
-    titleView = (ConversationTitleView) supportActionBar.getCustomView();
-    titleView.setOnBackClickedListener(view -> onBackPressed());
-    titleView.setOnClickListener(view -> onEnlargeAvatar());
+    if (isGlobalProfile()) {
+      supportActionBar.setDisplayHomeAsUpEnabled(true);
+      supportActionBar.setHomeActionContentDescription(getString(R.string.back));
+    } else {
+      supportActionBar.setDisplayHomeAsUpEnabled(false);
+      supportActionBar.setDisplayShowTitleEnabled(false);
+      supportActionBar.setDisplayShowCustomEnabled(true);
+      supportActionBar.setCustomView(R.layout.conversation_title_view);
+      titleView = (ConversationTitleView) supportActionBar.getCustomView();
+      titleView.setOnBackClickedListener(view -> onBackPressed());
+      titleView.setOnClickListener(view -> onEnlargeAvatar());
+      Toolbar parent = (Toolbar) supportActionBar.getCustomView().getParent();
+      parent.setPadding(0,0,0,0);
+      parent.setContentInsetsAbsolute(0,0);
+    }
 
     updateToolbar();
 
@@ -128,7 +132,7 @@ public class ProfileActivity extends PassphraseRequiredActionBarActivity
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
-    if (!isSelfProfile()) {
+    if (!isSelfProfile() && !isGlobalProfile()) {
       getMenuInflater().inflate(R.menu.profile_common, menu);
       boolean canReceive = true;
 
