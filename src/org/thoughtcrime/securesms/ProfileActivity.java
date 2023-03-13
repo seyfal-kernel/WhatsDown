@@ -102,15 +102,16 @@ public class ProfileActivity extends PassphraseRequiredActionBarActivity
       supportActionBar.setHomeActionContentDescription(getString(R.string.back));
     } else {
       supportActionBar.setDisplayHomeAsUpEnabled(false);
-      supportActionBar.setDisplayShowTitleEnabled(false);
-      supportActionBar.setDisplayShowCustomEnabled(true);
       supportActionBar.setCustomView(R.layout.conversation_title_view);
-      titleView = (ConversationTitleView) supportActionBar.getCustomView();
-      titleView.setOnBackClickedListener(view -> onBackPressed());
-      titleView.setOnClickListener(view -> onEnlargeAvatar());
+      supportActionBar.setDisplayShowCustomEnabled(true);
+      supportActionBar.setDisplayShowTitleEnabled(false);
       Toolbar parent = (Toolbar) supportActionBar.getCustomView().getParent();
       parent.setPadding(0,0,0,0);
       parent.setContentInsetsAbsolute(0,0);
+
+      titleView = (ConversationTitleView) supportActionBar.getCustomView();
+      titleView.setOnBackClickedListener(view -> onBackPressed());
+      titleView.setOnClickListener(view -> onEnlargeAvatar());
     }
 
     updateToolbar();
