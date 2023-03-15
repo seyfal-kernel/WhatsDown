@@ -208,6 +208,8 @@
     <string name="menu_add_attachment">Dateien anhängen</string>
     <string name="menu_leave_group">Gruppe verlassen</string>
     <string name="menu_delete_chat">Chat löschen</string>
+    <!-- Command to delete all messages in a chat. The chat itself will not be deleted but will be empty afterwards, so make sure to be different from "Delete Chat" here. "Clear" is a verb here, "Empty Chat" would also be fine (eg. in German "Chat leeren") -->
+    <string name="clear_chat">Chat leeren</string>
     <string name="ask_delete_named_chat">Sind Sie sicher, dass Sie \"%1$s\" löschen möchten?</string>
     <string name="menu_delete_messages">Nachrichten löschen</string>
     <string name="delete_contact">Kontakt löschen</string>
@@ -456,6 +458,7 @@
     <string name="tab_video_empty_hint">In diesem Chat geteilte Videos werden hier angezeigt.</string>
     <string name="tab_audio_empty_hint">In diesem Chat geteilte Audiodateien und Sprachnachrichten werden hier angezeigt.</string>
     <string name="tab_webxdc_empty_hint">In diesem Chat geteilte Private Apps werden hier angezeigt.</string>
+    <string name="tab_all_media_empty_hint">Medien aus allen Chats werden hier angezeigt.</string>
     <string name="media_preview">Medien-Vorschau</string>
     <string name="send_message">Nachricht senden</string>
     <!-- Placeholder %1$s will be replaced by the name of the contact changing their address. Placeholders %2$s and %3$s will be replaced by old/new email addresses. -->
