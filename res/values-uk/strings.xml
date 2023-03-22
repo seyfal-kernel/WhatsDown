@@ -176,10 +176,10 @@
     <string name="file">Файл</string>
     <string name="files">Файли</string>
     <!-- "App" is used to present "Webxdc App" (https://webxdc.org) in a user friendly way. Please stay close to the original term and keep it short (it is used in menus with few screen space). -->
-    <string name="webxdc_app">Приватний застосунок</string>
+    <string name="webxdc_app">Застосунок</string>
     <!-- plural of "App"; used to present "Webxdc App" (https://webxdc.org) in a user friendly way. Please stay close to the original term and keep it short (it is used in menus with few screen space). -->
-    <string name="webxdc_apps">Приватні застосунки</string>
-    <string name="files_and_webxdx_apps">Файли і приватні застосунки</string>
+    <string name="webxdc_apps">Застосунки</string>
+    <string name="files_and_webxdx_apps">Файли і застосунки</string>
     <string name="unknown">Невідомо</string>
 
     <string name="green">Зелений</string>
@@ -486,7 +486,7 @@
     <string name="tab_image_empty_hint">Зображення, якими поділилися у цьому чаті, будуть відображатися тут.</string>
     <string name="tab_video_empty_hint">Відео, якими поділилися у цьому чаті, будуть відображатися тут.</string>
     <string name="tab_audio_empty_hint">Аудіозаписи та голосові повідомлення, якими поділилися у цьому чаті, будуть відображатися тут.</string>
-    <string name="tab_webxdc_empty_hint">Приватні застосунки, якими поділилися у цьому чаті, будуть відображатися тут.</string>
+    <string name="tab_webxdc_empty_hint">Застосунки, якими поділилися у цьому чаті, будуть відображатися тут.</string>
     <string name="tab_all_media_empty_hint">Тут відображатимуться медіафайли, якими ви ділилися в будь-якому чаті.</string>
     <string name="media_preview">Попередній перегляд медіа</string>
     <string name="send_message">Надіслати повідомлення</string>
@@ -657,6 +657,7 @@
     <string name="pref_managekeys_import_explain">Імпортувати секретні ключі з «%1$s»?\n\n• Існуючі секретні ключі не будуть видалені\n\n• Останній імпортований ключ буде використаний як новий ключ за замовчуванням, якщо він не містить слова legacy у назві файлу.</string>
     <string name="pref_managekeys_secret_keys_exported_to_x">Секретні ключі успішно збережені в «%1$s».</string>
     <string name="pref_managekeys_secret_keys_imported_from_x">Секретні ключі імпортовані з «%1$s».</string>
+    <!-- No need to translate "Wallpaper" literally. Chose what is common in your language for a "Wallpaper" or a "Background". Avoid adding the term "image" here, as the "Wallpaper" may also be just a single color. -->
     <string name="pref_background">Фон</string>
     <string name="pref_background_btn_default">Використовувати зображення за замовчуванням</string>
     <string name="pref_background_btn_gallery">Вибрати з галереї</string>
@@ -1027,7 +1028,7 @@
     <string name="notifications_avg_hours">В середньому %1$d годин</string>
     <string name="last_check_at">Перевірено о %1$s</string>
     <!-- iOS webxdc selector -->
-    <string name="webxdc_selector_empty_hint">Приватні застосунки, отримані або надіслані у цьому чаті, будуть відображатися тут. \"Файли\" відображають щойно завантажені приватні застосунки.</string>
+    <string name="webxdc_selector_empty_hint">Застосунки, отримані або надіслані у цьому чаті, будуть відображатися тут. \"Файли\" відображають щойно завантажені застосунки.</string>
     <!-- iOS webxdc shortcut page -->
     <string name="shortcut_step1_tap_share_btn">Натисніть кнопку поділитися</string>
     <string name="shortcut_step2_tap_add_to_home_screen">Виберіть «Додати на головний екран», щоб додати застосунок на головний екран.</string>
