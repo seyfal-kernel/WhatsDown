@@ -28,8 +28,6 @@ import org.thoughtcrime.securesms.connect.DcEventCenter;
 import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.util.Util;
 
-import java.util.Locale;
-
 public class BackupProviderFragment extends Fragment implements DcEventCenter.DcEventDelegate {
 
     private final static String TAG = BackupProviderFragment.class.getSimpleName();
@@ -41,6 +39,7 @@ public class BackupProviderFragment extends Fragment implements DcEventCenter.Dc
     private ProgressBar      progressBar;
     private View             topText;
     private SVGImageView     qrImageView;
+    private View             bottomText;
 
     @Override
     public void onCreate(Bundle bundle) {
@@ -55,9 +54,10 @@ public class BackupProviderFragment extends Fragment implements DcEventCenter.Dc
         progressBar = view.findViewById(R.id.progress_bar);
         topText = view.findViewById(R.id.top_text);
         qrImageView = view.findViewById(R.id.qrImage);
+        bottomText = view.findViewById(R.id.bottom_text);
         setHasOptionsMenu(true);
 
-        statusLine.setText(R.string.one_moment);
+        statusLine.setText(R.string.preparing_account);
         progressBar.setIndeterminate(true);
 
         dcContext = DcHelper.getContext(getActivity());
@@ -68,10 +68,14 @@ public class BackupProviderFragment extends Fragment implements DcEventCenter.Dc
             dcBackupProvider = dcContext.newBackupProvider();
             Log.i(TAG, "##### newBackupProvider() returned");
             Util.runOnMain(() -> {
+                BackupTransferActivity activity = getTransferActivity();
+                if (activity == null || activity.isFinishing()) {
+                    return;
+                }
                 progressBar.setVisibility(View.GONE);
                 if (!dcBackupProvider.isOk()) {
-                    getTransferActivity().setTransferState(BackupTransferActivity.TransferState.TRANSFER_ERROR);
-                    getTransferActivity().showLastErrorAlert("Cannot create backup provider");
+                    activity.setTransferState(BackupTransferActivity.TransferState.TRANSFER_ERROR);
+                    activity.showLastErrorAlert("Cannot create backup provider");
                     return;
                 }
                 statusLine.setVisibility(View.GONE);
@@ -82,6 +86,7 @@ public class BackupProviderFragment extends Fragment implements DcEventCenter.Dc
                 } catch (SVGParseException e) {
                     e.printStackTrace();
                 }
+                bottomText.setVisibility(View.VISIBLE);
                 new Thread(() -> {
                     Log.i(TAG, "##### waitForReceiver() with qr: "+dcBackupProvider.getQr());
                     dcBackupProvider.waitForReceiver();
@@ -98,7 +103,9 @@ public class BackupProviderFragment extends Fragment implements DcEventCenter.Dc
     @Override
     public void onDestroyView() {
         dcContext.stopOngoingProcess();
-        dcBackupProvider.unref();
+        if (dcBackupProvider != null) {
+            dcBackupProvider.unref();
+        }
         super.onDestroyView();
         DcHelper.getEventCenter(getActivity()).removeObservers(this);
     }
@@ -140,13 +147,11 @@ public class BackupProviderFragment extends Fragment implements DcEventCenter.Dc
                 getTransferActivity().setTransferState(BackupTransferActivity.TransferState.TRANSFER_ERROR);
                 getTransferActivity().showLastErrorAlert("Sending Error");
                 hideQrCode = true;
-            } else if(permille <= 100) {
-                statusLineText = getString(R.string.exporting_account);
-            } else if(permille <= 300) {
-                statusLineText = getString(R.string.preparing_account);
             } else if(permille <= 350) {
-                statusLineText = getString(R.string.account_prepared);
+                statusLineText = getString(R.string.preparing_account);
             } else if(permille <= 400) {
+                statusLine.setVisibility(View.GONE);
+                progressBar.setVisibility(View.GONE);
                 statusLineText = getString(R.string.waiting_for_receiver);
             } else if(permille <= 450) {
                 statusLineText = getString(R.string.receiver_connected);
@@ -154,7 +159,7 @@ public class BackupProviderFragment extends Fragment implements DcEventCenter.Dc
             } else if (permille < 1000) {
                 percent = (permille-450)/5;
                 percentMax = 100;
-                statusLineText = getString(R.string.transferring) + String.format(Locale.getDefault(), " %d%%", percent);
+                statusLineText = getString(R.string.transferring);
                 hideQrCode = true;
             } else if (permille == 1000) {
                 statusLineText = getString(R.string.done) + " \uD83D\uDE00";
@@ -176,6 +181,7 @@ public class BackupProviderFragment extends Fragment implements DcEventCenter.Dc
             if (hideQrCode && qrImageView.getVisibility() != View.GONE) {
                 qrImageView.setVisibility(View.GONE);
                 topText.setVisibility(View.GONE);
+                bottomText.setVisibility(View.GONE);
                 statusLine.setVisibility(View.VISIBLE);
                 progressBar.setVisibility(permille == 1000 ? View.GONE : View.VISIBLE);
             }

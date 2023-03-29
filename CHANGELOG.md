@@ -1,5 +1,37 @@
 # Delta Chat Android Changelog
 
+## v1.36.0
+2023-03
+
+* new, easy method of adding a second device to your account:
+  select "Add as a Second Device" after installation and scan a QR code from the old device
+* view "All Media" of all chats by the corresponding option in the chat list's menu
+* add "Clear Chat" option to remove all messages from a chat
+* show non-deltachat emails by default for new installations
+  (you can change this at "Settings / Chats and Media)
+* show notifications for all accounts
+* make better use of dark/light mode in "Show full message"
+* show icon beside info messages of apps
+* resilience against outages by caching DNS results for SMTP connections
+  (IMAP connections are already cached since 1.34.11)
+* prefer TLS over STARTTLS during autoconfiguration, set minimum TLS version to 1.2
+* use SOCKS5 configuration also for HTTP requests
+* make invite QR codes even prettier
+* improve speed by reorganizing the database connection pool
+* improve speed by decrypting messages in parallel
+* improve reliability by using read/write instead of per-command timeouts for SMTP
+* improve reliability by closing databases sooner
+* improve compatibility with encrypted messages from non-deltachat clients
+* fix: Skip "Show full message" if the additional text is only a footer already shown in the profile
+* fix verifications when using for multiple devices
+* fix backup imports for backups seemingly work at first
+* fix a problem with gmail where (auto-)deleted messages would get archived instead of deleted
+* fix deletion of more than 32000 messages at the same time
+* update provider database
+* update translations and local help
+* update to core112.1
+
+
 ## v1.34.13
 2023-02
 
@@ -83,7 +115,7 @@
 ## v1.34.5
 2022-11
 
-* allow removal of references contacts from the "New Chat" list
+* allow removal of referenced contacts from the "New Chat" list
 * show more debug info in message info
 * improve IMAP logging
 * show versionCode in log
@@ -773,7 +805,7 @@
 * improve receiving messages
 * improve error handling when there is no network
 * use correct aspect ratio of background images
-* fix sending umcompressed images
+* fix sending uncompressed images
 * fix emojis for android 4
 * more bug fixes
 
@@ -838,7 +870,7 @@
 2020-05-11
 
 * by default, the permanent notification is no longer shown;
-  the background fetch realibility depends on the system and the
+  the background fetch reliability depends on the system and the
   permanent notification can be enabled at "Settings / Notifications" as needed
 * fix a bug that stops receiving messages under some circumstances
 * more bug fixes
@@ -901,7 +933,7 @@
 * lower minimal requirements, Delta Chat now also runs on Android 4.1 Jelly Bean
 * fix updating names from incoming mails
 * fix encryption to Ed25519 keys that will be used in one of the next releases
-* several bug fixes, eg. on sending and receivind messages, see
+* several bug fixes, eg. on sending and receiving messages, see
   https://github.com/deltachat/deltachat-core-rust/blob/master/CHANGELOG.md#1250
   for details on that
 * add Croatian and Esperanto translations, update other translations and help
@@ -1573,7 +1605,7 @@ Osoitz, sebek, Thomas Oster
 * Notify the user in the chatlist about contact requests
   of known users or of other Delta Chat clients
 * Show messages only for explicitly wanted chats
-* Show more detailed reasons about failed end-to-end-encryptions
+* Show more detailed reasons about failed end-to-end-encryption
 * Explicit option to leave a group
 * Do not show the padlock if end-to-end-encryption is disabled by the user
 * Import images from a backup when using a different device with different paths

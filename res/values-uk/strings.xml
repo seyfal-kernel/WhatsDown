@@ -511,11 +511,7 @@
     <string name="multidevice_abort_will_invalidate_copied_qr">Це зробить недійсним QR-код, скопійований у буфер обміну.</string>
     <string name="multidevice_experimental_hint">(експериментальний, потрібна версія 1.36)</string>
     <!-- Shown beside progress bar, stay short -->
-    <string name="exporting_account">Експорт облікового запису…</string>
-    <!-- Shown beside progress bar, stay short -->
     <string name="preparing_account">Підготовка облікового запису…</string>
-    <!-- Shown beside progress bar, stay short -->
-    <string name="account_prepared">Обліковий запис підготовлено.</string>
     <!-- Shown beside progress bar, stay short -->
     <string name="waiting_for_receiver">Очікування одержувача…</string>
     <!-- Shown beside progress bar, stay short -->
@@ -865,7 +861,7 @@
     <string name="devicemsg_bad_time">⚠️ Дата і час на вашому пристрої видаються неточними (%1$s).\n\nНалаштуйте свій годинник ⏰🔧 для правильного отримання ваших повідомлень.</string>
     <string name="devicemsg_update_reminder">⚠️ Ваша версія Delta Chat може бути застарілою.\n\nЦе може спричинити проблеми, оскільки ваші співрозмовники в чаті використовують новіші версії, а вам не вистачає найновіших функцій 😳 \nПеревірте оновлення на https://get.delta.chat або у вашому магазині додатків. </string>
 
-    <!-- Some options as "Manage keys" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Manage keys" or "Backup". -->
+    <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Введіть захисний код, щоб продовжити.</string>
 
     <!-- qr code stuff -->
@@ -1084,5 +1080,4 @@
 
     <!-- device messages for updates -->
     <string name="update_1_34_android">Що нового в 1.34?\n\n🤗 Дружніші списки контактів: упорядковані за останнім відвідуванням і контакти, які бачили протягом 10 хвилин, позначаються крапкою 🟢\n\n📑 Нові сторінки в профілях чату: «Аудіо» та «Приватні застосунки»\n\n🖼️ Якщо хтось надішле вам «Приватний застосунок» (наприклад, з https://webxdc.org), ви можете додати її на головний екран</string>
-
-</resources>
+    </resources>

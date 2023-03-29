@@ -496,6 +496,31 @@
     <string name="aeap_explanation">Zmieniłeś swój adres e-mail z %1$s na %2$s.\n\nJeśli teraz wyślesz wiadomość do zweryfikowanej grupy, kontakty tam zawarte automatycznie zastąpią stary adres Twoim nowym.\n\nBardzo zalecane jest, aby ustawić swojego starego dostawcę emaila tak, aby przekazywał wszystkie emaile na Twój nowy adres email. W przeciwnym razie możesz przegapić wiadomości od kontaktów, które jeszcze nie dostały Twojego nowego adresu.</string>
 
 
+    <!-- Multi Device -->
+    <!-- "Second Device" can also be translated as "Another Device", if that is catchier in the destination language. However, make sure to use the term consistently. -->
+    <string name="multidevice_title">Dodaj kolejne urządzenie</string>
+    <string name="multidevice_same_network_hint">Upewnij się, że oba urządzenia są połączone z tym samym Wi-Fi lub siecią</string>
+    <string name="multidevice_this_creates_a_qr_code">Spowoduje to utworzenie kodu QR, który kolejne urządzenie może zeskanować w celu skopiowania konta.</string>
+    <string name="multidevice_install_dc_on_other_device">Zainstaluj Delta Chat na swoim kolejnym urządzeniu (https://get.delta.chat)</string>
+    <string name="multidevice_tap_scan_on_other_device">Uruchom Delta Chat, dotknij „Dodaj jako kolejne urządzenie” i zeskanuj pokazany tutaj kod</string>
+    <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
+    <string name="multidevice_qr_subtitle">Zeskanuj, aby skonfigurować kolejne urządzenie dla %1$s</string>
+    <string name="multidevice_receiver_title">Dodaj jako kolejne urządzenie</string>
+    <string name="multidevice_open_settings_on_other_device">Na pierwszym urządzeniu przejdź do „Ustawienia » Dodaj kolejne urządzenie” i zeskanuj wyświetlony tam kod</string>
+    <string name="multidevice_receiver_scanning_ask">Skopiować konto z innego urządzenia na to urządzenie?</string>
+    <string name="multidevice_abort">Przerwać konfigurowanie kolejnego urządzenia?</string>
+    <string name="multidevice_abort_will_invalidate_copied_qr">Spowoduje to unieważnienie kodu QR skopiowanego do schowka.</string>
+    <string name="multidevice_experimental_hint">(eksperymentalna, wymagana wersja 1.36)</string>
+    <!-- Shown beside progress bar, stay short -->
+    <string name="preparing_account">Przygotowywanie konta…</string>
+    <!-- Shown beside progress bar, stay short -->
+    <string name="waiting_for_receiver">Oczekiwanie na odbiorcę…</string>
+    <!-- Shown beside progress bar, stay short -->
+    <string name="receiver_connected">Odbiorca połączony…</string>
+    <!-- Shown beside progress bar, stay short -->
+    <string name="transferring">Przenoszenie…</string>
+    <string name="troubleshooting">Rozwiązywanie problemów</string>
+
     <!-- Connectivity -->
     <!-- Headline for the "Inbox" eg. in the "Connectivity" view -->
     <string name="incoming_messages">Wiadomości przychodzące</string>
@@ -837,7 +862,7 @@
     <string name="devicemsg_bad_time">⚠️ Data lub godzina urządzenia wydaje się być niedokładna (%1$s).\n\nDostosuj zegar ⏰🔧, aby upewnić się, że wiadomości są prawidłowo odbierane.</string>
     <string name="devicemsg_update_reminder">⚠️ Twoja wersja Delta Chat może być nieaktualna.\n\nMoże to powodować problemy, ponieważ Twoi partnerzy czatu korzystają z nowszych wersji, a Ty nie masz najnowszych funkcji 😳\nSprawdź aktualizacje na stronie https://get.delta.chat lub w sklepie z aplikacjami.</string>
 
-    <!-- Some options as "Manage keys" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Manage keys" or "Backup". -->
+    <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Aby kontynuować, wprowadź swój tajny kod zdefiniowany w systemie.</string>
 
     <!-- qr code stuff -->
@@ -1056,5 +1081,9 @@
 
     <!-- device messages for updates -->
     <string name="update_1_34_android">Co nowego w wersji 1.34?\n\n🤗 Bardziej przyjazne listy kontaktów: uporządkowane według ostatnio widzianych, a kontakty widziane w ciągu 10 minut są oznaczone kropką 🟢\n\n📑 Nowe strony w profilach czatu: „Dźwięk” i „Aplikacje prywatne”\n\n🖼️ Jeśli ktoś wyśle ci „Prywatną aplikację” (np. z https://webxdc.org ), możesz dodać ją do ekranu głównego</string>
+    <!-- placeholder will be replaced by the URL https://get.delta.chat/#changelogs -->
+    <string name="update_1_36_android">Najciekawsze w wersji 1.36\n\n💻📱 Korzystaj z Delta Chat na wszystkich swoich urządzeniach w prosty sposób - wystarczy wykonać trzy proste kroki w \"Ustawienia » Dodaj kolejne urządzenie\" (eksperymentalna)\n\n🖼🔍 Czy kiedykolwiek szukałeś obrazu i nie mogłeś zapamiętać czatu? \"Wszystkie multimedia\" z menu głównego są twoje!\n\nCo jeszcze? Powiadomienia dla wszystkich kont, czyszczenie czatu i wiele więcej znajdziesz na stronie www %1$s</string>
+    <!-- placeholder will be replaced by the URL https://delta.chat/en/2023-03-27-third-independent-security-audit -->
+    <string name="update_1_36_audit">Nie rozmawiamy tutaj zbyt wiele o bezpieczeństwie, ale zapewniamy, że nam zależy: najnowsze dobre wieści znajdują się na stronie %1$s👌</string>
 
 </resources>
