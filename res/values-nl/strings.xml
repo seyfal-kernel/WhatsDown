@@ -60,7 +60,9 @@
     <!-- Possible answers to the question are: Never, Always, Once -->
     <string name="load_remote_content_ask">Externe afbeeldingen kunnen worden gebruikt om je gedrag te volgen.\n\nDeze instelling staat tevens toe om andere externe inhoud, zoals lettertypen, te laden, en zelfs na uitschakeling kunnen er ingesloten of gecachte afbeeldingen worden getoond.\n\nWeet je het zeker?</string>
     <string name="always">Altijd</string>
+    <string name="always_load_remote_images">Externe afbeeldingen altijd laden</string>
     <string name="once">Eenmalig</string>
+    <string name="show_warning">Waarschuwing tonen</string>
     <string name="show_password">Wachtwoord tonen</string>
     <string name="hide_password">Wachtwoord verbergen</string>
     <string name="not_now">Niet nu</string>
@@ -1051,7 +1053,6 @@
 
 
     <!-- device messages for updates -->
-    <string name="update_1_34_android">Wat is er nieuw en verbeterd in 1.34?\n\n🤗 Handigere contactpersoonslijsten: sorteren op laatst gezien en contactpersonen die de afgelopen 10 minuten actief waren worden voortaan gemarkeerd met een stip 🟢\n\n📑 Nieuwe pagina\'s in profielen: audio en privé-apps\n\n🖼️ Als iemand je een privé-app stuurt (bijv. van https://webxdc.org ), dan kun je deze toevoegen aan het startscherm.</string>
     <!-- placeholder will be replaced by the URL https://get.delta.chat/#changelogs -->
     <string name="update_1_36_android">1.36 - Kenmerken\n\n💻📱 Gebruik Delta Chat eenvoudig op ál je apparaten aan de hand van drie stappen via ‘Instellingen → Tweede apparaat toevoegen’ (experimenteel)\n\n🖼🔍 Heb je wel eens een afbeelding proberen te vinden, maar wist je niet meer in welk gesprek deze stond? ‘Alle media’ in het hoofdmenu is je nieuwe beste vriend!\n\nWat nog meer? Meldingen van alle accounts, gesprekken wissen en meer op %1$s</string>
     <!-- placeholder will be replaced by the URL https://delta.chat/en/2023-03-27-third-independent-security-audit -->

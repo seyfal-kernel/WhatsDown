@@ -60,7 +60,9 @@
     <!-- Possible answers to the question are: Never, Always, Once -->
     <string name="load_remote_content_ask">Figurat e largëta mund të përdoren për t’ju ndjekur.\n\nRregullimi lejon gjithashtu të ngarkohen shkronja dhe lëndë tjetër. Edhe nëse është e çaktivizuar, prapë mund të shihni figura të trupëzuara ose të ruajtura në fshehtinë.\n\nTë ngarkohen figura të largëta?</string>
     <string name="always">Përherë</string>
+    <string name="always_load_remote_images">Ngarko Përherë Figura të Largëta</string>
     <string name="once">Vetëm njëherë</string>
+    <string name="show_warning">Shfaq Sinjalizim</string>
     <string name="show_password">Shfaqe fjalëkalimin</string>
     <string name="hide_password">Fshihe fjalëkalimin</string>
     <string name="not_now">Jo tani</string>
@@ -479,6 +481,7 @@
     <string name="multidevice_abort">Të ndërpritet ujdisja e pajisjes së dytë?</string>
     <string name="multidevice_abort_will_invalidate_copied_qr">Kjo do të bëjë të pavlefshëm kodin QR të kopjuar në të papastër.</string>
     <string name="multidevice_experimental_hint">(eksperimentale, lyp versionin 1.36)</string>
+    <string name="multidevice_transfer_done_devicemsg">ℹ️ Llogaria u shpërngul te pajisja juaj e dytë.</string>
     <!-- Shown beside progress bar, stay short -->
     <string name="preparing_account">Po përgatitet llogaria…</string>
     <!-- Shown beside progress bar, stay short -->
@@ -1045,7 +1048,6 @@
 
 
     <!-- device messages for updates -->
-    <string name="update_1_34_android">Ç’ka të re në 1.34?\n\n🤗 Lista më miqësore kontaktesh: Renditur sipas parë së fundi dhe kontakteve të parë brenda 10 minutash u vihet një shenjë 🟢\n\n📑 Faqe të reja në profile fjalosjesh: “Audio” dhe “Aplikacione Private”\n\n🖼️ Nëse dikush ju dërgon një “Aplikacion Privat” (p.sh., që nga https://webxdc.org ), mund ta shtoni te skena e kreut</string>
     <!-- placeholder will be replaced by the URL https://get.delta.chat/#changelogs -->
     <string name="update_1_36_android">Gjëra në pah për 1.36\n\n💻📱 Përdoreni kollaj Delta Chat-in në krejt pajisjet tuaja - thjesht ndiqni tre hapa të thjeshtë te “Rregullime / Shtoni Pajisje të Dytë” (eksperimentale)\n\n🖼🔍 Ju ka qëlluar të kërkoni për një figurë dhe s’mbanit mend bisedën? “Krejt Mediat” prej menusë kryesorë është e juaja!\n\nPo tjetër? Njoftime për krejt llogaritë, spastrim fjalosjesh, etj, në %1$s</string>
     <!-- placeholder will be replaced by the URL https://delta.chat/en/2023-03-27-third-independent-security-audit -->

@@ -239,6 +239,7 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
         + "img-src 'self' data: blob: ; "
         + "webrtc 'block' ; "
       );
+      headers.put("X-DNS-Prefetch-Control", "off");
       res.setResponseHeaders(headers);
     }
     return res;

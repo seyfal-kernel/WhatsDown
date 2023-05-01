@@ -1,14 +1,6 @@
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.2'
-    }
+plugins {
+    id 'com.android.application' version '7.4.2'
 }
-
-apply plugin: 'com.android.application'
 
 repositories {
     google()
@@ -97,13 +89,22 @@ dependencies {
 
 
 android {
+    namespace "org.thoughtcrime.securesms"
     flavorDimensions "none"
     compileSdkVersion 32
+
+    // Set NDK version to strip native libraries.
+    // Even though we compile our libraries outside Gradle with `scripts/ndk-make.sh`,
+    // without ndkVersion `./gradlew clean` followed by `./gradlew assembleDebug --warning-mode=all` emits the following warning:
+    //   > Task :stripFatDebugDebugSymbols
+    //   Unable to strip the following libraries, packaging them as they are: libanimation-decoder-gif.so, libmapbox-gl.so, libnative-utils.so.
+    // See <https://issuetracker.google.com/issues/237187538> for details.
+    ndkVersion "23.2.8568313"
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        versionCode 651
-        versionName "1.36.2"
+        versionCode 654
+        versionName "1.36.5"
 
         applicationId "com.b44t.messenger"
         multiDexEnabled true
@@ -143,18 +144,15 @@ android {
     }
 
     signingConfigs {
-        signingConfigs {
-            release {
-                // can be defined at `~/.gradle/gradle.properties` or at "Build/Generate signed APK"
-                if(project.hasProperty("DC_RELEASE_STORE_FILE")) {
-                    storeFile file(DC_RELEASE_STORE_FILE)
-                    storePassword DC_RELEASE_STORE_PASSWORD
-                    keyAlias DC_RELEASE_KEY_ALIAS
-                    keyPassword DC_RELEASE_KEY_PASSWORD
-                }
+        release {
+            // can be defined at `~/.gradle/gradle.properties` or at "Build/Generate signed APK"
+            if(project.hasProperty("DC_RELEASE_STORE_FILE")) {
+                storeFile file(DC_RELEASE_STORE_FILE)
+                storePassword DC_RELEASE_STORE_PASSWORD
+                keyAlias DC_RELEASE_KEY_ALIAS
+                keyPassword DC_RELEASE_KEY_PASSWORD
             }
         }
-        release
     }
 
     buildTypes {
