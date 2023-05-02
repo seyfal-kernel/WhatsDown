@@ -19,7 +19,6 @@ package org.thoughtcrime.securesms;
 import static org.thoughtcrime.securesms.ConversationActivity.CHAT_ID_EXTRA;
 import static org.thoughtcrime.securesms.ConversationActivity.STARTING_POSITION_EXTRA;
 import static org.thoughtcrime.securesms.map.MapDataManager.ALL_CHATS_GLOBAL_MAP;
-import static org.thoughtcrime.securesms.util.RelayUtil.REQUEST_RELAY;
 import static org.thoughtcrime.securesms.util.RelayUtil.acquireRelayMessageContent;
 import static org.thoughtcrime.securesms.util.RelayUtil.getDirectSharingChatId;
 import static org.thoughtcrime.securesms.util.RelayUtil.isDirectSharing;
@@ -66,6 +65,7 @@ import org.thoughtcrime.securesms.util.DynamicLanguage;
 import org.thoughtcrime.securesms.util.DynamicNoActionBarTheme;
 import org.thoughtcrime.securesms.util.DynamicTheme;
 import org.thoughtcrime.securesms.util.Prefs;
+import org.thoughtcrime.securesms.util.RelayUtil;
 import org.thoughtcrime.securesms.util.SendRelayedMessageUtil;
 
 public class ConversationListActivity extends PassphraseRequiredActionBarActivity
@@ -213,10 +213,6 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
     refreshAvatar();
     refreshTitle();
     handleOpenpgp4fpr();
-    if (isDirectSharing(this)) {
-      openConversation(getDirectSharingChatId(this), -1);
-    }
-
     if (isDirectSharing(this)) {
       openConversation(getDirectSharingChatId(this), -1);
     }
@@ -406,10 +402,8 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
       intent.putExtra(STARTING_POSITION_EXTRA, startingPosition);
       if (isRelayingMessageContent(this)) {
         acquireRelayMessageContent(this, intent);
-        startActivityForResult(intent, REQUEST_RELAY);
-      } else {
-        startActivity(intent);
       }
+      startActivity(intent);
 
       overridePendingTransition(R.anim.slide_from_right, R.anim.fade_scale_out);
     }
@@ -420,10 +414,8 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
     Intent intent = new Intent(this, ConversationListArchiveActivity.class);
     if (isRelayingMessageContent(this)) {
       acquireRelayMessageContent(this, intent);
-      startActivityForResult(intent, REQUEST_RELAY);
-    } else {
-      startActivity(intent);
     }
+    startActivity(intent);
     overridePendingTransition(R.anim.slide_from_right, R.anim.fade_scale_out);
   }
 
@@ -440,10 +432,8 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
     Intent intent = new Intent(this, NewConversationActivity.class);
     if (isRelayingMessageContent(this)) {
       acquireRelayMessageContent(this, intent);
-      startActivityForResult(intent, REQUEST_RELAY);
-    } else {
-      startActivity(intent);
     }
+    startActivity(intent);
   }
 
   @Override
@@ -454,13 +444,6 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         QrCodeHandler qrCodeHandler = new QrCodeHandler(this);
         qrCodeHandler.onScanPerformed(scanResult);
-        break;
-      case REQUEST_RELAY:
-        if (resultCode == RESULT_OK) {
-          handleResetRelaying();
-          setResult(RESULT_OK);
-          finish();
-        }
         break;
       default:
         break;
