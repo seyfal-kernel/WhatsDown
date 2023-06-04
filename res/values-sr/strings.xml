@@ -91,7 +91,7 @@
     <string name="this_month">Овог месеца</string>
     <string name="last_week">Прошле недеље</string>
     <string name="last_month">Прошлог месеца</string>
-    <!-- Placeholder replaced by date or time, resulting in "Last seen at 12:13 AM" or "Last seen Nov 12" -->
+    <!-- Refers to the time a contact was last seen. Shown below contact name in the profile. The placeholder will be replaced by date or time, resulting in "Last seen at 12:13 AM" or "Last seen Nov 12" -->
     <string name="last_seen_at">Последњи пут виђен %1$s</string>
     <string name="last_seen_unknown">Последњи пут виђен: Непознато</string>
     <!-- Shown beside messages that are "N minutes old". Prefer short strings, or well-known abbreviations. -->
@@ -209,7 +209,6 @@
     <string name="menu_toggle_keyboard">Емоџи тастатура</string>
     <string name="menu_edit_group">Уреди групу</string>
     <string name="menu_group_name_and_image">Назив и слика групе</string>
-    <string name="menu_show_map">Прикажи карту</string>
     <string name="menu_show_global_map">Прикажи све положаје</string>
     <string name="menu_archive_chat">Архивирај ћаскање</string>
     <string name="menu_unarchive_chat">Деархивирај ћаскање</string>

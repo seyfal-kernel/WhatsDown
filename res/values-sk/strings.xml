@@ -87,7 +87,7 @@
     <string name="this_month">Tento mesiac</string>
     <string name="last_week">Minulý týždeň</string>
     <string name="last_month">Minulý mesiac</string>
-    <!-- Placeholder replaced by date or time, resulting in "Last seen at 12:13 AM" or "Last seen Nov 12" -->
+    <!-- Refers to the time a contact was last seen. Shown below contact name in the profile. The placeholder will be replaced by date or time, resulting in "Last seen at 12:13 AM" or "Last seen Nov 12" -->
     <string name="last_seen_at">Naposledy videné o%1$s</string>
     <string name="last_seen_unknown">Naposledy videné: Neznáme</string>
     <!-- Shown beside messages that are "N minutes old". Prefer short strings, or well-known abbreviations. -->
@@ -213,7 +213,6 @@
     <string name="menu_toggle_keyboard">Prepnúť klávesnicu emodži</string>
     <string name="menu_edit_group">Upraviť skupinu</string>
     <string name="menu_group_name_and_image">Názov a obrázok skupiny</string>
-    <string name="menu_show_map">Zobraziť mapu</string>
     <string name="menu_show_global_map">Zobraziť všetky polohy</string>
     <string name="menu_archive_chat">Archivovať konverzáciu</string>
     <string name="menu_unarchive_chat">Zrušiť archiváciu konverzácie</string>

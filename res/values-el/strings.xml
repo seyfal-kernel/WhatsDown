@@ -87,7 +87,7 @@
     <string name="this_month">Αυτόν το μήνα</string>
     <string name="last_week">Προηγούμενη εβδομάδα</string>
     <string name="last_month">Προηγούμενος μήνας</string>
-    <!-- Placeholder replaced by date or time, resulting in "Last seen at 12:13 AM" or "Last seen Nov 12" -->
+    <!-- Refers to the time a contact was last seen. Shown below contact name in the profile. The placeholder will be replaced by date or time, resulting in "Last seen at 12:13 AM" or "Last seen Nov 12" -->
     <string name="last_seen_at">Τελευταία προβολή στις %1$s</string>
     <string name="last_seen_unknown">Τελευταία προβολή: Άγνωστο</string>
     <!-- Shown beside messages that are "N minutes old". Prefer short strings, or well-known abbreviations. -->
@@ -197,7 +197,6 @@
     <string name="menu_toggle_keyboard">Εναλλαγή πληκτρολογίου emoji</string>
     <string name="menu_edit_group">Επεξεργασία ομάδας</string>
     <string name="menu_group_name_and_image">Όνομα Ομάδας και Εικόνα</string>
-    <string name="menu_show_map">Εμφάνιση Xάρτη</string>
     <string name="menu_show_global_map">Εμφάνιση όλων των Τοποθεσιών</string>
     <string name="menu_archive_chat">Αρχείο Συνομιλίας</string>
     <string name="menu_unarchive_chat">Κατάργηση Αρχειοθέτησης Συνομιλίας</string>

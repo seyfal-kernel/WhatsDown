@@ -91,7 +91,7 @@
     <string name="this_month">Този месец</string>
     <string name="last_week">Миналата седмица</string>
     <string name="last_month">Миналия месец</string>
-    <!-- Placeholder replaced by date or time, resulting in "Last seen at 12:13 AM" or "Last seen Nov 12" -->
+    <!-- Refers to the time a contact was last seen. Shown below contact name in the profile. The placeholder will be replaced by date or time, resulting in "Last seen at 12:13 AM" or "Last seen Nov 12" -->
     <string name="last_seen_at">Последно видян на %1$s</string>
     <string name="last_seen_unknown">Последно видян: Не е известно</string>
     <!-- Shown beside messages that are "N minutes old". Prefer short strings, or well-known abbreviations. -->
@@ -201,7 +201,6 @@
     <string name="menu_toggle_keyboard">Включване/изключване на Emoji клавиатура</string>
     <string name="menu_edit_group">Редактиране на група</string>
     <string name="menu_group_name_and_image">Име и изображение на група</string>
-    <string name="menu_show_map">Показване на карта</string>
     <string name="menu_show_global_map">Показване на всички местоположения</string>
     <string name="menu_archive_chat">Поставяне на чата в архив</string>
     <string name="menu_unarchive_chat">Премахване на чата от архив</string>
