@@ -23,4 +23,5 @@ DeltaLab was created with a focus on saving data plan and comes with some differ
 <li>Messages in groups are ignored if the sender is not a group member</li>
 <li>Account's display name is shown in the app's title bar instead of the name of the app</li>
 <li>Your avatar is visible to other users in Mailing Lists</li>
+<li>Can open/display mardown (*.md) attachments</li>
 </ul>
