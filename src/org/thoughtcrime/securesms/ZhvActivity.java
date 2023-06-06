@@ -84,7 +84,7 @@ public class ZhvActivity extends PassphraseRequiredActionBarActivity implements 
     public void configureWebView(WebView web) {
         WebSettings webSettings = web.getSettings();
         webSettings.setBlockNetworkLoads(true);
-        webSettings.setJavaScriptEnabled(true);
+        webSettings.setJavaScriptEnabled(false);
         webSettings.setSupportZoom(true);
         webSettings.setBuiltInZoomControls(true);
         webSettings.setDomStorageEnabled(true);
