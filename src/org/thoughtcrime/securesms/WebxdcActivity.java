@@ -60,11 +60,10 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
       if (Prefs.isDeveloperModeEnabled(context)) {
         WebView.setWebContentsDebuggingEnabled(true);
       }
+      context.startActivity(getWebxdcIntent(context, instance.getId()));
     } else {
-      Toast.makeText(context, "WARNING! At least Android 5.0 (Lollipop) is needed for Webxdc to be safe! Use at your own risk!", Toast.LENGTH_LONG).show();
+      Toast.makeText(context, "At least Android 5.0 (Lollipop) required for Webxdc.", Toast.LENGTH_LONG).show();
     }
-
-    context.startActivity(getWebxdcIntent(context, instance.getId()));
   }
 
   private static Intent getWebxdcIntent(Context context, int msgId) {
