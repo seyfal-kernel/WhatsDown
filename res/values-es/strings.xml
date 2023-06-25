@@ -29,6 +29,7 @@
     <string name="emoji">Emoji</string>
     <string name="attachment">Adjunto</string>
     <string name="back">Atrás</string>
+    <string name="verified">Verificado</string>
     <string name="close">Cerrar</string>
     <string name="forward">Reenviar</string>
     <!-- "Resend" means "Sending the selected message(s) again to the same chat". The string is used in a menu and should be as short as possible. Resending may be needed after failures or to repost old messages to new members. -->
@@ -95,6 +96,8 @@
     <string name="last_month">El mes pasado</string>
     <!-- Refers to the time a contact was last seen. Shown below contact name in the profile. The placeholder will be replaced by date or time, resulting in "Last seen at 12:13 AM" or "Last seen Nov 12" -->
     <string name="last_seen_at">Visto por última vez: %1$s</string>
+    <!-- Refers to the time a contact was last seen. Shown below contact name in the profile. The placeholder will be replaced by a relative point in time as "3 minutes ago" (see https://momentjs.com for more examples and languages)-->
+    <string name="last_seen_relative">Visto por última vez: %1$s</string>
     <string name="last_seen_unknown">Visto por última vez: Desconocido</string>
     <!-- Shown beside messages that are "N minutes old". Prefer short strings, or well-known abbreviations. -->
     <plurals name="n_minutes">
@@ -165,6 +168,7 @@
     <string name="switch_camera">Alternar cámara</string>
     <string name="toggle_fullscreen">Alternar modo pantalla completa</string>
     <string name="location">Ubicación</string>
+    <string name="locations">Ubicaciones</string>
     <string name="gallery">Galería</string>
     <string name="images_and_videos">Imágenes y videos</string>
     <string name="file">Archivo</string>
@@ -255,6 +259,7 @@
     <string name="menu_help">Ayuda</string>
     <string name="privacy_policy">Política de privacidad</string>
     <string name="menu_select_all">Seleccionar todo</string>
+    <string name="select_chat">Seleccionar chat</string>
     <string name="select_more">Seleccionar más</string>
     <string name="menu_edit_name">Editar nombre</string>
     <string name="menu_settings">Ajustes</string>
@@ -907,6 +912,8 @@
     <string name="secure_join_replies">%1$s respondió, esperando ser agregado al grupo…</string>
     <string name="contact_verified">%1$s verificado.</string>
     <string name="contact_not_verified">No se pudo verificar %1$s.</string>
+    <!-- Shown in contact profile. The placeholder will be replaced by the name of the contact that verified the contact shown. -->
+    <string name="verified_by">Verificado por %1$s</string>
     <!-- translators: "setup" is the "encryption setup" here, as in "Autocrypt Setup Message" -->
     <string name="contact_setup_changed">Configuración cambiada para %1$s.</string>
     <string name="verified_group_explain">Los grupos verificados (experimentales) brindan seguridad contra ataques activos. Los miembros son verificados con un segundo factor por otros miembros y los mensajes siempre están encriptados de extremo a extremo.</string>
@@ -1081,5 +1088,9 @@
     <string name="update_1_36_android">1.36 Cambios principales\n\n💻📱 Utiliza Delta Chat en todos tus dispositivos fácilmente - sólo tienes que seguir tres sencillos pasos en \"Ajustes / Añadir otro dispositivo\" (experimental)\n\n🖼🔍 ¿Alguna vez has buscado una imagen sin recordar en cual chat? \"Toda la multimedia\" del menú principal es lo que necesitas!\n\n¿Qué más? Notificaciones para todas las cuentas, vaciar chat, y mucho más en %1$s</string>
     <!-- placeholder will be replaced by the URL https://delta.chat/en/2023-03-27-third-independent-security-audit -->
     <string name="update_1_36_audit">No hablamos mucho de seguridad aquí, pero puedes confiar que nos importa: Consulte %1$s para buenas noticias recientes 👌</string>
+    <!-- placeholder will be replaced by the URL https://get.delta.chat/#changelogs -->
+    <string name="update_1_38_android">1.38 ya está disponible:\n\n📎 Se eliminó el límite de tamaño máximo de los archivos adjuntos\n\n🗜️ Las imágenes PNG (¡capturas de pantalla!) ahora también son comprimidas\n\n⌨️ Para desarrolladores: mejores aplicaciones para chats con sendToChat() e importFiles( ) (¿Qué es Webxdc? → https://webxdc.org)\n\n... y más en %1$s</string>
+    <!-- placeholder will be replaced by the URL https://get.delta.chat/#changelogs -->
+    <string name="update_1_38_ios">1.38 está disponible:\n\n🖼🔍 ¿Alguna vez buscaste una imagen y no recordabas el chat? ¡Entonces el botón \"Toda la multimedia\" es tuyo!\n\n🧹 \"Vaciar chat\" de los perfiles\n\n📎 Se eliminó el límite de tamaño máximo de los archivos adjuntos\n\n🗜️ Las imágenes PNG (¡capturas de pantalla!) ahora también se comprimen\n\n... y más en %1$s</string>
 
 </resources>

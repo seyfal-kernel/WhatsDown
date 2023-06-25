@@ -105,12 +105,8 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
     dcContext.addDeviceMsg("update_1_34a_tips", msg);
 
     msg = new DcMsg(dcContext, DcMsg.DC_MSG_TEXT);
-    msg.setText("1.37 is out:\n\n"
-      + "📎 Removed upper size limit of attachments\n\n"
-      + "🗜️ PNG images (screenshots!) are now compressed as well\n\n"
-      + "⌨️ For Devs: Better apps for chats with sendToChat() and importFiles() (What is Webxdc? -> https://webxdc.org)\n\n"
-      + "... and more at https://get.delta.chat/#changelogs");
-    dcContext.addDeviceMsg("update_1_37d_android", msg);
+    msg.setText(getString(R.string.update_1_38_android, "https://get.delta.chat/#changelogs"));
+    dcContext.addDeviceMsg("update_1_38c_android", msg);
 
     // create view
     setContentView(R.layout.conversation_list_activity);
