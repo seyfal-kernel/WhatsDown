@@ -133,6 +133,7 @@ import java.util.concurrent.ExecutionException;
 
 import static org.thoughtcrime.securesms.TransportOption.Type;
 import static org.thoughtcrime.securesms.util.RelayUtil.getSharedText;
+import static org.thoughtcrime.securesms.util.RelayUtil.getSharedType;
 import static org.thoughtcrime.securesms.util.RelayUtil.isForwarding;
 import static org.thoughtcrime.securesms.util.RelayUtil.isSharing;
 
@@ -160,6 +161,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   public static final String CHAT_ID_EXTRA           = "chat_id";
   public static final String FROM_ARCHIVED_CHATS_EXTRA = "from_archived";
   public static final String TEXT_EXTRA              = "draft_text";
+  public static final String MSG_TYPE_EXTRA          = "msg_type";
   public static final String STARTING_POSITION_EXTRA = "starting_position";
 
   private static final int PICK_GALLERY        = 1;
@@ -710,7 +712,12 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       if (uriList.isEmpty()) {
         dcContext.setDraft(chatId, SendRelayedMessageUtil.createMessage(this, null, getSharedText(this)));
       } else {
-        dcContext.setDraft(chatId, SendRelayedMessageUtil.createMessage(this, uriList.get(0), getSharedText(this)));
+        String msgType = getSharedType(this);
+        if ("sticker".equals(msgType)) {
+          SendRelayedMessageUtil.immediatelyRelay(this, chatId);
+        } else {
+          dcContext.setDraft(chatId, SendRelayedMessageUtil.createMessage(this, uriList.get(0), msgType, getSharedText(this)));
+        }
       }
       initializeDraft();
     }

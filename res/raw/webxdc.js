@@ -97,6 +97,7 @@ window.webxdc = (() => {
         }
         data.base64 = base64content;
         data.name = message.file.name;
+        data.type = message.file.type;
       }
 
       const errorMsg = InternalJSApi.sendToChat(JSON.stringify(data));

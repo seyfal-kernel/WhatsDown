@@ -313,14 +313,16 @@ public class DcHelper {
     }
   }
 
-  public static void share(Context activity, byte[] data, String mimeType, String fileName, String text) {
+  public static void sendToChat(Context activity, byte[] data, String type, String fileName, String text) {
       Intent intent = new Intent(activity, ShareActivity.class);
       intent.setAction(Intent.ACTION_SEND);
 
       if (data != null) {
+          String mimeType = "application/octet-stream";
           Uri uri = PersistentBlobProvider.getInstance().create(activity, data, mimeType, fileName);
           intent.setType(mimeType);
           intent.putExtra(Intent.EXTRA_STREAM, uri);
+          intent.putExtra(ShareActivity.EXTRA_MSG_TYPE, type);
       }
 
       if (text != null) {

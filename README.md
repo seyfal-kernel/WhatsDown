@@ -13,6 +13,17 @@ Or get the latest APK from the [Releases section](https://github.com/adbenitez/d
 
 <img alt="Screenshot Chat List" src="fastlane/metadata/android/en-US/images/phoneScreenshots/02.jpg" width="298" /> <img alt="Screenshot Chat View" src="fastlane/metadata/android/en-US/images/phoneScreenshots/04.jpg" width="298" />
 
+# WebXDC
+
+DeltaLab has some extended support for WebXDC apps:
+
+- `sendToChat()`: the file object parameter also accepts a `type` field that can be one of:
+  * `sticker`
+  * `image`
+  * `audio`
+  * `video`
+  * `file` (default if `type` field is not present)
+
 # Credits
 
 DeltaLab is based on the [official Delta Chat client](https://github.com/deltachat/deltachat-android) with some small improvements.

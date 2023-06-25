@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import java.util.ArrayList;
 
 import static org.thoughtcrime.securesms.ConversationActivity.TEXT_EXTRA;
+import static org.thoughtcrime.securesms.ConversationActivity.MSG_TYPE_EXTRA;
 
 public class RelayUtil {
     private static final String FORWARDED_MESSAGE_IDS   = "forwarded_message_ids";
@@ -71,6 +72,14 @@ public class RelayUtil {
         return new ArrayList<>();
     }
 
+    public static String getSharedType(Activity activity) {
+        try {
+            return activity.getIntent().getStringExtra(MSG_TYPE_EXTRA);
+        } catch (NullPointerException npe) {
+            return null;
+        }
+    }
+
     public static String getSharedText(Activity activity) {
         try {
             return activity.getIntent().getStringExtra(TEXT_EXTRA);
@@ -105,6 +114,9 @@ public class RelayUtil {
             }
             if (getSharedText(currentActivity) != null) {
                 newActivityIntent.putExtra(TEXT_EXTRA, getSharedText(currentActivity));
+            }
+            if (getSharedType(currentActivity) != null) {
+                newActivityIntent.putExtra(MSG_TYPE_EXTRA, getSharedType(currentActivity));
             }
         }
     }

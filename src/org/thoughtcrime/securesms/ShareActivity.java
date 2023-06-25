@@ -57,6 +57,7 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity implement
   private static final String TAG = ShareActivity.class.getSimpleName();
 
   public static final String EXTRA_CHAT_ID = "chat_id";
+  public static final String EXTRA_MSG_TYPE = "msg_type";
 
   private final DynamicTheme    dynamicTheme    = new DynamicNoActionBarTheme();
   private final DynamicLanguage dynamicLanguage = new DynamicLanguage();
@@ -204,6 +205,7 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity implement
 
   private void handleResolvedMedia(Intent intent) {
     int       chatId           = intent.getIntExtra(EXTRA_CHAT_ID, -1);
+    String    msgType          = intent.getStringExtra(EXTRA_MSG_TYPE);
 
     String shortcutId = intent.getStringExtra(ShortcutManagerCompat.EXTRA_SHORTCUT_ID);
     if (chatId == -1 && shortcutId != null) {
@@ -262,10 +264,12 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity implement
     if (chatId != -1) {
       composeIntent = getBaseShareIntent(ConversationActivity.class);
       composeIntent.putExtra(ConversationActivity.CHAT_ID_EXTRA, chatId);
+      composeIntent.putExtra(ConversationActivity.MSG_TYPE_EXTRA, msgType);
       RelayUtil.setSharedUris(composeIntent, resolvedExtras);
       startActivity(composeIntent);
     } else {
       composeIntent = getBaseShareIntent(ConversationListRelayingActivity.class);
+      composeIntent.putExtra(ConversationActivity.MSG_TYPE_EXTRA, msgType);
       RelayUtil.setSharedUris(composeIntent, resolvedExtras);
       ConversationListRelayingActivity.start(this, composeIntent);
     }

@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import static android.app.Activity.RESULT_OK;
 import static org.thoughtcrime.securesms.util.RelayUtil.getForwardedMessageIDs;
 import static org.thoughtcrime.securesms.util.RelayUtil.getSharedText;
+import static org.thoughtcrime.securesms.util.RelayUtil.getSharedType;
 import static org.thoughtcrime.securesms.util.RelayUtil.getSharedUris;
 import static org.thoughtcrime.securesms.util.RelayUtil.isForwarding;
 import static org.thoughtcrime.securesms.util.RelayUtil.isSharing;
@@ -47,10 +48,11 @@ public class SendRelayedMessageUtil {
     } else if (isSharing(activity)) {
       ArrayList<Uri> sharedUris = getSharedUris(activity);
       String sharedText = getSharedText(activity);
+      String msgType = getSharedType(activity);
       resetRelayingMessageContent(activity);
       Util.runOnAnyBackgroundThread(() -> {
         for (long chatId : chatIds) {
-          handleSharing(activity, (int) chatId, sharedUris, sharedText);
+          handleSharing(activity, (int) chatId, sharedUris, msgType, sharedText);
         }
       });
     }
@@ -61,13 +63,13 @@ public class SendRelayedMessageUtil {
     dcContext.forwardMsgs(forwardedMessageIDs, chatId);
   }
 
-  private static void handleSharing(Context context, int chatId, ArrayList<Uri> sharedUris, String sharedText) {
+  private static void handleSharing(Context context, int chatId, ArrayList<Uri> sharedUris, String msgType, String sharedText) {
     DcContext dcContext = DcHelper.getContext(context);
     ArrayList<Uri> uris = sharedUris;
     String text = sharedText;
 
     if (uris.size() == 1) {
-      dcContext.sendMsg(chatId, createMessage(context, uris.get(0), text));
+      dcContext.sendMsg(chatId, createMessage(context, uris.get(0), msgType, text));
     } else {
       if (text != null) {
         dcContext.sendMsg(chatId, createMessage(context, null, text));
@@ -88,16 +90,22 @@ public class SendRelayedMessageUtil {
   }
 
   public static DcMsg createMessage(Context context, Uri uri, String text) throws NullPointerException {
+    return createMessage(context, uri, null, text);
+  }
+
+  public static DcMsg createMessage(Context context, Uri uri, String type, String text) throws NullPointerException {
     DcContext dcContext = DcHelper.getContext(context);
     DcMsg message;
     String mimeType = MediaUtil.getMimeType(context, uri);
     if (uri == null) {
       message = new DcMsg(dcContext, DcMsg.DC_MSG_TEXT);
-    } else if (MediaUtil.isImageType(mimeType)) {
+    } else if ("sticker".equals(type)) {
+      message = new DcMsg(dcContext, DcMsg.DC_MSG_STICKER);
+    } else if ("image".equals(type) || MediaUtil.isImageType(mimeType)) {
       message = new DcMsg(dcContext, DcMsg.DC_MSG_IMAGE);
-    } else if (MediaUtil.isAudioType(mimeType)) {
+    } else if ("audio".equals(type) || MediaUtil.isAudioType(mimeType)) {
       message = new DcMsg(dcContext, DcMsg.DC_MSG_AUDIO);
-    } else if (MediaUtil.isVideoType(mimeType)) {
+    } else if ("video".equals(type) || MediaUtil.isVideoType(mimeType)) {
       message = new DcMsg(dcContext, DcMsg.DC_MSG_VIDEO);
     } else {
       message = new DcMsg(dcContext, DcMsg.DC_MSG_FILE);

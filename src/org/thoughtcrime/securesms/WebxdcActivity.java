@@ -396,9 +396,13 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
         String text = null;
         byte[] data = null;
         String name = null;
+        String type = null;
         if (jsonObject.has("base64")) {
             data = Base64.decode(jsonObject.getString("base64"), Base64.NO_WRAP | Base64.NO_PADDING);
             name = jsonObject.getString("name");
+        }
+        if (jsonObject.has("type")) {
+            type = jsonObject.getString("type");
         }
         if (jsonObject.has("text")) {
             text = jsonObject.getString("text");
@@ -408,7 +412,7 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
             return "provided file is invalid, you need to set both name and base64 content";
         }
 
-        DcHelper.share(WebxdcActivity.this, data, "application/octet-stream", name, text);
+        DcHelper.sendToChat(WebxdcActivity.this, data, type, name, text);
         return null;
       } catch (Exception e) {
         e.printStackTrace();
