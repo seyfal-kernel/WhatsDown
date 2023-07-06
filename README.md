@@ -17,12 +17,14 @@ Or get the latest APK from the [Releases section](https://github.com/adbenitez/d
 
 DeltaLab has some extended support for WebXDC apps:
 
+- `window.webxdc.deltalab` is `true` and can be used by app developers to detect when they can use the DeltaLab-specific features
 - `sendToChat()`: the file object parameter also accepts a `type` field that can be one of:
-  * `sticker`
-  * `image`
-  * `audio`
-  * `video`
-  * `file` (default if `type` field is not present)
+  * `"sticker"`
+  * `"image"`
+  * `"audio"`
+  * `"video"`
+  * `"file"` (default if `type` field is not present)
+- Inside apps, clicking external links is supported, ex. to open in browser, so you can include links to your website or donation pages.
 
 # Credits
 

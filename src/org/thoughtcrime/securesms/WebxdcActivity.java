@@ -199,12 +199,11 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
 
   @Override
   protected boolean openOnlineUrl(String url) {
-    if (url.startsWith("mailto:")) {
-      return super.openOnlineUrl(url);
+    if (url.startsWith(baseURL +"/")) {
+      // internal page, continue loading in the WebView
+      return false;
     }
-
-    Toast.makeText(this, "Please embed needed resources.", Toast.LENGTH_LONG).show();
-    return true; // returning `true` causes the WebView to abort loading
+    return super.openOnlineUrl(url);
   }
 
   @Override
