@@ -176,8 +176,8 @@
     <!-- "App" is used to present "Webxdc App" (https://webxdc.org) in a user friendly way. Please stay close to the original term and keep it short (it is used in menus with few screen space). -->
     <string name="webxdc_app">Aplicación privada</string>
     <!-- plural of "App"; used to present "Webxdc App" (https://webxdc.org) in a user friendly way. Please stay close to the original term and keep it short (it is used in menus with few screen space). -->
-    <string name="webxdc_apps">Aplicaciones privadas</string>
-    <string name="files_and_webxdx_apps">Archivos y aplicaciones privadas</string>
+    <string name="webxdc_apps">Apps</string>
+    <string name="files_and_webxdx_apps">Archivos y apps</string>
     <string name="unknown">Desconocido</string>
 
     <string name="green">Verde</string>
@@ -483,7 +483,7 @@
     <string name="tab_image_empty_hint">Imágenes compartidas en este chat se mostrarán aquí.</string>
     <string name="tab_video_empty_hint">Vídeos compartidos en este chat se mostrarán aquí.</string>
     <string name="tab_audio_empty_hint">Los archivos de audio y los mensajes de voz compartidos en este chat se mostrarán aquí.</string>
-    <string name="tab_webxdc_empty_hint">Aplicaciones privadas compartidas en este chat se mostrarán aquí</string>
+    <string name="tab_webxdc_empty_hint">Apps compartidas en este chat se mostrarán aquí</string>
     <string name="tab_all_media_empty_hint">La multimedia compartida en cualquier chat aparecerá aquí</string>
     <string name="media_preview">Vista previa de multimedia</string>
     <string name="send_message">Enviar mensaje</string>
@@ -1056,7 +1056,7 @@
     <string name="notifications_avg_hours">Promedio cada %1$d horas</string>
     <string name="last_check_at">Comprobado en %1$s</string>
     <!-- iOS webxdc selector -->
-    <string name="webxdc_selector_empty_hint">Aplicaciones privadas recibidas o enviadas en cualquier chat aparecerán aquí. \"Archivos\" muestra aplicaciones privadas descargadas. </string>
+    <string name="webxdc_selector_empty_hint">Apps recibidas o enviadas en cualquier chat aparecerán aquí. \"Archivos\" muestra apps descargadas.</string>
     <!-- iOS webxdc shortcut page -->
     <string name="shortcut_step1_tap_share_btn">Presiona el botón de compartir</string>
     <string name="shortcut_step2_tap_add_to_home_screen">Selecciona \"Añadir a la pantalla principal\" para añadir la aplicación a tu pantaña principal.</string>
