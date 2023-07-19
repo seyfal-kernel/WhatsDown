@@ -455,6 +455,7 @@ public class DcHelper {
       } else {
           return context.getString(R.string.connectivity_not_connected);
       }
+  }
 
   public static void showVerificationBrokenDialog(Context context, String name) {
     new AlertDialog.Builder(context)
