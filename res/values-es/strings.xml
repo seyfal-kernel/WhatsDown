@@ -174,7 +174,7 @@
     <string name="file">Archivo</string>
     <string name="files">Archivos</string>
     <!-- "App" is used to present "Webxdc App" (https://webxdc.org) in a user friendly way. Please stay close to the original term and keep it short (it is used in menus with few screen space). -->
-    <string name="webxdc_app">Aplicación privada</string>
+    <string name="webxdc_app">App</string>
     <!-- plural of "App"; used to present "Webxdc App" (https://webxdc.org) in a user friendly way. Please stay close to the original term and keep it short (it is used in menus with few screen space). -->
     <string name="webxdc_apps">Apps</string>
     <string name="files_and_webxdx_apps">Archivos y apps</string>
