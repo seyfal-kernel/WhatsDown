@@ -1,7 +1,5 @@
 <i>DeltaLab</i> is a friendly fork of <i>Delta Chat</i> messenger, a chat app compatible with the existing e-mail infrastructure.
 
-<b>WARNING:</b> Be careful when running WebXDC apps in DeltaLab, the sandboxed webview can't currently prevent WebRTC connections, so in theory information inside the WebXDC app could be leaked and also your IP, the risk is low, for most people this is not even important, but if you are a person at risk, only use trusted apps, or use official Delta Chat.
-
 DeltaLab was created with a focus on usability, good user experience, and saving data plan and comes with some different default settings than Delta Chat. Also the app usually experiments with new features and alternative paths of development that eventually might get added to the official Delta Chat client.
 
 <b>Main differences with official Delta Chat client:</b>
@@ -28,3 +26,5 @@ DeltaLab was created with a focus on usability, good user experience, and saving
 <li>Can be selected as app to open .xdc files</li>
 <li>For mini-apps developers: there are some differences in the WebXDC API, check https://github.com/adbenitez/deltalab-android/#webxdc</li>
 </ul>
+
+<b>WARNING:</b> Be careful when running WebXDC apps in DeltaLab, the sandboxed webview can't currently prevent WebRTC connections, so in theory information inside the WebXDC app could be leaked and also your IP, the risk is low, for most people this is not even important, but if you are a person at risk, only use trusted apps, or use official Delta Chat.
