@@ -24,4 +24,11 @@
     <item android:title="@string/switch_account"
         android:id="@+id/menu_switch_account" />
 
+    <group android:id="@+id/extra_services" >
+
+      <item android:title="@string/webxdc_apps_store"
+            android:id="@+id/menu_webxdc_apps_store" />
+
+    </group>
+
 </menu>

@@ -429,6 +429,7 @@
     <string name="mailing_list_profile_info">Los cambios en el nombre y la imagen de la lista de correo solo se aplican a este dispositivo.</string>
 
     <!-- webxdc -->
+    <string name="webxdc_apps_store">🎮 Tienda de mini-apps</string>
     <!-- "Start..." button for an app -->
     <string name="start_app">Iniciar…</string>
     <!-- this is a warning that is shown when one tries to send something to a chat that is not yet accepted. -->

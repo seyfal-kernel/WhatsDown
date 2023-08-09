@@ -43,6 +43,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.widget.TooltipCompat;
+import androidx.core.view.MenuCompat;
 
 import com.b44t.messenger.DcContact;
 import com.b44t.messenger.DcContext;
@@ -273,6 +274,8 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
       if (!Prefs.isLocationStreamingEnabled(this)) {
         menu.findItem(R.id.menu_global_map).setVisible(false);
       }
+
+      MenuCompat.setGroupDividerEnabled(menu, true);
     }
 
     super.onPrepareOptionsMenu(menu);
@@ -348,6 +351,9 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
       case R.id.menu_all_media:
         startActivity(new Intent(this, ProfileActivity.class));
         return true;
+      case R.id.menu_webxdc_apps_store:
+        handleShowAppStore();
+        return true;
     }
 
     return false;
@@ -378,6 +384,18 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
       Intent intent = new Intent(this, MapActivity.class);
       intent.putExtra(MapActivity.CHAT_IDS, ALL_CHATS_GLOBAL_MAP);
       startActivity(intent);
+  }
+
+  private void handleShowAppStore() {
+      final String addr = "mini-apps@hispanilandia.net";
+      final DcContext dcContext = DcHelper.getContext(this);
+      int contactId = dcContext.lookupContactIdByAddr(addr);
+      if (contactId!=0 && dcContext.getChatIdByContactId(contactId)!=0) {
+          openConversation(dcContext.createChatByContactId(contactId), -1);
+      } else {
+          QrCodeHandler qrCodeHandler = new QrCodeHandler(this);
+          qrCodeHandler.handleQrData("OPENPGP4FPR:3CC3726E55E69CF4B52368C411819C7E7639B38C#a=mini%2Dapps%40hispanilandia.net&n=&i=jHGRY-9E7jd&s=cRh0KZJmfKJ");
+      }
   }
 
 

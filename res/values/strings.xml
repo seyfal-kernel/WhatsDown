@@ -416,6 +416,7 @@
     <string name="mailing_list_profile_info">Changes to mailing list name and image apply on this device only.</string>
 
     <!-- webxdc -->
+    <string name="webxdc_apps_store">🎮 Mini-Apps Store</string>
     <!-- "Start..." button for an app -->
     <string name="start_app">Start…</string>
     <!-- this is a warning that is shown when one tries to send something to a chat that is not yet accepted. -->
