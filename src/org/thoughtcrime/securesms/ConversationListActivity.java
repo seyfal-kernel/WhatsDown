@@ -28,6 +28,7 @@ import static org.thoughtcrime.securesms.util.RelayUtil.resetRelayingMessageCont
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -275,7 +276,11 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
         menu.findItem(R.id.menu_global_map).setVisible(false);
       }
 
-      MenuCompat.setGroupDividerEnabled(menu, true);
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+          MenuCompat.setGroupDividerEnabled(menu, true);
+      } else{
+          menu.setGroupVisible(R.id.extra_services, false);
+      }
     }
 
     super.onPrepareOptionsMenu(menu);
