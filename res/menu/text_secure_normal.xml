@@ -7,9 +7,6 @@
           android:icon="@drawable/ic_ab_qr"
           app:showAsAction="always"/>
 
-    <item android:title="@string/menu_new_chat"
-          android:id="@+id/menu_new_chat" />
-
     <item android:title="@string/menu_all_media"
         android:id="@+id/menu_all_media" />
 

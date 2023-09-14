@@ -335,9 +335,6 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
     super.onOptionsItemSelected(item);
 
     switch (item.getItemId()) {
-      case R.id.menu_new_chat:
-        createChat();
-        return true;
       case R.id.menu_settings:
         startActivity(new Intent(this, ApplicationPreferencesActivity.class));
         return true;
