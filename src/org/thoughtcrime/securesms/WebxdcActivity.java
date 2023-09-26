@@ -3,6 +3,7 @@ package org.thoughtcrime.securesms;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -101,10 +102,6 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
   protected void onCreate(Bundle state, boolean ready) {
     super.onCreate(state, ready);
 
-    // enter fullscreen mode if necessary,
-    // this is needed here because if the app is opened while already in landscape mode, onConfigurationChanged() is not triggered
-    setScreenMode();
-
     webView.setWebChromeClient(new WebChromeClient() {
       @Override
       @RequiresApi(21)
@@ -153,8 +150,11 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
     internetAccess = JsonUtils.optBoolean(info, "internet_access");
     if ("landscape".equals(JsonUtils.optString(info, "orientation"))) {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setFullscreen(true);
     }
+
+    // enter fullscreen mode if necessary,
+    // this is needed here because if the app is opened while already in landscape mode, onConfigurationChanged() is not triggered
+    setScreenMode();
 
     WebSettings webSettings = webView.getSettings();
     webSettings.setJavaScriptEnabled(true);
@@ -206,27 +206,6 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
         return true;
     }
     return false;
-  }
-
-
-  @Override
-  public void onConfigurationChanged(Configuration newConfig) {
-    Log.i(TAG, "onConfigurationChanged(" + newConfig.orientation + ")");
-    super.onConfigurationChanged(newConfig);
-    if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-        setFullscreen(true);
-    } else {
-        setFullscreen(false);
-    }
-  }
-
-  private void setFullscreen(boolean enable) {
-      getWindow().getDecorView().setSystemUiVisibility(enable? View.SYSTEM_UI_FLAG_FULLSCREEN : 0);
-      if (enable) {
-          getSupportActionBar().hide();
-      } else {
-          getSupportActionBar().show();
-      }
   }
 
   @Override
