@@ -113,6 +113,9 @@
         <item name="colorControlActivated">#ff2090ea</item>
     </style>
 
+    <style name="ShapeAppearanceOverlay.App.CornerSize10Percent" parent="">
+        <item name="cornerSize">7%</item>
+    </style>
 
 
 
@@ -248,5 +251,4 @@
         <item name="android:textColorSecondary">#BFffffff</item>
         <item name="elevation">4dp</item>
     </style>
-
 </resources>

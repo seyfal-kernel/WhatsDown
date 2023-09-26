@@ -3,7 +3,6 @@ package org.thoughtcrime.securesms;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -17,7 +16,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
 import android.webkit.MimeTypeMap;
 import android.webkit.ValueCallback;
@@ -103,6 +101,10 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
   protected void onCreate(Bundle state, boolean ready) {
     super.onCreate(state, ready);
 
+    // enter fullscreen mode if necessary,
+    // this is needed here because if the app is opened while already in landscape mode, onConfigurationChanged() is not triggered
+    setScreenMode();
+
     webView.setWebChromeClient(new WebChromeClient() {
       @Override
       @RequiresApi(21)
@@ -122,6 +124,7 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
 
     DcEventCenter eventCenter = DcHelper.getEventCenter(WebxdcActivity.this.getApplicationContext());
     eventCenter.addObserver(DcContext.DC_EVENT_WEBXDC_STATUS_UPDATE, this);
+    eventCenter.addObserver(DcContext.DC_EVENT_MSGS_CHANGED, this);
     
     Bundle b = getIntent().getExtras();
     int appMessageId = b.getInt("appMessageId");
@@ -227,6 +230,26 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
   }
 
   @Override
+  public void onConfigurationChanged(Configuration newConfig) {
+    Log.i(TAG, "onConfigurationChanged(" + newConfig.orientation + ")");
+    super.onConfigurationChanged(newConfig);
+    // orientation might have changed, enter/exit fullscreen mode if needed
+    setScreenMode();
+  }
+
+  private void setScreenMode() {
+    // enter/exit fullscreen mode depending on orientation (landscape/portrait),
+    // on tablets there is enought height so fullscreen mode is never enabled there
+    boolean enable = getResources().getBoolean(R.bool.isLandscape) && !getResources().getBoolean(R.bool.isBigScreen);
+    getWindow().getDecorView().setSystemUiVisibility(enable? View.SYSTEM_UI_FLAG_FULLSCREEN : 0);
+    if (enable) {
+      getSupportActionBar().hide();
+    } else {
+      getSupportActionBar().show();
+    }
+  }
+
+  @Override
   protected boolean openOnlineUrl(String url) {
     if (url.startsWith(baseURL +"/")) {
       // internal page, continue loading in the WebView
@@ -305,6 +328,7 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
       Log.i(TAG, "handleEvent");
       webView.loadUrl("javascript:window.__webxdcUpdate();");
     } else if ((eventId == DcContext.DC_EVENT_MSGS_CHANGED && event.getData2Int() == dcAppMsg.getId())) {
+      this.dcAppMsg = this.dcContext.getMsg(event.getData2Int()); // msg changed, reload data from db
       Util.runOnAnyBackgroundThread(() -> {
         final JSONObject info = dcAppMsg.getWebxdcInfo();
         final DcChat chat = dcContext.getChat(dcAppMsg.getChatId());
