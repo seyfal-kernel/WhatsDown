@@ -18,6 +18,7 @@
 package org.thoughtcrime.securesms;
 
 import static org.thoughtcrime.securesms.util.RelayUtil.setSharedText;
+import static org.thoughtcrime.securesms.util.RelayUtil.setSharedTitle;
 
 import android.Manifest;
 import android.content.Intent;
@@ -38,9 +39,7 @@ import com.b44t.messenger.DcContext;
 import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.mms.PartAuthority;
 import org.thoughtcrime.securesms.permissions.Permissions;
-import org.thoughtcrime.securesms.util.DynamicLanguage;
 import org.thoughtcrime.securesms.util.DynamicNoActionBarTheme;
-import org.thoughtcrime.securesms.util.DynamicTheme;
 import org.thoughtcrime.securesms.util.MailtoUtil;
 import org.thoughtcrime.securesms.util.MediaUtil;
 import org.thoughtcrime.securesms.util.RelayUtil;
@@ -59,9 +58,7 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity implement
 
   public static final String EXTRA_CHAT_ID = "chat_id";
   public static final String EXTRA_MSG_TYPE = "msg_type";
-
-  private final DynamicTheme    dynamicTheme    = new DynamicNoActionBarTheme();
-  private final DynamicLanguage dynamicLanguage = new DynamicLanguage();
+  public static final String EXTRA_TITLE = "extra_title";
 
   private ArrayList<Uri>               resolvedExtras;
   private DcContext                    dcContext;
@@ -69,8 +66,8 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity implement
 
   @Override
   protected void onPreCreate() {
-    dynamicTheme.onCreate(this);
-    dynamicLanguage.onCreate(this);
+    dynamicTheme = new DynamicNoActionBarTheme();
+    super.onPreCreate();
   }
 
   @Override
@@ -89,14 +86,6 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity implement
     super.onNewIntent(intent);
     setIntent(intent);
     initializeMedia();
-  }
-
-  @Override
-  public void onResume() {
-    Log.w(TAG, "onResume()");
-    super.onResume();
-    dynamicTheme.onResume(this);
-    dynamicLanguage.onResume(this);
   }
 
   @Override
@@ -293,6 +282,12 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity implement
 
   private Intent getBaseShareIntent(final @NonNull Class<?> target) {
     final Intent intent = new Intent(this, target);
+
+    String title = getIntent().getStringExtra(EXTRA_TITLE);
+    if (title != null) {
+        setSharedTitle(intent, title);
+    }
+
     String text = getIntent().getStringExtra(Intent.EXTRA_TEXT);
     if (text==null) {
       CharSequence cs = getIntent().getCharSequenceExtra(Intent.EXTRA_TEXT);

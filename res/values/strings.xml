@@ -658,6 +658,8 @@
     <string name="pref_manage_keys">Manage Keys</string>
     <string name="pref_use_system_emoji">Use System Emoji</string>
     <string name="pref_use_system_emoji_explain">Turn off DeltaLab\'s built-in emoji support</string>
+    <string name="pref_use_builtin_camera">Use Built-In Camera</string>
+    <string name="pref_use_builtin_camera_explain">Built-in camera usually has less features</string>
     <string name="pref_app_access">App Access</string>
     <string name="pref_chats">Chats</string>
     <string name="pref_in_chat_sounds">In-Chat Sounds</string>
@@ -734,6 +736,8 @@
     <string name="emoji_symbols">Symbols</string>
     <string name="emoji_flags">Flags</string>
 
+    <!-- Reactions -->
+    <string name="ReactionsConversationView_plus">+%1$d</string>
 
     <!-- automatically delete message -->
     <string name="delete_old_messages">Delete Old Messages</string>

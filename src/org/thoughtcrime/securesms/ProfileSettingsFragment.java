@@ -143,8 +143,11 @@ public class ProfileSettingsFragment extends Fragment
   @Override
   public void onSettingsClicked(int settingsId) {
     switch(settingsId) {
-      case ProfileSettingsAdapter.SETTING_SEND_MESSAGE:
+      case ProfileSettingsAdapter.INFO_SEND_MESSAGE_BUTTON:
         onSendMessage();
+        break;
+      case ProfileSettingsAdapter.INFO_VERIFIED:
+        onVerifiedByClicked();
         break;
     }
   }
@@ -231,6 +234,18 @@ public class ProfileSettingsFragment extends Fragment
     intent.putExtra(ConversationActivity.CHAT_ID_EXTRA, chatId);
     getContext().startActivity(intent);
     getActivity().finish();
+  }
+
+  private void onVerifiedByClicked() {
+    DcContact dcContact = dcContext.getContact(contactId);
+    if (dcContact.isVerified()) {
+      int verifierId = dcContact.getVerifierId();
+      if (verifierId != 0 && verifierId != contactId) {
+        Intent intent = new Intent(getContext(), ProfileActivity.class);
+        intent.putExtra(ProfileActivity.CONTACT_ID_EXTRA, verifierId);
+        startActivity(intent);
+      }
+     }
   }
 
   private void onSendMessage() {

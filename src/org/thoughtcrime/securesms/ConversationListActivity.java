@@ -21,6 +21,7 @@ import static org.thoughtcrime.securesms.ConversationActivity.STARTING_POSITION_
 import static org.thoughtcrime.securesms.map.MapDataManager.ALL_CHATS_GLOBAL_MAP;
 import static org.thoughtcrime.securesms.util.RelayUtil.acquireRelayMessageContent;
 import static org.thoughtcrime.securesms.util.RelayUtil.getDirectSharingChatId;
+import static org.thoughtcrime.securesms.util.RelayUtil.getSharedTitle;
 import static org.thoughtcrime.securesms.util.RelayUtil.isDirectSharing;
 import static org.thoughtcrime.securesms.util.RelayUtil.isForwarding;
 import static org.thoughtcrime.securesms.util.RelayUtil.isRelayingMessageContent;
@@ -63,7 +64,6 @@ import org.thoughtcrime.securesms.qr.QrActivity;
 import org.thoughtcrime.securesms.qr.QrCodeHandler;
 import org.thoughtcrime.securesms.recipients.Recipient;
 import org.thoughtcrime.securesms.search.SearchFragment;
-import org.thoughtcrime.securesms.util.DynamicLanguage;
 import org.thoughtcrime.securesms.util.DynamicNoActionBarTheme;
 import org.thoughtcrime.securesms.util.DynamicTheme;
 import org.thoughtcrime.securesms.util.Prefs;
@@ -80,9 +80,6 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
   public static final String CLEAR_NOTIFICATIONS = "clear_notifications";
   public static final String ACCOUNT_ID_EXTRA = "account_id";
 
-  private final DynamicTheme    dynamicTheme    = new DynamicNoActionBarTheme();
-  private final DynamicLanguage dynamicLanguage = new DynamicLanguage();
-
   private ConversationListFragment conversationListFragment;
   public TextView                  title;
   private AvatarImageView          selfAvatar;
@@ -93,8 +90,8 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
 
   @Override
   protected void onPreCreate() {
-    dynamicTheme.onCreate(this);
-    dynamicLanguage.onCreate(this);
+    dynamicTheme = new DynamicNoActionBarTheme();
+    super.onPreCreate();
   }
 
   @Override
@@ -221,7 +218,16 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
 
   public void refreshTitle() {
     if (isRelayingMessageContent(this)) {
-      title.setText(isForwarding(this) ? R.string.forward_to : R.string.chat_share_with_title);
+      if (isForwarding(this)) {
+        title.setText(R.string.forward_to);
+      } else {
+        String titleStr = getSharedTitle(this);
+        if (titleStr != null) { // sharing from sendToChat
+          title.setText(titleStr);
+        } else { // normal sharing
+          title.setText(R.string.chat_share_with_title);
+        }
+      }
       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     } else {
       DcContext dcContext = DcHelper.getContext(this);
@@ -253,9 +259,6 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
   @Override
   public void onResume() {
     super.onResume();
-    dynamicTheme.onResume(this);
-    dynamicLanguage.onResume(this);
-
     refreshTitle();
     DirectShareUtil.triggerRefreshDirectShare(this);
   }

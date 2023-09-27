@@ -329,10 +329,14 @@ public class DcHelper {
           intent.setType(mimeType);
           intent.putExtra(Intent.EXTRA_STREAM, uri);
           intent.putExtra(ShareActivity.EXTRA_MSG_TYPE, type);
+          intent.putExtra(ShareActivity.EXTRA_TITLE, activity.getString(R.string.send_file_to, fileName));
       }
 
       if (text != null) {
           intent.putExtra(Intent.EXTRA_TEXT, text);
+          if (data == null) {
+              intent.putExtra(ShareActivity.EXTRA_TITLE, activity.getString(R.string.send_message_to));
+          }
       }
 
       activity.startActivity(intent);

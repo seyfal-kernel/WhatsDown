@@ -106,7 +106,6 @@ import org.thoughtcrime.securesms.permissions.Permissions;
 import org.thoughtcrime.securesms.providers.PersistentBlobProvider;
 import org.thoughtcrime.securesms.recipients.Recipient;
 import org.thoughtcrime.securesms.scribbles.ScribbleActivity;
-import org.thoughtcrime.securesms.util.DynamicLanguage;
 import org.thoughtcrime.securesms.util.DynamicTheme;
 import org.thoughtcrime.securesms.util.MediaUtil;
 import org.thoughtcrime.securesms.util.Prefs;
@@ -203,16 +202,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private boolean    isDefaultSms             = true;
   private boolean    isSecurityInitialized    = false;
   private boolean successfulForwardingAttempt = false;
-
-
-  private final DynamicTheme       dynamicTheme    = new DynamicTheme();
-  private final DynamicLanguage    dynamicLanguage = new DynamicLanguage();
-
-  @Override
-  protected void onPreCreate() {
-    dynamicTheme.onCreate(this);
-    dynamicLanguage.onCreate(this);
-  }
 
   @Override
   protected void onCreate(Bundle state, boolean ready) {
@@ -316,8 +305,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   @Override
   protected void onResume() {
     super.onResume();
-    dynamicTheme.onResume(this);
-    dynamicLanguage.onResume(this);
     quickAttachmentDrawer.onResume();
 
     initializeEnabledCheck();
@@ -873,13 +860,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     composeText.setOnClickListener(composeKeyPressedListener);
     composeText.setOnFocusChangeListener(composeKeyPressedListener);
 
-    if (QuickAttachmentDrawer.isDeviceSupported(this)) {
-      quickAttachmentDrawer.setListener(this);
-      quickCameraToggle.setOnClickListener(new QuickCameraToggleListener());
-    } else {
-      quickCameraToggle.setVisibility(View.GONE);
-      quickCameraToggle.setEnabled(false);
-    }
+    quickAttachmentDrawer.setListener(this);
+    quickCameraToggle.setOnClickListener(new QuickCameraToggleListener());
 
     initializeBackground();
   }
@@ -1388,18 +1370,23 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private class QuickCameraToggleListener implements OnClickListener {
     @Override
     public void onClick(View v) {
-      if (!quickAttachmentDrawer.isShowing()) {
-        Permissions.with(ConversationActivity.this)
-                   .request(Manifest.permission.CAMERA)
-                   .ifNecessary()
-                   .withPermanentDenialDialog(getString(R.string.perm_explain_access_to_camera_denied))
-                   .onAllGranted(() -> {
-                     composeText.clearFocus();
-                     container.show(composeText, quickAttachmentDrawer);
-                   })
-                   .execute();
+      if (Prefs.isBuiltInCameraPreferred(ConversationActivity.this)
+       && QuickAttachmentDrawer.isDeviceSupported(ConversationActivity.this)) {
+        if (!quickAttachmentDrawer.isShowing()) {
+          Permissions.with(ConversationActivity.this)
+            .request(Manifest.permission.CAMERA)
+            .ifNecessary()
+            .withPermanentDenialDialog(getString(R.string.perm_explain_access_to_camera_denied))
+            .onAllGranted(() -> {
+              composeText.clearFocus();
+              container.show(composeText, quickAttachmentDrawer);
+            })
+            .execute();
+        } else {
+          container.hideAttachedInput(false);
+        }
       } else {
-        container.hideAttachedInput(false);
+        attachmentManager.capturePhoto(ConversationActivity.this, TAKE_PHOTO);
       }
     }
   }
