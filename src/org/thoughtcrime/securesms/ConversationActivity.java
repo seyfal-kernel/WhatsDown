@@ -1086,7 +1086,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
         e.printStackTrace();
       }
     }
-    else if (quote.isPresent() && EmojiProvider.getInstance(this).isEmoji(body)){
+    else if (action == ACTION_SEND_OUT && quote.isPresent() && EmojiProvider.getInstance(this).isEmoji(body)){
       try {
           rpc.sendReaction(dcContext.getAccountId(), quote.get().getQuotedMsg().getId(), body);
           future.set(chatId);
