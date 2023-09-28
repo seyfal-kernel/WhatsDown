@@ -66,6 +66,8 @@ import com.b44t.messenger.DcContact;
 import com.b44t.messenger.DcContext;
 import com.b44t.messenger.DcEvent;
 import com.b44t.messenger.DcMsg;
+import com.b44t.messenger.rpc.Rpc;
+import com.b44t.messenger.rpc.RpcException;
 import com.b44t.messenger.util.concurrent.ListenableFuture;
 import com.b44t.messenger.util.concurrent.SettableFuture;
 
@@ -86,6 +88,7 @@ import org.thoughtcrime.securesms.components.camera.QuickAttachmentDrawer;
 import org.thoughtcrime.securesms.components.camera.QuickAttachmentDrawer.AttachmentDrawerListener;
 import org.thoughtcrime.securesms.components.camera.QuickAttachmentDrawer.DrawerState;
 import org.thoughtcrime.securesms.components.emoji.EmojiKeyboardProvider;
+import org.thoughtcrime.securesms.components.emoji.EmojiProvider;
 import org.thoughtcrime.securesms.components.emoji.MediaKeyboard;
 import org.thoughtcrime.securesms.connect.AccountManager;
 import org.thoughtcrime.securesms.connect.DcEventCenter;
@@ -196,6 +199,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private ApplicationContext context;
   private Recipient  recipient;
   private DcContext  dcContext;
+  private Rpc        rpc;
   private DcChat     dcChat                = new DcChat(0);
   private int        chatId;
   private final boolean isSecureText          = true;
@@ -207,6 +211,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   protected void onCreate(Bundle state, boolean ready) {
     this.context = ApplicationContext.getInstance(getApplicationContext());
     this.dcContext = DcHelper.getContext(context);
+    this.rpc = DcHelper.getRpc(context);
 
     supportRequestWindowFeature(WindowCompat.FEATURE_ACTION_BAR_OVERLAY);
     setContentView(R.layout.conversation_activity);
@@ -1079,6 +1084,17 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       }
       catch(Exception e) {
         e.printStackTrace();
+      }
+    }
+    else if (quote.isPresent() && EmojiProvider.getInstance(this).isEmoji(body)){
+      try {
+          rpc.sendReaction(dcContext.getAccountId(), quote.get().getQuotedMsg().getId(), body);
+          future.set(chatId);
+          return future;
+      } catch (RpcException e) {
+          e.printStackTrace();
+          msg = new DcMsg(dcContext, DcMsg.DC_MSG_TEXT);
+          msg.setText(body);
       }
     }
     else if (!body.isEmpty()){
