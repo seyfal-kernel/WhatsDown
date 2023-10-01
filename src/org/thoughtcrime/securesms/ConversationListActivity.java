@@ -67,7 +67,6 @@ import org.thoughtcrime.securesms.search.SearchFragment;
 import org.thoughtcrime.securesms.util.DynamicNoActionBarTheme;
 import org.thoughtcrime.securesms.util.DynamicTheme;
 import org.thoughtcrime.securesms.util.Prefs;
-import org.thoughtcrime.securesms.util.RelayUtil;
 import org.thoughtcrime.securesms.util.SendRelayedMessageUtil;
 
 public class ConversationListActivity extends PassphraseRequiredActionBarActivity

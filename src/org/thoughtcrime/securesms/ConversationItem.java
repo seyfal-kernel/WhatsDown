@@ -702,6 +702,13 @@ public class ConversationItem extends BaseConversationItem
         reactionsView.clear();
       } else {
         reactionsView.setReactions(reactions.getReactions());
+        reactionsView.setOnClickListener(view -> {
+          if (eventListener != null && batchSelected.isEmpty()) {
+            eventListener.onReactionClicked(current);
+          } else {
+            passthroughClickListener.onClick(view);
+          }
+        });
       }
     } catch (RpcException e) {
       reactionsView.clear();

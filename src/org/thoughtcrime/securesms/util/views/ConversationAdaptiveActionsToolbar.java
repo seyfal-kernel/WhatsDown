@@ -31,7 +31,7 @@ public class ConversationAdaptiveActionsToolbar extends Toolbar {
   private static final int ID_NEVER_SHOW_AS_ACTION_6 = R.id.menu_add_to_home_screen;
   private static final int ID_ALWAYS_SHOW_AS_ACTION = R.id.menu_context_forward;
 
-  private int   maxShown;
+  private final int   maxShown;
 
   public ConversationAdaptiveActionsToolbar(@NonNull Context context) {
     this(context, null);

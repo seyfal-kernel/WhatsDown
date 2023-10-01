@@ -46,7 +46,7 @@ public class FullMsgActivity extends WebViewActivity
     super.onCreate(state, ready);
 
     registerForContextMenu(webView);
-    blockLoadingRemote = getIntent().getBooleanExtra(BLOCK_LOADING_REMOTE, false);;
+    blockLoadingRemote = getIntent().getBooleanExtra(BLOCK_LOADING_REMOTE, false);
     loadRemoteContent = !blockLoadingRemote && Prefs.getAlwaysLoadRemoteContent(this);
     webView.getSettings().setBlockNetworkLoads(!loadRemoteContent);
 

@@ -96,10 +96,11 @@ public class ConversationListFragment extends Fragment
   private TextView                    emptySearch;
   private PulsingFloatingActionButton fab;
   private Locale                      locale;
-  private String                      queryFilter  = "";
+  private final String                queryFilter  = "";
   private boolean                     archive;
   private Timer                       reloadTimer;
   private boolean                     chatlistJustLoaded;
+  private boolean                     reloadTimerInstantly;
 
   @Override
   public void onCreate(Bundle icicle) {
@@ -172,23 +173,33 @@ public class ConversationListFragment extends Fragment
 
     if (getActivity().getIntent().getIntExtra(RELOAD_LIST, 0) == 1
         && !chatlistJustLoaded) {
+      Log.i(TAG, "🤠 resuming chatlist: loading chatlist");
       loadChatlist();
+      reloadTimerInstantly = false;
     }
     chatlistJustLoaded = false;
 
+    Log.i(TAG, "🤠 resuming chatlist: starting update timer");
     reloadTimer = new Timer();
     reloadTimer.scheduleAtFixedRate(new TimerTask() {
       @Override
       public void run() {
-        Util.runOnMain(() -> { list.getAdapter().notifyDataSetChanged(); });
+        Util.runOnMain(() -> {
+          Log.i(TAG, "🤠 update timer: refreshing chatlist");
+          list.getAdapter().notifyDataSetChanged();
+        });
       }
-    }, 60 * 1000, 60 * 1000);
+    }, reloadTimerInstantly? 0 : 60 * 1000, 60 * 1000);
   }
 
   @Override
   public void onPause() {
     super.onPause();
+
+    Log.i(TAG, "🤠 pausing chatlist: cancel update timer");
     reloadTimer.cancel();
+    reloadTimerInstantly = true;
+
     fab.stopPulse();
   }
 
