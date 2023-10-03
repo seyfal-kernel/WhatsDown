@@ -17,6 +17,7 @@
  */
 package org.thoughtcrime.securesms;
 
+import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
@@ -30,6 +31,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
@@ -247,7 +249,17 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
 
         switch (category) {
         case PREFERENCE_CATEGORY_NOTIFICATIONS:
-          fragment = new NotificationsPreferenceFragment();
+          NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getActivity());
+          if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU || notificationManager.areNotificationsEnabled()) {
+            fragment = new NotificationsPreferenceFragment();
+          } else {
+            new AlertDialog.Builder(getActivity())
+              .setTitle(R.string.notifications_disabled)
+              .setMessage(R.string.perm_explain_access_to_notifications_denied)
+              .setPositiveButton(R.string.perm_continue, (dialog, which) -> getActivity().startActivity(Permissions.getApplicationSettingsIntent(getActivity())))
+              .setNegativeButton(android.R.string.cancel, null)
+              .show();
+          }
           break;
         case PREFERENCE_CATEGORY_CONNECTIVITY:
           startActivity(new Intent(getActivity(), ConnectivityActivity.class));
