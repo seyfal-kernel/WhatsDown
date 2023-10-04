@@ -19,6 +19,7 @@ import com.b44t.messenger.rpc.Rpc;
 import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.recipients.Recipient;
 import org.thoughtcrime.securesms.util.ViewUtil;
+import org.thoughtcrime.securesms.util.Util;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -95,6 +96,8 @@ public abstract class BaseConversationItem extends LinearLayout
                 || messageRecord.getInfoType() == DcMsg.DC_INFO_PROTECTION_ENABLED);
   }
 
+  protected void onAccessibilityClick() {}
+
   protected class PassthroughClickListener implements View.OnLongClickListener, View.OnClickListener {
 
     @Override
@@ -121,6 +124,9 @@ public abstract class BaseConversationItem extends LinearLayout
 
     public void onClick(View v) {
       if (!shouldInterceptClicks(messageRecord) && parent != null) {
+        if (batchSelected.isEmpty() && Util.isTouchExplorationEnabled(context)) {
+          BaseConversationItem.this.onAccessibilityClick();
+        }
         parent.onClick(v);
       } else if (messageRecord.isFailed()) {
         View view = View.inflate(context, R.layout.message_details_view, null);
