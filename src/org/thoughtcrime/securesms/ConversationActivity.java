@@ -862,7 +862,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void initializeBackground() {
-    String backgroundImagePath = Prefs.getBackgroundImagePath(this);
+    String backgroundImagePath = Prefs.getBackgroundImagePath(this, dcContext.getAccountId());
     Drawable background;
     if(!backgroundImagePath.isEmpty()) {
       background = Drawable.createFromPath(backgroundImagePath);
@@ -893,6 +893,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       AccountManager.getInstance().switchAccount(context, accountId);
       dcContext = context.dcContext;
       fragment.dcContext = context.dcContext;
+      initializeBackground();
     }
     chatId = getIntent().getIntExtra(CHAT_ID_EXTRA, -1);
     if(chatId == DcChat.DC_CHAT_NO_CHAT)
@@ -951,7 +952,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void startContactChooserActivity() {
-    Intent intent = new Intent(ConversationActivity.this, BlockedAndShareContactsActivity.class);
+    Intent intent = new Intent(ConversationActivity.this, AttachContactActivity.class);
+    intent.putExtra(ContactSelectionListFragment.ALLOW_CREATION, false);
     startActivityForResult(intent, PICK_CONTACT);
   }
 
@@ -968,8 +970,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void addAttachmentContactInfo(Intent data) {
-    String name = data.getStringExtra(BlockedAndShareContactsActivity.SHARE_CONTACT_NAME_EXTRA);
-    String mail = data.getStringExtra(BlockedAndShareContactsActivity.SHARE_CONTACT_MAIL_EXTRA);
+    String name = data.getStringExtra(AttachContactActivity.NAME_EXTRA);
+    String mail = data.getStringExtra(AttachContactActivity.ADDR_EXTRA);
     composeText.append(name + "\n" + mail);
   }
 

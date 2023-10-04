@@ -62,8 +62,6 @@ public class Prefs {
   private static final String PROFILE_AVATAR_ID_PREF           = "pref_profile_avatar_id";
   public  static final String INCOGNITO_KEYBORAD_PREF          = "pref_incognito_keyboard";
 
-  public static final String SCREEN_LOCK         = "pref_android_screen_lock";
-
   private static final String PREF_CONTACT_PHOTO_IDENTIFIERS = "pref_contact_photo_identifiers";
 
   private static final String MAP_CENTER_LATITUDE = "pref_map_center_latitude";
@@ -79,14 +77,6 @@ public class Prefs {
     VibrateState(int id) { this.id = id; }
     public int getId() { return id; }
     public static VibrateState fromId(int id) { return values()[id]; }
-  }
-
-  public static boolean isScreenLockEnabled(@NonNull Context context) {
-    return getBooleanPreference(context, SCREEN_LOCK, false);
-  }
-
-  public static void setScreenLockEnabled(@NonNull Context context, boolean value) {
-    setBooleanPreference(context, SCREEN_LOCK, value);
   }
 
   public static void setDatabaseEncryptedSecret(@NonNull Context context, @NonNull String secret, int accountId) {
@@ -281,37 +271,37 @@ public class Prefs {
 
   // map
 
-  public static void setMapCenter(Context context, int chatId, LatLng latLng) {
-    setLongPreference(context, MAP_CENTER_LATITUDE+chatId, Double.doubleToRawLongBits(latLng.getLatitude()));
-    setLongPreference(context, MAP_CENTER_LONGITUDE+chatId, Double.doubleToRawLongBits(latLng.getLongitude()));
+  public static void setMapCenter(Context context, int accountId, int chatId, LatLng latLng) {
+    setLongPreference(context, MAP_CENTER_LATITUDE+accountId+"."+chatId, Double.doubleToRawLongBits(latLng.getLatitude()));
+    setLongPreference(context, MAP_CENTER_LONGITUDE+accountId+"."+chatId, Double.doubleToRawLongBits(latLng.getLongitude()));
   }
 
-  public static void setMapZoom(Context context, int chatId, double zoom) {
-    setLongPreference(context, MAP_ZOOM+chatId, Double.doubleToRawLongBits(zoom));
+  public static void setMapZoom(Context context, int accountId, int chatId, double zoom) {
+    setLongPreference(context, MAP_ZOOM+accountId+"."+chatId, Double.doubleToRawLongBits(zoom));
   }
 
-  public static LatLng getMapCenter(Context context, int chatId) {
-    long latitude = getLongPreference(context, MAP_CENTER_LATITUDE+chatId, Long.MAX_VALUE);
-    long longitude = getLongPreference(context, MAP_CENTER_LONGITUDE+chatId, Long.MAX_VALUE);
+  public static LatLng getMapCenter(Context context, int accountId, int chatId) {
+    long latitude = getLongPreference(context, MAP_CENTER_LATITUDE+accountId+"."+chatId, Long.MAX_VALUE);
+    long longitude = getLongPreference(context, MAP_CENTER_LONGITUDE+accountId+"."+chatId, Long.MAX_VALUE);
     if (latitude == Long.MAX_VALUE || longitude == Long.MAX_VALUE) {
       return null;
     }
     return new LatLng(Double.longBitsToDouble(latitude), Double.longBitsToDouble(longitude));
   }
 
-  public static double getMapZoom(Context context, int chatId) {
-    long zoom = getLongPreference(context, MAP_ZOOM+chatId, Double.doubleToLongBits(MINIMUM_ZOOM));
+  public static double getMapZoom(Context context, int accountId, int chatId) {
+    long zoom = getLongPreference(context, MAP_ZOOM+accountId+"."+chatId, Double.doubleToLongBits(MINIMUM_ZOOM));
     return Double.longBitsToDouble(zoom);
   }
 
   // misc.
 
-  public static String getBackgroundImagePath(Context context) {
-    return getStringPreference(context, BACKGROUND_PREF, "");
+  public static String getBackgroundImagePath(Context context, int accountId) {
+    return getStringPreference(context, BACKGROUND_PREF+accountId, "");
   }
 
-  public static void setBackgroundImagePath(Context context, String path) {
-    setStringPreference(context, BACKGROUND_PREF, path);
+  public static void setBackgroundImagePath(Context context, int accountId, String path) {
+    setStringPreference(context, BACKGROUND_PREF+accountId, path);
   }
 
   public static boolean isSystemEmojiPreferred(Context context) {
