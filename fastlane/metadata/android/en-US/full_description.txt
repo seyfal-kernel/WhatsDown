@@ -13,6 +13,7 @@ DeltaLab was created with a focus on usability, good user experience, and saving
 <li>Replies to your messages in muted groups trigger notifications</li>
 <li>Backup filenames contain the account's address</li>
 <li>More Kaomoji emoticons</li>
+<li>Location streaming feature enabled by default and have extra option to share location for 12 hours</li>
 <li>Verified icon is shown in the chat list for verified contacts and the "Device Messages" chat</li>
 <li>Videos are played in loop, useful for short GIF videos</li>
 <li>It is possible to click <b>OPENPGP4FPR:</b> and <b>mumble:</b> links in messages</li>
