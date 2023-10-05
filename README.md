@@ -2,7 +2,7 @@
 
 DeltaLab is a [Delta Chat](https://delta.chat/) client for Android.
 
-[<img src="store/get-it-in-IzzyOnDroid.png"
+[<img src="store/get-it-on-IzzyOnDroid.png"
      alt="Get it on IzzyOnDroid"
      height="48">](https://apt.izzysoft.de/fdroid/index/apk/chat.delta.lite)
 [<img src="store/get-it-on-apklis.png"
