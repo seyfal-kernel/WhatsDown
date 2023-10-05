@@ -27,7 +27,7 @@ DeltaLab has some extended support for WebXDC apps:
   * `"video"`
   * `"file"` (default if `type` field is not present)
 - Inside apps, clicking external links is supported, ex. to open in browser, so you can include links to your website or donation pages.
-- `manifest.toml` field: `orientation`, if you set it to `"landscape"` your app will be launched in full screen and landscape mode
+- `manifest.toml` field: `orientation`, if you set it to `"landscape"` your app will be launched in landscape mode
 
 # Credits
 
