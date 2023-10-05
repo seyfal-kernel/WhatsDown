@@ -106,7 +106,7 @@ class EmojiPages {
       "(\u2229\u1111_\u1111)\u2283\u2501\u2606\uFF9F*\uFF65\uFF61*\uFF65", "(\u02D8\u25E1\u02D8) \u250Ciii\u2510",
       "\u30FE(\u2310\u25A0_\u25A0)\u30CE\u266A", "( \u0360\u00B0 \u035F\u0296 \u0361\u00B0)", "(\u301C\uFFE3\u25BD\uFFE3)\u301C",
       "(\u02C7\u25BD\u02C7)\u30CE\u266A\u266C\u266B", "(\u0298 \u035F\u0296 \u0298)", "(\u0298 \u035C\u0296 \u0298)",
-      "(\uFFE3^\uFFE3)\u309E", "(\uFFE3\uFE43\uFFE3)", "(\uFF0D\u2038\u10DA)", "(=O*_*)=O Q(*_*Q)"
+      "(\uFFE3^\uFFE3)\u309E", "(\uFFE3\uFE43\uFFE3)", "(\uFF0D\u2038\u10DA)", "`(=O*_*)=O Q(*_*Q)`"
   }, null);
 
   static final List<EmojiPageModel> DISPLAY_PAGES = Arrays.asList(PAGE_PEOPLE, PAGE_NATURE, PAGE_FOODS, PAGE_ACTIVITY, PAGE_PLACES, PAGE_OBJECTS, PAGE_SYMBOLS, PAGE_FLAGS, PAGE_EMOTICONS);
