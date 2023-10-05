@@ -27,9 +27,9 @@ public class AudioCodec {
   private static final int    SAMPLE_RATE_INDEX_BALANCED = 4;
   private static final int    BIT_RATE_BALANCED = 32000;
 
-  private static final int    SAMPLE_RATE_WORSE = 16000;
-  private static final int    SAMPLE_RATE_INDEX_WORSE = 8;
-  private static final int    BIT_RATE_WORSE    = 8000;
+  private static final int    SAMPLE_RATE_WORSE = 24000;
+  private static final int    SAMPLE_RATE_INDEX_WORSE = 6;
+  private static final int    BIT_RATE_WORSE    = 16000;
 
   private static final int    CHANNELS          = 1;
 
