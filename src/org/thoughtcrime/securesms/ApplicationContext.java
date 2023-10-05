@@ -11,6 +11,7 @@ import android.net.LinkProperties;
 import android.net.NetworkCapabilities;
 import android.os.Build;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -49,6 +50,8 @@ import org.thoughtcrime.securesms.util.Prefs;
 import org.thoughtcrime.securesms.util.SignalProtocolLoggerProvider;
 
 import java.io.File;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.concurrent.TimeUnit;
 //import com.squareup.leakcanary.LeakCanary;
 
@@ -75,6 +78,32 @@ public class ApplicationContext extends MultiDexApplication {
   @Override
   public void onCreate() {
     super.onCreate();
+
+    Thread.setDefaultUncaughtExceptionHandler((thread, throwable) -> {
+      StringWriter stringWriter = new StringWriter();
+      throwable.printStackTrace(new PrintWriter(stringWriter, true));
+      String errorMsg = stringWriter.getBuffer().toString();
+      Toast.makeText(
+        this,
+        throwable.toString(),
+        Toast.LENGTH_LONG
+      ).show();
+
+      String subject = "DeltaLab Crash Report";
+      Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+      intent.setType("text/plain");
+      intent.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
+      intent.putExtra(android.content.Intent.EXTRA_TEXT, subject + "\n\n" + errorMsg);
+      intent.putExtra(Intent.EXTRA_EMAIL, "adbenitez@hispanilandia.net");
+      Intent chooser = Intent.createChooser(intent, subject);
+      chooser.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+      chooser.addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+      startActivity(chooser);
+
+      try {
+        ApplicationContext.this.finalize();
+      } catch (Throwable e) {}
+    });
 
     // if (LeakCanary.isInAnalyzerProcess(this)) {
     //   // This process is dedicated to LeakCanary for heap analysis.
