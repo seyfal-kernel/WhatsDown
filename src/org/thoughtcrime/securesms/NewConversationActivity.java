@@ -45,7 +45,6 @@ import static org.thoughtcrime.securesms.util.RelayUtil.isRelayingMessageContent
  */
 public class NewConversationActivity extends ContactSelectionActivity {
 
-  @SuppressWarnings("unused")
   private static final String TAG = NewConversationActivity.class.getSimpleName();
 
   @Override
