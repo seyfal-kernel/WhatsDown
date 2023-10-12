@@ -59,7 +59,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
-          body: "Auto-generated release"
+          body: "DeltaLab release, download the APK file for your phone's CPU architecture, if you don't know your phone's architecture, use the universal APK which works for all architectures"
           prerelease: ${{ contains(github.event.ref, '-beta') }}
           fail_on_unmatched_files: true
           files: build/outputs/apk/gplay/release/*.apk
