@@ -1021,6 +1021,14 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   protected static final int ACTION_SEND_OUT = 1;
   protected static final int ACTION_SAVE_DRAFT = 2;
 
+  private String getSelfReaction(int msgId) {
+    try {
+      final String [] selfReactions = rpc.getMsgReactions(dcContext.getAccountId(), msgId).getReactionsByContact().get(DcContact.DC_CONTACT_ID_SELF);
+      if (selfReactions != null && selfReactions.length > 0) return selfReactions[0];
+    } catch(Exception e) { e.printStackTrace(); }
+    return null;
+  }
+
   protected ListenableFuture<Integer> processComposeControls(int action) {
     return processComposeControls(action, composeText.getTextTrimmed(),
       attachmentManager.isAttachmentPresent() ?
@@ -1078,15 +1086,16 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
         e.printStackTrace();
       }
     }
-    else if (false && action == ACTION_SEND_OUT && quote.isPresent() && EmojiProvider.getInstance(this).isEmoji(body)){
+    else if (action == ACTION_SEND_OUT && quote.isPresent() && EmojiProvider.getInstance(this).isEmoji(body)){
+      int quotedMsg = quote.get().getQuotedMsg().getId();
       try {
-          rpc.sendReaction(dcContext.getAccountId(), quote.get().getQuotedMsg().getId(), body);
-          future.set(chatId);
-          return future;
+        rpc.sendReaction(dcContext.getAccountId(), quotedMsg, body.equals(getSelfReaction(quotedMsg))? "" : body);
+        future.set(chatId);
+        return future;
       } catch (RpcException e) {
-          e.printStackTrace();
-          msg = new DcMsg(dcContext, DcMsg.DC_MSG_TEXT);
-          msg.setText(body);
+        e.printStackTrace();
+        msg = new DcMsg(dcContext, DcMsg.DC_MSG_TEXT);
+        msg.setText(body);
       }
     }
     else if (!body.isEmpty()){
