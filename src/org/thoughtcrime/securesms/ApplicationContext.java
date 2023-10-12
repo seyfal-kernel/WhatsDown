@@ -11,7 +11,6 @@ import android.net.LinkProperties;
 import android.net.NetworkCapabilities;
 import android.os.Build;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -82,14 +81,8 @@ public class ApplicationContext extends MultiDexApplication {
     Thread.setDefaultUncaughtExceptionHandler((thread, throwable) -> {
       StringWriter stringWriter = new StringWriter();
       throwable.printStackTrace(new PrintWriter(stringWriter, true));
-      String errorMsg = stringWriter.getBuffer().toString();
-      Toast.makeText(
-        this,
-        throwable.toString(),
-        Toast.LENGTH_LONG
-      ).show();
-
-      String subject = "DeltaLab Crash Report";
+      String errorMsg = "Android " + Build.VERSION.RELEASE +":\n" + stringWriter.getBuffer().toString();
+      String subject = "DeltaLab " + BuildConfig.VERSION_NAME + " Crash Report";
       Intent intent = new Intent(android.content.Intent.ACTION_SEND);
       intent.setType("text/plain");
       intent.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
