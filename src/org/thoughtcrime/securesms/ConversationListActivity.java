@@ -101,7 +101,7 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
     DcContext dcContext = DcHelper.getContext(this);
     DcMsg msg = new DcMsg(dcContext, DcMsg.DC_MSG_TEXT);
     msg.setText(getString(R.string.device_msg_tips));
-    dcContext.addDeviceMsg("update_1_34a_tips", msg);
+    dcContext.addDeviceMsg("update_1_42a_tips", msg);
 
     //msg = new DcMsg(dcContext, DcMsg.DC_MSG_TEXT);
     //msg.setText(getString(R.string.update_1_38_android, "https://get.delta.chat/#changelogs"));

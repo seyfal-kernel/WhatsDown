@@ -1084,7 +1084,7 @@
 
 
     <!-- device messages for updates -->
-    <string name="device_msg_tips">**💡 TIPS**\n\n\n**🤖 Public bots list:**\nhttps://deltachat-bot.github.io/public-bots/\n\n\n[**🎮 Games List**](mailto:juegos@buzon.uy?body=/list)\n\n\n[**💬 Public super groups and channels list**](mailto:groupsbot@hispanilandia.net?body=/list) (the super groups are anonymous your email address is not revealed to members!)</string>
+    <string name="device_msg_tips">**💡 TIPS**\n\n\n[**💬 Public super groups and channels list**](mailto:groupsbot@hispanilandia.net?body=/list) (the super groups are anonymous your email address is not revealed to members!)</string>
     <!-- placeholder will be replaced by the URL https://get.delta.chat/#changelogs -->
     <string name="update_1_38_android">1.38 is out:\n\n📎 Removed upper size limit of attachments\n\n🗜️ PNG images (screenshots!) are now compressed as well\n\n⌨️ For Devs: Better apps for chats with sendToChat() and importFiles() (What is Webxdc? → https://webxdc.org)\n\n… and more at %1$s</string>
     <!-- placeholder will be replaced by the URL https://get.delta.chat/#changelogs -->
