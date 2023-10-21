@@ -107,7 +107,6 @@ public class Rpc {
         return getResult("send_reaction", accountId, msgId, reaction).getAsInt();
     }
 
-
     private static class Request {
         private final String jsonrpc = "2.0";
         public final String method;
