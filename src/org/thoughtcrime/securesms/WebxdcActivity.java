@@ -153,11 +153,11 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
     internetAccess = JsonUtils.optBoolean(info, "internet_access");
     if ("landscape".equals(JsonUtils.optString(info, "orientation"))) {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+    } else {
+        // enter fullscreen mode if necessary,
+        // this is needed here because if the app is opened while already in landscape mode, onConfigurationChanged() is not triggered
+        setScreenMode();
     }
-
-    // enter fullscreen mode if necessary,
-    // this is needed here because if the app is opened while already in landscape mode, onConfigurationChanged() is not triggered
-    setScreenMode();
 
     WebSettings webSettings = webView.getSettings();
     webSettings.setJavaScriptEnabled(true);
