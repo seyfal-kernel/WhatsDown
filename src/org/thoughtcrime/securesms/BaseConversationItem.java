@@ -20,6 +20,7 @@ import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.recipients.Recipient;
 import org.thoughtcrime.securesms.util.ViewUtil;
 import org.thoughtcrime.securesms.util.Util;
+import org.thoughtcrime.securesms.recipients.Recipient;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -37,6 +38,7 @@ public abstract class BaseConversationItem extends LinearLayout
   protected final DcContext            dcContext;
   protected Recipient                  conversationRecipient;
   protected final Rpc rpc;
+  protected Recipient                  conversationRecipient;
 
   protected @NonNull  Set<DcMsg> batchSelected = new HashSet<>();
 
