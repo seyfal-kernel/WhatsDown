@@ -459,19 +459,6 @@ public class DcHelper {
       }
   }
 
-  public static String getConnectivitySummary(Context context, String connectedString) {
-      int connectivity = getContext(context).getConnectivity();
-      if (connectivity >= DcContext.DC_CONNECTIVITY_CONNECTED) {
-          return connectedString;
-      } else if (connectivity >= DcContext.DC_CONNECTIVITY_WORKING) {
-          return context.getString(R.string.connectivity_updating);
-      } else if (connectivity >= DcContext.DC_CONNECTIVITY_CONNECTING) {
-          return context.getString(R.string.connectivity_connecting);
-      } else {
-          return context.getString(R.string.connectivity_not_connected);
-      }
-  }
-
   public static void showVerificationBrokenDialog(Context context, String name) {
     new AlertDialog.Builder(context)
             .setMessage(context.getString(R.string.chat_protection_broken_explanation, name))

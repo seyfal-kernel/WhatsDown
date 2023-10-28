@@ -8,6 +8,9 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
+
+import com.b44t.messenger.DcContext;
 
 import org.thoughtcrime.securesms.R;
 import org.thoughtcrime.securesms.mms.GlideRequests;
@@ -54,6 +57,19 @@ public class AvatarView extends ConstraintLayout {
 
   public void setSeenRecently(boolean enabled) {
     seenRecentlyIndicator.setVisibility(enabled? View.VISIBLE : View.GONE);
+  }
+
+  public void setConnectivity(int connectivity) {
+      final int id;
+      if (connectivity >= DcContext.DC_CONNECTIVITY_WORKING) {
+          id = R.drawable.ic_circle_status_online;
+      } else if (connectivity >= DcContext.DC_CONNECTIVITY_CONNECTING) {
+          id = R.drawable.ic_circle_status_connecting;
+      } else {
+          id = R.drawable.ic_circle_status_offline;
+      }
+      seenRecentlyIndicator.setImageDrawable(ContextCompat.getDrawable(getContext(), id));
+      seenRecentlyIndicator.setVisibility(View.VISIBLE);
   }
 
   public void clear(@NonNull GlideRequests glideRequests) {
