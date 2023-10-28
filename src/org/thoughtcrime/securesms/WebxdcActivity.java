@@ -392,6 +392,11 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
 
   class InternalJSApi {
     @JavascriptInterface
+    public String deltalab() {
+      return BuildConfig.VERSION_NAME;
+    }
+
+    @JavascriptInterface
     public String selfAddr() {
       return WebxdcActivity.this.dcContext.getConfig("addr");
     }

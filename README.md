@@ -19,7 +19,8 @@ DeltaLab is a [Delta Chat](https://delta.chat/) client for Android.
 
 DeltaLab has some extended support for WebXDC apps:
 
-- `window.webxdc.deltalab` is `true` and can be used by app developers to detect when they can use the DeltaLab-specific features
+- `window.webxdc.deltalab` is a string with the DeltaLab version and can be used by app developers
+  to detect when they can use the DeltaLab-specific features.
 - `sendToChat()`: extra property `subject` can be set to a text string to set message/email's subject.
 - `sendToChat()`: extra property `html` can be set to a string of html markup to set the HTML part of the email/message.
 - `sendToChat()`: the file object parameter also accepts a `type` field that can be one of:
@@ -29,7 +30,7 @@ DeltaLab has some extended support for WebXDC apps:
   * `"video"`
   * `"file"` (default if `type` field is not present)
 - Inside apps, clicking external links is supported, ex. to open in browser, so you can include links to your website or donation pages.
-- `manifest.toml` field: `orientation`, if you set it to `"landscape"` your app will be launched in landscape mode
+- `manifest.toml` field: `orientation`, if you set it to `"landscape"` your app will be launched in landscape mode.
 
 # Credits
 
