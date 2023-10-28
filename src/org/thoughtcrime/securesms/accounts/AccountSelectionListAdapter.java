@@ -39,7 +39,7 @@ public class AccountSelectionListAdapter extends RecyclerView.Adapter
       super(itemView);
     }
 
-    public abstract void bind(@NonNull GlideRequests glideRequests, int accountId, DcContact self, String name, String addr, int unreadCount, boolean selected);
+    public abstract void bind(@NonNull GlideRequests glideRequests, int accountId, DcContact self, String name, String addr, int unreadCount, int connectivity, boolean selected);
     public abstract void unbind(@NonNull GlideRequests glideRequests);
   }
 
@@ -64,8 +64,8 @@ public class AccountSelectionListAdapter extends RecyclerView.Adapter
       return (AccountSelectionListItem) itemView;
     }
 
-    public void bind(@NonNull GlideRequests glideRequests, int accountId, DcContact self, String name, String addr, int unreadCount, boolean selected) {
-      getView().bind(glideRequests, accountId, self, name, addr, unreadCount, selected);
+    public void bind(@NonNull GlideRequests glideRequests, int accountId, DcContact self, String name, String addr, int unreadCount, int connectivity, boolean selected) {
+      getView().bind(glideRequests, accountId, self, name, addr, unreadCount, connectivity, selected);
     }
 
     @Override
@@ -100,6 +100,7 @@ public class AccountSelectionListAdapter extends RecyclerView.Adapter
     String name;
     String addr = null;
     int unreadCount = 0;
+    int connectivity = 0;
 
     if (id == DcContact.DC_CONTACT_ID_ADD_ACCOUNT) {
       name = context.getString(R.string.add_account);
@@ -112,11 +113,12 @@ public class AccountSelectionListAdapter extends RecyclerView.Adapter
         name = addr;
       }
       unreadCount = dcContext.getFreshMsgs().length;
+      connectivity = dcContext.getConnectivity();
     }
 
     ViewHolder holder = (ViewHolder) viewHolder;
     holder.unbind(glideRequests);
-    holder.bind(glideRequests, id, dcContact, name, addr, unreadCount, id == selectedAccountId);
+    holder.bind(glideRequests, id, dcContact, name, addr, unreadCount, connectivity, id == selectedAccountId);
   }
 
   public interface ItemClickListener {

@@ -81,7 +81,7 @@ public class ReactionsDetailsFragment extends DialogFragment implements DcEventC
   }
 
   private void refreshData() {
-    if (recyclerView == null) return;
+    if (adapter == null) return;
 
     int accId = DcHelper.getContext(requireActivity()).getAccountId();
     try {

@@ -17,7 +17,7 @@ import com.amulyakhare.textdrawable.TextDrawable;
 import com.b44t.messenger.DcContact;
 
 import org.thoughtcrime.securesms.R;
-import org.thoughtcrime.securesms.components.AvatarImageView;
+import org.thoughtcrime.securesms.components.AvatarView;
 import org.thoughtcrime.securesms.mms.GlideRequests;
 import org.thoughtcrime.securesms.recipients.Recipient;
 import org.thoughtcrime.securesms.util.DynamicTheme;
@@ -25,12 +25,11 @@ import org.thoughtcrime.securesms.util.ViewUtil;
 
 public class AccountSelectionListItem extends LinearLayout {
 
-  private AvatarImageView contactPhotoImage;
+  private AvatarView      contactPhotoImage;
   private View            addrContainer;
   private TextView        addrView;
   private TextView        nameView;
   private ImageView       unreadIndicator;
-  private ImageView       checkbox;
   private ImageButton     deleteBtn;
 
   private int           accountId;
@@ -51,34 +50,34 @@ public class AccountSelectionListItem extends LinearLayout {
     this.addrView          = findViewById(R.id.addr);
     this.nameView          = findViewById(R.id.name);
     this.unreadIndicator   = findViewById(R.id.unread_indicator);
-    this.checkbox          = findViewById(R.id.checkbox);
     this.deleteBtn         = findViewById(R.id.delete);
 
     deleteBtn.setColorFilter(DynamicTheme.isDarkTheme(getContext())? Color.WHITE : Color.BLACK);
     ViewUtil.setTextViewGravityStart(this.nameView, getContext());
   }
 
-  public void bind(@NonNull GlideRequests glideRequests, int accountId, DcContact self, String name, String addr, int unreadCount, boolean selected) {
+  public void bind(@NonNull GlideRequests glideRequests, int accountId, DcContact self, String name, String addr, int unreadCount, int connectivity, boolean selected) {
     this.accountId     = accountId;
 
     Recipient recipient;
     if (accountId != DcContact.DC_CONTACT_ID_ADD_ACCOUNT) {
       deleteBtn.setVisibility(selected? View.INVISIBLE : View.VISIBLE);
       recipient = new Recipient(getContext(), self, name);
+      this.contactPhotoImage.setConnectivity(connectivity);
     } else {
       deleteBtn.setVisibility(View.GONE);
       recipient = null;
+      this.contactPhotoImage.setSeenRecently(false); // hide connectivity dot
     }
     this.contactPhotoImage.setAvatar(glideRequests, recipient, false);
 
+    setSelected(selected);
     if (selected) {
       addrView.setTypeface(null, Typeface.BOLD);
       nameView.setTypeface(null, Typeface.BOLD);
-      checkbox.setVisibility(View.VISIBLE);
     } else {
       addrView.setTypeface(null, 0);
       nameView.setTypeface(null, 0);
-      checkbox.setVisibility(View.GONE);
     }
 
     updateUnreadIndicator(unreadCount);

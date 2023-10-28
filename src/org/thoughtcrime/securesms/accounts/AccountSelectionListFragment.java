@@ -14,38 +14,33 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.b44t.messenger.DcAccounts;
+import com.b44t.messenger.DcContext;
+import com.b44t.messenger.DcEvent;
 
 import org.thoughtcrime.securesms.ConnectivityActivity;
 import org.thoughtcrime.securesms.R;
 import org.thoughtcrime.securesms.connect.AccountManager;
+import org.thoughtcrime.securesms.connect.DcEventCenter;
 import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.mms.GlideApp;
 import org.thoughtcrime.securesms.util.ViewUtil;
 
 import static com.b44t.messenger.DcContact.DC_CONTACT_ID_ADD_ACCOUNT;
 
-public class AccountSelectionListFragment extends DialogFragment
+public class AccountSelectionListFragment extends DialogFragment implements DcEventCenter.DcEventDelegate
 {
   private RecyclerView recyclerView;
+  private AccountSelectionListAdapter adapter;
 
   @Override
   public void onActivityCreated(Bundle icicle) {
     super.onActivityCreated(icicle);
-    AccountSelectionListAdapter adapter = new AccountSelectionListAdapter(getActivity(),
-            GlideApp.with(getActivity()),
-            new ListClickListener());
+    adapter = new AccountSelectionListAdapter(getActivity(), GlideApp.with(getActivity()), new ListClickListener());
     recyclerView.setAdapter(adapter);
-
-    DcAccounts accounts = DcHelper.getAccounts(getActivity());
-    int[] accountIds = accounts.getAll();
-
-    int[] ids = new int[accountIds.length + 1];
-    ids[0] = DC_CONTACT_ID_ADD_ACCOUNT;
-    int j = 0;
-    for (int accountId : accountIds) {
-      ids[++j] = accountId;
-    }
-    adapter.changeData(ids, accounts.getSelectedAccount().getAccountId());
+    refreshData();
+    DcEventCenter eventCenter = DcHelper.getEventCenter(requireActivity());
+    eventCenter.addObserver(DcContext.DC_EVENT_CONNECTIVITY_CHANGED, this);
+    eventCenter.addObserver(DcContext.DC_EVENT_INCOMING_MSG, this);
   }
 
   @NonNull
@@ -64,6 +59,26 @@ public class AccountSelectionListFragment extends DialogFragment
     recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
     return builder.setView(view).create();
+  }
+
+  @Override
+  public void handleEvent(@NonNull DcEvent event) {
+    refreshData();
+  }
+
+  private void refreshData() {
+    if (adapter == null) return;
+
+    DcAccounts accounts = DcHelper.getAccounts(requireActivity());
+    int[] accountIds = accounts.getAll();
+
+    int[] ids = new int[accountIds.length + 1];
+    ids[0] = DC_CONTACT_ID_ADD_ACCOUNT;
+    int j = 0;
+    for (int accountId : accountIds) {
+      ids[++j] = accountId;
+    }
+    adapter.changeData(ids, accounts.getSelectedAccount().getAccountId());
   }
 
 
