@@ -44,7 +44,7 @@ window.webxdc = (() => {
 
     sendToChat: async (message) => {
       const data = {};
-      if (!message.file && !message.text) {
+      if (!message.file && !message.text && !message.html) {
         return Promise.reject("sendToChat() error: file or text missing");
       }
 
@@ -62,6 +62,12 @@ window.webxdc = (() => {
       };
       if (message.text) {
         data.text = message.text;
+      }
+      if (message.subject) {
+        data.subject = message.subject;
+      }
+      if (message.html) {
+        data.html = message.html;
       }
 
       if (message.file) {

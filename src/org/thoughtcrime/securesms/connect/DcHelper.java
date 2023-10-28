@@ -321,7 +321,7 @@ public class DcHelper {
     }
   }
 
-  public static void sendToChat(Context activity, byte[] data, String type, String fileName, String text) {
+  public static void sendToChat(Context activity, byte[] data, String type, String fileName, String html, String subject, String text) {
       Intent intent = new Intent(activity, ShareActivity.class);
       intent.setAction(Intent.ACTION_SEND);
 
@@ -332,13 +332,20 @@ public class DcHelper {
           intent.putExtra(Intent.EXTRA_STREAM, uri);
           intent.putExtra(ShareActivity.EXTRA_MSG_TYPE, type);
           intent.putExtra(ShareActivity.EXTRA_TITLE, activity.getString(R.string.send_file_to, fileName));
+      } else {
+          intent.putExtra(ShareActivity.EXTRA_TITLE, activity.getString(R.string.send_message_to));
       }
 
       if (text != null) {
           intent.putExtra(Intent.EXTRA_TEXT, text);
-          if (data == null) {
-              intent.putExtra(ShareActivity.EXTRA_TITLE, activity.getString(R.string.send_message_to));
-          }
+      }
+
+      if (subject != null) {
+          intent.putExtra(ShareActivity.EXTRA_MSG_SUBJECT, subject);
+      }
+
+      if (html != null) {
+          intent.putExtra(ShareActivity.EXTRA_MSG_HTML, html);
       }
 
       activity.startActivity(intent);
@@ -443,6 +450,19 @@ public class DcHelper {
       int connectivity = getContext(context).getConnectivity();
       if (connectivity >= DcContext.DC_CONNECTIVITY_CONNECTED) {
           return context.getString(connectedString);
+      } else if (connectivity >= DcContext.DC_CONNECTIVITY_WORKING) {
+          return context.getString(R.string.connectivity_updating);
+      } else if (connectivity >= DcContext.DC_CONNECTIVITY_CONNECTING) {
+          return context.getString(R.string.connectivity_connecting);
+      } else {
+          return context.getString(R.string.connectivity_not_connected);
+      }
+  }
+
+  public static String getConnectivitySummary(Context context, String connectedString) {
+      int connectivity = getContext(context).getConnectivity();
+      if (connectivity >= DcContext.DC_CONNECTIVITY_CONNECTED) {
+          return connectedString;
       } else if (connectivity >= DcContext.DC_CONNECTIVITY_WORKING) {
           return context.getString(R.string.connectivity_updating);
       } else if (connectivity >= DcContext.DC_CONNECTIVITY_CONNECTING) {

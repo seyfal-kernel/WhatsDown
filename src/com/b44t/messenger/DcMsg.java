@@ -153,6 +153,8 @@ public class DcMsg {
     public native int     getVideochatType   ();
     public native boolean isIncreation       ();
     public native void    setText            (String text);
+    public native void    setSubject         (String text);
+    public native void    setHtml            (String text);
     public native void    setFile            (String file, String filemime);
     public native void    setDimension       (int width, int height);
     public native void    setDuration        (int duration);

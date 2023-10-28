@@ -20,6 +20,8 @@ import java.util.ArrayList;
 
 import static org.thoughtcrime.securesms.util.RelayUtil.getForwardedMessageIDs;
 import static org.thoughtcrime.securesms.util.RelayUtil.getSharedText;
+import static org.thoughtcrime.securesms.util.RelayUtil.getSharedSubject;
+import static org.thoughtcrime.securesms.util.RelayUtil.getSharedHtml;
 import static org.thoughtcrime.securesms.util.RelayUtil.getSharedType;
 import static org.thoughtcrime.securesms.util.RelayUtil.getSharedUris;
 import static org.thoughtcrime.securesms.util.RelayUtil.isForwarding;
@@ -47,11 +49,13 @@ public class SendRelayedMessageUtil {
     } else if (isSharing(activity)) {
       ArrayList<Uri> sharedUris = getSharedUris(activity);
       String sharedText = getSharedText(activity);
+      String subject = getSharedSubject(activity);
+      String sharedHtml = getSharedHtml(activity);
       String msgType = getSharedType(activity);
       resetRelayingMessageContent(activity);
       Util.runOnAnyBackgroundThread(() -> {
         for (long chatId : chatIds) {
-          handleSharing(activity, (int) chatId, sharedUris, msgType, sharedText);
+          handleSharing(activity, (int) chatId, sharedUris, msgType, sharedHtml, subject, sharedText);
         }
       });
     }
@@ -62,19 +66,19 @@ public class SendRelayedMessageUtil {
     dcContext.forwardMsgs(forwardedMessageIDs, chatId);
   }
 
-  private static void handleSharing(Context context, int chatId, ArrayList<Uri> sharedUris, String msgType, String sharedText) {
+  private static void handleSharing(Context context, int chatId, ArrayList<Uri> sharedUris, String msgType, String sharedHtml, String subject, String sharedText) {
     DcContext dcContext = DcHelper.getContext(context);
     ArrayList<Uri> uris = sharedUris;
     String text = sharedText;
 
     if (uris.size() == 1) {
-      dcContext.sendMsg(chatId, createMessage(context, uris.get(0), msgType, text));
+      dcContext.sendMsg(chatId, createMessage(context, uris.get(0), msgType, sharedHtml, subject, text));
     } else {
-      if (text != null) {
-        dcContext.sendMsg(chatId, createMessage(context, null, text));
+      if (text != null || sharedHtml != null) {
+        dcContext.sendMsg(chatId, createMessage(context, null, null, sharedHtml, subject, text));
       }
       for (Uri uri : uris) {
-        dcContext.sendMsg(chatId, createMessage(context, uri, null));
+        dcContext.sendMsg(chatId, createMessage(context, uri, null, null, subject, null));
       }
     }
   }
@@ -88,11 +92,7 @@ public class SendRelayedMessageUtil {
     }
   }
 
-  public static DcMsg createMessage(Context context, Uri uri, String text) throws NullPointerException {
-    return createMessage(context, uri, null, text);
-  }
-
-  public static DcMsg createMessage(Context context, Uri uri, String type, String text) throws NullPointerException {
+  public static DcMsg createMessage(Context context, Uri uri, String type, String html, String subject, String text) throws NullPointerException {
     DcContext dcContext = DcHelper.getContext(context);
     DcMsg message;
     String mimeType = MediaUtil.getMimeType(context, uri);
@@ -112,6 +112,12 @@ public class SendRelayedMessageUtil {
 
     if (uri != null) {
       message.setFile(getRealPathFromUri(context, uri), mimeType);
+    }
+    if (html != null) {
+      message.setHtml(html);
+    }
+    if (subject != null) {
+      message.setSubject(subject);
     }
     if (text != null) {
       message.setText(text);

@@ -9,7 +9,9 @@ import androidx.annotation.NonNull;
 import java.util.ArrayList;
 
 import static org.thoughtcrime.securesms.ConversationActivity.TEXT_EXTRA;
+import static org.thoughtcrime.securesms.ConversationActivity.MSG_SUBJECT_EXTRA;
 import static org.thoughtcrime.securesms.ConversationActivity.MSG_TYPE_EXTRA;
+import static org.thoughtcrime.securesms.ConversationActivity.MSG_HTML_EXTRA;
 
 public class RelayUtil {
     private static final String FORWARDED_MESSAGE_IDS   = "forwarded_message_ids";
@@ -81,6 +83,22 @@ public class RelayUtil {
         }
     }
 
+    public static String getSharedHtml(Activity activity) {
+        try {
+            return activity.getIntent().getStringExtra(MSG_HTML_EXTRA);
+        } catch (NullPointerException npe) {
+            return null;
+        }
+    }
+
+    public static String getSharedSubject(Activity activity) {
+        try {
+            return activity.getIntent().getStringExtra(MSG_SUBJECT_EXTRA);
+        } catch (NullPointerException npe) {
+            return null;
+        }
+    }
+
     public static String getSharedText(Activity activity) {
         try {
             return activity.getIntent().getStringExtra(TEXT_EXTRA);
@@ -105,6 +123,9 @@ public class RelayUtil {
             activity.getIntent().removeExtra(IS_SHARING);
             activity.getIntent().removeExtra(DIRECT_SHARING_CHAT_ID);
             activity.getIntent().removeExtra(TEXT_EXTRA);
+            activity.getIntent().removeExtra(MSG_TYPE_EXTRA);
+            activity.getIntent().removeExtra(MSG_HTML_EXTRA);
+            activity.getIntent().removeExtra(MSG_SUBJECT_EXTRA);
         } catch (NullPointerException npe) {
             npe.printStackTrace();
         }
@@ -124,6 +145,12 @@ public class RelayUtil {
             if (getSharedText(currentActivity) != null) {
                 newActivityIntent.putExtra(TEXT_EXTRA, getSharedText(currentActivity));
             }
+            if (getSharedSubject(currentActivity) != null) {
+                newActivityIntent.putExtra(MSG_SUBJECT_EXTRA, getSharedSubject(currentActivity));
+            }
+            if (getSharedHtml(currentActivity) != null) {
+                newActivityIntent.putExtra(MSG_HTML_EXTRA, getSharedHtml(currentActivity));
+            }
             if (getSharedType(currentActivity) != null) {
                 newActivityIntent.putExtra(MSG_TYPE_EXTRA, getSharedType(currentActivity));
             }
@@ -141,6 +168,21 @@ public class RelayUtil {
 
     public static void setSharedText(Intent composeIntent, String text) {
         composeIntent.putExtra(TEXT_EXTRA, text);
+        composeIntent.putExtra(IS_SHARING, true);
+    }
+
+    public static void setSharedSubject(Intent composeIntent, String subject) {
+        composeIntent.putExtra(MSG_SUBJECT_EXTRA, subject);
+        composeIntent.putExtra(IS_SHARING, true);
+    }
+
+    public static void setSharedHtml(Intent composeIntent, String html) {
+        composeIntent.putExtra(MSG_HTML_EXTRA, html);
+        composeIntent.putExtra(IS_SHARING, true);
+    }
+
+    public static void setSharedType(Intent composeIntent, String type) {
+        composeIntent.putExtra(MSG_TYPE_EXTRA, type);
         composeIntent.putExtra(IS_SHARING, true);
     }
 

@@ -135,6 +135,8 @@ import java.util.concurrent.ExecutionException;
 
 import static org.thoughtcrime.securesms.TransportOption.Type;
 import static org.thoughtcrime.securesms.util.RelayUtil.getSharedText;
+import static org.thoughtcrime.securesms.util.RelayUtil.getSharedSubject;
+import static org.thoughtcrime.securesms.util.RelayUtil.getSharedHtml;
 import static org.thoughtcrime.securesms.util.RelayUtil.getSharedType;
 import static org.thoughtcrime.securesms.util.RelayUtil.isForwarding;
 import static org.thoughtcrime.securesms.util.RelayUtil.isSharing;
@@ -164,6 +166,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   public static final String FROM_ARCHIVED_CHATS_EXTRA = "from_archived";
   public static final String TEXT_EXTRA              = "draft_text";
   public static final String MSG_TYPE_EXTRA          = "msg_type";
+  public static final String MSG_HTML_EXTRA          = "msg_html";
+  public static final String MSG_SUBJECT_EXTRA       = "msg_subject";
   public static final String STARTING_POSITION_EXTRA = "starting_position";
 
   private static final int PICK_GALLERY        = 1;
@@ -691,15 +695,10 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
               .setPositiveButton(R.string.menu_send, (dialog, which) -> SendRelayedMessageUtil.immediatelyRelay(this, chatId))
               .show();
     } else {
-      if (uriList.isEmpty()) {
-        dcContext.setDraft(chatId, SendRelayedMessageUtil.createMessage(this, null, getSharedText(this)));
+      if (getSharedHtml(this) != null || getSharedSubject(this) != null || ("sticker".equals(getSharedType(this)) && !uriList.isEmpty())) {
+        SendRelayedMessageUtil.immediatelyRelay(this, chatId);
       } else {
-        String msgType = getSharedType(this);
-        if ("sticker".equals(msgType)) {
-          SendRelayedMessageUtil.immediatelyRelay(this, chatId);
-        } else {
-          dcContext.setDraft(chatId, SendRelayedMessageUtil.createMessage(this, uriList.get(0), msgType, getSharedText(this)));
-        }
+        dcContext.setDraft(chatId, SendRelayedMessageUtil.createMessage(this, uriList.get(0), getSharedType(this), null, null, getSharedText(this)));
       }
       initializeDraft();
     }
@@ -718,6 +717,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
     if (draft == null) {
       if (TextUtils.isEmpty(sharedText)) {
+        composeText.setText("");
         future.set(false);
       } else {
         composeText.setText(sharedText);
@@ -731,6 +731,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     if(!text.isEmpty()) {
       composeText.setText(text);
       composeText.setSelection(composeText.getText().length());
+    } else {
+      composeText.setText("");
     }
 
     DcMsg quote = draft.getQuotedMsg();

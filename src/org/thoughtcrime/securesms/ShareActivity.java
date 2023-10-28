@@ -18,6 +18,8 @@
 package org.thoughtcrime.securesms;
 
 import static org.thoughtcrime.securesms.util.RelayUtil.setSharedText;
+import static org.thoughtcrime.securesms.util.RelayUtil.setSharedSubject;
+import static org.thoughtcrime.securesms.util.RelayUtil.setSharedHtml;
 import static org.thoughtcrime.securesms.util.RelayUtil.setSharedTitle;
 
 import android.Manifest;
@@ -58,6 +60,8 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity implement
 
   public static final String EXTRA_CHAT_ID = "chat_id";
   public static final String EXTRA_MSG_TYPE = "msg_type";
+  public static final String EXTRA_MSG_SUBJECT = "msg_subject";
+  public static final String EXTRA_MSG_HTML = "msg_html";
   public static final String EXTRA_TITLE = "extra_title";
 
   private ArrayList<Uri>               resolvedExtras;
@@ -269,12 +273,12 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity implement
     if (chatId != -1) {
       composeIntent = getBaseShareIntent(ConversationActivity.class);
       composeIntent.putExtra(ConversationActivity.CHAT_ID_EXTRA, chatId);
-      composeIntent.putExtra(ConversationActivity.MSG_TYPE_EXTRA, msgType);
+      RelayUtil.setSharedType(composeIntent, msgType);
       RelayUtil.setSharedUris(composeIntent, resolvedExtras);
       startActivity(composeIntent);
     } else {
       composeIntent = getBaseShareIntent(ConversationListRelayingActivity.class);
-      composeIntent.putExtra(ConversationActivity.MSG_TYPE_EXTRA, msgType);
+      RelayUtil.setSharedType(composeIntent, msgType);
       RelayUtil.setSharedUris(composeIntent, resolvedExtras);
       ConversationListRelayingActivity.start(this, composeIntent);
     }
@@ -299,6 +303,14 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity implement
 
     if (text != null) {
       setSharedText(intent, text.toString());
+    }
+    String subject = getIntent().getStringExtra(EXTRA_MSG_SUBJECT);
+    if (subject != null) {
+      setSharedSubject(intent, subject);
+    }
+    String html = getIntent().getStringExtra(EXTRA_MSG_HTML);
+    if (html != null) {
+      setSharedHtml(intent, html);
     }
     if (resolvedExtras.size() > 0) {
       Uri data = resolvedExtras.get(0);
