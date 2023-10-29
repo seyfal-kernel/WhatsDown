@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
   <!-- DEFAULT -->
-  <color name="def_primary">#6364ff</color>
-  <color name="def_primary_dark">#6364ff</color>
-  <color name="def_primary_lite">#6364ff</color>
-  <color name="def_primary_alpha33">#556364ff</color>
-  <color name="def_accent">#7564ff</color>
-  <color name="def_outgoing_bubble">#fffff9d9</color>
-  <color name="def_outgoing_label">#ff7564ff</color>
-  <color name="def_unreadcount">#6364ff</color>
+  <color name="def_primary">@color/purple_primary</color>
+  <color name="def_primary_dark">@color/purple_primary_dark</color>
+  <color name="def_primary_lite">@color/purple_primary_lite</color>
+  <color name="def_primary_alpha33">@color/purple_primary_alpha33</color>
+  <color name="def_accent">@color/purple_accent</color>
+  <color name="def_outgoing_bubble">@color/purple_outgoing_bubble</color>
+  <color name="def_outgoing_label">@color/purple_outgoing_label</color>
+  <color name="def_unreadcount">@color/purple_unreadcount</color>
   <!-- ========== -->
 
   <!-- PURPLE -->
