@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools">
+
+    <Preference
+        android:key="preference_category_blocked"
+        android:title="@string/pref_blocked_contacts" />
+
+    <org.thoughtcrime.securesms.components.SwitchPreferenceCompat
+        android:defaultValue="false"
+        android:key="pref_read_receipts"
+        android:summary="@string/pref_read_receipts_explain"
+        android:title="@string/pref_read_receipts" />
+
+    <PreferenceCategory android:title="@string/delete_old_messages">
+        <ListPreference
+            android:key="autodel_device"
+            android:title="@string/autodel_device_title"
+            android:entries="@array/autodel_device_durations"
+            android:entryValues="@array/autodel_device_values"/>
+
+        <ListPreference
+            android:key="autodel_server"
+            android:title="@string/autodel_server_title"
+            android:entries="@array/autodel_server_durations"
+            android:entryValues="@array/autodel_server_values" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_app_access">
+        <org.thoughtcrime.securesms.components.SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="pref_screen_security"
+            android:summary="@string/pref_screen_security_explain"
+            android:title="@string/pref_screen_security" />
+
+        <org.thoughtcrime.securesms.components.SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="pref_incognito_keyboard"
+            android:summary="@string/pref_incognito_keyboard_explain"
+            android:title="@string/pref_incognito_keyboard" />
+
+        <org.thoughtcrime.securesms.components.SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="pref_builtin_camera"
+            android:title="@string/pref_use_inapp_camera"
+            android:summary="@string/pref_use_inapp_camera_explain"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

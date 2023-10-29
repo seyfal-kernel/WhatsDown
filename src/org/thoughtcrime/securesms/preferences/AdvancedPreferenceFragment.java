@@ -19,7 +19,6 @@ import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -36,7 +35,6 @@ import org.thoughtcrime.securesms.connect.DcEventCenter;
 import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.mms.AttachmentManager;
 import org.thoughtcrime.securesms.permissions.Permissions;
-import org.thoughtcrime.securesms.util.Prefs;
 import org.thoughtcrime.securesms.util.ScreenLockUtil;
 import org.thoughtcrime.securesms.util.StorageUtil;
 import org.thoughtcrime.securesms.util.StreamUtil;
@@ -120,9 +118,6 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
 
     Preference manageKeys = this.findPreference("pref_manage_keys");
     manageKeys.setOnPreferenceClickListener(new ManageKeysListener());
-
-    Preference screenSecurity = this.findPreference(Prefs.SCREEN_SECURITY_PREF);
-    screenSecurity.setOnPreferenceChangeListener(new ScreenShotSecurityListener());
 
     Preference submitDebugLog = this.findPreference("pref_view_log");
     submitDebugLog.setOnPreferenceClickListener(new ViewLogListener());
@@ -246,16 +241,6 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
     } catch (PackageManager.NameNotFoundException e) {
       Log.w(TAG, e);
       return context.getString(R.string.app_name);
-    }
-  }
-
-  private class ScreenShotSecurityListener implements Preference.OnPreferenceChangeListener {
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-      boolean enabled = (Boolean) newValue;
-      Prefs.setScreenSecurityEnabled(getContext(), enabled);
-      Toast.makeText(getContext(), R.string.pref_screen_security_please_restart_hint, Toast.LENGTH_LONG).show();
-      return true;
     }
   }
 

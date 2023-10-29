@@ -10,6 +10,11 @@
                 android:icon="@drawable/ic_forum_24dp"
                 android:layout="@layout/preference_item" />
 
+    <Preference android:key="preference_category_privacy"
+                android:title="@string/pref_privacy"
+                android:icon="@drawable/ic_lock_24dp"
+                android:layout="@layout/preference_item" />
+
     <Preference android:key="preference_category_notifications"
                 android:title="@string/pref_notifications"
                 android:icon="@drawable/ic_notifications_24dp"

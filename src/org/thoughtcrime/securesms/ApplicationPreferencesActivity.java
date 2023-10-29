@@ -48,6 +48,7 @@ import org.thoughtcrime.securesms.permissions.Permissions;
 import org.thoughtcrime.securesms.preferences.AdvancedPreferenceFragment;
 import org.thoughtcrime.securesms.preferences.AppearancePreferenceFragment;
 import org.thoughtcrime.securesms.preferences.ChatsPreferenceFragment;
+import org.thoughtcrime.securesms.preferences.PrivacyPreferenceFragment;
 import org.thoughtcrime.securesms.preferences.CorrectedPreferenceFragment;
 import org.thoughtcrime.securesms.preferences.NotificationsPreferenceFragment;
 import org.thoughtcrime.securesms.preferences.widgets.ProfilePreference;
@@ -70,6 +71,7 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
   private static final String PREFERENCE_CATEGORY_NOTIFICATIONS  = "preference_category_notifications";
   private static final String PREFERENCE_CATEGORY_APPEARANCE     = "preference_category_appearance";
   private static final String PREFERENCE_CATEGORY_CHATS          = "preference_category_chats";
+  private static final String PREFERENCE_CATEGORY_PRIVACY        = "preference_category_privacy";
   private static final String PREFERENCE_CATEGORY_MULTIDEVICE    = "preference_category_multidevice";
   private static final String PREFERENCE_CATEGORY_ADVANCED       = "preference_category_advanced";
   private static final String PREFERENCE_CATEGORY_CONNECTIVITY   = "preference_category_connectivity";
@@ -147,6 +149,8 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
         .setOnPreferenceClickListener(new CategoryClickListener(PREFERENCE_CATEGORY_APPEARANCE));
       this.findPreference(PREFERENCE_CATEGORY_CHATS)
         .setOnPreferenceClickListener(new CategoryClickListener(PREFERENCE_CATEGORY_CHATS));
+      this.findPreference(PREFERENCE_CATEGORY_PRIVACY)
+        .setOnPreferenceClickListener(new CategoryClickListener(PREFERENCE_CATEGORY_PRIVACY));
       this.findPreference(PREFERENCE_CATEGORY_MULTIDEVICE)
         .setOnPreferenceClickListener(new CategoryClickListener(PREFERENCE_CATEGORY_MULTIDEVICE));
       this.findPreference(PREFERENCE_CATEGORY_ADVANCED)
@@ -198,6 +202,8 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
           .setSummary(AppearancePreferenceFragment.getSummary(getActivity()));
       this.findPreference(PREFERENCE_CATEGORY_CHATS)
           .setSummary(ChatsPreferenceFragment.getSummary(getActivity()));
+      this.findPreference(PREFERENCE_CATEGORY_PRIVACY)
+          .setSummary(PrivacyPreferenceFragment.getSummary(getActivity()));
       this.findPreference(PREFERENCE_CATEGORY_CONNECTIVITY)
           .setSummary(DcHelper.getConnectivitySummary(getActivity(), R.string.connectivity_connected));
       this.findPreference(PREFERENCE_CATEGORY_HELP)
@@ -210,6 +216,7 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
       Drawable swap          = DrawableCompat.wrap(ContextCompat.getDrawable(context, R.drawable.ic_swap_vert_white_24dp));
       Drawable appearance    = DrawableCompat.wrap(ContextCompat.getDrawable(context, R.drawable.ic_brightness_6_white_24dp));
       Drawable chats         = DrawableCompat.wrap(ContextCompat.getDrawable(context, R.drawable.ic_forum_white_24dp));
+      Drawable privacy       = DrawableCompat.wrap(ContextCompat.getDrawable(context, R.drawable.ic_lock_white_24dp));
       Drawable advanced      = DrawableCompat.wrap(ContextCompat.getDrawable(context, R.drawable.ic_advanced_white_24dp));
       Drawable help          = DrawableCompat.wrap(ContextCompat.getDrawable(context, R.drawable.ic_help_white_24dp));
 
@@ -222,6 +229,7 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
       DrawableCompat.setTint(swap, color);
       DrawableCompat.setTint(appearance, color);
       DrawableCompat.setTint(chats, color);
+      DrawableCompat.setTint(privacy, color);
       DrawableCompat.setTint(advanced, color);
       DrawableCompat.setTint(help, color);
 
@@ -229,6 +237,7 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
       this.findPreference(PREFERENCE_CATEGORY_CONNECTIVITY).setIcon(swap);
       this.findPreference(PREFERENCE_CATEGORY_APPEARANCE).setIcon(appearance);
       this.findPreference(PREFERENCE_CATEGORY_CHATS).setIcon(chats);
+      this.findPreference(PREFERENCE_CATEGORY_PRIVACY).setIcon(privacy);
       this.findPreference(PREFERENCE_CATEGORY_ADVANCED).setIcon(advanced);
       this.findPreference(PREFERENCE_CATEGORY_HELP).setIcon(help);
     }
@@ -266,6 +275,9 @@ public class ApplicationPreferencesActivity extends PassphraseRequiredActionBarA
           break;
         case PREFERENCE_CATEGORY_CHATS:
           fragment = new ChatsPreferenceFragment();
+          break;
+        case PREFERENCE_CATEGORY_PRIVACY:
+          fragment = new PrivacyPreferenceFragment();
           break;
         case PREFERENCE_CATEGORY_MULTIDEVICE:
           if (!ScreenLockUtil.applyScreenLock(getActivity(), getString(R.string.multidevice_title),
