@@ -698,7 +698,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       if (getSharedHtml(this) != null || getSharedSubject(this) != null || ("sticker".equals(getSharedType(this)) && !uriList.isEmpty())) {
         SendRelayedMessageUtil.immediatelyRelay(this, chatId);
       } else {
-        dcContext.setDraft(chatId, SendRelayedMessageUtil.createMessage(this, uriList.get(0), getSharedType(this), null, null, getSharedText(this)));
+        Uri uri = uriList.isEmpty()? null : uriList.get(0);
+        dcContext.setDraft(chatId, SendRelayedMessageUtil.createMessage(this, uri, getSharedType(this), null, null, getSharedText(this)));
       }
       initializeDraft();
     }
