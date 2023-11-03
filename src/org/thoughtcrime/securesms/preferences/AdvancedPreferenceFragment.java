@@ -336,7 +336,7 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
       .setTitle(R.string.pref_managekeys_import_secret_keys)
       .setMessage(getActivity().getString(R.string.pref_managekeys_import_explain, pathAsDisplayedToUser))
       .setNegativeButton(android.R.string.cancel, null)
-      .setPositiveButton(android.R.string.ok, (dialogInterface2, i2) -> startImex(DcContext.DC_IMEX_IMPORT_SELF_KEYS, imexPath, pathAsDisplayedToUser))
+      .setPositiveButton(android.R.string.ok, (dialogInterface2, i2) -> startImexOne(DcContext.DC_IMEX_IMPORT_SELF_KEYS, imexPath, pathAsDisplayedToUser))
       .show();
   }
 
@@ -370,7 +370,7 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
                           .setTitle(R.string.pref_managekeys_export_secret_keys)
                           .setMessage(getActivity().getString(R.string.pref_managekeys_export_explain, DcHelper.getImexDir().getAbsolutePath()))
                           .setNegativeButton(android.R.string.cancel, null)
-                          .setPositiveButton(android.R.string.ok, (dialogInterface2, i2) -> startImex(DcContext.DC_IMEX_EXPORT_SELF_KEYS))
+                          .setPositiveButton(android.R.string.ok, (dialogInterface2, i2) -> startImexOne(DcContext.DC_IMEX_EXPORT_SELF_KEYS))
                           .show();
                     }
                     else {

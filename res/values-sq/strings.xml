@@ -33,6 +33,8 @@
     <string name="close">Mbylle</string>
     <string name="close_window">Mbylle Dritaren</string>
     <string name="forward">Përpara</string>
+    <string name="create">Krijoje</string>
+    <string name="later">Më vonë</string>
     <!-- "Resend" means "Sending the selected message(s) again to the same chat". The string is used in a menu and should be as short as possible. Resending may be needed after failures or to repost old messages to new members. -->
     <string name="resend">Ridërgoje</string>
     <!-- Verb "to archive", as in "put a chat in the archive", not a noun "The Archive". -->
@@ -144,6 +146,9 @@
     <string name="gif">Gif</string>
     <!-- "Stickers" as known from other messengers; in some languages, the English "Sticker" is fine. -->
     <string name="sticker">Ngjitës</string>
+    <string name="add_to_sticker_collection">Shtoje te Koleksion Ngjitësish</string>
+    <string name="add_stickers_instructions">Që të shtoni ngjitës, prekni “Hap Dosje Ngjitësish”, krijoni një nëndosje për paketën e ngjitësit tuaj dhe tërhiqni në të figurë dhe kartela ngjitësi</string>
+    <string name="open_sticker_folder">Hap Dosje Ngjitësish</string>
     <string name="images">Figura</string>
     <string name="audio">Audio</string>
     <string name="voice_message">Mesazh zanor</string>
@@ -202,6 +207,9 @@
     <string name="broadcast_lists">Lista Transmetimi</string>
     <string name="new_broadcast_list">Listë e Re Transmetimi</string>
     <string name="add_recipients">Shtoni Marrës</string>
+    <string name="edit_broadcast_list">Përpunoni Listë Transmetimesh</string>
+    <string name="broadcast_list_name">Emër Liste Transmetimesh</string>
+    <string name="please_enter_broadcast_list_name">Ju lutemi, jepni një emër për listën e transmetimeve</string>
     <string name="menu_send">Dërgoje</string>
     <string name="menu_toggle_keyboard">Shfaq/fshih tastierë emoji</string>
     <string name="menu_edit_group">Përpunoni grup</string>
@@ -226,6 +234,7 @@
     <string name="menu_copy_image_to_clipboard">Kopjo figurën</string>
     <string name="menu_copy_email_to_clipboard">Kopjo Email</string>
     <string name="paste_from_clipboard">Ngjite prej të papastre</string>
+    <string name="ask_copy_unopenable_link_to_clipboard">Lidhja “%1$d” s’mund të hapet te shfletuesi. Doni, në vend të kësaj, të kopjohet lidhja në të papastër?</string>
     <string name="menu_forward">Përcille mesazhin</string>
     <string name="menu_reply">Përgjigju mesazhit</string>
     <string name="menu_mute">Heshto njoftimet</string>
@@ -235,6 +244,7 @@
     <string name="menu_all_media">Krejt mediat</string>
     <!-- Command to jump to the original message corresponding to a gallery image or document -->
     <string name="show_in_chat">Shfaqe në fjalosje</string>
+    <string name="show_app_in_chat">Shfaqe Aplikacionin në Fjalosje</string>
     <string name="menu_share">Ndajeni me të tjerë</string>
     <!-- Verb "to block sth." usually a mailing list or a contact, not a noun -->
     <string name="block">Bllokoje</string>
@@ -246,6 +256,7 @@
     <string name="menu_scroll_to_bottom">Rrëshqit drejt fundit</string>
     <string name="menu_scroll_to_top">Rrëshqit sipër në krye</string>
     <string name="menu_help">Nidhmë</string>
+    <string name="what_is_webxdc">Ç’është Webxdc?</string>
     <string name="privacy_policy">Rregulla Privatësie</string>
     <string name="menu_select_all">Përzgjidhi krejt</string>
     <string name="select_chat">Përzgjidhni Fjalosje</string>
@@ -282,6 +293,7 @@
     <string name="source_code">Kod Burim</string>
     <!-- Menu item beside an app/chat that adds an icon to the system's home screen. If the user taps that icon, the app/chat is opened directly. -->
     <string name="add_to_home_screen">Shtoje te Skena e Kreut</string>
+    <string name="donate">Dhuroni</string>
 
     <string name="mute_for_one_hour">Heshtoji për 1 orë</string>
     <string name="mute_for_two_hours">Heshtoji për 2 orë</string>
@@ -374,6 +386,7 @@
     </plurals>
     <!-- The placeholder will be replaced by the name of the recipient in a one-to-one chat. -->
     <string name="chat_new_one_to_one_hint">Dërgoni një mesazh. S’ka problem nëse %1$s nuk përdor Delta Chat.</string>
+    <string name="chat_new_broadcast_hint">Në një listë transmetimesh, marrësit do të marrin mesazhe në një fjalosje të llojit “vetëm lexim” me ju.</string>
     <string name="chat_new_group_hint">Hartoni mesazhin e parë, duke u lejuar të tjerëve të përgjigjen brenda këtij grupi.\n\n• S\’ka problem nëse Delta Chat-in s\’e përdorin  të tërë anëtarë.\n\n• Dërgimi i mesazhit të parë mund të zgjasë ca.</string>
     <string name="chat_record_slide_to_cancel">Rrëshqiteni që të anulohet</string>
     <string name="chat_record_explain">Prekeni dhe mbajeni të prekur që të incizoni një mesazh zanor; lëshojeni, që të dërgohet</string>
@@ -438,6 +451,8 @@
 
     <!-- search -->
     <string name="search">Kërko</string>
+    <string name="search_in_chat">Kërko në Fjalosje</string>
+    <string name="search_files">Kërko në Kartela</string>
     <string name="search_explain">Kërkoni për fjalosje, kontakte dhe mesazhe.</string>
     <string name="search_no_result_for_x">S\’u gjetën përfundime për \"%s\"</string>
 
@@ -453,6 +468,7 @@
     <string name="group_self_not_in_group">Duhet të jeni anëtar i grupit që të kryeni këtë veprim.</string>
     <string name="profile_encryption">Fshehtëzim</string>
     <string name="profile_shared_chats">Fjalosje të përbashkëta</string>
+    <string name="related_chats">Fjalosje të Afërta</string>
     <string name="tab_contact">Kontakt</string>
     <string name="tab_group">Grup</string>
     <string name="tab_gallery">Galeri</string>
@@ -467,6 +483,10 @@
     <string name="tab_webxdc_empty_hint">Këtu do të shfaqen aplikacione private të përbashkët në këtë fjalosje </string>
     <string name="tab_all_media_empty_hint">Këtu do të duke media e dhënë në çfarëdo fjalosjeje.</string>
     <string name="media_preview">Paraparje media</string>
+    <!-- option to show images in the gallery with the correct width/height aspect (instead of square); other gallery apps may be a source of inspiration for translation :) -->
+    <string name="aspect_ratio_grid">Mozaik Përpjesëtimor  </string>
+    <!-- option to show images in the gallery as square (instead of using correct width/height) -->
+    <string name="square_grid">Mozaik Katror</string>
     <string name="send_message">Dërgo mesazh</string>
     <!-- Placeholder %1$s will be replaced by the name of the contact changing their address. Placeholders %2$s and %3$s will be replaced by old/new email addresses. -->
     <string name="aeap_addr_changed">%1$s ndryshoi adresën e vet nga %2$s në %3$s</string>
@@ -655,6 +675,10 @@
     <string name="pref_backup">Kopjeruajtje</string>
     <string name="pref_backup_explain">Kopjeruaji fjalosjet në depozitim të jashtëm</string>
     <string name="pref_backup_export_explain">Një kopjeruajtje ju lejon të rregulloni një instalim të ri në këtë apo në një tjetër pajisje.\n\nKopjeruajtja do të përmbajë krejt mesazhet, kontaktet dhe fjalosjet, si dhe rregullimin tuaj për Autocrypt skaj-më-skaj. Mbajeni kartelën e kopjeruajtjes diku të parrezikuar, përndryshe fshijeni as më shpejt që të jetë e mundur.</string>
+    <!-- the placeholder will be replaced by the name of the account's email address -->
+    <string name="pref_backup_export_x">Eksporto %1$s</string>
+    <!-- the placeholder will be replaced by the number of accounts to export; the number is always larger than 1 -->
+    <string name="pref_backup_export_all">Eksporto krejt llogaritë e %1$d</string>
     <string name="pref_backup_export_start_button">Fillo kopjeruajtjen</string>
     <string name="pref_backup_written_to_x">Kopjeruajtje e shkruar me sukses te %1$s</string>
     <string name="pref_managekeys_menu_title">Administroni kyçe</string>
@@ -704,6 +728,8 @@
     <string name="profile_image_delete">Fshini figurën e profilit</string>
     <string name="pref_show_tray_icon">Shfaq ikonë paneli</string>
     <string name="pref_edit_profile">Përpunoni profil</string>
+    <string name="disable_imap_idle">Çaktivizo IMAP IDLE</string>
+    <string name="disable_imap_idle_explain">Mos e përdor zgjerimin IMAP IDLE, edhe kur shërbyesi e mbulon. Aktivizimi i kësaj mundësie do të vonojë marrjen e mesazheve, aktivizojeni vetëm për testime.</string>
 
     <!-- Emoji picker and categories -->
     <string name="emoji_search_results">Përfundime kërkimi</string>
@@ -830,6 +856,14 @@
     <string name="ephemeral_timer_weeks_by_you">E vutë kohëmatësin e zhdukjes së mesazheve në %1$s javë.</string>
     <!-- %1$s will be replaced by the number of weeks (always >1) the timer is set to, %2$s will be replaced by name and address of the contact -->
     <string name="ephemeral_timer_weeks_by_other">Kohëmatësi i zhdukjes së mesazheve u vu në %1$s javë nga %2$s.</string>
+    <!-- this may be shown instead of the chat's input field, with buttons "More Info" and "OK" -->
+    <string name="chat_protection_broken">%1$s dërgoi një mesazh nga një pajisje tjetër.</string>
+    <string name="chat_protection_enabled_tap_to_learn_more">Nga sot e tutje për mesazhet garantohet fshehtëzimi skaj-më-skaj. Prekeni që të mësoni më tepër.</string>
+    <string name="chat_protection_enabled_explanation">Tanimë për mesazhet në këtë fjalosje garantohet fshehtëzimi skaj-më-skaj.\n\nFshehtëzimi skaj-më-skaj i mban private mesazhet mes jush dhe partnerëve tuaj të fjalosjes. Ato s’mund t’i lexojë as furnizuesi i shërbimit tuaj email.</string>
+    <string name="chat_protection_broken_tap_to_learn_more">%1$s dërgoi një mesazh nga një pajisje tjetër. Prekeni që të mësoni më tepër.</string>
+    <string name="chat_protection_broken_explanation">Fshehtëzimi skaj-më-skaj s’mund të garantohet më, ngaqë, sipas gjasash, %1$s riinstaloi Delta Chat-in, ose dërgoi një mesazh nga një tjetër pajisje.\n\nMund t’i takoni dhe të skanoni KODIN e tyre QR sërish, që të rivendoset fshehtëzim skaj-më-skaj i garantuar.</string>
+    <string name="learn_more">Mësoni Më Tepër</string>
+
     <string name="devicemsg_self_deleted">Fshitë fjalosjen “Mesazhe të ruajtur”.\n\nℹ️ Që të përdorni sërish veçorinë “Mesazhe të ruajtur”, krijoni një fjalosje të re me veten tuaj.</string>
     <!-- %1$s will be replaced by the amount of storage already used, sth. as '500 MB'. If you want to use a percentage sign, type in two of them, eg. %1$s %% -->
     <string name="devicemsg_storage_exceeding">⚠️ Po mbaron depozita e shërbimit tuaj, përdoren tashmë %1$s%%.\n\nKur depozita është 100%% e përdorur, mund të mos jeni në gjendje të merrni mesazhe.\n\n👉 Ju lutemi, shihni se mos mund të fshini të dhëna të vjetra që nga ndërfaqja web e furnizuesit të shërbimit dhe shihni mundësinë të aktivizoni “Rregullime / Fshi Mesazhe të Vjetër”. Se sa depozitë është aktualisht e përdorur mund ta kontrolloni kurdo, që nga \"Rregullime / Lidhje\".</string>
@@ -891,7 +925,9 @@
     <string name="verified_by_you">Verifikuar nga ju</string>
     <!-- translators: "setup" is the "encryption setup" here, as in "Autocrypt Setup Message" -->
     <string name="contact_setup_changed">U ndryshua rregullimi për %1$s</string>
-    <string name="verified_group_explain">Grupet e verifikuara (eksperimentale) furnizojnë siguri kundër sulmesh aktive. Anëtarët janë të verifikuar me një faktor të dytë nga anëtarë të tjerë dhe mesazhet janë përherë të fshehtëzuara skaj më skaj.</string>
+    <string name="verified_group_explain">Grupet e verifikuara garantojnë fshehtëzim skaj-më-skaj. Në to mund të shtohen vetëm kontakte me një shenjë të gjelbër verifikimi.</string>
+    <string name="verified_contact_required_explain">Që të garantohte fshehtëzim skaj-më-skaj, mund të shtoni në këtë grup vetëm kontakte me shenjën e gjelbër të verifikimit.\n\nMund të takoheni drejtpërsëdrejti me kontakte të paverifikuar dhe të skanoni kodin e tyre QR për t’i verifikuar ata.</string>
+    <string name="create_verified_group_ask">Krejt anëtarët kanë një shenjë të gjelbër verifikimi.\n\nDoni të krijohet një grup që garanton fshehtëzim skaj-më-skaj?</string>
     <string name="copy_qr_data_success">URL-ja QR u kopjua në të papastër</string>
     <string name="mailto_dialog_header_select_chat">Përzgjidhni fjalosje ku të dërgohet mesazhi</string>
     <!-- first placeholder is the name of the chat -->
@@ -909,6 +945,8 @@
     <string name="notify_name_only">Vetëm emër</string>
     <string name="notify_no_name_or_message">Pa emër apo mesazh</string>
     <string name="notifications_disabled">Njoftimet të çaktivizuara</string>
+    <string name="new_messages">Mesazhe të rinj</string>
+    <string name="n_messages_in_m_chats">%1$d mesazhe në %2$d fjalosje</string>
 
 
     <!-- permissions -->
