@@ -76,8 +76,8 @@ public class AccountSelectionListItem extends LinearLayout {
       addrView.setTypeface(null, Typeface.BOLD);
       nameView.setTypeface(null, Typeface.BOLD);
     } else {
-      addrView.setTypeface(null, 0);
-      nameView.setTypeface(null, 0);
+      addrView.setTypeface(null, Typeface.NORMAL);
+      nameView.setTypeface(null, accountId == DcContact.DC_CONTACT_ID_ADD_ACCOUNT? Typeface.BOLD : Typeface.NORMAL);
     }
 
     updateUnreadIndicator(unreadCount);

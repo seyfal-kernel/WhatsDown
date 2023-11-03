@@ -29,6 +29,7 @@
     <string name="emoji">Емодзі</string>
     <string name="attachment">Вкладення</string>
     <string name="back">Назад</string>
+    <!-- this string is deprecated; the new wording is "introduced by ..." -->
     <string name="verified">Підтверджено</string>
     <string name="close">Закрити</string>
     <string name="close_window">Закрити вікно</string>
@@ -51,7 +52,6 @@
     <string name="main_menu">Головне меню</string>
     <string name="start_chat">Почати розмову</string>
     <string name="show_full_message">Показати повне повідомлення...</string>
-    <string name="show_full_message_in_browser">Показати повне повідомлення у браузері...</string>
     <!-- Stay short here, say ~16 characters. The source string could also be "All Read", maybe that hint can make translations easier :) -->
     <string name="mark_all_as_read">Позначити все як прочитане</string>
     <!-- Shortest text for "Mark as being read". In english, this could be "Read" (past tense of "to read"), in german, this could be "Gelesen". -->
@@ -175,7 +175,6 @@
     <string name="video">Відео</string>
     <string name="documents">Документи</string>
     <string name="contact">Контакт</string>
-    <string name="verified_contact">Перевірений контакт</string>
     <string name="camera">Камера</string>
     <!-- As in "start a video recording" or "take a photo"; eg. the description of the "shutter button" in cameras -->
     <string name="capture">Захопити</string>
@@ -191,7 +190,6 @@
     <string name="webxdc_app">Застосунок</string>
     <!-- plural of "App"; used to present "Webxdc App" (https://webxdc.org) in a user friendly way. Please stay close to the original term and keep it short (it is used in menus with few screen space). -->
     <string name="webxdc_apps">Застосунки</string>
-    <string name="files_and_webxdx_apps">Файли і застосунки</string>
     <string name="unknown">Невідомо</string>
 
     <string name="green">Зелений</string>
@@ -217,9 +215,6 @@
     <string name="menu_new_contact">Новий контакт</string>
     <string name="menu_new_chat">Новий чат</string>
     <string name="menu_new_group">Нова група</string>
-    <!-- Use the same wording as "Subject" to help people coming from the e-mail context; eg. "Betreff" in German -->
-    <string name="new_group_or_subject">Нова група або тема</string>
-    <string name="menu_new_verified_group">Нова перевірена група</string>
     <!-- consider keeping the term "broadcast" as in WhatsApp or Telegram -->
     <string name="broadcast_list">Список трансляцій</string>
     <string name="broadcast_lists">Списки трансляцій</string>
@@ -568,7 +563,6 @@
     <!-- welcome and login -->
     <string name="welcome_chat_over_email">Чат через електронну пошту.</string>
     <string name="scan_invitation_code">Сканувати код запрошення</string>
-    <string name="welcome_intro1_message">Мессенджер з найширшою аудиторією у світі. Безкоштовний і незалежний.</string>
     <string name="login_title">Увійти</string>
     <string name="login_header">Увійдіть до свого облікового запису електронної пошти</string>
     <string name="login_explain">Увійти з наявним обліковим записом електронної пошти</string>
@@ -593,8 +587,6 @@
     <string name="login_socks5_port">Порт SOCKS5</string>
     <string name="login_socks5_user">Ім\'я користувача SOCKS5</string>
     <string name="login_socks5_password">Пароль SOCKS5</string>
-    <!-- Translators: %1$s will be replaced by an e-mail address -->
-    <string name="login_oauth2_checking_addr">Перевірка %1$s</string>
     <string name="login_info_oauth2_title">Продовжити спрощене налаштування?</string>
     <string name="login_info_oauth2_text">Введена адреса електронної пошти підтримує спрощене налаштування (OAuth2).\n\nНа наступному кроці дозвольте, будь ласка, Delta Chat виступати у якості Вашого додатку для чату за допомогою електронної пошти.\n\nУ Delta Chat немає серверів, Ваші дані залишаються на Вашому пристрої!</string>
     <string name="login_certificate_checks">Перевірки сертифікатів</string>
@@ -791,7 +783,7 @@
     <string name="autocrypt_send_asm_title">Надіслати повідомлення з параметрами Autocrypt</string>
     <string name="autocrypt_send_asm_explain_before">«Повідомлення з параметрами Autocrypt» слугує для безпечної передачі параметрів наскрізного шифрування між власними додатками для роботи з електронною поштою, що підтримують протокол Autocrypt.\n\nЦі параметри шифруються з використанням спеціального інсталяційного коду, що показаний тут і повинен бути введений у налаштовуємому додатку.</string>
     <string name="autocrypt_send_asm_button">Надіслати повідомлення з параметрами Autocrypt</string>
-    <string name="autocrypt_send_asm_explain_after">Параметри шифрування були Вам надіслані. Відкрийте інсталяційне повідомлення у налаштовуємій програмі, після чого вона запросить інсталяційний код. Введіть наступний код:\n\n%1$s\n\nПісля завершення налаштування програма зможе використовувати Autocrypt.</string>
+    <string name="autocrypt_send_asm_explain_after">Параметри шифрування були Вам надіслані. Відкрийте інсталяційне повідомлення у налаштовуємій програмі, після чого вона запросить інсталяційний код. Введіть наступний код.\n\nПісля завершення налаштування програма зможе використовувати Autocrypt.</string>
     <string name="autocrypt_prefer_e2ee">Віддавати перевагу наскрізному шифруванню</string>
     <string name="autocrypt_asm_subject">Повідомлення з параметрами Autocrypt</string>
     <string name="autocrypt_asm_general_body">Це повідомлення з параметрами Autocrypt, що слугує для передачі параметрів наскрізного шифрування між пристроями.\n\nДля розшифрування параметрів відкрийте це повідомлення у додатку, що підтримує Autocrypt і введіть інсталяційний код, показаний на початковому пристрої.</string>
@@ -926,7 +918,7 @@
     <string name="secure_join_replies">%1$s відповіли, очікуємо на додавання до групи…</string>
     <string name="contact_verified">%1$s підтверджений(-а)</string>
     <string name="contact_not_verified">Неможливо підтвердити %1$s</string>
-    <!-- Shown in contact profile. The placeholder will be replaced by the name of the contact that verified the contact shown. -->
+    <!-- Shown in contact profile. The placeholder will be replaced by the name of the contact that introduced the contact. -->
     <string name="verified_by">Підтверджено %1$s</string>
     <string name="verified_by_you">Підтверджено вами</string>
     <!-- translators: "setup" is the "encryption setup" here, as in "Autocrypt Setup Message" -->
@@ -1005,13 +997,17 @@
     <string name="remove_desktop">Видалити</string>
     <string name="save_desktop">Зберегти</string>
     <string name="name_desktop">Ім\'я</string>
+    <!-- deprecated, use autocrypt_send_asm_title / autocrypt_continue_transfer_title -->
     <string name="autocrypt_key_transfer_desktop">Передавання ключів Autocrypt</string>
+    <!-- deprecated, use autocrypt_send_asm_explain_before -->
     <string name="initiate_key_transfer_desktop">Повідомлення з параметрами Autocrypt слугує для безпечного передавання параметрів наскрізного шифрування між власними додатками для роботи з електронною поштою, що підтримують протокол Autocrypt. Ці параметри шифруються з використанням спеціального інсталяційного коду, що показаний тут і повинен бути введений у налаштовуємому додатку.</string>
     <string name="select_group_image_desktop">Вибрати зображення групи</string>
     <string name="imex_progress_title_desktop">Прогрес резервного копіювання</string>
     <string name="export_backup_desktop">Експорт резервної копії</string>
+    <!-- deprecated, use autocrypt_send_asm_explain_after instead -->
     <string name="show_key_transfer_message_desktop">Ваш ключ було надіслано до вас. Перейдіть на інший пристрій та відкрийте установче повідомлення. Вас мають спитати установчий код. Введіть наступні цифри:</string>
     <string name="autocrypt_correct_desktop">Налаштування Autocrypt успішно передані!</string>
+    <!-- deprecated, use autocrypt_bad_setup_code instead -->
     <string name="autocrypt_incorrect_desktop">Невірний інсталяційний код. Спробуйте ввести його повторно.</string>
     <string name="create_chat_error_desktop">Не вдалося створити чат.</string>
     <string name="forget_login_confirmation_desktop">Видалити цей обліковий запис? При цьому будуть видалені всі дані, включно з параметрами наскрізного шифрування, списками контактів, чатами, повідомленнями та медіафайлами. Цю дію не можна буде скасувати.</string>
