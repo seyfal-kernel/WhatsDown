@@ -79,6 +79,10 @@ public class Util {
     return value == null || value.getText() == null || TextUtils.isEmpty(value.getTextTrimmed());
   }
 
+  public static boolean isEmpty(@Nullable CharSequence charSequence) {
+    return charSequence == null || charSequence.length() == 0;
+  }
+
   public static CharSequence getBoldedString(String value) {
     SpannableString spanned = new SpannableString(value);
     spanned.setSpan(new StyleSpan(Typeface.BOLD), 0,
