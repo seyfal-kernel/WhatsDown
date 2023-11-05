@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Build;
+import android.text.Spannable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
@@ -31,6 +32,7 @@ import org.thoughtcrime.securesms.mms.Slide;
 import org.thoughtcrime.securesms.mms.SlideDeck;
 import org.thoughtcrime.securesms.recipients.Recipient;
 import org.thoughtcrime.securesms.recipients.RecipientForeverObserver;
+import org.thoughtcrime.securesms.util.MarkdownUtil;
 import org.thoughtcrime.securesms.util.MediaUtil;
 import org.thoughtcrime.securesms.util.ThemeUtil;
 import org.thoughtcrime.securesms.util.Util;
@@ -178,7 +180,7 @@ public class QuoteView extends FrameLayout implements RecipientForeverObserver {
   private void setQuoteText(@Nullable CharSequence body, @NonNull SlideDeck attachments) {
     if (!TextUtils.isEmpty(body) || !attachments.containsMediaSlide()) {
       bodyView.setVisibility(VISIBLE);
-      bodyView.setText(body == null ? "" : body);
+      bodyView.setText((Spannable) MarkdownUtil.toMarkdown(getContext(), body == null ? "" : body.toString()));
     } else {
       bodyView.setVisibility(GONE);
     }

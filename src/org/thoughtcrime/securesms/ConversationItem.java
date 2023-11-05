@@ -22,9 +22,8 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
-import android.text.Spannable;
 import android.os.Build;
-import android.text.SpannableString;
+import android.text.Spannable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -43,13 +42,6 @@ import com.b44t.messenger.DcContact;
 import com.b44t.messenger.DcMsg;
 import com.b44t.messenger.rpc.Reactions;
 import com.b44t.messenger.rpc.RpcException;
-
-import io.noties.markwon.AbstractMarkwonPlugin;
-import io.noties.markwon.Markwon;
-import io.noties.markwon.MarkwonVisitor;
-import io.noties.markwon.ext.strikethrough.StrikethroughPlugin;
-import io.noties.markwon.ext.tasklist.TaskListPlugin;
-import org.commonmark.node.SoftLineBreak;
 
 import org.thoughtcrime.securesms.audio.AudioSlidePlayer;
 import org.thoughtcrime.securesms.components.AudioView;
@@ -73,6 +65,7 @@ import org.thoughtcrime.securesms.mms.StickerSlide;
 import org.thoughtcrime.securesms.reactions.ReactionsConversationView;
 import org.thoughtcrime.securesms.recipients.Recipient;
 import org.thoughtcrime.securesms.util.LongClickMovementMethod;
+import org.thoughtcrime.securesms.util.MarkdownUtil;
 import org.thoughtcrime.securesms.util.MediaUtil;
 import org.thoughtcrime.securesms.util.Prefs;
 import org.thoughtcrime.securesms.util.Util;
@@ -128,29 +121,12 @@ public class ConversationItem extends BaseConversationItem
   private int incomingBubbleColor;
   private int outgoingBubbleColor;
 
-  private final Markwon markwon;
-
   public ConversationItem(Context context) {
     this(context, null);
   }
 
   public ConversationItem(Context context, AttributeSet attrs) {
     super(context, attrs);
-    markwon = Markwon.builder(context)
-	.usePlugin(StrikethroughPlugin.create())
-	.usePlugin(TaskListPlugin.create(context))
-	.usePlugin(new AbstractMarkwonPlugin() {
-            @Override
-            public void configureVisitor(@NonNull MarkwonVisitor.Builder builder) {
-                builder.on(SoftLineBreak.class, new MarkwonVisitor.NodeVisitor<SoftLineBreak>() {
-                    @Override
-                    public void visit(@NonNull MarkwonVisitor visitor, @NonNull SoftLineBreak softLineBreak) {
-                        visitor.forceNewLine();
-                    }
-                });
-            }
-        })
-	.build();
   }
 
   @Override
@@ -406,7 +382,7 @@ public class ConversationItem extends BaseConversationItem
       bodyText.setVisibility(View.GONE);
     }
     else {
-      Spannable spannable = (Spannable)markwon.toMarkdown(text);
+      Spannable spannable = (Spannable) MarkdownUtil.toMarkdown(context, text);
       if (batchSelected.isEmpty()) {
         spannable = EmojiTextView.linkify(spannable);
       }
