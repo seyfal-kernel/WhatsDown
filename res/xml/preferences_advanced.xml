@@ -53,7 +53,7 @@
             android:title="@string/broadcast_lists"/>
 
         <org.thoughtcrime.securesms.components.SwitchPreferenceCompat
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="pref_send_reactions"
             android:title="@string/reactions"/>
 

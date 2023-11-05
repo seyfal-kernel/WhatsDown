@@ -59,7 +59,7 @@ public class AddReactionView extends LinearLayout {
     public void show(DcMsg msgToReactTo, View parentView, AddReactionListener listener) {
         init(); // init delayed as needed
 
-        if (!Prefs.getBooleanPreference(context, "pref_send_reactions", false)) {
+        if (!Prefs.getBooleanPreference(context, "pref_send_reactions", true)) {
             return;
         }
 
