@@ -255,6 +255,8 @@ public class DcHelper {
     // DC_INFO_PROTECTION_{EN|DIS}ABLED info message
     dcContext.setStockTranslation(170, context.getString(R.string.chat_protection_enabled_tap_to_learn_more));
     dcContext.setStockTranslation(171, context.getString(R.string.chat_protection_broken_tap_to_learn_more));
+
+    dcContext.setStockTranslation(172, context.getString(R.string.chat_new_group_hint));
   }
 
   public static File getImexDir() {
@@ -462,7 +464,7 @@ public class DcHelper {
   public static void showVerificationBrokenDialog(Context context, String name) {
     new AlertDialog.Builder(context)
             .setMessage(context.getString(R.string.chat_protection_broken_explanation, name))
-            .setNeutralButton(R.string.learn_more, (d, w) -> IntentUtils.showBrowserIntent(context, "https://staging.delta.chat/733/en/help#verificationbroken"))
+            .setNeutralButton(R.string.learn_more, (d, w) -> IntentUtils.showBrowserIntent(context, "https://staging.delta.chat/746/en/help#nocryptanymore"))
             .setNegativeButton(R.string.qrscan_title, (d, w) -> context.startActivity(new Intent(context, QrActivity.class)))
             .setPositiveButton(R.string.ok, null)
             .setCancelable(true)
@@ -472,7 +474,7 @@ public class DcHelper {
   public static void showProtectionEnabledDialog(Context context) {
     new AlertDialog.Builder(context)
             .setMessage(context.getString(R.string.chat_protection_enabled_explanation))
-            .setNeutralButton(R.string.learn_more, (d, w) -> IntentUtils.showBrowserIntent(context, "https://staging.delta.chat/733/en/help#verifiedchats"))
+            .setNeutralButton(R.string.learn_more, (d, w) -> IntentUtils.showBrowserIntent(context, "https://staging.delta.chat/746/en/help#e2eeguarantee"))
             .setPositiveButton(R.string.ok, null)
             .setCancelable(true)
             .show();

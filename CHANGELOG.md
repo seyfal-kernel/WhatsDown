@@ -1,5 +1,30 @@
 # Delta Chat Android Changelog
 
+## v1.41.5 Testrun
+2023-11
+
+* sync Accept/Blocked, Archived, Pinned and Mute across devices
+* add "group created instructions" as info message to new chats
+* clone group in the group's profile menu
+* add hardcoded fallback DNS cache
+* improve group creation and make it more obvious that a group is created
+* auto-detect if a group with guaranteed end-to-end encryption can be created
+* more graceful ratelimit for .testrun.org subdomains
+* faster message detection on the server
+* fix accidentally hidden title bar on android14
+* fix: more reliable group consistency by always automatically downloading messages up to 160k
+* fix: properly abort backup process if there is some failure
+* fix: make sure, a QR scan succeeds if there is some leftover from a previously broken scan
+* fix: allow other guaranteed e2ee group recipients to be unverified, only check the sender verification
+* fix: switch to "Mutual" encryption preference on a receipt of encrypted+signed message
+* fix hang in receiving messages when accidentally going IDLE
+* fix: allow verified key changes via "member added" message
+* fix: partial messages do not change group state
+* fix: don't implicitly delete members locally, add absent ones instead
+* update translations
+* update to core 1.129.1
+
+
 ## v1.41.3 Testrun
 2023-10
 
