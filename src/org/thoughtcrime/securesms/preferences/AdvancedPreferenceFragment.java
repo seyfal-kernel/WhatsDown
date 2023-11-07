@@ -6,7 +6,6 @@ import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_BCC_SELF;
 import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_E2EE_ENABLED;
 import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_MVBOX_MOVE;
 import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_ONLY_FETCH_MVBOX;
-import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_SENTBOX_WATCH;
 
 import android.Manifest;
 import android.content.Context;
@@ -53,7 +52,6 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
   public static final int PICK_SELF_KEYS = 29923;
 
   CheckBoxPreference preferE2eeCheckbox;
-  CheckBoxPreference sentboxWatchCheckbox;
   CheckBoxPreference bccSelfCheckbox;
   CheckBoxPreference mvboxMoveCheckbox;
   CheckBoxPreference onlyFetchMvboxCheckbox;
@@ -67,15 +65,6 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
 
     preferE2eeCheckbox = (CheckBoxPreference) this.findPreference("pref_prefer_e2ee");
     preferE2eeCheckbox.setOnPreferenceChangeListener(new PreferE2eeListener());
-
-    sentboxWatchCheckbox = (CheckBoxPreference) this.findPreference("pref_sentbox_watch");
-    sentboxWatchCheckbox.setOnPreferenceChangeListener((preference, newValue) -> {
-      boolean enabled = (Boolean) newValue;
-      DcHelper.getAccounts(getContext()).stopIo();
-      dcContext.setConfigInt(CONFIG_SENTBOX_WATCH, enabled? 1 : 0);
-      DcHelper.getAccounts(getContext()).startIo();
-      return true;
-    });
 
     bccSelfCheckbox = (CheckBoxPreference) this.findPreference("pref_bcc_self");
     bccSelfCheckbox.setOnPreferenceChangeListener((preference, newValue) -> {
@@ -191,7 +180,6 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
     ((ApplicationPreferencesActivity) getActivity()).getSupportActionBar().setTitle(R.string.menu_advanced);
 
     preferE2eeCheckbox.setChecked(0!=dcContext.getConfigInt(CONFIG_E2EE_ENABLED));
-    sentboxWatchCheckbox.setChecked(0!=dcContext.getConfigInt(CONFIG_SENTBOX_WATCH));
     bccSelfCheckbox.setChecked(0!=dcContext.getConfigInt(CONFIG_BCC_SELF));
     mvboxMoveCheckbox.setChecked(0!=dcContext.getConfigInt(CONFIG_MVBOX_MOVE));
     onlyFetchMvboxCheckbox.setChecked(0!=dcContext.getConfigInt(CONFIG_ONLY_FETCH_MVBOX));
