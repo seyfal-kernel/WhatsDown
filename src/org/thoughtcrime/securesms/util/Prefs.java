@@ -57,7 +57,6 @@ public class Prefs {
   public  static final String NOTIFICATION_PRIORITY_PREF       = "pref_notification_priority";
 
   public  static final String SYSTEM_EMOJI_PREF                = "pref_system_emoji";
-  public  static final String BUILTIN_CAMERA_PREF              = "pref_builtin_camera";
   public  static final String DIRECT_CAPTURE_CAMERA_ID         = "pref_direct_capture_camera_id";
   private static final String PROFILE_AVATAR_ID_PREF           = "pref_profile_avatar_id";
   public  static final String INCOGNITO_KEYBORAD_PREF          = "pref_incognito_keyboard";
@@ -306,10 +305,6 @@ public class Prefs {
 
   public static boolean isSystemEmojiPreferred(Context context) {
     return getBooleanPreference(context, SYSTEM_EMOJI_PREF, true);
-  }
-
-  public static boolean isBuiltInCameraPreferred(Context context) {
-    return getBooleanPreference(context, BUILTIN_CAMERA_PREF, false);
   }
 
   public static boolean getAlwaysLoadRemoteContent(Context context) {
