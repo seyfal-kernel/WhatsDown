@@ -187,10 +187,6 @@ public class Prefs {
     return getBooleanPreference(context, "pref_developer_mode_enabled", false);
   }
 
-  public static boolean isNewBroadcastListAvailable(Context context) {
-    return getBooleanPreference(context, "pref_new_broadcast_list", true);
-  }
-
   // ringtone
 
   public static @NonNull Uri getNotificationRingtone(Context context) {

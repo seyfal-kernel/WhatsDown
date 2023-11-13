@@ -115,37 +115,6 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
     webrtcInstance.setOnPreferenceClickListener(new WebrtcInstanceListener());
     updateWebrtcSummary();
 
-    Preference newBroadcastList = this.findPreference("pref_new_broadcast_list");
-    newBroadcastList.setOnPreferenceChangeListener((preference, newValue) -> {
-      if ((Boolean)newValue) {
-        new AlertDialog.Builder(getActivity())
-          .setTitle("Thanks for trying out \"Broadcast Lists\"!")
-          .setMessage("• You can now create new \"Broadcast Lists\" from the \"New Chat\" dialog\n\n"
-            + "• In case you are using more than one device, broadcast lists are currently not synced between them\n\n"
-            + "• If you want to quit the experimental feature, you can disable it at \"Settings / Advanced\"")
-          .setCancelable(false)
-          .setPositiveButton(R.string.ok, null)
-          .show();
-      }
-      return true;
-    });
-
-    Preference sendReactions = this.findPreference("pref_send_reactions");
-    sendReactions.setOnPreferenceChangeListener((preference, newValue) -> {
-      if ((Boolean)newValue) {
-        new AlertDialog.Builder(getActivity())
-          .setTitle("Thanks for trying out \"Reactions\"!")
-          .setMessage("• By long tapping a message, you can now add a reaction\n\n"
-            + "• Do not rely on reactions being seen by all recipients currently: On some platforms they're still in development, also rolling out updates take time\n\n"
-            + "• If you want to quit the experimental feature, disable it again at \"Settings / Advanced\";"
-            + "  received or already sent reactions are displayed independently of this switch")
-          .setCancelable(false)
-          .setPositiveButton(R.string.ok, null)
-          .show();
-      }
-      return true;
-    });
-
     Preference developerModeEnabled = this.findPreference("pref_developer_mode_enabled");
     developerModeEnabled.setOnPreferenceChangeListener((preference, newValue) -> {
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
