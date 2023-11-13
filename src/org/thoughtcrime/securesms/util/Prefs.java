@@ -180,12 +180,7 @@ public class Prefs {
   }
 
   public static boolean isLocationStreamingEnabled(Context context) {
-    try {
-      return getBooleanPreference(context, "pref_location_streaming_enabled", false);
-    }
-    catch(Exception e) {
-      return false;
-    }
+    return true;
   }
 
   public static boolean isDeveloperModeEnabled(Context context) {

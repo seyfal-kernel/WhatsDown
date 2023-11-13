@@ -51,7 +51,7 @@ public class AttachmentTypeSelector extends PopupWindow {
   private final @NonNull ImageView           audioButton;
   private final @NonNull ImageView           documentButton;
   private final @NonNull ImageView           contactButton;
-  private final @NonNull ImageView           cameraButton;
+    //private final @NonNull ImageView           cameraButton;
   private final @NonNull ImageView           videoButton;
   private final @NonNull ImageView           locationButton;
   private final @NonNull ImageView           closeButton;
@@ -74,7 +74,7 @@ public class AttachmentTypeSelector extends PopupWindow {
     this.audioButton    = ViewUtil.findById(layout, R.id.audio_button);
     this.documentButton = ViewUtil.findById(layout, R.id.document_button);
     this.contactButton  = ViewUtil.findById(layout, R.id.contact_button);
-    this.cameraButton   = ViewUtil.findById(layout, R.id.camera_button);
+    //this.cameraButton   = ViewUtil.findById(layout, R.id.camera_button);
     this.videoButton    = ViewUtil.findById(layout, R.id.record_video_button);
     this.locationButton = ViewUtil.findById(layout, R.id.location_button);
     this.closeButton    = ViewUtil.findById(layout, R.id.close_button);
@@ -83,7 +83,7 @@ public class AttachmentTypeSelector extends PopupWindow {
     this.audioButton.setOnClickListener(new PropagatingClickListener(ADD_SOUND));
     this.documentButton.setOnClickListener(new PropagatingClickListener(ADD_DOCUMENT));
     this.contactButton.setOnClickListener(new PropagatingClickListener(ADD_CONTACT_INFO));
-    this.cameraButton.setOnClickListener(new PropagatingClickListener(TAKE_PHOTO));
+    //this.cameraButton.setOnClickListener(new PropagatingClickListener(TAKE_PHOTO));
     this.videoButton.setOnClickListener(new PropagatingClickListener(RECORD_VIDEO));
     this.locationButton.setOnClickListener(new PropagatingClickListener(ADD_LOCATION));
     this.closeButton.setOnClickListener(new CloseClickListener());
@@ -139,11 +139,11 @@ public class AttachmentTypeSelector extends PopupWindow {
     });
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-      animateButtonIn(cameraButton, ANIMATION_DURATION / 2);
+        //animateButtonIn(cameraButton, ANIMATION_DURATION / 2);
       animateButtonIn(videoButton, ANIMATION_DURATION / 2);
-      animateButtonIn(imageButton, ANIMATION_DURATION / 3);
+      animateButtonIn(imageButton, ANIMATION_DURATION / 2);
       animateButtonIn(audioButton, ANIMATION_DURATION / 3);
-      animateButtonIn(locationButton, ANIMATION_DURATION / 4);
+      animateButtonIn(locationButton, ANIMATION_DURATION / 3);
       animateButtonIn(documentButton, ANIMATION_DURATION / 4);
       animateButtonIn(contactButton, 0);
       animateButtonIn(closeButton, 0);
