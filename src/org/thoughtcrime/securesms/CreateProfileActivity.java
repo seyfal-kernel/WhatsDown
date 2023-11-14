@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -200,7 +201,7 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Emoj
   }
 
   private void initializeResources() {
-    TextView passwordAccountSettings       = ViewUtil.findById(this, R.id.password_account_settings_button);
+    Button passwordAccountSettings = ViewUtil.findById(this, R.id.password_account_settings_button);
     TextView loginSuccessText              = ViewUtil.findById(this, R.id.login_success_text);
     this.avatar       = ViewUtil.findById(this, R.id.avatar);
     this.name         = ViewUtil.findById(this, R.id.name_text);
