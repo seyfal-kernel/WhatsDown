@@ -65,7 +65,6 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Emoj
   private EditText               name;
   private MediaKeyboard          emojiDrawer;
   private EditText               statusView;
-  private View                   reveal;
 
   private boolean fromWelcome;
   private boolean avatarChanged;
@@ -207,7 +206,6 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Emoj
     this.name         = ViewUtil.findById(this, R.id.name_text);
     this.emojiDrawer  = ViewUtil.findById(this, R.id.emoji_drawer);
     this.container    = ViewUtil.findById(this, R.id.container);
-    this.reveal       = ViewUtil.findById(this, R.id.reveal);
     this.statusView   = ViewUtil.findById(this, R.id.status_text);
 
     passwordAccountSettings.setOnClickListener(view -> {
