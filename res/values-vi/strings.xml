@@ -106,37 +106,29 @@
     <string name="last_seen_unknown">Nhìn thấy lần cuối: Không rõ</string>
     <!-- Shown beside messages that are "N minutes old". Prefer short strings, or well-known abbreviations. -->
     <plurals name="n_minutes">
-        <item quantity="one">%d phút</item>
         <item quantity="other">%d phút</item>
     </plurals>
     <!-- Shown beside messages that are "N hours old". Prefer short strings, or well-known abbreviations. -->
     <plurals name="n_hours">
-        <item quantity="one">%d giờ</item>
         <item quantity="other">%d giờ</item>
     </plurals>
     <plurals name="n_chats">
-        <item quantity="one">%d chat</item>
         <item quantity="other">%d chats</item>
     </plurals>
     <plurals name="n_contacts">
-        <item quantity="one">%d liên hệ</item>
         <item quantity="other">%d liên hệ</item>
     </plurals>
     <plurals name="n_messages">
-        <item quantity="one">%d tin nhắn</item>
         <item quantity="other">%d tin nhắn</item>
     </plurals>
     <plurals name="n_members">
-        <item quantity="one">%d thành viên</item>
         <item quantity="other">%d thành viên</item>
     </plurals>
     <plurals name="n_recipients">
-        <item quantity="one">%d người nhận</item>
         <item quantity="other">%d người nhận</item>
     </plurals>
     <!-- Short form for "N Items Selected" -->
     <plurals name="n_selected">
-        <item quantity="one">%d đã chọn</item>
         <item quantity="other">%d đã chọn</item>
     </plurals>
 
@@ -308,7 +300,6 @@
     <string name="share_location_for_six_hours">Trong 6 giờ</string>
 
     <plurals name="ask_send_following_n_files_to">
-        <item quantity="one">Gửi tập tin sau tới %s?</item>
         <item quantity="other">Gửi tập tin sau tới %s?</item>
     </plurals>
     <string name="file_saved_to">Tệp đã được lưu vào \"%1$s\".</string>
@@ -331,16 +322,13 @@
     <!-- get confirmations -->
     <string name="ask_leave_group">Bạn có chắc chắn muốn rời khỏi nhóm này không?</string>
     <plurals name="ask_delete_chat">
-        <item quantity="one">Xóa cuộc trò chuyện %d? Nó sẽ không còn được hiển thị trong danh sách trò chuyện nữa; tin nhắn của nó sẽ vẫn còn trên máy chủ.</item>
         <item quantity="other">Xóa cuộc trò chuyện %d? Nó sẽ không còn được hiển thị trong danh sách trò chuyện nữa; tin nhắn của nó sẽ vẫn còn trên máy chủ.</item>
     </plurals>
     <string name="ask_delete_message">Bạn có chắc chắn muốn xóa tin nhắn này?</string>
     <plurals name="ask_delete_messages">
-        <item quantity="one">Xóa %d tin nhắn ở đây và trên máy chủ?</item>
         <item quantity="other">Xóa %d tin nhắn ở đây và trên máy chủ?</item>
     </plurals>
     <plurals name="ask_delete_messages_simple">
-        <item quantity="one">Xóa %d tin nhắn?</item>
         <item quantity="other">Xóa %d tin nhắn?</item>
     </plurals>
     <string name="ask_forward">Chuyển tiếp tin nhắn tới %1$s?</string>
@@ -362,18 +350,16 @@
 
     <!-- contact list -->
     <string name="contacts_title">Danh bạ</string>
-    <string name="contacts_enter_name_or_e-mail">Nhập tên hoặc địa chỉ e-mail</string>
-    <string name="contacts_type_e-mail_above">Nhập địa chỉ e-mail ở trên</string>
+    <string name="contacts_enter_name_or_email">Nhập tên hoặc địa chỉ e-mail</string>
+    <string name="contacts_type_email_above">Nhập địa chỉ e-mail ở trên</string>
     <string name="contacts_empty_hint">Không có liên hệ nào.</string>
 
 
     <!-- chatlist and chat view -->
     <plurals name="chat_archived">
-        <item quantity="one">đã lưu trữ %d cuộc trò chuyện</item>
         <item quantity="other">đã lưu trữ %d cuộc trò chuyện</item>
     </plurals>
     <plurals name="chat_unarchived">
-        <item quantity="one">đã hủy lưu trữ %d cuộc trò chuyện</item>
         <item quantity="other">đã hủy lưu trữ %d cuộc trò chuyện</item>
     </plurals>
     <string name="chat_archived_chats_title">Cuộc trò chuyện đã lưu trữ</string>
@@ -381,7 +367,6 @@
     <string name="chat_camera_unavailable">Máy ảnh không có sẵn.</string>
     <string name="chat_unable_to_record_audio">Không thể ghi âm.</string>
     <plurals name="chat_n_new_messages">
-        <item quantity="one">%d tin nhắn mới</item>
         <item quantity="other">%d tin nhắn mới</item>
     </plurals>
     <!-- The placeholder will be replaced by the name of the recipient in a one-to-one chat. -->
@@ -778,7 +763,7 @@
     <string name="autocrypt_send_asm_explain_after">Thiết lập của bạn đã được gửi cho chính bạn. Chuyển sang thiết bị khác và mở thông báo thiết lập. Bạn sẽ được yêu cầu nhập mã thiết lập. Nhập các chữ số sau:</string>
     <string name="autocrypt_prefer_e2ee">Ưu tiên mã hóa đầu cuối</string>
     <string name="autocrypt_asm_subject">Thông báo thiết lập Autocrypt</string>
-    <string name="autocrypt_asm_general_body">Đây là Thông báo Thiết lập Autocrypt được sử dụng để truyền thiết lập hai đầu của bạn giữa các máy khách.\n\nĐể giải mã và sử dụng thiết lập của bạn, hãy mở tin nhắn trong một ứng dụng khách tương thích với Autocrypt và nhập mã thiết lập được trình bày trên thiết bị tạo.< /chuỗi>
+    <string name="autocrypt_asm_general_body">Đây là Thông báo Thiết lập Autocrypt được sử dụng để truyền thiết lập hai đầu của bạn giữa các máy khách.\n\nĐể giải mã và sử dụng thiết lập của bạn, hãy mở tin nhắn trong một ứng dụng khách tương thích với Autocrypt và nhập mã thiết lập được trình bày trên thiết bị tạo.</string>
     <string name="autocrypt_asm_click_body">Đây là Thông báo Thiết lập Autocrypt được sử dụng để chuyển thiết lập hai đầu của bạn giữa các máy khách.\n\nĐể giải mã và sử dụng thiết lập của bạn, hãy nhấn hoặc nhấp vào thông báo này.</string>
     <string name="autocrypt_continue_transfer_title">Thông báo thiết lập tự động mã hóa</string>
     <string name="autocrypt_continue_transfer_please_enter_code">Vui lòng nhập mã thiết lập được hiển thị trên thiết bị kia.</string>
@@ -1088,7 +1073,7 @@
 
 
     <!-- device messages for updates -->
-    <string name="update_1_42_common">Có gì mới:\n\n💌 cuộc trò chuyện một-một đảm bảo mã hóa hai đầu cho những người liên hệ được giới thiệu\n\n😌 để mọi người đơn giản, chúng tôi đánh dấu những người liên hệ và cuộc trò chuyện này bằng dấu kiểm màu xanh lá cây\ n\n👥 nhóm được tạo tự động với mã hóa hai đầu được đảm bảo nếu có thể\n\n🔄 Chấp nhận/Chặn, Đã lưu trữ, Đã ghim, Tắt tiếng được đồng bộ hóa trên tất cả các thiết bị của bạn</string>
+    <string name="update_1_42_common">Có gì mới:\n\n💌 cuộc trò chuyện một-một đảm bảo mã hóa hai đầu cho những người liên hệ được giới thiệu\n\n😌 để mọi người đơn giản, chúng tôi đánh dấu những người liên hệ và cuộc trò chuyện này bằng dấu kiểm màu xanh lá cây\n\n👥 nhóm được tạo tự động với mã hóa hai đầu được đảm bảo nếu có thể\n\n🔄 Chấp nhận/Chặn, Đã lưu trữ, Đã ghim, Tắt tiếng được đồng bộ hóa trên tất cả các thiết bị của bạn</string>
     <!-- placeholder will be replaced by the URL https://get.delta.chat/#changelogs -->
     <string name="update_1_42_android">Hãy chú ý đến những cải tiến khác về máy ảnh, tin nhắn thoại, sao lưu tất cả, trình đọc màn hình, hình nền cho mỗi tài khoản, chọn tất cả thư viện, phong cảnh webxdc … hoặc đọc chúng tại %1$s</string>
 </resources>
