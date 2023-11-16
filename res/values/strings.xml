@@ -940,7 +940,7 @@
     <!-- translators: "setup" is the "encryption setup" here, as in "Autocrypt Setup Message" -->
     <string name="contact_setup_changed">Changed setup for %1$s.</string>
     <string name="verified_contact_required_explain">To guarantee end-to-end-encryption, you can only add contacts with a green checkmark to this group.\n\nYou may meet contacts in person and scan their QR Code to introduce them.</string>
-    <string name="create_verified_group_ask">Do you want to create a protected group that guarantees end-to-end-encryption?\n\nOnly members that have a green checkmark can be added to a protected group.</string>
+    <string name="create_verified_group_ask">Do you want to create a protected group that guarantees end-to-end-encryption?\n\nOnly contacts that have a green checkmark can be added to a protected group.</string>
     <string name="copy_qr_data_success">Copied QR url to clipboard</string>
     <string name="mailto_dialog_header_select_chat">Select chat to send the message to</string>
     <!-- first placeholder is the name of the chat -->
