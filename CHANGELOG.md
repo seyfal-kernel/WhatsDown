@@ -1,5 +1,24 @@
 # Delta Chat Android Changelog
 
+## v1.42.0
+2023-11
+
+* fix download button shown when download could be decrypted
+* using core 1.131.3
+
+
+## v1.41.9 Testrun
+2023-11
+
+* fix missing messages because of misinterpreted server responses (ignore EOF on FETCH)
+* fix: re-gossip keys if a group member changed setup
+* fix: skip sync when chat name is set to the current one
+* fix: ignore unknown sync items to provide forward compatibility
+  and to avoid creating empty message bubbles in "Saved Messages"
+* update translations and local help
+* update to core 1.131.3
+
+
 ## v1.41.8 Testrun
 2023-11
 
