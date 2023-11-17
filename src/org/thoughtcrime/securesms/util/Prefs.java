@@ -295,7 +295,7 @@ public class Prefs {
   }
 
   public static boolean isSystemEmojiPreferred(Context context) {
-    return getBooleanPreference(context, SYSTEM_EMOJI_PREF, true);
+    return true;
   }
 
   public static boolean getAlwaysLoadRemoteContent(Context context) {
