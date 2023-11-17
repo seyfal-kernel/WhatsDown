@@ -23,16 +23,17 @@ jobs:
     name: Upload Release APK
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           submodules: recursive
-      - uses: Swatinem/rust-cache@v1
+      - uses: Swatinem/rust-cache@v2
         with:
           working-directory: jni/deltachat-core-rust
-      - uses: actions/setup-java@v1.4.3
+      - uses: actions/setup-java@v3
         with:
-          java-version: 11
-      - uses: android-actions/setup-android@v2
+          java-version: 17
+          distribution: 'temurin'
+      - uses: android-actions/setup-android@v3
       - uses: nttld/setup-ndk@v1
         id: setup-ndk
         with:
