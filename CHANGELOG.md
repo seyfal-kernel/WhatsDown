@@ -1,5 +1,49 @@
 # Delta Chat Android Changelog
 
+## v1.42.6
+2023-11
+
+* sync changes on "Your Profile Name", "Show Class Mails", "Read Receipts" options across devices
+* remove receiver limit on .xdc size
+* fix decryption errors when using multiple private keys
+* fix more log in errors for providers as 163.com; this was introduced in 1.41
+* fix: database locked errors on webxdc updates
+* update translations and local help
+* update to core 1.131.9
+
+
+## v1.42.4
+2023-11
+
+* fix battery draining due to active IMAP loop on some providers; this was introduced in 1.41
+* fix log in error on some providers as 163.com; this was introduced in 1.41
+* fix "Learn More" buttons that opened the help always in english
+* update local help
+* update to core 1.131.7
+
+
+## v1.42.3
+2023-11
+
+* fix: avoid infinite loop by failing fast on IMAP FETCH parsing errors
+* update translations
+* update to core 1.131.6
+
+
+## v1.42.2
+2023-11
+
+* fix contact creation using outdated names sometimes
+* fix: do not replace the message with an error in square brackets
+  when the sender is not a member of the protected group
+* fix: compare addresses on QR code scans and at similar places case-insensitively
+* fix: normalize addresses to lower case to catch unrecoverable typos and other rare errors
+* fix: fetch contact addresses in a single query
+* fix: sync chat name to other devices
+* update translations and local help
+* update to core 1.131.5
+
+
 ## v1.42.1
 2023-11
 
