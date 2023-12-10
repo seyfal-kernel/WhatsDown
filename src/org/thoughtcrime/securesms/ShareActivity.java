@@ -300,18 +300,20 @@ public class ShareActivity extends PassphraseRequiredActionBarActivity implement
         text = cs.toString();
       }
     }
-
     if (text != null) {
       setSharedText(intent, text.toString());
     }
+
     String subject = getIntent().getStringExtra(EXTRA_MSG_SUBJECT);
     if (subject != null) {
       setSharedSubject(intent, subject);
     }
-    String html = getIntent().getStringExtra(EXTRA_MSG_HTML);
+
+    Uri html = getIntent().getParcelableExtra(EXTRA_MSG_HTML);
     if (html != null) {
       setSharedHtml(intent, html);
     }
+
     if (resolvedExtras.size() > 0) {
       Uri data = resolvedExtras.get(0);
       if (data != null) {

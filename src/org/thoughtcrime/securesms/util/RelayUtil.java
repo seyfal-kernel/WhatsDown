@@ -83,9 +83,9 @@ public class RelayUtil {
         }
     }
 
-    public static String getSharedHtml(Activity activity) {
+    public static Uri getSharedHtml(Activity activity) {
         try {
-            return activity.getIntent().getStringExtra(MSG_HTML_EXTRA);
+            return activity.getIntent().getParcelableExtra(MSG_HTML_EXTRA);
         } catch (NullPointerException npe) {
             return null;
         }
@@ -176,7 +176,7 @@ public class RelayUtil {
         composeIntent.putExtra(IS_SHARING, true);
     }
 
-    public static void setSharedHtml(Intent composeIntent, String html) {
+    public static void setSharedHtml(Intent composeIntent, Uri html) {
         composeIntent.putExtra(MSG_HTML_EXTRA, html);
         composeIntent.putExtra(IS_SHARING, true);
     }

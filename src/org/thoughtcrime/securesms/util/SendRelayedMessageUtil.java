@@ -13,8 +13,10 @@ import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.mms.PartAuthority;
 import org.thoughtcrime.securesms.providers.PersistentBlobProvider;
 
+import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
@@ -50,7 +52,7 @@ public class SendRelayedMessageUtil {
       ArrayList<Uri> sharedUris = getSharedUris(activity);
       String sharedText = getSharedText(activity);
       String subject = getSharedSubject(activity);
-      String sharedHtml = getSharedHtml(activity);
+      String sharedHtml = getHtml(activity, getSharedHtml(activity));
       String msgType = getSharedType(activity);
       resetRelayingMessageContent(activity);
       Util.runOnAnyBackgroundThread(() -> {
@@ -147,6 +149,23 @@ public class SendRelayedMessageUtil {
       return path;
     } catch (Exception e) {
       e.printStackTrace();
+      return null;
+    }
+  }
+
+  private static String getHtml(Context context, Uri uri) {
+    try {
+      InputStream in = PartAuthority.getAttachmentStream(context, uri);
+      BufferedReader br = new BufferedReader(new InputStreamReader(in));
+      StringBuilder html = new StringBuilder();
+      for (String line; (line = br.readLine()) != null; ) {
+        html.append(line).append('\n');
+      }
+      if (in != null) in.close();
+      br.close();
+      return html.toString();
+    } catch (Exception ex) {
+      Log.e(TAG, "failed to get HTML", ex);
       return null;
     }
   }

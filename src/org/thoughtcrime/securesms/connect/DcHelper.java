@@ -346,7 +346,9 @@ public class DcHelper {
       }
 
       if (html != null) {
-          intent.putExtra(ShareActivity.EXTRA_MSG_HTML, html);
+          String mimeType = "application/octet-stream";
+          Uri uri = PersistentBlobProvider.getInstance().create(activity, html.getBytes(), mimeType, "index.html");
+          intent.putExtra(ShareActivity.EXTRA_MSG_HTML, uri);
       }
 
       activity.startActivity(intent);
