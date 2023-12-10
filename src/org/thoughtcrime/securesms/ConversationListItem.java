@@ -174,7 +174,8 @@ public class ConversationListItem extends RelativeLayout
       avatar.setSeenRecently(false);
     } else {
       avatar.setSeenRecently(contact.wasSeenRecently());
-      if (contact.isVerified() || DcHelper.getContext(getContext()).getChat((int)chatId).isDeviceTalk()) {
+      DcChat dcChat = DcHelper.getContext(getContext()).getChat((int)chatId);
+      if (dcChat.isProtected() || dcChat.isDeviceTalk()) {
         imgRight = R.drawable.ic_verified;
       }
     }

@@ -74,7 +74,7 @@ public class ConversationTitleView extends RelativeLayout {
     if (dcChat.isMuted()) {
       imgLeft = R.drawable.ic_volume_off_white_18dp;
     }
-    if (dcChat.isProtected()) {
+    if (dcChat.isProtected() || dcChat.isDeviceTalk()) {
       imgRight = R.drawable.ic_verified;
     }
 
