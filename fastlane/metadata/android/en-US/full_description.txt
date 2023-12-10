@@ -27,7 +27,7 @@ DeltaLab was created with a focus on usability, good user experience, and saving
 <li>Can be selected as application when clicking/opening links, this is useful to share the link with web grabber bots</li>
 <li>Can be selected as app to open .xdc files</li>
 <li>For mini-apps developers: there are some differences in the WebXDC API, check https://github.com/adbenitez/deltalab-android/#webxdc</li>
-<li>Send and display WebXDC of up to 10MB</li>
+<li>Send WebXDC mini-apps of up to 10MB</li>
 <li>Additional "Privacy" section in the settings</li>
 </ul>
 
