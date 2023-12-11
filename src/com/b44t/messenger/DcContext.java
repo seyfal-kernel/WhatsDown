@@ -86,6 +86,8 @@ public class DcContext {
     public final static int DC_CONNECTIVITY_WORKING = 3000;
     public final static int DC_CONNECTIVITY_CONNECTED = 4000;
 
+    private static final String CONFIG_ACCOUNT_ENABLED = "ui.enabled";
+
     // when using DcAccounts, use DcAccounts.addAccount() instead
     public DcContext(String osName, String dbfile) {
         contextCPtr = createContextCPtr(osName, dbfile);
@@ -213,6 +215,19 @@ public class DcContext {
     public DcArray             getLocations         (int chat_id, int contact_id, long timestamp_start, long timestamp_end) { return new DcArray(getLocationsCPtr(chat_id, contact_id, timestamp_start, timestamp_end)); }
     public native void         deleteAllLocations   ();
     public DcProvider          getProviderFromEmailWithDns (String email) { long cptr = getProviderFromEmailWithDnsCPtr(email); return cptr!=0 ? new DcProvider(cptr) : null; }
+
+    public boolean isEnabled() {
+      return !"0".equals(getConfig(CONFIG_ACCOUNT_ENABLED));
+    }
+
+    public void setEnabled(boolean enabled) {
+      setConfigInt(CONFIG_ACCOUNT_ENABLED, enabled? 1 : 0);
+      if (enabled) {
+        startIo();
+      } else {
+        stopIo();
+      }
+    }
 
     public String getNameNAddr() {
       String displayname = getConfig("displayname");

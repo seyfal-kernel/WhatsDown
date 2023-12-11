@@ -21,7 +21,15 @@ public class DcAccounts {
 
     public DcEventEmitter         getEventEmitter      () { return new DcEventEmitter(getEventEmitterCPtr()); }
     public DcJsonrpcInstance      getJsonrpcInstance   () { return new DcJsonrpcInstance(getJsonrpcInstanceCPtr()); }
-    public native void            startIo              ();
+    public void            startIo              () {
+        for (int accountId : getAll()) {
+            DcContext acc = getAccount(accountId);
+            if (acc.isEnabled()) {
+                acc.startIo();
+            }
+        }
+    };
+    public native void            startIo2             ();
     public native void            stopIo               ();
     public native void            maybeNetwork         ();
 

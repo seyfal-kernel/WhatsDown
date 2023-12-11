@@ -1,7 +1,6 @@
 package org.thoughtcrime.securesms.accounts;
 
 import android.content.Context;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +38,7 @@ public class AccountSelectionListAdapter extends RecyclerView.Adapter
       super(itemView);
     }
 
-    public abstract void bind(@NonNull GlideRequests glideRequests, int accountId, DcContact self, String name, String addr, int unreadCount, int connectivity, boolean selected);
+    public abstract void bind(@NonNull GlideRequests glideRequests, int accountId, DcContext dcContext, boolean selected);
     public abstract void unbind(@NonNull GlideRequests glideRequests);
   }
 
@@ -64,8 +63,8 @@ public class AccountSelectionListAdapter extends RecyclerView.Adapter
       return (AccountSelectionListItem) itemView;
     }
 
-    public void bind(@NonNull GlideRequests glideRequests, int accountId, DcContact self, String name, String addr, int unreadCount, int connectivity, boolean selected) {
-      getView().bind(glideRequests, accountId, self, name, addr, unreadCount, connectivity, selected);
+    public void bind(@NonNull GlideRequests glideRequests, int accountId, DcContext dcContext, boolean selected) {
+      getView().bind(glideRequests, accountId, dcContext, selected);
     }
 
     @Override
@@ -94,31 +93,12 @@ public class AccountSelectionListAdapter extends RecyclerView.Adapter
 
   @Override
   public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-
     int id = accountList[i];
-    DcContact dcContact = null;
-    String name;
-    String addr = null;
-    int unreadCount = 0;
-    int connectivity = 0;
-
-    if (id == DcContact.DC_CONTACT_ID_ADD_ACCOUNT) {
-      name = context.getString(R.string.add_account);
-    } else {
-      DcContext dcContext = accounts.getAccount(id);
-      dcContact = dcContext.getContact(DcContact.DC_CONTACT_ID_SELF);
-      addr = dcContact.getAddr();
-      name = dcContext.getConfig("displayname");
-      if (TextUtils.isEmpty(name)) {
-        name = addr;
-      }
-      unreadCount = dcContext.getFreshMsgs().length;
-      connectivity = dcContext.getConnectivity();
-    }
+    DcContext dcContext = (id == DcContact.DC_CONTACT_ID_ADD_ACCOUNT)? null : accounts.getAccount(id);
 
     ViewHolder holder = (ViewHolder) viewHolder;
     holder.unbind(glideRequests);
-    holder.bind(glideRequests, id, dcContact, name, addr, unreadCount, connectivity, id == selectedAccountId);
+    holder.bind(glideRequests, id, dcContext, id == selectedAccountId);
   }
 
   public interface ItemClickListener {

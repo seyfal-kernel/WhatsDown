@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageButton;
@@ -12,9 +13,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.SwitchCompat;
 
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.b44t.messenger.DcContact;
+import com.b44t.messenger.DcContext;
 
 import org.thoughtcrime.securesms.R;
 import org.thoughtcrime.securesms.components.AvatarView;
@@ -31,6 +34,7 @@ public class AccountSelectionListItem extends LinearLayout {
   private TextView        nameView;
   private ImageView       unreadIndicator;
   private ImageButton     deleteBtn;
+  private SwitchCompat enableSwitch;
 
   private int           accountId;
 
@@ -51,21 +55,42 @@ public class AccountSelectionListItem extends LinearLayout {
     this.nameView          = findViewById(R.id.name);
     this.unreadIndicator   = findViewById(R.id.unread_indicator);
     this.deleteBtn         = findViewById(R.id.delete);
+    this.enableSwitch      = findViewById(R.id.enable_switch);
 
     deleteBtn.setColorFilter(DynamicTheme.isDarkTheme(getContext())? Color.WHITE : Color.BLACK);
     ViewUtil.setTextViewGravityStart(this.nameView, getContext());
   }
 
-  public void bind(@NonNull GlideRequests glideRequests, int accountId, DcContact self, String name, String addr, int unreadCount, int connectivity, boolean selected) {
-    this.accountId     = accountId;
+  public void bind(@NonNull GlideRequests glideRequests, int accountId, DcContext dcContext, boolean selected) {
+    this.accountId = accountId;
+    DcContact self = null;
+    String name;
+    String addr = null;
+    int unreadCount = 0;
 
     Recipient recipient;
     if (accountId != DcContact.DC_CONTACT_ID_ADD_ACCOUNT) {
+      self = dcContext.getContact(DcContact.DC_CONTACT_ID_SELF);
+      addr = self.getAddr();
+      name = dcContext.getConfig("displayname");
+      if (TextUtils.isEmpty(name)) {
+        name = addr;
+      }
+      unreadCount = dcContext.getFreshMsgs().length;
+
       deleteBtn.setVisibility(selected? View.INVISIBLE : View.VISIBLE);
+      enableSwitch.setChecked(dcContext.isEnabled());
+      enableSwitch.setOnCheckedChangeListener((view, isChecked) -> {
+          dcContext.setEnabled(isChecked);
+          if (!isChecked) contactPhotoImage.setConnectivity(dcContext.getConnectivity());
+      });
+      enableSwitch.setVisibility(View.VISIBLE);
       recipient = new Recipient(getContext(), self, name);
-      this.contactPhotoImage.setConnectivity(connectivity);
+      this.contactPhotoImage.setConnectivity(dcContext.getConnectivity());
     } else {
+      name = getContext().getString(R.string.add_account);
       deleteBtn.setVisibility(View.GONE);
+      enableSwitch.setVisibility(View.INVISIBLE);
       recipient = null;
       this.contactPhotoImage.setSeenRecently(false); // hide connectivity dot
     }

@@ -250,7 +250,7 @@ JNIEXPORT jlong Java_com_b44t_messenger_DcAccounts_getJsonrpcInstanceCPtr(JNIEnv
 }
 
 
-JNIEXPORT void Java_com_b44t_messenger_DcAccounts_startIo(JNIEnv *env, jobject obj)
+JNIEXPORT void Java_com_b44t_messenger_DcAccounts_startIo2(JNIEnv *env, jobject obj)
 {
     dc_accounts_start_io(get_dc_accounts(env, obj));
 }
