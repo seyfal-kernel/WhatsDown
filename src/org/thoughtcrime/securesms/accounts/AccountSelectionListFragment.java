@@ -63,6 +63,10 @@ public class AccountSelectionListFragment extends DialogFragment implements DcEv
 
   @Override
   public void handleEvent(@NonNull DcEvent event) {
+  }
+
+  @Override
+  public void handleEvent2(@NonNull DcEvent event) {
     refreshData();
   }
 

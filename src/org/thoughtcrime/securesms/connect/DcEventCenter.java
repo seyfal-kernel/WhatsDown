@@ -23,6 +23,8 @@ public class DcEventCenter {
 
     public interface DcEventDelegate {
         void handleEvent(@NonNull DcEvent event);
+        default void handleEvent2(@NonNull DcEvent event) {
+        }
         default boolean runOnMain() {
             return true;
         }
@@ -94,6 +96,38 @@ public class DcEventCenter {
         }
     }
 
+    public void sendToObservers2(@NonNull DcEvent event) {
+        synchronized (LOCK) {
+            ArrayList<DcEventDelegate> idObservers = allObservers.get(event.getId());
+            if (idObservers != null) {
+                for (DcEventDelegate observer : idObservers) {
+                    // using try/catch blocks as under some circumstances eg. getContext() may return NULL -
+                    // and as this function is used virtually everywhere, also in libs,
+                    // it's not feasible to check all single occurrences.
+                    if(observer.runOnMain()) {
+                        Util.runOnMain(() -> {
+                            try {
+                                observer.handleEvent2(event);
+                            }
+                            catch(Exception e) {
+                                e.printStackTrace();
+                            }
+                        });
+                    } else {
+                        Util.runOnBackground(() -> {
+                            try {
+                                observer.handleEvent2(event);
+                            }
+                            catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        });
+                    }
+                }
+            }
+        }
+    }
+
   private final Object lastErrorLock = new Object();
   private boolean showNextErrorAsToast = true;
 
@@ -138,6 +172,8 @@ public class DcEventCenter {
   public long handleEvent(@NonNull DcEvent event) {
     int accountId = event.getAccountId();
     int id = event.getId();
+
+    sendToObservers2(event);
 
     switch (id) {
       case DcContext.DC_EVENT_INCOMING_MSG:
