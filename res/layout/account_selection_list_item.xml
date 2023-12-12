@@ -91,8 +91,8 @@
         android:layout_height="match_parent"
         android:paddingStart="10dp"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingEnd="10dp"
+        android:paddingRight="16dp"
+        android:paddingEnd="16dp"
         />
 
 </org.thoughtcrime.securesms.accounts.AccountSelectionListItem>
