@@ -37,6 +37,7 @@ public class AccountSelectionListItem extends LinearLayout {
   private SwitchCompat enableSwitch;
 
   private int           accountId;
+  private DcContext     dcContext;
 
   public AccountSelectionListItem(Context context) {
     super(context);
@@ -57,12 +58,16 @@ public class AccountSelectionListItem extends LinearLayout {
     this.deleteBtn         = findViewById(R.id.delete);
     this.enableSwitch      = findViewById(R.id.enable_switch);
 
+    enableSwitch.setOnCheckedChangeListener((view, isChecked) -> {
+      if (isChecked != this.dcContext.isEnabled()) this.dcContext.setEnabled(isChecked);
+    });
     deleteBtn.setColorFilter(DynamicTheme.isDarkTheme(getContext())? Color.WHITE : Color.BLACK);
     ViewUtil.setTextViewGravityStart(this.nameView, getContext());
   }
 
   public void bind(@NonNull GlideRequests glideRequests, int accountId, DcContext dcContext, boolean selected) {
     this.accountId = accountId;
+    this.dcContext = dcContext;
     DcContact self = null;
     String name;
     String addr = null;
@@ -80,10 +85,6 @@ public class AccountSelectionListItem extends LinearLayout {
 
       deleteBtn.setVisibility(selected? View.INVISIBLE : View.VISIBLE);
       enableSwitch.setChecked(dcContext.isEnabled());
-      enableSwitch.setOnCheckedChangeListener((view, isChecked) -> {
-          dcContext.setEnabled(isChecked);
-          if (!isChecked) contactPhotoImage.setConnectivity(dcContext.getConnectivity());
-      });
       enableSwitch.setVisibility(View.VISIBLE);
       recipient = new Recipient(getContext(), self, name);
       this.contactPhotoImage.setConnectivity(dcContext.getConnectivity());
