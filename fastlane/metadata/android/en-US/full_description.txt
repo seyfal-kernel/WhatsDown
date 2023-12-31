@@ -9,6 +9,7 @@ DeltaLab was created with a focus on usability, good user experience, and saving
 <li>Support for displaying Telegram's animated stickers (.tgs files)</li>
 <li>Support for SVG images previews</li>
 <li>Multiple color themes/skins</li>
+<li>It is possible to enable/disable accounts</li>
 <li>A videochat instance is set by default</li>
 <li>Replies to your messages in muted groups trigger notifications</li>
 <li>Quote-reply a message with a single emoji to set it as reaction</li>
