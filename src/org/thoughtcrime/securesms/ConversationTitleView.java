@@ -106,12 +106,12 @@ public class ConversationTitleView extends RelativeLayout {
       }
       else {
         DcContact dcContact = dcContext.getContact(chatContacts[0]);
-        subtitleStr = dcContact.getAddr();
+        if (profileView || !dcChat.isProtected()) {
+          subtitleStr = dcContact.getAddr();
+        }
         isOnline = dcContact.wasSeenRecently();
       }
     }
-
-    subtitle.setText(subtitleStr);
 
     avatar.setAvatar(glideRequests, new Recipient(getContext(), dcChat), false);
     avatar.setSeenRecently(isOnline);

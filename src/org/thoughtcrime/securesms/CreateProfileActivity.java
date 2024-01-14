@@ -110,7 +110,7 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Emoj
         onBackPressed();
         return true;
       case R.id.menu_create_profile:
-        handleUpload();
+        updateProfile();
         break;
     }
 
@@ -122,8 +122,7 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Emoj
     if (container.isInputOpen()) {
       container.hideCurrentInput(name);
     } else if (fromWelcome) {
-      startActivity(new Intent(getApplicationContext(), ConversationListActivity.class));
-      finish();
+      updateProfile();
     } else {
       super.onBackPressed();
     }
@@ -227,7 +226,7 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Emoj
 
     if (fromWelcome) {
       String addr = DcHelper.get(this, "addr");
-      loginSuccessText.setText(getString(R.string.qraccount_success_enter_name, addr));
+      loginSuccessText.setText(R.string.set_name_and_avatar_explain);
       ViewUtil.findById(this, R.id.status_text_layout).setVisibility(View.GONE);
       ViewUtil.findById(this, R.id.information_label).setVisibility(View.GONE);
       passwordAccountSettings.setVisibility(View.GONE);
@@ -294,11 +293,12 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Emoj
     statusView.setText(status);
   }
 
-  private void handleUpload() {
-    final String        name;
-
-    if (TextUtils.isEmpty(this.name.getText().toString())) name = null;
-    else                                                   name = this.name.getText().toString();
+  private void updateProfile() {
+    if (TextUtils.isEmpty(this.name.getText())) {
+      Toast.makeText(this, R.string.please_enter_name, Toast.LENGTH_LONG).show();
+      return;
+    }
+    final String name = this.name.getText().toString();
 
     new AsyncTask<Void, Void, Boolean>() {
       @Override
