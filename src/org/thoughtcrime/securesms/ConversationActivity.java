@@ -255,8 +255,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     if (!isMultiUser()) {
       eventCenter.addObserver(DcContext.DC_EVENT_INCOMING_MSG, this);
       eventCenter.addObserver(DcContext.DC_EVENT_MSG_READ, this);
-      // handle DC_EVENT_MSG_DELIVERED to hide the seen-recently indicator if needed:
-      eventCenter.addObserver(DcContext.DC_EVENT_MSG_DELIVERED, this);
     }
 
     handleRelaying();
@@ -1489,11 +1487,10 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       setComposePanelVisibility();
       initializeContactRequest();
     } else if ((eventId == DcContext.DC_EVENT_INCOMING_MSG
-                || eventId == DcContext.DC_EVENT_MSG_READ
-                || eventId == DcContext.DC_EVENT_MSG_DELIVERED)
+                || eventId == DcContext.DC_EVENT_MSG_READ)
                && event.getData1Int() == chatId) {
-        DcContact contact = recipient.getDcContact();
-        titleView.setSeenRecently(contact!=null? dcContext.getContact(contact.getId()).wasSeenRecently() : false);
+        dcChat = dcContext.getChat(chatId);
+        titleView.setTitle(glideRequests, dcChat);
     }
   }
 

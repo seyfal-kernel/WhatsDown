@@ -1922,6 +1922,11 @@ JNIEXPORT jboolean Java_com_b44t_messenger_DcContact_isBlocked(JNIEnv *env, jobj
     return (jboolean)(dc_contact_is_blocked(get_dc_contact(env, obj))!=0);
 }
 
+JNIEXPORT jboolean Java_com_b44t_messenger_DcContact_isBot(JNIEnv *env, jobject obj)
+{
+    return (jboolean)(dc_contact_is_bot(get_dc_contact(env, obj))!=0);
+}
+
 
 JNIEXPORT jboolean Java_com_b44t_messenger_DcContact_isVerified(JNIEnv *env, jobject obj)
 {

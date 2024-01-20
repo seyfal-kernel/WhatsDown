@@ -110,8 +110,13 @@ public class ConversationTitleView extends RelativeLayout {
       }
       else {
         DcContact dcContact = dcContext.getContact(chatContacts[0]);
-        if (profileView || !dcChat.isProtected()) {
+        isOnline = dcContact.wasSeenRecently();
+        if (profileView) {
           subtitleStr = dcContact.getAddr();
+        } else if (false && dcContact.isBot()) {
+          subtitleStr = context.getString(R.string.bot);
+        } else if (isOnline) {
+          subtitleStr = context.getString(R.string.online);
         } else {
           long timestamp = dcContact.getLastSeen();
           if (timestamp != 0) {
@@ -119,7 +124,6 @@ public class ConversationTitleView extends RelativeLayout {
             subtitleStr = context.getString(R.string.last_seen_at, DateUtils.getExtendedTimeSpanString(context, locale, timestamp));
           }
         }
-        isOnline = dcContact.wasSeenRecently();
       }
     }
 

@@ -8,6 +8,7 @@
    <!-- the word "or" to separate blocks in the user interface that are mutually exclusive -->
     <string name="or_separator">or</string>
     <string name="clear_search">Clear Search</string>
+    <string name="bot">bot</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="select">Select</string>
@@ -101,10 +102,11 @@
     <string name="last_week">Last week</string>
     <string name="last_month">Last month</string>
     <!-- Refers to the time a contact was last seen. Shown below contact name in the profile. The placeholder will be replaced by date or time, resulting in "Last seen at 12:13 AM" or "Last seen Nov 12" -->
-    <string name="last_seen_at">Last seen at %1$s</string>
+    <string name="last_seen_at">last seen at %1$s</string>
     <!-- Refers to the time a contact was last seen. Shown below contact name in the profile. The placeholder will be replaced by a relative point in time as "3 minutes ago" (see https://momentjs.com for more examples and languages)-->
-    <string name="last_seen_relative">Last seen %1$s</string>
-    <string name="last_seen_unknown">Last seen: Unknown</string>
+    <string name="last_seen_relative">last seen %1$s</string>
+    <string name="last_seen_unknown">last seen: Unknown</string>
+    <string name="online">online</string>
     <!-- Shown beside messages that are "N minutes old". Prefer short strings, or well-known abbreviations. -->
     <plurals name="n_minutes">
         <item quantity="one">%d min</item>
