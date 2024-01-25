@@ -1219,6 +1219,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
   @Override
   public void onRecorderStarted() {
+    fragment.hideAddReactionView();
     Vibrator vibrator = ServiceUtil.getVibrator(this);
     vibrator.vibrate(20);
 
@@ -1394,6 +1395,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private class AttachButtonListener implements OnClickListener {
     @Override
     public void onClick(View v) {
+      fragment.hideAddReactionView();
       handleAddAttachment();
     }
   }
