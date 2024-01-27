@@ -119,7 +119,9 @@ public class ConversationTitleView extends RelativeLayout {
           subtitleStr = context.getString(R.string.online);
         } else {
           long timestamp = dcContact.getLastSeen();
-          if (timestamp != 0) {
+          if (timestamp == 0) {
+            subtitleStr = dcContact.getAddr();
+          } else {
             Locale locale = DynamicLanguage.getSelectedLocale(context);
             subtitleStr = context.getString(R.string.last_seen_at, DateUtils.getExtendedTimeSpanString(context, locale, timestamp));
           }
