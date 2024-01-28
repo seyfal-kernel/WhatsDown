@@ -106,13 +106,9 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
     // it is not needed to keep all past update messages, however, when deleted, also the strings should be deleted.
     try {
       DcContext dcContext = DcHelper.getContext(this);
-      DcMsg msg = new DcMsg(dcContext, DcMsg.DC_MSG_TEXT);
-      msg.setText(getString(R.string.device_msg_tips));
-      dcContext.addDeviceMsg("update_1_42a_tips", msg);
-
       final String deviceMsgId = "update_1_42ai_android";
       if (!dcContext.wasDeviceMsgEverAdded(deviceMsgId)) {
-        msg = null;
+        DcMsg msg = null;
         if (!getIntent().getBooleanExtra(FROM_WELCOME, false)) {
           msg = new DcMsg(dcContext, DcMsg.DC_MSG_IMAGE);
 
