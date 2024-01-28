@@ -171,7 +171,7 @@ public class DcHelper {
     dcContext.setStockTranslation(68, context.getString(R.string.device_talk));
     dcContext.setStockTranslation(69, context.getString(R.string.saved_messages));
     dcContext.setStockTranslation(70, context.getString(R.string.device_talk_explain));
-    dcContext.setStockTranslation(71, context.getString(R.string.device_talk_welcome_message));
+    dcContext.setStockTranslation(71, context.getString(R.string.device_talk_welcome_message2));
     dcContext.setStockTranslation(72, context.getString(R.string.systemmsg_unknown_sender_for_chat));
     dcContext.setStockTranslation(73, context.getString(R.string.systemmsg_subject_for_new_contact));
     dcContext.setStockTranslation(74, context.getString(R.string.systemmsg_failed_sending_to));
@@ -255,6 +255,7 @@ public class DcHelper {
 
     dcContext.setStockTranslation(172, context.getString(R.string.chat_new_group_hint));
     dcContext.setStockTranslation(173, context.getString(R.string.member_x_added));
+    dcContext.setStockTranslation(174, context.getString(R.string.invalid_unencrypted_tap_to_learn_more));
   }
 
   public static File getImexDir() {
@@ -475,6 +476,16 @@ public class DcHelper {
     new AlertDialog.Builder(context)
       .setMessage(context.getString(R.string.chat_protection_enabled_explanation))
       .setNeutralButton(R.string.learn_more, (d, w) -> openHelp(context, "#e2eeguarantee"))
+      .setPositiveButton(R.string.ok, null)
+      .setCancelable(true)
+      .show();
+  }
+
+  public static void showInvalidUnencryptedDialog(Context context) {
+    new AlertDialog.Builder(context)
+      .setMessage(context.getString(R.string.invalid_unencrypted_explanation))
+      .setNeutralButton(R.string.learn_more, (d, w) -> openHelp(context, "#howtoe2ee"))
+      .setNegativeButton(R.string.qrscan_title, (d, w) -> context.startActivity(new Intent(context, QrActivity.class)))
       .setPositiveButton(R.string.ok, null)
       .setCancelable(true)
       .show();
