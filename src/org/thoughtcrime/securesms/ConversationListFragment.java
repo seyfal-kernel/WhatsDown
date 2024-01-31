@@ -313,6 +313,28 @@ public class ConversationListFragment extends Fragment
     }
   }
 
+  private void handleMuteAllSelected() {
+    final DcContext dcContext             = DcHelper.getContext(getActivity());
+    final Set<Long> selectedConversations = new HashSet<>(getListAdapter().getBatchSelections());
+    if (areSomeSelectedChatsUnmuted()) {
+      MuteDialog.show(getActivity(), duration -> {
+          for (long chatId : selectedConversations) {
+            dcContext.setChatMuteDuration((int)chatId, duration);
+          }
+      });
+    } else {
+      // unmute
+      for (long chatId : selectedConversations) {
+        dcContext.setChatMuteDuration((int)chatId, 0);
+      }
+    }
+
+    if (actionMode != null) {
+      actionMode.finish();
+      actionMode = null;
+    }
+  }
+
   @SuppressLint("StaticFieldLeak")
   private void handleArchiveAllSelected() {
     final DcContext dcContext             = DcHelper.getContext(getActivity());
@@ -548,6 +570,18 @@ public class ConversationListFragment extends Fragment
     return false;
   }
 
+  private boolean areSomeSelectedChatsUnmuted() {
+    DcContext dcContext = DcHelper.getContext(getActivity());
+    final Set<Long> selectedChats = getListAdapter().getBatchSelections();
+    for (long chatId : selectedChats) {
+      DcChat dcChat = dcContext.getChat((int)chatId);
+      if (!dcChat.isMuted()) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   private void updateActionModeItems(Menu menu) {
     // We do not show action mode icons when relaying (= sharing or forwarding).
     if (!isRelayingMessageContent(getActivity())) {
@@ -558,6 +592,12 @@ public class ConversationListFragment extends Fragment
       } else {
         pinItem.setIcon(R.drawable.ic_unpin_white);
         pinItem.setTitle(R.string.unpin_chat);
+      }
+      MenuItem muteItem = menu.findItem(R.id.menu_mute_selected);
+      if (areSomeSelectedChatsUnmuted()) {
+        muteItem.setTitle(R.string.menu_mute);
+      } else {
+        muteItem.setTitle(R.string.menu_unmute);
       }
     }
   }
@@ -604,6 +644,7 @@ public class ConversationListFragment extends Fragment
     case R.id.menu_delete_selected:  handleDeleteAllSelected();  return true;
     case R.id.menu_pin_selected:     handlePinAllSelected();     return true;
     case R.id.menu_archive_selected: handleArchiveAllSelected(); return true;
+    case R.id.menu_mute_selected:    handleMuteAllSelected();    return true;
     }
 
     return false;
