@@ -39,8 +39,9 @@ public class AccountSelectionListFragment extends DialogFragment implements DcEv
     recyclerView.setAdapter(adapter);
     refreshData();
     DcEventCenter eventCenter = DcHelper.getEventCenter(requireActivity());
-    eventCenter.addObserver(DcContext.DC_EVENT_CONNECTIVITY_CHANGED, this);
-    eventCenter.addObserver(DcContext.DC_EVENT_INCOMING_MSG, this);
+    eventCenter.addMultiAccountObserver(DcContext.DC_EVENT_CONNECTIVITY_CHANGED, this);
+    eventCenter.addMultiAccountObserver(DcContext.DC_EVENT_INCOMING_MSG, this);
+    eventCenter.addMultiAccountObserver(DcContext.DC_EVENT_MSGS_NOTICED, this);
   }
 
   @NonNull
@@ -62,11 +63,13 @@ public class AccountSelectionListFragment extends DialogFragment implements DcEv
   }
 
   @Override
-  public void handleEvent(@NonNull DcEvent event) {
+  public void onDestroy() {
+    super.onDestroy();
+    DcHelper.getEventCenter(requireActivity()).removeObservers(this);
   }
 
   @Override
-  public void handleEvent2(@NonNull DcEvent event) {
+  public void handleEvent(@NonNull DcEvent event) {
     refreshData();
   }
 
