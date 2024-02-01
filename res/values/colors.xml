@@ -150,7 +150,7 @@
     <color name="reaction_pill_background">@color/white</color>
     <color name="reaction_pill_border">#88dddddd</color>
     <color name="reaction_pill_text_color">#545863</color>
-    <color name="reaction_pill_background_selected">?attr/colorPrimary</color>
-    <color name="reaction_pill_border_selected">@color/reaction_pill_border</color>
-    <color name="reaction_pill_text_color_selected">@color/white</color>
+    <color name="reaction_pill_background_selected">@color/reaction_pill_background</color>
+    <color name="reaction_pill_border_selected">?attr/colorPrimary</color>
+    <color name="reaction_pill_text_color_selected">@color/reaction_pill_text_color</color>
 </resources>
