@@ -147,10 +147,10 @@
          unknown_sender is used for the sender-name/quote-bar if the sender is unknown -->
     <color name="unknown_sender">#ff999999</color>
 
-    <color name="reaction_pill_background">#ffffff</color>
+    <color name="reaction_pill_background">@color/white</color>
     <color name="reaction_pill_border">#88dddddd</color>
     <color name="reaction_pill_text_color">#545863</color>
     <color name="reaction_pill_background_selected">?attr/colorPrimary</color>
     <color name="reaction_pill_border_selected">@color/reaction_pill_border</color>
-    <color name="reaction_pill_text_color_selected">@color/reaction_pill_text_color</color>
+    <color name="reaction_pill_text_color_selected">@color/white</color>
 </resources>
