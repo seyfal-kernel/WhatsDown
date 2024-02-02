@@ -419,10 +419,10 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
         startActivity(new Intent(this, ProfileActivity.class));
         return true;
       case R.id.menu_webxdc_apps_store:
-          handleShowBot("mini-apps@hispanilandia.net", "OPENPGP4FPR:3CC3726E55E69CF4B52368C411819C7E7639B38C#a=mini%2Dapps%40hispanilandia.net&n=&i=jHGRY-9E7jd&s=cRh0KZJmfKJ");
+          handleShowBot("xstore@testrun.org", "OPENPGP4FPR:37DC2B704A2AE2F6A96235CE0C3A0EBCA4F5801D#a=xstore%40testrun.org&n=&i=-1IGtynaivZ&s=JqHsvvcDmnW");
         return true;
       case R.id.menu_public_bots:
-          handleShowBot("public-bots@hispanilandia.net", "OPENPGP4FPR:A0DCC2FD2D39D5F4CABE2E7AA5FAFF66B7B9AF7D#a=public%2Dbots%40hispanilandia.net&n=Public%20Bots&i=1DiZsGwxyzv&s=tIEcS-8zZJN");
+          handleShowBot("publicbots@testrun.org", "OPENPGP4FPR:4DB8117591B27184A903FF7E9F469E00D40E13E7#a=publicbots%40testrun.org&n=Public%20Bots&i=zSuQpFtBa_Q&s=weLMu1-o1o1");
         return true;
     }
 
