@@ -55,6 +55,7 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
   CheckBoxPreference bccSelfCheckbox;
   CheckBoxPreference mvboxMoveCheckbox;
   CheckBoxPreference onlyFetchMvboxCheckbox;
+  CheckBoxPreference showSystemContacts;
 
   @Override
   public void onCreate(Bundle paramBundle) {
@@ -105,6 +106,13 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
       }
     }));
 
+    showSystemContacts = (CheckBoxPreference) this.findPreference("pref_show_system_contacts");
+    showSystemContacts.setOnPreferenceChangeListener((preference, newValue) -> {
+      boolean enabled = (Boolean) newValue;
+      dcContext.setConfigInt("ui.android.show_system_contacts", enabled? 1 : 0);
+      return true;
+    });
+
     Preference manageKeys = this.findPreference("pref_manage_keys");
     manageKeys.setOnPreferenceClickListener(new ManageKeysListener());
 
@@ -138,6 +146,7 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
     bccSelfCheckbox.setChecked(0!=dcContext.getConfigInt(CONFIG_BCC_SELF));
     mvboxMoveCheckbox.setChecked(0!=dcContext.getConfigInt(CONFIG_MVBOX_MOVE));
     onlyFetchMvboxCheckbox.setChecked(0!=dcContext.getConfigInt(CONFIG_ONLY_FETCH_MVBOX));
+    showSystemContacts.setChecked(0!=dcContext.getConfigInt("ui.android.show_system_contacts"));
   }
 
   @Override
