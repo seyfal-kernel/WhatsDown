@@ -70,11 +70,25 @@ public class WelcomeActivity extends BaseActionBarActivity implements DcEventCen
         super.onCreate(bundle);
         setContentView(R.layout.welcome_activity);
 
+        Button registerButton = findViewById(R.id.register_button);
         Button loginButton = findViewById(R.id.login_button);
         View addAsSecondDeviceButton = findViewById(R.id.add_as_second_device_button);
         View scanQrButton = findViewById(R.id.scan_qr_button);
         View backupButton = findViewById(R.id.backup_button);
 
+        registerButton.setOnClickListener((view) -> {
+            String qrAccount = "dcaccount:https://nine.testrun.org/new";
+            String domain = dcContext.checkQr(qrAccount).getText1();
+            new AlertDialog.Builder(this)
+              .setMessage(getString(R.string.register_hint, domain))
+              .setCancelable(false)
+              .setNegativeButton(R.string.cancel, null)
+              .setPositiveButton(R.string.ok, (dialog, which) -> {
+                  manualConfigure = false;
+                  startQrAccountCreation(qrAccount);
+              })
+              .show();
+        });
         loginButton.setOnClickListener((view) -> startRegistrationActivity());
         addAsSecondDeviceButton.setOnClickListener((view) -> startAddAsSecondDeviceActivity());
         scanQrButton.setOnClickListener((view) -> startRegistrationQrActivity());
