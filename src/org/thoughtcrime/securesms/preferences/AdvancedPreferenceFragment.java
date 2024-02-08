@@ -6,7 +6,6 @@ import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_BCC_SELF;
 import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_E2EE_ENABLED;
 import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_MVBOX_MOVE;
 import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_ONLY_FETCH_MVBOX;
-import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_SENTBOX_WATCH;
 import static org.thoughtcrime.securesms.connect.DcHelper.getRpc;
 
 import android.Manifest;
