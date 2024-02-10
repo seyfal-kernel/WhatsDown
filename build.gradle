@@ -132,7 +132,7 @@ android {
         buildConfigField("String", "TEST_MAIL_PW", buildConfigProperty("TEST_MAIL_PW"))
         buildConfigField("String", "NDK_ARCH", getNdkArch())
         ndk {
-            abiFilters "armeabi-v7a", "x86"
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86"
        }
     }
 
@@ -195,7 +195,7 @@ android {
         abi {
             enable true
             reset()
-            include "armeabi-v7a", "x86"
+            include "armeabi-v7a", "arm64-v8a", "x86"
             universalApk true
         }
     }

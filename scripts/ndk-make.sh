@@ -123,14 +123,14 @@ if test -z $1 || test $1 = armeabi-v7a; then
     cp target/armv7-linux-androideabi/$RELEASE/libdeltachat.a $jnidir/armeabi-v7a
 fi
 
-# if test -z $1 || test $1 = arm64-v8a; then
-#     echo "-- cross compiling to aarch64-linux-android (arm64) --"
-#     TARGET_CC="$TOOLCHAIN/bin/aarch64-linux-android21-clang" \
-#     TARGET_AR="$TOOLCHAIN/bin/llvm-ar" \
-#     TARGET_RANLIB="$TOOLCHAIN/bin/llvm-ranlib" \
-#     cargo build $RELEASEFLAG --target aarch64-linux-android -p deltachat_ffi --features jsonrpc
-#     cp target/aarch64-linux-android/$RELEASE/libdeltachat.a $jnidir/arm64-v8a
-# fi
+if test -z $1 || test $1 = arm64-v8a; then
+    echo "-- cross compiling to aarch64-linux-android (arm64) --"
+    TARGET_CC="$TOOLCHAIN/bin/aarch64-linux-android21-clang" \
+    TARGET_AR="$TOOLCHAIN/bin/llvm-ar" \
+    TARGET_RANLIB="$TOOLCHAIN/bin/llvm-ranlib" \
+    cargo build $RELEASEFLAG --target aarch64-linux-android -p deltachat_ffi --features jsonrpc
+    cp target/aarch64-linux-android/$RELEASE/libdeltachat.a $jnidir/arm64-v8a
+fi
 
 if test -z $1 || test $1 = x86; then
     echo "-- cross compiling to i686-linux-android (x86) --"
