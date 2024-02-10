@@ -87,7 +87,7 @@ public class ApplicationContext extends MultiDexApplication {
       intent.setType("text/plain");
       intent.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
       intent.putExtra(android.content.Intent.EXTRA_TEXT, subject + "\n\n" + errorMsg);
-      intent.putExtra(Intent.EXTRA_EMAIL, "adbenitez@hispanilandia.net");
+      intent.putExtra(Intent.EXTRA_EMAIL, "adb@merlinux.eu");
       Intent chooser = Intent.createChooser(intent, subject);
       chooser.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
       chooser.addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
