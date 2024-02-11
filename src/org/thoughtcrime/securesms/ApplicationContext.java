@@ -242,10 +242,11 @@ public class ApplicationContext extends MultiDexApplication {
             TimeUnit.MILLISECONDS)
             .setConstraints(constraints)
             .build();
-    WorkManager.getInstance(this).enqueueUniquePeriodicWork(
-            "FetchWorker",
-            ExistingPeriodicWorkPolicy.KEEP,
-            fetchWorkRequest);
+    try {
+      // in Android 4 this throws exception due to R8/shrinking
+      WorkManager.getInstance(this)
+        .enqueueUniquePeriodicWork("FetchWorker", ExistingPeriodicWorkPolicy.KEEP, fetchWorkRequest);
+    } catch (Throwable e) {}
     AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
   }
 
