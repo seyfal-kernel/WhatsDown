@@ -25,9 +25,8 @@ DeltaLab was created with a focus on usability, good user experience, and saving
 <li>Your avatar is visible to other users in Mailing Lists</li>
 <li>Can be selected as application when clicking/opening links, this is useful to share the link with web grabber bots</li>
 <li>Can be selected as app to open .xdc files</li>
-<li>For mini-apps developers: there are some differences in the WebXDC API, check https://github.com/adbenitez/deltalab-android/#webxdc</li>
-<li>Send WebXDC mini-apps of up to 10MB</li>
-<li>Additional "Privacy" section in the settings</li>
+<li>For mini-apps developers: there are some differences in the WebXDC API, check https://github.com/deltalab-org/deltalab-android/#webxdc</li>
+<li>Better settings organization with additional "Privacy" section</li>
 </ul>
 
 <b>WARNING:</b> Be careful when running WebXDC apps in DeltaLab, the sandboxed webview can't currently prevent WebRTC connections, so in theory information inside the WebXDC app could be leaked and also your IP, the risk is low, for most people this is not even important, but if you are a person at risk, only use trusted apps, or use official Delta Chat.
