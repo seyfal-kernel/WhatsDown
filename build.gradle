@@ -175,8 +175,8 @@ android {
             // nb: it is highly recommended to use the same settings in debug+release -
             // otherwise problems might be noticed delayed only
             minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
-                          'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            multiDexKeepProguard = file('multidex-config.pro')
 
 	    if(project.hasProperty("DC_RELEASE_STORE_FILE")) {
                 signingConfig signingConfigs.release
