@@ -422,7 +422,7 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
           handleShowBot("xstore@testrun.org", "OPENPGP4FPR:37DC2B704A2AE2F6A96235CE0C3A0EBCA4F5801D#a=xstore%40testrun.org&n=&i=-1IGtynaivZ&s=JqHsvvcDmnW");
         return true;
       case R.id.menu_public_bots:
-          handleShowBot("botsindex@nine.testrun.org", "OPENPGP4FPR:9AF055DB87EC48A1C009B6CA55E3712A6F7D346F#a=botsindex%40nine.testrun.org&n=Public%20Bots&i=QpBSronexvP&s=nAfQ0q_JomN");
+          handleShowBot("publicbots@testrun.org", "OPENPGP4FPR:4DB8117591B27184A903FF7E9F469E00D40E13E7#a=publicbots%40testrun.org&n=Public%20Bots&i=zSuQpFtBa_Q&s=weLMu1-o1o1");
         return true;
     }
 
