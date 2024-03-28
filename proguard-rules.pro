@@ -20,6 +20,7 @@
 -dontwarn com.google.android.gms.tasks.Task
 
 # avoid crash on Android 4
+-keep class androidx.startup.** { *; }
 -keepnames class * extends androidx.startup.Initializer
 # These Proguard rules ensures that ComponentInitializers are are neither shrunk nor obfuscated,
 # and are a part of the primary dex file. This is because they are discovered and instantiated
