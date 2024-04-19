@@ -1,6 +1,5 @@
 # native methods
 -keep class com.b44t.messenger.** { *; }
--keep class org.thoughtcrime.securesms.util.FileUtils* { *; }
 
 # bug with video recoder
 -keep class com.coremedia.iso.** { *; }
