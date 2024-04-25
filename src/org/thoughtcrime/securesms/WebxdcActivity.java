@@ -159,6 +159,8 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
         setScreenMode(getResources().getConfiguration());
     }
 
+    toggleFakeProxy(!internetAccess);
+
     WebSettings webSettings = webView.getSettings();
     webSettings.setJavaScriptEnabled(true);
     webSettings.setAllowFileAccess(false);
@@ -236,8 +238,8 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
 
   @Override
   protected boolean openOnlineUrl(String url) {
-    if (url.startsWith(baseURL +"/")) {
-      // internal page, continue loading in the WebView
+    if (internetAccess) {
+      // internet access enabled, continue loading in the WebView
       return false;
     }
     return super.openOnlineUrl(url);
@@ -288,7 +290,7 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
       res = new WebResourceResponse("text/plain", "UTF-8", targetStream);
     }
 
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && !internetAccess) {
       Map<String, String> headers = new HashMap<>();
       headers.put("Content-Security-Policy",
           "default-src 'self'; "
