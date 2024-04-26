@@ -272,11 +272,12 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
 
   @Override
   protected boolean openOnlineUrl(String url) {
-    if (internetAccess) {
-      // internet access enabled, continue loading in the WebView
-      return false;
+    Log.i(TAG, "openOnlineUrl: " + url);
+    boolean openExternally = !internetAccess && !url.startsWith(baseURL +"/");
+    if (openExternally || url.startsWith("mailto:") || url.startsWith("openpgp4fpr:")) {
+      return super.openOnlineUrl(url);
     }
-    return super.openOnlineUrl(url);
+    return false; // continue loading in the WebView
   }
 
   @Override
