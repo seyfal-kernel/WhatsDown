@@ -380,7 +380,22 @@ public class ConversationFragment extends MessageSelectorFragment
     }
 
     static boolean canReplyToMsg(DcMsg dcMsg) {
-        return !dcMsg.isInfo() && dcMsg.getType() != DcMsg.DC_MSG_VIDEOCHAT_INVITATION;
+        boolean canReply = dcMsg.getType() != DcMsg.DC_MSG_VIDEOCHAT_INVITATION;
+        if (canReply && dcMsg.isInfo()) {
+            switch (dcMsg.getInfoType()) {
+                case DcMsg.DC_INFO_GROUP_NAME_CHANGED:
+                case DcMsg.DC_INFO_GROUP_IMAGE_CHANGED:
+                case DcMsg.DC_INFO_MEMBER_ADDED_TO_GROUP:
+                case DcMsg.DC_INFO_MEMBER_REMOVED_FROM_GROUP:
+                case DcMsg.DC_INFO_LOCATIONSTREAMING_ENABLED:
+                case DcMsg.DC_INFO_EPHEMERAL_TIMER_CHANGED:
+                case DcMsg.DC_INFO_WEBXDC_INFO_MESSAGE:
+                    break;
+                default:
+                    canReply = false;
+            }
+        }
+        return canReply;
     }
 
     public void handleClearChat() {
