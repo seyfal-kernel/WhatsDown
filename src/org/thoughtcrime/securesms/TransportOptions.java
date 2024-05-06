@@ -12,9 +12,6 @@ import java.util.List;
 import static org.thoughtcrime.securesms.TransportOption.Type;
 
 public class TransportOptions {
-
-  private static final String TAG = TransportOptions.class.getSimpleName();
-
   private final List<OnTransportChangedListener> listeners = new LinkedList<>();
   private final Context                          context;
   private final List<TransportOption>            enabledTransports;
@@ -55,10 +52,6 @@ public class TransportOptions {
     notifyTransportChangeListeners();
   }
 
-  public boolean isManualSelection() {
-    return this.selectedOption.isPresent();
-  }
-
   public @NonNull TransportOption getSelectedTransport() {
     if (selectedOption.isPresent()) return selectedOption.get();
 
@@ -69,18 +62,6 @@ public class TransportOptions {
     }
 
     throw new AssertionError("No options of default type!");
-  }
-
-  public void disableTransport(Type type) {
-    Optional<TransportOption> option = find(type);
-
-    if (option.isPresent()) {
-      enabledTransports.remove(option.get());
-
-      if (selectedOption.isPresent() && selectedOption.get().getType() == type) {
-        setSelectedTransport(null);
-      }
-    }
   }
 
   public List<TransportOption> getEnabledTransports() {
@@ -105,16 +86,6 @@ public class TransportOptions {
     for (OnTransportChangedListener listener : listeners) {
       listener.onChange(getSelectedTransport(), selectedOption.isPresent());
     }
-  }
-
-  private Optional<TransportOption> find(Type type) {
-    for (TransportOption option : enabledTransports) {
-      if (option.isType(type)) {
-        return Optional.of(option);
-      }
-    }
-
-    return Optional.absent();
   }
 
   private boolean isEnabled(TransportOption transportOption) {

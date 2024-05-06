@@ -44,7 +44,6 @@ import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 
 import org.thoughtcrime.securesms.R;
-import org.thoughtcrime.securesms.attachments.AttachmentServer;
 import org.thoughtcrime.securesms.mms.VideoSlide;
 import org.thoughtcrime.securesms.util.ViewUtil;
 import org.thoughtcrime.securesms.video.exo.AttachmentDataSourceFactory;
@@ -53,12 +52,9 @@ import java.io.IOException;
 
 public class VideoPlayer extends FrameLayout {
 
-  private static final String TAG = VideoPlayer.class.getName();
-
   @Nullable private final SimpleExoPlayerView exoView;
 
   @Nullable private       SimpleExoPlayer     exoPlayer;
-  @Nullable private       AttachmentServer    attachmentServer;
   @Nullable private       Window              window;
 
   public VideoPlayer(Context context) {
@@ -78,7 +74,6 @@ public class VideoPlayer extends FrameLayout {
   }
 
   public void setVideoSource(@NonNull VideoSlide videoSource, boolean autoplay)
-      throws IOException
   {
     setExoViewSource(videoSource, autoplay);
   }
@@ -90,10 +85,6 @@ public class VideoPlayer extends FrameLayout {
   }
 
   public void cleanup() {
-    if (this.attachmentServer != null) {
-      this.attachmentServer.stop();
-    }
-
     if (this.exoPlayer != null) {
       this.exoPlayer.release();
     }
@@ -104,7 +95,6 @@ public class VideoPlayer extends FrameLayout {
   }
 
   private void setExoViewSource(@NonNull VideoSlide videoSource, boolean autoplay)
-      throws IOException
   {
     BandwidthMeter         bandwidthMeter             = new DefaultBandwidthMeter();
     TrackSelection.Factory videoTrackSelectionFactory = new AdaptiveTrackSelection.Factory(bandwidthMeter);

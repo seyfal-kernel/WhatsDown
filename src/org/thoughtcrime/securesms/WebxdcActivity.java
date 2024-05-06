@@ -270,6 +270,9 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
     }
   }
 
+  // This is usually only called when internetAccess == true or for mailto/openpgp4fpr scheme,
+  // because when internetAccess == false, the page is loaded inside an iframe,
+  // and WebViewClient.shouldOverrideUrlLoading is not called for HTTP(S) links inside the iframe
   @Override
   protected boolean openOnlineUrl(String url) {
     Log.i(TAG, "openOnlineUrl: " + url);
@@ -392,9 +395,8 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
         .setIntents(getWebxdcIntentWithParentStack(context, msgId))
         .build();
 
-      if (ShortcutManagerCompat.requestPinShortcut(context, shortcutInfoCompat, null)) {
-        Toast.makeText(context, R.string.done, Toast.LENGTH_SHORT).show();
-      } else {
+      Toast.makeText(context, R.string.one_moment, Toast.LENGTH_SHORT).show();
+      if (!ShortcutManagerCompat.requestPinShortcut(context, shortcutInfoCompat, null)) {
         Toast.makeText(context, "ErrAddToHomescreen: requestPinShortcut() failed", Toast.LENGTH_LONG).show();
       }
     } catch(Exception e) {
@@ -438,6 +440,7 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
       return WebxdcActivity.this.dcContext.getConfig("addr");
     }
 
+    /** @noinspection unused*/
     @JavascriptInterface
     public String selfName() {
       String name = WebxdcActivity.this.dcContext.getConfig("displayname");
@@ -447,6 +450,7 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
       return name;
     }
 
+    /** @noinspection unused*/
     @JavascriptInterface
     public boolean sendStatusUpdate(String payload, String descr) {
       Log.i(TAG, "sendStatusUpdate");
@@ -462,12 +466,14 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
       return true;
     }
 
+    /** @noinspection unused*/
     @JavascriptInterface
     public String getStatusUpdates(int lastKnownSerial) {
       Log.i(TAG, "getStatusUpdates");
       return WebxdcActivity.this.dcContext.getWebxdcStatusUpdates(WebxdcActivity.this.dcAppMsg.getId(), lastKnownSerial    );
     }
 
+    /** @noinspection unused*/
     @JavascriptInterface
     public String sendToChat(String message) {
       Log.i(TAG, "sendToChat");
