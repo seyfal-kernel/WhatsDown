@@ -97,9 +97,9 @@ public class AccountSelectionListFragment extends DialogFragment implements DcEv
       AccountSelectionListFragment.this.dismiss();
       int accountId = contact.getAccountId();
       if (accountId == DC_CONTACT_ID_ADD_ACCOUNT) {
-        AccountManager.getInstance().switchAccountAndStartActivity(activity, 0, null);
+        AccountManager.getInstance().switchAccountAndStartActivity(activity, 0);
       } else if (accountId != DcHelper.getAccounts(activity).getSelectedAccount().getAccountId()) {
-        AccountManager.getInstance().switchAccountAndStartActivity(activity, accountId, null);
+        AccountManager.getInstance().switchAccountAndStartActivity(activity, accountId);
       }
     }
 

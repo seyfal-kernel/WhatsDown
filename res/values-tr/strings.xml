@@ -499,6 +499,7 @@
     <string name="multidevice_same_network_hint">Her iki aygıtın da aynı Wi-Fi\'da ya da ağda olduğundan emin olun</string>
     <string name="multidevice_this_creates_a_qr_code">Bu, ikinci aygıtın hesabı kopyalamak için tarayabileceği bir QR kodu oluşturur.</string>
     <string name="multidevice_install_dc_on_other_device">Delta Chat\'i diğer aygıtınıza kurun (https://get.delta.chat)</string>
+    <!-- "I Already Have a Login / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
     <string name="multidevice_tap_scan_on_other_device">Delta Chat\'i başlatın, “İkinci Aygıt Olarak Ekle”ye dokunun ve burada gösterilen kodu tarayın</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
     <string name="multidevice_qr_subtitle">%1$s için ikinci aygıtı ayarlamak üzere tarayın</string>
@@ -576,7 +577,7 @@
     <string name="login_header">E-Posta Hesabınıza Giriş Yapın</string>
     <string name="login_explain">Varolan bir e-posta hesabıyla giriş yapın</string>
     <string name="login_subheader">Bilinen e-posta sağlayıcıları için ek ayarlar otomatik olarak ayarlanır. Bazen IMAP\'in web ayarlarından etkinleştirilmesi gerekir. Yardım için e-posta sağlayıcınıza ya da arkadaşlarınıza danışın.</string>
-    <string name="login_no_servers_hint">Delta Chat sunucuları yoktur; verileriniz aygıtınızda kalır.</string>
+    <string name="login_no_servers_hint">Delta Chat kullanıcı verisi toplamaz; her şey aygıtınızda kalır.</string>
     <string name="login_inbox">Gelen Kutusu</string>
     <string name="login_imap_login">IMAP Giriş Adı</string>
     <string name="login_imap_server">IMAP Sunucusu</string>
@@ -597,7 +598,7 @@
     <string name="login_socks5_user">SOCKS5 Kullanıcısı</string>
     <string name="login_socks5_password">SOCKS5 Parolası</string>
     <string name="login_info_oauth2_title">Basitleştirilen ayarlamayla sürdürülsün mü?</string>
-    <string name="login_info_oauth2_text">Girilen e-posta adresi basitleştirilen bir ayarlamayı (OAuth 2.0) destekliyor.\n\nSonraki adımda, lütfen Delta Chat\'in E-posta Üzerinden Sohbet uygulamanız olarak davranmasına izin verin.\n\nDelta Chat sunucuları yoktur; verileriniz aygıtınızda kalır.</string>
+    <string name="login_info_oauth2_text">Girilen e-posta adresi basitleştirilen bir ayarlamayı (OAuth 2.0) destekliyor.\n\nSonraki adımda, lütfen Delta Chat\'in E-posta Üzerinden Sohbet uygulamanız olarak davranmasına izin verin.\n\nDelta Chat kullanıcı verisi toplamaz; her şey aygıtınızda kalır.</string>
     <string name="login_certificate_checks">Sertifika Denetimleri</string>
     <string name="login_error_mail">Lütfen geçerli bir e-posta adresi girin</string>
     <string name="login_error_server">Lütfen geçerli bir sunucu / IP adresi girin</string>
@@ -802,7 +803,9 @@
     <string name="autodel_after_1_year">1 yıl sonra</string>
 
     <!-- autocrypt -->
+    <!-- deprecated, used "Encryption" if a headline is needed -->
     <string name="autocrypt">Autocrypt</string>
+    <!-- deprecated, the button "Send Autocrypt Setup Message" is enough -->
     <string name="autocrypt_explain">Autocrypt, otomatik uçtan uca e-posta şifrelemesi için yeni ve açık bir belirtimdir.\n\nUçtan uca ayarlamanız, gerektiğinde otomatik olarak oluşturulur ve Autocrypt Ayarlama İletileri ile aygıtlar arasında aktarabilirsiniz.</string>
     <string name="autocrypt_send_asm_title">Autocrypt Ayarlama İletisi Gönder</string>
     <string name="autocrypt_send_asm_explain_before">Bir Autocrypt Ayarlama İletisi, uçtan uca ayarlamanızı diğer Autocrypt uyumlu uygulamalarla güvenli olarak paylaşır.\n\nAyarlama, burada görüntülenen ve diğer aygıtta yazılması gereken bir ayarlama kodu tarafından şifrelenecek.</string>

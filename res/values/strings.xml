@@ -514,7 +514,8 @@
     <string name="multidevice_same_network_hint">Make sure both devices are on the same Wi-Fi or network</string>
     <string name="multidevice_this_creates_a_qr_code">This creates a QR code that the second device can scan to copy the account.</string>
     <string name="multidevice_install_dc_on_other_device">Install DeltaLab on your other device (https://get.delta.chat)</string>
-    <string name="multidevice_tap_scan_on_other_device">Start DeltaLab, tap “Add as Second Device” and scan the code shown here</string>
+    <!-- "I Already Have a Login / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
+    <string name="multidevice_tap_scan_on_other_device">Start DeltaLab, tap “I Already Have a Login / Add as Second Device” and scan the code shown here</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
     <string name="multidevice_qr_subtitle">Scan to set up second device for %1$s</string>
     <string name="multidevice_receiver_title">Add as Second Device</string>
@@ -651,7 +652,7 @@
     <!-- preferences -->
     <string name="pref_using_custom">Using custom: %s</string>
     <string name="pref_using_default">Using default: %s</string>
-    <string name="pref_profile_info_headline">Your Profile Info</string>
+    <string name="pref_profile_info_headline">Your Profile</string>
     <string name="pref_profile_photo">Profile Image</string>
     <string name="pref_blocked_contacts">Blocked Contacts</string>
     <string name="blocked_empty_hint">Blocked contacts will appear here.</string>
@@ -695,6 +696,8 @@
     <string name="pref_read_receipts_explain">If read receipts are disabled, you won\'t be able to see read receipts from others.</string>
     <string name="pref_subject">Subject</string>
     <string name="pref_subject_explain">If subject is disabled, your messages will be sent without a subject.</string>
+    <string name="pref_server">Server</string>
+    <string name="pref_encryption">Encryption</string>
     <string name="pref_manage_keys">Manage Keys</string>
     <string name="pref_use_system_emoji">Use System Emoji</string>
     <string name="pref_use_system_emoji_explain">Turn off DeltaLab\'s built-in emoji support</string>
@@ -820,7 +823,9 @@
     <string name="autodel_after_1_year">After 1 year</string>
 
     <!-- autocrypt -->
+    <!-- deprecated, used "Encryption" if a headline is needed -->
     <string name="autocrypt">Autocrypt</string>
+    <!-- deprecated, the button "Send Autocrypt Setup Message" is enough -->
     <string name="autocrypt_explain">Autocrypt is a new and open specification for automatic end-to-end e-mail encryption.\n\nYour end-to-end setup is created automatically as needed and you can transfer it between devices with Autocrypt Setup Messages.</string>
     <string name="autocrypt_send_asm_title">Send Autocrypt Setup Message</string>
     <string name="autocrypt_send_asm_explain_before">An Autocrypt Setup Message securely shares your end-to-end setup with other Autocrypt-compliant apps.\n\nThe setup will be encrypted by a setup code displayed here and must be typed on the other device.</string>

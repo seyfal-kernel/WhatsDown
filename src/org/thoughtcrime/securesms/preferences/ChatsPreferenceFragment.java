@@ -1,7 +1,6 @@
 package org.thoughtcrime.securesms.preferences;
 
 import static android.app.Activity.RESULT_OK;
-import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_SHOW_EMAILS;
 
 import android.Manifest;
 import android.content.Context;
@@ -24,11 +23,11 @@ import org.thoughtcrime.securesms.ApplicationPreferencesActivity;
 import org.thoughtcrime.securesms.R;
 import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.permissions.Permissions;
+import org.thoughtcrime.securesms.util.Prefs;
 import org.thoughtcrime.securesms.util.ScreenLockUtil;
 import org.thoughtcrime.securesms.util.Util;
 
 public class ChatsPreferenceFragment extends ListSummaryPreferenceFragment {
-  private ListPreference showEmails;
   private ListPreference mediaQuality;
   private ListPreference autoDownload;
   private CheckBoxPreference subjectCheckbox;
@@ -53,13 +52,6 @@ public class ChatsPreferenceFragment extends ListSummaryPreferenceFragment {
     });
     nicerAutoDownloadNames();
 
-    showEmails = (ListPreference) this.findPreference("pref_show_emails");
-    showEmails.setOnPreferenceChangeListener((preference, newValue) -> {
-      updateListSummary(preference, newValue);
-      dcContext.setConfigInt(CONFIG_SHOW_EMAILS, Util.objectToInt(newValue));
-      return true;
-    });
-
     subjectCheckbox = (CheckBoxPreference) this.findPreference("pref_subject");
     subjectCheckbox.setOnPreferenceChangeListener(new SubjectToggleListener());
 
@@ -77,11 +69,7 @@ public class ChatsPreferenceFragment extends ListSummaryPreferenceFragment {
     super.onResume();
     ((ApplicationPreferencesActivity)getActivity()).getSupportActionBar().setTitle(R.string.pref_chats_and_media);
 
-    String value = Integer.toString(dcContext.getConfigInt("show_emails"));
-    showEmails.setValue(value);
-    updateListSummary(showEmails, value);
-
-    value = Integer.toString(dcContext.getConfigInt(DcHelper.CONFIG_MEDIA_QUALITY));
+    String value = Integer.toString(dcContext.getConfigInt(DcHelper.CONFIG_MEDIA_QUALITY));
     mediaQuality.setValue(value);
     updateListSummary(mediaQuality, value);
 
@@ -134,17 +122,13 @@ public class ChatsPreferenceFragment extends ListSummaryPreferenceFragment {
   }
 
   public static CharSequence getSummary(Context context) {
-    DcContext dcContext = DcHelper.getContext(context);
-    final String offRes = context.getString(R.string.off);
-    String showEmails = "?";
-    switch (dcContext.getConfigInt("show_emails")) {
-      case DcContext.DC_SHOW_EMAILS_OFF: showEmails = offRes; break;
-      case DcContext.DC_SHOW_EMAILS_ACCEPTED_CONTACTS: showEmails = context.getString(R.string.pref_show_emails_accepted_contacts); break;
-      case DcContext.DC_SHOW_EMAILS_ALL: showEmails = context.getString(R.string.pref_show_emails_all); break;
+    final String quality;
+    if (Prefs.isHardCompressionEnabled(context)) {
+      quality = context.getString(R.string.pref_outgoing_worse);
+    } else {
+      quality = context.getString(R.string.pref_outgoing_balanced);
     }
-
-    String summary = context.getString(R.string.pref_show_emails) + " " + showEmails;
-    return summary;
+    return context.getString(R.string.pref_outgoing_media_quality) + " " + quality;
   }
 
   private class SubjectToggleListener implements Preference.OnPreferenceChangeListener {

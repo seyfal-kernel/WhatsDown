@@ -6,6 +6,7 @@ import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_BCC_SELF;
 import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_E2EE_ENABLED;
 import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_MVBOX_MOVE;
 import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_ONLY_FETCH_MVBOX;
+import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_SHOW_EMAILS;
 import static org.thoughtcrime.securesms.connect.DcHelper.getRpc;
 
 import android.Manifest;
@@ -24,6 +25,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.preference.CheckBoxPreference;
+import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 
 import com.b44t.messenger.DcContext;
@@ -33,6 +35,7 @@ import org.thoughtcrime.securesms.ApplicationPreferencesActivity;
 import org.thoughtcrime.securesms.ConversationActivity;
 import org.thoughtcrime.securesms.LogViewActivity;
 import org.thoughtcrime.securesms.R;
+import org.thoughtcrime.securesms.RegistrationActivity;
 import org.thoughtcrime.securesms.connect.DcEventCenter;
 import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.mms.AttachmentManager;
@@ -40,6 +43,7 @@ import org.thoughtcrime.securesms.permissions.Permissions;
 import org.thoughtcrime.securesms.util.ScreenLockUtil;
 import org.thoughtcrime.securesms.util.StorageUtil;
 import org.thoughtcrime.securesms.util.StreamUtil;
+import org.thoughtcrime.securesms.util.Util;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -54,6 +58,7 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
   private static final String TAG = AdvancedPreferenceFragment.class.getSimpleName();
   public static final int PICK_SELF_KEYS = 29923;
 
+  private ListPreference showEmails;
   CheckBoxPreference preferE2eeCheckbox;
   CheckBoxPreference bccSelfCheckbox;
   CheckBoxPreference mvboxMoveCheckbox;
@@ -62,6 +67,13 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
   @Override
   public void onCreate(Bundle paramBundle) {
     super.onCreate(paramBundle);
+
+    showEmails = (ListPreference) this.findPreference("pref_show_emails");
+    showEmails.setOnPreferenceChangeListener((preference, newValue) -> {
+      updateListSummary(preference, newValue);
+      dcContext.setConfigInt(CONFIG_SHOW_EMAILS, Util.objectToInt(newValue));
+      return true;
+    });
 
     Preference sendAsm = this.findPreference("pref_send_autocrypt_setup_message");
     sendAsm.setOnPreferenceClickListener(new SendAsmListener());
@@ -135,6 +147,15 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
 
       return true;
     }));
+
+    Preference passwordAndAccount = this.findPreference("password_account_settings_button");
+    passwordAndAccount.setOnPreferenceClickListener(((preference) -> {
+      boolean result = ScreenLockUtil.applyScreenLock(getActivity(), getString(R.string.pref_password_and_account_settings), getString(R.string.enter_system_secret_to_continue), REQUEST_CODE_CONFIRM_CREDENTIALS_ACCOUNT);
+      if (!result) {
+        openRegistrationActivity();
+      }
+      return true;
+    }));
   }
 
   @Override
@@ -146,6 +167,10 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
   public void onResume() {
     super.onResume();
     ((ApplicationPreferencesActivity) getActivity()).getSupportActionBar().setTitle(R.string.menu_advanced);
+
+    String value = Integer.toString(dcContext.getConfigInt("show_emails"));
+    showEmails.setValue(value);
+    updateListSummary(showEmails, value);
 
     preferE2eeCheckbox.setChecked(0!=dcContext.getConfigInt(CONFIG_E2EE_ENABLED));
     bccSelfCheckbox.setChecked(0!=dcContext.getConfigInt(CONFIG_BCC_SELF));
@@ -173,6 +198,8 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
       } catch (IOException e) {
         e.printStackTrace();
       }
+    } else if (requestCode == REQUEST_CODE_CONFIRM_CREDENTIALS_ACCOUNT) {
+      openRegistrationActivity();
     }
   }
 
@@ -238,6 +265,11 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
       webrtcInstance.setSummary(DcHelper.isWebrtcConfigOk(dcContext)?
               dcContext.getConfig(DcHelper.CONFIG_WEBRTC_INSTANCE) : getString(R.string.none));
     }
+  }
+
+  private void openRegistrationActivity() {
+    Intent intent = new Intent(getActivity(), RegistrationActivity.class);
+    startActivity(intent);
   }
 
   /***********************************************************************************************

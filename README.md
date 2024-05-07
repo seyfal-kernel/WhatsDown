@@ -32,6 +32,14 @@ DeltaLab has some extended support for WebXDC apps:
 - Inside apps, clicking external links is supported, ex. to open in browser, so you can include links to your website or donation pages.
 - `manifest.toml` field: `orientation`, if you set it to `"landscape"` your app will be launched in landscape mode.
 
+# Translations
+
+Android metadata and changelogs are translated using [Weblate](https://hosted.weblate.org/projects/deltachat/android-metadata/).
+
+<a href="https://hosted.weblate.org/engage/deltachat/">
+<img src="https://hosted.weblate.org/widget/deltachat/android-metadata/svg-badge.svg" alt="Translation status" />
+</a>
+
 # Credits
 
 DeltaLab is based on the [official Delta Chat client](https://github.com/deltachat/deltachat-android) with some small improvements.
