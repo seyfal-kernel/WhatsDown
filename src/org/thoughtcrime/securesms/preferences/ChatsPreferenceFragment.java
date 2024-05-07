@@ -30,7 +30,6 @@ import org.thoughtcrime.securesms.util.Util;
 public class ChatsPreferenceFragment extends ListSummaryPreferenceFragment {
   private ListPreference mediaQuality;
   private ListPreference autoDownload;
-  private CheckBoxPreference subjectCheckbox;
 
   @Override
   public void onCreate(Bundle paramBundle) {
@@ -51,9 +50,6 @@ public class ChatsPreferenceFragment extends ListSummaryPreferenceFragment {
       return true;
     });
     nicerAutoDownloadNames();
-
-    subjectCheckbox = (CheckBoxPreference) this.findPreference("pref_subject");
-    subjectCheckbox.setOnPreferenceChangeListener(new SubjectToggleListener());
 
     Preference backup = this.findPreference("pref_backup");
     backup.setOnPreferenceClickListener(new BackupListener());
@@ -77,8 +73,6 @@ public class ChatsPreferenceFragment extends ListSummaryPreferenceFragment {
     value = alignToMaxEntry(value, autoDownload.getEntryValues());
     autoDownload.setValue(value);
     updateListSummary(autoDownload, value);
-
-    subjectCheckbox.setChecked(0 != dcContext.getConfigInt("subject_enabled"));
   }
 
   // prefixes "Up to ..." to all entry names but the first one.
@@ -129,15 +123,6 @@ public class ChatsPreferenceFragment extends ListSummaryPreferenceFragment {
       quality = context.getString(R.string.pref_outgoing_balanced);
     }
     return context.getString(R.string.pref_outgoing_media_quality) + " " + quality;
-  }
-
-  private class SubjectToggleListener implements Preference.OnPreferenceChangeListener {
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-      boolean enabled = (boolean) newValue;
-      dcContext.setConfigInt("subject_enabled", enabled ? 1 : 0);
-      return true;
-    }
   }
 
   /***********************************************************************************************
