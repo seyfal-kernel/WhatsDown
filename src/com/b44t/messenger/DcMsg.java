@@ -119,7 +119,8 @@ public class DcMsg {
     public native long    getSortTimestamp   ();
     public native boolean hasDeviatingTimestamp();
     public native boolean hasLocation        ();
-    public native int     getType            ();
+    private native int    getViewType        ();
+    public int            getType            () { return getDownloadState()==DC_DOWNLOAD_DONE? getViewType() : DC_MSG_TEXT; }
     public native int     getInfoType        ();
     public native int     getState           ();
     public native int     getDownloadState   ();
