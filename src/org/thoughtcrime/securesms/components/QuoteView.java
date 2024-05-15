@@ -170,8 +170,9 @@ public class QuoteView extends FrameLayout implements RecipientForeverObserver {
           authorView.setTextColor(getResources().getColor(R.color.core_dark_05));
           quoteBarView.setBackgroundColor(getResources().getColor(R.color.core_dark_05));
         } else {
-          authorView.setTextColor(Util.rgbToArgbColor(contact.getColor()));
-          quoteBarView.setBackgroundColor(Util.rgbToArgbColor(contact.getColor()));
+          int color = author.getColor()==0? contact.getColor() : author.getColor();
+          authorView.setTextColor(Util.rgbToArgbColor(color));
+          quoteBarView.setBackgroundColor(Util.rgbToArgbColor(color));
         }
       }
     }

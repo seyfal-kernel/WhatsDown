@@ -173,7 +173,7 @@ public class ConversationItem extends BaseConversationItem
     bind(messageRecord, dcChat, batchSelected, pulseHighlight, recipients);
     this.locale                 = locale;
     this.glideRequests          = glideRequests;
-    this.showSender             = dcChat.isMultiUser() || messageRecord.getOverrideSenderName() != null;
+    this.showSender             = dcContext.isCommunity() || dcChat.isMultiUser() || messageRecord.getOverrideSenderName() != null;
 
     if (showSender && !messageRecord.isOutgoing()) {
       this.dcContact = dcContext.getContact(messageRecord.getFromId());
@@ -635,7 +635,9 @@ public class ConversationItem extends BaseConversationItem
     if (messageRecord.isOutgoing() || !showSender || dcContact ==null) {
       contactPhoto.setVisibility(View.GONE);
     } else {
-      contactPhoto.setAvatar(glideRequests, new Recipient(context, dcContact), true);
+      int color = messageRecord.getSenderColor();
+      Recipient recipient = new Recipient(context, dcContact, messageRecord.getSenderName(dcContact, !dcContext.isCommunity()), color);
+      contactPhoto.setAvatar(glideRequests, recipient, true);
       contactPhoto.setVisibility(View.VISIBLE);
     }
   }
@@ -660,7 +662,7 @@ public class ConversationItem extends BaseConversationItem
     Recipient author = null;
     SlideDeck slideDeck = new SlideDeck();
     if (msg != null) {
-      author = new Recipient(context, dcContext.getContact(msg.getFromId()));
+      author = new Recipient(context, dcContext.getContact(msg.getFromId()), msg.getSenderColor());
       if (msg.getType() != DcMsg.DC_MSG_TEXT) {
         Slide slide = MediaUtil.getSlideForMsg(context, msg);
         if (slide != null) {
@@ -767,7 +769,8 @@ public class ConversationItem extends BaseConversationItem
     }
     else if (showSender && !messageRecord.isOutgoing() && dcContact !=null) {
       this.groupSender.setText(messageRecord.getSenderName(dcContact, true));
-      this.groupSender.setTextColor(Util.rgbToArgbColor(dcContact.getColor()));
+      int color = messageRecord.getSenderColor();
+      this.groupSender.setTextColor(Util.rgbToArgbColor(color!=0? color : dcContact.getColor()));
     }
   }
 

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+  <string name="community">Comunidad</string>
+  <string name="description">Descripción</string>
     <!-- common strings without special context -->
     <string name="app_name">DeltaLab</string>
     <string name="ok">OK</string>

@@ -247,6 +247,23 @@ public class DcContext {
       return ret.trim();
     }
 
+    public boolean isCommunity() {
+        return getConfigInt("is_community") == 1;
+    }
+
+    public void setCommunityMode(boolean enable) {
+        setConfig("is_community", enable? "1" : null);
+    }
+
+    public String getCommunityUser() {
+        String name = getConfig("ui.community.selfname");
+        return name == null? "" : name;
+    }
+
+    public void setCommunityUser(String name) {
+        setConfig("ui.community.selfname", name);
+    }
+
     /**
      * @return true if at least one chat has location streaming enabled
      */

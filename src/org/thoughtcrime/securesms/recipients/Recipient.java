@@ -65,6 +65,7 @@ public class Recipient {
 
   private final @Nullable DcChat dcChat;
   private @Nullable DcContact dcContact;
+  private int color = 0;
 
   public static @NonNull Recipient fromChat(@NonNull Context context, int dcMsgId) {
     DcContext dcContext = DcHelper.getContext(context);
@@ -97,8 +98,18 @@ public class Recipient {
     this(context, null, dcContact, null);
   }
 
+  public Recipient(@NonNull Context context, @NonNull DcContact dcContact, int color) {
+    this(context, null, dcContact, null);
+    this.color = color;
+  }
+
   public Recipient(@NonNull Context context, @NonNull DcContact dcContact, @NonNull String profileName) {
     this(context, null, dcContact, profileName);
+  }
+
+  public Recipient(@NonNull Context context, @NonNull DcContact dcContact, @NonNull String profileName, int color) {
+    this(context, null, dcContact, profileName);
+    this.color = color;
   }
 
   private Recipient(@NonNull Context context, @Nullable DcChat dcChat, @Nullable DcContact dcContact, @Nullable String profileName) {
@@ -197,6 +208,9 @@ public class Recipient {
     if(dcChat!=null) {
       rgb = dcChat.getColor();
     }
+    else if(color!=0) {
+        rgb = color;
+    }
     else if(dcContact!=null) {
       rgb = dcContact.getColor();
     }
@@ -216,6 +230,10 @@ public class Recipient {
   }
 
   public synchronized @Nullable ContactPhoto getContactPhoto(Context context) {
+    if (color != 0) { // community nick
+      return null;
+    }
+
     LocalFileContactPhoto contactPhoto = null;
     if (dcChat!=null) {
       contactPhoto = new GroupRecordContactPhoto(context, address, dcChat);
@@ -288,6 +306,11 @@ public class Recipient {
   public DcChat getChat()
   {
     return dcChat!=null? dcChat : new DcChat(0, 0);
+  }
+
+  public int getColor()
+  {
+    return color;
   }
 
   @Override

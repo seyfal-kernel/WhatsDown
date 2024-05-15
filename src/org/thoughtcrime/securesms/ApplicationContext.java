@@ -131,6 +131,9 @@ public class ApplicationContext extends MultiDexApplication {
           e.printStackTrace();
         }
       }
+      if ("deltafans@nine.testrun.org".equals(ac.getConfig("configured_addr")) && !ac.isCommunity()) {
+          ac.setCommunityMode(true);
+      }
     }
     if (allAccounts.length == 0) {
       dcAccounts.addAccount();

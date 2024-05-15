@@ -26,9 +26,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.loader.app.LoaderManager;
 
+import com.b44t.messenger.DcContext;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
+import com.google.android.material.textfield.TextInputLayout;
 import com.soundcloud.android.crop.Crop;
 
 import org.thoughtcrime.securesms.components.AvatarSelector;
@@ -63,6 +65,7 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Emoj
   private InputAwareLayout       container;
   private ImageView              avatar;
   private EditText               name;
+  private EditText               overridenName;
   private MediaKeyboard          emojiDrawer;
   private EditText               statusView;
 
@@ -202,6 +205,7 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Emoj
     TextView loginSuccessText              = ViewUtil.findById(this, R.id.login_success_text);
     this.avatar       = ViewUtil.findById(this, R.id.avatar);
     this.name         = ViewUtil.findById(this, R.id.name_text);
+    this.overridenName = ViewUtil.findById(this, R.id.overriden_name);
     this.emojiDrawer  = ViewUtil.findById(this, R.id.emoji_drawer);
     this.container    = ViewUtil.findById(this, R.id.container);
     this.statusView   = ViewUtil.findById(this, R.id.status_text);
@@ -212,6 +216,12 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Emoj
       ViewUtil.findById(this, R.id.status_text_layout).setVisibility(View.GONE);
       ViewUtil.findById(this, R.id.information_label).setVisibility(View.GONE);
     } else {
+      if (DcHelper.getContext(this).isCommunity()) {
+        ViewUtil.findById(this, R.id.community_user_container).setVisibility(View.VISIBLE);
+        ViewUtil.findById(this, R.id.information_label).setVisibility(View.GONE);
+        ((TextInputLayout)ViewUtil.findById(this, R.id.name)).setHint(R.string.community);
+        ((TextInputLayout)ViewUtil.findById(this, R.id.status_text_layout)).setHint(R.string.description);
+      }
       loginSuccessText.setVisibility(View.GONE);
     }
   }
@@ -221,6 +231,10 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Emoj
     if (!TextUtils.isEmpty(profileName)) {
       name.setText(profileName);
       name.setSelection(profileName.length(), profileName.length());
+    }
+    DcContext dcContext = DcHelper.getContext(this);
+    if (dcContext.isCommunity()) {
+      overridenName.setText(dcContext.getCommunityUser());
     }
   }
 
@@ -280,11 +294,15 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Emoj
       return;
     }
     final String name = this.name.getText().toString();
+    final String ovName = this.overridenName.getText().toString().trim();
 
     new AsyncTask<Void, Void, Boolean>() {
       @Override
       protected Boolean doInBackground(Void... params) {
         Context context    = CreateProfileActivity.this;
+        if (DcHelper.getContext(context).isCommunity()) {
+          DcHelper.getContext(context).setCommunityUser(ovName);
+        }
         DcHelper.set(context, DcHelper.CONFIG_DISPLAY_NAME, name);
         setStatusText();
 
