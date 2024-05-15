@@ -84,6 +84,9 @@ public class ProfilePreference extends Preference {
       profileNameView.setText(profileName);
     }
 
-    profileAddressView.setText(address);
+    if (DcHelper.getContext(getContext()).isCommunity())
+      profileAddressView.setText(R.string.community);
+    else
+      profileAddressView.setText(address);
   }
 }
