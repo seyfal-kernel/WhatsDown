@@ -59,6 +59,10 @@ public class PrivacyPreferenceFragment extends ListSummaryPreferenceFragment {
 
     Preference screenSecurity = this.findPreference(Prefs.SCREEN_SECURITY_PREF);
     screenSecurity.setOnPreferenceChangeListener(new ScreenShotSecurityListener());
+
+    if (dcContext.isChatmail()) {
+      showSystemContacts.setVisible(false);
+    }
   }
 
   @Override

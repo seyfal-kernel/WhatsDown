@@ -260,6 +260,7 @@ public class DcContext {
 
     public void setCommunityUser(String name) {
         setConfig("ui.community.selfname", name);
+    }
 
     public boolean isChatmail() {
       return getConfigInt("is_chatmail") == 1;
