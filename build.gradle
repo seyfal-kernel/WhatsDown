@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application' version '8.1.4'
+    id 'com.google.gms.google-services' version '4.4.1'
 }
 
 repositories {
@@ -60,6 +61,11 @@ dependencies {
     implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'  // number of unread messages,
          // the one-letter circle for the contacts (when there is not avatar) and a white background.
     implementation 'com.googlecode.mp4parser:isoparser:1.0.6' // MP4 recoding; upgrading eg. to 1.1.22 breaks recoding, however, i have not investigated further, just reset to 1.0.6
+    implementation ('com.google.firebase:firebase-messaging:23.4.1') { // for PUSH notifications
+        exclude group: 'com.google.firebase', module: 'firebase-core'
+        exclude group: 'com.google.firebase', module: 'firebase-analytics'
+        exclude group: 'com.google.firebase', module: 'firebase-measurement-connector'
+    }
     implementation ('com.davemorrissey.labs:subsampling-scale-image-view:3.6.0') { // for the zooming on photos / media
         exclude group: 'com.android.support', module: 'support-annotations'
     }
@@ -113,8 +119,8 @@ android {
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        versionCode 674
-        versionName "1.44.0"
+        versionCode 675
+        versionName "1.45.0"
 
         applicationId "com.b44t.messenger"
         multiDexEnabled true
@@ -191,6 +197,7 @@ android {
         gplay {
             dimension "none"
             applicationId "chat.delta"
+            apply plugin: "com.google.gms.google-services"
         }
     }
 

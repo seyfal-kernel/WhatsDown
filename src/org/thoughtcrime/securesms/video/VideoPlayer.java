@@ -48,8 +48,6 @@ import org.thoughtcrime.securesms.mms.VideoSlide;
 import org.thoughtcrime.securesms.util.ViewUtil;
 import org.thoughtcrime.securesms.video.exo.AttachmentDataSourceFactory;
 
-import java.io.IOException;
-
 public class VideoPlayer extends FrameLayout {
 
   @Nullable private final SimpleExoPlayerView exoView;
