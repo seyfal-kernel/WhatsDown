@@ -156,6 +156,15 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
       }
       return true;
     }));
+
+    if (dcContext.isChatmail()) {
+      preferE2eeCheckbox.setVisible(false);
+      showSystemContacts.setVisible(false);
+      sentboxWatchCheckbox.setVisible(false);
+      bccSelfCheckbox.setVisible(false);
+      mvboxMoveCheckbox.setVisible(false);
+      onlyFetchMvboxCheckbox.setVisible(false);
+    }
   }
 
   @Override
