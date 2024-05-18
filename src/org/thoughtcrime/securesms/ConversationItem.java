@@ -22,6 +22,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
+import android.net.Uri;
 import android.os.Build;
 import android.text.Spannable;
 import android.text.TextUtils;
@@ -32,10 +33,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.DimenRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 
 import com.b44t.messenger.DcChat;
 import com.b44t.messenger.DcContact;
@@ -43,6 +46,7 @@ import com.b44t.messenger.DcMsg;
 import com.b44t.messenger.rpc.Reactions;
 import com.b44t.messenger.rpc.RpcException;
 
+import org.json.JSONObject;
 import org.thoughtcrime.securesms.audio.AudioSlidePlayer;
 import org.thoughtcrime.securesms.components.AudioView;
 import org.thoughtcrime.securesms.components.AvatarImageView;
@@ -62,8 +66,10 @@ import org.thoughtcrime.securesms.mms.Slide;
 import org.thoughtcrime.securesms.mms.SlideClickListener;
 import org.thoughtcrime.securesms.mms.SlideDeck;
 import org.thoughtcrime.securesms.mms.StickerSlide;
+import org.thoughtcrime.securesms.providers.PersistentBlobProvider;
 import org.thoughtcrime.securesms.reactions.ReactionsConversationView;
 import org.thoughtcrime.securesms.recipients.Recipient;
+import org.thoughtcrime.securesms.util.JsonUtils;
 import org.thoughtcrime.securesms.util.LongClickMovementMethod;
 import org.thoughtcrime.securesms.util.MarkdownUtil;
 import org.thoughtcrime.securesms.util.MediaUtil;
@@ -414,10 +420,14 @@ public class ConversationItem extends BaseConversationItem
     } else if (messageRecord.getType() == DcMsg.DC_MSG_WEBXDC) {
       msgActionButton.setVisibility(View.VISIBLE);
       msgActionButton.setEnabled(true);
-      msgActionButton.setText(R.string.start_app);
+      msgActionButton.setText(webxdcViewStub.get().isCommunity()? R.string.join: R.string.start_app);
       msgActionButton.setOnClickListener(view -> {
         if (batchSelected.isEmpty()) {
-          WebxdcActivity.openWebxdcActivity(getContext(), messageRecord);
+          if (webxdcViewStub.get().isCommunity()) {
+            joinCommunity(messageRecord);
+          } else {
+            WebxdcActivity.openWebxdcActivity(getContext(), messageRecord);
+          }
         } else {
           passthroughClickListener.onClick(view);
         }
@@ -627,6 +637,29 @@ public class ConversationItem extends BaseConversationItem
     }
 
     mediaThumbnailStub.get().setOutlineCorners(topLeft, topRight, bottomRight, bottomLeft);
+  }
+
+  private void joinCommunity(DcMsg dcMsg) {
+    JSONObject info = dcMsg.getWebxdcInfo();
+    String name = JsonUtils.optString(info, "name");
+    new AlertDialog.Builder(getContext())
+      .setMessage(getContext().getString(R.string.ask_join_community, name))
+      .setPositiveButton(R.string.yes, (dialog, which) -> {
+        String filename = "backup.tar";
+        byte[] blob = dcMsg.getWebxdcBlob(filename);
+        if (blob == null) {
+          Toast.makeText(getContext(), "invalid community file", Toast.LENGTH_SHORT).show();
+          return;
+        }
+        Intent intent = new Intent(getContext(), WelcomeActivity.class);
+        String mimeType = "application/octet-stream";
+        Uri uri = PersistentBlobProvider.getInstance().create(getContext(), blob, mimeType, filename);
+        intent.setType(mimeType);
+        intent.putExtra(WelcomeActivity.COMMUNITY_EXTRA, uri);
+        getContext().startActivity(intent);
+      })
+      .setNegativeButton(R.string.no, null)
+      .show();
   }
 
   private void setContactPhoto() {
@@ -852,7 +885,7 @@ public class ConversationItem extends BaseConversationItem
       if (shouldInterceptClicks(messageRecord) || !batchSelected.isEmpty()) {
         performClick();
       } else if (messageRecord.getType() == DcMsg.DC_MSG_WEBXDC) {
-        WebxdcActivity.openWebxdcActivity(context, messageRecord);
+        msgActionButton.performClick();
       } else if (MediaPreviewActivity.isTypeSupported(slide) && slide.getUri() != null) {
         Intent intent = new Intent(context, MediaPreviewActivity.class);
         intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);

@@ -211,8 +211,13 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Emoj
     this.statusView   = ViewUtil.findById(this, R.id.status_text);
 
     if (fromWelcome) {
-      String addr = DcHelper.get(this, "addr");
-      loginSuccessText.setText(R.string.set_name_and_avatar_explain);
+      if (DcHelper.getContext(this).isCommunity()) {
+        ViewUtil.findById(this, R.id.community_user_container).setVisibility(View.VISIBLE);
+        loginSuccessText.setText(R.string.community_set_name_explain);
+        ViewUtil.findById(this, R.id.avatar_and_name).setVisibility(View.GONE);
+      } else {
+        loginSuccessText.setText(R.string.set_name_and_avatar_explain);
+      }
       ViewUtil.findById(this, R.id.status_text_layout).setVisibility(View.GONE);
       ViewUtil.findById(this, R.id.information_label).setVisibility(View.GONE);
     } else {
@@ -289,10 +294,12 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Emoj
   }
 
   private void updateProfile() {
-    if (TextUtils.isEmpty(this.name.getText())) {
+    boolean isCommunity = DcHelper.getContext(context).isCommunity();
+    if (TextUtils.isEmpty(this.name.getText()) && !(isCommunity && fromWelcome)) {
       Toast.makeText(this, R.string.please_enter_name, Toast.LENGTH_LONG).show();
       return;
     }
+
     final String name = this.name.getText().toString();
     final String ovName = this.overridenName.getText().toString().trim();
 
@@ -300,7 +307,7 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Emoj
       @Override
       protected Boolean doInBackground(Void... params) {
         Context context    = CreateProfileActivity.this;
-        if (DcHelper.getContext(context).isCommunity()) {
+        if (isCommunity) {
           DcHelper.getContext(context).setCommunityUser(ovName);
         }
         DcHelper.set(context, DcHelper.CONFIG_DISPLAY_NAME, name);

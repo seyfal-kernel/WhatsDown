@@ -2,6 +2,8 @@
 <resources>
   <string name="community">Comunidad</string>
   <string name="description">Descripción</string>
+  <string name="ask_join_community">¿Quieres unirte a la comunidad \"%1$s\"?</string>
+  <string name="community_set_name_explain">Establece un nombre que otros puedan reconocer.</string>
     <!-- common strings without special context -->
     <string name="app_name">DeltaLab</string>
     <string name="ok">OK</string>
