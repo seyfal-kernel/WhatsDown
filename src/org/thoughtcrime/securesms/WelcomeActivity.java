@@ -33,6 +33,7 @@ import org.thoughtcrime.securesms.connect.AccountManager;
 import org.thoughtcrime.securesms.connect.DcEventCenter;
 import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.mms.AttachmentManager;
+import org.thoughtcrime.securesms.mms.PartAuthority;
 import org.thoughtcrime.securesms.permissions.Permissions;
 import org.thoughtcrime.securesms.qr.BackupTransferActivity;
 import org.thoughtcrime.securesms.qr.RegistrationQrActivity;
@@ -300,7 +301,7 @@ public class WelcomeActivity extends BaseActionBarActivity implements DcEventCen
     }
 
     private File copyToCacheDir(Uri uri) throws IOException {
-        try (InputStream inputStream = getContentResolver().openInputStream(uri)) {
+        try (InputStream inputStream = PartAuthority.getAttachmentStream(this, uri)) {
             File file = File.createTempFile(TMP_BACKUP_FILE, ".tmp", getCacheDir());
             try (OutputStream outputStream = new FileOutputStream(file)) {
                 StreamUtil.copy(inputStream, outputStream);

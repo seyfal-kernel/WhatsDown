@@ -16,13 +16,13 @@
  */
 package org.thoughtcrime.securesms;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
-import android.net.Uri;
 import android.os.Build;
 import android.text.Spannable;
 import android.text.TextUtils;
@@ -57,6 +57,7 @@ import org.thoughtcrime.securesms.components.DocumentView;
 import org.thoughtcrime.securesms.components.QuoteView;
 import org.thoughtcrime.securesms.components.WebxdcView;
 import org.thoughtcrime.securesms.components.emoji.EmojiTextView;
+import org.thoughtcrime.securesms.connect.AccountManager;
 import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.mms.AudioSlide;
 import org.thoughtcrime.securesms.mms.DocumentSlide;
@@ -66,7 +67,6 @@ import org.thoughtcrime.securesms.mms.Slide;
 import org.thoughtcrime.securesms.mms.SlideClickListener;
 import org.thoughtcrime.securesms.mms.SlideDeck;
 import org.thoughtcrime.securesms.mms.StickerSlide;
-import org.thoughtcrime.securesms.providers.PersistentBlobProvider;
 import org.thoughtcrime.securesms.reactions.ReactionsConversationView;
 import org.thoughtcrime.securesms.recipients.Recipient;
 import org.thoughtcrime.securesms.util.JsonUtils;
@@ -642,21 +642,17 @@ public class ConversationItem extends BaseConversationItem
   private void joinCommunity(DcMsg dcMsg) {
     JSONObject info = dcMsg.getWebxdcInfo();
     String name = JsonUtils.optString(info, "name");
-    new AlertDialog.Builder(getContext())
+    Context context = getContext();
+    new AlertDialog.Builder(context)
       .setMessage(getContext().getString(R.string.ask_join_community, name))
       .setPositiveButton(R.string.yes, (dialog, which) -> {
         String filename = "backup.tar";
         byte[] blob = dcMsg.getWebxdcBlob(filename);
         if (blob == null) {
-          Toast.makeText(getContext(), "invalid community file", Toast.LENGTH_SHORT).show();
+          Toast.makeText(context, "invalid community file", Toast.LENGTH_SHORT).show();
           return;
         }
-        Intent intent = new Intent(getContext(), WelcomeActivity.class);
-        String mimeType = "application/octet-stream";
-        Uri uri = PersistentBlobProvider.getInstance().create(getContext(), blob, mimeType, filename);
-        intent.setType(mimeType);
-        intent.putExtra(WelcomeActivity.COMMUNITY_EXTRA, uri);
-        getContext().startActivity(intent);
+        AccountManager.getInstance().addAccountFromCommunity((Activity) getContext(), blob);
       })
       .setNegativeButton(R.string.no, null)
       .show();

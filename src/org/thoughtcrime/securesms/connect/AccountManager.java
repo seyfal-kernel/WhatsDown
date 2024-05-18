@@ -5,6 +5,7 @@ import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_VERIFIED_ONE_ON
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
@@ -21,6 +22,7 @@ import org.thoughtcrime.securesms.WelcomeActivity;
 import org.thoughtcrime.securesms.accounts.AccountSelectionListFragment;
 import org.thoughtcrime.securesms.crypto.DatabaseSecret;
 import org.thoughtcrime.securesms.crypto.DatabaseSecretProvider;
+import org.thoughtcrime.securesms.providers.PersistentBlobProvider;
 
 import java.io.File;
 
@@ -117,10 +119,10 @@ public class AccountManager {
     }
 
     public void switchAccountAndStartActivity(Activity activity, int destAccountId) {
-        switchAccountAndStartActivity(activity, destAccountId, null);
+        switchAccountAndStartActivity(activity, destAccountId, null, null);
     }
 
-    private void switchAccountAndStartActivity(Activity activity, int destAccountId, @Nullable String backupQr) {
+    private void switchAccountAndStartActivity(Activity activity, int destAccountId, @Nullable String backupQr, @Nullable byte[] communityBlob) {
         if (destAccountId==0) {
             beginAccountCreation(activity);
         } else {
@@ -132,6 +134,12 @@ public class AccountManager {
             Intent intent = new Intent(activity, WelcomeActivity.class);
             if (backupQr != null) {
                 intent.putExtra(WelcomeActivity.BACKUP_QR_EXTRA, backupQr);
+            }
+            if (communityBlob != null) {
+                String mimeType = "application/octet-stream";
+                Uri uri = PersistentBlobProvider.getInstance().create(activity, communityBlob, mimeType, "backup.tar");
+                intent.setType(mimeType);
+                intent.putExtra(WelcomeActivity.COMMUNITY_EXTRA, uri);
             }
             activity.startActivity(intent);
         } else {
@@ -176,7 +184,11 @@ public class AccountManager {
         activity.startActivity(intent);
     }
 
+    public void addAccountFromCommunity(Activity activity, byte[] communityBlob) {
+        switchAccountAndStartActivity(activity, 0, null, communityBlob);
+    }
+
     public void addAccountFromSecondDevice(Activity activity, String backupQr) {
-        switchAccountAndStartActivity(activity, 0, backupQr);
+        switchAccountAndStartActivity(activity, 0, backupQr, null);
     }
 }

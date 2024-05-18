@@ -294,7 +294,7 @@ public class CreateProfileActivity extends BaseActionBarActivity implements Emoj
   }
 
   private void updateProfile() {
-    boolean isCommunity = DcHelper.getContext(context).isCommunity();
+    boolean isCommunity = DcHelper.getContext(this).isCommunity();
     if (TextUtils.isEmpty(this.name.getText()) && !(isCommunity && fromWelcome)) {
       Toast.makeText(this, R.string.please_enter_name, Toast.LENGTH_LONG).show();
       return;
