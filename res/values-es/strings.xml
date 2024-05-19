@@ -578,7 +578,6 @@
 
 
     <string name="scan_invitation_code">Escanear código de invitación</string>
-    <string name="register_title">Crear cuenta</string>
     <string name="login_title">Iniciar sesión</string>
     <!-- for classic email, we use the classical term "Account" -->
     <string name="login_header">Inicie sesión en su servidor</string>
@@ -951,7 +950,6 @@
     <string name="qrshow_join_contact_no_connection_toast">No hay conexión a Internet, no se puede configurar con código QR.</string>
     <string name="qraccount_ask_create_and_login">¿Crear una nueva dirección de correo en \"%1$s\" e ingresar allí?</string>
     <string name="qraccount_ask_create_and_login_another">¿Crear una nueva dirección de correo en \"%1$s\" e ingresar ahí?\n\nTu cuenta existente no será eliminada. Usar el ítem \"Cambiar cuenta\" para cambiar entre tus cuentas.</string>
-    <string name="register_hint">¿Crear una nueva dirección de correo en \"%1$s\" e ingresar ahí?\n\nSi lo que desea es iniciar sesión con una de sus cuentas de correo existente, usa el botón \"Iniciar sesión\"</string>
     <string name="set_name_and_avatar_explain">Establece un nombre que tus contactos puedan reconocer. También puedes establecer una foto de perfil.</string>
     <string name="please_enter_name">Por favor, introduce un nombre.</string>
     <string name="qraccount_qr_code_cannot_be_used">El código QR escaneado no puede ser usado para configurar una nueva cuenta.</string>

@@ -598,7 +598,6 @@
 
     <string name="welcome_chat_over_email">Secure Decentralized Chat</string>
     <string name="scan_invitation_code">Scan Invitation Code</string>
-    <string name="register_title">Create Account</string>
     <string name="login_title">Log In</string>
     <!-- for classic email, we use the classical term "Account" -->
     <string name="login_header">Log into your E-Mail Account</string>
