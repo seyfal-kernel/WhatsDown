@@ -834,6 +834,9 @@ public class ConversationFragment extends MessageSelectorFragment
                 list.getAdapter().notifyDataSetChanged();
 
                 actionMode = ((AppCompatActivity)getActivity()).startSupportActionMode(actionModeCallback);
+
+                if (dcContext.isCommunity()) return;
+
                 addReactionView.show(messageRecord, view, () -> {
                     if (actionMode != null) {
                         actionMode.finish();
