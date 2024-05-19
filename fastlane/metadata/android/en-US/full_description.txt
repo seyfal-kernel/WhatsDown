@@ -18,7 +18,6 @@ DeltaLab was created with a focus on usability, good user experience, and saving
 <li>Videos are played in loop, useful for short GIF videos</li>
 <li>It is possible to click <b>OPENPGP4FPR:</b> and <b>mumble:</b> links in messages</li>
 <li>Option to disable the auto-generated e-mail Subject set by Delta Chat</li>
-<li>When you select a message you have additional options to remove/add the sender from the current group easily</li>
 <li>Voice messages have more aggressive compression in "worse quality" mode to save data plan</li>
 <li>Default configuration changed: automatic download of messages limited to 640KB</li>
 <li>Account's display name is shown in the app's title bar instead of the name of the app</li>
