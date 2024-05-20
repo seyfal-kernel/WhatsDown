@@ -105,8 +105,7 @@ public class Recipient {
   }
 
   public Recipient(@NonNull Context context, @NonNull DcContact dcContact, int color) {
-    this(context, null, dcContact, null);
-    this.color = color;
+    this(context, dcContact, null, color);
   }
 
   public Recipient(@NonNull Context context, @NonNull DcContact dcContact, @NonNull String profileName) {
