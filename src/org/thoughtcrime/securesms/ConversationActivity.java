@@ -106,7 +106,6 @@ import org.thoughtcrime.securesms.mms.AttachmentManager.MediaType;
 import org.thoughtcrime.securesms.mms.AudioSlide;
 import org.thoughtcrime.securesms.mms.GlideApp;
 import org.thoughtcrime.securesms.mms.GlideRequests;
-import org.thoughtcrime.securesms.mms.PartAuthority;
 import org.thoughtcrime.securesms.mms.QuoteModel;
 import org.thoughtcrime.securesms.mms.SlideDeck;
 import org.thoughtcrime.securesms.permissions.Permissions;
@@ -128,12 +127,7 @@ import org.thoughtcrime.securesms.video.recode.VideoRecoder;
 import org.thoughtcrime.securesms.videochat.VideochatUtil;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -197,7 +191,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private ApplicationContext context;
   private Recipient  recipient;
   private DcContext  dcContext;
-  private Rpc        rpc;
+  private Rpc rpc;
   private DcChat     dcChat                = new DcChat(0, 0);
   private int        chatId;
   private final boolean isSecureText          = true;
@@ -972,9 +966,18 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   }
 
   private void addAttachmentContactInfo(Intent data) {
-    String name = data.getStringExtra(AttachContactActivity.NAME_EXTRA);
-    String mail = data.getStringExtra(AttachContactActivity.ADDR_EXTRA);
-    composeText.append(name + "\n" + mail);
+    int contactId = data.getIntExtra(AttachContactActivity.CONTACT_ID_EXTRA, 0);
+    if (contactId == 0) {
+      return;
+    }
+
+    try {
+      byte[] vcard = rpc.makeVcard(dcContext.getAccountId(), contactId).getBytes();
+      String mimeType = "application/octet-stream";
+      setMedia(PersistentBlobProvider.getInstance().create(this, vcard, mimeType, "vcard.vcf"), MediaType.DOCUMENT);
+    } catch (RpcException e) {
+      Log.e(TAG, "makeVcard() failed", e);
+    }
   }
 
   private boolean isMultiUser() {
@@ -983,39 +986,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
   private boolean isArchived() {
     return dcChat.getVisibility() == DcChat.DC_CHAT_VISIBILITY_ARCHIVED;
-  }
-
-  public static String getRealPathFromAttachment(Context context, Attachment attachment) {
-    try {
-      // get file in the blobdir as `<blobdir>/<name>[-<uniqueNumber>].<ext>`
-      String filename = attachment.getFileName();
-      String ext = "";
-      if(filename==null) {
-        filename = new SimpleDateFormat("yyyy-MM-dd-HH-mm").format(new Date());
-        ext = "." + MediaUtil.getExtensionFromMimeType(attachment.getContentType());
-      }
-      else {
-        int i = filename.lastIndexOf(".");
-        if(i>=0) {
-          ext = filename.substring(i);
-          filename = filename.substring(0, i);
-        }
-      }
-      String path = DcHelper.getBlobdirFile(DcHelper.getContext(context), filename, ext);
-
-      // copy content to this file
-      if(path!=null) {
-        InputStream inputStream = PartAuthority.getAttachmentStream(context, attachment.getDataUri());
-        OutputStream outputStream = new FileOutputStream(path);
-        Util.copy(inputStream, outputStream);
-      }
-
-      return path;
-    }
-    catch(Exception e) {
-      e.printStackTrace();
-      return null;
-    }
   }
 
   //////// send message or save draft
@@ -1078,7 +1048,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
             } else {
               msg = new DcMsg(dcContext, DcMsg.DC_MSG_FILE);
             }
-            String path = getRealPathFromAttachment(this, attachment);
+            String path = attachment.getRealPath(this);
             msg.setFile(path, null);
           }
         }
@@ -1313,7 +1283,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private void sendSticker(@NonNull Uri uri, String contentType) {
     Attachment attachment = new UriAttachment(uri, null, contentType,
       AttachmentDatabase.TRANSFER_PROGRESS_STARTED, 0, 0, 0, null, null, false);
-    String path = getRealPathFromAttachment(this, attachment);
+    String path = attachment.getRealPath(this);
 
     Optional<QuoteModel> quote = inputPanel.getQuote();
     inputPanel.clearQuote();
