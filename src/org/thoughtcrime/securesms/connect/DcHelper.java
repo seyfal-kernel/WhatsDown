@@ -24,11 +24,13 @@ import com.b44t.messenger.DcLot;
 import com.b44t.messenger.DcMsg;
 import com.b44t.messenger.rpc.Rpc;
 
+import org.json.JSONObject;
 import org.thoughtcrime.securesms.ApplicationContext;
 import org.thoughtcrime.securesms.BuildConfig;
 import org.thoughtcrime.securesms.LocalHelpActivity;
 import org.thoughtcrime.securesms.R;
 import org.thoughtcrime.securesms.ShareActivity;
+import org.thoughtcrime.securesms.WebxdcActivity;
 import org.thoughtcrime.securesms.database.model.ThreadRecord;
 import org.thoughtcrime.securesms.notifications.NotificationCenter;
 import org.thoughtcrime.securesms.providers.PersistentBlobProvider;
@@ -36,6 +38,7 @@ import org.thoughtcrime.securesms.qr.QrActivity;
 import org.thoughtcrime.securesms.recipients.Recipient;
 import org.thoughtcrime.securesms.util.IntentUtils;
 import org.thoughtcrime.securesms.util.FileUtils;
+import org.thoughtcrime.securesms.util.JsonUtils;
 import org.thoughtcrime.securesms.util.MediaUtil;
 
 import java.io.File;
@@ -494,6 +497,28 @@ public class DcHelper {
       .setPositiveButton(R.string.ok, null)
       .setCancelable(true)
       .show();
+  }
+
+  public static void openWebxdc(Context context, DcMsg dcMsg) {
+    JSONObject info = dcMsg.getWebxdcInfo();
+    if (JsonUtils.optBoolean(info, "community")) {
+      String name = JsonUtils.optString(info, "name");
+      new AlertDialog.Builder(context)
+        .setMessage(context.getString(R.string.ask_join_community, name))
+        .setPositiveButton(R.string.yes, (dialog, which) -> {
+            String filename = "backup.tar";
+            byte[] blob = dcMsg.getWebxdcBlob(filename);
+            if (blob == null) {
+              Toast.makeText(context, "invalid community file", Toast.LENGTH_SHORT).show();
+              return;
+            }
+            AccountManager.getInstance().addAccountFromCommunity((Activity) context, blob);
+        })
+        .setNegativeButton(R.string.no, null)
+        .show();
+    } else {
+      WebxdcActivity.openWebxdcActivity(context, dcMsg);
+    }
   }
 
   public static void openHelp(Context context, String section) {

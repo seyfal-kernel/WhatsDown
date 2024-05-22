@@ -16,7 +16,6 @@
  */
 package org.thoughtcrime.securesms;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -47,7 +46,6 @@ import com.b44t.messenger.rpc.Reactions;
 import com.b44t.messenger.rpc.RpcException;
 import com.b44t.messenger.rpc.VcardContact;
 
-import org.json.JSONObject;
 import org.thoughtcrime.securesms.audio.AudioSlidePlayer;
 import org.thoughtcrime.securesms.components.AudioView;
 import org.thoughtcrime.securesms.components.AvatarImageView;
@@ -59,7 +57,6 @@ import org.thoughtcrime.securesms.components.QuoteView;
 import org.thoughtcrime.securesms.components.VcardView;
 import org.thoughtcrime.securesms.components.WebxdcView;
 import org.thoughtcrime.securesms.components.emoji.EmojiTextView;
-import org.thoughtcrime.securesms.connect.AccountManager;
 import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.mms.AudioSlide;
 import org.thoughtcrime.securesms.mms.DocumentSlide;
@@ -72,7 +69,6 @@ import org.thoughtcrime.securesms.mms.StickerSlide;
 import org.thoughtcrime.securesms.mms.VcardSlide;
 import org.thoughtcrime.securesms.reactions.ReactionsConversationView;
 import org.thoughtcrime.securesms.recipients.Recipient;
-import org.thoughtcrime.securesms.util.JsonUtils;
 import org.thoughtcrime.securesms.util.LongClickMovementMethod;
 import org.thoughtcrime.securesms.util.MarkdownUtil;
 import org.thoughtcrime.securesms.util.MediaUtil;
@@ -440,11 +436,7 @@ public class ConversationItem extends BaseConversationItem
       msgActionButton.setText(webxdcViewStub.get().isCommunity()? R.string.join: R.string.start_app);
       msgActionButton.setOnClickListener(view -> {
         if (batchSelected.isEmpty()) {
-          if (webxdcViewStub.get().isCommunity()) {
-            joinCommunity(messageRecord);
-          } else {
-            WebxdcActivity.openWebxdcActivity(getContext(), messageRecord);
-          }
+          DcHelper.openWebxdc(getContext(), messageRecord);
         } else {
           passthroughClickListener.onClick(view);
         }
@@ -680,25 +672,6 @@ public class ConversationItem extends BaseConversationItem
     }
 
     mediaThumbnailStub.get().setOutlineCorners(topLeft, topRight, bottomRight, bottomLeft);
-  }
-
-  private void joinCommunity(DcMsg dcMsg) {
-    JSONObject info = dcMsg.getWebxdcInfo();
-    String name = JsonUtils.optString(info, "name");
-    Context context = getContext();
-    new AlertDialog.Builder(context)
-      .setMessage(getContext().getString(R.string.ask_join_community, name))
-      .setPositiveButton(R.string.yes, (dialog, which) -> {
-        String filename = "backup.tar";
-        byte[] blob = dcMsg.getWebxdcBlob(filename);
-        if (blob == null) {
-          Toast.makeText(context, "invalid community file", Toast.LENGTH_SHORT).show();
-          return;
-        }
-        AccountManager.getInstance().addAccountFromCommunity((Activity) getContext(), blob);
-      })
-      .setNegativeButton(R.string.no, null)
-      .show();
   }
 
   private void setContactPhoto() {
