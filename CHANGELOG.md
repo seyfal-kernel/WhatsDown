@@ -1,9 +1,9 @@
 # Delta Chat Android Changelog
 
-## v1.46.0
+## v1.46.1
 2024-05
 
-* new onboarding: you can create a new profile with one tap on "Let's Get Started!" -
+* new onboarding: you can create a new profile with one tap on "Create New Profile" -
   or use an existing login or second-device-setup as usual
 * use FCM PUSH notification if supported by providers (as chatmail) and by the operating system
 * do not ask for disabling "battery optimisations" when PUSH notifications are working
@@ -69,6 +69,7 @@
 * fix broken "..." ellipsis for small screens
 * fix: do not mark the message with locations as seen
 * fix startup crash on android4
+* fix location streaming crash introduced in 1.45 beta
 * update translations and local help
 * update to core 1.139.5
 

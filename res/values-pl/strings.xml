@@ -460,6 +460,8 @@
     <string name="send_file_to">Wyślij „%1$s” do…</string>
     <!-- title shown above a list contacts where one should be selected (eg. when a webxdc attempts to send a message to a chat) -->
     <string name="send_message_to">Wyślij wiadomość do…</string>
+    <string name="enable_realtime">Kanał czasu rzeczywistego dla Webxdc</string>
+    <string name="enable_realtime_explain">Włącz API czasu rzeczywistego dla Webxdc, aby tworzyć bezpośrednie połączenia między urządzeniami.</string>
 
     <!-- map -->
     <string name="filter_map_on_time">Pokaż lokalizacje w ramach czasowych</string>
@@ -1163,6 +1165,16 @@
     <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">Delta Chat chce zapisać obrazy w twojej bibliotece zdjęć.</string>
 
 
+    <!-- android specific strings, developers: please take care to remove strings that are no longer used! -->
+    <string name="pref_instant_delivery">Natychmiastowe dostarczenie</string>
+    <string name="pref_push_notifications">Użyj usługi push</string>
+    <string name="pref_push_notifications_explain">Niezawodne powiadomienia push dla serwerów chatmail</string>
+    <string name="pref_push_ask_disable">Wyłączyć korzystanie z usługi Push?\n\nMoże to skutkować opóźnieniami w powiadomieniach.</string>
+    <string name="pref_background_notifications">Użyj połączenia w tle</string>
+    <string name="pref_background_notifications_explain">Wymaga zignorowania optymalizacji baterii. Użyj, jeśli usługa Push jest niedostępna</string>
+    <string name="pref_reliable_service">Wymuś połączenie w tle</string>
+    <string name="pref_reliable_service_explain">Powoduje trwałe powiadomienie</string>
+
     <string name="pref_background_notifications_rationale">Aby utrzymać połączenie z serwerem e-mail i odbierać wiadomości w tle, zignoruj optymalizacje baterii w następnym kroku.\n\nDelta Chat zużywa niewiele zasobów i dba o to, aby nie wyczerpać baterii.</string>
     <!-- disabling "Reliable service" will hide a the maybe annoying permanent-notification with the drawback that new-message-notifications get potentially unreliable -->
     <string name="perm_enable_bg_reminder_title">Dotknij tutaj, aby odbierać wiadomości, podczas gdy Delta Chat działa w tle.</string>
@@ -1172,4 +1184,4 @@
     <string name="update_1_44_android">Co nowego:\n\n❤️ Tak! To było długo oczekiwane: naciśnij i przytrzymaj wiadomość, aby zareagować\n\n🔗 Jeśli nie możesz zeskanować kodów QR, udostępnij go jako linki z zaproszeniem\n\n🔵 Nieprzeczytane wiadomości ze wszystkich kont są teraz zliczane i wyświetlane w tytule\n\n … i MNÓSTWO poprawek błędów… %1$s\n\nPomóż w ulepszaniu aplikacji: użyj opcji „Ustawienia » Zaawansowane » Wyślij statystyki”, aby pomóc programistom w lepszej optymalizacji pod kątem rzeczywistego użytkowania. Możesz sprawdzić dane przed wysłaniem</string>
     <string name="update_1_44_ios">Co nowego:\n\n❤️ Tak! To było długo oczekiwane: naciśnij i przytrzymaj wiadomości, aby zareagować\n\n🫸 Powiadomienia PUSH, jeśli są obsługiwane przez dostawców, takich jak https://nine.testrun.org\n\n🔗 Jeśli nie możesz zeskanować kodów QR, udostępnij go jako linki z zaproszeniem \n\n… i MNÓSTWO poprawek błędów…%1$s</string>
     <string name="update_1_46_android">Nowe wdrożenie 🐣 i nie tylko:\n\n⚡️ Zarejestruj się, aby korzystać z bezpiecznych i szybkich serwerów chatmail (https://delta.chat/chatmail) lub korzystaj z klasycznych serwerów e-mail\n\n👉 Powiadomienia PUSH dla dowolnego serwera chatmail\n\n👤 Połącz bezpiecznie znajomych za pomocą opcji „Dołącz kontakty”\n\n🥰 Reaguj dowolnymi emoji\n\n📌 Przypinaj czaty bezpośrednio z wyszukiwarki… i wiele WIĘCEJ na %1$s</string>
-</resources>
+    </resources>
