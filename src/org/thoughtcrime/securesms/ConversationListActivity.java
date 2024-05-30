@@ -348,7 +348,8 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
         menu.findItem(R.id.menu_global_map).setVisible(false);
       }
 
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+      boolean isCommunity = DcHelper.getContext(this).isCommunity();
+      if (!isCommunity && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
           MenuCompat.setGroupDividerEnabled(menu, true);
       } else{
           menu.setGroupVisible(R.id.extra_services, false);
