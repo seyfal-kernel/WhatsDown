@@ -436,13 +436,25 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
     }
 
     @JavascriptInterface
+    public boolean isCommunity() {
+      return dcContext.isCommunity();
+    }
+
+    @JavascriptInterface
     public String selfAddr() {
-      return WebxdcActivity.this.dcContext.getConfig("addr");
+      if (dcContext.isCommunity() && !TextUtils.isEmpty(dcContext.getCommunityUser())) {
+        int flags = Base64.NO_WRAP | Base64.NO_PADDING | Base64.URL_SAFE;
+        return Base64.encodeToString(dcContext.getCommunityUser().getBytes(), flags);
+      }
+      return dcContext.getConfig("configured_addr");
     }
 
     /** @noinspection unused*/
     @JavascriptInterface
     public String selfName() {
+      if (dcContext.isCommunity() && !TextUtils.isEmpty(dcContext.getCommunityUser())) {
+        return dcContext.getCommunityUser();
+      }
       String name = WebxdcActivity.this.dcContext.getConfig("displayname");
       if (TextUtils.isEmpty(name)) {
         name = selfAddr();

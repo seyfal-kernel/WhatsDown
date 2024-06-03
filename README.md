@@ -19,7 +19,8 @@ DeltaLab is a [Delta Chat](https://delta.chat/) client for Android.
 
 DeltaLab has some extended support for WebXDC apps:
 
-- `window.webxdc.deltalab` is a string with the DeltaLab version and can be used by app developers
+- `window.webxdc.deltalab()` returns a string with the DeltaLab version and can be used by app developers
+- `window.webxdc.isCommunity()` returns true if the current account is a community account
   to detect when they can use the DeltaLab-specific features.
 - `sendToChat()`: extra property `subject` can be set to a text string to set message/email's subject.
 - `sendToChat()`: extra property `html` can be set to a string of html markup to set the HTML part of the email/message.
