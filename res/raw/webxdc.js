@@ -18,6 +18,8 @@ window.webxdc = (() => {
   return {
     deltalab: InternalJSApi.deltalab(),
 
+    isCommunity: InternalJSApi.isCommunity(),
+
     selfAddr: InternalJSApi.selfAddr(),
 
     selfName: InternalJSApi.selfName(),
