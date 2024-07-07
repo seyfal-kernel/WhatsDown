@@ -386,6 +386,7 @@ public class WelcomeActivity extends BaseActionBarActivity implements DcEventCen
                 }
                 DcHelper.getAccounts(this).startIo();
                 progressSuccess();
+                dcContext.assumeMultiDevice();
                 notificationController.close();
                 cleanupTempBackupFile();
             }

@@ -50,6 +50,7 @@ import org.thoughtcrime.securesms.profiles.ProfileMediaConstraints;
 import org.thoughtcrime.securesms.qr.RegistrationQrActivity;
 import org.thoughtcrime.securesms.scribbles.ScribbleActivity;
 import org.thoughtcrime.securesms.util.Prefs;
+import org.thoughtcrime.securesms.util.Util;
 import org.thoughtcrime.securesms.util.views.ProgressDialog;
 
 import java.io.File;
@@ -372,6 +373,7 @@ public class InstantOnboardingActivity extends BaseActionBarActivity implements 
         progressUpdate((int)progress);
       } else if (progress==1000/*done*/) {
         DcHelper.getAccounts(this).startIo();
+        dcContext.assumeSingleDevice();
         progressSuccess();
       }
     }
@@ -394,7 +396,7 @@ public class InstantOnboardingActivity extends BaseActionBarActivity implements 
     Intent intent = new Intent(getApplicationContext(), ConversationListActivity.class);
     intent.putExtra(ConversationListActivity.FROM_WELCOME, true);
     startActivity(intent);
-    finish();
+    finishAffinity();
   }
 
   public static void maybeShowConfigurationError(Activity activity, String data2) {
@@ -472,12 +474,16 @@ public class InstantOnboardingActivity extends BaseActionBarActivity implements 
 
     DcHelper.getEventCenter(this).captureNextError();
 
-    if (!dcContext.setConfigFromQr(qrCode)) {
-      progressError(dcContext.getLastError());
-      return;
-    }
-    DcHelper.getAccounts(this).stopIo();
-    dcContext.configure();
+    new Thread(() -> {
+      if (!dcContext.setConfigFromQr(qrCode)) {
+        Util.runOnMain(() -> {
+          progressError(dcContext.getLastError());
+        });
+        return;
+      }
+      DcHelper.getAccounts(this).stopIo();
+      dcContext.configure();
+    }).start();
   }
 
   private class AvatarSelectedListener implements AvatarSelector.AttachmentClickedListener {
