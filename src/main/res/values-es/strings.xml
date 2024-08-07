@@ -249,7 +249,7 @@
     <string name="share_invite_link">Compartir enlace de invitación</string>
     <string name="invite_friends">Invitar amigos</string>
     <!-- %1$s is replaced by the user's invitation link ("https://i.delta.chat/...") -->
-    <string name="invite_friends_text">Contáctame en Delta Chat:\n%1$s</string>
+    <string name="invite_friends_text">Contáctame en DeltaLab:\n%1$s</string>
     <string name="menu_copy_selection_to_clipboard">Copiar selección</string>
     <string name="menu_copy_link_to_clipboard">Copiar enlace</string>
     <string name="menu_copy_text_to_clipboard">Copiar texto</string>
