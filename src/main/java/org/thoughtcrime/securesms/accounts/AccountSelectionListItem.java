@@ -1,5 +1,6 @@
 package org.thoughtcrime.securesms.accounts;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
@@ -24,6 +25,7 @@ import org.thoughtcrime.securesms.components.AvatarView;
 import org.thoughtcrime.securesms.mms.GlideRequests;
 import org.thoughtcrime.securesms.recipients.Recipient;
 import org.thoughtcrime.securesms.util.DynamicTheme;
+import org.thoughtcrime.securesms.util.ThemeUtil;
 import org.thoughtcrime.securesms.util.ViewUtil;
 
 public class AccountSelectionListItem extends LinearLayout {
@@ -33,7 +35,6 @@ public class AccountSelectionListItem extends LinearLayout {
   private TextView        addrView;
   private TextView        nameView;
   private ImageView       unreadIndicator;
-  private ImageButton     deleteBtn;
   private SwitchCompat enableSwitch;
 
   private int           accountId;
@@ -55,23 +56,22 @@ public class AccountSelectionListItem extends LinearLayout {
     this.addrView          = findViewById(R.id.addr);
     this.nameView          = findViewById(R.id.name);
     this.unreadIndicator   = findViewById(R.id.unread_indicator);
-    this.deleteBtn         = findViewById(R.id.delete);
     this.enableSwitch      = findViewById(R.id.enable_switch);
 
     enableSwitch.setOnCheckedChangeListener((view, isChecked) -> {
       if (isChecked != this.dcContext.isEnabled()) this.dcContext.setEnabled(isChecked);
     });
-    deleteBtn.setColorFilter(DynamicTheme.isDarkTheme(getContext())? Color.WHITE : Color.BLACK);
     ViewUtil.setTextViewGravityStart(this.nameView, getContext());
   }
 
-  public void bind(@NonNull GlideRequests glideRequests, int accountId, DcContext dcContext, boolean selected) {
+  public void bind(@NonNull GlideRequests glideRequests, int accountId, DcContext dcContext, boolean selected, AccountSelectionListFragment fragment) {
     this.accountId = accountId;
     this.dcContext = dcContext;
     DcContact self = null;
     String name;
     String addr = null;
     int unreadCount = 0;
+    boolean isMuted = dcContext != null && dcContext.isMuted();
 
     Recipient recipient;
     if (accountId != DcContact.DC_CONTACT_ID_ADD_ACCOUNT) {
@@ -83,14 +83,12 @@ public class AccountSelectionListItem extends LinearLayout {
       }
       unreadCount = dcContext.getFreshMsgs().length;
 
-      deleteBtn.setVisibility(selected? View.INVISIBLE : View.VISIBLE);
       enableSwitch.setChecked(dcContext.isEnabled());
       enableSwitch.setVisibility(View.VISIBLE);
       recipient = new Recipient(getContext(), self, name);
       this.contactPhotoImage.setConnectivity(dcContext.getConnectivity());
     } else {
       name = getContext().getString(R.string.add_account);
-      deleteBtn.setVisibility(View.GONE);
       enableSwitch.setVisibility(View.INVISIBLE);
       recipient = null;
       this.contactPhotoImage.setSeenRecently(false); // hide connectivity dot
@@ -98,6 +96,8 @@ public class AccountSelectionListItem extends LinearLayout {
     this.contactPhotoImage.setAvatar(glideRequests, recipient, false);
 
     setSelected(selected);
+    nameView.setCompoundDrawablesWithIntrinsicBounds(isMuted? R.drawable.ic_volume_off_grey600_18dp : 0, 0, 0, 0);
+
     if (selected) {
       addrView.setTypeface(null, Typeface.BOLD);
       nameView.setTypeface(null, Typeface.BOLD);
@@ -106,21 +106,33 @@ public class AccountSelectionListItem extends LinearLayout {
       nameView.setTypeface(null, accountId == DcContact.DC_CONTACT_ID_ADD_ACCOUNT? Typeface.BOLD : Typeface.NORMAL);
     }
 
-    updateUnreadIndicator(unreadCount);
+    updateUnreadIndicator(unreadCount, isMuted);
     setText(name, addr);
+
+    if (accountId != DcContact.DC_CONTACT_ID_ADD_ACCOUNT) {
+      fragment.registerForContextMenu(this);
+    } else {
+      fragment.unregisterForContextMenu(this);
+    }
   }
 
   public void unbind(GlideRequests glideRequests) {
     contactPhotoImage.clear(glideRequests);
   }
 
-  private void updateUnreadIndicator(int unreadCount) {
+  private void updateUnreadIndicator(int unreadCount, boolean isMuted) {
     if(unreadCount == 0) {
       unreadIndicator.setVisibility(View.GONE);
     } else {
-      final TypedArray attrs = getContext().obtainStyledAttributes(new int[] {
-               R.attr.conversation_list_item_unreadcount_color,
-      });
+      final int color;
+      if (isMuted) {
+        color = getResources().getColor(ThemeUtil.isDarkTheme(getContext()) ? R.color.unread_count_muted_dark : R.color.unread_count_muted);
+      } else {
+        final TypedArray attrs = getContext().obtainStyledAttributes(new int[] {
+            R.attr.conversation_list_item_unreadcount_color,
+          });
+        color = attrs.getColor(0, Color.BLACK);
+      }
       unreadIndicator.setImageDrawable(TextDrawable.builder()
               .beginConfig()
               .width(ViewUtil.dpToPx(getContext(), 24))
@@ -128,7 +140,7 @@ public class AccountSelectionListItem extends LinearLayout {
               .textColor(Color.WHITE)
               .bold()
               .endConfig()
-              .buildRound(String.valueOf(unreadCount), attrs.getColor(0, Color.BLACK)));
+              .buildRound(String.valueOf(unreadCount), color));
       unreadIndicator.setVisibility(View.VISIBLE);
     }
   }
@@ -142,10 +154,6 @@ public class AccountSelectionListItem extends LinearLayout {
     } else {
       this.addrContainer.setVisibility(View.GONE);
     }
-  }
-
-  public ImageButton getDeleteBtn() {
-    return deleteBtn;
   }
 
   public int getAccountId() {

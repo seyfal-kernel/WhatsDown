@@ -6,6 +6,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,6 +35,7 @@ import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.mms.GlideApp;
 import org.thoughtcrime.securesms.util.DynamicNoActionBarTheme;
 import org.thoughtcrime.securesms.util.Prefs;
+import org.thoughtcrime.securesms.util.RelayUtil;
 import org.thoughtcrime.securesms.util.Util;
 import org.thoughtcrime.securesms.util.ViewUtil;
 
@@ -104,6 +106,9 @@ public class ProfileActivity extends PassphraseRequiredActionBarActivity
       titleView = (ConversationTitleView) supportActionBar.getCustomView();
       titleView.setOnBackClickedListener(view -> onBackPressed());
       titleView.setOnClickListener(view -> onEnlargeAvatar());
+      if (isContactProfile() && !isSelfProfile() && !chatIsDeviceTalk) {
+        titleView.registerForContextMenu(this);
+      }
     }
 
     updateToolbar();
@@ -134,7 +139,7 @@ public class ProfileActivity extends PassphraseRequiredActionBarActivity
         if (chatIsDeviceTalk) {
           menu.findItem(R.id.edit_name).setVisible(false);
           menu.findItem(R.id.show_encr_info).setVisible(false);
-          menu.findItem(R.id.copy_addr_to_clipboard).setVisible(false);
+          menu.findItem(R.id.share).setVisible(false);
         } else if (chatIsMultiUser) {
           if (chatIsBroadcast) {
             canReceive = false;
@@ -144,7 +149,7 @@ public class ProfileActivity extends PassphraseRequiredActionBarActivity
               menu.findItem(R.id.edit_name).setVisible(false);
             }
           }
-          menu.findItem(R.id.copy_addr_to_clipboard).setVisible(false);
+          menu.findItem(R.id.share).setVisible(false);
         }
       } else {
         canReceive = false;
@@ -170,6 +175,7 @@ public class ProfileActivity extends PassphraseRequiredActionBarActivity
     MenuItem item = menu.findItem(R.id.block_contact);
     if(item!=null) {
       item.setTitle(dcContext.getContact(contactId).isBlocked()? R.string.menu_unblock_contact : R.string.menu_block_contact);
+      Util.redMenuItem(menu, R.id.block_contact);
     }
 
     item = menu.findItem(R.id.menu_mute_notifications);
@@ -179,6 +185,12 @@ public class ProfileActivity extends PassphraseRequiredActionBarActivity
 
     super.onPrepareOptionsMenu(menu);
     return true;
+  }
+
+  @Override
+  public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+    super.onCreateContextMenu(menu, v, menuInfo);
+    getMenuInflater().inflate(R.menu.profile_title_context, menu);
   }
 
   boolean backPressed = false;
@@ -416,8 +428,8 @@ public class ProfileActivity extends PassphraseRequiredActionBarActivity
       case R.id.edit_name:
         onEditName();
         break;
-      case R.id.copy_addr_to_clipboard:
-        onCopyAddrToClipboard();
+      case R.id.share:
+        onShare();
         break;
       case R.id.show_encr_info:
         onEncrInfo();
@@ -430,6 +442,17 @@ public class ProfileActivity extends PassphraseRequiredActionBarActivity
         break;
     }
 
+    return false;
+  }
+
+  @Override
+  public boolean onContextItemSelected(MenuItem item) {
+    super.onContextItemSelected(item);
+    switch (item.getItemId()) {
+      case R.id.copy_addr_to_clipboard:
+        onCopyAddrToClipboard();
+        break;
+    }
     return false;
   }
 
@@ -533,6 +556,12 @@ public class ProfileActivity extends PassphraseRequiredActionBarActivity
           .setNegativeButton(android.R.string.cancel, null)
           .show();
     }
+  }
+
+  private void onShare() {
+    Intent composeIntent = new Intent();
+    RelayUtil.setSharedContactId(composeIntent, contactId);
+    ConversationListRelayingActivity.start(this, composeIntent);
   }
 
   private void onCopyAddrToClipboard() {

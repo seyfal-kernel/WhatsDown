@@ -210,11 +210,11 @@
     <string name="device_talk_subtitle">ローカルで生成されたメッセージ</string>
     <string name="device_talk_explain">このチャットのメッセージはアプリで生成されます。アプリ開発者はアップデートや問題点をお知らせするために使用しています。</string>
     <string name="edit_contact">連絡先を編集</string>
-    <!-- Verb "to pin", making something sticky, not a noun or appreviation for "pin number". -->
+    <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
     <string name="pin_chat">チャットをピン留め</string>
     <!-- Opposite of "Pin chat", removing the sticky-state from a chat. -->
     <string name="unpin_chat">チャットのピン留めを解除</string>
-    <!-- Verb "to pin", making something sticky, not a noun or appreviation for "pin number". -->
+    <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
     <string name="pin">ピン留め</string>
     <!-- Opposite of "Pin chat", removing the sticky-state from a chat. -->
     <string name="unpin">ピン留めを解除</string>
@@ -394,6 +394,7 @@
     <string name="login_error_cannot_login">%1$sとしてログインできません。メールアドレスとパスワードを確認してください。</string>
     <!-- TLS certificate checks -->
     <string name="accept_invalid_certificates">無効な証明書を受け入れます</string>
+    <!-- deprecated -->
     <string name="used_settings">使用した設定：</string>
     <string name="switch_account">アカウントを切り替え</string>
     <string name="add_account">アカウントを追加</string>
@@ -533,6 +534,7 @@
     <string name="autodel_after_1_hour">1時間</string>
     <string name="autodel_after_1_day">1日後</string>
     <string name="autodel_after_1_week">1週間後</string>
+    <!-- deprecated -->
     <string name="autodel_after_4_weeks">4週間後</string>
     <string name="after_5_weeks">5週間後</string>
     <string name="autodel_after_1_year">1年後</string>
@@ -550,6 +552,7 @@
     <string name="autocrypt_continue_transfer_title">自動暗号化設定用ﾒｯｾｰｼﾞ</string>
     <string name="autocrypt_continue_transfer_retry">再試行</string>
     <!-- system messages -->
+    <!-- deprecated -->
     <string name="systemmsg_read_receipt_subject">既読</string>
     <string name="systemmsg_subject_for_new_contact">%1$sさんからのメッセージ</string>
     <string name="systemmsg_failed_sending_to">%1$sさんへのメッセージ送信に失敗しました。</string>

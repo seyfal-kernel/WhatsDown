@@ -48,7 +48,6 @@ import android.util.Log;
 import android.util.Pair;
 import android.view.KeyEvent;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -390,7 +389,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       setMedia(data.getData(), MediaType.AUDIO);
       break;
     case PICK_CONTACT:
-      addAttachmentContactInfo(data);
+      addAttachmentContactInfo(data.getIntExtra(AttachContactActivity.CONTACT_ID_EXTRA, 0));
       break;
     case GROUP_EDIT:
       dcChat = dcContext.getChat(chatId);
@@ -439,10 +438,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
   @Override
   public boolean onPrepareOptionsMenu(Menu menu) {
-    MenuInflater inflater = this.getMenuInflater();
     menu.clear();
 
-    inflater.inflate(R.menu.conversation, menu);
+    getMenuInflater().inflate(R.menu.conversation, menu);
 
     if (dcChat.isSelfTalk() || dcChat.isBroadcast()) {
       menu.findItem(R.id.menu_mute_notifications).setVisible(false);
@@ -454,7 +452,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       menu.findItem(R.id.menu_show_map).setVisible(false);
     }
 
-    if (!DcHelper.isWebrtcConfigOk(dcContext) || !dcChat.canVideochat()) {
+    if (!DcHelper.isWebrtcConfigOk(dcContext) || !dcChat.canSend()) {
       menu.findItem(R.id.menu_videochat_invite).setVisible(false);
     }
 
@@ -464,17 +462,18 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
     if (isMultiUser()) {
       if (dcChat.canSend() && !dcChat.isBroadcast() && !dcChat.isMailingList()) {
-        inflater.inflate(R.menu.conversation_push_group_options, menu);
+        menu.findItem(R.id.menu_leave).setVisible(true);
       }
     }
 
-    inflater.inflate(R.menu.conversation_archive, menu);
     if (isArchived()) {
       menu.findItem(R.id.menu_archive_chat).setTitle(R.string.menu_unarchive_chat);
     }
 
-    inflater.inflate(R.menu.conversation_clear, menu);
-    inflater.inflate(R.menu.conversation_delete, menu);
+
+    Util.redMenuItem(menu, R.id.menu_leave);
+    Util.redMenuItem(menu, R.id.menu_clear_chat);
+    Util.redMenuItem(menu, R.id.menu_delete_chat);
 
     try {
       MenuItem searchItem = menu.findItem(R.id.menu_search_chat);
@@ -686,6 +685,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
   private void handleSharing() {
     ArrayList<Uri> uriList =  RelayUtil.getSharedUris(this);
+    int sharedContactId = RelayUtil.getSharedContactId(this);
     if (uriList.size() > 1) {
       String message = String.format(getString(R.string.share_multiple_attachments), uriList.size());
       new AlertDialog.Builder(this)
@@ -695,7 +695,9 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
               .setPositiveButton(R.string.menu_send, (dialog, which) -> SendRelayedMessageUtil.immediatelyRelay(this, chatId))
               .show();
     } else {
-      if (getSharedHtml(this) != null || getSharedSubject(this) != null || ("sticker".equals(getSharedType(this)) && !uriList.isEmpty())) {
+      if (sharedContactId != 0) {
+        addAttachmentContactInfo(sharedContactId);
+      } else if (getSharedHtml(this) != null || getSharedSubject(this) != null || ("sticker".equals(getSharedType(this)) && !uriList.isEmpty())) {
         SendRelayedMessageUtil.immediatelyRelay(this, chatId);
       } else {
         Uri uri = uriList.isEmpty()? null : uriList.get(0);
@@ -965,8 +967,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     return attachmentManager.setMedia(glideRequests, Uri.fromFile(new File(msg.getFile())), msg, mediaType, 0, 0, chatId);
   }
 
-  private void addAttachmentContactInfo(Intent data) {
-    int contactId = data.getIntExtra(AttachContactActivity.CONTACT_ID_EXTRA, 0);
+  private void addAttachmentContactInfo(int contactId) {
     if (contactId == 0) {
       return;
     }

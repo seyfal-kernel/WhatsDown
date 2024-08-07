@@ -60,6 +60,7 @@
     <string name="show_full_message">Mostrar mensaje completo…</string>
     <!-- Stay short here, say ~16 characters. The source string could also be "All Read", maybe that hint can make translations easier :) -->
     <string name="mark_all_as_read">Marcar todo como leído</string>
+    <string name="mark_as_read">Marcar como leído</string>
     <!-- Shortest text for "Mark as being read". In english, this could be "Read" (past tense of "to read"), in german, this could be "Gelesen". -->
     <string name="mark_as_read_short">Leído</string>
     <!-- Placeholder text when something is loading -->
@@ -245,6 +246,10 @@
     <string name="menu_delete_location">¿Eliminar esta ubicación?</string>
     <string name="menu_message_details">Detalles del mensaje</string>
     <string name="menu_copy_to_clipboard">Copiar al portapapeles</string>
+    <string name="share_invite_link">Compartir enlace de invitación</string>
+    <string name="invite_friends">Invitar amigos</string>
+    <!-- %1$s is replaced by the user's invitation link ("https://i.delta.chat/...") -->
+    <string name="invite_friends_text">Contáctame en Delta Chat:\n%1$s</string>
     <string name="menu_copy_selection_to_clipboard">Copiar selección</string>
     <string name="menu_copy_link_to_clipboard">Copiar enlace</string>
     <string name="menu_copy_text_to_clipboard">Copiar texto</string>
@@ -297,11 +302,11 @@
     <string name="device_talk_explain">Los mensajes en este chat son generados localmente por tu aplicación DeltaLab. Los creadores lo usan para informar sobre actualizaciones y problemas durante el uso de la aplicación.</string>
     <string name="device_talk_welcome_message2">¡Ponte en contacto!\n\n🙌 Toca \"Código QR\" en la pantalla principal de ambos dispositivos. Elija \"Escanear código QR\" en un dispositivo y apúntelo al otro\n\n🌍 Si no está en la misma habitación, escanee mediante videollamada o comparta un enlace de invitación desde \"Escanear código QR\"\n\nEntonces: disfrute de su experiencia de mensajería a través de la red descentralizada más grande que jamás haya existido: el correo electrónico. Y a diferencia de otras aplicaciones populares, sin control central ni seguimiento ni venta de usted, amigos, colegas o familiares a grandes organizaciones.</string>
     <string name="edit_contact">Editar contacto</string>
-    <!-- Verb "to pin", making something sticky, not a noun or appreviation for "pin number". -->
+    <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
     <string name="pin_chat">Anclar chat</string>
     <!-- Opposite of "Pin chat", removing the sticky-state from a chat. -->
     <string name="unpin_chat">Desanclar chat</string>
-    <!-- Verb "to pin", making something sticky, not a noun or appreviation for "pin number". -->
+    <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
     <string name="pin">Anclar</string>
     <!-- Opposite of "Pin chat", removing the sticky-state from a chat. -->
     <string name="unpin">Desanclar</string>
@@ -459,6 +464,9 @@
     <string name="send_file_to">Enviar \"%1$s\" a…</string>
     <!-- title shown above a list contacts where one should be selected (eg. when a webxdc attempts to send a message to a chat) -->
     <string name="send_message_to">Enviar mensaje a…</string>
+    <string name="enable_realtime">Canales Webxdc en tiempo real</string>
+    <string name="enable_realtime_explain">Habilitar la API de tiempo real de Webxdc para poder crear conexiones directas entre dispositivos.</string>
+
     <!-- map -->
     <string name="filter_map_on_time">Mostrar ubicaciones en el marco de tiempo</string>
     <string name="show_location_traces">Mostrar trazas</string>
@@ -532,7 +540,7 @@
     <string name="multidevice_same_network_hint">Asegúrate de que ambos dispositivos estén conectados en la misma red o Wi-Fi</string>
     <string name="multidevice_this_creates_a_qr_code">Esto crea un código QR que el otro dispositivo puede escanear para copiar la cuenta.</string>
     <string name="multidevice_install_dc_on_other_device">Instala DeltaLab en tu otro dispositivo (https://get.delta.chat)</string>
-    <!-- "I Already Have a Login / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
+    <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
     <string name="multidevice_tap_scan_on_other_device">Inicia DeltaLab, toca \"Añadir desde otro dispositivo\" y escanea el código mostrado aquí</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
     <string name="multidevice_qr_subtitle">Escanea para configurar otro dispositivo para %1$s</string>
@@ -649,6 +657,7 @@
     <string name="login_error_cannot_login">No se puede iniciar sesión como \"%1$s\". Por favor, compruebe si la dirección de correo y la contraseña son correctas.</string>
     <!-- TLS certificate checks -->
     <string name="accept_invalid_certificates">Aceptar certificados no válidos</string>
+    <!-- deprecated -->
     <string name="used_settings">Ajustes usados:</string>
     <string name="switch_account">Cambiar cuenta</string>
     <string name="add_account">Agregar cuenta</string>
@@ -830,6 +839,8 @@
     <string name="autodel_server_ask">¿Deseas borrar %1$d mensajes ahora y todos los mensajes recibidos en \"%2$s\"  al futuro?\n\n⚠️ Esto incluye correos, multimedia y \"Mensajes guardados\" en todas las carpetas del servidor. No uses esta función si quieres mantener tus datos en el servidor o si estas usando otros clientes de correo más allá de DeltaLab\n\n⚠️ No uses esta función si deseas mantener tus datos en el servidor\n\n⚠️ No uses esta función si estás usando otros clientes de correo más allá de DeltaLab</string>
     <!-- shown below enabled autodel_server-option, should be a summary of autodel_server_ask and remind about the impact -->
     <string name="autodel_server_enabled_hint">Esto incluye correos, multimedia  y \"Mensajes guardados\" en todas las carpetas del servidor. No uses esta función si quieres mantener tus datos en el servidor o si estas usando otros clientes de correo además de DeltaLab</string>
+    <string name="autodel_server_warn_multi_device_title">Activar la eliminación inmediata</string>
+    <string name="autodel_server_warn_multi_device">Si habilita la eliminación inmediata, no podrá utilizar varios dispositivos en este perfil.</string>
     <string name="autodel_confirm">Comprendo, borrar todos estos mensajes</string>
     <!-- "At once" in the meaning of "Immediately", without any intervening time. -->
     <string name="autodel_at_once">Inmediatamente</string>
@@ -840,6 +851,7 @@
     <string name="autodel_after_1_hour">Luego de 1 hora</string>
     <string name="autodel_after_1_day">Luego de 1 día</string>
     <string name="autodel_after_1_week">Luego de 1 semana</string>
+    <!-- deprecated -->
     <string name="autodel_after_4_weeks">Luego de 4 semanas</string>
     <string name="after_5_weeks">Luego de 5 semanas</string>
     <string name="autodel_after_1_year">Luego de 1 año</string>
@@ -865,7 +877,9 @@
 
 
     <!-- system messages -->
+    <!-- deprecated -->
     <string name="systemmsg_read_receipt_subject">Recibo de lectura</string>
+    <!-- deprecated -->
     <string name="systemmsg_read_receipt_body">El mensaje \"%1$s\" que enviaste se mostró en la pantalla del destinatario.\n\nEsto no garantiza que el contenido haya sido leído.</string>
     <string name="systemmsg_cannot_decrypt">Este mensaje no se puede descifrar.\n\n• Podría ayudar simplemente responder a este mensaje y pedir al remitente que lo envíe de nuevo.\n\n• Si acabas de reinstalar DeltaLab, es mejor que configures DeltaLab de nuevo y elijas \"Agregar como segundo dispositivo\" o importes una copia de seguridad.</string>
     <string name="systemmsg_unknown_sender_for_chat">Remitente desconocido. Mira \"info\" para más detalles.</string>
@@ -941,6 +955,7 @@
     <string name="chat_protection_broken_explanation">El cifrado de extremo a extremo ya no se puede garantizar, probablemente porque %1$s reinstaló DeltaLab o envió un mensaje desde otro dispositivo.\n\nPueden encontrarse en persona y escanear su código QR nuevamente para restablecer el cifrado de extremo a extremo garantizado.</string>
     <string name="invalid_unencrypted_tap_to_learn_more">⚠️ %1$s requiere cifrado de extremo a extremo que aún no está configurado para este chat. Toca para obtener más información.</string>
     <string name="invalid_unencrypted_explanation">Para establecer un cifrado de extremo a extremo, puede reunirse con los contactos en persona y escanear su código QR.</string>
+    <string name="encryption_required_for_new_contact">Se requiere cifrado de extremo a extremo, pero aún no está disponible para %1$s.\n\nPuede compartir su enlace de invitación o reunirse en persona y escanear su código QR.</string>
     <string name="learn_more">Aprender más</string>
 
     <string name="devicemsg_self_deleted">Eliminaste los chats de los \"Mensajes guardados\". \n\nℹ️ Para volver a usar los\"Mensajes guardados\", debes crear un chat contigo mismo.</string>
@@ -1166,8 +1181,11 @@
 
     <!-- android specific strings, developers: please take care to remove strings that are no longer used! -->
     <string name="pref_instant_delivery">Entrega inmediata</string>
+    <!-- deprecated -->
     <string name="pref_push_notifications">Usar servicio Push</string>
+    <!-- deprecated -->
     <string name="pref_push_notifications_explain">Notificaciones Push estables para servidores de chatmail</string>
+    <!-- deprecated -->
     <string name="pref_push_ask_disable">¿Desactivar el uso del servicio Push?\n\nEsto puede provocar retrasos en las notificaciones.</string>
     <string name="pref_background_notifications">Usar conexión en segundo plano</string>
     <string name="pref_background_notifications_explain">Requiere desactivar las optimizaciones de batería, utilícelas si el servicio Push no está disponible</string>
@@ -1183,4 +1201,5 @@
     <string name="update_1_44_android">Novedades:\n\n❤️ ¡Sí! Esto era muy esperado: toque prolongadamente un mensaje para reaccionar\n\n🔗 Si no puede escanear códigos QR, compártalos como enlaces de invitación\n\n🔵 Los mensajes no leídos de todas las cuentas se cuentan y se muestran en el título ahora\n\n… y TONELADAS de correcciones de errores… %1$s\n\nAyuda a mejorar la aplicación: usa \"Configuración/Avanzado/Enviar estadísticas\" para ayudar a los desarrolladores a optimizar mejor el uso en el mundo real. Puedes revisar los datos antes de enviar</string>
     <string name="update_1_44_ios">Novedades:\n\n❤️ ¡Sí! Esto era muy esperado: toque prolongadamente un mensaje para reaccionar\n\n🫸 Notificaciones PUSH para proveedores que lo soporten, como https://nine.testrun.org\n\n🔗 Si no puede escanear códigos QR, compártalos como enlaces de invitación\n\n… y TONELADAS de correcciones de errores… %1$s</string>
     <string name="update_1_46_android">Nueva pantalla de bienvenida 🐣 y más:\n\n⚡️ Regístrese en servidores de chatmail rápidos y seguros (https://delta.chat/chatmail) o use servidores de correo electrónico clásicos\n\n👉 Notificaciones PUSH para cualquier servidor de chatmail\n\n👤 Presenta un amigo a otro de forma segura usando \"Adjuntar Contacto\"\n\n🥰 Reacciona con cualquier emoji\n\n📌 Ancla chats directamente desde los resultados de la búsqueda... y MUCHO más en %1$s</string>
-    </resources>
+    <string name="update_1_46_ios">Nueva pantalla inicial 🐣 y más:\n\n⚡️ Regístrese en servidores de chatmail rápidos y seguros (https://delta.chat/chatmail) o use servidores de correo electrónico clásicos\n\n👉 Notificaciones PUSH para cualquier servidor de chatmail\n\n👤 Reciba \"Contactos adjuntos\" y conéctese con sus amigos\n\n🥰 Selección de reacción más rápida... y MÁS en %1$s</string>
+</resources>

@@ -173,11 +173,11 @@
     <string name="device_talk_subtitle">Lokalt genererte meldinger</string>
     <string name="device_talk_explain">Meldinger i denne chatten blir generert lokalt av Delta Chat-appen. Produsentene bruker den for å informere om appoppdateringer og problemer under bruk.</string>
     <string name="edit_contact">Rediger kontakt</string>
-    <!-- Verb "to pin", making something sticky, not a noun or appreviation for "pin number". -->
+    <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
     <string name="pin_chat">Fest chat</string>
     <!-- Opposite of "Pin chat", removing the sticky-state from a chat. -->
     <string name="unpin_chat">Løsne chat</string>
-    <!-- Verb "to pin", making something sticky, not a noun or appreviation for "pin number". -->
+    <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
     <string name="pin">Fest</string>
     <!-- Opposite of "Pin chat", removing the sticky-state from a chat. -->
     <string name="unpin">Løsn</string>
@@ -369,7 +369,9 @@
 
 
     <!-- system messages -->
+    <!-- deprecated -->
     <string name="systemmsg_read_receipt_subject">Meldingskvittering</string>
+    <!-- deprecated -->
     <string name="systemmsg_read_receipt_body">Dette er en meldingskvittering for meldingen \"%1$s\".\n\nDenne meldingskvitteringen bekrefter bare at meldingen ble vist på mottakerens enhet. Det finnes ingen garanti for at mottakeren har lest meldingsinnholdet.</string>
     <!-- %1$s will be replaced by the old group name, %2$s will be replaced by the new group name -->
     <string name="group_name_changed_by_you">Gruppenavn endret fra \"%1$s\" til \"%2$s\" av meg.</string>

@@ -53,6 +53,7 @@ public class DcContext {
     public final static int DC_QR_FPR_WITHOUT_ADDR  = 230;
     public final static int DC_QR_ACCOUNT           = 250;
     public final static int DC_QR_BACKUP            = 251;
+    public final static int DC_QR_BACKUP2           = 252;
     public final static int DC_QR_WEBRTC            = 260;
     public final static int DC_QR_ADDR              = 320;
     public final static int DC_QR_TEXT              = 330;
@@ -266,6 +267,14 @@ public class DcContext {
 
     public boolean isChatmail() {
       return getConfigInt("is_chatmail") == 1;
+    }
+
+    public boolean isMuted() {
+      return getConfigInt("is_muted") == 1;
+    }
+
+    public void setMuted(boolean muted) {
+      setConfigInt("is_muted", muted? 1 : 0);
     }
 
     // Called for new profiles on chatmail servers that are "single device" initially;

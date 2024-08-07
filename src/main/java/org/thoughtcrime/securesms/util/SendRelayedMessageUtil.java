@@ -11,7 +11,6 @@ import com.b44t.messenger.DcMsg;
 import org.thoughtcrime.securesms.ConversationListRelayingActivity;
 import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.mms.PartAuthority;
-import org.thoughtcrime.securesms.providers.PersistentBlobProvider;
 
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
@@ -81,15 +80,6 @@ public class SendRelayedMessageUtil {
       }
       for (Uri uri : uris) {
         dcContext.sendMsg(chatId, createMessage(context, uri, null, null, subject, null));
-      }
-    }
-  }
-
-  private static void cleanup(Activity activity) {
-    for (Uri uri : getSharedUris(activity)) {
-      if (uri != null && PersistentBlobProvider.isAuthority(activity, uri)) {
-        Log.i(TAG, "cleaning up " + uri);
-        PersistentBlobProvider.getInstance().delete(activity, uri);
       }
     }
   }

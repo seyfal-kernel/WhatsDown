@@ -168,28 +168,60 @@ public class RegistrationActivity extends BaseActionBarActivity implements DcEve
         viewLogText.setOnClickListener((view) -> showLog());
         boolean isConfigured = DcHelper.isConfigured(getApplicationContext());
         if (isConfigured) {
-            TextInputEditText imapLoginInput = findViewById(R.id.imap_login_text);
-
             String email = DcHelper.get(this, CONFIG_ADDRESS);
             emailInput.setText(email);
             if(!TextUtils.isEmpty(email)) {
                 emailInput.setSelection(email.length(), email.length());
             }
-
             passwordInput.setText(DcHelper.get(this, CONFIG_MAIL_PASSWORD));
-            imapLoginInput.setText(DcHelper.get(this, CONFIG_MAIL_USER));
-            imapServerInput.setText(DcHelper.get(this, CONFIG_MAIL_SERVER));
-            imapPortInput.setText(DcHelper.get(this, CONFIG_MAIL_PORT));
-            imapSecurity.setSelection(DcHelper.getInt(this, CONFIG_MAIL_SECURITY));
-            TextInputEditText smtpLoginInput = findViewById(R.id.smtp_login_text);
-            TextInputEditText smtpPasswordInput = findViewById(R.id.smtp_password_text);
-            smtpLoginInput.setText(DcHelper.get(this, CONFIG_SEND_USER));
-            smtpPasswordInput.setText(DcHelper.get(this, CONFIG_SEND_PASSWORD));
-            smtpServerInput.setText(DcHelper.get(this, CONFIG_SEND_SERVER));
-            smtpPortInput.setText(DcHelper.get(this, CONFIG_SEND_PORT));
-            smtpSecurity.setSelection(DcHelper.getInt(this, CONFIG_SEND_SECURITY));
 
-            proxySwitch.setChecked(DcHelper.getInt(this, CONFIG_SOCKS5_ENABLED) == 1);
+            boolean expandAdvanced = false;
+            String strVal;
+            int intVal;
+
+            TextInputEditText imapLoginInput = findViewById(R.id.imap_login_text);
+            strVal = DcHelper.get(this, CONFIG_MAIL_USER);
+            imapLoginInput.setText(strVal);
+            expandAdvanced = expandAdvanced || !TextUtils.isEmpty(strVal);
+
+            strVal = DcHelper.get(this, CONFIG_MAIL_SERVER);
+            imapServerInput.setText(strVal);
+            expandAdvanced = expandAdvanced || !TextUtils.isEmpty(strVal);
+
+            strVal = DcHelper.get(this, CONFIG_MAIL_PORT);
+            imapPortInput.setText(strVal);
+            expandAdvanced = expandAdvanced || !TextUtils.isEmpty(strVal);
+
+            intVal = DcHelper.getInt(this, CONFIG_MAIL_SECURITY);
+            imapSecurity.setSelection(intVal);
+            expandAdvanced = expandAdvanced || intVal != 0;
+
+            TextInputEditText smtpLoginInput = findViewById(R.id.smtp_login_text);
+            strVal = DcHelper.get(this, CONFIG_SEND_USER);
+            smtpLoginInput.setText(strVal);
+            expandAdvanced = expandAdvanced || !TextUtils.isEmpty(strVal);
+
+            TextInputEditText smtpPasswordInput = findViewById(R.id.smtp_password_text);
+            strVal = DcHelper.get(this, CONFIG_SEND_PASSWORD);
+            smtpPasswordInput.setText(strVal);
+            expandAdvanced = expandAdvanced || !TextUtils.isEmpty(strVal);
+
+            strVal = DcHelper.get(this, CONFIG_SEND_SERVER);
+            smtpServerInput.setText(strVal);
+            expandAdvanced = expandAdvanced || !TextUtils.isEmpty(strVal);
+
+            strVal = DcHelper.get(this, CONFIG_SEND_PORT);
+            smtpPortInput.setText(strVal);
+            expandAdvanced = expandAdvanced || !TextUtils.isEmpty(strVal);
+
+            intVal = DcHelper.getInt(this, CONFIG_SEND_SECURITY);
+            smtpSecurity.setSelection(intVal);
+            expandAdvanced = expandAdvanced || intVal != 0;
+
+            intVal = DcHelper.getInt(this, CONFIG_SOCKS5_ENABLED);
+            proxySwitch.setChecked(intVal == 1);
+            expandAdvanced = expandAdvanced || intVal == 1;
+
             proxyHostInput.setText(DcHelper.get(this, CONFIG_SOCKS5_HOST));
             proxyPortInput.setText(DcHelper.get(this, CONFIG_SOCKS5_PORT));
             TextInputEditText proxyUserInput = findViewById(R.id.socks5_user_text);
@@ -201,12 +233,17 @@ public class RegistrationActivity extends BaseActionBarActivity implements DcEve
             int sel = 0;
             if((serverFlags&DcContext.DC_LP_AUTH_OAUTH2)!=0) sel = 1;
             authMethod.setSelection(sel);
+            expandAdvanced = expandAdvanced || sel != 0;
 
             int certCheckFlags = DcHelper.getInt(this, "imap_certificate_checks");
             certCheck.setSelection(certCheckFlags);
+            expandAdvanced = expandAdvanced || certCheckFlags != 0;
+
             encryptCheckbox.setHeight(0);
             encryptCheckbox.setClickable(false);
             encryptCheckbox.setFocusable(false);
+
+            if (expandAdvanced) { onAdvancedSettings(); }
         } else if (getIntent() != null && getIntent().getBundleExtra(ACCOUNT_DATA) != null) {
           // Companion app might have sent account data
           Bundle b = getIntent().getBundleExtra(ACCOUNT_DATA);

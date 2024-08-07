@@ -56,6 +56,7 @@
     <string name="show_full_message">نمایش پیام کامل...</string>
     <!-- Stay short here, say ~16 characters. The source string could also be "All Read", maybe that hint can make translations easier :) -->
     <string name="mark_all_as_read">همه را خوانده شده بزن</string>
+    <string name="mark_as_read">علامت زدن به عنوان خوانده شده</string>
     <!-- Shortest text for "Mark as being read". In english, this could be "Read" (past tense of "to read"), in german, this could be "Gelesen". -->
     <string name="mark_as_read_short">خوانده شد</string>
     <!-- Placeholder text when something is loading -->
@@ -199,6 +200,8 @@
     <!-- menu labels (or icon, buttons...) -->
     <string name="menu_new_contact">مخاطب جدید</string>
     <string name="menu_new_classic_contact">اضافه کردن مخاطب به صورت دستی</string>
+    <string name="new_classic_contact_explain">مخاطبینی که دستی اضافه شده‌اند می توانند برای ارسال پیام به حساب ایمیل معمولی
+ استفاده شوند و رمزگذاری سرتاسر آنها تضمین نمی‌شود.</string>
     <string name="menu_new_chat">گپ جدید</string>
     <string name="menu_new_group">گروه جدید</string>
     <!-- consider keeping the term "broadcast" as in WhatsApp or Telegram -->
@@ -230,7 +233,7 @@
     <string name="menu_copy_image_to_clipboard">رونوشت گرفتن از تصویر</string>
     <string name="menu_copy_email_to_clipboard">کپی کردن رایانامه</string>
     <string name="paste_from_clipboard">چسباندن از حافظه</string>
-    <string name="ask_copy_unopenable_link_to_clipboard">نمی توان لینک \"%1$d\" را در مرورگر باز کرد. می خواهید در عوض لینک را کپی کنید؟</string>
+    <string name="ask_copy_unopenable_link_to_clipboard">نمی توان لینک \"%1$d\" را در مرورگر باز کرد. آیا می خواهید در عوض لینک را کپی کنید؟</string>
     <string name="menu_forward">هدایت پیام</string>
     <string name="menu_reply">پاسخ به پیام</string>
     <string name="menu_mute">ساکت کردن اعلان</string>
@@ -275,11 +278,11 @@
     <string name="device_talk_subtitle">پیام‌های  داخلی</string>
     <string name="device_talk_explain">پیام‌ها در این گپ به صورت داخلی و توسط نرم‌افزار دلتاچت تولید شده‌اند. سازنده‌ها از این محل برای اعلان به روز‌رسانی‌ها و مشکلات پیش آمده حین کار استفاده می‌کنند. </string>
     <string name="edit_contact">ویرایش مخاطب</string>
-    <!-- Verb "to pin", making something sticky, not a noun or appreviation for "pin number". -->
+    <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
     <string name="pin_chat">سنجاق کردن گپ</string>
     <!-- Opposite of "Pin chat", removing the sticky-state from a chat. -->
     <string name="unpin_chat">کندن گپ از سنجاق</string>
-    <!-- Verb "to pin", making something sticky, not a noun or appreviation for "pin number". -->
+    <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
     <string name="pin">سنجاق‌کردن</string>
     <!-- Opposite of "Pin chat", removing the sticky-state from a chat. -->
     <string name="unpin">سنجاق برداری</string>
@@ -492,7 +495,7 @@ https://meet.jit.si/$ROOM
     <string name="multidevice_same_network_hint">مطمئن شوید هر دو دستگاه در یک وای‌فای یا شبکه هستند</string>
     <string name="multidevice_this_creates_a_qr_code">این یک کد QR ایجاد می‌کند که دستگاه دوم می‌تواند برای کپی حساب اسکن کند.</string>
     <string name="multidevice_install_dc_on_other_device">دلتاچت را روی دستگاه دیگر خود نصب کنید (https://get.delta.chat)</string>
-    <!-- "I Already Have a Login / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
+    <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
     <string name="multidevice_tap_scan_on_other_device">دلتاچت را باز کنید، روی «افزودن به عنوان دستگاه دوم» بزنید و کد نشان داده شده در اینجا را اسکن کنید</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
     <string name="multidevice_qr_subtitle">برای راه اندازی دستگاه دوم برای %1$s اسکن کنید</string>
@@ -544,12 +547,14 @@ https://meet.jit.si/$ROOM
     <!-- Secondary button on the welcome screen, allows to "Add as Second Device", "Restore from Backup"  -->
     <string name="onboarding_alternative_logins">از قبل یک حساب کاربری دارم</string>
     <!-- Button, allows to log in to existing email accounts, setting ports, passwords and so on -->
-    <string name="manual_account_setup_option">ساخت حساب کاربری با حساب ایمیل عادی</string>
+    <string name="manual_account_setup_option">ساخت حساب کاربری با حساب ایمیل معمولی</string>
     <!-- Instant onboarding title (there is not more to do than to set name and avatar) -->
-    <string name="instant_onboarding_title">حساب شما</string>
+    <string name="instant_onboarding_title">نمایه شما</string>
     <!-- Secondary, link-like button to open a page with other possible instances -->
     <string name="instant_onboarding_show_more_instances">استفاده از یک سرور دیگر</string>
     <string name="instant_onboarding_other_server">لیست سرورهای Chatmail</string>
+    <!-- Hint about what happens when "Create Profile" button in pressed; the placeholder will be replaced by contact name and/or address -->
+    <string name="instant_onboarding_contact_info">برای گفتگو با %1$s یک حساب کاربری کنید.</string>
     <string name="welcome_chat_over_email">گفتگو غیرمتمرکز و ایمن</string>
     <string name="scan_invitation_code">اسکن کردن کد دعوت</string>
     <string name="login_title">ورود</string>
@@ -594,12 +599,13 @@ https://meet.jit.si/$ROOM
     <string name="login_error_cannot_login">نتوانست به عنوان «%1$s» وارد شود. لطفاً صحت نشانی رایانامه و گذرواژه را بررسی کنید. </string>
     <!-- TLS certificate checks -->
     <string name="accept_invalid_certificates">پذیرش گواهینامه‌های نامعتبر</string>
+    <!-- deprecated -->
     <string name="used_settings">تنظیمات استفاده شده:</string>
     <string name="switch_account">تغییر حساب کاربری</string>
     <string name="add_account">افزودن حساب کاربری</string>
     <string name="delete_account">حذف حساب کاربری</string>
     <string name="delete_account_ask">آیا از حذف حساب کاربری اطمینان دارید؟</string>
-    <string name="delete_account_explain_with_name">همه اطلاعات حساب مربوط به \"%s\" روی این دستگاه پاک می‌شود؛ که شامل تنظیمات رمزگذاری سرتاسر، مخاطبین، گفتگو ها پیام‌ها، رسانه ها می‌شود. این عمل قابل بازگشت نیست.</string>
+    <string name="delete_account_explain_with_name">همه اطلاعات حساب مربوط به «%s» روی این دستگاه پاک می‌شود. این شامل تنظیمات رمزگذاری سرتاسر، مخاطبین، گفتگو ها، پیام‌ها و رسانه ها می‌شود. این عمل قابل بازگردانی نیست.</string>
     <string name="unconfigured_account">حساب تنظیم نشده</string>
     <string name="unconfigured_account_hint">بازکردن حساب برای تنظیم آن</string>
     <string name="try_connect_now">اکنون برای اتصال تلاش کنید</string>
@@ -684,7 +690,7 @@ https://meet.jit.si/$ROOM
     <!-- the placeholder will be replaced by the name of the profile's email address -->
     <string name="pref_backup_export_x">برون‏بُرد(اکسپورت) %1$s</string>
     <!-- the placeholder will be replaced by the number of profiles to export; the number is always larger than 1 -->
-    <string name="pref_backup_export_all">برون‏بُرد(اکسپورت) هر %1$d حساب </string>
+    <string name="pref_backup_export_all">برون‏بُرد (اکسپورت) همه%1$d حساب ها</string>
     <string name="pref_backup_export_start_button">شروع تهیه نسخه پشتیبان</string>
     <string name="pref_backup_written_to_x">نسخه پشتیبان با موفقیت در\"%1$s\" ذخیره شد.</string>
     <string name="pref_managekeys_menu_title">مدیریت کلیدها</string>
@@ -781,6 +787,7 @@ https://meet.jit.si/$ROOM
     <string name="autodel_after_1_hour">بعد از ۱ ساعت</string>
     <string name="autodel_after_1_day">بعد از ۱  روز</string>
     <string name="autodel_after_1_week">بعد از ۱ هفته</string>
+    <!-- deprecated -->
     <string name="autodel_after_4_weeks">بعد از۴ هفته</string>
     <string name="after_5_weeks">بعد از ۵ هفته</string>
     <string name="autodel_after_1_year">بعد از ۱ سال</string>
@@ -806,7 +813,9 @@ https://meet.jit.si/$ROOM
 
 
     <!-- system messages -->
+    <!-- deprecated -->
     <string name="systemmsg_read_receipt_subject">پیام باز شد</string>
+    <!-- deprecated -->
     <string name="systemmsg_read_receipt_body">پیام\"%1$s\" که ارسال کرده بودید در ثفحه گیرنده نمایش داده شد\n\n. تضمینی وجود ندارد که محتوای پیام را خوانده باشد. </string>
     <string name="systemmsg_unknown_sender_for_chat">فرستنده در این گفت و گو ناشناس است. برای جزئیات بیشتر به \"اطلاعات\" مراجعه کنید.</string>
     <string name="systemmsg_subject_for_new_contact">پیام از%1$s</string>
@@ -1123,6 +1132,7 @@ GNU GPL ورژن ۳
     <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">دلتاچت میخواهد تصاویر را در آلبوم شما ذخیره کند.</string>
 
 
+    <!-- deprecated -->
     <string name="pref_push_notifications">استفاده از Push Service</string>
     <string name="pref_background_notifications">استفاده از اتصال پس زمینه</string>
     <string name="pref_reliable_service">اجبار کردن اتصال پس زمینه</string>

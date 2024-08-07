@@ -240,6 +240,10 @@
     <string name="menu_delete_location">Delete this Location?</string>
     <string name="menu_message_details">Message Info</string>
     <string name="menu_copy_to_clipboard">Copy to Clipboard</string>
+    <string name="share_invite_link">Share Invite Link</string>
+    <string name="invite_friends">Invite Friends</string>
+    <!-- %1$s is replaced by the user's invitation link ("https://i.delta.chat/...") -->
+    <string name="invite_friends_text">Contact me on Delta Chat:\n%1$s</string>
     <string name="menu_copy_selection_to_clipboard">Copy Selection</string>
     <string name="menu_copy_link_to_clipboard">Copy Link</string>
     <string name="menu_copy_text_to_clipboard">Copy Text</string>
@@ -641,6 +645,7 @@
     <string name="login_error_cannot_login">Cannot login as \"%1$s\". Please check if the e-mail address and the password are correct.</string>
     <!-- TLS certificate checks -->
     <string name="accept_invalid_certificates">Accept invalid certificates</string>
+    <!-- deprecated -->
     <string name="used_settings">Used settings:</string>
     <string name="switch_account">Switch Profile</string>
     <string name="add_account">Add Profile</string>
@@ -825,7 +830,7 @@
     <!-- shown below enabled autodel_server-option, should be a summary of autodel_server_ask and remind about the impact -->
     <string name="autodel_server_enabled_hint">This includes e-mails, media and \"Saved messages\" in all server folders. Do not use this function if you want to keep data on the server or if you are using other e-mail clients besides DeltaLab.</string>
     <string name="autodel_server_warn_multi_device_title">Turn on at-once deletion</string>
-    <string name="autodel_server_warn_multi_device">If you enable at-once deletion you cannot use multiple devices on this profile anymore.</string>
+    <string name="autodel_server_warn_multi_device">If you enable at-once deletion you cannot use multiple devices on this profile.</string>
     <string name="autodel_confirm">I understand, delete all these messages</string>
     <!-- "At once" in the meaning of "Immediately", without any intervening time. -->
     <string name="autodel_at_once">At once after Download</string>
@@ -862,7 +867,9 @@
 
 
     <!-- system messages -->
+    <!-- deprecated -->
     <string name="systemmsg_read_receipt_subject">Message opened</string>
+    <!-- deprecated -->
     <string name="systemmsg_read_receipt_body">The \"%1$s\" message you sent was displayed on the screen of the recipient.\n\nThis is no guarantee the content was read.</string>
     <string name="systemmsg_cannot_decrypt">This message cannot be decrypted.\n\n• It might already help to simply reply to this message and ask the sender to send the message again.\n\n• If you just re-installed DeltaLab then it is best if you re-setup DeltaLab now and choose "Add as second device" or import a backup.</string>
     <string name="systemmsg_unknown_sender_for_chat">Unknown sender for this chat. See \'info\' for more details.</string>
@@ -938,6 +945,7 @@
     <string name="chat_protection_broken_explanation">End-to-end encryption cannot be guaranteed anymore, likely because %1$s reinstalled DeltaLab or sent a message from another device.\n\nYou may meet them in person and scan their QR code again to reestablish guaranteed end-to-end encryption.</string>
     <string name="invalid_unencrypted_tap_to_learn_more">⚠️ %1$s requires end-to-end encryption which is not setup for this chat yet. Tap to learn more.</string>
     <string name="invalid_unencrypted_explanation">To establish end-to-end-encryption, you may meet contacts in person and scan their QR Code to introduce them.</string>
+    <string name="encryption_required_for_new_contact">End-to-end encryption is required but it is not setup for %1$s yet.\n\nYou may share your invite link with them or meet in person and scan their QR Code.</string>
     <string name="learn_more">Learn More</string>
 
     <string name="devicemsg_self_deleted">You deleted the \"Saved messages\" chat.\n\nℹ️ To use the \"Saved messages\" feature again, create a new chat with yourself.</string>
@@ -1163,11 +1171,14 @@
 
     <!-- android specific strings, developers: please take care to remove strings that are no longer used! -->
     <string name="pref_instant_delivery">Instant Delivery</string>
+    <!-- deprecated -->
     <string name="pref_push_notifications">Use Push Service</string>
+    <!-- deprecated -->
     <string name="pref_push_notifications_explain">Reliable Push Notifications for Chatmail-Servers</string>
+    <!-- deprecated -->
     <string name="pref_push_ask_disable">Disable using Push Service?\n\nThis may result in delayed notifications.</string>
     <string name="pref_background_notifications">Use Background Connection</string>
-    <string name="pref_background_notifications_explain">Requires ignored battery optimizations, use if Push Service is unavailable</string>
+    <string name="pref_background_notifications_explain">Requires ignored battery optimizations, use if notifications don\'t arrive on time</string>
     <string name="pref_reliable_service">Force Background Connection</string>
     <string name="pref_reliable_service_explain">Causes a permanent notification</string>
 

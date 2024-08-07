@@ -247,6 +247,10 @@
     <string name="menu_delete_location">Usunąć tę lokalizację?</string>
     <string name="menu_message_details">Szczegóły wiadomości</string>
     <string name="menu_copy_to_clipboard">Kopiuj do schowka</string>
+    <string name="share_invite_link">Udostępnij link zaproszenia</string>
+    <string name="invite_friends">Zaproś znajomych</string>
+    <!-- %1$s is replaced by the user's invitation link ("https://i.delta.chat/...") -->
+    <string name="invite_friends_text">Skontaktuj się ze mną przez Delta Chat:\n%1$s</string>
     <string name="menu_copy_selection_to_clipboard">Kopiuj zaznaczenie</string>
     <string name="menu_copy_link_to_clipboard">Kopiuj link</string>
     <string name="menu_copy_text_to_clipboard">Kopiuj tekst</string>
@@ -299,11 +303,11 @@
     <string name="device_talk_explain">Wiadomości w tym czacie są generowane lokalnie przez twoją aplikację Delta Chat. Twórcy używają go do informowania o aktualizacjach aplikacji i problemach podczas użytkowania.</string>
     <string name="device_talk_welcome_message2">Skontaktuj się!\n\n🙌 Dotknij „Kod QR” na ekranie głównym obu urządzeń. Wybierz opcję „Zeskanuj kod QR” na jednym urządzeniu i skieruj go na drugie\n\n🌍 Jeśli nie znajdujesz się w tym samym pokoju, zeskanuj kod podczas rozmowy wideo lub udostępnij link z zaproszeniem w sekcji „Zeskanuj kod QR”\n\nNastępnie: korzystaj z komunikatora za pośrednictwem największej zdecentralizowanej sieci, jaka kiedykolwiek istniała: e-mail. W przeciwieństwie do innych popularnych aplikacji bez centralnej kontroli, śledzenia lub sprzedawania Ciebie, znajomych, współpracowników lub rodziny dużym organizacjom.</string>
     <string name="edit_contact">Edytuj kontakt</string>
-    <!-- Verb "to pin", making something sticky, not a noun or appreviation for "pin number". -->
+    <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
     <string name="pin_chat">Przypnij czat</string>
     <!-- Opposite of "Pin chat", removing the sticky-state from a chat. -->
     <string name="unpin_chat">Odepnij czat</string>
-    <!-- Verb "to pin", making something sticky, not a noun or appreviation for "pin number". -->
+    <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
     <string name="pin">Przypnij</string>
     <!-- Opposite of "Pin chat", removing the sticky-state from a chat. -->
     <string name="unpin">Odepnij</string>
@@ -535,8 +539,8 @@
     <string name="multidevice_same_network_hint">Upewnij się, że oba urządzenia są połączone z tym samym Wi-Fi lub siecią</string>
     <string name="multidevice_this_creates_a_qr_code">Spowoduje to utworzenie kodu QR, który kolejne urządzenie może zeskanować w celu skopiowania konta.</string>
     <string name="multidevice_install_dc_on_other_device">Zainstaluj Delta Chat na swoim kolejnym urządzeniu (https://get.delta.chat)</string>
-    <!-- "I Already Have a Login / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
-    <string name="multidevice_tap_scan_on_other_device">Uruchom Delta Chat, dotknij „Dodaj jako kolejne urządzenie” i zeskanuj pokazany tutaj kod</string>
+    <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
+    <string name="multidevice_tap_scan_on_other_device">Uruchom Delta Chat, dotknij „Mam już profil / Dodaj jako kolejne urządzenie” i zeskanuj pokazany tutaj kod</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
     <string name="multidevice_qr_subtitle">Zeskanuj, aby skonfigurować kolejne urządzenie dla %1$s</string>
     <string name="multidevice_receiver_title">Dodaj jako kolejne urządzenie</string>
@@ -652,6 +656,7 @@
     <string name="login_error_cannot_login">Nie można się zalogować jako „%1$s. Sprawdź, czy adres e-mail i hasło są poprawne.</string>
     <!-- TLS certificate checks -->
     <string name="accept_invalid_certificates">Zaakceptuj nieprawidłowe certyfikaty</string>
+    <!-- deprecated -->
     <string name="used_settings">Użyte ustawienia:</string>
     <string name="switch_account">Przełącz konto</string>
     <string name="add_account">Dodaj konto</string>
@@ -833,9 +838,11 @@
     <string name="autodel_server_ask">Czy chcesz teraz usunąć %1$d wiadomości i wszystkie nowo pobrane wiadomości w przyszłości „%2$s”?\n\n⚠️ Obejmuje to e-maile, multimedia i „Zapisane wiadomości” we wszystkich folderach na serwerze.\n\n⚠️ Nie używaj tej funkcji, jeśli chcesz zachować dane na serwerze\n\n⚠️ Nie używaj tej funkcji, jeśli używasz innych klientów poczty e-mail oprócz Delta Chat</string>
     <!-- shown below enabled autodel_server-option, should be a summary of autodel_server_ask and remind about the impact -->
     <string name="autodel_server_enabled_hint">Obejmuje to e-maile, multimedia i „Zapisane wiadomości” we wszystkich folderach na serwerze. Nie używaj tej funkcji, jeśli chcesz zachować dane na serwerze lub jeśli używasz innych klientów poczty e-mail oprócz Delta Chat.</string>
+    <string name="autodel_server_warn_multi_device_title">Włącz natychmiastowe usuwanie</string>
+    <string name="autodel_server_warn_multi_device">Jeśli włączysz natychmiastowe usuwanie, nie będzie można używać wielu urządzeń w tym profilu.</string>
     <string name="autodel_confirm">Rozumiem, usuń te wszystkie wiadomości</string>
     <!-- "At once" in the meaning of "Immediately", without any intervening time. -->
-    <string name="autodel_at_once">Od razu</string>
+    <string name="autodel_at_once">Od razu po pobraniu</string>
     <string name="after_30_seconds">Po 30 sekundach</string>
     <string name="after_1_minute">Po 1 minucie</string>
     <string name="after_5_minutes">Po 5 minutach</string>
@@ -843,6 +850,7 @@
     <string name="autodel_after_1_hour">Po 1 godzinie</string>
     <string name="autodel_after_1_day">Po 1 dniu</string>
     <string name="autodel_after_1_week">Po 1 tygodniu</string>
+    <!-- deprecated -->
     <string name="autodel_after_4_weeks">Po 4 tygodniach</string>
     <string name="after_5_weeks">Po 5 tygodniach</string>
     <string name="autodel_after_1_year">Po 1 roku</string>
@@ -868,7 +876,9 @@
 
 
     <!-- system messages -->
+    <!-- deprecated -->
     <string name="systemmsg_read_receipt_subject">Potwierdzenie odczytu</string>
+    <!-- deprecated -->
     <string name="systemmsg_read_receipt_body">To jest potwierdzenie odczytu dla wiadomości ”%1$s„.\n\nTo potwierdzenie odczytu tylko informuje, że wiadomość została wyświetlona na urządzeniu odbiorcy. Nie ma gwarancji, że odbiorca przeczytał treść wiadomości.</string>
     <string name="systemmsg_cannot_decrypt">Tej wiadomości nie można odszyfrować.\n\n• Możesz teraz pomóc odpowiadając po prostu na tą wiadomość i poprosić nadawcę o ponowne wysłanie wiadomości.\n\n• Jeśli właśnie ponownie zainstalowałeś Delta Chat, najlepiej będzie, jeśli ponownie skonfigurujesz Delta Chat teraz i wybierzesz „Dodaj jako drugie urządzenie” lub zaimportujesz kopię zapasową.</string>
     <string name="systemmsg_unknown_sender_for_chat">Nieznany nadawca tego czatu. Więcej szczegółów znajdziesz w sekcji „Informacje”.</string>
@@ -944,6 +954,7 @@
     <string name="chat_protection_broken_explanation">Nie można już zagwarantować szyfrowania end-to-end, prawdopodobnie z powodu ponownej instalacji Delta Chat przez %1$s lub wysłania wiadomości z innego urządzenia.\n\nMożesz spotkać się z tą osobą osobiście i ponownie zeskanować jej kod QR, aby przywrócić gwarantowane szyfrowanie end-to-end.</string>
     <string name="invalid_unencrypted_tap_to_learn_more">⚠️ %1$s wymaga szyfrowania end-to-end, które nie zostało jeszcze skonfigurowane dla tego czatu. Dotknij, aby dowiedzieć się więcej.</string>
     <string name="invalid_unencrypted_explanation">Aby ustanowić szyfrowanie end-to-end, możesz spotkać się z kontaktami osobiście i zeskanować ich kod QR, żeby ich wprowadzić.</string>
+    <string name="encryption_required_for_new_contact">Wymagane jest szyfrowanie end-to-end, ale nie zostało ono jeszcze skonfigurowane dla %1$s.\n\nMożesz udostępnić im swój link zaproszenia lub spotkać się osobiście i zeskanować ich kod QR.</string>
     <string name="learn_more">Czytaj więcej</string>
 
     <string name="devicemsg_self_deleted">Usunięto czat „Zapisane wiadomości”.\n\nℹ️ Aby ponownie użyć funkcji „Zapisane wiadomości”, utwórz nowy czat ze sobą.</string>
@@ -1094,7 +1105,7 @@
     <string name="select_group_image_desktop">Wybierz obraz grupy</string>
     <string name="export_backup_desktop">Eksport kopii zapasowej</string>
     <string name="autocrypt_correct_desktop">Pomyślnie przetransferowano konfigurację Autocrypt!</string>
-    <string name="forget_login_confirmation_desktop">Usunąć ten login? Wszystko zostanie usunięte, w tym kompletna konfiguracja end-to-end, kontakty, czaty, wiadomości i multimedia. Ta akcja jest ostateczna i nie można jej odwrócić.</string>
+    <string name="forget_login_confirmation_desktop">Usunąć ten profil? Wszystko zostanie usunięte, w tym kompletna konfiguracja end-to-end, kontakty, czaty, wiadomości i multimedia. Ta akcja jest ostateczna i nie można jej odwrócić.</string>
     <!-- deprecated -->
     <string name="account_info_hover_tooltip_desktop2">E-mail: %1$s\nRozmiar: %2$s\nID konta: %3$s</string>
     <string name="message_detail_sent_desktop">wysłane</string>
@@ -1168,8 +1179,11 @@
 
     <!-- android specific strings, developers: please take care to remove strings that are no longer used! -->
     <string name="pref_instant_delivery">Natychmiastowe dostarczenie</string>
+    <!-- deprecated -->
     <string name="pref_push_notifications">Użyj usługi push</string>
+    <!-- deprecated -->
     <string name="pref_push_notifications_explain">Niezawodne powiadomienia push dla serwerów chatmail</string>
+    <!-- deprecated -->
     <string name="pref_push_ask_disable">Wyłączyć korzystanie z usługi Push?\n\nMoże to skutkować opóźnieniami w powiadomieniach.</string>
     <string name="pref_background_notifications">Użyj połączenia w tle</string>
     <string name="pref_background_notifications_explain">Wymaga zignorowania optymalizacji baterii. Użyj, jeśli usługa Push jest niedostępna</string>

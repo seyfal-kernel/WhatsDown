@@ -13,8 +13,6 @@
 
         <item name="recipient_preference_blocked">#d00000</item>
         <item name="contact_selection_label_text">#66000000</item>
-        <item name="contact_selection_push_user">@color/black</item>
-        <item name="contact_selection_lay_user">#a0000000</item>
         <item name="contact_selection_header_text">@color/def_primary_dark</item>
 
         <item name="profile_toolbar_background">@color/white</item>
@@ -34,8 +32,6 @@
 
         <item name="recipient_preference_blocked">#d00000</item>
         <item name="contact_selection_label_text">#66eeeeee</item>
-        <item name="contact_selection_push_user">@color/gray5</item>
-        <item name="contact_selection_lay_user">#afeeeeee</item>
         <item name="contact_selection_header_text">#66eeeeee</item>
 
         <item name="profile_toolbar_background">@color/black</item>
@@ -390,8 +386,6 @@
 
         <item name="recipient_preference_blocked">#d00000</item>
         <item name="contact_selection_label_text">#66000000</item>
-        <item name="contact_selection_push_user">@color/black</item>
-        <item name="contact_selection_lay_user">#a0000000</item>
         <item name="contact_selection_header_text">@color/purple_primary_dark</item>
 
         <item name="profile_toolbar_background">@color/white</item>
@@ -429,8 +423,6 @@
 
         <item name="recipient_preference_blocked">#d00000</item>
         <item name="contact_selection_label_text">#66eeeeee</item>
-        <item name="contact_selection_push_user">@color/gray5</item>
-        <item name="contact_selection_lay_user">#afeeeeee</item>
         <item name="contact_selection_header_text">#66eeeeee</item>
 
         <item name="profile_toolbar_background">@color/black</item>
@@ -473,8 +465,6 @@
 
         <item name="recipient_preference_blocked">#d00000</item>
         <item name="contact_selection_label_text">#66000000</item>
-        <item name="contact_selection_push_user">@color/black</item>
-        <item name="contact_selection_lay_user">#a0000000</item>
         <item name="contact_selection_header_text">@color/green_primary_dark</item>
 
         <item name="profile_toolbar_background">@color/white</item>
@@ -512,8 +502,6 @@
 
         <item name="recipient_preference_blocked">#d00000</item>
         <item name="contact_selection_label_text">#66eeeeee</item>
-        <item name="contact_selection_push_user">@color/gray5</item>
-        <item name="contact_selection_lay_user">#afeeeeee</item>
         <item name="contact_selection_header_text">#66eeeeee</item>
 
         <item name="profile_toolbar_background">@color/black</item>
@@ -557,8 +545,6 @@
 
         <item name="recipient_preference_blocked">#d00000</item>
         <item name="contact_selection_label_text">#66000000</item>
-        <item name="contact_selection_push_user">@color/black</item>
-        <item name="contact_selection_lay_user">#a0000000</item>
         <item name="contact_selection_header_text">@color/blue_primary_dark</item>
 
         <item name="profile_toolbar_background">@color/white</item>
@@ -596,8 +582,6 @@
 
         <item name="recipient_preference_blocked">#d00000</item>
         <item name="contact_selection_label_text">#66eeeeee</item>
-        <item name="contact_selection_push_user">@color/gray5</item>
-        <item name="contact_selection_lay_user">#afeeeeee</item>
         <item name="contact_selection_header_text">#66eeeeee</item>
 
         <item name="profile_toolbar_background">@color/black</item>
@@ -640,8 +624,6 @@
 
         <item name="recipient_preference_blocked">#d00000</item>
         <item name="contact_selection_label_text">#66000000</item>
-        <item name="contact_selection_push_user">@color/black</item>
-        <item name="contact_selection_lay_user">#a0000000</item>
         <item name="contact_selection_header_text">@color/red_primary_dark</item>
 
         <item name="profile_toolbar_background">@color/white</item>
@@ -679,8 +661,6 @@
 
         <item name="recipient_preference_blocked">#d00000</item>
         <item name="contact_selection_label_text">#66eeeeee</item>
-        <item name="contact_selection_push_user">@color/gray5</item>
-        <item name="contact_selection_lay_user">#afeeeeee</item>
         <item name="contact_selection_header_text">#66eeeeee</item>
 
         <item name="profile_toolbar_background">@color/black</item>
@@ -723,8 +703,6 @@
 
         <item name="recipient_preference_blocked">#d00000</item>
         <item name="contact_selection_label_text">#66000000</item>
-        <item name="contact_selection_push_user">@color/black</item>
-        <item name="contact_selection_lay_user">#a0000000</item>
         <item name="contact_selection_header_text">@color/pink_primary_dark</item>
 
         <item name="profile_toolbar_background">@color/white</item>
@@ -762,8 +740,6 @@
 
         <item name="recipient_preference_blocked">#d00000</item>
         <item name="contact_selection_label_text">#66eeeeee</item>
-        <item name="contact_selection_push_user">@color/gray5</item>
-        <item name="contact_selection_lay_user">#afeeeeee</item>
         <item name="contact_selection_header_text">#66eeeeee</item>
 
         <item name="profile_toolbar_background">@color/black</item>
@@ -806,8 +782,6 @@
 
         <item name="recipient_preference_blocked">#d00000</item>
         <item name="contact_selection_label_text">#66000000</item>
-        <item name="contact_selection_push_user">@color/black</item>
-        <item name="contact_selection_lay_user">#a0000000</item>
         <item name="contact_selection_header_text">@color/gray_primary_dark</item>
 
         <item name="profile_toolbar_background">@color/white</item>
@@ -845,8 +819,6 @@
 
         <item name="recipient_preference_blocked">#d00000</item>
         <item name="contact_selection_label_text">#66eeeeee</item>
-        <item name="contact_selection_push_user">@color/gray5</item>
-        <item name="contact_selection_lay_user">#afeeeeee</item>
         <item name="contact_selection_header_text">#66eeeeee</item>
 
         <item name="profile_toolbar_background">@color/black</item>

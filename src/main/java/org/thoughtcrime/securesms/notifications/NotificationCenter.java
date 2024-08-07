@@ -336,7 +336,7 @@ public class NotificationCenter {
             boolean isGroupMention = quotedMsg != null && dcChat.isMultiUser() && quotedMsg.isOutgoing();
             ChatData chatData = new ChatData(accountId, chatId);
 
-            if (!Prefs.isNotificationsEnabled(context) || (!isGroupMention &&  dcChat.isMuted())) {
+            if (dcContext.isMuted() || (!isGroupMention &&  dcChat.isMuted())) {
                 return;
             }
 
@@ -600,7 +600,7 @@ public class NotificationCenter {
     }
 
     public void maybePlaySendSound(DcChat dcChat) {
-        if (Prefs.isInChatNotifications(context) && Prefs.isNotificationsEnabled(context) && !dcChat.isMuted()) {
+        if (Prefs.isInChatNotifications(context) && !dcChat.isMuted()) {
             InChatSounds.getInstance(context).playSendSound();
         }
     }

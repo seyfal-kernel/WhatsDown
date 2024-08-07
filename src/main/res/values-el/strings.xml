@@ -250,11 +250,11 @@
     <string name="device_talk_subtitle">Τοπικά Μηνύματα</string>
     <string name="device_talk_explain">Τα μηνύματα σε αυτήν τη συνομιλία δημιουργούνται στη συσκευή σας για την ενημέρωση σχετικά με ενημερώσεις και προβλήματα κατά τη χρήση της εφαρμογής</string>
     <string name="edit_contact">Επεξεργασία Επαφής</string>
-    <!-- Verb "to pin", making something sticky, not a noun or appreviation for "pin number". -->
+    <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
     <string name="pin_chat">Καρφίτσωμα Συνομιλίας</string>
     <!-- Opposite of "Pin chat", removing the sticky-state from a chat. -->
     <string name="unpin_chat">Ξεκαρφίτσωμα Συνομιλίας</string>
-    <!-- Verb "to pin", making something sticky, not a noun or appreviation for "pin number". -->
+    <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
     <string name="pin">Καρφίτσωμα</string>
     <!-- Opposite of "Pin chat", removing the sticky-state from a chat. -->
     <string name="unpin">Ξεκαρφίτσωμα</string>
@@ -514,6 +514,7 @@
     <string name="login_error_cannot_login">Δεν είναι δυνατή η είσοδος ως \"%1$s\". Ελέγξτε εάν η διεύθυνση e-mail και ο κωδικός πρόσβασης είναι σωστά.</string>
     <!-- TLS certificate checks -->
     <string name="accept_invalid_certificates">Αποδοχή μη έγκυρων πιστοποιητικών</string>
+    <!-- deprecated -->
     <string name="used_settings">Χρησιμοποιούμενες ρυθμίσεις:</string>
     <string name="switch_account">Αλλαγή λογαριασμού</string>
     <string name="add_account">Προσθήκη Λογαριασμού</string>
@@ -681,6 +682,7 @@
     <string name="autodel_after_1_hour">Μετά από 1 ώρα</string>
     <string name="autodel_after_1_day">Μετά από 1 μέρα</string>
     <string name="autodel_after_1_week">Μετά από 1 εβδομάδα</string>
+    <!-- deprecated -->
     <string name="autodel_after_4_weeks">Μετά από 4 εβδομάδες</string>
     <string name="after_5_weeks">Μετά από 5 εβδομάδες</string>
     <string name="autodel_after_1_year">Μετά από 1 χρόνο</string>
@@ -706,7 +708,9 @@
 
 
     <!-- system messages -->
+    <!-- deprecated -->
     <string name="systemmsg_read_receipt_subject">Το μήνυμα ανοίχτηκε</string>
+    <!-- deprecated -->
     <string name="systemmsg_read_receipt_body">Το μήνυμα \"%1$s\" που στείλατε εμφανίστηκε στην οθόνη του παραλήπτη.\n\nΑυτό δεν αποτελεί εγγύηση για την ανάγνωση του περιεχομένου.</string>
     <string name="systemmsg_unknown_sender_for_chat">Άγνωστος αποστολέας για αυτήν τη συνομιλία. Δείτε \"πληροφορίες\" για περισσότερες λεπτομέρειες.</string>
     <string name="systemmsg_subject_for_new_contact">Μήνυμα από τον/την %1$s</string>

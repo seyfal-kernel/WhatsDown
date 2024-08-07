@@ -84,6 +84,7 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
   public static final String CLEAR_NOTIFICATIONS = "clear_notifications";
   public static final String ACCOUNT_ID_EXTRA = "account_id";
   public static final String FROM_WELCOME   = "from_welcome";
+  public static final String WARN_CANNOT_ENCRYPT = "warn_cannot_encrypt";
 
   private ConversationListFragment conversationListFragment;
   public TextView                  title;
@@ -241,6 +242,11 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
       AccountManager.getInstance().switchAccountAndStartActivity(this, accountId);
     }
 
+    String warnAddr = getIntent().getStringExtra(WARN_CANNOT_ENCRYPT);
+    if (!TextUtils.isEmpty(warnAddr)) {
+      DcHelper.showEncryptionRequiredDialog(this, warnAddr);
+    }
+
     refreshAvatar();
     refreshUnreadIndicator();
     refreshTitle();
@@ -297,7 +303,10 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
     int skipId = dcAccounts.getSelectedAccount().getAccountId();
     for (int accountId : dcAccounts.getAll()) {
       if (accountId != skipId) {
-        unreadCount += dcAccounts.getAccount(accountId).getFreshMsgs().length;
+        DcContext dcContext = dcAccounts.getAccount(accountId);
+        if (!dcContext.isMuted()) {
+          unreadCount += dcContext.getFreshMsgs().length;
+        }
       }
     }
 
@@ -403,6 +412,9 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
     super.onOptionsItemSelected(item);
 
     switch (item.getItemId()) {
+      case R.id.menu_invite_friends:
+        shareInvite();
+        return true;
       case R.id.menu_settings:
         startActivity(new Intent(this, ApplicationPreferencesActivity.class));
         return true;
@@ -411,9 +423,6 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
         return true;
       case R.id.menu_global_map:
         WebxdcActivity.openMaps(this, 0);
-        return true;
-      case R.id.menu_switch_account:
-        AccountManager.getInstance().showSwitchAccountMenu(this);
         return true;
       case android.R.id.home:
         onBackPressed();
@@ -522,6 +531,14 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
       acquireRelayMessageContent(this, intent);
     }
     startActivity(intent);
+  }
+
+  private void shareInvite() {
+    Intent intent = new Intent(Intent.ACTION_SEND);
+    intent.setType("text/plain");
+    String inviteURL = Util.QrDataToInviteURL(DcHelper.getContext(this).getSecurejoinQr(0));
+    intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.invite_friends_text, inviteURL));
+    startActivity(Intent.createChooser(intent, getString(R.string.chat_share_with_title)));
   }
 
   @Override

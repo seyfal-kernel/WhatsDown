@@ -245,7 +245,7 @@
     <string name="menu_delete_messages">Видалити повідомлення</string>
     <string name="delete_contact">Видалити контакт</string>
     <string name="menu_delete_location">Видалити це місце?</string>
-    <string name="menu_message_details">Деталі повідомлення</string>
+    <string name="menu_message_details">Інформація про повідомлення</string>
     <string name="menu_copy_to_clipboard">Копіювати в буфер обміну</string>
     <string name="menu_copy_selection_to_clipboard">Скопіювати позначене</string>
     <string name="menu_copy_link_to_clipboard">Скопіювати посилання</string>
@@ -299,11 +299,11 @@
     <string name="device_talk_explain">Повідомлення у цьому чаті згенеровані на вашому пристрої для інформування про оновлення та проблеми при використанні.</string>
     <string name="device_talk_welcome_message2">Виходьте на зв\'язок!\n\n🙌 Торкніться \"QR-код\" на головному екрані обох пристроїв. Виберіть \"Відсканувати QR-код\" на одному пристрої та наведіть його на інший\n\n🌍 Якщо ви не перебуваєте в одній кімнаті, відскануйте за допомогою відеодзвінка або поділіться посиланням-запрошенням зі сторінки \"Відсканувати QR-код\"\n\nПотім: Насолоджуйтесь спілкуванням у найбільшій децентралізованій мережі, яка коли-небудь існувала -- електронній пошті. І, на відміну від інших популярних додатків, без централізованого контролю, відстеження або продажу вас, друзів, колег чи сім\'ї великим організаціям.</string>
     <string name="edit_contact">Редагувати контакт</string>
-    <!-- Verb "to pin", making something sticky, not a noun or appreviation for "pin number". -->
+    <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
     <string name="pin_chat">Закріпити чат</string>
     <!-- Opposite of "Pin chat", removing the sticky-state from a chat. -->
     <string name="unpin_chat">Відкріпити чат</string>
-    <!-- Verb "to pin", making something sticky, not a noun or appreviation for "pin number". -->
+    <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
     <string name="pin">Закріпити</string>
     <!-- Opposite of "Pin chat", removing the sticky-state from a chat. -->
     <string name="unpin">Відкрипити</string>
@@ -535,8 +535,8 @@
     <string name="multidevice_same_network_hint">Переконайтеся, що обидва пристрої підключено до однієї мережі Wi-Fi</string>
     <string name="multidevice_this_creates_a_qr_code">Це створить QR-код, який другий пристрій може сканувати, щоб скопіювати обліковий запис.</string>
     <string name="multidevice_install_dc_on_other_device">Установіть Delta Chat на Ваш інший пристрій (https://get.delta.chat)</string>
-    <!-- "I Already Have a Login / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
-    <string name="multidevice_tap_scan_on_other_device">Запустіть Delta Chat, торкніться \"У мене вже є логін / Додати як другий пристрій\" і відскануйте код, показаний тут</string>
+    <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
+    <string name="multidevice_tap_scan_on_other_device">Запустіть Delta Chat, торкніться \"Я вже маю профіль / Додати як другий пристрій\" і відскануйте код, показаний тут</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
     <string name="multidevice_qr_subtitle">Скануйте, щоб налаштувати другий пристрій %1$s</string>
     <string name="multidevice_receiver_title">Додати як другий пристрій</string>
@@ -652,6 +652,7 @@
     <string name="login_error_cannot_login">Не вдалося увійти як \"%1$s\". Будь ласка, перевірте правильність адреси електронної пошти та паролю.</string>
     <!-- TLS certificate checks -->
     <string name="accept_invalid_certificates">Приймати недійсні сертифікати</string>
+    <!-- deprecated -->
     <string name="used_settings">Використані налаштування:</string>
     <string name="switch_account">Перемкнути обліковий запис</string>
     <string name="add_account">Додати обліковий запис</string>
@@ -833,9 +834,11 @@
     <string name="autodel_server_ask">Ви хочете видалити %1$dповідомлень зараз і всі нові повідомлення \"%2$s\" в майбутньому?\n\n⚠️ Сюди входять електронні листи, медіа та \"Збережені повідомлення\" у всіх папках сервера\n\n⚠️ Не використовуйте цю функцію, якщо Ви хочете зберегти дані на сервері\n\n⚠️ Не використовуйте цю функцію, якщо користуєтеся ще й іншими поштовими клієнтами крім Delta Chat</string>
     <!-- shown below enabled autodel_server-option, should be a summary of autodel_server_ask and remind about the impact -->
     <string name="autodel_server_enabled_hint">Це стосується повідомлень електронної пошти, медіа та \"Збережених повідомлень\" у всіх серверних папках. Не використовуйте цю функцію, якщо хочете зберегти дані на сервері або якщо користуєтесь іншими клієнтами електронної пошти крім Delta Chat.</string>
+    <string name="autodel_server_warn_multi_device_title">Увімкнути одномоментне видалення</string>
+    <string name="autodel_server_warn_multi_device">Якщо ви ввімкнули одномоментне видалення, ви не зможете використовувати кілька пристроїв у цьому профілі.</string>
     <string name="autodel_confirm">Я все розумію, видалити всі повідомлення</string>
     <!-- "At once" in the meaning of "Immediately", without any intervening time. -->
-    <string name="autodel_at_once">Одразу</string>
+    <string name="autodel_at_once">Відразу після завантаження</string>
     <string name="after_30_seconds">Через 30 секунд</string>
     <string name="after_1_minute">Через 1 хвилину</string>
     <string name="after_5_minutes">Через 5 хвилин</string>
@@ -843,6 +846,7 @@
     <string name="autodel_after_1_hour">Через 1 годину</string>
     <string name="autodel_after_1_day">Через 1 день</string>
     <string name="autodel_after_1_week">Через 1 тиждень</string>
+    <!-- deprecated -->
     <string name="autodel_after_4_weeks">Через 4 тижні</string>
     <string name="after_5_weeks">Через 5 тижнів</string>
     <string name="autodel_after_1_year">Через 1 рік</string>
@@ -868,7 +872,9 @@
 
 
     <!-- system messages -->
+    <!-- deprecated -->
     <string name="systemmsg_read_receipt_subject">Сповіщення про прочитання.</string>
+    <!-- deprecated -->
     <string name="systemmsg_read_receipt_body">Це підтвердження того, що повідомлення \"%1$s\" було відкрито на пристрої одержувача. Дане підтвердження не означає, що повідомлення було прочитано.</string>
     <string name="systemmsg_cannot_decrypt">Це повідомлення неможливо розшифрувати.\n\n- Можливо, допоможе просто відповісти на це повідомлення і попросити відправника надіслати повідомлення ще раз.\n\n- Якщо ви щойно переінсталювали Delta Chat, то краще за все переналаштувати Delta Chat зараз і вибрати \"Додати як другий пристрій\" або імпортувати резервну копію.</string>
     <string name="systemmsg_unknown_sender_for_chat">Невідомий відправник для цього чату. Дивіться \"Інформацію\" для деталей.</string>
@@ -1094,7 +1100,7 @@
     <string name="select_group_image_desktop">Вибрати зображення групи</string>
     <string name="export_backup_desktop">Експорт резервної копії</string>
     <string name="autocrypt_correct_desktop">Налаштування Autocrypt успішно передані!</string>
-    <string name="forget_login_confirmation_desktop">Видалити цей обліковий запис? При цьому будуть видалені всі дані, включно з параметрами наскрізного шифрування, списками контактів, чатами, повідомленнями та медіафайлами. Цю дію не можна буде скасувати.</string>
+    <string name="forget_login_confirmation_desktop">Видалити цей профіль? Все буде видалено, включно з усіма вашими налаштуваннями, контактами, чатами, повідомленнями та медіа. Цю дію неможливо скасувати.</string>
     <!-- deprecated -->
     <string name="account_info_hover_tooltip_desktop2">E-Mail: %1$s\nРозмір: %2$s\nІдентиф. аккаунту: %3$s</string>
     <string name="message_detail_sent_desktop">надіслано</string>
@@ -1168,8 +1174,11 @@
 
     <!-- android specific strings, developers: please take care to remove strings that are no longer used! -->
     <string name="pref_instant_delivery">Миттєва доставка</string>
+    <!-- deprecated -->
     <string name="pref_push_notifications">Використовувати Push-сервіс</string>
+    <!-- deprecated -->
     <string name="pref_push_notifications_explain">Надійні push-сповіщення для Chatmail-серверів</string>
+    <!-- deprecated -->
     <string name="pref_push_ask_disable">Вимкнути використання Push-сервісу?\n\nЦе може призвести до затримки сповіщень.</string>
     <string name="pref_background_notifications">Використовувати фонове підключення</string>
     <string name="pref_background_notifications_explain">Потребує ігнорування оптимізації батареї, використовуйте, якщо Push-сервіс недоступний</string>

@@ -161,8 +161,6 @@ public class DcHelper {
     dcContext.setStockTranslation(23, context.getString(R.string.gif));
     dcContext.setStockTranslation(24, context.getString(R.string.encrypted_message));
     dcContext.setStockTranslation(29, context.getString(R.string.systemmsg_cannot_decrypt));
-    dcContext.setStockTranslation(31, context.getString(R.string.systemmsg_read_receipt_subject));
-    dcContext.setStockTranslation(32, context.getString(R.string.systemmsg_read_receipt_body));
     dcContext.setStockTranslation(35, context.getString(R.string.contact_verified));
     dcContext.setStockTranslation(36, context.getString(R.string.contact_not_verified));
     dcContext.setStockTranslation(37, context.getString(R.string.contact_setup_changed));
@@ -264,7 +262,6 @@ public class DcHelper {
     dcContext.setStockTranslation(177, context.getString(R.string.reaction_by_other));
     dcContext.setStockTranslation(190, context.getString(R.string.secure_join_wait));
     dcContext.setStockTranslation(191, context.getString(R.string.secure_join_wait_timeout));
-    dcContext.setStockTranslation(200, context.getString(R.string.contact));
   }
 
   public static File getImexDir() {
@@ -493,6 +490,16 @@ public class DcHelper {
   public static void showInvalidUnencryptedDialog(Context context) {
     new AlertDialog.Builder(context)
       .setMessage(context.getString(R.string.invalid_unencrypted_explanation))
+      .setNeutralButton(R.string.learn_more, (d, w) -> openHelp(context, "#howtoe2ee"))
+      .setNegativeButton(R.string.qrscan_title, (d, w) -> context.startActivity(new Intent(context, QrActivity.class)))
+      .setPositiveButton(R.string.ok, null)
+      .setCancelable(true)
+      .show();
+  }
+
+  public static void showEncryptionRequiredDialog(Context context, String addr) {
+    new AlertDialog.Builder(context)
+      .setMessage(context.getString(R.string.encryption_required_for_new_contact, addr))
       .setNeutralButton(R.string.learn_more, (d, w) -> openHelp(context, "#howtoe2ee"))
       .setNegativeButton(R.string.qrscan_title, (d, w) -> context.startActivity(new Intent(context, QrActivity.class)))
       .setPositiveButton(R.string.ok, null)

@@ -282,11 +282,11 @@
     <string name="device_talk_explain">Viestit tässä keskustelussa luodaan paikallisesti Delta Chat -sovelluksessa. Kehittäjät ilmoittavat niiden avulla sovelluksen päivityksistä ja mahdollisista ongelmista.</string>
     <string name="device_talk_welcome_message2">Aloita keskustelu!\n\n🙌 Täppää \"QR koodi\" päänäkymässä molemmilla laitteilla. Valitse \"Skannaa QR koodi\" toisella laitteella, ja osoita sillä toista\n\n🌍 Jos ette ole samassa huoneessa, skannaa vaikkapa videopuhelun yli tai jaa kutsulinkki \"Skannaa QR koodi\" -sivulta\n\nSitten voit nauttia pikaviestittelystä suurimmassa hajautetussa sosiaalisessa verkostossa mitä on koskaan ollut olemassa: eli sähköpostissa. Kontrastina toisiin suosittuihin sovelluksiin, ilman keskitettyä tahoa kontrolloimassa, keräämässä massadataa tai myymässä sinua, ystäviäsi, kollegojasi tai perhettäsi suurille organisaatioille.</string>
     <string name="edit_contact">Muokkaa yhteystietoa</string>
-    <!-- Verb "to pin", making something sticky, not a noun or appreviation for "pin number". -->
+    <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
     <string name="pin_chat">Kiinnitä keskustelu</string>
     <!-- Opposite of "Pin chat", removing the sticky-state from a chat. -->
     <string name="unpin_chat">Irrota keskustelu</string>
-    <!-- Verb "to pin", making something sticky, not a noun or appreviation for "pin number". -->
+    <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
     <string name="pin">Kiinnitä</string>
     <!-- Opposite of "Pin chat", removing the sticky-state from a chat. -->
     <string name="unpin">Irrota</string>
@@ -504,7 +504,7 @@
     <string name="multidevice_same_network_hint">Varmista että molemmat laitteet ovat samassa Wi-Fi verkossa</string>
     <string name="multidevice_this_creates_a_qr_code">Tämä luo QR koodin, jolla toinen laite saa ladattua kopion profiilista.</string>
     <string name="multidevice_install_dc_on_other_device">Lataa Delta Chat toiselle laitteellesi (https://get.delta.chat)</string>
-    <!-- "I Already Have a Login / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
+    <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
     <string name="multidevice_tap_scan_on_other_device">Avaa Delta Chat, valitse \"Minulla on jo profiili / Lisää toiseksi laitteeksi\" ja skannaa täällä näkyvä koodi</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
     <string name="multidevice_qr_subtitle">Lisää toiseksi laitteeksi profiilille %1$s</string>
@@ -621,6 +621,7 @@
     <string name="login_error_cannot_login">Osoitteella \"%1$s\" kirjautuminen epäonnistui. Tarkistathan että sähköpostiosoite ja salasana ovat oikeinkirjoitettuja.</string>
     <!-- TLS certificate checks -->
     <string name="accept_invalid_certificates">Hyväksy rikkinäiset varmenteet</string>
+    <!-- deprecated -->
     <string name="used_settings">Käytetyt asetukset:</string>
     <string name="switch_account">Vaihda profiilia</string>
     <string name="add_account">Lisää profiili</string>
@@ -812,6 +813,7 @@
     <string name="autodel_after_1_hour">1 tunnin päästä</string>
     <string name="autodel_after_1_day">1 päivän päästä</string>
     <string name="autodel_after_1_week">1 viikon päästä</string>
+    <!-- deprecated -->
     <string name="autodel_after_4_weeks">4 viikon päästä</string>
     <string name="after_5_weeks">5 viikon päästä</string>
     <string name="autodel_after_1_year">1 vuoden päästä</string>
@@ -837,7 +839,9 @@
 
 
     <!-- system messages -->
+    <!-- deprecated -->
     <string name="systemmsg_read_receipt_subject">Viesti avattu</string>
+    <!-- deprecated -->
     <string name="systemmsg_read_receipt_body">Lähettämäsi viesti \"%1$s\" näytettiin vastaanottajan näytöllä.\n\nTämä ei takaa, että sisältö luettiin.</string>
     <string name="systemmsg_cannot_decrypt">Viestin salausta ei voitu purkaa.\n\n• Voi olla että vastaamalla tähän ja pyytämällä lähettäjää lähettämään viesti uudelleen ongelma ratkeaa.\n\n• Jos juuri uudelleenasensit Delta Chatin, lienee parasta että otat sovelluksen uudelleen käyttöön ja valitset \"Lisää toisena laitteena\" tai palauta varmuuskopiosta.</string>
     <string name="systemmsg_unknown_sender_for_chat">Tuntematon lähettäjä. Katso \"lisätietoja\".</string>
@@ -1137,8 +1141,11 @@
 
     <!-- android specific strings, developers: please take care to remove strings that are no longer used! -->
     <string name="pref_instant_delivery">Välitön toimitus</string>
+    <!-- deprecated -->
     <string name="pref_push_notifications">Käytä push -palvelua</string>
+    <!-- deprecated -->
     <string name="pref_push_notifications_explain">Luotettavat push -ilmoitukset chatmail -palvelimille</string>
+    <!-- deprecated -->
     <string name="pref_push_ask_disable">Lopeta push -palvelun käyttö?\n\nSe saattaa hidastaa ilmoitusten toimitusta.</string>
     <string name="pref_background_notifications">Käytä taustayhteyttä</string>
     <string name="pref_background_notifications_explain">Vaatii akun optimoinnin käytöstä poistoa, käytä jos push -palvelu ei ole saatavilla</string>
