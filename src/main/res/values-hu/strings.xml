@@ -225,12 +225,15 @@
     <string name="menu_delete_chat">Csevegés törlése</string>
     <!-- Command to delete all messages in a chat. The chat itself will not be deleted but will be empty afterwards, so make sure to be different from "Delete Chat" here. "Clear" is a verb here, "Empty Chat" would also be fine (eg. in German "Chat leeren") -->
     <string name="clear_chat">Csevegés kiürítése</string>
-    <string name="ask_delete_named_chat">Biztosan törli a következőt: „%1$s”?</string>
     <string name="menu_delete_messages">Üzenetek törlése</string>
     <string name="delete_contact">Névjegy törlése</string>
     <string name="menu_delete_location">Biztosan törli ezt a helyszínt?</string>
     <string name="menu_message_details">Üzenet részletei</string>
     <string name="menu_copy_to_clipboard">Vágólapra másolás</string>
+    <string name="share_invite_link">Meghívó hivatkozás megosztása</string>
+    <string name="invite_friends">Ismerősök meghívása</string>
+    <!-- %1$s is replaced by the user's invitation link ("https://i.delta.chat/...") -->
+    <string name="invite_friends_text">Lépjen kapcsolatba velem a Delta Chat-en:\n%1$s</string>
     <string name="menu_copy_selection_to_clipboard">Kiválasztás másolása</string>
     <string name="menu_copy_link_to_clipboard">Hívatkozás másolása</string>
     <string name="menu_copy_text_to_clipboard">Szöveg másolása</string>
@@ -337,6 +340,7 @@
         <item quantity="one">Biztosan töröl %d csevegést? Többé nem jelenik meg a csevegőlistában; az üzenetek viszont a szerveren maradnak.</item>
         <item quantity="other">Biztosan töröl %d csevegést? Többé nem jelennek meg a csevegőlistában; az üzeneteik viszont a kiszolgálón maradnak.</item>
     </plurals>
+    <string name="ask_delete_named_chat">Biztosan törli a következőt: „%1$s”?</string>
     <string name="ask_delete_message">Biztosan törölni szeretné ezt az üzenetet?</string>
     <plurals name="ask_delete_messages">
         <item quantity="one">%d üzenet törlése innen is és a kiszolgálóról is?</item>
@@ -920,6 +924,7 @@
     <string name="chat_protection_broken_explanation">A végpontok közötti titkosítás már nem garantálható, valószínűleg azért, mert %1$s újratelepítette a Delta Chat-et, vagy egy másik eszközről küldött üzenetet.\n\n Személyesen találkozhat vele, és újra beolvashatja a QR-kódját a garantált végpontok közötti titkosítás visszaállításához.</string>
     <string name="invalid_unencrypted_tap_to_learn_more">⚠️ A(z) %1$s végpontok közötti titkosítást igényel, ami még nincs beállítva erre a csevegésre. Koppintson, ha többet szeretne megtudni.</string>
     <string name="invalid_unencrypted_explanation">A végpontok közötti titkosítás létrehozásához személyesen is találkozhat az ismerőseivel, és a QR-kódjukat beolvasva bemutathatja őket.</string>
+    <string name="encryption_required_for_new_contact">A végpontok közötti titkosítás beállítása szükséges, de a(z) %1$s nevű ismerőse esetében az még nincs beállítva.\n\nMegoszthatja a meghívó hivatkozását, vagy személyesen is találkozhat vele, és beolvashatja a QR-kódját.</string>
     <string name="learn_more">Tudjon meg többet</string>
 
     <string name="devicemsg_self_deleted">Ön törölte a „Mentett üzenetek” csevegést.\n\nℹ️ A „Mentett üzenetek” funkció újbóli használatához hozzon létre egy új csevegést önmagával.</string>
@@ -1165,4 +1170,4 @@
     <string name="update_1_44_ios">Újdonságok:\n\n❤️ Igen! Ezt már régóta vártuk: Koppintson hosszan az üzenetre az üzenetreakciók küldéséhez\n\n🫸 PUSH értesítések, ha a szolgáltatók támogatják, mint például a https://nine.testrun.org\n\n🔗 Ha nem tudja beolvasni a QR-kódokat, ossza meg őket egy meghívó hivatkozásként\n\n\n... és további hibajavítások ... %1$s</string>
     <string name="update_1_46_android">Új szolgáltatások 🐣 és további tudnivalók:\n\n⚡️ Regisztráljon biztonságos, gyors chatmail kiszolgálókra (https://delta.chat/chatmail) vagy használja a klasszikus e-mail kiszolgálókat\n\n👉 PUSH értesítések bármely chatmail kiszolgálóra\n\n👤 Kapcsolja össze ismerőseit biztonságosan a „Névjegyek csatolásával”\n\n🥰 Reagáljon bármilyen hangulatjellel\n\n📌 Tűzze ki a csevegéseket közvetlenül a keresésből ... tudjon meg többet itt: %1$s</string>
     <string name="update_1_46_ios">Új szolgáltatások 🐣 és további tudnivalók:\n\n⚡️ Regisztráljon biztonságos, gyors chatmail kiszolgálókra (https://delta.chat/chatmail) vagy használja a klasszikus e-mail kiszolgálókat\n\n👉 PUSH értesítések bármely chatmail kiszolgálóra\n\n👤 Fogadjon „Csatolt névjegyeket\" és csatlakozzon az ismerőseihez”\n\n🥰 Gyorsabb üzenetreakció kiválasztás ... tudjon meg többet itt: %1$s</string>
-</resources>
+    </resources>

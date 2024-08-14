@@ -56,9 +56,9 @@ public class DcContact {
     public native long    getLastSeen    ();
     public native boolean wasSeenRecently();
     public native boolean isBlocked      ();
-    public native boolean isBot          ();
     public native boolean isVerified     ();
     public native int     getVerifierId  ();
+    public native boolean isBot          ();
 
     // working with raw c-data
     private long        contactCPtr;    // CAVE: the name is referenced in the JNI

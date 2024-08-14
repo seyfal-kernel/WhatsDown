@@ -224,7 +224,6 @@
     <string name="menu_delete_chat">Poista keskustelu</string>
     <!-- Command to delete all messages in a chat. The chat itself will not be deleted but will be empty afterwards, so make sure to be different from "Delete Chat" here. "Clear" is a verb here, "Empty Chat" would also be fine (eg. in German "Chat leeren") -->
     <string name="clear_chat">Tyhjennä keskustelu</string>
-    <string name="ask_delete_named_chat">Haluatko varmasti poistaa \"%1$s\"?</string>
     <string name="menu_delete_messages">Poista viestit</string>
     <string name="delete_contact">Poista yhteystieto</string>
     <string name="menu_delete_location">Poista tämä sijainti?</string>
@@ -336,6 +335,7 @@
         <item quantity="one">Poista %d keskustelu? Se ei enää näy keskustelulistauksessa, mutta sen viestit jäävät palvelimelle.</item>
         <item quantity="other">Poista %d keskustelua? Ne eivät enää näy keskustelulistauksessa, mutta niiden viestit jäävät palvelimelle.</item>
     </plurals>
+    <string name="ask_delete_named_chat">Haluatko varmasti poistaa \"%1$s\"?</string>
     <string name="ask_delete_message">Haluatko varmasti poistaa tämän viestin?</string>
     <plurals name="ask_delete_messages">
         <item quantity="one">Poista %d viesti täältä ja palvelimelta?</item>
@@ -1158,4 +1158,4 @@
     <string name="perm_enable_bg_already_done">Annoit jo luvan viestien vastaanottamiselle taustalla.\n\nJos et saa viestejä taustalla, tarkista myös järjestelmäasetukset.</string>
 
     <string name="update_1_46_ios">Uusittu käyttöönotto 🐣 ja muuta:\n\n⚡️ Rekisteröidy nopeille chatmail -palvelimille (https://delta.chat/chatmail) tai käytä tavanomaisia sähköpostipalvelimia\n\n👉 PUSH -ilmoitukset toimivat millä tahansa chatmail -palvelimella\n\n👤 Vastaanota \"Liitettyjä yhteystietoja\" ja ota yhteys ystäviisi\n\n🥰 Nopeampi reaktioiden valinta ... LISÄÄ osoitteessa %1$s</string>
-</resources>
+    </resources>

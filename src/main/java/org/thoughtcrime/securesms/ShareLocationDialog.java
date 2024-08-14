@@ -24,6 +24,7 @@ public class ShareLocationDialog {
 
       listener.onSelected(shareLocationUnit);
     });
+    builder.setNegativeButton(R.string.cancel, null);
 
     builder.show();
   }
