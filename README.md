@@ -1,6 +1,6 @@
 ## DeltaLab Android Client
 
-DeltaLab is a [Delta Chat](https://delta.chat/) client for Android.
+A [Delta Chat](https://delta.chat/) client for Android.
 
 [<img src="store/get-it-on-IzzyOnDroid.png"
      alt="Get it on IzzyOnDroid"
@@ -10,14 +10,14 @@ DeltaLab is a [Delta Chat](https://delta.chat/) client for Android.
      height="48">](https://www.apklis.cu/application/chat.delta.lite)
 [<img src="store/get-it-on-github.png"
      alt="Get it on GitHub"
-     height="48">](https://github.com/adbenitez/deltalab-android/releases/latest)
+     height="48">](https://github.com/deltalab-org/deltalab-android/releases/latest)
 
 
-<img alt="Screenshot Chat List" src="fastlane/metadata/android/en-US/images/phoneScreenshots/02.png" width="298" /> <img alt="Screenshot Chat View" src="fastlane/metadata/android/en-US/images/phoneScreenshots/04.jpg" width="298" />
+<img alt="Screenshot" src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="298" /> <img alt="Screenshot" src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.jpg" width="298" />
 
 # WebXDC
 
-DeltaLab has some extended support for WebXDC apps:
+This app has some extended support for WebXDC apps:
 
 - `window.webxdc.deltalab` a string with the DeltaLab version and can be used by app developers
   to detect when they can use the DeltaLab-specific features.
@@ -35,12 +35,6 @@ DeltaLab has some extended support for WebXDC apps:
 
 # Credits
 
-DeltaLab is based on the [official Delta Chat client](https://github.com/deltachat/deltachat-android) with some improvements.
+This app is based on the [official Delta Chat client](https://github.com/deltachat/deltachat-android) with several improvements.
 
-DeltaLab uses a [modified](https://github.com/adbenitez/deltalab-core) version of the [Delta Chat Core Library](https://github.com/deltachat/deltachat-core-rust).
-
-# License
-
-Licensed GPLv3+, see the LICENSE file for details.
-
-Copyright © 2024 DeltaLab contributors.
+This app uses a [modified](https://github.com/deltalab-org/deltalab-core) version of the [Delta Chat Core Library](https://github.com/deltachat/deltachat-core-rust).
