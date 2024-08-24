@@ -28,7 +28,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:922391085500:android:6f54e2c4e49405673e2bb9",
         "android_client_info": {
-          "package_name": "chat.delta.beta"
+          "package_name": "chat.delta.lite.beta"
         }
       },
       "oauth_client": [],
