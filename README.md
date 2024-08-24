@@ -13,7 +13,7 @@ A [Delta Chat](https://delta.chat/) client for Android.
      height="48">](https://github.com/deltalab-org/deltalab-android/releases/latest)
 
 
-<img alt="Screenshot" src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="298" /> <img alt="Screenshot" src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.jpg" width="298" />
+<img alt="Screenshot" src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="298" /> <img alt="Screenshot" src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="298" />
 
 # WebXDC
 
