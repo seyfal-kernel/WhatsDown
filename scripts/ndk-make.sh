@@ -141,14 +141,14 @@ if test -z $1 || test $1 = x86; then
     cp target/i686-linux-android/$RELEASE/libdeltachat.a $jnidir/x86
 fi
 
-# if test -z $1 || test $1 = x86_64; then
-#     echo "-- cross compiling to x86_64-linux-android (x86_64) --"
-#     TARGET_CC="$TOOLCHAIN/bin/x86_64-linux-android21-clang" \
-#     TARGET_AR="$TOOLCHAIN/bin/llvm-ar" \
-#     TARGET_RANLIB="$TOOLCHAIN/bin/llvm-ranlib" \
-#     cargo build $RELEASEFLAG --target x86_64-linux-android -p deltachat_ffi --features jsonrpc
-#     cp target/x86_64-linux-android/$RELEASE/libdeltachat.a $jnidir/x86_64
-# fi
+ if test -z $1 || test $1 = x86_64; then
+     echo "-- cross compiling to x86_64-linux-android (x86_64) --"
+     TARGET_CC="$TOOLCHAIN/bin/x86_64-linux-android21-clang" \
+     TARGET_AR="$TOOLCHAIN/bin/llvm-ar" \
+     TARGET_RANLIB="$TOOLCHAIN/bin/llvm-ranlib" \
+     cargo build $RELEASEFLAG --target x86_64-linux-android -p deltachat_ffi --features jsonrpc
+     cp target/x86_64-linux-android/$RELEASE/libdeltachat.a $jnidir/x86_64
+ fi
 
 rm -fr "$TMPLIB"
 
