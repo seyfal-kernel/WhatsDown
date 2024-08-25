@@ -129,7 +129,8 @@ android {
     android.applicationVariants.all { variant ->
         variant.outputs.all {
             outputFileName = outputFileName
-                .replace("deltalab-android", "deltalab")
+                .replace("android", "ArcaneChat")
+                .replace("foss", "FOSS")
                 .replace("-release", "")
                 .replace(".apk", "-${variant.versionName}.apk")
         }
