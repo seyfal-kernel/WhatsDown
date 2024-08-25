@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- common strings without special context -->
-    <string name="app_name">DeltaLab</string>
+    <string name="app_name">ArcaneChat</string>
     <string name="ok">OK</string>
     <string name="cancel">Annuler</string>
    <string name="clear_search">Effacer la recherche</string>
@@ -42,7 +42,7 @@
     <string name="unarchive">Désarchiver</string>
     <string name="mute">Sourdine</string>
     <string name="ephemeral_messages">Messages éphémères</string>
-    <string name="ephemeral_messages_hint">Ces paramètres s\'appliquent à tous les participants utilisant Delta Chat; ils peuvent copier, enregistrer et faire suivre des messages ou utiliser un autre client de e-mail.</string>
+    <string name="ephemeral_messages_hint">Ces paramètres s\'appliquent à tous les participants utilisant ArcaneChat; ils peuvent copier, enregistrer et faire suivre des messages ou utiliser un autre client de e-mail.</string>
     <string name="save">Sauvegarder</string>
     <string name="chat">Discussion</string>
     <string name="media">Média</string>
@@ -280,7 +280,7 @@
     <string name="title_share_location">Partager la position avec tous les membres du groupe</string>
     <string name="device_talk">Messages de l\'appareil</string>
     <string name="device_talk_subtitle">Messages générés localement</string>
-    <string name="device_talk_explain">Les messages dans cette discussion sont générés localement par votre application Delta Chat. Cela vous permet de recevoir des informations concernant les mises à jour et problèmes rencontrés à l\'utilisation.</string>
+    <string name="device_talk_explain">Les messages dans cette discussion sont générés localement par votre application ArcaneChat. Cela vous permet de recevoir des informations concernant les mises à jour et problèmes rencontrés à l\'utilisation.</string>
     <string name="edit_contact">Mettre à jour le contact</string>
     <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
     <string name="pin_chat">Épingler la discussion</string>
@@ -396,7 +396,7 @@
         <item quantity="other">%d nouveaux messages</item>
     </plurals>
     <!-- The placeholder will be replaced by the name of the recipient in a one-to-one chat. -->
-    <string name="chat_new_one_to_one_hint">Envoyez un message. Il n\'y a pas de problème si %1$s n\'utilise pas Delta Chat.</string>
+    <string name="chat_new_one_to_one_hint">Envoyez un message. Il n\'y a pas de problème si %1$s n\'utilise pas ArcaneChat.</string>
     <string name="chat_new_broadcast_hint">Dans une liste de diffusion, les destinataires reçoivent les messages dans une discussion avec vous en lecture seule.</string>
     <string name="chat_new_group_hint">Les autres participants ne verront ce groupe qu\'après que vous avez envoyé un premier message.</string>
     <string name="chat_record_slide_to_cancel">Glisser pour annuler</string>
@@ -507,9 +507,9 @@
     <string name="multidevice_title">Ajouter un deuxième appareil</string>
     <string name="multidevice_same_network_hint">Vérifiez que les deux appareils sont bien connectés au même Wi-Fi ou réseau.</string>
     <string name="multidevice_this_creates_a_qr_code">Crée un code QR que vous pouvez scanner avec le deuxième appareil pour copier le compte.</string>
-    <string name="multidevice_install_dc_on_other_device">Installer Delta Chat sur votre autre appareil (https://get.delta.chat)</string>
+    <string name="multidevice_install_dc_on_other_device">Installer ArcaneChat sur votre autre appareil (https://get.delta.chat)</string>
     <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
-    <string name="multidevice_tap_scan_on_other_device">Lancez Delta Chat, appuyez sur \"Ajouter comme deuxième appareil\" et scannez le code affiché ici.</string>
+    <string name="multidevice_tap_scan_on_other_device">Lancez ArcaneChat, appuyez sur \"Ajouter comme deuxième appareil\" et scannez le code affiché ici.</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
     <string name="multidevice_qr_subtitle">Scanner pour configurer un deuxième appareil pour %1$s</string>
     <string name="multidevice_receiver_title">Ajouter comme deuxième appareil</string>
@@ -561,7 +561,7 @@
     <!-- for classic email, we use the classical term "Account" -->
     <string name="login_explain">Se connecter avec un compte de courriel existant.</string>
     <string name="login_subheader">Pour les fournisseurs de courriel connus, des paramètres supplémentaires sont automatiquement configurés. Parfois, IMAP doit être activé dans l\'interface Web. Consultez votre fournisseur de courriel ou vos amis pour obtenir de l\'aide.</string>
-    <string name="login_no_servers_hint">Il n\'y a pas de serveur Delta Chat, vos données restent sur votre appareil !</string>
+    <string name="login_no_servers_hint">Il n\'y a pas de serveur ArcaneChat, vos données restent sur votre appareil !</string>
     <string name="login_inbox">Boîte de réception</string>
     <string name="login_imap_login">Utilisateur IMAP</string>
     <string name="login_imap_server">Serveur IMAP</string>
@@ -582,7 +582,7 @@
     <string name="login_socks5_user">Utilisateur SOCKS5</string>
     <string name="login_socks5_password">Mot de passe SOCKS5</string>
     <string name="login_info_oauth2_title">Continuer avec une configuration simplifiée ?</string>
-    <string name="login_info_oauth2_text">L\'adresse de courriel saisie prend en charge une configuration simplifiée (OAuth2.0). \n\nDans l\'étape suivante, autorisez Delta Chat à agir comme votre application de Chat avec courriel . Il n\'y a pas de serveur Delta Chat, vos données restent sur votre appareil !</string>
+    <string name="login_info_oauth2_text">L\'adresse de courriel saisie prend en charge une configuration simplifiée (OAuth2.0). \n\nDans l\'étape suivante, autorisez ArcaneChat à agir comme votre application de Chat avec courriel . Il n\'y a pas de serveur ArcaneChat, vos données restent sur votre appareil !</string>
     <string name="login_certificate_checks">Vérification du certificat</string>
     <string name="login_error_mail">Entrez une adresse email valide</string>
     <string name="login_error_server">Entre un serveur / adresse IP valide</string>
@@ -627,7 +627,7 @@
     <string name="pref_password_and_account_settings">Mot de passe et compte</string>
     <string name="pref_who_can_see_profile_explain">Votre image de profil, votre nom et votre signature seront envoyés avec vos messages lorsque vous communiquerez avec d\'autres utilisateurs.</string>
     <string name="pref_your_name">Votre nom</string>
-    <!-- Translators: Visible only to recipients who DO NOT use Delta Chat, so it's the last line in an E-mail and not a "Status". -->
+    <!-- Translators: Visible only to recipients who DO NOT use ArcaneChat, so it's the last line in an E-mail and not a "Status". -->
     <string name="pref_default_status_label">Signature</string>
     <string name="pref_enter_sends">Entrer les envois de clés</string>
     <string name="pref_enter_sends_explain">Appuyez sur la touche Entrée pour envoyer des messages texte</string>
@@ -664,7 +664,7 @@
     <string name="pref_read_receipts_explain">Si les accusés de lecture sont désactivés, vous ne pourrez pas voir les accusés de lecture des autres.</string>
     <string name="pref_manage_keys">Gérer les clés</string>
     <string name="pref_use_system_emoji">Utiliser les émojis système</string>
-    <string name="pref_use_system_emoji_explain">Désactiver la prise en charge des émojis intégrés de Delta Chat</string>
+    <string name="pref_use_system_emoji_explain">Désactiver la prise en charge des émojis intégrés de ArcaneChat</string>
     <string name="pref_use_inapp_camera">Utiliser l\'appareil photo de l\'appli</string>
     <string name="pref_use_inapp_camera_explain">L\'appareil photo de l\'appli possède généralement moins de fonctionnalités que celui du système</string>
     <string name="pref_app_access">Accès à l\'application</string>
@@ -758,9 +758,9 @@
     <!-- %1$d will be replaced by the number of messages, you can assume plural/lots here. %2$s will be replaced by a timespan option. -->
     <string name="autodel_device_ask">Voulez-vous supprimer %1$d messages maintenant ainsi que tous les nouveaux futurs messages reçus « %2$s » ?\n\n• Cela inclut tous les fichiers multimédia\n\n• Les messages seront effacés qu\'ils aient été vus ou non\n\n• Les « Messages sauvegardés » seront préservés de la suppression locale</string>
     <!-- %1$d will be replaced by the number of messages, you can assume plural/lots here. %2$s will be replaced by a timespan option. -->
-    <string name="autodel_server_ask">Voulez-vous supprimer %1$d messages maintenant ainsi que tous les futurs nouveaux messages reçus « %2$s » ?\n\n⚠️ Cela inclut les courriels, les fichiers multimédia et les « Messages sauvegardés » dans tous les répertoires du serveur\n\n⚠️ N\'utilisez pas cette fonction si vous utilisez d\'autres clients de messagerie électronique en plus de Delta Chat</string>
+    <string name="autodel_server_ask">Voulez-vous supprimer %1$d messages maintenant ainsi que tous les futurs nouveaux messages reçus « %2$s » ?\n\n⚠️ Cela inclut les courriels, les fichiers multimédia et les « Messages sauvegardés » dans tous les répertoires du serveur\n\n⚠️ N\'utilisez pas cette fonction si vous utilisez d\'autres clients de messagerie électronique en plus de ArcaneChat</string>
     <!-- shown below enabled autodel_server-option, should be a summary of autodel_server_ask and remind about the impact -->
-    <string name="autodel_server_enabled_hint">Cela inclus les courriels, médias et les « Messages sauvegardés » dans tous les répertoires du serveur. N\'utilisez pas cette fonction si vous voulez garder les données sur le serveur ou si vous utilisez d\'autres clients de messagerie électronique en plus de Delta Chat.</string>
+    <string name="autodel_server_enabled_hint">Cela inclus les courriels, médias et les « Messages sauvegardés » dans tous les répertoires du serveur. N\'utilisez pas cette fonction si vous voulez garder les données sur le serveur ou si vous utilisez d\'autres clients de messagerie électronique en plus de ArcaneChat.</string>
     <string name="autodel_confirm">J\'ai compris, supprimer tous ces messages</string>
     <!-- "At once" in the meaning of "Immediately", without any intervening time. -->
     <string name="autodel_at_once">Immédiatement</string>
@@ -863,7 +863,7 @@
     <string name="chat_protection_enabled_tap_to_learn_more">Les messages sont désormais garantis chiffrés de bout en bout. Appuyer pour en savoir plus.</string>
     <string name="chat_protection_enabled_explanation">Il n\'est pas garanti que tous les messages de cette discussion sont chiffrés de bout en bout.\n\nLe chiffrement de bout en bout assure la confidentialité des messages échangés par les membres d\'une discussion. Même votre fournisseur de courriel ne peut pas les lire. </string>
     <string name="chat_protection_broken_tap_to_learn_more">%1$s a envoyé un message depuis un nouvel appareil. Appuyez pour en savoir plus.</string>
-    <string name="chat_protection_broken_explanation">Le chiffrement de bout en bout ne peut plus être garanti, probablement parce que %1$s a réinstallé Delta Chat ou envoyé un message depuis un nouvel appareil.\n\nVous pouvez convenir d\'une rencontre physique afin de scanner à nouveau son code QR pour ré-instaurer la garantie du chiffrement de bout en bout.</string>
+    <string name="chat_protection_broken_explanation">Le chiffrement de bout en bout ne peut plus être garanti, probablement parce que %1$s a réinstallé ArcaneChat ou envoyé un message depuis un nouvel appareil.\n\nVous pouvez convenir d\'une rencontre physique afin de scanner à nouveau son code QR pour ré-instaurer la garantie du chiffrement de bout en bout.</string>
     <string name="learn_more">En savoir plus</string>
 
     <string name="devicemsg_self_deleted">Vous avez supprimé la discussion \"Messages sauvegardés\".\n\nℹ️ Pour utiliser la fonctionnalité \"Message enregistrés\" à nouveau, commencez une nouvelle discussion avec vous-même.</string>
@@ -871,7 +871,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ Bientôt plus d\'espace de stockage chez votre fournisseur, %1$s%% utilisés.\n\nVous ne serez peut-être plus en mesure de recevoir des messages quand votre espace de stockage sera plein.\n\n👉 Veuillez vérifier si vous avez d\'anciens éléments à supprimer directement sur l\'interface web de votre fournisseur et envisagez d\'activer \"Paramètres / Supprimer les anciens messages\". Vous pouvez vérifier à tout moment le volume d\'espace de stockage en cours d\'utilisation depuis \"Paramètres / Connectivité\".</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ L\'heure ou la date de votre appareil semble erronée (%1$s).\n\nRéglez votre horloge ⏰🔧 pour que vos messages soient bien reçus.</string>
-    <string name="devicemsg_update_reminder">⚠️ Votre version de Delta Chat semble obsolète.\n\nCela risque de créer des dysfonctionnements parce que vos contacts utilisent des versions plus récentes - en plus, vous ratez les nouvelles fonctionnalités 😳\n Rendez-vous sur https://get.delta.chat ou sur votre magasin d\'applications pour effectuer la mise à jour !</string>
+    <string name="devicemsg_update_reminder">⚠️ Votre version de ArcaneChat semble obsolète.\n\nCela risque de créer des dysfonctionnements parce que vos contacts utilisent des versions plus récentes - en plus, vous ratez les nouvelles fonctionnalités 😳\n Rendez-vous sur https://get.delta.chat ou sur votre magasin d\'applications pour effectuer la mise à jour !</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Déverrouillez votre appareil pour continuer</string>
@@ -954,7 +954,7 @@
     <string name="perm_explain_access_to_mic_denied">Pour envoyer des messages audio, aller dans les paramètres de l\'application, sélectionner \"Autorisations\" et autoriser \"Microphone\".</string>
     <string name="perm_explain_access_to_storage_denied">Pour recevoir ou envoyer des fichiers, aller dans les Paramètres de l\'application, sélectionner \"Autorisations\" et autoriser \"Stockage\".</string>
     <string name="perm_explain_access_to_location_denied">Pour joindre une position, aller au menu paramètres de l\'application, sélectionnez \"Autorisations\" et activez \"Position\".</string>
-    <string name="perm_explain_access_to_notifications_denied">Pour recevoir les notifications, accédez à \"Paramètres système / Applications / Delta Chat\" et activez les \"Notifications\".</string>
+    <string name="perm_explain_access_to_notifications_denied">Pour recevoir les notifications, accédez à \"Paramètres système / Applications / ArcaneChat\" et activez les \"Notifications\".</string>
 
     <!-- ImageEditorHud -->
     <string name="ImageEditorHud_draw_anywhere_to_blur">Dessinez n\'importe où pour flouter</string>
@@ -970,9 +970,9 @@
     <string name="encrypted_message">Message chiffré</string>
 
     <!-- strings introduced on desktop. we want to share strings between the os, in general, please do not add generic strings here -->
-    <string name="about_offical_app_desktop">Ceci est l\'application de bureau Delta Chat officielle.</string>
+    <string name="about_offical_app_desktop">Ceci est l\'application de bureau ArcaneChat officielle.</string>
     <string name="about_licensed_under_desktop">Ce logiciel est sous licence GNU GPL version 3 et le code source est disponible sur GitHub.</string>
-    <string name="welcome_desktop">Bienvenue sur Delta Chat</string>
+    <string name="welcome_desktop">Bienvenue sur ArcaneChat</string>
     <string name="global_menu_preferences_language_desktop">Choisissez la langue...</string>
     <string name="global_menu_file_desktop">Fichier</string>
     <string name="global_menu_file_quit_desktop">Quitter</string>
@@ -987,11 +987,11 @@
     <string name="global_menu_view_developer_desktop">Développeur</string>
     <string name="global_menu_view_developer_tools_desktop">Outils de développement</string>
     <string name="global_menu_help_desktop">Aide</string>
-    <string name="global_menu_help_learn_desktop">En savoir plus sur Delta Chat</string>
+    <string name="global_menu_help_learn_desktop">En savoir plus sur ArcaneChat</string>
     <string name="global_menu_help_contribute_desktop">Contribuer sur Github</string>
     <string name="global_menu_help_report_desktop">Signaler un problème</string>
-    <string name="global_menu_help_about_desktop">À propos de Delta Chat</string>
-    <string name="global_menu_file_open_desktop">Ouvrir Delta Chat</string>
+    <string name="global_menu_help_about_desktop">À propos de ArcaneChat</string>
+    <string name="global_menu_file_open_desktop">Ouvrir ArcaneChat</string>
     <string name="global_menu_minimize_to_tray">Minimiser</string>
     <string name="no_chat_selected_suggestion_desktop">Sélectionner une discussion ou en créer une nouvelle</string>
     <string name="write_message_desktop">Écrire un message</string>
@@ -1010,7 +1010,7 @@
     <string name="message_detail_received_desktop">reçu</string>
     <string name="menu.view.developer.open.log.folder">Ouvrir le dossier Journal</string>
     <string name="menu.view.developer.open.current.log.file">Ouvrir le fichier Journal courant</string>
-    <string name="explain_desktop_minimized_disabled_tray_pref" tools:ignore="TypographyDashes">L\'icône système ne peut pas être enlevé car Delta Chat a été démarré avec l\'option --minimized.</string>
+    <string name="explain_desktop_minimized_disabled_tray_pref" tools:ignore="TypographyDashes">L\'icône système ne peut pas être enlevé car ArcaneChat a été démarré avec l\'option --minimized.</string>
     <string name="no_spellcheck_suggestions_found">Aucune propositions de correction trouvées.</string>
     <string name="show_window">Afficher la fenêtre</string>
     <string name="login_socks5_experimental_warning">Le support de SOCK5 est actuellement expérimental. Utilisez le à vos risques et périls. Si vous saisissez une adresse de courriel, une requête DNS sera effectuée sans passer par SOCK5.</string>
@@ -1052,7 +1052,7 @@
     <string name="import_device_contacts">Importer les contacts de l\'appareil</string>
     <string name="import_device_contacts_hint">Pour discuter avec des contacts de votre appareils, ouvrez les paramètre et activez \"Contacts\".</string>
     <!-- iOS notification settings -->
-    <string name="disabled_in_dc">Désactivé dans Delta Chat</string>
+    <string name="disabled_in_dc">Désactivé dans ArcaneChat</string>
     <string name="disabled_in_system_settings">Désactivé dans les paramètres système</string>
     <string name="bg_app_refresh_disabled">Le \"rafraîchissement des applications en arrière-plan\" est désactivé dans les paramètres du système.</string>
     <!-- iOS connectivity view, Adjective, used eg. as "Notifications: Delayed" -->
@@ -1066,18 +1066,18 @@
     <string name="shortcut_step1_tap_share_btn">Cliquer sur le bouton « Partager ».</string>
     <string name="shortcut_step2_tap_add_to_home_screen">Sélectionner « Ajouter à l\'écran d\'accueil » pour ajouter l\'appli à votre écran d\'accueil.</string>
     <!-- iOS permissions, copy from "deltachat-ios/Info.plist", which is used on missing translations in "deltachat-ios/LANG.lproj/InfoPlist.strings" -->
-    <string name="InfoPlist_NSCameraUsageDescription">Delta Chat utilise votre appareil photo pour prendre des photos et des vidéos et les envoyer, ainsi que pour scanner des QR codes.</string>
-    <string name="InfoPlist_NSContactsUsageDescription">Delta Chat utilise vos contacts pour montrer une liste d\'adresses de courriel auxquels vous pouvez écrire. Delta Chat n\'a pas de serveur, vos contacts ne sont envoyés nulle part.</string>
-    <string name="InfoPlist_NSLocationAlwaysAndWhenInUseUsageDescription">Delta Chat a besoin de votre autorisation pour partager votre position pour la durée d\'activation du partage de position.</string>
-    <string name="InfoPlist_NSLocationWhenInUseUsageDescription">Delta Chat a besoin de votre autorisation pour partager votre position pour la durée d\'activation du partage de position.</string>
-    <string name="InfoPlist_NSMicrophoneUsageDescription">Delta Chat utilise votre micro pour enregistrer et envoyer des messages vocaux et des vidéos avec bande son.</string>
-    <string name="InfoPlist_NSPhotoLibraryUsageDescription">Delta Chat vous laisse choisir quelles photos envoyer de votre photothèque. </string>
-    <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">Delta Chat veut enregistrer les images dans votre bibliothèque photo.</string>
+    <string name="InfoPlist_NSCameraUsageDescription">ArcaneChat utilise votre appareil photo pour prendre des photos et des vidéos et les envoyer, ainsi que pour scanner des QR codes.</string>
+    <string name="InfoPlist_NSContactsUsageDescription">ArcaneChat utilise vos contacts pour montrer une liste d\'adresses de courriel auxquels vous pouvez écrire. ArcaneChat n\'a pas de serveur, vos contacts ne sont envoyés nulle part.</string>
+    <string name="InfoPlist_NSLocationAlwaysAndWhenInUseUsageDescription">ArcaneChat a besoin de votre autorisation pour partager votre position pour la durée d\'activation du partage de position.</string>
+    <string name="InfoPlist_NSLocationWhenInUseUsageDescription">ArcaneChat a besoin de votre autorisation pour partager votre position pour la durée d\'activation du partage de position.</string>
+    <string name="InfoPlist_NSMicrophoneUsageDescription">ArcaneChat utilise votre micro pour enregistrer et envoyer des messages vocaux et des vidéos avec bande son.</string>
+    <string name="InfoPlist_NSPhotoLibraryUsageDescription">ArcaneChat vous laisse choisir quelles photos envoyer de votre photothèque. </string>
+    <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">ArcaneChat veut enregistrer les images dans votre bibliothèque photo.</string>
 
 
-    <string name="pref_background_notifications_rationale">Pour maintenir une connexion à votre serveur de courriel et recevoir les messages en arrière-plan, ignorez l\'optimisation de la batterie à l\'étape suivante.\n\nDelta Chat utilise peu de ressources et prend garde à ne pas vider votre batterie.</string>
+    <string name="pref_background_notifications_rationale">Pour maintenir une connexion à votre serveur de courriel et recevoir les messages en arrière-plan, ignorez l\'optimisation de la batterie à l\'étape suivante.\n\nArcaneChat utilise peu de ressources et prend garde à ne pas vider votre batterie.</string>
     <!-- disabling "Reliable service" will hide a the maybe annoying permanent-notification with the drawback that new-message-notifications get potentially unreliable -->
     <string name="perm_enable_bg_reminder_title">Touchez ici pour recevoir des messages pendant que DeltaChat est en arrière-plan.</string>
-    <string name="perm_enable_bg_already_done">Vous avez déjà autorisé Delta Chat à recevoir des messages en arrière plan.\n\nSi vous ne les recevez toujours pas en arrière plan, vérifiez les paramètres de votre système.</string>
+    <string name="perm_enable_bg_already_done">Vous avez déjà autorisé ArcaneChat à recevoir des messages en arrière plan.\n\nSi vous ne les recevez toujours pas en arrière plan, vérifiez les paramètres de votre système.</string>
 
     </resources>

@@ -87,7 +87,7 @@ public class KeepAliveService extends Service {
 
     /* The notification
      * A notification is required for a foreground service; and without a foreground service,
-     * Delta Chat won't get new messages reliable
+     * ArcaneChat won't get new messages reliable
      **********************************************************************************************/
 
     private Notification createNotification()

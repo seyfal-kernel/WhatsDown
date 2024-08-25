@@ -6,7 +6,7 @@
   <string name="community_set_name_explain">Set a name that other will recognize.</string>
   <string name="could_not_open_file">Could not open file</string>
     <!-- common strings without special context -->
-    <string name="app_name">DeltaLab</string>
+    <string name="app_name">ArcaneChat</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
    <!-- the word "or" to separate blocks in the user interface that are mutually exclusive -->
@@ -49,7 +49,7 @@
     <string name="unarchive">Unarchive</string>
     <string name="mute">Mute</string>
     <string name="ephemeral_messages">Disappearing Messages</string>
-    <string name="ephemeral_messages_hint">Applies to all members of this chat if they use DeltaLab; they can still copy, save, and forward messages or use other e-mail clients.</string>
+    <string name="ephemeral_messages_hint">Applies to all members of this chat if they use ArcaneChat; they can still copy, save, and forward messages or use other e-mail clients.</string>
     <string name="save">Save</string>
     <string name="chat">Chat</string>
     <string name="media">Media</string>
@@ -240,7 +240,7 @@
     <string name="share_invite_link">Share Invite Link</string>
     <string name="invite_friends">Invite Friends</string>
     <!-- %1$s is replaced by the user's invitation link ("https://i.delta.chat/...") -->
-    <string name="invite_friends_text">Contact me on DeltaLab:\n%1$s</string>
+    <string name="invite_friends_text">Contact me on ArcaneChat:\n%1$s</string>
     <string name="menu_copy_selection_to_clipboard">Copy Selection</string>
     <string name="menu_copy_link_to_clipboard">Copy Link</string>
     <string name="menu_copy_text_to_clipboard">Copy Text</string>
@@ -527,9 +527,9 @@
     <string name="multidevice_title">Add Second Device</string>
     <string name="multidevice_same_network_hint">Make sure both devices are on the same Wi-Fi or network</string>
     <string name="multidevice_this_creates_a_qr_code">This creates a QR code that the second device can scan to copy the profile.</string>
-    <string name="multidevice_install_dc_on_other_device">Install DeltaLab on your other device (https://get.delta.chat)</string>
+    <string name="multidevice_install_dc_on_other_device">Install ArcaneChat on your other device (https://get.delta.chat)</string>
     <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
-    <string name="multidevice_tap_scan_on_other_device">Start DeltaLab, tap “I Already Have a Profile / Add as Second Device” and scan the code shown here</string>
+    <string name="multidevice_tap_scan_on_other_device">Start ArcaneChat, tap “I Already Have a Profile / Add as Second Device” and scan the code shown here</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
     <string name="multidevice_qr_subtitle">Scan to set up second device for %1$s</string>
     <string name="multidevice_receiver_title">Add as Second Device</string>
@@ -609,7 +609,7 @@
     <!-- for classic email, we use the classical term "Account" -->
     <string name="login_explain">Log in with an existing e-mail account</string>
     <string name="login_subheader">For known e-mail providers additional settings are set up automatically. Sometimes IMAP needs to be enabled in the web settings. Consult your e-mail provider or friends for help.</string>
-    <string name="login_no_servers_hint">DeltaLab does not collect user data, everything stays on your device.</string>
+    <string name="login_no_servers_hint">ArcaneChat does not collect user data, everything stays on your device.</string>
     <string name="login_inbox">Inbox</string>
     <string name="login_imap_login">IMAP Login Name</string>
     <string name="login_imap_server">IMAP Server</string>
@@ -630,7 +630,7 @@
     <string name="login_socks5_user">SOCKS5 User</string>
     <string name="login_socks5_password">SOCKS5 Password</string>
     <string name="login_info_oauth2_title">Continue with simplified setup?</string>
-    <string name="login_info_oauth2_text">The entered e-mail address supports a simplified setup (OAuth 2.0).\n\nIn the next step, please allow DeltaLab to act as your Chat over E-mail app.\n\nDeltaLab does not collect user data, everything stays on your device.</string>
+    <string name="login_info_oauth2_text">The entered e-mail address supports a simplified setup (OAuth 2.0).\n\nIn the next step, please allow ArcaneChat to act as your Chat over E-mail app.\n\nArcaneChat does not collect user data, everything stays on your device.</string>
     <string name="login_certificate_checks">Certificate Checks</string>
     <string name="login_error_mail">Please enter a valid e-mail address</string>
     <string name="login_error_server">Please enter a valid server / IP address</string>
@@ -675,7 +675,7 @@
     <string name="pref_password_and_account_settings">Password and Account</string>
     <string name="pref_who_can_see_profile_explain">Your profile image, name and bio will be sent together with your messages when communicating with other users.</string>
     <string name="pref_your_name">Your Name</string>
-    <!-- Translators: Visible only to recipients who DO NOT use Delta Chat, so it's the last line in an E-mail and not a "Status". -->
+    <!-- Translators: Visible only to recipients who DO NOT use ArcaneChat, so it's the last line in an E-mail and not a "Status". -->
     <string name="pref_default_status_label">Bio</string>
     <string name="pref_enter_sends">Enter Key Sends</string>
     <string name="pref_enter_sends_explain">Pressing the Enter key will send text messages</string>
@@ -716,7 +716,7 @@
     <string name="pref_encryption">Encryption</string>
     <string name="pref_manage_keys">Manage Keys</string>
     <string name="pref_use_system_emoji">Use System Emoji</string>
-    <string name="pref_use_system_emoji_explain">Turn off DeltaLab\'s built-in emoji support</string>
+    <string name="pref_use_system_emoji_explain">Turn off ArcaneChat\'s built-in emoji support</string>
     <string name="pref_use_inapp_camera">Use In-App Camera</string>
     <string name="pref_use_inapp_camera_explain">In-app camera usually has less features than the system camera</string>
     <string name="pref_show_system_contacts">Read System Address Book</string>
@@ -790,7 +790,7 @@
     <string name="pref_edit_profile">Edit Profile</string>
     <string name="disable_imap_idle">Disable IMAP IDLE</string>
     <string name="disable_imap_idle_explain">Do not use IMAP IDLE extension even if the server supports it. Enabling this option will delay message retrieval, enable it only for testing.</string>
-    <string name="send_stats_to_devs">Send statistics to Delta Chat\'s developers</string>
+    <string name="send_stats_to_devs">Send statistics to ArcaneChat\'s developers</string>
 
 
     <!-- Emoji picker and categories -->
@@ -822,9 +822,9 @@
     <!-- %1$d will be replaced by the number of messages, you can assume plural/lots here. %2$s will be replaced by a timespan option. -->
     <string name="autodel_device_ask">Do you want to delete %1$d messages now and all newly fetched messages \"%2$s\" in the future?\n\n• This includes all media\n\n• Messages will be deleted whether they were seen or not\n\n• \"Saved messages\" will be skipped from local deletion</string>
     <!-- %1$d will be replaced by the number of messages, you can assume plural/lots here. %2$s will be replaced by a timespan option. -->
-    <string name="autodel_server_ask">Do you want to delete %1$d messages now and all newly fetched messages \"%2$s\" in the future?\n\n⚠️ This includes e-mails, media and \"Saved messages\" in all server folders\n\n⚠️ Do not use this function if you want to keep data on the server\n\n⚠️ Do not use this function if you are using other e-mail clients besides DeltaLab</string>
+    <string name="autodel_server_ask">Do you want to delete %1$d messages now and all newly fetched messages \"%2$s\" in the future?\n\n⚠️ This includes e-mails, media and \"Saved messages\" in all server folders\n\n⚠️ Do not use this function if you want to keep data on the server\n\n⚠️ Do not use this function if you are using other e-mail clients besides ArcaneChat</string>
     <!-- shown below enabled autodel_server-option, should be a summary of autodel_server_ask and remind about the impact -->
-    <string name="autodel_server_enabled_hint">This includes e-mails, media and \"Saved messages\" in all server folders. Do not use this function if you want to keep data on the server or if you are using other e-mail clients besides DeltaLab.</string>
+    <string name="autodel_server_enabled_hint">This includes e-mails, media and \"Saved messages\" in all server folders. Do not use this function if you want to keep data on the server or if you are using other e-mail clients besides ArcaneChat.</string>
     <string name="autodel_server_warn_multi_device_title">Turn on at-once deletion</string>
     <string name="autodel_server_warn_multi_device">If you enable at-once deletion you cannot use multiple devices on this profile.</string>
     <string name="autodel_confirm">I understand, delete all these messages</string>
@@ -861,7 +861,7 @@
     <string name="systemmsg_read_receipt_subject">Message opened</string>
     <!-- deprecated -->
     <string name="systemmsg_read_receipt_body">The \"%1$s\" message you sent was displayed on the screen of the recipient.\n\nThis is no guarantee the content was read.</string>
-    <string name="systemmsg_cannot_decrypt">This message cannot be decrypted.\n\n• It might already help to simply reply to this message and ask the sender to send the message again.\n\n• If you just re-installed DeltaLab then it is best if you re-setup DeltaLab now and choose "Add as second device" or import a backup.</string>
+    <string name="systemmsg_cannot_decrypt">This message cannot be decrypted.\n\n• It might already help to simply reply to this message and ask the sender to send the message again.\n\n• If you just re-installed ArcaneChat then it is best if you re-setup ArcaneChat now and choose "Add as second device" or import a backup.</string>
     <string name="systemmsg_unknown_sender_for_chat">Unknown sender for this chat. See \'info\' for more details.</string>
     <string name="systemmsg_subject_for_new_contact">Message from %1$s</string>
     <string name="systemmsg_failed_sending_to">Failed to send message to %1$s.</string>
@@ -932,7 +932,7 @@
     <string name="chat_protection_enabled_tap_to_learn_more">Messages are guaranteed to be end-to-end encrypted from now on. Tap to learn more.</string>
     <string name="chat_protection_enabled_explanation">It is now guaranteed that all messages in this chat are end-to-end encrypted.\n\nEnd-to-end encryption keeps messages private between you and your chat partners. Not even your email provider can read them.</string>
     <string name="chat_protection_broken_tap_to_learn_more">%1$s sent a message from another device. Tap to learn more.</string>
-    <string name="chat_protection_broken_explanation">End-to-end encryption cannot be guaranteed anymore, likely because %1$s reinstalled DeltaLab or sent a message from another device.\n\nYou may meet them in person and scan their QR code again to reestablish guaranteed end-to-end encryption.</string>
+    <string name="chat_protection_broken_explanation">End-to-end encryption cannot be guaranteed anymore, likely because %1$s reinstalled ArcaneChat or sent a message from another device.\n\nYou may meet them in person and scan their QR code again to reestablish guaranteed end-to-end encryption.</string>
     <string name="invalid_unencrypted_tap_to_learn_more">⚠️ %1$s requires end-to-end encryption which is not setup for this chat yet. Tap to learn more.</string>
     <string name="invalid_unencrypted_explanation">To establish end-to-end-encryption, you may meet contacts in person and scan their QR Code to introduce them.</string>
     <string name="encryption_required_for_new_contact">End-to-end encryption is required but it is not setup for %1$s yet.\n\nYou may share your invite link with them or meet in person and scan their QR Code.</string>
@@ -943,7 +943,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ Your provider\'s storage is about to run out: %1$s%% are already used.\n\nYou may not be able to receive messages if storage is full.\n\n👉 Please check if you can delete old data in the provider\'s web interface and consider enabling \"Settings / Chats and Media / Delete Old Messages\". You can check your current storage usage anytime at \"Settings / Connectivity\".</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ Date or time on your device seems to be inaccurate (%1$s).\n\nAdjust your clock ⏰🔧 to ensure your messages are received correctly.</string>
-    <string name="devicemsg_update_reminder">⚠️ Your DeltaLab version might be outdated.\n\nThis may cause problems because your chat partners use newer versions - and you are missing the latest features 😳\nPlease check https://get.delta.chat or your app store for updates.</string>
+    <string name="devicemsg_update_reminder">⚠️ Your ArcaneChat version might be outdated.\n\nThis may cause problems because your chat partners use newer versions - and you are missing the latest features 😳\nPlease check https://get.delta.chat or your app store for updates.</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Unlock to continue</string>
@@ -1034,7 +1034,7 @@
     <string name="perm_explain_access_to_mic_denied">To send audio messages, go to the app settings, select \"Permissions\", and enable \"Microphone\".</string>
     <string name="perm_explain_access_to_storage_denied">To receive or send files, go to the app settings, select \"Permissions\", and enable \"Storage\".</string>
     <string name="perm_explain_access_to_location_denied">To attach a location, go to the app settings, select \"Permissions\", and enable \"Location\".</string>
-    <string name="perm_explain_access_to_notifications_denied">To receive notifications, go to \"System Settings / Apps / DeltaLab\" and enable \"Notifications\".</string>
+    <string name="perm_explain_access_to_notifications_denied">To receive notifications, go to \"System Settings / Apps / ArcaneChat\" and enable \"Notifications\".</string>
 
     <!-- ImageEditorHud -->
     <string name="ImageEditorHud_draw_anywhere_to_blur">Draw anywhere to blur</string>
@@ -1050,9 +1050,9 @@
     <string name="encrypted_message">Encrypted message</string>
 
     <!-- strings introduced on desktop. we want to share strings between the os, in general, please do not add generic strings here -->
-    <string name="about_offical_app_desktop">This is the official DeltaLab Desktop app.</string>
+    <string name="about_offical_app_desktop">This is the official ArcaneChat Desktop app.</string>
     <string name="about_licensed_under_desktop">This software is licensed under GNU GPL version 3 and the source code is available on GitHub.</string>
-    <string name="welcome_desktop">Welcome to DeltaLab</string>
+    <string name="welcome_desktop">Welcome to ArcaneChat</string>
     <string name="global_menu_preferences_language_desktop">Language</string>
     <string name="global_menu_file_desktop">File</string>
     <string name="global_menu_file_quit_desktop">Quit</string>
@@ -1067,11 +1067,11 @@
     <string name="global_menu_view_developer_desktop">Developer</string>
     <string name="global_menu_view_developer_tools_desktop">Developer Tools</string>
     <string name="global_menu_help_desktop">Help</string>
-    <string name="global_menu_help_learn_desktop">Learn more about DeltaLab</string>
+    <string name="global_menu_help_learn_desktop">Learn more about ArcaneChat</string>
     <string name="global_menu_help_contribute_desktop">Contribute on GitHub</string>
     <string name="global_menu_help_report_desktop">Report an Issue</string>
-    <string name="global_menu_help_about_desktop">About DeltaLab</string>
-    <string name="global_menu_file_open_desktop">Open DeltaLab</string>
+    <string name="global_menu_help_about_desktop">About ArcaneChat</string>
+    <string name="global_menu_file_open_desktop">Open ArcaneChat</string>
     <string name="global_menu_minimize_to_tray">Minimize</string>
     <string name="no_chat_selected_suggestion_desktop">Select a chat or create a new chat</string>
     <string name="write_message_desktop">Write a message</string>
@@ -1090,7 +1090,7 @@
     <string name="message_detail_received_desktop">received</string>
     <string name="menu.view.developer.open.log.folder">Open the Log Folder</string>
     <string name="menu.view.developer.open.current.log.file">Open Current Logfile</string>
-    <string name="explain_desktop_minimized_disabled_tray_pref" tools:ignore="TypographyDashes">Tray icon cannot be disabled as DeltaLab was started with the --minimized option.</string>
+    <string name="explain_desktop_minimized_disabled_tray_pref" tools:ignore="TypographyDashes">Tray icon cannot be disabled as ArcaneChat was started with the --minimized option.</string>
     <string name="no_spellcheck_suggestions_found">No spelling suggestions found.</string>
     <string name="show_window">Show Window</string>
     <string name="login_socks5_experimental_warning">SOCKS5 support is currently experimental. Please use at your own risk. If you type in an address in the e-mail field, there will be DNS lookup that won\'t get tunneled through SOCKS5.</string>
@@ -1132,7 +1132,7 @@
     <string name="import_device_contacts">Import device contacts</string>
     <string name="import_device_contacts_hint">To chat with contacts from your device open Settings and enable \"Contacts\".</string>
     <!-- iOS notification settings -->
-    <string name="disabled_in_dc">Disabled in DeltaLab</string>
+    <string name="disabled_in_dc">Disabled in ArcaneChat</string>
     <string name="disabled_in_system_settings">Disabled in system settings</string>
     <string name="bg_app_refresh_disabled">\"Background App Refresh\" disabled in system settings</string>
     <!-- iOS connectivity view, Adjective, used eg. as "Notifications: Delayed" -->
@@ -1146,13 +1146,13 @@
     <string name="shortcut_step1_tap_share_btn">Click the share button</string>
     <string name="shortcut_step2_tap_add_to_home_screen">Select \"Add to Home Screen\" to add the app to your home screen.</string>
     <!-- iOS permissions, copy from "deltachat-ios/Info.plist", which is used on missing translations in "deltachat-ios/LANG.lproj/InfoPlist.strings" -->
-    <string name="InfoPlist_NSCameraUsageDescription">DeltaLab uses your camera to take and send photos and videos and to scan QR codes.</string>
-    <string name="InfoPlist_NSContactsUsageDescription">DeltaLab uses your contacts to show a list of e-mail addresses you can write to. DeltaLab has no server, your contacts are not sent anywhere.</string>
-    <string name="InfoPlist_NSLocationAlwaysAndWhenInUseUsageDescription">DeltaLab needs permission to share your location for the timespan you have enabled location sharing.</string>
-    <string name="InfoPlist_NSLocationWhenInUseUsageDescription">DeltaLab needs permission to share your location for the timespan you have enabled location sharing.</string>
-    <string name="InfoPlist_NSMicrophoneUsageDescription">DeltaLab uses your microphone to record and send voice messages and videos with sound.</string>
-    <string name="InfoPlist_NSPhotoLibraryUsageDescription">DeltaLab will let you choose which photos from your library to send.</string>
-    <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">DeltaLab wants to save images to your photo library.</string>
+    <string name="InfoPlist_NSCameraUsageDescription">ArcaneChat uses your camera to take and send photos and videos and to scan QR codes.</string>
+    <string name="InfoPlist_NSContactsUsageDescription">ArcaneChat uses your contacts to show a list of e-mail addresses you can write to. ArcaneChat has no server, your contacts are not sent anywhere.</string>
+    <string name="InfoPlist_NSLocationAlwaysAndWhenInUseUsageDescription">ArcaneChat needs permission to share your location for the timespan you have enabled location sharing.</string>
+    <string name="InfoPlist_NSLocationWhenInUseUsageDescription">ArcaneChat needs permission to share your location for the timespan you have enabled location sharing.</string>
+    <string name="InfoPlist_NSMicrophoneUsageDescription">ArcaneChat uses your microphone to record and send voice messages and videos with sound.</string>
+    <string name="InfoPlist_NSPhotoLibraryUsageDescription">ArcaneChat will let you choose which photos from your library to send.</string>
+    <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">ArcaneChat wants to save images to your photo library.</string>
 
 
     <!-- android specific strings, developers: please take care to remove strings that are no longer used! -->
@@ -1162,10 +1162,10 @@
     <string name="pref_reliable_service">Force Background Connection</string>
     <string name="pref_reliable_service_explain">Causes a permanent notification</string>
 
-    <string name="pref_background_notifications_rationale">To maintain connection to your e-mail server and receive messages in the background, ignore battery optimizations in the next step.\n\nDeltaLab uses few resources and takes care not to drain your battery.</string>
+    <string name="pref_background_notifications_rationale">To maintain connection to your e-mail server and receive messages in the background, ignore battery optimizations in the next step.\n\nArcaneChat uses few resources and takes care not to drain your battery.</string>
     <!-- disabling "Reliable service" will hide a the maybe annoying permanent-notification with the drawback that new-message-notifications get potentially unreliable -->
-    <string name="perm_enable_bg_reminder_title">Tap here to receive messages while DeltaLab is in the background.</string>
-    <string name="perm_enable_bg_already_done">You already allowed DeltaLab to receive messages in the background.\n\nIf messages still do not arrive in background, please also check your system settings.</string>
+    <string name="perm_enable_bg_reminder_title">Tap here to receive messages while ArcaneChat is in the background.</string>
+    <string name="perm_enable_bg_already_done">You already allowed ArcaneChat to receive messages in the background.\n\nIf messages still do not arrive in background, please also check your system settings.</string>
 
     <!-- device messages for updates -->
     <string name="update_1_46_android">New Onboarding 🐣 and More:\n\n⚡️ Sign up to secure fast chatmail servers (https://delta.chat/chatmail) or use classic e-mail servers\n\n👉 PUSH notifications for any chatmail server\n\n👤 Connect your friends securely via \"Attach contacts\"\n\n🥰 React with any emoji\n\n📌 Pin chats directly from search … and MORE at %1$s</string>

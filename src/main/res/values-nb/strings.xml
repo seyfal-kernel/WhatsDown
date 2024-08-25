@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- common strings without special context -->
-    <string name="app_name">DeltaLab</string>
+    <string name="app_name">ArcaneChat</string>
     <string name="ok">OK</string>
     <string name="cancel">Avbryt</string>
    <string name="yes">Ja</string>
@@ -31,7 +31,7 @@
     <string name="unarchive">Fjern fra arkiv</string>
     <string name="mute">Demp</string>
     <string name="ephemeral_messages">Forsvinnende meldinger</string>
-    <string name="ephemeral_messages_hint">Disse innstillingene gjelder alle deltakerne som bruker Delta Chat. Men de kan kopiere, lagre og videresende meldinger eller bruke annen e-postklient.</string>
+    <string name="ephemeral_messages_hint">Disse innstillingene gjelder alle deltakerne som bruker ArcaneChat. Men de kan kopiere, lagre og videresende meldinger eller bruke annen e-postklient.</string>
     <string name="save">Lagre</string>
     <string name="chat">Chat</string>
     <string name="media">Media</string>
@@ -171,7 +171,7 @@
     <string name="title_share_location">Del beliggenhet med alle gruppemedlemmer</string>
     <string name="device_talk">Enhetsmeldinger</string>
     <string name="device_talk_subtitle">Lokalt genererte meldinger</string>
-    <string name="device_talk_explain">Meldinger i denne chatten blir generert lokalt av Delta Chat-appen. Produsentene bruker den for å informere om appoppdateringer og problemer under bruk.</string>
+    <string name="device_talk_explain">Meldinger i denne chatten blir generert lokalt av ArcaneChat-appen. Produsentene bruker den for å informere om appoppdateringer og problemer under bruk.</string>
     <string name="edit_contact">Rediger kontakt</string>
     <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
     <string name="pin_chat">Fest chat</string>
@@ -253,7 +253,7 @@
         <item quantity="one">%d ny melding</item>
         <item quantity="other">%d nye meldinger</item>
     </plurals>
-    <string name="chat_new_group_hint">Forfatt den første meldingen, noe som lar andre svare i gruppen.\n\n• Det er greit at ikke alle medlemmer bruker Delta Chat.\n\n• Levering av den første meldingen kan ta sin tid.</string>
+    <string name="chat_new_group_hint">Forfatt den første meldingen, noe som lar andre svare i gruppen.\n\n• Det er greit at ikke alle medlemmer bruker ArcaneChat.\n\n• Levering av den første meldingen kan ta sin tid.</string>
     <string name="chat_record_slide_to_cancel">Dra for å avbryte</string>
     <string name="chat_record_explain">Trykk og hold for å ta opp en melding, slipp for å sende</string>
     <string name="chat_no_chats_yet_title">Tøm innboksen.\nTrykk \"+\" for å starte en ny chat.</string>
@@ -302,7 +302,7 @@
     <!-- for classic email, we use the classical term "Account" -->
     <string name="pref_password_and_account_settings">Kontoinnstillinger</string>
     <string name="pref_your_name">Mitt navn</string>
-    <!-- Translators: Visible only to recipients who DO NOT use Delta Chat, so it's the last line in an E-mail and not a "Status". -->
+    <!-- Translators: Visible only to recipients who DO NOT use ArcaneChat, so it's the last line in an E-mail and not a "Status". -->
     <string name="pref_default_status_label">Signaturtekst</string>
     <string name="pref_enter_sends">Send med \"Enter\"</string>
     <string name="pref_vibrate">Vibrer</string>
@@ -331,7 +331,7 @@
     <string name="pref_read_receipts_explain">Hvis du slår av lesebekreftelser, får du heller ikke se lesebekreftelser fra andre.</string>
     <string name="pref_manage_keys">Behandle nøkler</string>
     <string name="pref_use_system_emoji">Bruk systemets emoji</string>
-    <string name="pref_use_system_emoji_explain">Slå av innebygd emoji-støtte i Delta Chat</string>
+    <string name="pref_use_system_emoji_explain">Slå av innebygd emoji-støtte i ArcaneChat</string>
     <string name="pref_app_access">Programtilgang</string>
     <string name="pref_chats">Sludringer</string>
     <string name="pref_in_chat_sounds">Merknader i programmet</string>
@@ -417,13 +417,13 @@
     <!-- dc_str_* resources -->
     <string name="encrypted_message">Kryptert melding</string>
 
-    <string name="welcome_desktop">Velkommen til Delta Chat</string>
+    <string name="welcome_desktop">Velkommen til ArcaneChat</string>
     <string name="global_menu_preferences_language_desktop">Språk</string>
     <string name="global_menu_edit_desktop">Rediger</string>
     <string name="global_menu_edit_copy_desktop">Kopier</string>
     <string name="global_menu_view_desktop">Vis</string>
     <string name="global_menu_help_desktop">Hjelp</string>
-    <string name="global_menu_help_about_desktop">Om Delta Chat</string>
+    <string name="global_menu_help_about_desktop">Om ArcaneChat</string>
     <string name="encryption_info_title_desktop">Krypteringsinfo</string>
     <string name="delete_message_desktop">Slett melding</string>
     <string name="more_info_desktop">Mer informasjon</string>

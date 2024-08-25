@@ -12,7 +12,7 @@ Please fill out as much of this form as you can (leaving out stuff that is not a
 
 - Android version:
 - Device:
-- DeltaLab version:
+- ArcaneChat version:
 - Expected behavior:
 - Actual behavior:
 - Steps to reproduce the problem:
@@ -20,7 +20,7 @@ Please fill out as much of this form as you can (leaving out stuff that is not a
 - Logs:
 
 <!--
-Debug logs can be copied from within the DeltaLab app with
+Debug logs can be copied from within the app with
 Settings menu -> Advanced -> View log
 
 Logs may contain private data 

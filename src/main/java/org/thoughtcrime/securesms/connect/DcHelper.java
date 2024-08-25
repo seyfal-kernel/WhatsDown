@@ -452,7 +452,7 @@ public class DcHelper {
    * Gets a string you can show to the user with basic information about connectivity.
    * @param context
    * @param connectedString Usually "Connected", but when using this as the title in
-   *                        ConversationListActivity, we want to write "Delta Chat" there instead.
+   *                        ConversationListActivity, we want to write "ArcaneChat" there instead.
    * @return
    */
   public static String getConnectivitySummary(Context context, int connectedString) {

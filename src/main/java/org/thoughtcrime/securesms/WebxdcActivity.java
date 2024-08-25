@@ -460,7 +460,7 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
 
   class InternalJSApi {
     @JavascriptInterface
-    public String deltalab() {
+    public String arcanechat() {
       return BuildConfig.VERSION_NAME;
     }
 

@@ -184,7 +184,7 @@ public class NotificationCenter {
     // - We include the delta-chat-notifications settings into the name of the channelId
     // - The chatId is included only, if there are separate sound- or vibration-settings for a chat
     // - This way, we have stable and few channelIds and the user
-    //   can edit the notifications in Delta Chat as well as in the system
+    //   can edit the notifications in ArcaneChat as well as in the system
 
     // channelIds: CH_MSG_* are used here, the other ones from outside (defined here to have some overview)
     public static final String CH_MSG_PREFIX = "ch_msg";
@@ -446,7 +446,7 @@ public class NotificationCenter {
                 } catch (Exception e) { Log.w(TAG, e); }
             }
 
-            // add buttons that allow some actions without opening Delta Chat.
+            // add buttons that allow some actions without opening ArcaneChat.
             // if privacy options are enabled, the buttons are not added.
             if (privacy.isDisplayContact() && privacy.isDisplayMessage()) {
                 try {
@@ -530,7 +530,7 @@ public class NotificationCenter {
                     .setSmallIcon(R.drawable.icon_notification)
                     .setColor(context.getResources().getColor(R.color.def_accent))
                     .setCategory(NotificationCompat.CATEGORY_MESSAGE)
-                    .setContentTitle("Delta Chat") // content title would only be used on SDK <24
+                    .setContentTitle("ArcaneChat") // content title would only be used on SDK <24
                     .setContentText("New messages") // content text would only be used on SDK <24
                     .setContentIntent(getOpenChatlistIntent(accountId));
                   if (privacy.isDisplayContact()) {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- common strings without special context -->
-    <string name="app_name">DeltaLab</string>
+    <string name="app_name">ArcaneChat</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel·la</string>
    <!-- the word "or" to separate blocks in the user interface that are mutually exclusive -->
@@ -44,7 +44,7 @@
     <string name="unarchive">Treu de l\'arxiu</string>
     <string name="mute">Emmudeix</string>
     <string name="ephemeral_messages">Missatges efímers</string>
-    <string name="ephemeral_messages_hint">Aquestes opcions són d\'aplicació per tots els integrants que usin Delta Chat. Tot i això, poden copiar, guardar o reenviar missatges o usar altres clients de correu.</string>
+    <string name="ephemeral_messages_hint">Aquestes opcions són d\'aplicació per tots els integrants que usin ArcaneChat. Tot i això, poden copiar, guardar o reenviar missatges o usar altres clients de correu.</string>
     <string name="save">Guarda</string>
     <string name="chat">Xat</string>
     <string name="media">Multimèdia</string>
@@ -269,7 +269,7 @@
     <string name="title_share_location">Comparteix la ubicació amb tots els membres del grup</string>
     <string name="device_talk">Missatges del dispositiu</string>
     <string name="device_talk_subtitle">Missatges generats localment</string>
-    <string name="device_talk_explain">Els missatges d\'aquest xat són generats localment per la vostra app de Delta Chat. Els seus creadors els usen per informar-vos d\'actualitzacions de l\'app i problemes durant el seu ús.</string>
+    <string name="device_talk_explain">Els missatges d\'aquest xat són generats localment per la vostra app de ArcaneChat. Els seus creadors els usen per informar-vos d\'actualitzacions de l\'app i problemes durant el seu ús.</string>
     <string name="edit_contact">Edita el contacte</string>
     <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
     <string name="pin_chat">Fixa el xat</string>
@@ -374,8 +374,8 @@
         <item quantity="other">%d nous missatges</item>
     </plurals>
     <!-- The placeholder will be replaced by the name of the recipient in a one-to-one chat. -->
-    <string name="chat_new_one_to_one_hint">Envieu un missatge. No hi fa pas res si %1$s no fa servir Delta Chat.</string>
-    <string name="chat_new_group_hint">Escriviu el primer missatge i així els altres podran respondre a tot el grup.\n\n• No patiu si hi ha membres que no fan servir Delta Chat.\n\n• El lliurament del primer missatge pot trigar una estona.</string>
+    <string name="chat_new_one_to_one_hint">Envieu un missatge. No hi fa pas res si %1$s no fa servir ArcaneChat.</string>
+    <string name="chat_new_group_hint">Escriviu el primer missatge i així els altres podran respondre a tot el grup.\n\n• No patiu si hi ha membres que no fan servir ArcaneChat.\n\n• El lliurament del primer missatge pot trigar una estona.</string>
     <string name="chat_record_slide_to_cancel">Llisca per cancel·lar</string>
     <string name="chat_record_explain">Mantingues premut per gravar un missatge de veu i deixa anar per enviar-lo</string>
     <string name="chat_no_chats_yet_title">Safata d\'entrada buida.\nPrem \"+\" per començar un xat nou.</string>
@@ -497,7 +497,7 @@
     <!-- for classic email, we use the classical term "Account" -->
     <string name="login_header">Identifiqueu-vos al vostre servidor</string>
     <string name="login_subheader">Als proveïdors de mail coneguts els paràmetres es configuren automàticament. De vegades l\'IMAP s\'ha d\'activar a la interfície web. Consulta el teu proveïdor de correu electrònic o a un amic perquè t\'ajudi. </string>
-    <string name="login_no_servers_hint">No hi ha servidors de Delta Chat: les teves dades es queden al teu dispositiu!</string>
+    <string name="login_no_servers_hint">No hi ha servidors de ArcaneChat: les teves dades es queden al teu dispositiu!</string>
     <string name="login_inbox">Safata d\'entrada</string>
     <string name="login_imap_login">Nom d\'identificació IMAP</string>
     <string name="login_imap_server">Servidor IMAP</string>
@@ -513,7 +513,7 @@
     <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_info_oauth2_title">Voleu continuar amb la configuració simplificada?</string>
-    <string name="login_info_oauth2_text">L’adreça d\'e-mail que heu introduït admet una configuració simplificada. (OAuth2).\n\nEn el pas següent, permeteu que Delta Chat actuï com a xat amb l\'aplicació de correu electrònic..\n\nNo hi ha servidors de Delta Chat, les vostres dades romanen al vostre dispositiu!</string>
+    <string name="login_info_oauth2_text">L’adreça d\'e-mail que heu introduït admet una configuració simplificada. (OAuth2).\n\nEn el pas següent, permeteu que ArcaneChat actuï com a xat amb l\'aplicació de correu electrònic..\n\nNo hi ha servidors de ArcaneChat, les vostres dades romanen al vostre dispositiu!</string>
     <string name="login_error_mail">Si us plau poseu una adreça d\'email vàlida</string>
     <string name="login_error_server">Si us plau poseu un servidor / adreça IP vàlida</string>
     <string name="login_error_port">Si us plau poseu un  port vàlid (1-65535)</string>
@@ -538,7 +538,7 @@
     <string name="pref_blocked_contacts">Contactes bloquejats</string>
     <string name="pref_who_can_see_profile_explain">La vostra imatge de perfil i el vostre nom es mostraran en els missatges que envieu als altres usuaris. La informació que ja s\'hagi enviat no es pot eliminar ni esborrar.</string>
     <string name="pref_your_name">El vostre nom</string>
-    <!-- Translators: Visible only to recipients who DO NOT use Delta Chat, so it's the last line in an E-mail and not a "Status". -->
+    <!-- Translators: Visible only to recipients who DO NOT use ArcaneChat, so it's the last line in an E-mail and not a "Status". -->
     <string name="pref_default_status_label">Signatura</string>
     <string name="pref_enter_sends">La tecla \"Intro\" envia</string>
     <string name="pref_enter_sends_explain">Els missatges s\'enviaran prement la tecla \"Intro\"</string>
@@ -569,7 +569,7 @@
     <string name="pref_read_receipts_explain">Si desactiveu la confirmació de lectura dels vostres missatges, tampoc no rebreu la dels altres usuaris.</string>
     <string name="pref_manage_keys">Gestioneu les claus</string>
     <string name="pref_use_system_emoji">Useu emojis de sistema</string>
-    <string name="pref_use_system_emoji_explain">Deshabilita el suport de sèrie per emoticones a Delta Chat</string>
+    <string name="pref_use_system_emoji_explain">Deshabilita el suport de sèrie per emoticones a ArcaneChat</string>
     <string name="pref_app_access">Accés a l\'aplicació</string>
     <string name="pref_chats">Xats</string>
     <string name="pref_in_chat_sounds">Sons d\'entrada</string>
@@ -595,7 +595,7 @@
     <string name="pref_imap_folder_handling">Gestió de carpetes IMAP</string>
     <string name="pref_imap_folder_warn_disable_defaults">Si desactiveu aquesta opció, assegureu-vos que el vostre servidor i els altres programes estiguin configurats de la mateixa manera.\n\nAltrament podeu tenir problemes de funcionament.</string>
     <string name="pref_watch_sent_folder">Mostra la safata de sortida</string>
-    <string name="pref_auto_folder_moves">Moure automàticament a la carpeta de Delta Chat</string>
+    <string name="pref_auto_folder_moves">Moure automàticament a la carpeta de ArcaneChat</string>
     <string name="pref_auto_folder_moves_explain">Les converses de xat s\'han mogut per no atapeir la safata d’entrada</string>
     <string name="pref_show_emails">Mostra els e-mails clàssics</string>
     <string name="pref_show_emails_no">No, només xats</string>
@@ -673,10 +673,10 @@
     <!-- permissions -->
     <string name="perm_required_title">Es requereix permís</string>
     <string name="perm_continue">Continua</string>
-    <string name="perm_explain_access_to_camera_denied">Delta Chat demana accés a la càmera per poder fer fotos o vídeos, però li ha estat denegat. Sisplau, vés al menú de configuració de l\'app, busca-hi els \"Permisos\" i habilita\'n la \"Càmera\".</string>
-    <string name="perm_explain_access_to_mic_denied">Delta Chat demana accés al micròfon per poder enviar missatges d\'àudio, però li ha estat denegat. Sisplau, vés al menú de configuració de l\'app, busca-hi els \"Permisos\" i habilita\'n el \"Micròfon\".</string>
-    <string name="perm_explain_access_to_storage_denied">Delta Chat necessita accedir a l’emmagatzematge per adjuntar o exportar fotos, vídeos o àudio, però se li ha denegat permanentment. Aneu al menú de configuració de l\'aplicació, seleccioneu \"Permisos\" i activeu \"Emmagatzematge\".</string>
-    <string name="perm_explain_access_to_location_denied">Delta Chat necessita accedir a la ubicació per poder-la adjuntar, però li ha estat denegada de forma permanent. Vés a les preferències del menú de l\'aplicació, tria \"Permisos i activa-hi la \"Ubicació\".</string>
+    <string name="perm_explain_access_to_camera_denied">ArcaneChat demana accés a la càmera per poder fer fotos o vídeos, però li ha estat denegat. Sisplau, vés al menú de configuració de l\'app, busca-hi els \"Permisos\" i habilita\'n la \"Càmera\".</string>
+    <string name="perm_explain_access_to_mic_denied">ArcaneChat demana accés al micròfon per poder enviar missatges d\'àudio, però li ha estat denegat. Sisplau, vés al menú de configuració de l\'app, busca-hi els \"Permisos\" i habilita\'n el \"Micròfon\".</string>
+    <string name="perm_explain_access_to_storage_denied">ArcaneChat necessita accedir a l’emmagatzematge per adjuntar o exportar fotos, vídeos o àudio, però se li ha denegat permanentment. Aneu al menú de configuració de l\'aplicació, seleccioneu \"Permisos\" i activeu \"Emmagatzematge\".</string>
+    <string name="perm_explain_access_to_location_denied">ArcaneChat necessita accedir a la ubicació per poder-la adjuntar, però li ha estat denegada de forma permanent. Vés a les preferències del menú de l\'aplicació, tria \"Permisos i activa-hi la \"Ubicació\".</string>
     <!-- dc_str_* resources -->
     <string name="encrypted_message">Missatge encriptat</string>
 
@@ -714,5 +714,5 @@
     <string name="menu.view.developer.open.log.folder">Obre la carpeta de registre</string>
     <string name="menu.view.developer.open.current.log.file">Obre el fitxer de registre actual</string>
     <!-- disabling "Reliable service" will hide a the maybe annoying permanent-notification with the drawback that new-message-notifications get potentially unreliable -->
-    <string name="perm_enable_bg_reminder_title">Prem aquí per rebre missatges mentre Delta Chat és en segon pla.</string>
+    <string name="perm_enable_bg_reminder_title">Prem aquí per rebre missatges mentre ArcaneChat és en segon pla.</string>
     </resources>

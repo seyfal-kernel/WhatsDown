@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- common strings without special context -->
-    <string name="app_name">DeltaLab</string>
+    <string name="app_name">ArcaneChat</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancelar</string>
    <string name="yes">Sim</string>
@@ -181,7 +181,7 @@
     <string name="chat_please_enter_message">Por favor introduza uma mensagem.</string>
     <string name="chat_camera_unavailable">Camera indisponivel.</string>
     <string name="chat_unable_to_record_audio">Não é possível gravar áudio.</string>
-    <string name="chat_new_group_hint">Componha a primeira mensagem, permitindo que outras pessoas respondam dentro deste grupo.\n\n• Tudo bem se nem todos os membros usarem o Delta Chat.\n\n• A entrega da primeira mensagem pode demorar um pouco.</string>
+    <string name="chat_new_group_hint">Componha a primeira mensagem, permitindo que outras pessoas respondam dentro deste grupo.\n\n• Tudo bem se nem todos os membros usarem o ArcaneChat.\n\n• A entrega da primeira mensagem pode demorar um pouco.</string>
     <string name="chat_record_slide_to_cancel">Deslize para cancelar</string>
     <string name="chat_record_explain">Toque e segure para gravar uma mensagem de voz, solte para enviar</string>
     <string name="chat_share_with_title">Partilhar com</string>
@@ -221,7 +221,7 @@
     <string name="login_smtp_security">SMTP segurança</string>
     <string name="login_auth_method">Método de autorização</string>
     <string name="login_info_oauth2_title">Usar configuração simplificada?</string>
-    <string name="login_info_oauth2_text">Seu servidor de e-mail aceita o método de configuração simplificada (OAuth2).\n\n No próximo passo, por favor, permita que o Delta Chat seja seu aplicativo de e-mail.\n\nNão há servidor do Delta Chat. Seus dados ficam no seu aparelho!</string>
+    <string name="login_info_oauth2_text">Seu servidor de e-mail aceita o método de configuração simplificada (OAuth2).\n\n No próximo passo, por favor, permita que o ArcaneChat seja seu aplicativo de e-mail.\n\nNão há servidor do ArcaneChat. Seus dados ficam no seu aparelho!</string>
     <string name="login_error_mail">Por favor insira um endereço de e-mail válido</string>
     <string name="login_error_server">Por favor insira um servidor ou endereço IP válido</string>
     <string name="login_error_port">Por favor, insira um porto válido (1-65535)</string>
@@ -242,7 +242,7 @@
     <string name="pref_blocked_contacts">Bloquear contactos</string>
     <string name="pref_who_can_see_profile_explain">A sua foto e nome de perfil serão mostrados ao lado das suas mensagens ao comunicar com outros utilizadores. As informações já enviadas não podem ser excluídas ou removidas</string>
     <string name="pref_your_name">O seu nome</string>
-    <!-- Translators: Visible only to recipients who DO NOT use Delta Chat, so it's the last line in an E-mail and not a "Status". -->
+    <!-- Translators: Visible only to recipients who DO NOT use ArcaneChat, so it's the last line in an E-mail and not a "Status". -->
     <string name="pref_default_status_label">Informação do estado</string>
     <string name="pref_enter_sends">Tecla ENTER para enviar</string>
     <string name="pref_enter_sends_explain">Pressionar a tecla ENTER enviará mensagens de texto</string>
@@ -273,7 +273,7 @@
     <string name="pref_read_receipts_explain">Se as confirmações de leitura estiverem desactivadas, não poderá ver os recibos de leitura de outras pessoas.</string>
     <string name="pref_manage_keys">Gerir teclas</string>
     <string name="pref_use_system_emoji">Utilizar o emoji do sistema</string>
-    <string name="pref_use_system_emoji_explain">Desactivar o suporte integrado de emojis no Delta Chat</string>
+    <string name="pref_use_system_emoji_explain">Desactivar o suporte integrado de emojis no ArcaneChat</string>
     <string name="pref_app_access">Acesso à App</string>
     <string name="pref_chats">chats</string>
     <string name="pref_in_chat_sounds">Sons na chat</string>
@@ -297,7 +297,7 @@
     <string name="pref_imap_folder_handling">Manipulação da pasta do IMAP</string>
     <string name="pref_imap_folder_warn_disable_defaults">Se desabilitar esta opção, verifique se seu servidor e seus outros clientes estão configurados adequadamente. \n\ncaso contrário, as coisas podem não funcionar.</string>
     <string name="pref_watch_sent_folder">Ver a pasta de enviados</string>
-    <string name="pref_auto_folder_moves">Mover pasta automaticamente para o Delta Chat</string>
+    <string name="pref_auto_folder_moves">Mover pasta automaticamente para o ArcaneChat</string>
     <string name="pref_auto_folder_moves_explain">As chats de chat são movidas para evitar atravancar da pasta Inbox</string>
     <string name="pref_show_emails">Exibir e-mails comuns</string>
     <string name="pref_show_emails_no">Não, apenas conversas</string>
@@ -374,10 +374,10 @@
     <!-- permissions -->
     <string name="perm_required_title">Permissão necessária</string>
     <string name="perm_continue">Continuar</string>
-    <string name="perm_explain_access_to_camera_denied">O Delta Chat necessita de permissão de acesso à Câmera para tirar fotos ou vídeos, mas o acesso foi negado permanentemente. Por favor, continue no menu de configurações do aplicativo, selecione \"Permissões\" e active \"Câmera\".</string>
-    <string name="perm_explain_access_to_mic_denied">O Delta Chat necessita de permissão de  acesso ao microfone para enviar mensagens de áudio, mas foi negado. Por favor, continue com as configurações do aplicativo, selecione \"Permissões\" e active \"Microfone\".</string>
-    <string name="perm_explain_access_to_storage_denied">O Delta Chat necessita da permissão de armazenamento para anexar ou exportar fotos, vídeos ou áudio, mas foi negado. Por favor, continue no menu de configurações do aplicativo, seleccione \"Permissões\" e active \"Armazenamento\".</string>
-    <string name="perm_explain_access_to_location_denied">O Delta Chat necessita permissão de acesso à localização para anexar um local, mas ele negado. Por favor, continue no menu de configurações do aplicativo, selecione \"Permissões \"e ative \"Localização\".</string>
+    <string name="perm_explain_access_to_camera_denied">O ArcaneChat necessita de permissão de acesso à Câmera para tirar fotos ou vídeos, mas o acesso foi negado permanentemente. Por favor, continue no menu de configurações do aplicativo, selecione \"Permissões\" e active \"Câmera\".</string>
+    <string name="perm_explain_access_to_mic_denied">O ArcaneChat necessita de permissão de  acesso ao microfone para enviar mensagens de áudio, mas foi negado. Por favor, continue com as configurações do aplicativo, selecione \"Permissões\" e active \"Microfone\".</string>
+    <string name="perm_explain_access_to_storage_denied">O ArcaneChat necessita da permissão de armazenamento para anexar ou exportar fotos, vídeos ou áudio, mas foi negado. Por favor, continue no menu de configurações do aplicativo, seleccione \"Permissões\" e active \"Armazenamento\".</string>
+    <string name="perm_explain_access_to_location_denied">O ArcaneChat necessita permissão de acesso à localização para anexar um local, mas ele negado. Por favor, continue no menu de configurações do aplicativo, selecione \"Permissões \"e ative \"Localização\".</string>
     <!-- dc_str_* resources -->
     <string name="encrypted_message">Mensagem encriptada</string>
 
@@ -415,5 +415,5 @@
     <string name="menu.view.developer.open.log.folder">Abrir pasta de Log</string>
     <string name="menu.view.developer.open.current.log.file">Abrir o aqrquio do log actual</string>
     <!-- disabling "Reliable service" will hide a the maybe annoying permanent-notification with the drawback that new-message-notifications get potentially unreliable -->
-    <string name="perm_enable_bg_reminder_title">Toque aqui para receber mensagens mesmo que o Delta Chat esteja em segundo plano.</string>
+    <string name="perm_enable_bg_reminder_title">Toque aqui para receber mensagens mesmo que o ArcaneChat esteja em segundo plano.</string>
     </resources>

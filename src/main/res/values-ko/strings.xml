@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- common strings without special context -->
-    <string name="app_name">DeltaLab</string>
+    <string name="app_name">ArcaneChat</string>
     <string name="ok">확인</string>
     <string name="cancel">취소</string>
    <string name="clear_search">검색 지우기</string>
@@ -39,7 +39,7 @@
     <string name="unarchive">보관 취소</string>
     <string name="mute">음소거</string>
     <string name="ephemeral_messages">사라지는 메시지</string>
-    <string name="ephemeral_messages_hint">Delta Chat을 사용하는 경우 이 대화의 모든 구성원에게 적용되며, 메시지를 복사, 저장 및 회송하거나 다른 전자우편 클라이언트를 사용할 수 있습니다.</string>
+    <string name="ephemeral_messages_hint">ArcaneChat을 사용하는 경우 이 대화의 모든 구성원에게 적용되며, 메시지를 복사, 저장 및 회송하거나 다른 전자우편 클라이언트를 사용할 수 있습니다.</string>
     <string name="save">저장</string>
     <string name="chat">채팅</string>
     <string name="media">매체</string>
@@ -457,7 +457,7 @@
     <!-- for classic email, we use the classical term "Account" -->
     <string name="login_explain">존재하는 이메일 계정으로 로그인하시오</string>
     <string name="login_subheader">알려진 이메일 공급자의 경우 추가 설정이 자동으로 설정됩니다. 웹 설정에서 IMAP을 사용 가능으로 설정해야 하는 경우가 있습니다. 도움이 필요하면 전자 메일 공급자나 친구에게 문의하십시오.</string>
-    <string name="login_no_servers_hint">Delta Chat은 서버가 없고, 당신의 데이터는 장치에 남아 있습니다.</string>
+    <string name="login_no_servers_hint">ArcaneChat은 서버가 없고, 당신의 데이터는 장치에 남아 있습니다.</string>
     <string name="login_inbox">받은 편지함</string>
     <string name="login_imap_login">IMAP 로그인 이름</string>
     <string name="login_imap_server">IMAP 서버</string>
@@ -478,7 +478,7 @@
     <string name="login_socks5_user">SOCKS5 사용자</string>
     <string name="login_socks5_password">SOCKS5 비밀번호</string>
     <string name="login_info_oauth2_title">간소화된 설치를 계속하시겠습니까?</string>
-    <string name="login_info_oauth2_text">입력한 이메일 주소는 단순화된 설정(OAuth 2.0)을 지원합니다.\n\n다음 단계에서는 Delta Chat 이 이메일을 통한 채팅 앱 역할을 하도록 허용하십시오.\n\nDelta 채팅 서버가 없으며 데이터가 장치에 남아 있습니다.</string>
+    <string name="login_info_oauth2_text">입력한 이메일 주소는 단순화된 설정(OAuth 2.0)을 지원합니다.\n\n다음 단계에서는 ArcaneChat 이 이메일을 통한 채팅 앱 역할을 하도록 허용하십시오.\n\nDelta 채팅 서버가 없으며 데이터가 장치에 남아 있습니다.</string>
     <string name="login_certificate_checks">인증서 확인</string>
     <string name="login_error_mail">유효한 이메일 주소를 입력하시오</string>
     <string name="login_error_server">유효한 서버 / IP 주소를 입력하시오</string>
@@ -521,7 +521,7 @@
     <string name="pref_password_and_account_settings">계정 설정</string>
     <string name="pref_who_can_see_profile_explain">다른 사용자와 통신할 때 프로필 이미지, 이름 및 서명이 메시지와 함께 전송됩니다.</string>
     <string name="pref_your_name">내 이름</string>
-    <!-- Translators: Visible only to recipients who DO NOT use Delta Chat, so it's the last line in an E-mail and not a "Status". -->
+    <!-- Translators: Visible only to recipients who DO NOT use ArcaneChat, so it's the last line in an E-mail and not a "Status". -->
     <string name="pref_default_status_label">서명 텍스트</string>
     <string name="pref_enter_sends">엔터키로 메시지 전송</string>
     <string name="pref_enter_sends_explain">Enter 키를 누르면 문자 메시지가 전송됩니다.</string>
@@ -557,7 +557,7 @@
     <string name="pref_read_receipts_explain">열람 안내 기능이 꺼져 있다면, 다른 사람이 메시지를 열람했는지의 여부 또한 볼 수 없습니다.</string>
     <string name="pref_manage_keys">키 관리</string>
     <string name="pref_use_system_emoji">시스템 이모티콘 사용</string>
-    <string name="pref_use_system_emoji_explain">Delta Chat 이모티콘 사용 중지</string>
+    <string name="pref_use_system_emoji_explain">ArcaneChat 이모티콘 사용 중지</string>
     <string name="pref_app_access">앱 접근</string>
     <string name="pref_chats">채팅</string>
     <string name="pref_in_chat_sounds">앱 내 알림</string>
@@ -633,7 +633,7 @@
     <!-- %1$d will be replaced by the number of messages, you can assume plural/lots here. %2$s will be replaced by a timespan option. -->
     <string name="autodel_device_ask">%1$d 메시지와 새로 가져온 모든 메시지 \"%2$s\"를 나중에 삭제하시겠습니까?\n\n• 여기에는 모든 미디어가 포함됩니다.\n\n• 메시지가 표시되었는지 여부에 관계없이 삭제됩니다.\n\n• \"저장된 메시지\"는 로컬 삭제에서 건너뜁니다.</string>
     <!-- shown below enabled autodel_server-option, should be a summary of autodel_server_ask and remind about the impact -->
-    <string name="autodel_server_enabled_hint">여기에는 모든 서버 폴더에 있는 전자 메일, 미디어 및 \"저장된 메시지\"가 포함됩니다. 서버에 데이터를 보관하거나 Delta Chat 외에 다른 이메일 클라이언트를 사용하는 경우 이 기능을 사용하지 마십시오.</string>
+    <string name="autodel_server_enabled_hint">여기에는 모든 서버 폴더에 있는 전자 메일, 미디어 및 \"저장된 메시지\"가 포함됩니다. 서버에 데이터를 보관하거나 ArcaneChat 외에 다른 이메일 클라이언트를 사용하는 경우 이 기능을 사용하지 마십시오.</string>
     <string name="autodel_confirm">알겠습니다. 모든 메시지를 삭제하세요.</string>
     <!-- "At once" in the meaning of "Immediately", without any intervening time. -->
     <string name="autodel_at_once">한 번에</string>
@@ -820,9 +820,9 @@
     <string name="encrypted_message">암호화된 메시지</string>
 
     <!-- strings introduced on desktop. we want to share strings between the os, in general, please do not add generic strings here -->
-    <string name="about_offical_app_desktop">이것은 Delta Chat 데스크톱 공식 앱입니다.</string>
+    <string name="about_offical_app_desktop">이것은 ArcaneChat 데스크톱 공식 앱입니다.</string>
     <string name="about_licensed_under_desktop">이 소프트웨어는 GNU GPL 버전 3에 따라 라이센스가 부여되며 소스 코드는 GitHub에서 사용할 수 있습니다.</string>
-    <string name="welcome_desktop">Delta Chat에 오신 것을 환영합니다.</string>
+    <string name="welcome_desktop">ArcaneChat에 오신 것을 환영합니다.</string>
     <string name="global_menu_preferences_language_desktop">언어</string>
     <string name="global_menu_file_desktop">파일</string>
     <string name="global_menu_file_quit_desktop">그만두기</string>
@@ -837,11 +837,11 @@
     <string name="global_menu_view_developer_desktop">개발자</string>
     <string name="global_menu_view_developer_tools_desktop">개발자 도구</string>
     <string name="global_menu_help_desktop">도움말</string>
-    <string name="global_menu_help_learn_desktop">Delta Chat에 대해 더 알아보기</string>
+    <string name="global_menu_help_learn_desktop">ArcaneChat에 대해 더 알아보기</string>
     <string name="global_menu_help_contribute_desktop">GitHub에 기여</string>
     <string name="global_menu_help_report_desktop">문제 보고</string>
-    <string name="global_menu_help_about_desktop">Delta Chat에 대해</string>
-    <string name="global_menu_file_open_desktop">Delta Chat 열기</string>
+    <string name="global_menu_help_about_desktop">ArcaneChat에 대해</string>
+    <string name="global_menu_file_open_desktop">ArcaneChat 열기</string>
     <string name="global_menu_minimize_to_tray">최소화</string>
     <string name="no_chat_selected_suggestion_desktop">채팅 선택 또는 새로운 채팅 생성</string>
     <string name="write_message_desktop">메시지 작성</string>
@@ -892,7 +892,7 @@
     <string name="import_device_contacts">장치 연락처 가져오기</string>
     <string name="import_device_contacts_hint">단말기에서 연락처와 대화하려면 설정을 열고 \"연락처\"를 활성화합니다.</string>
     <!-- iOS notification settings -->
-    <string name="disabled_in_dc">Delta Chat에서 비활성화됨</string>
+    <string name="disabled_in_dc">ArcaneChat에서 비활성화됨</string>
     <string name="disabled_in_system_settings">환경설정에서 비활성화됨</string>
     <string name="bg_app_refresh_disabled">시스템 설정에서 \"백그라운드 앱 새로 고침\"이 비활성화됨</string>
     <!-- iOS connectivity view, Adjective, used eg. as "Notifications: Delayed" -->
@@ -906,18 +906,18 @@
     <string name="shortcut_step1_tap_share_btn">공유 버튼을 누르시오</string>
     <string name="shortcut_step2_tap_add_to_home_screen">홈 화면에 앱을 추가하려면 \"홈 화면에 추가\"를 선택합니다.</string>
     <!-- iOS permissions, copy from "deltachat-ios/Info.plist", which is used on missing translations in "deltachat-ios/LANG.lproj/InfoPlist.strings" -->
-    <string name="InfoPlist_NSCameraUsageDescription">Delta Chat은 카메라를 사용하여 사진과 비디오를 찍고 전송하고 QR 코드를 스캔합니다.</string>
-    <string name="InfoPlist_NSContactsUsageDescription">Delta Chat 은 연락처를 사용하여 쓸 수 있는 이메일 주소 목록을 표시합니다. Delta Chat 에는 서버가 없으며 연락처는 아무 곳에도 전송되지 않습니다.</string>
-    <string name="InfoPlist_NSLocationAlwaysAndWhenInUseUsageDescription">Delta Chat 에서는 위치 공유를 사용하도록 설정한 기간 동안 사용자의 위치를 공유할 수 있는 권한이 필요합니다.</string>
-    <string name="InfoPlist_NSLocationWhenInUseUsageDescription">Delta Chat 에서는 위치 공유를 사용하도록 설정한 기간 동안 사용자의 위치를 공유할 수 있는 권한이 필요합니다.</string>
-    <string name="InfoPlist_NSMicrophoneUsageDescription">Delta Chat 은 마이크를 사용하여 음성 메시지와 비디오를 소리와 함께 녹음하고 전송합니다.</string>
-    <string name="InfoPlist_NSPhotoLibraryUsageDescription">Delta Chat 을 통해 라이브러리에서 보낼 사진을 선택할 수 있습니다.</string>
-    <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">Delta Chat 에서 사진 라이브러리에 이미지를 저장하려고 합니다.</string>
+    <string name="InfoPlist_NSCameraUsageDescription">ArcaneChat은 카메라를 사용하여 사진과 비디오를 찍고 전송하고 QR 코드를 스캔합니다.</string>
+    <string name="InfoPlist_NSContactsUsageDescription">ArcaneChat 은 연락처를 사용하여 쓸 수 있는 이메일 주소 목록을 표시합니다. ArcaneChat 에는 서버가 없으며 연락처는 아무 곳에도 전송되지 않습니다.</string>
+    <string name="InfoPlist_NSLocationAlwaysAndWhenInUseUsageDescription">ArcaneChat 에서는 위치 공유를 사용하도록 설정한 기간 동안 사용자의 위치를 공유할 수 있는 권한이 필요합니다.</string>
+    <string name="InfoPlist_NSLocationWhenInUseUsageDescription">ArcaneChat 에서는 위치 공유를 사용하도록 설정한 기간 동안 사용자의 위치를 공유할 수 있는 권한이 필요합니다.</string>
+    <string name="InfoPlist_NSMicrophoneUsageDescription">ArcaneChat 은 마이크를 사용하여 음성 메시지와 비디오를 소리와 함께 녹음하고 전송합니다.</string>
+    <string name="InfoPlist_NSPhotoLibraryUsageDescription">ArcaneChat 을 통해 라이브러리에서 보낼 사진을 선택할 수 있습니다.</string>
+    <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">ArcaneChat 에서 사진 라이브러리에 이미지를 저장하려고 합니다.</string>
 
 
-    <string name="pref_background_notifications_rationale">이메일 서버에 대한 연결을 유지하고 백그라운드에서 메시지를 수신하려면 다음 단계에서 배터리 최적화를 무시하십시오.\n\nDelta Chat은 리소스를 거의 사용하지 않으며 배터리가 소모되지 않도록 주의합니다.</string>
+    <string name="pref_background_notifications_rationale">이메일 서버에 대한 연결을 유지하고 백그라운드에서 메시지를 수신하려면 다음 단계에서 배터리 최적화를 무시하십시오.\n\nArcaneChat은 리소스를 거의 사용하지 않으며 배터리가 소모되지 않도록 주의합니다.</string>
     <!-- disabling "Reliable service" will hide a the maybe annoying permanent-notification with the drawback that new-message-notifications get potentially unreliable -->
-    <string name="perm_enable_bg_reminder_title">Delta Chat이 백그라운드에 있는 동안 메시지를 받으려면 여기를 누르십시오.</string>
-    <string name="perm_enable_bg_already_done">이미 Delta Chat 에서 백그라운드로 메시지를 수신하도록 허용했습니다.\n\n메시지가 여전히 백그라운드로 도착하지 않으면 시스템 설정도 확인하십시오.</string>
+    <string name="perm_enable_bg_reminder_title">ArcaneChat이 백그라운드에 있는 동안 메시지를 받으려면 여기를 누르십시오.</string>
+    <string name="perm_enable_bg_already_done">이미 ArcaneChat 에서 백그라운드로 메시지를 수신하도록 허용했습니다.\n\n메시지가 여전히 백그라운드로 도착하지 않으면 시스템 설정도 확인하십시오.</string>
 
     </resources>
