@@ -21,7 +21,6 @@ import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.mms.GlideRequests;
 import org.thoughtcrime.securesms.recipients.Recipient;
 import org.thoughtcrime.securesms.util.DateUtils;
-import org.thoughtcrime.securesms.util.DynamicLanguage;
 import org.thoughtcrime.securesms.util.ViewUtil;
 
 import java.util.Locale;
@@ -126,8 +125,7 @@ public class ConversationTitleView extends RelativeLayout {
           if (timestamp == 0) {
             subtitleStr = dcContact.getAddr();
           } else {
-            Locale locale = DynamicLanguage.getSelectedLocale(context);
-            subtitleStr = context.getString(R.string.last_seen_at, DateUtils.getExtendedTimeSpanString(context, locale, timestamp));
+            subtitleStr = context.getString(R.string.last_seen_at, DateUtils.getExtendedTimeSpanString(context, timestamp));
           }
         }
       }

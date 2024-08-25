@@ -11,10 +11,6 @@
         <item name="colorPrimary">@color/def_primary</item>
         <item name="colorPrimaryDark">@color/def_primary</item>
 
-        <item name="recipient_preference_blocked">#d00000</item>
-        <item name="contact_selection_label_text">#66000000</item>
-        <item name="contact_selection_header_text">@color/def_primary_dark</item>
-
         <item name="profile_toolbar_background">@color/white</item>
         <item name="profile_toolbar_foreground">@color/gray70</item>
         <item name="profile_header_foreground">@color/gray50</item>
@@ -30,10 +26,6 @@
         <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
         <item name="colorPrimary">@color/gray95</item>
         <item name="colorPrimaryDark">@color/gray95</item>
-
-        <item name="recipient_preference_blocked">#d00000</item>
-        <item name="contact_selection_label_text">#66eeeeee</item>
-        <item name="contact_selection_header_text">#66eeeeee</item>
 
         <item name="profile_toolbar_background">@color/black</item>
         <item name="profile_toolbar_foreground">@color/white</item>
@@ -63,10 +55,8 @@
 	<item name="conversation_list_item_unreadcount_color">@color/def_unreadcount</item>
         <item name="conversation_list_item_background">@drawable/conversation_list_item_background</item>
         <item name="pinned_list_item_background">@drawable/pinned_list_item_background</item>
-        <item name="conversation_list_deaddrop_bg_color">@color/pinned_bg</item>
         <item name="conversation_list_item_contact_color">@color/core_light_90</item>
         <item name="conversation_list_item_subject_color">@color/core_light_60</item>
-        <item name="conversation_list_item_delivery_icon_color">@color/core_light_35</item>
         <item name="conversation_list_item_date_color">@color/core_light_60</item>
         <item name="conversation_list_item_unread_color">@color/core_black</item>
         <item name="conversation_list_item_divider">@drawable/conversation_list_divider_shape</item>
@@ -82,13 +72,8 @@
         <item name="lower_right_divet">@drawable/divet_lower_right_dark</item>
         <item name="close_icon_color">#A4A6A9</item>
 
-        <item name="conversation_group_member_name">#99000000</item>
-
         <!-- light theme -->
         <item name="conversation_background">@color/gray10</item>
-        <item name="conversation_editor_background">#22000000</item>
-        <item name="conversation_editor_text_color">@color/gray95</item>
-        <item name="conversation_input_background">@drawable/compose_background_light</item>
         <item name="conversation_transport_sms_indicator">@drawable/ic_send_sms_insecure</item>
         <item name="conversation_transport_push_indicator">@drawable/ic_send_push</item>
         <item name="conversation_transport_popup_background">@color/white</item>
@@ -105,8 +90,6 @@
 
         <item name="contact_list_divider">@drawable/contact_list_divider_light</item>
         <item name="contact_list_divider_color">@color/gray65</item>
-
-        <item name="verification_background">@color/gray5</item>
 
         <item name="emoji_tab_strip_background">@color/gray12</item>
         <item name="emoji_tab_indicator">#66555555</item>
@@ -157,12 +140,6 @@
         <item name="dialog_alert_icon">@drawable/ic_warning_light</item>
         <item name="dialog_background_color">@color/background_material_light</item>
 
-        <item name="device_link_item_card_background">@color/device_link_item_background_light</item>
-
-        <item name="import_export_item_background_color">@color/import_export_item_background_light</item>
-        <item name="import_export_item_background_shadow_color">@color/import_export_item_background_shadow_light</item>
-        <item name="import_export_item_card_background">@drawable/clickable_card_light</item>
-
         <item name="menu_new_conversation_icon">@drawable/ic_add_white_24dp</item>
         <item name="menu_search_icon">@drawable/ic_search_white_24dp</item>
         <item name="menu_popup_expand">@drawable/ic_launch_white_24dp</item>
@@ -176,21 +153,16 @@
         <item name="menu_forward_icon">@drawable/ic_forward_white_24dp</item>
         <item name="menu_reply_icon">@drawable/ic_reply_white_24dp</item>
 
-        <item name="pref_icon_tint">@color/def_primary_dark</item>
+        <item name="pref_icon_tint">@color/def_primary</item>
         <item name="icon_tint">@color/grey_700</item>
         <item name="icon_tint_dark">@color/grey_100</item>
 
         <item name="quote_dismiss_button_tint">@color/gray70</item>
 
-        <item name="group_members_dialog_icon">@drawable/ic_group_grey600_24dp</item>
         <item name="preferenceTheme">@style/PreferenceThemeOverlay.Fix</item>
 
         <item name="search_toolbar_background">@color/white</item>
         <item name="search_background">@color/white</item>
-
-        <item name="shared_contact_details_header_background">@color/grey_100</item>
-        <item name="shared_contact_details_titlebar">@color/grey_400</item>
-        <item name="shared_contact_item_button_color">@color/core_light_02</item>
     </style>
 
     <style name="TextSecure.DarkTheme" parent="@style/Theme.AppCompat">
@@ -214,13 +186,11 @@
 
         <item name="attachment_type_selector_background">@color/gray95</item>
 
-	<item name="conversation_list_item_unreadcount_color">@color/def_unreadcount</item>
+	    <item name="conversation_list_item_unreadcount_color">@color/def_unreadcount</item>
         <item name="conversation_list_item_background">@drawable/conversation_list_item_background</item>
         <item name="pinned_list_item_background">@drawable/pinned_list_item_background</item>
-        <item name="conversation_list_deaddrop_bg_color">@color/pinned_bg_dark</item>
         <item name="conversation_list_item_contact_color">@color/white</item>
         <item name="conversation_list_item_subject_color">@color/core_dark_30</item>
-        <item name="conversation_list_item_delivery_icon_color">@color/core_dark_55</item>
         <item name="conversation_list_item_date_color">@color/core_dark_30</item>
         <item name="conversation_list_item_unread_color">@color/core_white</item>
         <item name="conversation_list_item_divider">@drawable/conversation_list_divider_shape_dark</item>
@@ -230,8 +200,6 @@
         <item name="button_bg">@drawable/button_bg</item>
         <item name="secondary_button_fg">@color/gray10</item>
         <item name="floating_mini_bg">@drawable/floating_mini_bg_dark</item>
-
-        <item name="conversation_group_member_name">@color/sticker_selected_color</item>
 
         <!-- dark theme -->
         <item name="conversation_item_incoming_bubble_color">@color/black</item>
@@ -257,17 +225,9 @@
         <item name="contact_list_divider">@drawable/contact_list_divider_dark</item>
         <item name="contact_list_divider_color">@color/gray10</item>
 
-        <item name="verification_background">@color/import_export_item_background_dark</item>
-
         <item name="dialog_info_icon">@drawable/ic_info_outline_dark</item>
         <item name="dialog_alert_icon">@drawable/ic_warning_dark</item>
         <item name="dialog_background_color">@color/background_material_dark</item>
-
-        <item name="device_link_item_card_background">@color/device_link_item_background_dark</item>
-
-        <item name="import_export_item_background_color">@color/import_export_item_background_dark</item>
-        <item name="import_export_item_background_shadow_color">@color/import_export_item_background_shadow_dark</item>
-        <item name="import_export_item_card_background">@drawable/clickable_card_dark</item>
 
         <item name="fab_color">@color/def_primary_lite</item>
         <item name="input_panel_bg_color">@color/gray95</item>
@@ -276,9 +236,6 @@
 
         <!-- dark theme -->
         <item name="conversation_background">@color/black</item>
-        <item name="conversation_editor_background">#22ffffff</item>
-        <item name="conversation_editor_text_color">@color/gray5</item>
-        <item name="conversation_input_background">@drawable/compose_background_dark</item>
         <item name="conversation_transport_sms_indicator">@drawable/ic_send_sms_insecure_dark</item>
         <item name="conversation_transport_push_indicator">@drawable/ic_send_push</item>
         <item name="conversation_transport_popup_background">@color/black</item>
@@ -329,20 +286,15 @@
         <item name="menu_forward_icon">@drawable/ic_forward_white_24dp</item>
         <item name="menu_reply_icon">@drawable/ic_reply_white_24dp</item>
 
-        <item name="pref_icon_tint">@color/def_primary_dark</item>
+        <item name="pref_icon_tint">@color/def_primary</item>
         <item name="icon_tint">@color/grey_100</item>
         <item name="icon_tint_dark">?icon_tint</item>
 
         <item name="quote_dismiss_button_tint">@color/core_white</item>
 
-        <item name="group_members_dialog_icon">@drawable/ic_group_white_24dp</item>
         <item name="preferenceTheme">@style/PreferenceThemeOverlay.Fix</item>
         <item name="search_toolbar_background">@color/black</item>
         <item name="search_background">@color/black</item>
-
-        <item name="shared_contact_details_header_background">@color/grey_800</item>
-        <item name="shared_contact_details_titlebar">@color/grey_900</item>
-        <item name="shared_contact_item_button_color">@color/core_dark_85</item>
     </style>
     
     <style name="TextSecure.ScribbleTheme" parent="TextSecure.DarkNoActionBar">
@@ -361,7 +313,7 @@
         <item name="actionBarStyle">@style/TextSecure.PurpleActionBar</item>
         <item name="actionBarTabBarStyle">@style/TextSecure.PurpleActionBar.TabBar</item>
         <item name="colorPrimary">@color/purple_primary</item>
-        <item name="colorPrimaryDark">@color/purple_primary_dark</item>
+        <item name="colorPrimaryDark">@color/purple_primary</item>
 
         <item name="colorAccent">@color/purple_accent</item>
         <item name="colorControlActivated">@color/purple_accent</item>
@@ -378,7 +330,7 @@
         <item name="conversation_item_outgoing_text_secondary_color">@color/purple_outgoing_label</item>
         <item name="conversation_item_background">@drawable/conversation_item_background_purple</item>
         <item name="conversation_item_background_animated">@drawable/conversation_item_background_animated_purple</item>
-        <item name="pref_icon_tint">@color/purple_primary_dark</item>
+        <item name="pref_icon_tint">@color/purple_primary</item>
     </style>
     <style name="TextSecure.PurpleNoActionBar" parent="@style/TextSecure.PurpleTheme">
         <item name="windowActionBar">false</item>
@@ -386,10 +338,6 @@
         <item name="windowActionModeOverlay">true</item>
 
         <item name="theme_type">light</item>
-
-        <item name="recipient_preference_blocked">#d00000</item>
-        <item name="contact_selection_label_text">#66000000</item>
-        <item name="contact_selection_header_text">@color/purple_primary_dark</item>
 
         <item name="profile_toolbar_background">@color/white</item>
         <item name="profile_toolbar_foreground">@color/gray70</item>
@@ -413,7 +361,7 @@
         <item name="conversation_item_outgoing_text_secondary_color">@color/purple_outgoing_label</item>
         <item name="conversation_item_background">@drawable/conversation_item_background_purple</item>
         <item name="conversation_item_background_animated">@drawable/conversation_item_background_animated_purple</item>
-        <item name="pref_icon_tint">@color/purple_primary_dark</item>
+        <item name="pref_icon_tint">@color/purple_primary</item>
     </style>
     <style name="TextSecure.PurpleDarkNoActionBar" parent="@style/TextSecure.PurpleDarkTheme">
         <item name="windowActionBar">false</item>
@@ -423,10 +371,6 @@
         <item name="theme_type">dark</item>
         <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
         <item name="colorPrimary">@color/gray95</item>
-
-        <item name="recipient_preference_blocked">#d00000</item>
-        <item name="contact_selection_label_text">#66eeeeee</item>
-        <item name="contact_selection_header_text">#66eeeeee</item>
 
         <item name="profile_toolbar_background">@color/black</item>
         <item name="profile_toolbar_foreground">@color/white</item>
@@ -440,7 +384,7 @@
         <item name="actionBarStyle">@style/TextSecure.GreenActionBar</item>
         <item name="actionBarTabBarStyle">@style/TextSecure.GreenActionBar.TabBar</item>
         <item name="colorPrimary">@color/green_primary</item>
-        <item name="colorPrimaryDark">@color/green_primary_dark</item>
+        <item name="colorPrimaryDark">@color/green_primary</item>
 
         <item name="colorAccent">@color/green_accent</item>
         <item name="colorControlActivated">@color/green_accent</item>
@@ -457,7 +401,7 @@
         <item name="conversation_item_outgoing_text_secondary_color">@color/green_outgoing_label</item>
         <item name="conversation_item_background">@drawable/conversation_item_background_green</item>
         <item name="conversation_item_background_animated">@drawable/conversation_item_background_animated_green</item>
-        <item name="pref_icon_tint">@color/green_primary_dark</item>
+        <item name="pref_icon_tint">@color/green_primary</item>
     </style>
     <style name="TextSecure.GreenNoActionBar" parent="@style/TextSecure.GreenTheme">
         <item name="windowActionBar">false</item>
@@ -465,10 +409,6 @@
         <item name="windowActionModeOverlay">true</item>
 
         <item name="theme_type">light</item>
-
-        <item name="recipient_preference_blocked">#d00000</item>
-        <item name="contact_selection_label_text">#66000000</item>
-        <item name="contact_selection_header_text">@color/green_primary_dark</item>
 
         <item name="profile_toolbar_background">@color/white</item>
         <item name="profile_toolbar_foreground">@color/gray70</item>
@@ -492,7 +432,7 @@
         <item name="conversation_item_outgoing_text_secondary_color">@color/green_outgoing_label</item>
         <item name="conversation_item_background">@drawable/conversation_item_background_green</item>
         <item name="conversation_item_background_animated">@drawable/conversation_item_background_animated_green</item>
-        <item name="pref_icon_tint">@color/green_primary_dark</item>
+        <item name="pref_icon_tint">@color/green_primary</item>
     </style>
     <style name="TextSecure.GreenDarkNoActionBar" parent="@style/TextSecure.GreenDarkTheme">
         <item name="windowActionBar">false</item>
@@ -502,10 +442,6 @@
         <item name="theme_type">dark</item>
         <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
         <item name="colorPrimary">@color/gray95</item>
-
-        <item name="recipient_preference_blocked">#d00000</item>
-        <item name="contact_selection_label_text">#66eeeeee</item>
-        <item name="contact_selection_header_text">#66eeeeee</item>
 
         <item name="profile_toolbar_background">@color/black</item>
         <item name="profile_toolbar_foreground">@color/white</item>
@@ -520,7 +456,7 @@
         <item name="actionBarStyle">@style/TextSecure.BlueActionBar</item>
         <item name="actionBarTabBarStyle">@style/TextSecure.BlueActionBar.TabBar</item>
         <item name="colorPrimary">@color/blue_primary</item>
-        <item name="colorPrimaryDark">@color/blue_primary_dark</item>
+        <item name="colorPrimaryDark">@color/blue_primary</item>
 
         <item name="colorAccent">@color/blue_accent</item>
         <item name="colorControlActivated">@color/blue_accent</item>
@@ -537,7 +473,7 @@
         <item name="conversation_item_outgoing_text_secondary_color">@color/blue_outgoing_label</item>
         <item name="conversation_item_background">@drawable/conversation_item_background_blue</item>
         <item name="conversation_item_background_animated">@drawable/conversation_item_background_animated_blue</item>
-        <item name="pref_icon_tint">@color/blue_primary_dark</item>
+        <item name="pref_icon_tint">@color/blue_primary</item>
     </style>
     <style name="TextSecure.BlueNoActionBar" parent="@style/TextSecure.BlueTheme">
         <item name="windowActionBar">false</item>
@@ -545,10 +481,6 @@
         <item name="windowActionModeOverlay">true</item>
 
         <item name="theme_type">light</item>
-
-        <item name="recipient_preference_blocked">#d00000</item>
-        <item name="contact_selection_label_text">#66000000</item>
-        <item name="contact_selection_header_text">@color/blue_primary_dark</item>
 
         <item name="profile_toolbar_background">@color/white</item>
         <item name="profile_toolbar_foreground">@color/gray70</item>
@@ -572,7 +504,7 @@
         <item name="conversation_item_outgoing_text_secondary_color">@color/blue_outgoing_label</item>
         <item name="conversation_item_background">@drawable/conversation_item_background_blue</item>
         <item name="conversation_item_background_animated">@drawable/conversation_item_background_animated_blue</item>
-        <item name="pref_icon_tint">@color/blue_primary_dark</item>
+        <item name="pref_icon_tint">@color/blue_primary</item>
     </style>
     <style name="TextSecure.BlueDarkNoActionBar" parent="@style/TextSecure.BlueDarkTheme">
         <item name="windowActionBar">false</item>
@@ -582,10 +514,6 @@
         <item name="theme_type">dark</item>
         <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
         <item name="colorPrimary">@color/gray95</item>
-
-        <item name="recipient_preference_blocked">#d00000</item>
-        <item name="contact_selection_label_text">#66eeeeee</item>
-        <item name="contact_selection_header_text">#66eeeeee</item>
 
         <item name="profile_toolbar_background">@color/black</item>
         <item name="profile_toolbar_foreground">@color/white</item>
@@ -599,7 +527,7 @@
         <item name="actionBarStyle">@style/TextSecure.RedActionBar</item>
         <item name="actionBarTabBarStyle">@style/TextSecure.RedActionBar.TabBar</item>
         <item name="colorPrimary">@color/red_primary</item>
-        <item name="colorPrimaryDark">@color/red_primary_dark</item>
+        <item name="colorPrimaryDark">@color/red_primary</item>
 
         <item name="colorAccent">@color/red_accent</item>
         <item name="colorControlActivated">@color/red_accent</item>
@@ -616,7 +544,7 @@
         <item name="conversation_item_outgoing_text_secondary_color">@color/red_outgoing_label</item>
         <item name="conversation_item_background">@drawable/conversation_item_background_red</item>
         <item name="conversation_item_background_animated">@drawable/conversation_item_background_animated_red</item>
-        <item name="pref_icon_tint">@color/red_primary_dark</item>
+        <item name="pref_icon_tint">@color/red_primary</item>
     </style>
     <style name="TextSecure.RedNoActionBar" parent="@style/TextSecure.RedTheme">
         <item name="windowActionBar">false</item>
@@ -624,10 +552,6 @@
         <item name="windowActionModeOverlay">true</item>
 
         <item name="theme_type">light</item>
-
-        <item name="recipient_preference_blocked">#d00000</item>
-        <item name="contact_selection_label_text">#66000000</item>
-        <item name="contact_selection_header_text">@color/red_primary_dark</item>
 
         <item name="profile_toolbar_background">@color/white</item>
         <item name="profile_toolbar_foreground">@color/gray70</item>
@@ -651,7 +575,7 @@
         <item name="conversation_item_outgoing_text_secondary_color">@color/red_outgoing_label</item>
         <item name="conversation_item_background">@drawable/conversation_item_background_red</item>
         <item name="conversation_item_background_animated">@drawable/conversation_item_background_animated_red</item>
-        <item name="pref_icon_tint">@color/red_primary_dark</item>
+        <item name="pref_icon_tint">@color/red_primary</item>
     </style>
     <style name="TextSecure.RedDarkNoActionBar" parent="@style/TextSecure.RedDarkTheme">
         <item name="windowActionBar">false</item>
@@ -661,10 +585,6 @@
         <item name="theme_type">dark</item>
         <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
         <item name="colorPrimary">@color/gray95</item>
-
-        <item name="recipient_preference_blocked">#d00000</item>
-        <item name="contact_selection_label_text">#66eeeeee</item>
-        <item name="contact_selection_header_text">#66eeeeee</item>
 
         <item name="profile_toolbar_background">@color/black</item>
         <item name="profile_toolbar_foreground">@color/white</item>
@@ -678,7 +598,7 @@
         <item name="actionBarStyle">@style/TextSecure.PinkActionBar</item>
         <item name="actionBarTabBarStyle">@style/TextSecure.PinkActionBar.TabBar</item>
         <item name="colorPrimary">@color/pink_primary</item>
-        <item name="colorPrimaryDark">@color/pink_primary_dark</item>
+        <item name="colorPrimaryDark">@color/pink_primary</item>
 
         <item name="colorAccent">@color/pink_accent</item>
         <item name="colorControlActivated">@color/pink_accent</item>
@@ -695,7 +615,7 @@
         <item name="conversation_item_outgoing_text_secondary_color">@color/pink_outgoing_label</item>
         <item name="conversation_item_background">@drawable/conversation_item_background_pink</item>
         <item name="conversation_item_background_animated">@drawable/conversation_item_background_animated_pink</item>
-        <item name="pref_icon_tint">@color/pink_primary_dark</item>
+        <item name="pref_icon_tint">@color/pink_primary</item>
     </style>
     <style name="TextSecure.PinkNoActionBar" parent="@style/TextSecure.PinkTheme">
         <item name="windowActionBar">false</item>
@@ -703,10 +623,6 @@
         <item name="windowActionModeOverlay">true</item>
 
         <item name="theme_type">light</item>
-
-        <item name="recipient_preference_blocked">#d00000</item>
-        <item name="contact_selection_label_text">#66000000</item>
-        <item name="contact_selection_header_text">@color/pink_primary_dark</item>
 
         <item name="profile_toolbar_background">@color/white</item>
         <item name="profile_toolbar_foreground">@color/gray70</item>
@@ -730,7 +646,7 @@
         <item name="conversation_item_outgoing_text_secondary_color">@color/pink_outgoing_label</item>
         <item name="conversation_item_background">@drawable/conversation_item_background_pink</item>
         <item name="conversation_item_background_animated">@drawable/conversation_item_background_animated_pink</item>
-        <item name="pref_icon_tint">@color/pink_primary_dark</item>
+        <item name="pref_icon_tint">@color/pink_primary</item>
     </style>
     <style name="TextSecure.PinkDarkNoActionBar" parent="@style/TextSecure.PinkDarkTheme">
         <item name="windowActionBar">false</item>
@@ -740,10 +656,6 @@
         <item name="theme_type">dark</item>
         <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
         <item name="colorPrimary">@color/gray95</item>
-
-        <item name="recipient_preference_blocked">#d00000</item>
-        <item name="contact_selection_label_text">#66eeeeee</item>
-        <item name="contact_selection_header_text">#66eeeeee</item>
 
         <item name="profile_toolbar_background">@color/black</item>
         <item name="profile_toolbar_foreground">@color/white</item>
@@ -757,7 +669,7 @@
         <item name="actionBarStyle">@style/TextSecure.GrayActionBar</item>
         <item name="actionBarTabBarStyle">@style/TextSecure.GrayActionBar.TabBar</item>
         <item name="colorPrimary">@color/gray_primary</item>
-        <item name="colorPrimaryDark">@color/gray_primary_dark</item>
+        <item name="colorPrimaryDark">@color/gray_primary</item>
 
         <item name="colorAccent">@color/gray_accent</item>
         <item name="colorControlActivated">@color/gray_accent</item>
@@ -774,7 +686,7 @@
         <item name="conversation_item_outgoing_text_secondary_color">@color/gray_outgoing_label</item>
         <item name="conversation_item_background">@drawable/conversation_item_background_gray</item>
         <item name="conversation_item_background_animated">@drawable/conversation_item_background_animated_gray</item>
-        <item name="pref_icon_tint">@color/gray_primary_dark</item>
+        <item name="pref_icon_tint">@color/gray_primary</item>
     </style>
     <style name="TextSecure.GrayNoActionBar" parent="@style/TextSecure.GrayTheme">
         <item name="windowActionBar">false</item>
@@ -782,10 +694,6 @@
         <item name="windowActionModeOverlay">true</item>
 
         <item name="theme_type">light</item>
-
-        <item name="recipient_preference_blocked">#d00000</item>
-        <item name="contact_selection_label_text">#66000000</item>
-        <item name="contact_selection_header_text">@color/gray_primary_dark</item>
 
         <item name="profile_toolbar_background">@color/white</item>
         <item name="profile_toolbar_foreground">@color/gray70</item>
@@ -809,7 +717,7 @@
         <item name="conversation_item_outgoing_text_secondary_color">@color/gray_outgoing_label</item>
         <item name="conversation_item_background">@drawable/conversation_item_background_gray</item>
         <item name="conversation_item_background_animated">@drawable/conversation_item_background_animated_gray</item>
-        <item name="pref_icon_tint">@color/gray_primary_dark</item>
+        <item name="pref_icon_tint">@color/gray_primary</item>
     </style>
     <style name="TextSecure.GrayDarkNoActionBar" parent="@style/TextSecure.GrayDarkTheme">
         <item name="windowActionBar">false</item>
@@ -819,10 +727,6 @@
         <item name="theme_type">dark</item>
         <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
         <item name="colorPrimary">@color/gray95</item>
-
-        <item name="recipient_preference_blocked">#d00000</item>
-        <item name="contact_selection_label_text">#66eeeeee</item>
-        <item name="contact_selection_header_text">#66eeeeee</item>
 
         <item name="profile_toolbar_background">@color/black</item>
         <item name="profile_toolbar_foreground">@color/white</item>

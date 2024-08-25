@@ -2,7 +2,6 @@
 <resources>
   <!-- DEFAULT -->
   <color name="def_primary">@color/purple_primary</color>
-  <color name="def_primary_dark">@color/purple_primary_dark</color>
   <color name="def_primary_lite">@color/purple_primary_lite</color>
   <color name="def_primary_alpha33">@color/purple_primary_alpha33</color>
   <color name="def_accent">@color/purple_accent</color>
@@ -13,7 +12,6 @@
 
   <!-- PURPLE -->
   <color name="purple_primary">#ff7b00c8</color>
-  <color name="purple_primary_dark">#ff7b00c8</color>
   <color name="purple_primary_lite">#ff7b00c8</color>
   <color name="purple_primary_alpha33">#557b00c8</color>
   <color name="purple_accent">#9646c8</color>
@@ -24,7 +22,6 @@
 
   <!-- GREEN -->
   <color name="green_primary">#ff009788</color>
-  <color name="green_primary_dark">#ff009788</color>
   <color name="green_primary_lite">#ff009788</color>
   <color name="green_primary_alpha33">#55009788</color>
   <color name="green_accent">#00b7a5</color>
@@ -35,7 +32,6 @@
 
   <!-- BLUE -->
   <color name="blue_primary">#ff517da2</color>
-  <color name="blue_primary_dark">#ff517da2</color>
   <color name="blue_primary_lite">#ff517da2</color>
   <color name="blue_primary_alpha33">#55517da2</color>
   <color name="blue_accent">#486d8f</color>
@@ -46,7 +42,6 @@
 
   <!-- RED -->
   <color name="red_primary">#ffb61c1c</color>
-  <color name="red_primary_dark">#ffb61c1c</color>
   <color name="red_primary_lite">#ffb61c1c</color>
   <color name="red_primary_alpha33">#55b61c1c</color>
   <color name="red_accent">#a41a1a</color>
@@ -57,7 +52,6 @@
 
   <!-- PINK -->
   <color name="pink_primary">#ffc84595</color>
-  <color name="pink_primary_dark">#ffc84595</color>
   <color name="pink_primary_lite">#ffc84595</color>
   <color name="pink_primary_alpha33">#55c84595</color>
   <color name="pink_accent">#a03779</color>
@@ -68,7 +62,6 @@
 
   <!-- GRAY -->
   <color name="gray_primary">#ff415e6b</color>
-  <color name="gray_primary_dark">#ff415e6b</color>
   <color name="gray_primary_lite">#4c6e7d</color>
   <color name="gray_primary_alpha33">#55415e6b</color>
   <color name="gray_accent">#3b5561</color>
@@ -107,16 +100,6 @@
 
     <color name="action_mode_status_bar">@color/gray50</color>
     <color name="touch_highlight">#400099cc</color>
-
-    <color name="device_link_item_background_light">#ffffffff</color>
-    <color name="device_link_item_background_dark">#ff333333</color>
-
-    <color name="import_export_item_background_light">#ffeeeeee</color>
-    <color name="import_export_item_background_dark">#ff333333</color>
-    <color name="import_export_item_background_shadow_light">#ffd5d5d5</color>
-    <color name="import_export_item_background_shadow_dark">#ff222222</color>
-    <color name="import_export_touch_highlight_light">#400099cc</color>
-    <color name="import_export_touch_highlight_dark">#40ffffff</color>
 
     <color name="sticker_selected_color">#99ffffff</color>
     <color name="transparent">#00FFFFFF</color>
