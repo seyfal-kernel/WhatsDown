@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- common strings without special context -->
-    <string name="app_name">DeltaLab</string>
+    <string name="app_name">ArcaneChat</string>
     <string name="ok">AB</string>
     <string name="cancel">Annulla</string>
    <string name="yes">Eja</string>
@@ -33,7 +33,7 @@
     <string name="unarchive">Riprìstina</string>
     <string name="mute">Boga su sonu</string>
     <string name="ephemeral_messages">Messàgios chi isparessent</string>
-    <string name="ephemeral_messages_hint">Custas impostatziones s\'àplicant a totu sos partetzipantes chi impreant Delta Chat. Nointames custu podent copiare, sarvare e torrare a imbiare messàgios o impreare àteros clientes de posta eletrònica.</string>
+    <string name="ephemeral_messages_hint">Custas impostatziones s\'àplicant a totu sos partetzipantes chi impreant ArcaneChat. Nointames custu podent copiare, sarvare e torrare a imbiare messàgios o impreare àteros clientes de posta eletrònica.</string>
     <string name="save">Sarva</string>
     <string name="chat">Tzarrada</string>
     <string name="media">Cuntenutu multimediale</string>
@@ -179,7 +179,7 @@
     <string name="title_share_location">Cumpartzi sa positzione cun totu sos membros de su grupu</string>
     <string name="device_talk">Messàgios de su dispositivu</string>
     <string name="device_talk_subtitle">Messàgios ingendrados localmente</string>
-    <string name="device_talk_explain">Sos messàgios in custa tzarrada benint ingendrados localmente dae s\'aplicatzone Delta Chat tua. Sos isvilupadores los impreant pro informare a pitzu de sos agiornamentos de s\'aplicatzione e de problemas durante s\'impreu.</string>
+    <string name="device_talk_explain">Sos messàgios in custa tzarrada benint ingendrados localmente dae s\'aplicatzone ArcaneChat tua. Sos isvilupadores los impreant pro informare a pitzu de sos agiornamentos de s\'aplicatzione e de problemas durante s\'impreu.</string>
     <string name="edit_contact">Modìfica su cuntatu</string>
     <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
     <string name="pin_chat">Apica sa tzarrada</string>
@@ -265,7 +265,7 @@
         <item quantity="one">%d messàgiu nou</item>
         <item quantity="other">%dmessàgios noos</item>
     </plurals>
-    <string name="chat_new_group_hint">Imbia su primu messàgiu, permitende a sos àteros de ti rispòndere in intro de custu grupu.\n\n•Lu podes fàghere fintzas si non totu sos membros impreant Delta Chat.Sa cunsinna de su primu messàgiu diat pòdere pigare un\'agigu de tempus.</string>
+    <string name="chat_new_group_hint">Imbia su primu messàgiu, permitende a sos àteros de ti rispòndere in intro de custu grupu.\n\n•Lu podes fàghere fintzas si non totu sos membros impreant ArcaneChat.Sa cunsinna de su primu messàgiu diat pòdere pigare un\'agigu de tempus.</string>
     <string name="chat_record_slide_to_cancel">Iscurre pro annulare</string>
     <string name="chat_record_explain">Incarca e mantene incarcadu pro registrare unu messàgiu vocale, lassa pro imbiare</string>
     <string name="chat_no_chats_yet_title">Cartella de intrada bòida.\nIncarca \"+\" pro abèrrere una tzarrada noa.</string>
@@ -321,7 +321,7 @@
     <!-- for classic email, we use the classical term "Account" -->
     <string name="login_explain">Intra cun un\'indiritzu de posta eletrònica chi esistat</string>
     <string name="login_subheader">Pro sos frunidores de posta eletrònica connotos sas impostatziones additzionales benint impostadas in automàticu. Cada tantu s\'IMAP cheret abilitadu in sas impostatziones web. Si ti serbit agiudu pedi a su frunidore de posta eletrònica tuo o a sos amigos tuos.</string>
-    <string name="login_no_servers_hint">No esistint serbidores de Delta Chat, sos datos tuos abarrant in su dispositivu tuo.</string>
+    <string name="login_no_servers_hint">No esistint serbidores de ArcaneChat, sos datos tuos abarrant in su dispositivu tuo.</string>
     <string name="login_inbox">In arrivu</string>
     <string name="login_imap_login">Nùmene impreadore IMAP</string>
     <string name="login_imap_server">Serbidore IMAP</string>
@@ -335,7 +335,7 @@
     <string name="login_smtp_security">Seguresa SMTP</string>
     <string name="login_auth_method">Manera de autenticatzione</string>
     <string name="login_info_oauth2_title">Cheres sighire cun s\'impostatzione semplificada?</string>
-    <string name="login_info_oauth2_text">S\'indiritzu de posta eletrònica insertadu suportat un\'impostztione semplificada (OAuth 2.0).\n\n In su passu chi sighet, pro praghere, permite a Delta Chat de operare che a aplicatzione de tzarrada pro mèdiu de posta eletrònica.\n\nNon bi sunt serbidores de Delta Chat, abarrat totu in su dispositivu tuo.</string>
+    <string name="login_info_oauth2_text">S\'indiritzu de posta eletrònica insertadu suportat un\'impostztione semplificada (OAuth 2.0).\n\n In su passu chi sighet, pro praghere, permite a ArcaneChat de operare che a aplicatzione de tzarrada pro mèdiu de posta eletrònica.\n\nNon bi sunt serbidores de ArcaneChat, abarrat totu in su dispositivu tuo.</string>
     <string name="login_certificate_checks">Verìficas de su tzertificadu</string>
     <string name="login_error_mail">Inserta un\'indiritzu de posta eletrònica bàlidu</string>
     <string name="login_error_server">Inserta un\'indiritzu de serbidore / IP bàlidu</string>
@@ -376,7 +376,7 @@
     <string name="pref_password_and_account_settings">Crae de intrada e contu</string>
     <string name="pref_who_can_see_profile_explain">S\'immàgine de profilu tua e su nùmene tuo ant a èssere ammustrados in paris cun sos messàgios tuos cando ses comunichende cun àteros impreadores. Sas informatziones giai imbiadas non podent èssere iscantzelladas o bogadas.</string>
     <string name="pref_your_name">Su nùmene tuo</string>
-    <!-- Translators: Visible only to recipients who DO NOT use Delta Chat, so it's the last line in an E-mail and not a "Status". -->
+    <!-- Translators: Visible only to recipients who DO NOT use ArcaneChat, so it's the last line in an E-mail and not a "Status". -->
     <string name="pref_default_status_label">Firma</string>
     <string name="pref_enter_sends">Imbia cun \"Imbiu\"</string>
     <string name="pref_enter_sends_explain">Incarchende sa tecla Imbiu as a imbiare sos messàgios</string>
@@ -412,7 +412,7 @@
     <string name="pref_read_receipts_explain">Si sas retzidas de leghidura sunt disabilitadas, no as a pòdere bìdere sas retzidas de leghidura de àtere.</string>
     <string name="pref_manage_keys">Amministra sas craes</string>
     <string name="pref_use_system_emoji">Imprea sas emoji de sistema</string>
-    <string name="pref_use_system_emoji_explain">Istuda su suportu de sas emoji incorporadu in Delta Chat</string>
+    <string name="pref_use_system_emoji_explain">Istuda su suportu de sas emoji incorporadu in ArcaneChat</string>
     <string name="pref_app_access">Atzessu a s\'aplicatzione</string>
     <string name="pref_chats">Tzarradas</string>
     <string name="pref_in_chat_sounds">Sonos in sa tzarrada</string>

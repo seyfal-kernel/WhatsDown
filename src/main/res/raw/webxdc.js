@@ -42,7 +42,8 @@ window.webxdc = (() => {
   }
 
   return {
-    deltalab: InternalJSApi.deltalab(),
+    arcanechat: InternalJSApi.arcanechat(),
+    deltalab: InternalJSApi.arcanechat(),
 
     isCommunity: InternalJSApi.isCommunity(),
 

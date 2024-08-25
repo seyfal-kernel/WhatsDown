@@ -211,7 +211,7 @@ public class SharingTest {
    * If you save your contacts's emails in the contacts app of the phone, there are buttons to call
    * them and also to write an email to them.
    *
-   * If you click the email button, Delta Chat opened but instead of opening a chat with that contact,
+   * If you click the email button, ArcaneChat opened but instead of opening a chat with that contact,
    * the chat list was show and "share with" was displayed at the top
    */
   @Test

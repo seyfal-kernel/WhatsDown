@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- common strings without special context -->
-    <string name="app_name">DeltaLab</string>
+    <string name="app_name">ArcaneChat</string>
     <string name="ok">Gerai</string>
     <string name="cancel">Atsisakyti</string>
    <!-- the word "or" to separate blocks in the user interface that are mutually exclusive -->
@@ -40,7 +40,7 @@
     <!-- Verb "to unarchive", as in "remove a chat from the archive", opposite of the previous string -->
     <string name="unarchive">Išarchyvuoti</string>
     <string name="ephemeral_messages">Išnykstančios žinutės</string>
-    <string name="ephemeral_messages_hint">Šie nustatymai taikomi visiems Delta Chat besinaudojantiems dalyviams. Vis dėlto, jie gali kopijuoti, įrašyti ir persiųsti žinutes arba naudoti kitas el. pašto kliento programas.</string>
+    <string name="ephemeral_messages_hint">Šie nustatymai taikomi visiems ArcaneChat besinaudojantiems dalyviams. Vis dėlto, jie gali kopijuoti, įrašyti ir persiųsti žinutes arba naudoti kitas el. pašto kliento programas.</string>
     <string name="save">Įrašyti</string>
     <string name="media">Medija</string>
     <string name="profile">Profilis</string>
@@ -354,7 +354,7 @@
         <item quantity="many">%d naujų žinučių</item>
         <item quantity="other">%d nauja žinutė</item>
     </plurals>
-    <string name="chat_new_group_hint">Rašykite pirmąją žinutę, taip leisdami kitiems atsakyti šioje grupėje..\n\n• Nieko tokio, jei ne visi dalyviai naudoja Delta Chat.\n\n• Pirmosios žinutės pristatymas gali šiek tiek užtrukti.</string>
+    <string name="chat_new_group_hint">Rašykite pirmąją žinutę, taip leisdami kitiems atsakyti šioje grupėje..\n\n• Nieko tokio, jei ne visi dalyviai naudoja ArcaneChat.\n\n• Pirmosios žinutės pristatymas gali šiek tiek užtrukti.</string>
     <string name="chat_record_slide_to_cancel">Perbraukite, norėdami atsisakyti</string>
     <string name="chat_record_explain">Bakstelėkite ir laikykite, norėdami įrašyti balso žinutę. Atleiskite, norėdami išsiųsti</string>
     <string name="chat_all_archived">Visi pokalbiai archyvuoti.\nPaspauskite „+“ norėdami pradėti naują pokalbį.</string>
@@ -456,7 +456,7 @@
     <!-- for classic email, we use the classical term "Account" -->
     <string name="login_explain">Prisijungti naudojant esamą el. pašto paskyrą</string>
     <string name="login_subheader">Žinomiems el. pašto teikėjams papildomi nustatymai yra nustatomi automatiškai. Kartais, IMAP turi būti įjungtas prisijungus per naršyklę. Išsamesnės pagalbos teiraukitės savo el. pašto teikėjo ar draugų.</string>
-    <string name="login_no_servers_hint">Nėra jokių Delta Chat serverių, jūsų duomenys išlieka jūsų įrenginyje!</string>
+    <string name="login_no_servers_hint">Nėra jokių ArcaneChat serverių, jūsų duomenys išlieka jūsų įrenginyje!</string>
     <string name="login_inbox">Gauta</string>
     <string name="login_imap_login">IMAP prisijungimo vardas</string>
     <string name="login_imap_server">IMAP serveris</string>
@@ -514,7 +514,7 @@
     <string name="pref_password_and_account_settings">Slaptažodis ir paskyra</string>
     <string name="pref_who_can_see_profile_explain">Bendraujant su kitais naudotojais, jūsų profilio paveikslas ir vardas bus rodomi kartu su jūsų žinutėmis. Jau išsiųsta informacija negalės būti ištrinta ar pašalinta.</string>
     <string name="pref_your_name">Jūsų vardas</string>
-    <!-- Translators: Visible only to recipients who DO NOT use Delta Chat, so it's the last line in an E-mail and not a "Status". -->
+    <!-- Translators: Visible only to recipients who DO NOT use ArcaneChat, so it's the last line in an E-mail and not a "Status". -->
     <string name="pref_default_status_label">Parašo tekstas</string>
     <string name="pref_enter_sends">Įvedimo (Enter) klavišas išsiunčia</string>
     <string name="pref_enter_sends_explain">Paspaudus įvedimo (Enter) klavišą, bus išsiunčiamos tekstinės žinutės</string>
@@ -550,7 +550,7 @@
     <string name="pref_read_receipts_explain">Jei pranešimai apie skaitymą yra išjungti, jūs negalėsite matyti pranešimų apie skaitymą iš kitų žmonių.</string>
     <string name="pref_manage_keys">Tvarkyti raktus</string>
     <string name="pref_use_system_emoji">Naudoti sistemos šypsniukus</string>
-    <string name="pref_use_system_emoji_explain">Išjungti Delta Chat įtaisytąjį šypsniukų palaikymą</string>
+    <string name="pref_use_system_emoji_explain">Išjungti ArcaneChat įtaisytąjį šypsniukų palaikymą</string>
     <string name="pref_app_access">Prieiga prie programėlės</string>
     <string name="pref_chats">Pokalbiai</string>
     <string name="pref_in_chat_sounds">Garsai pokalbiuose</string>
@@ -609,7 +609,7 @@
     <string name="profile_image_delete">Ištrinti profilio paveikslą</string>
     <string name="pref_show_tray_icon">Rodyti dėklo piktogramą</string>
     <string name="pref_edit_profile">Taisyti profilį</string>
-    <string name="send_stats_to_devs">Siųsti statistiką Delta Chat plėtotojams</string>
+    <string name="send_stats_to_devs">Siųsti statistiką ArcaneChat plėtotojams</string>
 
 
     <!-- Emoji picker and categories -->
@@ -782,7 +782,7 @@
     <string name="encrypted_message">Šifruota žinutė</string>
 
     <string name="about_licensed_under_desktop">Ši programinė įranga yra licencijuota pagal GNU GPL versiją 3, o pirminis kodas yra prieinamas „GitHub“ internetinėje svetainėje.</string>
-    <string name="welcome_desktop">Sveiki atvykę į Delta Chat</string>
+    <string name="welcome_desktop">Sveiki atvykę į ArcaneChat</string>
     <string name="global_menu_preferences_language_desktop">Pasirinkti kalbą...</string>
     <string name="global_menu_file_desktop">Failas</string>
     <string name="global_menu_file_quit_desktop">Išeiti</string>
@@ -797,11 +797,11 @@
     <string name="global_menu_view_developer_desktop">Plėtotojas</string>
     <string name="global_menu_view_developer_tools_desktop">Plėtotojo įrankiai</string>
     <string name="global_menu_help_desktop">Žinynas</string>
-    <string name="global_menu_help_learn_desktop">Sužinokite daugiau apie Delta Chat</string>
+    <string name="global_menu_help_learn_desktop">Sužinokite daugiau apie ArcaneChat</string>
     <string name="global_menu_help_contribute_desktop">Talkinti „Github“ svetainėje</string>
     <string name="global_menu_help_report_desktop">Pranešti apie klaidą</string>
-    <string name="global_menu_help_about_desktop">Apie Delta Chat</string>
-    <string name="global_menu_file_open_desktop">Atverti Delta Chat</string>
+    <string name="global_menu_help_about_desktop">Apie ArcaneChat</string>
+    <string name="global_menu_file_open_desktop">Atverti ArcaneChat</string>
     <string name="global_menu_minimize_to_tray">Suskleisti</string>
     <string name="no_chat_selected_suggestion_desktop">Pasirinkite arba sukurkite naują pokalbį</string>
     <string name="write_message_desktop">Rašykite žinutę</string>
@@ -820,7 +820,7 @@
     <string name="message_detail_received_desktop">gauta</string>
     <string name="menu.view.developer.open.log.folder">Atverti žurnalų aplanką</string>
     <string name="menu.view.developer.open.current.log.file">Atverti dabartinio žurnalo failą</string>
-    <string name="explain_desktop_minimized_disabled_tray_pref" tools:ignore="TypographyDashes">Dėklo piktograma negali būti išjungta, nes Delta Chat buvo paleista naudojant --minimized parinktį.</string>
+    <string name="explain_desktop_minimized_disabled_tray_pref" tools:ignore="TypographyDashes">Dėklo piktograma negali būti išjungta, nes ArcaneChat buvo paleista naudojant --minimized parinktį.</string>
     <string name="no_spellcheck_suggestions_found">Nerasta jokių rašybos pasiūlymų.</string>
     <string name="show_window">Rodyti langą</string>
     <string name="switch_between_chats">Perjungti tarp pokalbių</string>
@@ -843,16 +843,16 @@
     <!-- iOS device contact alert -->
     <string name="import_device_contacts">Importuoti įrenginio adresatus</string>
     <!-- iOS notification settings -->
-    <string name="disabled_in_dc">Išjungta Delta Chat programėlėje</string>
+    <string name="disabled_in_dc">Išjungta ArcaneChat programėlėje</string>
     <string name="disabled_in_system_settings">Išjungta sistemos nustatymuose</string>
-    <string name="InfoPlist_NSMicrophoneUsageDescription">Delta Chat naudoja mikrofoną, kad įrašytų ir siųstų balso žinutes bei vaizdo įrašus su garsu.</string>
-    <string name="InfoPlist_NSPhotoLibraryUsageDescription">Delta Chat leis jums pasirinkti, kurias nuotraukas iš savo kolekcijos išsiųsti.</string>
-    <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">Delta Chat nori įrašyti paveikslus į jūsų nuotraukų kolekciją.</string>
+    <string name="InfoPlist_NSMicrophoneUsageDescription">ArcaneChat naudoja mikrofoną, kad įrašytų ir siųstų balso žinutes bei vaizdo įrašus su garsu.</string>
+    <string name="InfoPlist_NSPhotoLibraryUsageDescription">ArcaneChat leis jums pasirinkti, kurias nuotraukas iš savo kolekcijos išsiųsti.</string>
+    <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">ArcaneChat nori įrašyti paveikslus į jūsų nuotraukų kolekciją.</string>
 
 
-    <string name="pref_background_notifications_rationale">Norėdami palaikyti ryšį su savo el. pašto serveriu ir gauti žinutes fone, kitame žingsnyje nepaisykite akumuliatoriaus optimizavimų (leiskite vykdyti programą fone).\n\nDelta Chat naudoja nedaug išteklių ir rūpinasi, kad neeikvotų jūsų akumuliatoriaus energijos.</string>
+    <string name="pref_background_notifications_rationale">Norėdami palaikyti ryšį su savo el. pašto serveriu ir gauti žinutes fone, kitame žingsnyje nepaisykite akumuliatoriaus optimizavimų (leiskite vykdyti programą fone).\n\nArcaneChat naudoja nedaug išteklių ir rūpinasi, kad neeikvotų jūsų akumuliatoriaus energijos.</string>
     <!-- disabling "Reliable service" will hide a the maybe annoying permanent-notification with the drawback that new-message-notifications get potentially unreliable -->
-    <string name="perm_enable_bg_reminder_title">Bakstelėkite čia, norėdami gauti žinutes, kol Delta Chat veikia fone.</string>
-    <string name="perm_enable_bg_already_done">Jūs jau leidote Delta Chat gauti žinutes fone.\n\nJei žinutės vis tiek nepristatomos fone, patikrinkite taip pat savo sistemos nustatymus.</string>
+    <string name="perm_enable_bg_reminder_title">Bakstelėkite čia, norėdami gauti žinutes, kol ArcaneChat veikia fone.</string>
+    <string name="perm_enable_bg_already_done">Jūs jau leidote ArcaneChat gauti žinutes fone.\n\nJei žinutės vis tiek nepristatomos fone, patikrinkite taip pat savo sistemos nustatymus.</string>
 
     </resources>

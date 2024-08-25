@@ -1,7 +1,7 @@
 package com.b44t.messenger.rpc;
 
 /**
- * An exception occurred while processing a request in Delta Chat core.
+ * An exception occurred while processing a request in ArcaneChat core.
  **/
 public class RpcException extends Exception {
 

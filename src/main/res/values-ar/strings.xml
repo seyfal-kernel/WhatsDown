@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- common strings without special context -->
-    <string name="app_name">DeltaLab</string>
+    <string name="app_name">ArcaneChat</string>
     <string name="ok">موافق</string>
     <string name="cancel">إلغاء</string>
    <string name="yes">نعم</string>
@@ -171,7 +171,7 @@
     <!-- for classic email, we use the classical term "Account" -->
     <string name="pref_password_and_account_settings">الكلمة السرية والحساب</string>
     <string name="pref_your_name">اسمك</string>
-    <!-- Translators: Visible only to recipients who DO NOT use Delta Chat, so it's the last line in an E-mail and not a "Status". -->
+    <!-- Translators: Visible only to recipients who DO NOT use ArcaneChat, so it's the last line in an E-mail and not a "Status". -->
     <string name="pref_default_status_label">التوقيع</string>
     <string name="pref_enter_sends">مفتاح الدخول يقوم بالإرسا</string>
     <string name="pref_vibrate">إهتز</string>
@@ -190,7 +190,7 @@
     <string name="pref_theme">السمة</string>
     <string name="pref_language">اللغة</string>
     <string name="pref_use_system_emoji">استخدام الرموز التعبيرية بالنظام</string>
-    <string name="pref_use_system_emoji_explain"> Delta Chat تعطيل الرموز التعبيرية المدمجة في </string>
+    <string name="pref_use_system_emoji_explain"> ArcaneChat تعطيل الرموز التعبيرية المدمجة في </string>
     <string name="pref_app_access">دخول البرنامج</string>
     <string name="pref_chats">المحادثات</string>
     <string name="pref_in_chat_sounds">أصوات خلال الدردش</string>

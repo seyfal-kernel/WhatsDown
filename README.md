@@ -1,4 +1,4 @@
-## DeltaLab Android Client
+## ArcaneChat Android Client
 
 A [Delta Chat](https://delta.chat/) client for Android.
 
@@ -19,8 +19,8 @@ A [Delta Chat](https://delta.chat/) client for Android.
 
 This app has some extended support for WebXDC apps:
 
-- `window.webxdc.deltalab` a string with the DeltaLab version and can be used by app developers
-  to detect when they can use the DeltaLab-specific features.
+- `window.webxdc.arcanechat` a string with the ArcaneChat version and can be used by app developers
+  to detect when they can use the ArcaneChat-specific features.
 - `window.webxdc.isCommunity` true if the current account is a community account
 - `sendToChat()`: extra property `subject` can be set to a text string to set message/email's subject.
 - `sendToChat()`: extra property `html` can be set to a string of html markup to set the HTML part of the email/message.

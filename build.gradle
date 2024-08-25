@@ -158,7 +158,7 @@ android {
 final def  markwon_version =  '4.6.2'
 
 dependencies {
-    // DeltaLab-only dependencies:
+    // ArcaneChat-only dependencies:
     implementation "io.noties.markwon:core:$markwon_version"
     implementation "io.noties.markwon:ext-strikethrough:$markwon_version"
     implementation "io.noties.markwon:inline-parser:$markwon_version"

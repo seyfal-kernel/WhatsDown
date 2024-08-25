@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- common strings without special context -->
-    <string name="app_name">DeltaLab</string>
+    <string name="app_name">ArcaneChat</string>
     <string name="ok">సరే</string>
     <string name="cancel">రద్దు</string>
    <string name="yes">అవును</string>
@@ -178,7 +178,7 @@
     <string name="pref_read_receipts">చదివిన రసీదులు</string>
     <string name="pref_read_receipts_explain">చదివే రసీదులను నిలిపివేస్తే, మీరు ఇతరుల నుండి చదివే రసీదులను చూడలేరు.</string>
     <string name="pref_use_system_emoji">యంత్రము యొక్క  ఎమొజిలను  ఉపయొగించు</string>
-    <string name="pref_use_system_emoji_explain">Delta Chat యొక్క అంతర్నిర్మిత ఎమోజి మద్దతును నిలిపివేయి</string>
+    <string name="pref_use_system_emoji_explain">ArcaneChat యొక్క అంతర్నిర్మిత ఎమోజి మద్దతును నిలిపివేయి</string>
     <string name="pref_app_access">అనువర్తన ప్రాప్యత</string>
     <string name="pref_chats">చాట్లు</string>
     <string name="pref_in_chat_sounds">యాప్-లోపల నోటిఫికేషన్లు</string>
@@ -202,12 +202,12 @@
     <!-- dc_str_* resources -->
     <string name="encrypted_message">ఎంక్రిప్ట్ చెసిన సందేశం</string>
 
-    <string name="welcome_desktop">Delta Chat కి స్వాగతం.</string>
+    <string name="welcome_desktop">ArcaneChat కి స్వాగతం.</string>
     <string name="global_menu_file_desktop">ఫైల్</string>
     <string name="global_menu_edit_desktop">మార్చు</string>
     <string name="global_menu_view_desktop">చూడు</string>
     <string name="global_menu_help_desktop">సహాయం</string>
-    <string name="global_menu_help_about_desktop">Delta Chat గురించి</string>
+    <string name="global_menu_help_about_desktop">ArcaneChat గురించి</string>
     <string name="more_info_desktop">మరింత సమాచారం</string>
     <string name="remove_desktop">తొలగించు</string>
     <string name="save_desktop">భద్రపరుచు</string>
