@@ -33,8 +33,8 @@ android {
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        versionCode 30000686
-        versionName "1.46.14"
+        versionCode 687
+        versionName "1.46.15"
 
         applicationId "chat.delta.lite"
         multiDexEnabled true
@@ -118,11 +118,13 @@ android {
         foss {
             dimension "none"
             buildConfigField "boolean", "USE_PLAY_SERVICES", "false"
+            applicationId "com.github.arcanechat"
         }
         gplay {
             dimension "none"
             apply plugin: "com.google.gms.google-services"
             buildConfigField "boolean", "USE_PLAY_SERVICES", "true"
+            versionCode 30000000 + android.defaultConfig.versionCode
         }
     }
 

@@ -66,7 +66,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:922391085500:android:92b4cf12669cc2083e2bb9",
         "android_client_info": {
-          "package_name": "com.b44t.messenger"
+          "package_name": "com.github.arcanechat"
         }
       },
       "oauth_client": [],
