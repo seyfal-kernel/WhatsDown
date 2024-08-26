@@ -128,13 +128,25 @@ android {
         }
     }
 
+    splits {
+        abi {
+            enable true
+            reset()
+            include "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+            universalApk true
+        }
+    }
+
+    project.ext.versionCodes = ['armeabi-v7a': 1, 'arm64-v8a': 2, 'x86': 3, 'x86_64': 4]
+
     android.applicationVariants.all { variant ->
-        variant.outputs.all {
-            outputFileName = outputFileName
+        variant.outputs.all { output ->
+            output.outputFileName = output.outputFileName
                 .replace("android", "ArcaneChat")
-                .replace("foss", "FOSS")
                 .replace("-release", "")
                 .replace(".apk", "-${variant.versionName}.apk")
+            output.versionCodeOverride =
+                variant.versionCode * 10 + project.ext.versionCodes.get(output.getFilter(com.android.build.OutputFile.ABI), 4)
         }
     }
 
