@@ -60,7 +60,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
-          body: "Auto-generated release"
+          body: "If you don't know what APK file to download for your phone, download the one that has 'universal' in its name, it should work for all phones"
           prerelease: ${{ contains(github.event.ref, '-beta') }}
           fail_on_unmatched_files: true
           files: build/outputs/apk/gplay/release/*.apk
