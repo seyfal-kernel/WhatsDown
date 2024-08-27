@@ -67,7 +67,7 @@ fi
 
 unset RUSTFLAGS
 
-ROOT_DIR="$(dirname $(dirname "$0"))"
+ROOT_DIR="$(realpath $(dirname $(dirname "$0")))"
 export RUSTFLAGS="-C link-args=-Wl,--build-id=none --remap-path-prefix=$HOME/.cargo= --remap-path-prefix=$ROOT_DIR="
 
 TOOLCHAIN="$ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/$NDK_HOST_TAG"
