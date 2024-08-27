@@ -68,7 +68,7 @@ fi
 unset RUSTFLAGS
 
 ROOT_DIR="$(dirname $(dirname "$0"))"
-export RUSTFLAGS="-C link-args=-Wl,--build-id=none --remap-path-prefix=$HOME= --remap-path-prefix=$ROOT_DIR="
+export RUSTFLAGS="-C link-args=-Wl,--build-id=none --remap-path-prefix=$HOME/.cargo= --remap-path-prefix=$ROOT_DIR="
 
 TOOLCHAIN="$ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/$NDK_HOST_TAG"
 export CARGO_TARGET_ARMV7_LINUX_ANDROIDEABI_LINKER="$TOOLCHAIN/bin/armv7a-linux-androideabi16-clang"
