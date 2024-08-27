@@ -71,6 +71,7 @@ android {
     }
     packagingOptions {
         jniLibs {
+            doNotStrip '**/*.so'
             keepDebugSymbols += ['*/mips/*.so', '*/mips64/*.so']
         }
         resources {
