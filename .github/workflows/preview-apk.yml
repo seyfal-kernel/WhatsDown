@@ -48,7 +48,7 @@ jobs:
         uses: gradle/wrapper-validation-action@v1
 
       - name: Build APK
-        run: ./gradlew --no-daemon assembleFossDebug
+        run: ./gradlew --no-daemon -PABI_FILTER=armeabi-v7a assembleFossDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v3

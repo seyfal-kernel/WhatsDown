@@ -54,7 +54,7 @@ jobs:
           echo "DC_RELEASE_STORE_PASSWORD=${{ secrets.KEY_STORE_PASSWORD }}" >> ~/.gradle/gradle.properties
           echo "DC_RELEASE_KEY_ALIAS=${{ secrets.ALIAS }}" >> ~/.gradle/gradle.properties
           echo "DC_RELEASE_KEY_PASSWORD=${{ secrets.KEY_PASSWORD }}" >> ~/.gradle/gradle.properties
-          ./gradlew --no-daemon assembleGplayRelease
+          ./gradlew --no-daemon assembleFossRelease
 
       - name: Release
         uses: softprops/action-gh-release@v1
@@ -63,4 +63,4 @@ jobs:
           body: "If you don't know what APK file to download for your phone, download the one that has 'universal' in its name, it should work for all phones"
           prerelease: ${{ contains(github.event.ref, '-beta') }}
           fail_on_unmatched_files: true
-          files: build/outputs/apk/gplay/release/*.apk
+          files: build/outputs/apk/foss/release/*.apk
