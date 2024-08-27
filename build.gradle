@@ -33,7 +33,7 @@ android {
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        versionCode 688
+        versionCode 30000688
         versionName "1.46.16"
 
         applicationId "chat.delta.lite"
@@ -71,6 +71,7 @@ android {
     }
     packagingOptions {
         jniLibs {
+            doNotStrip '**/*.so'
             keepDebugSymbols += ['*/mips/*.so', '*/mips64/*.so']
         }
         resources {
@@ -122,13 +123,11 @@ android {
         foss {
             dimension "none"
             buildConfigField "boolean", "USE_PLAY_SERVICES", "false"
-            applicationId "com.github.arcanechat"
         }
         gplay {
             dimension "none"
             apply plugin: "com.google.gms.google-services"
             buildConfigField "boolean", "USE_PLAY_SERVICES", "true"
-            versionCode 30000000 + android.defaultConfig.versionCode
         }
     }
 
