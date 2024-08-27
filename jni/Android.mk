@@ -33,3 +33,5 @@ LOCAL_CFLAGS 	+= -DANDROID_NDK -DDISABLE_IMPORTGL -fno-strict-aliasing -DAVOID_T
 LOCAL_SRC_FILES := dc_wrapper.c
 
 include $(BUILD_SHARED_LIBRARY)
+
+LOCAL_LDFLAGS += -Wl,--build-id=none
