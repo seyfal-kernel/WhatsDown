@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 rustup=$1
 ndk=$2
