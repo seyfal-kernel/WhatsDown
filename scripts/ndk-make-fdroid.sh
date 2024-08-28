@@ -22,8 +22,7 @@ pushd "$repo"
 "$rustup/rustup-init.sh" -y --default-toolchain $(cat scripts/rust-toolchain) --target $target
 source "$HOME/.cargo/env"
 export PATH="$PATH:$NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/"
-ln -s "$NDK" android-ndk
-export ANDROID_NDK_ROOT="$PWD/android-ndk"
+export ANDROID_NDK_ROOT="$NDK"
 scripts/ndk-make.sh $arch
 
 popd

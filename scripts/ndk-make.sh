@@ -49,6 +49,9 @@ if test -z "$ANDROID_NDK_ROOT"; then
     echo "ANDROID_NDK_ROOT is not set"
     exit 1
 fi
+rm -f android-ndk-root
+ln -s "$ANDROID_NDK_ROOT" android-ndk-root
+ANDROID_NDK_ROOT="$PWD/android-ndk-root"
 
 echo Setting CARGO_TARGET environment variables.
 
