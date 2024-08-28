@@ -12,17 +12,18 @@ esac
 
 fdroiddir=chat.delta.lite
 rootdir=/home/runner/work/android
-repo=$rootdir/android
+repo="$rootdir/android"
 
-mkdir -p $rootdir
+mkdir -p "$rootdir"
 cd ..
-mv $fdroiddir $repo
-pushd $repo
+mv "$fdroiddir" "$repo"
+pushd "$repo"
 
-$rustup/rustup-init.sh -y --default-toolchain $(cat scripts/rust-toolchain) --target $target
-source $HOME/.cargo/env
-export ANDROID_NDK_ROOT=$NDK
-export PATH=$PATH:$NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/
+"$rustup/rustup-init.sh" -y --default-toolchain $(cat scripts/rust-toolchain) --target $target
+source "$HOME/.cargo/env"
+export PATH="$PATH:$NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/"
+ln -s "$NDK" android-ndk
+export ANDROID_NDK_ROOT="$PWD/android-ndk"
 scripts/ndk-make.sh $arch
 
 popd
