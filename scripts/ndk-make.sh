@@ -54,12 +54,11 @@ fi
 ROOT_DIR="$(realpath $(dirname $(dirname "$0")))"
 export RUSTFLAGS="-C link-args=-Wl,--build-id=none --remap-path-prefix=$HOME/.cargo= --remap-path-prefix=$ROOT_DIR="
 export SOURCE_DATE_EPOCH=1
-export CFLAGS="$CFLAGS -ffile-prefix-map=$ROOT_DIR="
-# use always the same path to NDK:
+export CARGO_TARGET_DIR=/tmp/arcanechat-build
+# always use the same path to NDK:
 rm -f /tmp/android-ndk-root
 ln -s "$ANDROID_NDK_ROOT" /tmp/android-ndk-root
 ANDROID_NDK_ROOT=/tmp/android-ndk-root
-export CARGO_TARGET_DIR=/tmp/arcanechat-build
 
 echo Setting CARGO_TARGET environment variables.
 
