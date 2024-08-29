@@ -68,7 +68,7 @@ public class AccountSelectionListItem extends LinearLayout {
     String name;
     String addr = null;
     int unreadCount = 0;
-    boolean isMuted = dcContext != null && dcContext.isMuted();
+    boolean isMuted = dcContext.isMuted();
 
     Recipient recipient;
     if (accountId != DcContact.DC_CONTACT_ID_ADD_ACCOUNT) {
@@ -92,9 +92,9 @@ public class AccountSelectionListItem extends LinearLayout {
     }
     this.contactPhotoImage.setAvatar(glideRequests, recipient, false);
 
-    setSelected(selected);
     nameView.setCompoundDrawablesWithIntrinsicBounds(isMuted? R.drawable.ic_volume_off_grey600_18dp : 0, 0, 0, 0);
 
+    setSelected(selected);
     if (selected) {
       addrView.setTypeface(null, Typeface.BOLD);
       nameView.setTypeface(null, Typeface.BOLD);

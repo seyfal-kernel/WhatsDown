@@ -92,7 +92,7 @@ public class AccountSelectionListAdapter extends RecyclerView.Adapter
   @Override
   public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
     int id = accountList[i];
-    DcContext dcContext = (id == DcContact.DC_CONTACT_ID_ADD_ACCOUNT)? null : accounts.getAccount(id);
+    DcContext dcContext = accounts.getAccount(id);
 
     ViewHolder holder = (ViewHolder) viewHolder;
     holder.unbind(glideRequests);
