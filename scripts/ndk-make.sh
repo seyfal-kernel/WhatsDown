@@ -51,8 +51,7 @@ if test -z "$ANDROID_NDK_ROOT"; then
 fi
 
 # for reproducible build:
-ROOT_DIR="$(realpath $(dirname $(dirname "$0")))"
-export RUSTFLAGS="-C link-args=-Wl,--build-id=none --remap-path-prefix=$HOME/.cargo= --remap-path-prefix=$ROOT_DIR="
+export RUSTFLAGS="-C link-args=-Wl,--build-id=none --remap-path-prefix=$HOME/.cargo= --remap-path-prefix=$(realpath $(dirname $(dirname "$0")))="
 export SOURCE_DATE_EPOCH=1
 export CARGO_TARGET_DIR=/tmp/arcanechat-build
 # always use the same path to NDK:
