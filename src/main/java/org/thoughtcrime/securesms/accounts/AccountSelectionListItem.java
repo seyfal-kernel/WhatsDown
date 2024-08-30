@@ -71,12 +71,21 @@ public class AccountSelectionListItem extends LinearLayout {
     boolean isMuted = dcContext.isMuted();
 
     Recipient recipient;
-    if (accountId != DcContact.DC_CONTACT_ID_ADD_ACCOUNT) {
+    if (accountId == DcContact.DC_CONTACT_ID_ADD_ACCOUNT) {
+      name = getContext().getString(R.string.add_account);
+      enableSwitch.setVisibility(View.INVISIBLE);
+      recipient = null;
+      this.contactPhotoImage.setSeenRecently(false); // hide connectivity dot
+    } else {
       self = dcContext.getContact(DcContact.DC_CONTACT_ID_SELF);
-      addr = dcContext.isCommunity()? getContext().getString(R.string.community) : self.getAddr();
       name = dcContext.getConfig("displayname");
       if (TextUtils.isEmpty(name)) {
-        name = addr;
+        name = self.getAddr();
+      }
+      if (dcContext.isCommunity()) {
+        addr = getContext().getString(R.string.community);
+      } else if (!dcContext.isChatmail()) {
+        addr = self.getAddr();
       }
       unreadCount = dcContext.getFreshMsgs().length;
 
@@ -84,11 +93,6 @@ public class AccountSelectionListItem extends LinearLayout {
       enableSwitch.setVisibility(View.VISIBLE);
       recipient = new Recipient(getContext(), self, name);
       this.contactPhotoImage.setConnectivity(dcContext.getConnectivity());
-    } else {
-      name = getContext().getString(R.string.add_account);
-      enableSwitch.setVisibility(View.INVISIBLE);
-      recipient = null;
-      this.contactPhotoImage.setSeenRecently(false); // hide connectivity dot
     }
     this.contactPhotoImage.setAvatar(glideRequests, recipient, false);
 
