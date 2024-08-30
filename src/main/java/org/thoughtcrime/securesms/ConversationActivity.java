@@ -1056,18 +1056,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
         e.printStackTrace();
       }
     }
-    else if (action == ACTION_SEND_OUT && quote.isPresent() && EmojiProvider.getInstance(this).maybeEmoji(body)){
-      int quotedMsg = quote.get().getQuotedMsg().getId();
-      try {
-        rpc.sendReaction(dcContext.getAccountId(), quotedMsg, body.equals(getSelfReaction(quotedMsg))? "" : body);
-        future.set(chatId);
-        return future;
-      } catch (RpcException e) {
-        e.printStackTrace();
-        msg = new DcMsg(dcContext, DcMsg.DC_MSG_TEXT);
-        msg.setText(body);
-      }
-    }
     else if (!body.isEmpty()){
       msg = new DcMsg(dcContext, DcMsg.DC_MSG_TEXT);
       msg.setText(body);
