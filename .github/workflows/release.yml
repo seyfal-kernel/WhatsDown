@@ -54,13 +54,16 @@ jobs:
           echo "DC_RELEASE_STORE_PASSWORD=${{ secrets.KEY_STORE_PASSWORD }}" >> ~/.gradle/gradle.properties
           echo "DC_RELEASE_KEY_ALIAS=${{ secrets.ALIAS }}" >> ~/.gradle/gradle.properties
           echo "DC_RELEASE_KEY_PASSWORD=${{ secrets.KEY_PASSWORD }}" >> ~/.gradle/gradle.properties
-          ./gradlew --no-daemon assembleFossRelease
+          ./gradlew assembleFossRelease
+          rm build/outputs/apk/foss/release/*universal*
+          ./gradlew assembleGplayRelease
+          mv build/outputs/apk/gplay/release/*universal* build/outputs/apk/foss/release/ArcaneChat-gplay.apk
 
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
-          body: "If you don't know what APK file to download for your phone, download the one that has 'universal' in its name, it should work for all phones"
+          body: "Auto-generated release"
           prerelease: ${{ contains(github.event.ref, '-beta') }}
           fail_on_unmatched_files: true
           files: build/outputs/apk/foss/release/*.apk
