@@ -460,10 +460,10 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
         startActivity(new Intent(this, ProfileActivity.class));
         return true;
       case R.id.menu_webxdc_apps_store:
-          handleShowBot("xstore@testrun.org", "OPENPGP4FPR:37DC2B704A2AE2F6A96235CE0C3A0EBCA4F5801D#a=xstore%40testrun.org&n=&i=-1IGtynaivZ&s=JqHsvvcDmnW");
+        handleShowBot("juegos@buzon.uy", "OPENPGP4FPR:d3d403a734be71fe9293a00311fef80dbe5dbc89#a=juegos%40buzon.uy&n=&i=WQZY-8FODS3&s=ZQBkaclFzao");
         return true;
       case R.id.menu_public_bots:
-          handleShowBot("publicbots@testrun.org", "OPENPGP4FPR:4DB8117591B27184A903FF7E9F469E00D40E13E7#a=publicbots%40testrun.org&n=Public%20Bots&i=zSuQpFtBa_Q&s=weLMu1-o1o1");
+        handleShowBot("puente@buzon.uy", "OPENPGP4FPR:4B41E5AFAF78A0C71DB56138D5BEFED00A45F97A#a=puente%40buzon.uy&n=Public%20Bots&i=ZC_oaJtuvJP&s=5SE96rRovsK");
         return true;
     }
 
