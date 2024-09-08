@@ -290,32 +290,15 @@ public class InstantOnboardingActivity extends BaseActionBarActivity implements 
 
     signUpBtn.setOnClickListener(view -> createProfile());
 
-    Button otherOptionsBtn = findViewById(R.id.other_options_button);
-    otherOptionsBtn.setOnClickListener(view -> showOtherOptionsDialog());
-  }
-
-  private void showOtherOptionsDialog() {
-    View view = View.inflate(this, R.layout.signup_options_view, null);
-    AlertDialog signUpDialog = new AlertDialog.Builder(this)
-      .setView(view)
-      .setTitle(R.string.instant_onboarding_show_more_instances)
-      .setNegativeButton(R.string.cancel, null)
-      .create();
-
-    view.findViewById(R.id.use_other_server).setOnClickListener((v) -> {
+    findViewById(R.id.use_other_server).setOnClickListener((v) -> {
       WebViewActivity.openUrlInBrowser(this, INSTANCES_URL);
-      signUpDialog.dismiss();
     });
-    view.findViewById(R.id.login_button).setOnClickListener((v) -> {
+    findViewById(R.id.login_button).setOnClickListener((v) -> {
       startRegistrationActivity();
-      signUpDialog.dismiss();
     });
-    view.findViewById(R.id.scan_qr_button).setOnClickListener((v) -> {
+    findViewById(R.id.scan_qr_button).setOnClickListener((v) -> {
       new IntentIntegrator(this).setCaptureActivity(RegistrationQrActivity.class).initiateScan();
-      signUpDialog.dismiss();
     });
-
-    signUpDialog.show();
   }
 
   private void startRegistrationActivity() {
