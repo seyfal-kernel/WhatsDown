@@ -128,22 +128,24 @@ public class NotificationCenter {
                 .getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT | IntentUtils.FLAG_MUTABLE());
     }
 
-    private PendingIntent getRemoteReplyIntent(ChatData chatData) {
+    private PendingIntent getRemoteReplyIntent(ChatData chatData, int msgId) {
         Intent intent = new Intent(RemoteReplyReceiver.REPLY_ACTION);
         intent.setClass(context, RemoteReplyReceiver.class);
         intent.setData(Uri.parse("custom://"+chatData.accountId+"."+chatData.chatId));
         intent.putExtra(RemoteReplyReceiver.ACCOUNT_ID_EXTRA, chatData.accountId);
         intent.putExtra(RemoteReplyReceiver.CHAT_ID_EXTRA, chatData.chatId);
+        intent.putExtra(RemoteReplyReceiver.MSG_ID_EXTRA, msgId);
         intent.setPackage(context.getPackageName());
         return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | IntentUtils.FLAG_MUTABLE());
     }
 
-    private PendingIntent getMarkAsReadIntent(ChatData chatData, boolean markNoticed) {
+    private PendingIntent getMarkAsReadIntent(ChatData chatData, int msgId, boolean markNoticed) {
         Intent intent = new Intent(markNoticed? MarkReadReceiver.MARK_NOTICED_ACTION : MarkReadReceiver.CANCEL_ACTION);
         intent.setClass(context, MarkReadReceiver.class);
         intent.setData(Uri.parse("custom://"+chatData.accountId+"."+chatData.chatId));
         intent.putExtra(MarkReadReceiver.ACCOUNT_ID_EXTRA, chatData.accountId);
         intent.putExtra(MarkReadReceiver.CHAT_ID_EXTRA, chatData.chatId);
+        intent.putExtra(MarkReadReceiver.MSG_ID_EXTRA, msgId);
         intent.setPackage(context.getPackageName());
         return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | IntentUtils.FLAG_MUTABLE());
     }
@@ -379,7 +381,7 @@ public class NotificationCenter {
                     .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                     .setOnlyAlertOnce(!signal)
                     .setContentText(line)
-                    .setDeleteIntent(getMarkAsReadIntent(chatData, false))
+                    .setDeleteIntent(getMarkAsReadIntent(chatData, msgId, false))
                     .setContentIntent(getOpenChatIntent(chatData));
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -450,11 +452,11 @@ public class NotificationCenter {
             // if privacy options are enabled, the buttons are not added.
             if (privacy.isDisplayContact() && privacy.isDisplayMessage()) {
                 try {
-                    PendingIntent inNotificationReplyIntent = getRemoteReplyIntent(chatData);
-                    PendingIntent markReadIntent = getMarkAsReadIntent(chatData, true);
+                    PendingIntent inNotificationReplyIntent = getRemoteReplyIntent(chatData, msgId);
+                    PendingIntent markReadIntent = getMarkAsReadIntent(chatData, msgId, true);
 
                     NotificationCompat.Action markAsReadAction = new NotificationCompat.Action(R.drawable.check,
-                            context.getString(R.string.notify_dismiss),
+                            context.getString(R.string.mark_as_read_short),
                             markReadIntent);
 
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -567,7 +569,7 @@ public class NotificationCenter {
         } catch (Exception e) { Log.w(TAG, e); }
     }
 
-    public void removeAllNotifiations(int accountId) {
+    public void removeAllNotifications(int accountId) {
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
         String tag = String.valueOf(accountId);
         synchronized (inboxes) {

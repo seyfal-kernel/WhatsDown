@@ -35,6 +35,7 @@ import com.b44t.messenger.rpc.RpcException;
 import org.thoughtcrime.securesms.ApplicationPreferencesActivity;
 import org.thoughtcrime.securesms.ConversationActivity;
 import org.thoughtcrime.securesms.LogViewActivity;
+import org.thoughtcrime.securesms.ProxySettingsActivity;
 import org.thoughtcrime.securesms.R;
 import org.thoughtcrime.securesms.RegistrationActivity;
 import org.thoughtcrime.securesms.connect.DcEventCenter;
@@ -156,6 +157,11 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
 
       return true;
     }));
+
+    this.findPreference("proxy_settings_button").setOnPreferenceClickListener((preference) -> {
+      startActivity(new Intent(getActivity(), ProxySettingsActivity.class));
+      return true;
+    });
 
     Preference passwordAndAccount = this.findPreference("password_account_settings_button");
     passwordAndAccount.setOnPreferenceClickListener(((preference) -> {

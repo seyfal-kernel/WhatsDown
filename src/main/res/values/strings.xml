@@ -61,7 +61,7 @@
     <string name="mark_all_as_read">Mark All as Read</string>
     <string name="mark_as_read">Mark as Read</string>
     <!-- Shortest text for "Mark as being read". In english, this could be "Read" (past tense of "to read"), in german, this could be "Gelesen". -->
-    <string name="mark_as_read_short">Read</string>
+    <string name="mark_as_read_short">Mark Read</string>
     <!-- Placeholder text when something is loading -->
     <string name="loading">Loading…</string>
     <string name="hide">Hide</string>
@@ -341,6 +341,7 @@
     <string name="videochat_tap_to_open">Tap to Open</string>
     <string name="videochat_instance">Video Chat Instance</string>
     <string name="videochat_instance_placeholder">Your Video Chat Instance</string>
+    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Example: https://your-server.org/$ROOM</string>
     <string name="videochat_instance_explain_2">If enabled, you can start a video chat from each chat. Requires a compatible app or a browser on both ends.</string>
     <string name="videochat_instance_from_qr">Use \"%1$s\" to invite others to video chats?\n\nOnce set, you can start a video chat from each chat. This replaces any previous setting for video chats.</string>
@@ -622,6 +623,9 @@
     <string name="login_smtp_port">SMTP Port</string>
     <string name="login_smtp_security">SMTP Security</string>
     <string name="login_auth_method">Authorization Method</string>
+    <!-- the word "Proxy" might be left untranslated unless the destination language has a well-known term for a "Proxy Server", acting intermediary between the app and the chatmail or email server -->
+    <string name="proxy_settings">Proxy</string>
+    <string name="proxy_use_proxy">Use Proxy</string>
     <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">Use SOCKS5</string>
@@ -1011,6 +1015,7 @@
     <string name="mailto_link_could_not_be_decoded">mailto link could not be decoded: %1$s</string>
 
     <!-- notifications  -->
+    <!-- deprecated, use mark_as_read or mark_as_read_short -->
     <string name="notify_dismiss">Dismiss</string>
     <string name="notify_reply_button">Reply</string>
     <string name="notify_new_message">New message</string>
