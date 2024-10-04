@@ -327,7 +327,7 @@
     <string name="videochat_tap_to_open">Tryck för att öppna</string>
     <string name="videochat_instance">Videochattinstans</string>
     <string name="videochat_instance_placeholder">Din videochattinstans</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Exempel: https://din-server.org/$RUM</string>
     <string name="videochat_instance_explain_2">Om det är aktiverat kan du starta en videochatt från varje chatt. Kräver en kompatibel app eller en webbläsare på båda sidor.</string>
     <string name="videochat_instance_from_qr">Vill du använda \"%1$s\" för att bjuda in andra till videochattar?\n\nNär det väl är inställt kan du starta en videochatt från vilken en-till-en-chatt som helst. Detta ersätter den tidigare inställningen för eventuella videochattar.</string>
@@ -506,7 +506,7 @@
     <string name="multidevice_title">Lägg till en andra enhet</string>
     <string name="multidevice_same_network_hint">Tillse att bägge enheterna är på samma WiFi eller nätverk</string>
     <string name="multidevice_this_creates_a_qr_code">Detta skapar en QR-kod som den andra enheten kan skanna för att kopiera profilen.</string>
-    <string name="multidevice_install_dc_on_other_device">Installera ArcaneChat på din andra enhet (https://get.delta.chat)</string>
+    <string name="multidevice_install_dc_on_other_device">Installera ArcaneChat på din andra enhet (https://github.com/ArcaneChat)</string>
     <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
     <string name="multidevice_tap_scan_on_other_device">Starta ArcaneChat, tryck på \"Jag har redan en profil / Lägg till som andra enhet\" och skanna koden som visas här.</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
@@ -601,13 +601,14 @@
     <string name="login_smtp_port">SMTP port</string>
     <string name="login_smtp_security">SMTP säkerhet</string>
     <string name="login_auth_method">Auktoriseringsmetod</string>
-    <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
+    <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">Använd SOCKS5</string>
     <string name="login_socks5_host">SOCKS5-värd</string>
     <string name="login_socks5_port">SOCKS5-port</string>
     <string name="login_socks5_user">SOCKS5-användare</string>
     <string name="login_socks5_password">SOCKS5-lösenord</string>
+
     <string name="login_info_oauth2_title">Fortsätta med förenklad installation?</string>
     <string name="login_info_oauth2_text">Den angivna e-postadressen stödjer förenklad inställning (OAuth 2.0).\n\nLåt ArcaneChat agera som ditt chatt-över-epost-program, i nästa steg.\n\nDet finns ingen ArcaneChat-server, din data stannar på din enhet.</string>
     <string name="login_certificate_checks">Certifikatkontroller</string>
@@ -920,7 +921,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ Din leverantörs lagringsutrymme är snart slut: %1$s%% är redan använt.\n\nDu kanske inte kan ta emot meddelanden om lagringsutrymmet är fullt.\n\n👉 Kontrollera om du kan radera gammal data i leverantörens webbgränssnitt och överväg att aktivera \"Inställningar / Chattar och media / Ta bort gamla meddelanden\". Du kan kontrollera din aktuella lagringsanvändning när som helst under \"Inställningar / Anslutning\".</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ Datum eller tid på din enhet verkar vara felaktigt (%1$s).\n\nJustera din klocka ⏰🔧 för att säkerställa att dina meddelanden tas emot korrekt.</string>
-    <string name="devicemsg_update_reminder">⚠️ Din ArcaneChat-version kan vara föråldrad.\n\nDetta kan orsaka problem eftersom dina chattpartners använder nyare versioner - och du saknar de senaste funktionerna 😳\nSök efter uppdateringar på https://get.delta.chat eller i din appbutik.</string>
+    <string name="devicemsg_update_reminder">⚠️ Din ArcaneChat-version kan vara föråldrad.\n\nDetta kan orsaka problem eftersom dina chattpartners använder nyare versioner - och du saknar de senaste funktionerna 😳\nSök efter uppdateringar på https://github.com/ArcaneChat eller i din appbutik.</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Lås upp för att fortsätta</string>
@@ -987,6 +988,7 @@
     <string name="mailto_link_could_not_be_decoded">mailto-länken kunde inte avkodas: %1$s</string>
 
     <!-- notifications  -->
+    <!-- deprecated, use mark_as_read or mark_as_read_short -->
     <string name="notify_dismiss">Avvisa</string>
     <string name="notify_reply_button">Svara</string>
     <string name="notify_new_message">Nytt meddelande</string>

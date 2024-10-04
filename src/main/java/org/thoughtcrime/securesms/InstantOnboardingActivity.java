@@ -5,7 +5,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -48,6 +50,7 @@ import org.thoughtcrime.securesms.mms.GlideApp;
 import org.thoughtcrime.securesms.permissions.Permissions;
 import org.thoughtcrime.securesms.profiles.AvatarHelper;
 import org.thoughtcrime.securesms.profiles.ProfileMediaConstraints;
+import org.thoughtcrime.securesms.proxy.ProxySettingsActivity;
 import org.thoughtcrime.securesms.qr.RegistrationQrActivity;
 import org.thoughtcrime.securesms.scribbles.ScribbleActivity;
 import org.thoughtcrime.securesms.util.Prefs;
@@ -330,7 +333,11 @@ public class InstantOnboardingActivity extends BaseActionBarActivity implements 
       privacyPolicyBtn.setText(getString(R.string.qrlogin_ask_login, providerHost));
     } else {
       signUpBtn.setText(R.string.instant_onboarding_create);
-      privacyPolicyBtn.setTextColor(getResources().getColor(R.color.def_accent));
+
+      try (TypedArray typedArray = obtainStyledAttributes(new int[]{R.attr.colorAccent})) {
+        privacyPolicyBtn.setTextColor(typedArray.getColor(0, Color.BLACK));
+      }
+
       if (DEFAULT_CHATMAIL_HOST.equals(providerHost)) {
         privacyPolicyBtn.setText(getString(R.string.instant_onboarding_agree_default2, providerHost));
       } else {

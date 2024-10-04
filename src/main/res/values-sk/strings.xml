@@ -307,7 +307,7 @@
     <string name="videochat_tap_to_open">Otvoríte klepnutím</string>
     <string name="videochat_instance">Inštancia videohovoru</string>
     <string name="videochat_instance_placeholder">Vaša inštancia videohovoru</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Príklady: https://your-server.org/$ROOM</string>
     <string name="videochat_instance_explain_2">Ak to zapnete, môžete začať video rozhovor z každej konverzácie. Vyžaduje kompatibilnú aplikáciu alebo prehliadač na oboch stranách.</string>
     <string name="videochat_instance_from_qr">Použiť „%1$s“ na odoslanie pozvánky na videohovor?\n\nPo nastavení môžete začať videohovor z každej jednotlivej konverzácie. Toto nahradí predchádzajúce nastavenie pre videohovory, ak existujú.</string>
@@ -518,13 +518,14 @@
     <string name="login_smtp_port">Port SMTP</string>
     <string name="login_smtp_security">Zabezpečenie SMTP</string>
     <string name="login_auth_method">Metóda autorizácie</string>
-    <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
+    <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">Použiť SOCKS5</string>
     <string name="login_socks5_host">SOCKS5 Host</string>
     <string name="login_socks5_port">SOCKS5 Port</string>
     <string name="login_socks5_user">SOCKS5 Používateľ</string>
     <string name="login_socks5_password">SOCKS5 Heslo</string>
+
     <string name="login_info_oauth2_title">Pokračovať v zjednodušenom nastavovaní?</string>
     <string name="login_info_oauth2_text">Zadaná e-mailová adresa podporuje zjednodušené nastavenie (OAuth 2.0).\n\nV ďalšom kroku povoľte aplikácii ArcaneChat, aby fungovala ako vaša aplikácia Chat cez e-mail.\n\nNie sú k dispozícii servery ArcaneChat, vaše dáta zostanú vo vašom zariadení .</string>
     <string name="login_certificate_checks">Osvedčovacie kontroly</string>
@@ -797,7 +798,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ Úložisko vašeho poskytovateľa čoskoro prekročí limit, už%1$s%%  sú využité.\n\n Je možné, že nebudete môcť prijímať správy, ak bude úložisko 100 %% využité.\n\n👉 Prosím skontrolujte, či môžete vo webovom rozhraní poskytovateľa vymazať staré údaje, a zvážte aktiváciu „Nastavenia / Odstrániť Staré Správy“. Aktuálne využitie úložiska si môžete kedykoľvek skontrolovať v časti „Nastavenia / Pripojenie“. </string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">Zdá sa, že dátum alebo čas vášho zariadenia je nepresný (%1$s).\n\nUpravte si hodiny ⏰🔧, aby ste zaistili správne prijímanie správ. </string>
-    <string name="devicemsg_update_reminder">⚠️ Vaša verzia ArcaneChat-u môže byť zastaraná.\n\nMôže to spôsobiť problémy, pretože vaši chatový partneri používajú novšie verzie – a vám chýbajú najnovšie funkcie 😳\nAktualizácie nájdete na https://get.delta.chat alebo obchode s aplikáciami . </string>
+    <string name="devicemsg_update_reminder">⚠️ Vaša verzia ArcaneChat-u môže byť zastaraná.\n\nMôže to spôsobiť problémy, pretože vaši chatový partneri používajú novšie verzie – a vám chýbajú najnovšie funkcie 😳\nAktualizácie nájdete na https://github.com/ArcaneChat alebo obchode s aplikáciami . </string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Ak chcete pokračovať, zadajte heslo do systému.</string>
@@ -853,6 +854,7 @@
     <string name="mailto_link_could_not_be_decoded">prepojenie mailto sa nepodarilo dekódovať: %1$s</string>
 
     <!-- notifications  -->
+    <!-- deprecated, use mark_as_read or mark_as_read_short -->
     <string name="notify_dismiss">Odmietnuť</string>
     <string name="notify_reply_button">Odpovedať</string>
     <string name="notify_new_message">Nová správa</string>

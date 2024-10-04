@@ -17,7 +17,7 @@ import com.google.firebase.messaging.RemoteMessage;
 
 import org.thoughtcrime.securesms.ApplicationContext;
 import org.thoughtcrime.securesms.BuildConfig;
-import org.thoughtcrime.securesms.util.Prefs;
+import org.thoughtcrime.securesms.service.FetchForegroundService;
 import org.thoughtcrime.securesms.util.Util;
 
 public class FcmReceiveService extends FirebaseMessagingService {
@@ -92,18 +92,17 @@ public class FcmReceiveService extends FirebaseMessagingService {
     return prefixedToken;
   }
 
+  @WorkerThread
   @Override
   public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
     Log.i(TAG, "FCM push notification received");
-    // the app is running (again) now and fetching and notifications should be processed as usual.
-    // to support accounts that do not send PUSH notifications and for simplicity,
-    // we just let the app run as long as possible.
+    FetchForegroundService.start(this);
   }
 
   @Override
   public void onDeletedMessages() {
     Log.i(TAG, "FCM push notifications dropped");
-    // nothing special to do as we're running now and notifications should be processed as usual.
+    FetchForegroundService.start(this);
   }
 
   @Override

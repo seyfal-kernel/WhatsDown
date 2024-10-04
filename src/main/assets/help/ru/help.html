@@ -55,7 +55,7 @@
       <li><a href="#как-я-могу-обеспечить-сквозное-шифрование-и-удаление-сообщений">Как я могу обеспечить сквозное шифрование и удаление сообщений?</a></li>
       <li><a href="#pfs">Поддерживает ли ArcaneChat Совершенную Прямую Секретность?</a></li>
       <li><a href="#является-ли-сквозное-шифрование-delta-chat-таким-же-безопасным-как-signal">Является ли сквозное шифрование ArcaneChat таким же безопасным как Signal?</a></li>
-      <li><a href="#можно-ли-повторно-использовать-существующий-секретный-ключ">Можно ли повторно использовать существующий секретный ключ?</a></li>
+      <li><a href="#importkey">Можно ли повторно использовать существующий секретный ключ?</a></li>
       <li><a href="#я-не-могу-импортировать-мой-существующий-ключ-pgp-в-delta-chat">Я не могу импортировать мой существующий ключ PGP в ArcaneChat.</a></li>
       <li><a href="#security-audits">Проходил ли ArcaneChat независимую проверку на наличие уязвимостей безопасности?</a></li>
     </ul>
@@ -97,7 +97,7 @@
       <li><a href="#для-чего-нужен-параметр-следить-за-папкой-отправлено">Для чего нужен параметр “следить за папкой Отправлено”?</a></li>
       <li><a href="#почему-я-могу-отключить-следить-за-папкой-delta-chat">Почему я могу отключить “следить за папкой ArcaneChat”?</a></li>
       <li><a href="#совместим-ли-delta-chat-с-protonmail--tutanota--criptext">Совместим ли ArcaneChat с Protonmail / Tutanota / Criptext?</a></li>
-      <li><a href="#как-я-могу-удалить-аккаунт">Как я могу удалить аккаунт?</a></li>
+      <li><a href="#remove-account">Как я могу удалить аккаунт?</a></li>
       <li><a href="#меня-интересуют-технические-детали-можете-рассказать-больше">Меня интересуют технические детали. Можете рассказать больше?</a></li>
       <li><a href="#как-финансируются-разработки-delta-chat">Как финансируются разработки ArcaneChat?</a></li>
     </ul>
@@ -543,12 +543,12 @@
         
       </h3>
 
-<p>Yes, ArcaneChat automatically uses Push Notifications for <a href="https://delta.chat/chatmail">chatmail</a> profiles.
-And no, there is no alternative on Apple’s phones to achieve instant message delivery
-because Apple devices do not allow ArcaneChat to fetch data in the background.
-Push notifications are automatically activated for iOS users because
-<a href="#privacy-notifications">ArcaneChat’s privacy-preserving Push Notification system</a>
-does not expose data to Apple that it doesn’t already have.</p>
+<p>Да, ArcaneChat автоматически использует Push-уведомления для профилей <a href="https://delta.chat/chatmail">chatmail</a>.
+И нет, на устройствах Apple нет альтернативы для обеспечения мгновенной доставки сообщений,
+поскольку устройства Apple не позволяют ArcaneChat запрашивать данные в фоновом режиме.
+Push-уведомления автоматически активируются для пользователей iOS, потому что
+<a href="#privacy-notifications">Система Push-уведомлений ArcaneChat, обеспечивающая конфиденциальность</a>
+не передает данные Apple, которых у нее еще нет.</p>
     
       <h3 id="android-push">
         
@@ -1150,10 +1150,10 @@ Signal и большинство других мессенджеров, подд
 <p>В любом случае, сквозное шифрование ArcaneChat использует <a href="#openpgp-secure">безопасное подмножество OpenPGP</a>
 которое прошло <a href="https://delta.chat/assets/blog/2019-first-security-review.pdf">независимую проверку безопасности</a>.</p>
     
-      <h3 id="можно-ли-повторно-использовать-существующий-секретный-ключ">
+      <h3 id="importkey">
         
         
-          Можно ли повторно использовать существующий секретный ключ? <a href="#можно-ли-повторно-использовать-существующий-секретный-ключ" class="anchor"></a>
+          Можно ли повторно использовать существующий секретный ключ? <a href="#importkey" class="anchor"></a>
         
         
       </h3>
@@ -1204,11 +1204,11 @@ Look for something like <strong>Start Autocrypt Setup Transfer</strong> in the s
 
 <ul>
   <li>
-    <p>2024 March, we received a deep security analysis from the Applied Cryptography
-research group at ETH Zuerich and addressed all raised issues. 
-See our blog post about <a href="https://delta.chat/en/2024-03-25-crypto-analysis-securejoin">Hardening Guaranteed End-to-End encryption</a> for more detailed information and the
+    <p>В марте 2024 года мы получили подробный анализ безопасности от исследовательской группы
+Applied Cryptography в ETH Цюрихе и устранили все выявленные проблемы. 
+Читайте наш пост в блоге о <a href="https://delta.chat/en/2024-03-25-crypto-analysis-securejoin">Hardening Guaranteed End-to-End encryption</a> для более подробной информации и 
 <a href="https://eprint.iacr.org/2024/918.pdf">Cryptographic Analysis of ArcaneChat</a> 
-research paper published afterwards.</p>
+научной статьи, опубликованной позже.</p>
   </li>
   <li>
     <p>В Апреле 2023 г. мы исправили проблемы безопасности и конфиденциальности в веб-интерфейсе,
@@ -1279,7 +1279,7 @@ Chat Rust <a href="https://github.com/deltachat/deltachat-core-rust/">ядро</
 и подождите немного, пока не появится QR-код</p>
   </li>
   <li>
-    <p>На втором устройстве, <a href="https://get.delta.chat">установите ArcaneChat</a></p>
+    <p>На втором устройстве, <a href="https://github.com/ArcaneChat">установите ArcaneChat</a></p>
   </li>
   <li>
     <p>На втором устройстве запустите ArcaneChat, выберите <strong>Добавить как второе устройство</strong> и отсканируйте QR-код со старого устройства</p>
@@ -1378,7 +1378,7 @@ PIN-код разблокировки экрана, графический кл�
   <li>Если вам нужен веб-клиент, поскольку вы не можете устанавливать программное обеспечение на
 компьютере, на которым вы работаете, вы можете использовать портативный настольный клиент Windows
 или AppImage для Linux. Вы можете найти их на
-<a href="https://get.delta.chat">get.delta.chat</a>.</li>
+<a href="https://github.com/ArcaneChat">github.com/ArcaneChat</a>.</li>
 </ul>
     
       <h2 id="webxdc">
@@ -1767,7 +1767,7 @@ PIN-код разблокировки экрана, графический кл�
 почтовую программу (например, Thunderbird) вместе с приложением ArcaneChat.</p>
 
 <p>Однако мы рекомендуем использовать настольный клиент ArcaneChat; вы можете скачать его
-на <a href="https://get.delta.chat">get.delta.chat</a>. Опция для слежения за папкой “Отправлено”
+на <a href="https://github.com/ArcaneChat">github.com/ArcaneChat</a>. Опция для слежения за папкой “Отправлено”
 может быть убрана в будущем. Эта функция была представлена в то время, когда не было
  настольного клиента ArcaneChat доступного на всех платформах.</p>
     
@@ -1803,22 +1803,38 @@ Protonmail, Tutanota или Criptext. Однако, эти сообщения н
 <a href="https://autocrypt.org/dev-status.html">Приложением эл.почты с поддержкой Autocrypt</a>.</li>
 </ul>
     
-      <h3 id="как-я-могу-удалить-аккаунт">
+      <h3 id="remove-account">
         
         
-          Как я могу удалить аккаунт? <a href="#как-я-могу-удалить-аккаунт" class="anchor"></a>
+          Как я могу удалить аккаунт? <a href="#remove-account" class="anchor"></a>
         
         
       </h3>
 
-<p>Поскольку вы используете учётную запись эл.почты для ArcaneChat,
-способ удаления своей учетной записи зависит от вашего провайдера эл.почты.
-Мы не имеем никакого контроля над вашей учётной записью эл.почты,
-поэтому, к сожалению, мы не можем вам с этим помочь.</p>
+<p>If you use a default chat profile
+you can simply uninstall the app.
+This will automatically trigger deletion of all associated account data on the chatmail server.
+For more info, please refer to <a href="https://nine.testrun.org/info.html#account-deletion">nine.testrun.org account-deletion</a> for the default onboarding server,
+or the respective page from your chosen <a href="https://delta.chat/ru/chatmail">3rd party chatmail server</a>.</p>
 
-<p>Если вы хотите сохранить учётную запись,
-но удаляете ArcaneChat,
-перед удалением ArcaneChat рекомендуется выйти из группового чата.</p>
+<p>If you have set up your chat profile on multiple devices
+you need to remove it from all devices.</p>
+
+<p>If you are using more than one account,
+but don’t want to get rid of all of them,
+you can remove it in the account switcher menu (on android and iOS),
+or in the sidebar with a right click (in the desktop client).</p>
+
+<p>Accounts on <a href="https://providers.delta.chat">classic e-mail providers</a>
+will not be deleted automatically;
+how you can delete your account depends on your e-mail provider.
+We don’t have any control over e-mail accounts at those providers,
+so unfortunately we can’t help you with that.</p>
+
+<p>If you want to continue using a classic e-mail account with other apps,
+but uninstall ArcaneChat,
+it is recommended to leave any group chat before uninstalling ArcaneChat.
+Otherwise you might receive undecryptable messages from those group chats.</p>
     
       <h3 id="меня-интересуют-технические-детали-можете-рассказать-больше">
         

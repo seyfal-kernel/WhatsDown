@@ -56,7 +56,7 @@
     <string name="mark_all_as_read">Tümünü Okundu Olarak İmle</string>
     <string name="mark_as_read">Okundu Olarak İmle</string>
     <!-- Shortest text for "Mark as being read". In english, this could be "Read" (past tense of "to read"), in german, this could be "Gelesen". -->
-    <string name="mark_as_read_short">Okundu</string>
+    <string name="mark_as_read_short">Okundu İmi</string>
     <!-- Placeholder text when something is loading -->
     <string name="loading">Yükleniyor…</string>
     <string name="hide">Gizle</string>
@@ -331,7 +331,7 @@
     <string name="videochat_tap_to_open">Açmak için Dokunun</string>
     <string name="videochat_instance">Video Sohbeti Örneği</string>
     <string name="videochat_instance_placeholder">Video Sohbeti Örneğiniz</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Örnek: https://your-server.org/$ROOM</string>
     <string name="videochat_instance_explain_2">Etkinleştirilirse, her sohbetten video sohbeti başlatabilirsiniz. Her iki uçta da uyumlu bir uygulama ya da bir tarayıcı gerektirir.</string>
     <string name="videochat_instance_from_qr">\"%1$s\" diğerlerini video sohbetlerine çağırmak için kullanılsın mı?\n\nBir kez ayarlandığında, her sohbetten video sohbeti başlatabilirsiniz. Bu, video sohbetleri için herhangi bir önceki ayarın yerini alır.</string>
@@ -510,7 +510,7 @@
     <string name="multidevice_title">İkinci Aygıt Ekle</string>
     <string name="multidevice_same_network_hint">Her iki aygıtın da aynı Wi-Fi\'da ya da ağda olduğundan emin olun</string>
     <string name="multidevice_this_creates_a_qr_code">Bu, ikinci aygıtın profili kopyalamak için tarayabileceği bir QR kodu oluşturur.</string>
-    <string name="multidevice_install_dc_on_other_device">ArcaneChat\'i diğer aygıtınıza kurun (https://get.delta.chat)</string>
+    <string name="multidevice_install_dc_on_other_device">ArcaneChat\'i diğer aygıtınıza kurun (https://github.com/ArcaneChat)</string>
     <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
     <string name="multidevice_tap_scan_on_other_device">ArcaneChat\'i başlatın, “Zaten Bir Profilim Var / İkinci Aygıt Olarak Ekle”ye dokunun ve burada gösterilen kodu tarayın</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
@@ -608,13 +608,22 @@
     <!-- the word "Proxy" might be left untranslated unless the destination language has a well-known term for a "Proxy Server", acting intermediary between the app and the chatmail or email server -->
     <string name="proxy_settings">Proxy</string>
     <string name="proxy_use_proxy">Proxy Kullan</string>
-    <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
+    <string name="proxy_add">Proxy Ekle</string>
+    <string name="proxy_add_explain">Desteklenen proxy türleri: HTTP(S), SOCKS5 ve Shadowsocks.</string>
+    <string name="proxy_add_url_hint">Buraya proxy URL\'sini girin</string>
+    <string name="proxy_invalid">Geçersiz ya da desteklenmeyen proxy URL\'si</string>
+    <string name="proxy_list_header">Kaydedilen Proxy\'ler</string>
+    <string name="proxy_delete">Proxy\'yi Sil</string>
+    <string name="proxy_delete_explain">\"%1$s\" proxy\'sini silmek istediğinizden emin misiniz?</string>
+
+    <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">SOCKS5\'i Kullan</string>
     <string name="login_socks5_host">SOCKS5 Ana Bilgisayarı</string>
     <string name="login_socks5_port">SOCKS5 Bağlantı Noktası</string>
     <string name="login_socks5_user">SOCKS5 Kullanıcısı</string>
     <string name="login_socks5_password">SOCKS5 Parolası</string>
+
     <string name="login_info_oauth2_title">Basitleştirilen ayarlamayla sürdürülsün mü?</string>
     <string name="login_info_oauth2_text">Girilen e-posta adresi basitleştirilen bir ayarlamayı (OAuth 2.0) destekliyor.\n\nSonraki adımda, lütfen ArcaneChat\'in E-posta Üzerinden Sohbet uygulamanız olarak davranmasına izin verin.\n\nArcaneChat kullanıcı verisi toplamaz; her şey aygıtınızda kalır.</string>
     <string name="login_certificate_checks">Sertifika Denetimleri</string>
@@ -927,7 +936,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ Sağlayıcınızın depolaması dolmak üzere: %1$s%% zaten kullanımda.\n\nDepolama tam dolduğunda iletileri alamayabilirsiniz.\n\n👉 Lütfen sağlayıcınızın web arabiriminden eski verileri silip silemeyeceğinizi denetleyin ve \"Ayarlar / Sohbetler ve Ortamlar / Eski İletileri Sil\"i etkinleştirmeyi düşünün. Herhangi bir zamanda şu anki depolama kullanımınızı \"Ayarlar / Bağlanabilirlik\"ten denetleyebilirsiniz.</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ Aygıtınızdaki tarih ya da saat yanlış görünüyor (%1$s).\n\nİletilerinizin doğru şekilde alınmasını sağlamak için saatinizi ⏰🔧 ayarlayın.</string>
-    <string name="devicemsg_update_reminder">⚠️ ArcaneChat sürümünüz eski olabilir.\n\nBu, sorunlara neden olabilir; çünkü sohbet ortaklarınız daha yeni sürümleri kullanıyor - ve en yeni özellikleri kaybediyorsunuz 😳\nGüncelleştirmeler için lütfen https://get.delta.chat ya da uygulama mağazanızı denetleyin.</string>
+    <string name="devicemsg_update_reminder">⚠️ ArcaneChat sürümünüz eski olabilir.\n\nBu, sorunlara neden olabilir; çünkü sohbet ortaklarınız daha yeni sürümleri kullanıyor - ve en yeni özellikleri kaybediyorsunuz 😳\nGüncelleştirmeler için lütfen https://github.com/ArcaneChat ya da uygulama mağazanızı denetleyin.</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Sürdürmek için kilidi açın</string>
@@ -994,6 +1003,7 @@
     <string name="mailto_link_could_not_be_decoded">mailto bağlantısının kodu çözülemedi: %1$s</string>
 
     <!-- notifications  -->
+    <!-- deprecated, use mark_as_read or mark_as_read_short -->
     <string name="notify_dismiss">Kapat</string>
     <string name="notify_reply_button">Yanıtla</string>
     <string name="notify_new_message">Yeni ileti</string>

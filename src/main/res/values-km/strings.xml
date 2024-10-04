@@ -437,13 +437,14 @@
     <string name="login_smtp_port">ច្រករបស SMTP</string>
     <string name="login_smtp_security">សន្តិសុខ SMTP</string>
     <string name="login_auth_method">ការចុះបញ្ជី</string>
-    <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
+    <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">ប្រើ SOCKS5</string>
     <string name="login_socks5_host">ម្ចាស់ SOCKS5</string>
     <string name="login_socks5_port">ច្រក SOCKS5</string>
     <string name="login_socks5_user">អ្នកប្រើប្រាស់ SOCKS5</string>
     <string name="login_socks5_password">ពាក្យសម្ងាត់ SOCKS5</string>
+
     <string name="login_info_oauth2_title">បន្តជាមួយការដំឡើងសាមញ្ញ?</string>
     <string name="login_info_oauth2_text">អស័យដ្ឋានអុីម៉េលដែលបានបញ្ចូល គាំទ្រការដំឡើងសាមញ្ញ (OAuth 2.0)\n\nនៅជំហានបន្ទាប់ សូមអនុញ្ញាតឲ្យសាហារីសង្ឃ ដើរតួជាការសន្ទនារបស់អ្នកនៅលើកម្មវិធីអុីម៉េល។\n\nមិនមាន ម៉ាសុីនមេ សាហារីសង្ឃទេ។ ទិន្ន័យរបស់អ្នកស្ថិតនៅលើឧបករណ៍របស់អ្នក។</string>
     <string name="login_certificate_checks">ការត្រួតពិនិត្យលិខិតបញ្ជាក់</string>
@@ -702,7 +703,7 @@
     <string name="devicemsg_storage_exceeding">⚠️️ឃ្លាំងផ្ទុករបស់កម្មវិធីផ្តល់សេវាឲ្យអ្នក ជិតអស់ហើយត្រូវបានប្រើ %1$s%% រួចហើយ។\n\n អ្នកប្រហែលជាមិនអាចទទួលបានសារទេនៅពេលប្រើទំហំផ្ទុក ១០០%% ។\n\n👉 សូមពិនិត្យមើលថាតើ អ្នកអាចលុបទិន្នន័យចាស់នៅក្នុងចំណុចប្រទាក់គេហទំព័ររបស់កម្មវិធីផ្តល់សេវាកម្មហើយពិចារណាបើក \"ការកំណត់ / លុបសារចាស់ \"។ អ្នកអាចពិនិត្យមើលការប្រើប្រាស់ទំហំផ្ទុកបច្ចុប្បន្នរបស់អ្នកបានគ្រប់ពេលនៅ \"ការកំណត់ / ការតភ្ជាប់និងសេវាកម្ម\" ។</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ កាលបរិច្ឆេទ ឬពេលវេលានៃឧបករណ៍របស់អ្នកហាក់ដូចជាមិនត្រឹមត្រូវ (%1$s)។\n\n កែតម្រូវនាឡិការបស់អ្នក ⏰🔧 ដើម្បីធានាថា សាររបស់អ្នកត្រូវបានទទួលត្រឹមត្រូវ។</string>
-    <string name="devicemsg_update_reminder">⚠️កំណែ ArcaneChat របស់អ្នកប្រហែលជាហួសសម័យហើយ។\n\n នេះអាចបណ្តាលឱ្យមានបញ្ហាដោយសារតែដៃគូជជែករបស់អ្នកប្រើកំណែថ្មីជាង - ហើយអ្នកកំពុងបាត់លក្ខណៈពិសេសចុងក្រោយ 😳\n សូមពិនិត្យមើល https://get.delta.chat ឬហាងកម្មវិធីរបស់អ្នកដើម្បីទទួលបានព័ត៌មានថ្មីៗ ។</string>
+    <string name="devicemsg_update_reminder">⚠️កំណែ ArcaneChat របស់អ្នកប្រហែលជាហួសសម័យហើយ។\n\n នេះអាចបណ្តាលឱ្យមានបញ្ហាដោយសារតែដៃគូជជែករបស់អ្នកប្រើកំណែថ្មីជាង - ហើយអ្នកកំពុងបាត់លក្ខណៈពិសេសចុងក្រោយ 😳\n សូមពិនិត្យមើល https://github.com/ArcaneChat ឬហាងកម្មវិធីរបស់អ្នកដើម្បីទទួលបានព័ត៌មានថ្មីៗ ។</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">សូមបញ្ចូល ប្រព័ន្ធកំណត់ដោយសម្ងាត់របស់អ្នក ដើម្បីបន្ត។</string>

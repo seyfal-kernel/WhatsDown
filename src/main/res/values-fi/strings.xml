@@ -321,7 +321,7 @@
     <string name="videochat_tap_to_open">Napauta avataksesi</string>
     <string name="videochat_instance">Videokeskustelun tarjoaja</string>
     <string name="videochat_instance_placeholder">Videokeskustelusi tarjoaja</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Esimerkkejä: https://meet.jit.si/$ROOM tai basicwebrtc:https://sinun-palvelimesi</string>
     <string name="videochat_instance_explain_2">Jos videokeskustelu on kytketty päälle, voit aloittaa videokeskustelun mistä tahansa keskustelusta. Videokeskustelu vaatii molemmilta yhteensopivan sovelluksen tai selaimen.</string>
     <string name="videochat_instance_from_qr">Käytä \"%1$s\" videokeskustelupyyntöihin?\n\nTämän jälkeen voit aloittaa videokeskustelun mistä tahansa keskustelusta. Tämä korvaa edellisen videokeskusteluasetuksen, jos sellainen on.</string>
@@ -500,7 +500,7 @@
     <string name="multidevice_title">Lisää toinen laite</string>
     <string name="multidevice_same_network_hint">Varmista että molemmat laitteet ovat samassa Wi-Fi verkossa</string>
     <string name="multidevice_this_creates_a_qr_code">Tämä luo QR koodin, jolla toinen laite saa ladattua kopion profiilista.</string>
-    <string name="multidevice_install_dc_on_other_device">Lataa ArcaneChat toiselle laitteellesi (https://get.delta.chat)</string>
+    <string name="multidevice_install_dc_on_other_device">Lataa ArcaneChat toiselle laitteellesi (https://github.com/ArcaneChat)</string>
     <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
     <string name="multidevice_tap_scan_on_other_device">Avaa ArcaneChat, valitse \"Minulla on jo profiili / Lisää toiseksi laitteeksi\" ja skannaa täällä näkyvä koodi</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
@@ -595,13 +595,14 @@
     <string name="login_smtp_port">SMTP -portti</string>
     <string name="login_smtp_security">SMTP -turvallisuusprotokolla</string>
     <string name="login_auth_method">Kirjautumismenetelmä</string>
-    <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
+    <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">Käytä SOCKS5</string>
     <string name="login_socks5_host">SOCKS5 -isäntä</string>
     <string name="login_socks5_port">SOCKS5 -portti</string>
     <string name="login_socks5_user">SOCKS5 -käyttäjä</string>
     <string name="login_socks5_password">SOCKS5 -salasana</string>
+
     <string name="login_info_oauth2_title">Jatka yksinkertaistetulla käyttöönotolla?</string>
     <string name="login_info_oauth2_text">Annettu sähköpostiosoite tukee yksinkertaista käyttöönottoa (OAuth 2.0).\n\nSeuraavassa vaiheessa sinun tulisi antaa ArcaneChatille oikeus toimia keskustelusovelluksena sähköpostia hyödyntäen.\n\nArcaneChat ei kerää käyttäjädataa, kaikki tallennetaan vain laitteellesi.</string>
     <string name="login_certificate_checks">Varmenteiden tarkastus</string>
@@ -911,7 +912,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ Palveluntarjoajasi tallennuskiintiö ylitetään pian, käytössä on jo %1$s / %%.\n\nEt välttämättä enää voi vastaanottaa viestejäsi, kun 100 %% on käytössä.\n\n👉 Kokeile poistaa viestejä palveluntarjoajasi internetkäyttöliittymästä. Kannattaa myös ehkä kytkeä päälle \"Asetukset / Poista vanhat viestit\". Voit tarkistaa tämän hetkisen tallennustilan käytön \"Asetukset / Yhteys\".</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ Laitteesi päivämäärä tai aika vaikuttaa olevan väärässä (%1$s).\n\nAseta kellonaika ⏰🔧 varmistaaksesi, että viestin vastaanottaminen onnistuu.</string>
-    <string name="devicemsg_update_reminder">⚠️ ArcaneChat -versio saattaa olla vanhentunut.\n\nTämä saattaa aiheuttaa ongelmia, koska muut käyttävät uudempia versioita - ja saatat jäädä paitsi uusista ominaisuuksista. 😳\nTarkista uudet päivitykset sovelluskaupastasi tai https://get.delta.chat</string>
+    <string name="devicemsg_update_reminder">⚠️ ArcaneChat -versio saattaa olla vanhentunut.\n\nTämä saattaa aiheuttaa ongelmia, koska muut käyttävät uudempia versioita - ja saatat jäädä paitsi uusista ominaisuuksista. 😳\nTarkista uudet päivitykset sovelluskaupastasi tai https://github.com/ArcaneChat</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Avaa lukitus jatkaaksesi</string>
@@ -978,6 +979,7 @@
     <string name="mailto_link_could_not_be_decoded">mailto-linkkiä ei voitu selvittää: %1$s</string>
 
     <!-- notifications  -->
+    <!-- deprecated, use mark_as_read or mark_as_read_short -->
     <string name="notify_dismiss">Hylkää</string>
     <string name="notify_reply_button">Vastaa</string>
     <string name="notify_new_message">Uusi viesti</string>

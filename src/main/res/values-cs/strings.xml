@@ -450,7 +450,7 @@
     <string name="tab_all_media_empty_hint">Zde se zobrazí média sdílená v jakémkoli chatu.</string>
     <string name="media_preview">Náhled multimedia</string>
     <string name="send_message">Pošli zprávu</string>
-    <string name="multidevice_install_dc_on_other_device">Nainstalujte si ArcaneChat do druhého zařízení (https://get.delta.chat)</string>
+    <string name="multidevice_install_dc_on_other_device">Nainstalujte si ArcaneChat do druhého zařízení (https://github.com/ArcaneChat)</string>
     <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
     <string name="multidevice_tap_scan_on_other_device">Spusťte ArcaneChat, klepněte na „Přidat jako druhé zařízení“ a naskenujte zde zobrazený kód</string>
     <string name="login_title">Přihlaš se</string>
@@ -718,7 +718,7 @@
     <string name="chat_protection_enabled_explanation">Nyní je zaručeno, že všechny zprávy v tomto chatu jsou šifrovány end-to-end.\n\nŠifrování end-to-end udržuje zprávy soukromé mezi vámi a vašimi partnery v chatu. Nedokáže je přečíst ani váš poskytovatel e-mailu.</string>
     <string name="invalid_unencrypted_tap_to_learn_more">⚠️%1$svyžaduje end-to-end šifrování, které pro tento chat ještě není nastaveno. Klepnutím se dozvíte více. </string>
     <string name="devicemsg_self_deleted">Smazali jste chat „Uložené zprávy“.\n\nℹ️ Chcete-li znovu použít funkci „Uložené zprávy“, vytvořte si nový chat. </string>
-    <string name="devicemsg_update_reminder">⚠️ Vaše verze ArcaneChatu může být zastaralá.\n\nTo může způsobit problémy, protože vaši partneři v chatu používají novější verze – a vám chybí nejnovější funkce 😳\nAktualizace najdete na https://get.delta.chat nebo v obchodě s aplikacemi . </string>
+    <string name="devicemsg_update_reminder">⚠️ Vaše verze ArcaneChatu může být zastaralá.\n\nTo může způsobit problémy, protože vaši partneři v chatu používají novější verze – a vám chybí nejnovější funkce 😳\nAktualizace najdete na https://github.com/ArcaneChat nebo v obchodě s aplikacemi . </string>
 
     <!-- qr code stuff -->
     <string name="qr_code">QR kód</string>

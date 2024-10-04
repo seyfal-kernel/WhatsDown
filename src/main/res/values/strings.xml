@@ -341,7 +341,7 @@
     <string name="videochat_tap_to_open">Tap to Open</string>
     <string name="videochat_instance">Video Chat Instance</string>
     <string name="videochat_instance_placeholder">Your Video Chat Instance</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Example: https://your-server.org/$ROOM</string>
     <string name="videochat_instance_explain_2">If enabled, you can start a video chat from each chat. Requires a compatible app or a browser on both ends.</string>
     <string name="videochat_instance_from_qr">Use \"%1$s\" to invite others to video chats?\n\nOnce set, you can start a video chat from each chat. This replaces any previous setting for video chats.</string>
@@ -528,7 +528,7 @@
     <string name="multidevice_title">Add Second Device</string>
     <string name="multidevice_same_network_hint">Make sure both devices are on the same Wi-Fi or network</string>
     <string name="multidevice_this_creates_a_qr_code">This creates a QR code that the second device can scan to copy the profile.</string>
-    <string name="multidevice_install_dc_on_other_device">Install ArcaneChat on your other device (https://get.delta.chat)</string>
+    <string name="multidevice_install_dc_on_other_device">Install ArcaneChat on your other device (https://github.com/ArcaneChat)</string>
     <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
     <string name="multidevice_tap_scan_on_other_device">Start ArcaneChat, tap “I Already Have a Profile / Add as Second Device” and scan the code shown here</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
@@ -626,13 +626,22 @@
     <!-- the word "Proxy" might be left untranslated unless the destination language has a well-known term for a "Proxy Server", acting intermediary between the app and the chatmail or email server -->
     <string name="proxy_settings">Proxy</string>
     <string name="proxy_use_proxy">Use Proxy</string>
-    <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
+    <string name="proxy_add">Add Proxy</string>
+    <string name="proxy_add_explain">Supported proxy types: HTTP(S), SOCKS5 and Shadowsocks.</string>
+    <string name="proxy_add_url_hint">Enter proxy URL here</string>
+    <string name="proxy_invalid">Invalid or unsupported proxy URL</string>
+    <string name="proxy_list_header">Saved Proxies</string>
+    <string name="proxy_delete">Delete Proxy</string>
+    <string name="proxy_delete_explain">Are you sure you want to delete \"%1$s\"?</string>
+
+    <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">Use SOCKS5</string>
     <string name="login_socks5_host">SOCKS5 Host</string>
     <string name="login_socks5_port">SOCKS5 Port</string>
     <string name="login_socks5_user">SOCKS5 User</string>
     <string name="login_socks5_password">SOCKS5 Password</string>
+
     <string name="login_info_oauth2_title">Continue with simplified setup?</string>
     <string name="login_info_oauth2_text">The entered e-mail address supports a simplified setup (OAuth 2.0).\n\nIn the next step, please allow ArcaneChat to act as your Chat over E-mail app.\n\nArcaneChat does not collect user data, everything stays on your device.</string>
     <string name="login_certificate_checks">Certificate Checks</string>
@@ -947,7 +956,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ Your provider\'s storage is about to run out: %1$s%% are already used.\n\nYou may not be able to receive messages if storage is full.\n\n👉 Please check if you can delete old data in the provider\'s web interface and consider enabling \"Settings / Chats and Media / Delete Old Messages\". You can check your current storage usage anytime at \"Settings / Connectivity\".</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ Date or time on your device seems to be inaccurate (%1$s).\n\nAdjust your clock ⏰🔧 to ensure your messages are received correctly.</string>
-    <string name="devicemsg_update_reminder">⚠️ Your ArcaneChat version might be outdated.\n\nThis may cause problems because your chat partners use newer versions - and you are missing the latest features 😳\nPlease check https://get.delta.chat or your app store for updates.</string>
+    <string name="devicemsg_update_reminder">⚠️ Your ArcaneChat version might be outdated.\n\nThis may cause problems because your chat partners use newer versions - and you are missing the latest features 😳\nPlease check https://github.com/ArcaneChat or your app store for updates.</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Unlock to continue</string>

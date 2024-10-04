@@ -331,7 +331,7 @@
     <string name="videochat_tap_to_open">Druk om te openen</string>
     <string name="videochat_instance">Videogespreksinstantie</string>
     <string name="videochat_instance_placeholder">Mijn videogespreksinstantie</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Voorbeeld: https://your-server.org/$ROOM</string>
     <string name="videochat_instance_explain_2">Schakel in om een videogesprek te starten vanuit een een-op-eengesprek. Zowel jij als je gesprekspartner hebben hiervoor een compatibele app of webbrowser nodig.</string>
     <string name="videochat_instance_from_qr">Wil je ‘%1$s’, gebruiken om anderen uit te nodigen voor videogesprekken?\n\nNa het instellen kun je een videogesprek starten vanuit elk een-op-eengesprek. Deze instelling vervangt de vorige videogespreksinstelling.</string>
@@ -510,7 +510,7 @@
     <string name="multidevice_title">Secundair apparaat toevoegen</string>
     <string name="multidevice_same_network_hint">Zorg ervoor dat beide apparaten verbonden zijn met hetzelfde (wifi)netwerk</string>
     <string name="multidevice_this_creates_a_qr_code">Hiermee wordt een QR-code samengesteld die door het tweede apparaat kan worden gescand om het account te kopiëren.</string>
-    <string name="multidevice_install_dc_on_other_device">Installeer ArcaneChat op je andere apparaat (https://get.delta.chat)</string>
+    <string name="multidevice_install_dc_on_other_device">Installeer ArcaneChat op je andere apparaat (https://github.com/ArcaneChat)</string>
     <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
     <string name="multidevice_tap_scan_on_other_device">Start ArcaneChat, druk op ‘Ik heb al een profiel → Toevoegen als secundair apparaat’ en scan de hier getoonde code</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
@@ -608,13 +608,22 @@
     <!-- the word "Proxy" might be left untranslated unless the destination language has a well-known term for a "Proxy Server", acting intermediary between the app and the chatmail or email server -->
     <string name="proxy_settings">Proxy</string>
     <string name="proxy_use_proxy">Proxy gebruiken</string>
-    <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
+    <string name="proxy_add">Proxy toevoegen</string>
+    <string name="proxy_add_explain">Ondersteunde proxytypes: http(s), socks5 en shadowsocks.</string>
+    <string name="proxy_add_url_hint">Voer een proxy-url in</string>
+    <string name="proxy_invalid">Ongeldige of niet-ondersteunde proxy-url</string>
+    <string name="proxy_list_header">Bewaarde proxy\'s</string>
+    <string name="proxy_delete">Proxy verwijderen</string>
+    <string name="proxy_delete_explain">Weet je zeker dat je ‘%1$s’ wilt verwijderen?</string>
+
+    <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">SOCKS5 gebruiken</string>
     <string name="login_socks5_host">SOCKS5-host</string>
     <string name="login_socks5_port">SOCKS5-poort</string>
     <string name="login_socks5_user">SOCKS5-gebruiker</string>
     <string name="login_socks5_password">SOCKS5-wachtwoord</string>
+
     <string name="login_info_oauth2_title">Wil je doorgaan met vereenvoudigd instellen?</string>
     <string name="login_info_oauth2_text">Het ingevoerde e-mailadres ondersteunt vereenvoudigd instellen (OAuth2).\n\nTijdens de volgende stap moet je ArcaneChat toestaan te fungeren als je e-mailapp.\n\nArcaneChat heeft geen eigen servers; jóuw gegevens blijven op jóuw apparaat!</string>
     <string name="login_certificate_checks">Certificaatcontrole</string>
@@ -927,7 +936,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ De opslagruimte die je provider biedt is bijna overschreden. Momenteel heb je %1$s%% ervan in gebruik.\n\nAls je geen ruimte meer hebt, kun je mogelijk geen berichten meer ontvangen.\n\n👉 Kijk of je oude gegevens kunt verwijderen in de webclient van je provider. Overweeg ook ‘Instellingen → Oude berichten verwijderen’ in te schakelen. Je kunt je huidige gebruik te allen tijde bekijken via ‘Instellingen → Verbindingen’.</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ De datum en tijd van je apparaat lijken niet te kloppen (%1$s).\n\nVerzet je klok ⏰🔧 om er zeker van te zijn dat je berichten kunt ontvangen.</string>
-    <string name="devicemsg_update_reminder">⚠️ Je versie van ArcaneChat is mogelijk verouderd.\n\nDit kan problemen veroorzaken aangezien je gesprekspartners nieuwe versies gebruiken. Bovendien mis je hierdoor enkele nieuwe functies. 😳\nGa naar https://get.delta.chat of de appwinkel van je apparaat om te controleren op updates.</string>
+    <string name="devicemsg_update_reminder">⚠️ Je versie van ArcaneChat is mogelijk verouderd.\n\nDit kan problemen veroorzaken aangezien je gesprekspartners nieuwe versies gebruiken. Bovendien mis je hierdoor enkele nieuwe functies. 😳\nGa naar https://github.com/ArcaneChat of de appwinkel van je apparaat om te controleren op updates.</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Ontgrendelen om verder te gaan</string>
@@ -994,6 +1003,7 @@
     <string name="mailto_link_could_not_be_decoded">De mailto-link kan niet worden ontcijferd: %1$s</string>
 
     <!-- notifications  -->
+    <!-- deprecated, use mark_as_read or mark_as_read_short -->
     <string name="notify_dismiss">Verwerpen</string>
     <string name="notify_reply_button">Beantwoorden</string>
     <string name="notify_new_message">Nieuw bericht</string>

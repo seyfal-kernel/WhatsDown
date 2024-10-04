@@ -289,7 +289,7 @@
     <string name="videochat_tap_to_open">Πατήστε για Άνοιγμα</string>
     <string name="videochat_instance">Παρουσία στη Βιντεοκλήση</string>
     <string name="videochat_instance_placeholder">Η παρουσία σας στη βιντεοκλήση</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Παράδειγμα: https://meet.jit.si/$ROOM ή basicwebrtc:https://your-server</string>
     <string name="videochat_instance_explain_2">Αν είναι ενεργοποιημένο, μπορείτε να ξεκινήσετε μια συνομιλία μέσω βίντεο από κάθε συνομιλία. Απαιτεί μια συμβατή εφαρμογή ή ένα πρόγραμμα περιήγησης και στα δύο άκρα.</string>
     <string name="videochat_instance_from_qr">Χρήση \"%1$s\" για να προσκαλέσετε άλλους στη βιντεοκλήση;\n\nΑφού ρυθμιστεί, μπορείτε να ξεκινήσετε μια συνομιλία μέσω βίντεο από κάθε συνομιλία. Αυτό αντικαθιστά οποιαδήποτε προηγούμενη ρύθμιση για συνομιλίες μέσω βίντεο.</string>
@@ -492,13 +492,14 @@
     <string name="login_smtp_port">Θύρα SMTP</string>
     <string name="login_smtp_security">Ασφάλεια SMTP</string>
     <string name="login_auth_method">Μέθοδος Πιστοποίησης</string>
-    <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
+    <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">Χρήση SOCKS5</string>
     <string name="login_socks5_host">SOCKS5 Κεντρικός</string>
     <string name="login_socks5_port">Θύρα SOCKS5</string>
     <string name="login_socks5_user">Χρήστης SOCKS5</string>
     <string name="login_socks5_password">Κωδικός SOCKS5</string>
+
     <string name="login_info_oauth2_title">Συνέχεια με την απλοποιημένη ρύθμιση;</string>
     <string name="login_info_oauth2_text">Η εισαγόμενη διεύθυνση e-mail υποστηρίζει μια απλοποιημένη ρύθμιση (OAuth 2.0).\n\nΣτο επόμενο βήμα, επιτρέψτε στο ArcaneChat να λειτουργεί ως η εφαρμογή Chat μέσω ηλεκτρονικού ταχυδρομείου.\n\nΔεν υπάρχουν διακομιστές ArcaneChat, τα δεδομένα σας παραμένει στη συσκευή σας.</string>
     <string name="login_certificate_checks">Έλεγχοι Πιστοποιητικών</string>
@@ -771,7 +772,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ Ο αποθηκευτικός χώρος του παρόχου σας πρόκειται να εξαντληθεί: %1$s %% χρησιμοποιούνται ήδη.\n\nΕνδέχεται να μην μπορείτε να λαμβάνετε μηνύματα εάν ο χώρος αποθήκευσης είναι πλήρης.\n\n👉 Ελέγξτε εάν μπορείτε να διαγράψετε παλιά δεδομένα στη διεπαφή ιστού του παρόχου και εξετάστε το ενδεχόμενο ενεργοποίηση \"Ρυθμίσεις / Διαγραφή παλαιών μηνυμάτων\". Μπορείτε να ελέγξετε την τρέχουσα χρήση αποθηκευτικού χώρου ανά πάσα στιγμή στις \"Ρυθμίσεις / Συνδεσιμότητα\".</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ Η ημερομηνία ή η ώρα στη συσκευή σας φαίνεται να είναι μην είναι ακριβής (%1$s).\n\nΠροσαρμόστε το ρολόι σας ⏰🔧 για να βεβαιωθείτε ότι τα μηνύματά σας λαμβάνονται σωστά.</string>
-    <string name="devicemsg_update_reminder">⚠️ Η έκδοση ArcaneChat μπορεί να είναι παλιά.\n\nΑυτό μπορεί να προκαλέσει προβλήματα επειδή οι συνεργάτες συνομιλίας σας χρησιμοποιούν νεότερες εκδόσεις - και δεν έχετε τις πιο πρόσφατες λειτουργίες 😳\nΕλέγξτε τη https://get.delta.chat ή το κατάστημα εφαρμογών σας για ενημερώσεις .</string>
+    <string name="devicemsg_update_reminder">⚠️ Η έκδοση ArcaneChat μπορεί να είναι παλιά.\n\nΑυτό μπορεί να προκαλέσει προβλήματα επειδή οι συνεργάτες συνομιλίας σας χρησιμοποιούν νεότερες εκδόσεις - και δεν έχετε τις πιο πρόσφατες λειτουργίες 😳\nΕλέγξτε τη https://github.com/ArcaneChat ή το κατάστημα εφαρμογών σας για ενημερώσεις .</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Εισαγάγετε το μυστικό που έχει οριστεί από το σύστημά σας για να συνεχίσετε.</string>
@@ -829,6 +830,7 @@
     <string name="mailto_link_could_not_be_decoded">Αδυναμία αποκωδικοποίησης του συνδέσμου mailto: %1$s</string>
 
     <!-- notifications  -->
+    <!-- deprecated, use mark_as_read or mark_as_read_short -->
     <string name="notify_dismiss">Απόρριψη</string>
     <string name="notify_reply_button">Απάντηση</string>
     <string name="notify_new_message">Νέο μήνυμα</string>

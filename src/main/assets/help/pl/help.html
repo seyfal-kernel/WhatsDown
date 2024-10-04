@@ -55,7 +55,7 @@
       <li><a href="#jak-mogę-zapewnić-kompleksowe-szyfrowanie-i-usuwanie-wiadomości">Jak mogę zapewnić kompleksowe szyfrowanie i usuwanie wiadomości?</a></li>
       <li><a href="#pfs">Czy ArcaneChat obsługuje funkcję Perfect Forward Secrecy?</a></li>
       <li><a href="#czy-szyfrowanie-end-to-end-delta-chat-jest-tak-samo-bezpieczne-jak-signal">Czy szyfrowanie end-to-end ArcaneChat jest tak samo bezpieczne jak Signal?</a></li>
-      <li><a href="#czy-mogę-ponownie-wykorzystać-mój-istniejący-klucz-prywatny">Czy mogę ponownie wykorzystać mój istniejący klucz prywatny?</a></li>
+      <li><a href="#importkey">Czy mogę ponownie wykorzystać mój istniejący klucz prywatny?</a></li>
       <li><a href="#nie-mogę-zaimportować-istniejącego-klucza-pgp-do-delta-chat">Nie mogę zaimportować istniejącego klucza PGP do ArcaneChat.</a></li>
       <li><a href="#security-audits">Czy ArcaneChat był niezależnie kontrolowany pod kątem luk w zabezpieczeniach?</a></li>
     </ul>
@@ -97,7 +97,7 @@
       <li><a href="#po-co-mam-wybrać-opcję-oglądania-folderu-wysłane">Po co mam wybrać opcję oglądania folderu „Wysłane”?</a></li>
       <li><a href="#dlaczego-mogę-nie-widzieć-folderu-deltachat">Dlaczego mogę nie widzieć folderu DeltaChat?</a></li>
       <li><a href="#czy-delta-chat-jest-kompatybilny-z-protonmail--tutanota--criptext">Czy ArcaneChat jest kompatybilny z Protonmail / Tutanota / Criptext?</a></li>
-      <li><a href="#jak-mogę-usunąć-swoje-konto">Jak mogę usunąć swoje konto?</a></li>
+      <li><a href="#remove-account">Jak mogę usunąć swoje konto?</a></li>
       <li><a href="#interesują-mnie-szczegóły-techniczne-możesz-powiedzieć-mi-coś-więcej">Interesują mnie szczegóły techniczne. Możesz powiedzieć mi coś więcej?</a></li>
       <li><a href="#w-jaki-sposób-finansowany-jest-rozwój-delta-chat">W jaki sposób finansowany jest rozwój ArcaneChat?</a></li>
     </ul>
@@ -824,10 +824,10 @@ nadal będziesz mógł pisać, ale nie będziesz już powiadamiany o żadnych no
 
 <p>W każdym razie szyfrowanie end-to-end ArcaneChat wykorzystuje <a href="#openpgp-secure">bezpieczny podzbiór OpenPGP</a>, który został poddany <a href="https://delta.chat/assets/blog/2019-first-security-review.pdf">niezależnemu audytowi bezpieczeństwa</a>.</p>
     
-      <h3 id="czy-mogę-ponownie-wykorzystać-mój-istniejący-klucz-prywatny">
+      <h3 id="importkey">
         
         
-          Czy mogę ponownie wykorzystać mój istniejący klucz prywatny? <a href="#czy-mogę-ponownie-wykorzystać-mój-istniejący-klucz-prywatny" class="anchor"></a>
+          Czy mogę ponownie wykorzystać mój istniejący klucz prywatny? <a href="#importkey" class="anchor"></a>
         
         
       </h3>
@@ -914,7 +914,7 @@ W przypadku innych programów można znaleźć rozwiązanie online.</p>
     <p>Na pierwszym urządzeniu przejdź do <strong>Ustawienia → Dodaj kolejne urządzenie</strong>, w razie potrzeby odblokuj ekran i poczekaj chwilę, aż pojawi się kod QR</p>
   </li>
   <li>
-    <p>Na drugim urządzeniu <a href="https://get.delta.chat">zainstaluj ArcaneChat</a></p>
+    <p>Na drugim urządzeniu <a href="https://github.com/ArcaneChat">zainstaluj ArcaneChat</a></p>
   </li>
   <li>
     <p>Na drugim urządzeniu uruchom ArcaneChat, wybierz <strong>Dodaj jako kolejne urządzenie</strong> i zeskanuj kod QR z pierwszego urządzenia</p>
@@ -993,7 +993,7 @@ W przypadku innych programów można znaleźć rozwiązanie online.</p>
 <ul>
   <li>Nie ma bezpośrednich planów, ale wstępne przemyślenia.</li>
   <li>Istnieją 2-3 możliwości wprowadzenia klienta Web ArcaneChat, ale wszystkie wymagają znaczącej pracy. Na razie skupiamy się na udostępnianiu stabilnych wersji we wszystkich sklepach z aplikacjami (repozytoria Google Play/iOS/Windows/macOS/Linux) jako aplikacji natywnych.</li>
-  <li>Jeśli potrzebujesz klienta Web, ponieważ nie możesz instalować oprogramowania na komputerze, na którym pracujesz, możesz użyć przenośnego klienta Windows Desktop lub AppImage dla Linuxa. Możesz je znaleźć na <a href="https://get.delta.chat">get.delta.chat</a>.</li>
+  <li>Jeśli potrzebujesz klienta Web, ponieważ nie możesz instalować oprogramowania na komputerze, na którym pracujesz, możesz użyć przenośnego klienta Windows Desktop lub AppImage dla Linuxa. Możesz je znaleźć na <a href="https://github.com/ArcaneChat">github.com/ArcaneChat</a>.</li>
 </ul>
     
       <h2 id="webxdc">
@@ -1299,7 +1299,7 @@ jeśli chcesz sprawdzić, czy Twoje poświadczenia są przetwarzane w bezpieczny
 
 <p>Jedynym powodem, dla którego ktoś chce oglądać folder Wysłane, jest to, że używa innego programu pocztowego (takiego jak Thunderbird) razem z aplikacją ArcaneChat i chce, aby jego program pocztowy „uczestniczył” w rozmowach na czacie.</p>
 
-<p>Jednak zalecamy używanie klienta ArcaneChat Desktop; możesz go pobrać z <a href="https://get.delta.chat">get.delta.chat</a>. Opcja oglądania folderu „Wysłane” może w przyszłości zniknąć. Została wprowadzona w czasie, gdy na żadnej platformie nie był dostępny klient ArcaneChat Desktop.</p>
+<p>Jednak zalecamy używanie klienta ArcaneChat Desktop; możesz go pobrać z <a href="https://github.com/ArcaneChat">github.com/ArcaneChat</a>. Opcja oglądania folderu „Wysłane” może w przyszłości zniknąć. Została wprowadzona w czasie, gdy na żadnej platformie nie był dostępny klient ArcaneChat Desktop.</p>
     
       <h3 id="dlaczego-mogę-nie-widzieć-folderu-deltachat">
         
@@ -1326,18 +1326,38 @@ jeśli chcesz sprawdzić, czy Twoje poświadczenia są przetwarzane w bezpieczny
   <li>ArcaneChat może zaszyfrować metodą end-to-end za pośrednictwem dowolnego dostawcy poczty e-mail z dowolną <a href="https://autocrypt.org/dev-status.html">aplikacją e-mail z włączoną funkcją Autocrypt</a>.</li>
 </ul>
     
-      <h3 id="jak-mogę-usunąć-swoje-konto">
+      <h3 id="remove-account">
         
         
-          Jak mogę usunąć swoje konto? <a href="#jak-mogę-usunąć-swoje-konto" class="anchor"></a>
+          Jak mogę usunąć swoje konto? <a href="#remove-account" class="anchor"></a>
         
         
       </h3>
 
-<p>Gdy korzystasz z konta e-mail w ArcaneChat, sposób usunięcia konta zależy od dostawcy poczty e-mail.
-Nie mamy żadnej kontroli nad twoim kontem e-mail, więc niestety nie możemy ci w tym pomóc.</p>
+<p>If you use a default chat profile
+you can simply uninstall the app.
+This will automatically trigger deletion of all associated account data on the chatmail server.
+For more info, please refer to <a href="https://nine.testrun.org/info.html#account-deletion">nine.testrun.org account-deletion</a> for the default onboarding server,
+or the respective page from your chosen <a href="https://delta.chat/pl/chatmail">3rd party chatmail server</a>.</p>
 
-<p>Jeśli chcesz zachować konto, ale odinstalować ArcaneChat, zaleca się opuszczenie każdego czatu grupowego przed odinstalowaniem ArcaneChat.</p>
+<p>If you have set up your chat profile on multiple devices
+you need to remove it from all devices.</p>
+
+<p>If you are using more than one account,
+but don’t want to get rid of all of them,
+you can remove it in the account switcher menu (on android and iOS),
+or in the sidebar with a right click (in the desktop client).</p>
+
+<p>Accounts on <a href="https://providers.delta.chat">classic e-mail providers</a>
+will not be deleted automatically;
+how you can delete your account depends on your e-mail provider.
+We don’t have any control over e-mail accounts at those providers,
+so unfortunately we can’t help you with that.</p>
+
+<p>If you want to continue using a classic e-mail account with other apps,
+but uninstall ArcaneChat,
+it is recommended to leave any group chat before uninstalling ArcaneChat.
+Otherwise you might receive undecryptable messages from those group chats.</p>
     
       <h3 id="interesują-mnie-szczegóły-techniczne-możesz-powiedzieć-mi-coś-więcej">
         

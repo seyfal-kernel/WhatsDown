@@ -317,7 +317,7 @@
     <string name="videochat_tap_to_open">برای باز کردن ضربه بزنید. </string>
     <string name="videochat_instance">جلسه تماس تصویری</string>
     <string name="videochat_instance_placeholder">جلسه تماس تصویری شما</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">مثال‌: 
 https://meet.jit.si/$ROOM 
 یا
@@ -491,7 +491,7 @@ https://meet.jit.si/$ROOM
     <string name="multidevice_title">افزودن دستگاه دوم</string>
     <string name="multidevice_same_network_hint">مطمئن شوید هر دو دستگاه در یک وای‌فای یا شبکه هستند</string>
     <string name="multidevice_this_creates_a_qr_code">این یک کد کیوآر ایجاد می‌کند که دستگاه دوم می‌تواند برای کپی حساب اسکن کند.</string>
-    <string name="multidevice_install_dc_on_other_device">دلتاچت را روی دستگاه دیگر خود نصب کنید (https://get.delta.chat)</string>
+    <string name="multidevice_install_dc_on_other_device">دلتاچت را روی دستگاه دیگر خود نصب کنید (https://github.com/ArcaneChat)</string>
     <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
     <string name="multidevice_tap_scan_on_other_device">دلتاچت را باز کنید، روی «افزودن به عنوان دستگاه دوم» بزنید و کد نشان داده شده در اینجا را اسکن کنید</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
@@ -573,13 +573,14 @@ https://meet.jit.si/$ROOM
     <string name="login_smtp_port">SMTP Port</string>
     <string name="login_smtp_security">SMTP Security</string>
     <string name="login_auth_method">Authorization Method</string>
-    <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
+    <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">استفاده از SOCKS5</string>
     <string name="login_socks5_host">SOCKS5 Host</string>
     <string name="login_socks5_port">SOCKS5 Port</string>
     <string name="login_socks5_user">SOCKS5 User</string>
     <string name="login_socks5_password">SOCKS5 Password</string>
+
     <string name="login_info_oauth2_title">با تنظیم‌ها ساده‌ شده ادامه می‌دهید؟</string>
     <string name="login_info_oauth2_text">نشانی رایانامه وارد شده از تنظیم‌های ساده پشتیبانی می‌کند
 (OAuth 2.0).\n\nIn
@@ -888,7 +889,7 @@ https://meet.jit.si/$ROOM
 ساعت دستگاه خود را تنظیم کنید ⏰🔧 تا پیام‌ها به درستی دریافت شوند. </string>
     <string name="devicemsg_update_reminder">هشدار⚠️ ممکن است نسخه دلتاچت مورد استفاده قدیمی شده باشد. 
 این موضوع ممکن است مشکلاتی ایجاد کند چون مخاطبین شما از نسخه‌های جدیدتر استفاده می‌کنند. همچنین قابلیت‌های جدید را هم از دست می‌دهید😳
-لطفا برای دریافت نسخه جدید به app store یا https://get.delta.chat مراجعه کنید. </string>
+لطفا برای دریافت نسخه جدید به app store یا https://github.com/ArcaneChat مراجعه کنید. </string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">برای ادامه، لطفا رمز تعیین شده توسط سیستم خود را وارد کنید</string>
@@ -955,6 +956,7 @@ https://meet.jit.si/$ROOM
     <string name="mailto_link_could_not_be_decoded">امکان کدگشایی پیوند mailto وجود ندارد: %1$s</string>
 
     <!-- notifications  -->
+    <!-- deprecated, use mark_as_read or mark_as_read_short -->
     <string name="notify_dismiss">صرف نظر</string>
     <string name="notify_reply_button">پاسخ</string>
     <string name="notify_new_message">پیام جدید</string>

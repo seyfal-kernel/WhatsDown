@@ -348,7 +348,7 @@
     <string name="videochat_tap_to_open">Toca para abrir</string>
     <string name="videochat_instance">Instancia de videollamada</string>
     <string name="videochat_instance_placeholder">Tu instancia de videollamada</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Ejemplo: https://tu-servidor.org/$ROOM</string>
     <string name="videochat_instance_explain_2">Si el videochat está activado, puedes iniciar un videochat desde cada chat. Los chats de vídeo necesitan una aplicación o un navegador compatible en los dos lados.</string>
     <string name="videochat_instance_from_qr">¿Usa \"%1$s\" para invitar a otros a la videollamada?\n\nUna vez configurado, puedes iniciar una videollamada desde el chat individual. Esto reemplaza la configuración previa de videollamadas. Si la hubiera.</string>
@@ -541,7 +541,7 @@
     <string name="multidevice_title">Añadir otro dispositivo</string>
     <string name="multidevice_same_network_hint">Asegúrate de que ambos dispositivos estén conectados en la misma red o Wi-Fi</string>
     <string name="multidevice_this_creates_a_qr_code">Esto crea un código QR que el otro dispositivo puede escanear para copiar la cuenta.</string>
-    <string name="multidevice_install_dc_on_other_device">Instala ArcaneChat en tu otro dispositivo (https://get.delta.chat)</string>
+    <string name="multidevice_install_dc_on_other_device">Instala ArcaneChat en tu otro dispositivo (https://github.com/ArcaneChat)</string>
     <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
     <string name="multidevice_tap_scan_on_other_device">Inicia ArcaneChat, toca \"Añadir desde otro dispositivo\" y escanea el código mostrado aquí</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
@@ -636,13 +636,14 @@
     <string name="login_smtp_port">Puerto SMTP</string>
     <string name="login_smtp_security">Seguridad SMTP</string>
     <string name="login_auth_method">Método de autorización</string>
-    <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
+    <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">Usar SOCKS5</string>
     <string name="login_socks5_host">Servidor SOCKS5</string>
     <string name="login_socks5_port">Puerto SOCKS5</string>
     <string name="login_socks5_user">Usuario SOCKS5</string>
     <string name="login_socks5_password">Contraseña SOCKS5</string>
+
     <string name="login_info_oauth2_title">¿Continuar con la configuración simplificada?</string>
     <string name="login_info_oauth2_text">La dirección de correo electrónico introducida admite una configuración simplificada (OAuth 2.0).\n\nEn el próximo paso, permita que ArcaneChat actúe como su aplicación de chat por correo electrónico.\n\nNo hay servidores de ArcaneChat, tus datos permanecen en tu dispositivo.</string>
     <string name="login_certificate_checks">Comprobaciones de certificados</string>
@@ -955,7 +956,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ El almacenamiento de tu proveedor está por excederse, ya tienes %1$s%% en uso.\n\nQuizás no puedas recibir mensajes cuando el almacenamiento esté al 100%% de uso.\n\n👉 Por favor chequea si puedes eliminar los datos antiguos en la página web del proveedor y considera habilitar \"Ajustes / Eliminar mensajes antiguos\". Puedes chequear tu almacenamiento actual en cualquier momento en \"Ajustes / Conectividad\".</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ Fecha y hora de tu dispositivo parecen ser inexactas (%1$s).\n\nAjusta tu reloj ⏰🔧 para asegurarte que los mensajes sean recibidos correctamente.</string>
-    <string name="devicemsg_update_reminder">⚠️ Tu versión de ArcaneChat puede estar desactualizada.\n\nEso puede crear problemas porque tus contactos usan nuevas versiones - y tú te estás perdiendo las últimas novedades 😳\nChequea https://get.delta.chat o tu tienda de aplicaciones para actualizaciones.</string>
+    <string name="devicemsg_update_reminder">⚠️ Tu versión de ArcaneChat puede estar desactualizada.\n\nEso puede crear problemas porque tus contactos usan nuevas versiones - y tú te estás perdiendo las últimas novedades 😳\nChequea https://github.com/ArcaneChat o tu tienda de aplicaciones para actualizaciones.</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Desbloquear para continuar</string>
@@ -1023,6 +1024,7 @@
     <string name="mailto_link_could_not_be_decoded">El enlace mailto no se pudo decodificar: %1$s</string>
 
     <!-- notifications  -->
+    <!-- deprecated, use mark_as_read or mark_as_read_short -->
     <string name="notify_dismiss">Descartar</string>
     <string name="notify_reply_button">Responder</string>
     <string name="notify_new_message">Nuevo mensaje</string>

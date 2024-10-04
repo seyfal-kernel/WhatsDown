@@ -31,6 +31,7 @@ public class DcContext {
     public final static int DC_EVENT_WEBXDC_STATUS_UPDATE        = 2120;
     public final static int DC_EVENT_WEBXDC_INSTANCE_DELETED     = 2121;
     public final static int DC_EVENT_WEBXDC_REALTIME_DATA        = 2150;
+    public final static int DC_EVENT_ACCOUNTS_BACKGROUND_FETCH_DONE = 2200;
 
     public final static int DC_IMEX_EXPORT_SELF_KEYS = 1;
     public final static int DC_IMEX_IMPORT_SELF_KEYS = 2;
@@ -55,6 +56,7 @@ public class DcContext {
     public final static int DC_QR_BACKUP            = 251;
     public final static int DC_QR_BACKUP2           = 252;
     public final static int DC_QR_WEBRTC            = 260;
+    public final static int DC_QR_PROXY             = 271;
     public final static int DC_QR_ADDR              = 320;
     public final static int DC_QR_TEXT              = 330;
     public final static int DC_QR_URL               = 332;

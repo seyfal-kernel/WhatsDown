@@ -328,7 +328,7 @@
     <string name="videochat_tap_to_open">Prekeni që të Hapet</string>
     <string name="videochat_instance">Instancë Fjalosjeje me Video</string>
     <string name="videochat_instance_placeholder">Instanca juaj e Fjalosjes me Video</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Shembull: https://shërbyesi-juaj.org/$ROOM</string>
     <string name="videochat_instance_explain_2">Nëse është aktivizuar, mund të nisni një fjalosje me video prej secilës fjalosje. Kjo lyp në të dy skajet një aplikacion të përputhshëm, ose një shfletues të përputhshëm.</string>
     <string name="videochat_instance_from_qr">Të përdoret “%1$s” për të ftuar të tjerë në fjalosje me video?\n\nPasi të ujdiset kjo, mund të filloni një fjalosje me video që prej një fjalosjeje tek-për-tek. Kështu do të zëvendësohet rregullimi i mëparshëm për fjalosje video, në pastë.</string>
@@ -504,7 +504,7 @@
     <string name="multidevice_title">Shtoni Pajisje të Dytë</string>
     <string name="multidevice_same_network_hint">Sigurohuni se të dy pajisjet janë në të njëjtin rrjet Wi-Fi ose klasik</string>
     <string name="multidevice_this_creates_a_qr_code">Kjo krijon një kod QR që pajisja e dytë mund ta skanojë për të kopjuar llogarinë.</string>
-    <string name="multidevice_install_dc_on_other_device">Instaloni ArcaneChat-in në pajisjen tuaj tjetër (https://get.delta.chat)</string>
+    <string name="multidevice_install_dc_on_other_device">Instaloni ArcaneChat-in në pajisjen tuaj tjetër (https://github.com/ArcaneChat)</string>
     <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
     <string name="multidevice_tap_scan_on_other_device">Nisni ArcaneChat-in, prekni mbi “Shtoje si Pajisje të Dytë” dhe skanoni kodin e treguar këtu</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
@@ -602,13 +602,22 @@
     <!-- the word "Proxy" might be left untranslated unless the destination language has a well-known term for a "Proxy Server", acting intermediary between the app and the chatmail or email server -->
     <string name="proxy_settings">Ndërmjetës</string>
     <string name="proxy_use_proxy">Përdor Ndërmjetës</string>
-    <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
+    <string name="proxy_add">Shtoni Ndërmjetës</string>
+    <string name="proxy_add_explain">Lloje ndërmjetësish që mbulohen: HTTP(S), SOCKS5 dhe Shadowsocks.</string>
+    <string name="proxy_add_url_hint">Jepni këtu URL-në e ndërmjetësit</string>
+    <string name="proxy_invalid">URL ndërmjetësi e pavlefshme, ose që s’mbulohet</string>
+    <string name="proxy_list_header">Ndërmjetës të Ruajtur</string>
+    <string name="proxy_delete">Fshije Ndërmjetësin</string>
+    <string name="proxy_delete_explain">Jeni i sigurt se doni të fshihet “%1$s”?</string>
+
+    <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">Përdor SOCKS5</string>
     <string name="login_socks5_host">Strehë SOCKS5</string>
     <string name="login_socks5_port">Portë SOCKS5</string>
     <string name="login_socks5_user">Përdorues SOCKS5</string>
     <string name="login_socks5_password">Fjalëkalim SOCKS5</string>
+
     <string name="login_info_oauth2_title">Të vazhdohet me rregullimin e thjeshtuar?</string>
     <string name="login_info_oauth2_text">Adresa email e dhënë mbulon një ujdisje të thjeshtuar (OAuth 2.0).\n\nNë hapin pasues, ju lutemi, lejojeni ArcaneChat-in të veprojë si aplikacioni juaj për Fjalosje Përmes Email-i.\n\nS\’ka shërbyes ArcaneChat, të dhënat tuaja rrinë në pajisjen tuaj!</string>
     <string name="login_certificate_checks">Kontrolle Dëshmish</string>
@@ -919,7 +928,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ Po mbaron depozita e shërbimit tuaj, përdoren tashmë %1$s%%.\n\nKur depozita është 100%% e përdorur, mund të mos jeni në gjendje të merrni mesazhe.\n\n👉 Ju lutemi, shihni se mos mund të fshini të dhëna të vjetra që nga ndërfaqja web e furnizuesit të shërbimit dhe shihni mundësinë të aktivizoni “Rregullime / Fshi Mesazhe të Vjetër”. Se sa depozitë është aktualisht e përdorur mund ta kontrolloni kurdo, që nga \"Rregullime / Lidhje\".</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ Data ose koha e pajisjes tuaj duket të jetë e pasaktë (%1$s).\n\nRregulloni sahatin tuaj ⏰🔧 që të garantohet se mesazhet tuaj merren saktë.</string>
-    <string name="devicemsg_update_reminder">⚠️ Versioni juaj i ArcaneChat-it duket të jetë i vjetruar.\n\nKjo mund të shkaktojë probleme, ngaqë partnerët tuaj të fjalosjes përdorin versione të rinj - dhe ju mungojnë veçoritë më të reja 😳\nPër përditësime, ju lutemi, shihni te https://get.delta.chat ose te shitorja juaj e aplikacioneve.</string>
+    <string name="devicemsg_update_reminder">⚠️ Versioni juaj i ArcaneChat-it duket të jetë i vjetruar.\n\nKjo mund të shkaktojë probleme, ngaqë partnerët tuaj të fjalosjes përdorin versione të rinj - dhe ju mungojnë veçoritë më të reja 😳\nPër përditësime, ju lutemi, shihni te https://github.com/ArcaneChat ose te shitorja juaj e aplikacioneve.</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Që të vazhdohet, shkyçeni</string>
@@ -986,6 +995,7 @@
     <string name="mailto_link_could_not_be_decoded">s’u shkodua dot lidhje mailto: %1$s</string>
 
     <!-- notifications  -->
+    <!-- deprecated, use mark_as_read or mark_as_read_short -->
     <string name="notify_dismiss">Hidhe tej</string>
     <string name="notify_reply_button">Përgjigjuni</string>
     <string name="notify_new_message">Mesazh i ri</string>

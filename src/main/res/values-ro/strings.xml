@@ -306,7 +306,7 @@
     <string name="videochat_tap_to_open">Atingeți pentru a deschide</string>
     <string name="videochat_instance">Instanță de Videochat</string>
     <string name="videochat_instance_placeholder">Instanța Dumneavoastră de Videochat</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Exemple: https://meet.jit.si/$ROOM ori basicwebrtc:https://your-server</string>
     <string name="videochat_instance_explain_2">Dacă este activată, puteți începe un chat video din fiecare chat. Necesită un app compatibil sau un browser la ambele capete.</string>
     <string name="videochat_instance_from_qr">Folosiți \"%1$s\" pentru a invita alte persoane la chat-uri video?\n\nOnce setat, puteți începe un chat video din fiecare chat. Acest lucru înlocuiește orice setare anterioară pentru chat-urile video.</string>
@@ -476,7 +476,7 @@
     <string name="multidevice_title">Adăugați un al doilea dispozitiv</string>
     <string name="multidevice_same_network_hint">Asigurați-vă că ambele dispozitive se află în aceeași rețea Wi-Fi sau în aceeași rețea</string>
     <string name="multidevice_this_creates_a_qr_code">Astfel se creează un cod QR pe care cel de-al doilea dispozitiv îl poate scana pentru a copia contul.</string>
-    <string name="multidevice_install_dc_on_other_device">Instalați ArcaneChat pe celălalt dispozitiv (https://get.delta.chat)</string>
+    <string name="multidevice_install_dc_on_other_device">Instalați ArcaneChat pe celălalt dispozitiv (https://github.com/ArcaneChat)</string>
     <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
     <string name="multidevice_tap_scan_on_other_device">Porniți ArcaneChat, atingeți \" Adăugați ca al doilea dispozitiv\" și scanați codul afișat aici</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
@@ -543,13 +543,14 @@
     <string name="login_smtp_port">Portul SMTP </string>
     <string name="login_smtp_security">Securitate SMTP</string>
     <string name="login_auth_method">Metoda de autorizare</string>
-    <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
+    <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">Utilizați SOCKS5</string>
     <string name="login_socks5_host">Gazdă SOCKS5</string>
     <string name="login_socks5_port">Portul SOCKS5</string>
     <string name="login_socks5_user">Utilizator SOCKS5</string>
     <string name="login_socks5_password">Parolă SOCKS5</string>
+
     <string name="login_info_oauth2_title">Continuați cu configurația simplificată?</string>
     <string name="login_info_oauth2_text">Adresa de e-mail introdusă suportă o configurare simplificată (OAuth 2.0).\n\nÎn pasul următor, vă rugăm să permiteți ca ArcaneChat să acționeze ca aplicație de chat prin e-mail.\n\nNu există servere ArcaneChat, datele voastre rămân pe dispozitivul dumneavoastră.</string>
     <string name="login_certificate_checks">Verificări de certificate</string>

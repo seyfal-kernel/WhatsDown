@@ -295,7 +295,7 @@
     <string name="videochat_tap_to_open">Toca para abrir</string>
     <string name="videochat_instance">Instancia para video chat</string>
     <string name="videochat_instance_placeholder">A túa instancia para video chat</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Exemplos: https://meet.jit.si/$ROOM ou basicwebrtc:https://your-server</string>
     <string name="videochat_instance_explain_2">Se o chat por vídeo está activado, podes iniciar o chat de vídeo desde cada chat. Os chats de vídeo requiren unha app compatible ou un navegador compatible nos dous extremos.</string>
     <string name="videochat_instance_from_qr">¿Usar \"%1$s\" para convidar a outras a chats de vídeo?\n\nUnha vez establecido podes iniciar o chat desde a conversa un-a-un. Esto restablece o axuste anterior para video chats se existise.</string>
@@ -499,13 +499,14 @@
     <string name="login_smtp_port">Porto SMTP</string>
     <string name="login_smtp_security">Seguridade SMTP</string>
     <string name="login_auth_method">Método de autorización</string>
-    <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
+    <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">Usar SOCKS5</string>
     <string name="login_socks5_host">Servidor SOCKS5</string>
     <string name="login_socks5_port">Porto SOCKS5</string>
     <string name="login_socks5_user">Usuaria SOCKS5</string>
     <string name="login_socks5_password">Contrasinal SOCKS5</string>
+
     <string name="login_info_oauth2_title">Continuar co axuste simplificado?</string>
     <string name="login_info_oauth2_text">O enderezo introducido soporta o axuste simplificado (OAuth 2.0).\n\nNo seguinte paso, permite a ArcaneChat actuar como app de Conversa sobre Correo-e.\n\nNon hai servidores ArcaneChat, os teus datos permanecen no dispositivo.</string>
     <string name="login_certificate_checks">Comprobacións do certificado</string>
@@ -751,7 +752,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ A almacenaxe do teu provedor vaise esgotar, xa utilizaches %1$s %%.\n\nPode que non recibas mensaxes cando a almacenaxe chegue a 100%% utilizado.\n\n👉 Mira se podes eliminar datos antigos na interface web do teu provedor e pensa se debes activar \"Axustes / Eliminar Mensaxes Antigas\". Podes ver a almacenaxe actual utilizada en \"Axustes / Conectividade\".</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ A hora ou data no teu dispositivo poderían ser incorrectas (%1$s).\n\nAxusta o reloxio ⏰🔧 para asegurar que as túas mensaxes son recibidas correctamente.</string>
-    <string name="devicemsg_update_reminder">⚠️ A túa versión de ArcaneChat podería estar desactualizada.\n\nEsto podería causar problemas porque os teus correspondentes utilizan versións máis novas - e ademáis non tes as últimas características 😳\nVai a https://get.delta.chat ou tenda de aplicacións para máis detalles.</string>
+    <string name="devicemsg_update_reminder">⚠️ A túa versión de ArcaneChat podería estar desactualizada.\n\nEsto podería causar problemas porque os teus correspondentes utilizan versións máis novas - e ademáis non tes as últimas características 😳\nVai a https://github.com/ArcaneChat ou tenda de aplicacións para máis detalles.</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Escribe o código establecido no sistema para continuar.</string>
@@ -805,6 +806,7 @@
     <string name="mailto_link_could_not_be_decoded">a ligazón mailto non se puido descodificar: %1$s</string>
 
     <!-- notifications  -->
+    <!-- deprecated, use mark_as_read or mark_as_read_short -->
     <string name="notify_dismiss">Desbotar</string>
     <string name="notify_reply_button">Responder</string>
     <string name="notify_new_message">Nova mensaxe</string>

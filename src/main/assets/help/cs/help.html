@@ -55,7 +55,7 @@
       <li><a href="#how-can-i-ensure-message-end-to-end-encryption-and-deletion">How can I ensure message end-to-end encryption and deletion?</a></li>
       <li><a href="#pfs">Does ArcaneChat support Perfect Forward Secrecy?</a></li>
       <li><a href="#is-end-to-end-encryption-of-delta-chat-as-safe-as-signal">Is end-to-end encryption of ArcaneChat as safe as Signal?</a></li>
-      <li><a href="#lze-znovu-použít-můj-stávající-soukromý-klíč">Lze znovu použít můj stávající soukromý klíč?</a></li>
+      <li><a href="#importkey">Lze znovu použít můj stávající soukromý klíč?</a></li>
       <li><a href="#nemohu-do-delta-chatu-zavést-můj-stávající-pgp-klíč">Nemohu do ArcaneChatu zavést můj stávající PGP klíč.</a></li>
       <li><a href="#security-audits">Was ArcaneChat independently audited for security vulnerabilities?</a></li>
     </ul>
@@ -97,7 +97,7 @@
       <li><a href="#proč-můžu-nastavit-sledování-složky-odeslané">Proč můžu nastavit sledování složky Odeslané?</a></li>
       <li><a href="#proč-mohu-zvolit-nesledovat-složku-deltachat">Proč mohu zvolit nesledovat složku DeltaChat?</a></li>
       <li><a href="#lze-delta-chat-používat-s-protonmail--tutanota--criptext">Lze ArcaneChat používat s Protonmail / Tutanota / Criptext?</a></li>
-      <li><a href="#how-can-i-delete-my-account">How can I delete my account?</a></li>
+      <li><a href="#remove-account">How can I delete my account?</a></li>
       <li><a href="#mám-zájem-o-technické-podrobnosti-kde-najdu-víc">Mám zájem o technické podrobnosti. Kde najdu víc?</a></li>
       <li><a href="#jak-je-financován-vývoj-delta-chatu">Jak je financován vývoj ArcaneChatu?</a></li>
     </ul>
@@ -1146,10 +1146,10 @@ past encrypted messages.</p>
 <p>In any case, ArcaneChat’s end-to-end encryption uses a <a href="#openpgp-secure">secure subset of OpenPGP</a>
 which has been <a href="https://delta.chat/assets/blog/2019-first-security-review.pdf">independently security-audited</a>.</p>
     
-      <h3 id="lze-znovu-použít-můj-stávající-soukromý-klíč">
+      <h3 id="importkey">
         
         
-          Lze znovu použít můj stávající soukromý klíč? <a href="#lze-znovu-použít-můj-stávající-soukromý-klíč" class="anchor"></a>
+          Lze znovu použít můj stávající soukromý klíč? <a href="#importkey" class="anchor"></a>
         
         
       </h3>
@@ -1277,7 +1277,7 @@ You can read the <a href="https://delta.chat/assets/blog/2019-first-security-rev
 and wait a moment until a QR code is shown</p>
   </li>
   <li>
-    <p>On the second device, <a href="https://get.delta.chat">install ArcaneChat</a></p>
+    <p>On the second device, <a href="https://github.com/ArcaneChat">install ArcaneChat</a></p>
   </li>
   <li>
     <p>On the second device, start ArcaneChat, select <strong>Add as Second Device</strong>, and scan the QR code from the old device</p>
@@ -1379,7 +1379,7 @@ V tuto chvíli jsme zaměřeni na poskytování stabilní verze jako nativní ap
 významných obchodech (Google Play / iOS / Windows / macOS / Linux repositories) .</li>
   <li>Pokud nemáš dostatečná práva instalovat programy na svůj pracovní počítač, můžeš použít
 přenosnou verzi pro Windows nebo AppImage pro Linux. 
-Všechny softwarové balíčky jsou na <a href="https://get.delta.chat">get.delta.chat</a>.</li>
+Všechny softwarové balíčky jsou na <a href="https://github.com/ArcaneChat">github.com/ArcaneChat</a>.</li>
 </ul>
     
       <h2 id="webxdc">
@@ -1791,7 +1791,7 @@ pro složku Odeslané přes IMAP).</p>
 programu (např. Thunderbird) spolu s ArcaneChatem, a chtít z tohoto programu také 
 psát zprávy do hovorů ArcaneChatu.</p>
 
-<p>Nicméně doporučujeme používat ArcaneChat Desktop Client; ten lze stáhnout z <a href="https://get.delta.chat">get.delta.chat</a>. Možnost sledování složky “Odeslané”
+<p>Nicméně doporučujeme používat ArcaneChat Desktop Client; ten lze stáhnout z <a href="https://github.com/ArcaneChat">github.com/ArcaneChat</a>. Možnost sledování složky “Odeslané”
 může být v budoucnu zrušena. Byla totiž vytvořena v době, kdy ArcaneChat Desktop
 nebyl dostupný na všech platformách.</p>
     
@@ -1829,22 +1829,38 @@ uses.</li>
 <a href="https://autocrypt.org/dev-status.html">Autocrypt-enabled e-mail app</a>.</li>
 </ul>
     
-      <h3 id="how-can-i-delete-my-account">
+      <h3 id="remove-account">
         
         
-          How can I delete my account? <a href="#how-can-i-delete-my-account" class="anchor"></a>
+          How can I delete my account? <a href="#remove-account" class="anchor"></a>
         
         
       </h3>
 
-<p>As you use an e-mail account for ArcaneChat,
+<p>If you use a default chat profile
+you can simply uninstall the app.
+This will automatically trigger deletion of all associated account data on the chatmail server.
+For more info, please refer to <a href="https://nine.testrun.org/info.html#account-deletion">nine.testrun.org account-deletion</a> for the default onboarding server,
+or the respective page from your chosen <a href="https://delta.chat/cs/chatmail">3rd party chatmail server</a>.</p>
+
+<p>If you have set up your chat profile on multiple devices
+you need to remove it from all devices.</p>
+
+<p>If you are using more than one account,
+but don’t want to get rid of all of them,
+you can remove it in the account switcher menu (on android and iOS),
+or in the sidebar with a right click (in the desktop client).</p>
+
+<p>Accounts on <a href="https://providers.delta.chat">classic e-mail providers</a>
+will not be deleted automatically;
 how you can delete your account depends on your e-mail provider.
-We don’t have any control over your e-mail account,
+We don’t have any control over e-mail accounts at those providers,
 so unfortunately we can’t help you with that.</p>
 
-<p>If you want to keep the account,
+<p>If you want to continue using a classic e-mail account with other apps,
 but uninstall ArcaneChat,
-it is recommended to leave any group chat before uninstalling ArcaneChat.</p>
+it is recommended to leave any group chat before uninstalling ArcaneChat.
+Otherwise you might receive undecryptable messages from those group chats.</p>
     
       <h3 id="mám-zájem-o-technické-podrobnosti-kde-najdu-víc">
         

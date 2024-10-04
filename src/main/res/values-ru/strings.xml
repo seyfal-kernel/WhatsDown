@@ -14,7 +14,7 @@
     <string name="off">Выкл.</string>
     <string name="def">По умолчанию</string>
     <string name="default_value">По умолчанию (%1$s)</string>
-    <string name="default_value_as_above">По умолчанию (как указано выше)</string>
+    <string name="default_value_as_above">По умолчанию (так же, как выше)</string>
     <string name="custom">Персональная настройка</string>
     <string name="none">Не задано</string>
     <string name="automatic">Автоматически</string>
@@ -32,12 +32,12 @@
     <string name="attachment">Вложение</string>
     <string name="back">Назад</string>
     <string name="close">Закрыть</string>
-    <string name="close_window">Закрыть Окно</string>
+    <string name="close_window">Закрыть окно</string>
     <string name="forward">Переслать</string>
     <string name="create">Создать</string>
     <string name="later">Позже</string>
     <!-- "Resend" means "Sending the selected message(s) again to the same chat". The string is used in a menu and should be as short as possible. Resending may be needed after failures or to repost old messages to new members. -->
-    <string name="resend">Переотправить</string>
+    <string name="resend">Отправить повторно</string>
     <!-- Verb "to archive", as in "put a chat in the archive", not a noun "The Archive". -->
     <string name="archive">В архив</string>
     <!-- Verb "to unarchive", as in "remove a chat from the archive", opposite of the previous string -->
@@ -53,7 +53,7 @@
     <string name="start_chat">Начать чат</string>
     <string name="show_full_message">Показать сообщение полностью…</string>
     <!-- Stay short here, say ~16 characters. The source string could also be "All Read", maybe that hint can make translations easier :) -->
-    <string name="mark_all_as_read">Отметить Все как Прочитанные</string>
+    <string name="mark_all_as_read">Отметить все как прочитанные</string>
     <string name="mark_as_read">Отметить как прочитанное</string>
     <!-- Shortest text for "Mark as being read". In english, this could be "Read" (past tense of "to read"), in german, this could be "Gelesen". -->
     <string name="mark_as_read_short">Прочитано</string>
@@ -61,23 +61,23 @@
     <string name="loading">Загрузка…</string>
     <string name="hide">Скрыть</string>
     <string name="activate">Активировать</string>
-    <string name="load_remote_content">Загружать удалённые изображения</string>
+    <string name="load_remote_content">Загрузка изображений из внешних источников</string>
     <!-- Possible answers to the question are: Never, Always, Once -->
-    <string name="load_remote_content_ask">Удалённые изображения могут использоваться для отслеживания вас.\n\nЭта настройка также позволяет загружать удалённые шрифты и другое содержимое. Даже если она отключена, вы все равно сможете видеть встроенные или кешированные изображения.\n\nЗагружать удалённые изображения?</string>
+    <string name="load_remote_content_ask">Изображения размещенные на внешних источниках можно использовать для слежки за вами.\n\nЭта настройка также позволяет загружать шрифты и другое содержимое. Если она отключена, вы сможете видеть встроенные или кешированные изображения.\n\nРазрешить загрузку из внешних источников?</string>
     <string name="always">Всегда</string>
-    <string name="always_load_remote_images">Всегда Загружать Изображения с Удалённого Сервера</string>
+    <string name="always_load_remote_images">Всегда загружать изображения из внешних источников</string>
     <string name="once">Только сейчас</string>
-    <string name="show_warning">Показывать Предупреждение</string>
+    <string name="show_warning">Показать предупреждение</string>
     <string name="show_password">Показать пароль</string>
     <string name="hide_password">Скрыть пароль</string>
     <string name="not_now">Не сейчас</string>
     <string name="never">Никогда</string>
     <string name="one_moment">Один момент…</string>
-    <string name="done">Выполнено</string>
+    <string name="done">Готово</string>
     <string name="undo">Отмена</string>
     <string name="offline">Не в сети</string>
     <!-- For the next view or as "continue". Should be as short as possible. -->
-    <string name="next">Дальше</string>
+    <string name="next">Далее</string>
     <string name="error">Ошибка</string>
     <string name="error_x">Ошибка: %1$s</string>
     <string name="no_app_to_handle_data">Приложение, позволяющее обрабатывать этот тип данных, не найдено.</string>
@@ -88,10 +88,10 @@
     <string name="email_address">Адрес эл.почты</string>
     <string name="bad_email_address">Неправильный адрес эл.почты.</string>
     <string name="password">Пароль</string>
-    <string name="existing_password">Пароль</string>
+    <string name="existing_password">Текущий пароль</string>
     <string name="now">Сейчас</string>
     <!-- Headline for destructive actions with no undo. Could also be "Caution" or "Warning". -->
-    <string name="danger">Опасность</string>
+    <string name="danger">Внимание</string>
     <string name="today">Сегодня</string>
     <string name="yesterday">Вчера</string>
     <string name="this_week">На этой неделе</string>
@@ -99,10 +99,10 @@
     <string name="last_week">Прошлая неделя</string>
     <string name="last_month">Прошлый месяц</string>
     <!-- Refers to the time a contact was last seen. Shown below contact name in the profile. The placeholder will be replaced by date or time, resulting in "Last seen at 12:13 AM" or "Last seen Nov 12" -->
-    <string name="last_seen_at">Последний раз был(а) в %1$s</string>
+    <string name="last_seen_at">Последнее посещение: %1$s</string>
     <!-- Refers to the time a contact was last seen. Shown below contact name in the profile. The placeholder will be replaced by a relative point in time as "3 minutes ago" (see https://momentjs.com for more examples and languages)-->
-    <string name="last_seen_relative">Был %1$s</string>
-    <string name="last_seen_unknown">Последний раз был(а): Неизвестно</string>
+    <string name="last_seen_relative">Последнее посещение: %1$s</string>
+    <string name="last_seen_unknown">Последнее посещение: Неизвестно</string>
     <!-- Shown beside messages that are "N minutes old". Prefer short strings, or well-known abbreviations. -->
     <plurals name="n_minutes">
         <item quantity="one">%d минуту</item>
@@ -164,8 +164,8 @@
     <!-- "Stickers" as known from other messengers; in some languages, the English "Sticker" is fine. -->
     <string name="sticker">Стикер</string>
     <string name="add_to_sticker_collection">Добавить в Коллекцию Стикеров</string>
-    <string name="add_stickers_instructions">Для добавления стикеров, нажмите \"Открыть Папку со Стикерами\", создайте подпапку для набора ваших стикеров и перетащите туда изображения и файлы стикеров</string>
-    <string name="open_sticker_folder">Открыть Папку со Стикерами</string>
+    <string name="add_stickers_instructions">Для добавления стикеров, нажмите \"Открыть папку стикеров\", создайте подпапку для набора ваших стикеров и перетащите туда изображения и файлы стикеров</string>
+    <string name="open_sticker_folder">Открыть папку стикеров</string>
     <string name="images">Изображения</string>
     <string name="audio">Аудио</string>
     <string name="voice_message">Голосовое сообщение</string>
@@ -235,7 +235,7 @@
     <string name="menu_show_global_map">Все Местоположения</string>
     <string name="menu_archive_chat">Архивировать чат</string>
     <string name="menu_unarchive_chat">Разархивировать чат</string>
-    <string name="menu_add_attachment">Прикрепить вложение</string>
+    <string name="menu_add_attachment">Добавить вложение</string>
     <string name="menu_leave_group">Покинуть группу</string>
     <string name="menu_delete_chat">Удалить чат</string>
     <!-- Command to delete all messages in a chat. The chat itself will not be deleted but will be empty afterwards, so make sure to be different from "Delete Chat" here. "Clear" is a verb here, "Empty Chat" would also be fine (eg. in German "Chat leeren") -->
@@ -248,7 +248,7 @@
     <string name="share_invite_link">Поделиться ссылкой-приглашением</string>
     <string name="invite_friends">Пригласить друзей</string>
     <!-- %1$s is replaced by the user's invitation link ("https://i.delta.chat/...") -->
-    <string name="invite_friends_text">Свяжитесь со мной через Delta Chat:\n%1$s</string>
+    <string name="invite_friends_text">Свяжитесь со мной через ArcaneChat:\n%1$s</string>
     <string name="menu_copy_selection_to_clipboard">Копировать выделенное</string>
     <string name="menu_copy_link_to_clipboard">Копировать ссылку</string>
     <string name="menu_copy_text_to_clipboard">Копировать текст</string>
@@ -260,8 +260,8 @@
     <string name="menu_reply">Ответить на сообщение</string>
     <string name="menu_mute">Отключить уведомления</string>
     <string name="menu_unmute">Включить уведомления</string>
-    <string name="menu_export_attachment">Экспортировать вложение</string>
-    <string name="menu_export_attachments">Экспортировать вложения</string>
+    <string name="menu_export_attachment">Экспорт вложения</string>
+    <string name="menu_export_attachments">Экспорт вложений</string>
     <string name="menu_all_media">Все медиафайлы</string>
     <!-- Command to jump to the original message corresponding to a gallery image or document -->
     <string name="show_in_chat">Показать в чате</string>
@@ -295,7 +295,7 @@
     <string name="menu_save_log">Сохранить журнал</string>
     <string name="menu_more_options">Больше настроек</string>
     <string name="menu_learn_spelling">Запоминать правописание </string>
-    <string name="menu_chat_audit_log">Chat Audit Log</string>
+    <string name="menu_chat_audit_log">Журнал аудита чата</string>
     <string name="jump_to_message">Перейти к сообщению</string>
     <string name="copy_json">Копировать JSON</string>
     <string name="replace_draft">Заменить черновик</string>
@@ -349,7 +349,7 @@
     <string name="videochat_tap_to_open">Нажмите, чтобы открыть.</string>
     <string name="videochat_instance">Инстанс видеочатов</string>
     <string name="videochat_instance_placeholder">Ваш инстанс видеочатов</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Пример: https://your-server.org/$ROOM</string>
     <string name="videochat_instance_explain_2">Если функция видеочата активирована, вы можете запустить видеочат из любого чата. Для видеочата требуется совместимое приложение или браузер у всех участников.</string>
     <string name="videochat_instance_from_qr">Использовать \"%1$s\" чтобы приглашать других в видеочаты?\n\nНастроив один раз, вы можете начинать видеочат из каждого чата. Это заменит предыдущие настройки видеочатов, если они были.</string>
@@ -477,7 +477,7 @@
 
     <!-- chat audit log -->
     <string name="chat_audit_log_empty_message">Здесь будут появляться системные сообщения этого чата</string>
-    <string name="chat_audit_log_title">Chat Audit Log для %1$s</string>
+    <string name="chat_audit_log_title">Журнал аудита чата для %1$s</string>
     <string name="chat_audit_log_description">Здесь отображаются только системные и информационные сообщения. Полезно для поиска последних действий в чате без прокрутки множества обычных сообщений. </string>
 
     <!-- punycode warning / labeled links -->
@@ -638,13 +638,22 @@
     <!-- the word "Proxy" might be left untranslated unless the destination language has a well-known term for a "Proxy Server", acting intermediary between the app and the chatmail or email server -->
     <string name="proxy_settings">Прокси</string>
     <string name="proxy_use_proxy">Использовать прокси</string>
-    <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
+    <string name="proxy_add">Добавить прокси</string>
+    <string name="proxy_add_explain">Поддерживаемые типы прокси: HTTP(S), SOCKS5 и Shadowsocks.</string>
+    <string name="proxy_add_url_hint">Введите URL прокси</string>
+    <string name="proxy_invalid">Некорректный или неподдерживаемый URL прокси</string>
+    <string name="proxy_list_header">Сохраненные прокси</string>
+    <string name="proxy_delete">Удалить прокси</string>
+    <string name="proxy_delete_explain">Вы уверены, что хотите удалить \"%1$s\"?</string>
+
+    <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">Использовать SOCKS5</string>
     <string name="login_socks5_host">Сервер SOCKS5</string>
     <string name="login_socks5_port">Порт SOCKS5</string>
     <string name="login_socks5_user">Пользователь SOCKS5</string>
     <string name="login_socks5_password">Пароль SOCKS5</string>
+
     <string name="login_info_oauth2_title">Продолжить упрощенную настройку?</string>
     <string name="login_info_oauth2_text">Введённый адрес эл. почты поддерживает упрощённую настройку (OAuth 2.0).\n\nНа следующем шаге пожалуйста, разрешите ArcaneChat выступать в качестве Вашего приложения для Чата по Эл. почте.\n\nArcaneChat не собирает данные пользователей, все данные остаются на вашем устройстве.</string>
     <string name="login_certificate_checks">Проверки сертификатов</string>
@@ -740,8 +749,8 @@
     <string name="pref_in_chat_sounds">Звуки в чате</string>
     <string name="pref_message_text_size">Размер шрифта сообщения</string>
     <string name="pref_view_log">Открыть журнал</string>
-    <string name="pref_saved_log">Журнал сохранён в папку «Загрузки»</string>
-    <string name="pref_save_log_failed">Ошибка при сохранении журнала</string>
+    <string name="pref_saved_log">Журнал сохранён в папку \"Загрузки\"</string>
+    <string name="pref_save_log_failed">Не удалось сохранить журнал</string>
     <string name="pref_log_header">Журнал</string>
     <string name="pref_other">Другое</string>
     <string name="pref_backup">Резервное копирование</string>
@@ -843,7 +852,7 @@
     <string name="autodel_server_warn_multi_device">Если включить удаление без запроса, вы не сможете использовать этот профиль на нескольких устройствах.</string>
     <string name="autodel_confirm">Я понимаю, удалить все эти сообщения</string>
     <!-- "At once" in the meaning of "Immediately", without any intervening time. -->
-    <string name="autodel_at_once">Сразу</string>
+    <string name="autodel_at_once">Сразу после загрузки</string>
     <string name="after_30_seconds">Через 30 секунд</string>
     <string name="after_1_minute">Через 1 минуту</string>
     <string name="after_5_minutes">Через 5 минут</string>
@@ -957,7 +966,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ Хранилище вашего провайдера скоро будет превышено, уже использовано %1$s%%.\n\nВозможно, вы не сможете получать сообщения, когда хранилище будет переполнено.\n\n👉 Пожалуйста, проверьте, можете ли вы удалить старые данные в веб-интерфейсе провайдера и подумайте о том, чтобы включить \"Настройки / Чаты и Медиафайлы / Удалить Старые Сообщения\". Вы можете проверить текущее использование хранилища в любое время в \"Настройки / Соединение\".</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ Дата или время вашего устройства кажутся неточными (%1$s).\n\nНастройте свои часы ⏰🔧, чтобы убедиться, что ваши сообщения принимаются правильно.</string>
-    <string name="devicemsg_update_reminder">⚠️ Ваша версия ArcaneChat может быть устаревшей.\n\nЭто может вызвать проблемы, поскольку ваши собеседники используют версии новее - вам не хватает новых функций 😳\nПожалуйста, проверьте https://get.delta.chat или магазин приложений на наличие обновлений.</string>
+    <string name="devicemsg_update_reminder">⚠️ Ваша версия ArcaneChat может быть устаревшей.\n\nЭто может вызвать проблемы, поскольку ваши собеседники используют версии новее - вам не хватает новых функций 😳\nПожалуйста, проверьте https://github.com/ArcaneChat или магазин приложений на наличие обновлений.</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Разблокируйте для продолжения</string>
@@ -1024,6 +1033,7 @@
     <string name="mailto_link_could_not_be_decoded">ссылка mailto не может быть декодирована: %1$s</string>
 
     <!-- notifications  -->
+    <!-- deprecated, use mark_as_read or mark_as_read_short -->
     <string name="notify_dismiss">Отклонить</string>
     <string name="notify_reply_button">Ответить</string>
     <string name="notify_new_message">Новое сообщение</string>

@@ -332,7 +332,7 @@
     <string name="videochat_tap_to_open">Öffnen</string>
     <string name="videochat_instance">Videochat-Instanz</string>
     <string name="videochat_instance_placeholder">Videochat-Instanz</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Beispiele: https://meet.jit.si/$ROOM oder basicwebrtc:https://your-server</string>
     <string name="videochat_instance_explain_2">Wenn aktiv, können Sie einen Videochat aus jedem Chat starten. Videochats erfordern beidseitig eine kompatible App oder einen kompatiblen Browser.</string>
     <string name="videochat_instance_from_qr">\"%1$s\" verwenden, um andere zu Videochats einzuladen?\n\nWenn Sie diese Einstellung vornehmen, können Sie von jedem Chat aus einen Videochat starten. Dies überschreibt, falls vorhanden, die bisherige Einstellung zu Videochats.</string>
@@ -511,7 +511,7 @@
     <string name="multidevice_title">Zweitgerät hinzufügen</string>
     <string name="multidevice_same_network_hint">Beide Geräte müssen im selben Wi-Fi oder Netzwerk sein.</string>
     <string name="multidevice_this_creates_a_qr_code">Erstellt einen QR-Code, den ein Zweitgerät scannen kann, um das Profil zu kopieren.</string>
-    <string name="multidevice_install_dc_on_other_device">ArcaneChat auf dem anderen Gerät installieren (https://get.delta.chat)</string>
+    <string name="multidevice_install_dc_on_other_device">ArcaneChat auf dem anderen Gerät installieren (https://github.com/ArcaneChat)</string>
     <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
     <string name="multidevice_tap_scan_on_other_device">ArcaneChat starten, \"Ich habe bereits ein Profil / Als Zweitgerät hinzufügen\" wählen und den QR-Code scannen</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
@@ -609,13 +609,22 @@
     <!-- the word "Proxy" might be left untranslated unless the destination language has a well-known term for a "Proxy Server", acting intermediary between the app and the chatmail or email server -->
     <string name="proxy_settings">Proxy</string>
     <string name="proxy_use_proxy">Proxy verwenden</string>
-    <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
+    <string name="proxy_add">Proxy hinzufügen</string>
+    <string name="proxy_add_explain">Unterstützte Typen: HTTP(S), SOCKS5 und Shadowsocks.</string>
+    <string name="proxy_add_url_hint">Proxy URL hier eingeben</string>
+    <string name="proxy_invalid">Ungültige oder nicht unterstützte Proxy-URL</string>
+    <string name="proxy_list_header">Proxies</string>
+    <string name="proxy_delete">Proxy löschen</string>
+    <string name="proxy_delete_explain">\"%1$s\" löschen?</string>
+
+    <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">SOCKS5 verwenden</string>
     <string name="login_socks5_host">SOCKS5-Host</string>
     <string name="login_socks5_port">SOCKS5-Port</string>
     <string name="login_socks5_user">SOCKS5-Anmeldename</string>
     <string name="login_socks5_password">SOCKS5-Passwort</string>
+
     <string name="login_info_oauth2_title">Weiter mit vereinfachter Einrichtung?</string>
     <string name="login_info_oauth2_text">Die eingegebene E-Mail-Adresse unterstützt eine vereinfachte Einrichtung (OAuth 2.0).\n\nBitte erlauben Sie ArcaneChat im nächsten Schritt, als Chat-über-E-Mail-App zu arbeiten.\n\nArcaneChat sammelt keine Benutzerdaten, alles bleibt auf Ihrem Gerät.</string>
     <string name="login_certificate_checks">Zertifikatsüberprüfung</string>
@@ -928,7 +937,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ Der Speicherplatz Ihres Anbieters ist bald erschöpft; bereits %1$s%% sind verbraucht.\n\nSie können möglicherweise keine Nachrichten mehr empfangen, wenn der Speicherplatz komplett verbraucht ist.\n\n👉 Bitte prüfen Sie, ob Sie alte Daten im Webinterface des Anbieters löschen können, und erwägen Sie, \"Einstellungen / Chats und Medien / Alte Nachrichten löschen\" zu aktivieren. Den aktuellen Speicherverbrauch können Sie jederzeit unter \"Einstellungen / Verbindungsstatus\" überprüfen.</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ Ihr Gerät scheint ein falsches Datum oder eine falsche Uhrzeit (%1$s) zu verwenden.\n\nStellen Sie Ihre Uhr ⏰🔧 richtig ein, um sicherzustellen, dass Ihre Nachrichten korrekt empfangen werden.</string>
-    <string name="devicemsg_update_reminder">⚠️ Ihre Delta-Chat-Version ist möglicherweise veraltet.\n\nDies kann zu Problemen führen, wenn Ihre Chat-PartnerInnen neuere Versionen verwenden - und Ihnen die neuesten Funktionen fehlen. 😳\nBitte überprüfen Sie https://get.delta.chat oder Ihren App-Store auf Updates.</string>
+    <string name="devicemsg_update_reminder">⚠️ Ihre Delta-Chat-Version ist möglicherweise veraltet.\n\nDies kann zu Problemen führen, wenn Ihre Chat-PartnerInnen neuere Versionen verwenden - und Ihnen die neuesten Funktionen fehlen. 😳\nBitte überprüfen Sie https://github.com/ArcaneChat oder Ihren App-Store auf Updates.</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Entsperren zum Fortfahren</string>
@@ -995,6 +1004,7 @@
     <string name="mailto_link_could_not_be_decoded">Mailto-Link konnte nicht dekodiert werden: %1$s</string>
 
     <!-- notifications  -->
+    <!-- deprecated, use mark_as_read or mark_as_read_short -->
     <string name="notify_dismiss">Verwerfen</string>
     <string name="notify_reply_button">Antworten</string>
     <string name="notify_new_message">Neue Nachricht</string>

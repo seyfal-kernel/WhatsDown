@@ -279,7 +279,7 @@
     <string name="videochat_tap_to_open">열기 위해 탭하기</string>
     <string name="videochat_instance">비디오 채팅 인스턴스</string>
     <string name="videochat_instance_placeholder">당신의 비디오 채팅 인스턴스</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">예시: https://meet.jit.si/$ROOM 또는 basicwebrtc:https://your-server</string>
     <string name="videochat_instance_explain_2">비디오 채팅을 사용할 수 있는 경우 각 채팅에서 비디오 채팅을 시작할 수 있습니다. 화상 채팅을 하려면 호환되는 앱 또는 호환 가능한 브라우저가 양쪽 끝에 필요합니다.</string>
     <string name="videochat_instance_from_qr">\"%1$s\"를 사용하여 다른 사람을 화상 채팅에 초대하시겠습니까?\n\n설정되면 각 채팅에서 비디오 채팅을 시작할 수 있습니다. 이것은 비디오 채팅에 대한 이전 설정을 대체합니다.</string>
@@ -471,13 +471,14 @@
     <string name="login_smtp_port">SMTP 포트</string>
     <string name="login_smtp_security">SMTP 보안</string>
     <string name="login_auth_method">권한 부여 방법</string>
-    <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
+    <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">SOCKS5 사용</string>
     <string name="login_socks5_host">SOCKS5 호스트</string>
     <string name="login_socks5_port">SOCKS5 포트</string>
     <string name="login_socks5_user">SOCKS5 사용자</string>
     <string name="login_socks5_password">SOCKS5 비밀번호</string>
+
     <string name="login_info_oauth2_title">간소화된 설치를 계속하시겠습니까?</string>
     <string name="login_info_oauth2_text">입력한 이메일 주소는 단순화된 설정(OAuth 2.0)을 지원합니다.\n\n다음 단계에서는 ArcaneChat 이 이메일을 통한 채팅 앱 역할을 하도록 허용하십시오.\n\nDelta 채팅 서버가 없으며 데이터가 장치에 남아 있습니다.</string>
     <string name="login_certificate_checks">인증서 확인</string>
@@ -733,7 +734,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ 공급자의 저장공간이 곧 고갈될 예정입니다. %1$s%%가 이미 사용 중입니다.\n\n저장공간이 가득 찬 경우 메시지를 수신하지 못할 수 있습니다.\n\n👉 공급자의 웹 인터페이스에서 이전 데이터를 삭제할 수 있는지 확인하고 \"설정 / 이전 메시지 삭제\"를 활성화하는 것을 고려하십시오. \"설정/연결\"에서 언제든지 현재 저장공간 사용량을 확인할 수 있습니다.</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ 장치의 날짜 또는 시간이 정확하지 않은 것 같습니다(%1$s).\n\n메시지가 올바르게 수신되도록 시계 ⏰🔧를 조정하세요.</string>
-    <string name="devicemsg_update_reminder">⚠️ 델타 채팅 버전이 오래되었을 수 있습니다.\n\n채팅 파트너가 최신 버전을 사용하기 때문에 문제가 발생할 수 있습니다.  당신은 최신 기능이 없습니다. 😳\n https://get.delta.chat 또는 앱 스토어에서 업데이트를 확인하십시오.</string>
+    <string name="devicemsg_update_reminder">⚠️ 델타 채팅 버전이 오래되었을 수 있습니다.\n\n채팅 파트너가 최신 버전을 사용하기 때문에 문제가 발생할 수 있습니다.  당신은 최신 기능이 없습니다. 😳\n https://github.com/ArcaneChat 또는 앱 스토어에서 업데이트를 확인하십시오.</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">계속하려면 시스템 정의 암호를 입력하십시오.</string>
@@ -791,6 +792,7 @@
     <string name="mailto_link_could_not_be_decoded">링크로 보내는 메일을 디코딩할 수 없습니다: %1$s</string>
 
     <!-- notifications  -->
+    <!-- deprecated, use mark_as_read or mark_as_read_short -->
     <string name="notify_dismiss">무시하기</string>
     <string name="notify_reply_button">답장하기</string>
     <string name="notify_new_message">새 메시지</string>

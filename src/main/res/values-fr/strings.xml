@@ -4,7 +4,9 @@
     <string name="app_name">ArcaneChat</string>
     <string name="ok">OK</string>
     <string name="cancel">Annuler</string>
-   <string name="clear_search">Effacer la recherche</string>
+   <!-- the word "or" to separate blocks in the user interface that are mutually exclusive -->
+    <string name="or_separator">ou</string>
+    <string name="clear_search">Effacer la recherche</string>
     <string name="yes">Oui</string>
     <string name="no">Non</string>
     <string name="select">Sélectionner</string>
@@ -52,6 +54,7 @@
     <string name="show_full_message">Montrer le message complet...</string>
     <!-- Stay short here, say ~16 characters. The source string could also be "All Read", maybe that hint can make translations easier :) -->
     <string name="mark_all_as_read">Marquer tout comme lu</string>
+    <string name="mark_as_read">Marquer comme lu</string>
     <!-- Shortest text for "Mark as being read". In english, this could be "Read" (past tense of "to read"), in german, this could be "Gelesen". -->
     <string name="mark_as_read_short">Lu</string>
     <!-- Placeholder text when something is loading -->
@@ -203,6 +206,8 @@
 
     <!-- menu labels (or icon, buttons...) -->
     <string name="menu_new_contact">Nouveau contact</string>
+    <string name="menu_new_classic_contact">Ajouter le contact à la main</string>
+    <string name="new_classic_contact_explain">Les contacts ajoutés à la main peuvent être contactés par e-mail classique. Le chiffrement de bout en bout n\'est pas garanti.</string>
     <string name="menu_new_chat">Nouvelle discussion</string>
     <string name="menu_new_group">Nouveau groupe</string>
     <string name="clone_chat">Cloner la discussion</string>
@@ -326,7 +331,7 @@
     <string name="videochat_tap_to_open">Appuyer pour ouvrir</string>
     <string name="videochat_instance">Instance de discussion vidéo</string>
     <string name="videochat_instance_placeholder">Votre instance de discussion vidéo</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Par exemple : https://your-server.org/$ROOM</string>
     <string name="videochat_instance_explain_2">Si vous avez activé les discussions vidéo, vous pouvez démarrer une conversation vidéo dans chacune de vos discussions. Il faut que chaque participant-e ait une application ou un navigateur compatibles pour pouvoir utiliser cette option.</string>
     <string name="videochat_instance_from_qr">Utiliser « %1$s » pour inviter d\'autres personnes à des discussions vidéo ?\n\nUne fois configuré, vous pouvez discuter en vidéo dans chaque discussion privée. Remplace vos préférences de configurations précédentes pour les discussions vidéos.</string>
@@ -438,6 +443,9 @@
     <string name="send_file_to">Envoyer \"%1$s\" à</string>
     <!-- title shown above a list contacts where one should be selected (eg. when a webxdc attempts to send a message to a chat) -->
     <string name="send_message_to">Envoyer un message à</string>
+    <string name="enable_realtime">Canaux Webxdc temps réel</string>
+    <string name="enable_realtime_explain">Enclenchez l\'API temps réel Webxdc pour créer des connexions entre les appareils.</string>
+
     <!-- map -->
     <string name="filter_map_on_time">Afficher les positions pour une période</string>
     <string name="show_location_traces">Afficher les traces</string>
@@ -508,7 +516,7 @@
     <string name="multidevice_title">Ajouter un deuxième appareil</string>
     <string name="multidevice_same_network_hint">Vérifiez que les deux appareils sont bien connectés au même Wi-Fi ou réseau.</string>
     <string name="multidevice_this_creates_a_qr_code">Crée un code QR que vous pouvez scanner avec le deuxième appareil pour copier le compte.</string>
-    <string name="multidevice_install_dc_on_other_device">Installer ArcaneChat sur votre autre appareil (https://get.delta.chat)</string>
+    <string name="multidevice_install_dc_on_other_device">Installer ArcaneChat sur votre autre appareil (https://github.com/ArcaneChat)</string>
     <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
     <string name="multidevice_tap_scan_on_other_device">Lancez ArcaneChat, appuyez sur \"Ajouter comme deuxième appareil\" et scannez le code affiché ici.</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
@@ -555,6 +563,18 @@
     <string name="part_of_total_used">%1$s sur %2$s utilisé</string>
 
 
+    <!-- welcome and login -->
+    <!-- Primary button on the welcome screen, allows to create an instant profile -->
+    <string name="onboarding_create_instant_account">Créer un nouveau compte</string>
+    <!-- Secondary button on the welcome screen, allows to "Add as Second Device", "Restore from Backup"  -->
+    <string name="onboarding_alternative_logins">Je possède déjà un compte</string>
+    <!-- Instant onboarding title (there is not more to do than to set name and avatar) -->
+    <string name="instant_onboarding_title">Votre compte</string>
+    <!-- Confirmation button on the instant onboarding screen -->
+    <string name="instant_onboarding_create">Accepter et créer le compte</string>
+    <!-- Secondary, link-like button to open a page with other possible instances -->
+    <string name="instant_onboarding_show_more_instances">Utiliser un autre serveur</string>
+    <string name="instant_onboarding_other_server">Lister les serveurs de discussions</string>
     <string name="scan_invitation_code">Scanner le code d\'invitation</string>
     <string name="login_title">Connexion</string>
     <!-- for classic email, we use the classical term "Account" -->
@@ -575,13 +595,23 @@
     <string name="login_smtp_port">Port SMTP</string>
     <string name="login_smtp_security">Sécurité SMTP</string>
     <string name="login_auth_method">Méthode d\'autorisation</string>
-    <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
+    <!-- the word "Proxy" might be left untranslated unless the destination language has a well-known term for a "Proxy Server", acting intermediary between the app and the chatmail or email server -->
+    <string name="proxy_settings">Proxy</string>
+    <string name="proxy_use_proxy">Utiliser le proxy</string>
+    <string name="proxy_add">Ajouter un proxy</string>
+    <string name="proxy_add_explain">Types de proxy supportés: HTTP(S), SOCKS5 et Shadowsocks.</string>
+    <string name="proxy_add_url_hint">Entrez l\'URL du proxy ici</string>
+    <string name="proxy_invalid">URL invalide ou non supportée</string>
+    <string name="proxy_list_header">Sauver les proxy</string>
+    <string name="proxy_delete">Effacer le proxy</string>
+    <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">Utiliser SOCKS5</string>
     <string name="login_socks5_host">Hôte SOCKS5</string>
     <string name="login_socks5_port">Port SOCKS5</string>
     <string name="login_socks5_user">Utilisateur SOCKS5</string>
     <string name="login_socks5_password">Mot de passe SOCKS5</string>
+
     <string name="login_info_oauth2_title">Continuer avec une configuration simplifiée ?</string>
     <string name="login_info_oauth2_text">L\'adresse de courriel saisie prend en charge une configuration simplifiée (OAuth2.0). \n\nDans l\'étape suivante, autorisez ArcaneChat à agir comme votre application de Chat avec courriel . Il n\'y a pas de serveur ArcaneChat, vos données restent sur votre appareil !</string>
     <string name="login_certificate_checks">Vérification du certificat</string>
@@ -663,6 +693,8 @@
     <string name="pref_incognito_keyboard_explain">Demander que le clavier désactive l\'apprentissage personnalisé</string>
     <string name="pref_read_receipts">Accusés de lecture</string>
     <string name="pref_read_receipts_explain">Si les accusés de lecture sont désactivés, vous ne pourrez pas voir les accusés de lecture des autres.</string>
+    <string name="pref_server">Serveur</string>
+    <string name="pref_encryption">Chiffrement</string>
     <string name="pref_manage_keys">Gérer les clés</string>
     <string name="pref_use_system_emoji">Utiliser les émojis système</string>
     <string name="pref_use_system_emoji_explain">Désactiver la prise en charge des émojis intégrés de ArcaneChat</string>
@@ -737,6 +769,9 @@
     <string name="pref_edit_profile">Édition du profil</string>
     <string name="disable_imap_idle">Désactiver IMAP IDLE</string>
     <string name="disable_imap_idle_explain">N\'utilisez pas d\'extension IMAP IDLE, même si elle est prise en charge par votre serveur, car elle provoque des retards dans la récupération des messages. Activez cette option uniquement pour effectuer des tests.</string>
+    <string name="send_stats_to_devs">Envoyer les statistiques aux développeurs ArcaneChat</string>
+
+
     <!-- Emoji picker and categories -->
     <string name="emoji_search_results">Résultats de la recherche</string>
     <string name="emoji_not_found">Pas d\'emoji trouvé</string>
@@ -796,6 +831,7 @@
     <string name="systemmsg_read_receipt_subject">Accusé de lecture</string>
     <!-- deprecated -->
     <string name="systemmsg_read_receipt_body">Ceci est un accusé de lecture pour le message \"%1$s\".\n\nCela signifie que le message a été affiché sur l\'appareil du destinataire, pas forcément que le contenu ait été lu.</string>
+    <string name="systemmsg_cannot_decrypt">Ce message ne peut pas être déchiffré.\n\n• Essayez de demander à l\'expéditeur de vous l\'envoyer à nouveaux.\n\n• Si vous venez de réinstaller ArcaneChat il serait bien de le reconfigurer en sélectionnant \"Ajouter un deuxième appareil\" ou d\'importer une sauvegarde.</string>
     <string name="systemmsg_unknown_sender_for_chat">Expéditeur inconnu de cette discussion. Voir « Info » pour plus de détails.</string>
     <string name="systemmsg_subject_for_new_contact">Message de %1$s</string>
     <string name="systemmsg_failed_sending_to">Échec de l\'envoi du message à %1$s.</string>
@@ -865,6 +901,7 @@
     <string name="chat_protection_enabled_explanation">Il n\'est pas garanti que tous les messages de cette discussion sont chiffrés de bout en bout.\n\nLe chiffrement de bout en bout assure la confidentialité des messages échangés par les membres d\'une discussion. Même votre fournisseur de courriel ne peut pas les lire. </string>
     <string name="chat_protection_broken_tap_to_learn_more">%1$s a envoyé un message depuis un nouvel appareil. Appuyez pour en savoir plus.</string>
     <string name="chat_protection_broken_explanation">Le chiffrement de bout en bout ne peut plus être garanti, probablement parce que %1$s a réinstallé ArcaneChat ou envoyé un message depuis un nouvel appareil.\n\nVous pouvez convenir d\'une rencontre physique afin de scanner à nouveau son code QR pour ré-instaurer la garantie du chiffrement de bout en bout.</string>
+    <string name="invalid_unencrypted_explanation">Pour établir un chiffrement de bout en bout vous pouvez rencontrer vos contacts en personne et scanner leur code QR.</string>
     <string name="learn_more">En savoir plus</string>
 
     <string name="devicemsg_self_deleted">Vous avez supprimé la discussion \"Messages sauvegardés\".\n\nℹ️ Pour utiliser la fonctionnalité \"Message enregistrés\" à nouveau, commencez une nouvelle discussion avec vous-même.</string>
@@ -872,7 +909,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ Bientôt plus d\'espace de stockage chez votre fournisseur, %1$s%% utilisés.\n\nVous ne serez peut-être plus en mesure de recevoir des messages quand votre espace de stockage sera plein.\n\n👉 Veuillez vérifier si vous avez d\'anciens éléments à supprimer directement sur l\'interface web de votre fournisseur et envisagez d\'activer \"Paramètres / Supprimer les anciens messages\". Vous pouvez vérifier à tout moment le volume d\'espace de stockage en cours d\'utilisation depuis \"Paramètres / Connectivité\".</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ L\'heure ou la date de votre appareil semble erronée (%1$s).\n\nRéglez votre horloge ⏰🔧 pour que vos messages soient bien reçus.</string>
-    <string name="devicemsg_update_reminder">⚠️ Votre version de ArcaneChat semble obsolète.\n\nCela risque de créer des dysfonctionnements parce que vos contacts utilisent des versions plus récentes - en plus, vous ratez les nouvelles fonctionnalités 😳\n Rendez-vous sur https://get.delta.chat ou sur votre magasin d\'applications pour effectuer la mise à jour !</string>
+    <string name="devicemsg_update_reminder">⚠️ Votre version de ArcaneChat semble obsolète.\n\nCela risque de créer des dysfonctionnements parce que vos contacts utilisent des versions plus récentes - en plus, vous ratez les nouvelles fonctionnalités 😳\n Rendez-vous sur https://github.com/ArcaneChat ou sur votre magasin d\'applications pour effectuer la mise à jour !</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Déverrouillez votre appareil pour continuer</string>
@@ -882,6 +919,7 @@
     <string name="load_qr_code_as_image">Charger le code QR comme une image</string>
     <string name="qrscan_title">Numériser le QR code</string>
     <string name="qrscan_hint">Placez votre caméra au dessus du QR code</string>
+    <string name="qrscan_hint_desktop">Placez le code QR devant la caméra</string>
     <string name="qrscan_failed">Le code QR n\'a pas pu être décodé</string>
     <string name="qrscan_ask_join_group">Voulez-vous rejoindre le groupe \"%1$s\" ?</string>
     <string name="qrscan_fingerprint_mismatch">L\'empreinte digitale numérisée ne correspond pas à la dernière empreinte digitale vue depuis  %1$s</string>
@@ -910,6 +948,7 @@
     <string name="qrshow_join_contact_no_connection_toast">Pas de connexion Internet, ne peut pas effectuer la configuration du QR code.</string>
     <string name="qraccount_ask_create_and_login">Créer une nouvelle adresse de courriel sur « %1$s » et se connecter ici ?</string>
     <string name="qraccount_ask_create_and_login_another">Créer une nouvelle adresse de courriel sur « %1$s » et s\'y connecter ?\n\nVotre compte existant ne sera pas supprimé. Utilisez l\'élément de menu « Changer de compte » pour passer d\'un compte à l\'autre.</string>
+    <string name="set_name_and_avatar_explain">Choisissez un nom que vos contacts reconnaîtrons. Vous pouvez également définir une image pour votre profile.</string>
     <string name="qraccount_qr_code_cannot_be_used">Le code QR scanné ne peut pas être utilisé pour ouvrir un nouveau compte.</string>
     <!-- the placeholder will be replaced by the e-mail address of the profile -->
     <string name="qrlogin_ask_login">Se connecter au compte « %1$s » ?</string>
@@ -919,6 +958,8 @@
     <string name="secure_join_started">%1$s vous a invité à rejoindre ce groupe.\n\nEn attente de la réponse de l’appareil de %2$s…</string>
     <!-- placeholder will be replaced by the name of the inviter. -->
     <string name="secure_join_replies">%1$s a répondu, en attente d’être ajouté au groupe…</string>
+    <string name="secure_join_wait">Chiffrement de bout en bout en cours d\'établissement, merci de patienter...</string>
+    <string name="secure_join_wait_timeout">Le chiffrement de bout en bout n\'est pas encore garanti, mais vous pouvez déjà envoyer un message.</string>
     <string name="contact_verified">%1$s connu.</string>
     <string name="contact_not_verified">Impossible de garantir le chiffrement de bout en bout avec %1$s.</string>
     <!-- Shown in contact profile. The placeholder will be replaced by the name of the contact that introduced the contact. -->
@@ -934,6 +975,7 @@
     <string name="mailto_link_could_not_be_decoded">Le lien mailto n\'a pas pu être décodé: %1$s</string>
 
     <!-- notifications  -->
+    <!-- deprecated, use mark_as_read or mark_as_read_short -->
     <string name="notify_dismiss">Rejeter</string>
     <string name="notify_reply_button">Répondre</string>
     <string name="notify_new_message">Nouveau message</string>
@@ -945,6 +987,8 @@
     <string name="notify_no_name_or_message">Pas de nom ou de message</string>
     <string name="notifications_disabled">Notifications désactivées</string>
     <string name="new_messages">Nouveaux messages</string>
+    <!-- Body text for a generic "New messages" notification. Shown if we do not have more information about a new messages. Note, that the string is also referenced at https://github.com/deltachat/notifiers -->
+    <string name="new_messages_body">Vous avez de nouveaux messages</string>
     <string name="n_messages_in_m_chats">%1$d messages dans %2$d discussions</string>
 
 
@@ -1076,6 +1120,10 @@
     <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">ArcaneChat veut enregistrer les images dans votre bibliothèque photo.</string>
 
 
+    <!-- android specific strings, developers: please take care to remove strings that are no longer used! -->
+    <string name="pref_instant_delivery">Envoi Immédiat</string>
+    <string name="pref_background_notifications">Utiliser une connexion en arrière plan</string>
+    <string name="pref_reliable_service">Forcer une connexion en arrière plan</string>
     <string name="pref_background_notifications_rationale">Pour maintenir une connexion à votre serveur de courriel et recevoir les messages en arrière-plan, ignorez l\'optimisation de la batterie à l\'étape suivante.\n\nArcaneChat utilise peu de ressources et prend garde à ne pas vider votre batterie.</string>
     <!-- disabling "Reliable service" will hide a the maybe annoying permanent-notification with the drawback that new-message-notifications get potentially unreliable -->
     <string name="perm_enable_bg_reminder_title">Touchez ici pour recevoir des messages pendant que DeltaChat est en arrière-plan.</string>

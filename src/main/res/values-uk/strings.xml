@@ -56,7 +56,7 @@
     <string name="mark_all_as_read">Позначити все як прочитане</string>
     <string name="mark_as_read">Позначити як прочитане</string>
     <!-- Shortest text for "Mark as being read". In english, this could be "Read" (past tense of "to read"), in german, this could be "Gelesen". -->
-    <string name="mark_as_read_short">Прочитане</string>
+    <string name="mark_as_read_short">Позначити прочитаним</string>
     <!-- Placeholder text when something is loading -->
     <string name="loading">Завантаження...</string>
     <string name="hide">Приховати</string>
@@ -248,7 +248,7 @@
     <string name="share_invite_link">Поділитися посиланням на запрошення</string>
     <string name="invite_friends">Запросити друзів</string>
     <!-- %1$s is replaced by the user's invitation link ("https://i.delta.chat/...") -->
-    <string name="invite_friends_text">Зв\'яжіться зі мною в Delta Chat:\n%1$s</string>
+    <string name="invite_friends_text">Зв\'яжіться зі мною в ArcaneChat:\n%1$s</string>
     <string name="menu_copy_selection_to_clipboard">Скопіювати позначене</string>
     <string name="menu_copy_link_to_clipboard">Скопіювати посилання</string>
     <string name="menu_copy_text_to_clipboard">Копіювати текст</string>
@@ -349,7 +349,7 @@
     <string name="videochat_tap_to_open">Торкніться, щоб відкрити</string>
     <string name="videochat_instance">Відео чат</string>
     <string name="videochat_instance_placeholder">Ваш відео чат</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Приклади: https://meet.jit.si/$ROOM або basicwebrtc:https://your-server</string>
     <string name="videochat_instance_explain_2">Якщо ввімкнено, Ви можете почати відеочат із кожного чату. Обидві сторони повинні встановити сумісний додаток або браузер.</string>
     <string name="videochat_instance_from_qr">Використовувати \"%1$s\" аби запросити інших у відеочат?\n\nПісля встановлення Ви можете розпочати відеочат із кожного індивідуального чату. Це замінить попереднє налаштування для відеочату, якщо воно є.</string>
@@ -540,7 +540,7 @@
     <string name="multidevice_title">Додати другий пристрій</string>
     <string name="multidevice_same_network_hint">Переконайтеся, що обидва пристрої підключено до однієї мережі Wi-Fi</string>
     <string name="multidevice_this_creates_a_qr_code">Це створить QR-код, який другий пристрій може сканувати, щоб скопіювати обліковий запис.</string>
-    <string name="multidevice_install_dc_on_other_device">Установіть ArcaneChat на Ваш інший пристрій (https://get.delta.chat)</string>
+    <string name="multidevice_install_dc_on_other_device">Установіть ArcaneChat на Ваш інший пристрій (https://github.com/ArcaneChat)</string>
     <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
     <string name="multidevice_tap_scan_on_other_device">Запустіть ArcaneChat, торкніться \"Я вже маю профіль / Додати як другий пристрій\" і відскануйте код, показаний тут</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
@@ -635,13 +635,25 @@
     <string name="login_smtp_port">SMTP-порт</string>
     <string name="login_smtp_security">Налаштування безпеки SMTP</string>
     <string name="login_auth_method">Метод авторизації</string>
-    <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
+    <!-- the word "Proxy" might be left untranslated unless the destination language has a well-known term for a "Proxy Server", acting intermediary between the app and the chatmail or email server -->
+    <string name="proxy_settings">Проксі</string>
+    <string name="proxy_use_proxy">Використовувати проксі</string>
+    <string name="proxy_add">Додати проксі-сервер</string>
+    <string name="proxy_add_explain">Підтримувані типи проксі: HTTP(S), SOCKS5 і Shadowsocks.</string>
+    <string name="proxy_add_url_hint">Введіть URL проксі-сервера тут</string>
+    <string name="proxy_invalid">Невірний або непідтримуваний URL проксі-сервера</string>
+    <string name="proxy_list_header">Збережені проксі-сервери</string>
+    <string name="proxy_delete">Видалити проксі-сервер</string>
+    <string name="proxy_delete_explain">Ви дійсно хочете видалити \"%1$s\"?</string>
+
+    <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">Використовувати SOCKS5</string>
     <string name="login_socks5_host">Хост SOCKS5</string>
     <string name="login_socks5_port">Порт SOCKS5</string>
     <string name="login_socks5_user">Ім\'я користувача SOCKS5</string>
     <string name="login_socks5_password">Пароль SOCKS5</string>
+
     <string name="login_info_oauth2_title">Продовжити спрощене налаштування?</string>
     <string name="login_info_oauth2_text">Введена адреса електронної пошти підтримує спрощене налаштування (OAuth 2.0).\n\nНа наступному кроці дозвольте, будь ласка, ArcaneChat виступати в якості Вашого додатку для чату за допомогою електронної пошти.\n\nУ ArcaneChat немає серверів, Ваші дані залишаються на Вашому пристрої!</string>
     <string name="login_certificate_checks">Перевірки сертифікатів</string>
@@ -954,7 +966,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ Сховище вашого провайдера електронної пошти майже заповнено, уже використовується %1$s%%.\n\nМожливо, Ви не зможете отримувати повідомлення, коли сховище буде заповнене.\n\n👉 Перевірте, чи можна видалити старі дані у веб-інтерфейсі провайдера та ввімкніть \"Налаштування / Видалити старі повідомлення\". Ви можете будь-коли перевірити своє поточне використання сховища в \"Налаштування / Підключення\". </string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ Дата й час на вашому пристрої видаються неточними (%1$s).\n\nНалаштуйте свій годинник ⏰🔧 для правильного отримання повідомлень.</string>
-    <string name="devicemsg_update_reminder">⚠️ Ваша версія ArcaneChat може бути застарілою.\n\nЦе може спричинити проблеми, оскільки Ваші співрозмовники в чаті використовують новіші версії, а Вам не вистачає найновіших функцій 😳 \nПеревірте оновлення на https://get.delta.chat або в магазині додатків. </string>
+    <string name="devicemsg_update_reminder">⚠️ Ваша версія ArcaneChat може бути застарілою.\n\nЦе може спричинити проблеми, оскільки Ваші співрозмовники в чаті використовують новіші версії, а Вам не вистачає найновіших функцій 😳 \nПеревірте оновлення на https://github.com/ArcaneChat або в магазині додатків. </string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Введіть захисний код, щоб продовжити.</string>
@@ -1021,6 +1033,7 @@
     <string name="mailto_link_could_not_be_decoded">неможливо декодувати посилання mailto: %1$s</string>
 
     <!-- notifications  -->
+    <!-- deprecated, use mark_as_read or mark_as_read_short -->
     <string name="notify_dismiss">Відхилити</string>
     <string name="notify_reply_button">Відповісти</string>
     <string name="notify_new_message">Нове повідомлення</string>

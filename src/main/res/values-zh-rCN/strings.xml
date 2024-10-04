@@ -322,7 +322,7 @@
     <string name="videochat_tap_to_open">点击来打开</string>
     <string name="videochat_instance">视频聊天实例</string>
     <string name="videochat_instance_placeholder">您的视频聊天实例</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">示例： https://meet.jit.si/$ROOM 或 basicwebrtc:https://your-server</string>
     <string name="videochat_instance_explain_2">启用视频聊天后，您便可以在所有聊天中发起视频聊天。需要双方均装有兼容的应用或浏览器。</string>
     <string name="videochat_instance_from_qr">使用“%1$s”邀请其他人参加视频聊天吗？\n\n设置好后，您就可以在聊天里发起视频聊天了。 这会取代之前的视频聊天设置。</string>
@@ -495,7 +495,7 @@
     <string name="multidevice_title">添加第二台设备</string>
     <string name="multidevice_same_network_hint">让两台设备连接相同的 Wi-Fi 或网络</string>
     <string name="multidevice_this_creates_a_qr_code">这将创建第二台设备可以扫描用于复制此账号的二维码。</string>
-    <string name="multidevice_install_dc_on_other_device">在你的其他设备上安装 ArcaneChat (https://get.delta.chat)</string>
+    <string name="multidevice_install_dc_on_other_device">在你的其他设备上安装 ArcaneChat (https://github.com/ArcaneChat)</string>
     <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
     <string name="multidevice_tap_scan_on_other_device">启动 ArcaneChat，点击“我已有账号/添加为第二台设备”，扫描此处显示的二维码</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
@@ -593,13 +593,22 @@
     <!-- the word "Proxy" might be left untranslated unless the destination language has a well-known term for a "Proxy Server", acting intermediary between the app and the chatmail or email server -->
     <string name="proxy_settings">代理</string>
     <string name="proxy_use_proxy">使用代理</string>
-    <!-- the word "SOCKS5" here and in the following strings should not be translated in most cases -->
+    <string name="proxy_add">添加代理</string>
+    <string name="proxy_add_explain">支持的代理类型：HTTP(S)、SOCKS5 和 Shadowsocks.</string>
+    <string name="proxy_add_url_hint">在此输入代理 URL</string>
+    <string name="proxy_invalid">无效或不受支持的代理 URL</string>
+    <string name="proxy_list_header">已保存的代理</string>
+    <string name="proxy_delete">删除代理</string>
+    <string name="proxy_delete_explain">你确定要删除 \"%1$s\"吗？</string>
+
+    <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">使用 SOCKS5 代理</string>
     <string name="login_socks5_host">SOCKS5 主机</string>
     <string name="login_socks5_port">SOCKS5 端口</string>
     <string name="login_socks5_user">SOCKS5 用户名</string>
     <string name="login_socks5_password">SOCKS5 密码</string>
+
     <string name="login_info_oauth2_title">使用简易设置继续？</string>
     <string name="login_info_oauth2_text">输入的电子邮件地址支持简化设置（OAuth 2.0）。\n\n在下一步中，请允许 ArcaneChat 充当您的“通过电子邮件聊天”应用程序。\n\n不存在 ArcaneChat 服务器，您的数据保留于您的设备！</string>
     <string name="login_certificate_checks">证书检查</string>
@@ -912,7 +921,7 @@
     <string name="devicemsg_storage_exceeding">⚠️邮件服务商提供的存储空间快满了，已使用 %1$s%%。\n\n如果存储空间用光，您可能无法接收消息。\n\n👉请检查是否可以在提供商的网页界面上删除旧数据，或考虑启用“设置/删除旧消息”。您可以在“设置/连接状态”中查看当前的存储使用情况。</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️设备的日期或时间似乎不准确 （%1$s）。\n\n请调整时钟⏰🔧以确保能够正确接收消息。</string>
-    <string name="devicemsg_update_reminder">⚠️您的 ArcaneChat 版本可能过时了。\n\n这可能会在您的聊天伙伴使用更新的版本时造成问题。并且您缺失了最新功能😳\n请浏览 https://get.delta.chat 或应用商店来获取更新。</string>
+    <string name="devicemsg_update_reminder">⚠️您的 ArcaneChat 版本可能过时了。\n\n这可能会在您的聊天伙伴使用更新的版本时造成问题。并且您缺失了最新功能😳\n请浏览 https://github.com/ArcaneChat 或应用商店来获取更新。</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">解锁以继续</string>
@@ -979,6 +988,7 @@
     <string name="mailto_link_could_not_be_decoded">无法解码 mailto 链接：%1$s</string>
 
     <!-- notifications  -->
+    <!-- deprecated, use mark_as_read or mark_as_read_short -->
     <string name="notify_dismiss">不予理会</string>
     <string name="notify_reply_button">回复</string>
     <string name="notify_new_message">新消息</string>

@@ -20,7 +20,7 @@ import static org.thoughtcrime.securesms.ConversationActivity.CHAT_ID_EXTRA;
 import static org.thoughtcrime.securesms.ConversationActivity.STARTING_POSITION_EXTRA;
 import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_ADDRESS;
 import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_SERVER_FLAGS;
-import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_SOCKS5_ENABLED;
+import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_PROXY_URL;
 import static org.thoughtcrime.securesms.util.RelayUtil.acquireRelayMessageContent;
 import static org.thoughtcrime.securesms.util.RelayUtil.getDirectSharingChatId;
 import static org.thoughtcrime.securesms.util.RelayUtil.getSharedTitle;
@@ -67,6 +67,7 @@ import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.connect.DirectShareUtil;
 import org.thoughtcrime.securesms.mms.GlideApp;
 import org.thoughtcrime.securesms.permissions.Permissions;
+import org.thoughtcrime.securesms.proxy.ProxySettingsActivity;
 import org.thoughtcrime.securesms.qr.QrActivity;
 import org.thoughtcrime.securesms.qr.QrCodeHandler;
 import org.thoughtcrime.securesms.recipients.Recipient;
@@ -122,7 +123,7 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
           // Util.copy(inputStream, new FileOutputStream(outputFile));
           // msg.setFile(outputFile, "image/jpeg");
 
-          msg.setText(getString(R.string.update_1_46_android, "https://get.delta.chat/#changelogs"));
+          msg.setText(getString(R.string.update_1_46_android, "https://raw.githubusercontent.com/ArcaneChat/android/refs/heads/main/CHANGELOG.md"));
         }
         dcContext.addDeviceMsg(deviceMsgLabel, msg);
 
@@ -381,13 +382,8 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
     if (!isRelayingMessageContent(this)) {
       inflater.inflate(R.menu.text_secure_normal, menu);
       menu.findItem(R.id.menu_global_map).setVisible(Prefs.isLocationStreamingEnabled(this));
-      menu.findItem(R.id.menu_proxy_settings).setVisible(DcHelper.getInt(this, CONFIG_SOCKS5_ENABLED) == 1);
-
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-        MenuCompat.setGroupDividerEnabled(menu, true);
-      } else {
-        menu.setGroupVisible(R.id.extra_services, false);
-      }
+      menu.findItem(R.id.menu_proxy_settings).setVisible(!TextUtils.isEmpty(DcHelper.get(this, CONFIG_PROXY_URL)));
+      MenuCompat.setGroupDividerEnabled(menu, true);
     }
 
     super.onPrepareOptionsMenu(menu);
