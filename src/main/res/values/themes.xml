@@ -52,7 +52,7 @@
 
         <item name="attachment_type_selector_background">@color/white</item>
 
-	<item name="conversation_list_item_unreadcount_color">@color/def_unreadcount</item>
+	    <item name="conversation_list_item_unreadcount_color">@color/def_unreadcount</item>
         <item name="conversation_list_item_background">@drawable/conversation_list_item_background</item>
         <item name="pinned_list_item_background">@drawable/pinned_list_item_background</item>
         <item name="conversation_list_item_contact_color">@color/core_light_90</item>
@@ -62,9 +62,6 @@
         <item name="conversation_list_item_divider">@drawable/conversation_list_divider_shape</item>
 
         <item name="ic_circle_checkbox">@drawable/ic_circle_checkbox</item>
-        <item name="send_button_bg">@drawable/send_button_bg</item>
-        <item name="button_bg">@drawable/button_bg</item>
-        <item name="secondary_button_fg">@color/def_primary</item>
         <item name="floating_mini_bg">@drawable/floating_mini_bg_light</item>
 
         <item name="fab_color">@color/def_primary_lite</item>
@@ -132,7 +129,7 @@
 
         <item name="quick_camera_icon">@drawable/quick_camera_light</item>
         <item name="quick_mic_icon">@drawable/ic_mic_grey600_24dp</item>
-	<item name="recording_lock_background">@drawable/recording_lock_background_light</item>
+	    <item name="recording_lock_background">@drawable/recording_lock_background_light</item>
 
         <item name="conversation_item_sent_indicator_text_background">@drawable/conversation_item_sent_indicator_text_shape</item>
 
@@ -196,9 +193,6 @@
         <item name="conversation_list_item_divider">@drawable/conversation_list_divider_shape_dark</item>
 
         <item name="ic_circle_checkbox">@drawable/ic_circle_checkbox</item>
-        <item name="send_button_bg">@drawable/send_button_bg</item>
-        <item name="button_bg">@drawable/button_bg</item>
-        <item name="secondary_button_fg">@color/gray10</item>
         <item name="floating_mini_bg">@drawable/floating_mini_bg_dark</item>
 
         <!-- dark theme -->
@@ -272,7 +266,7 @@
 
         <item name="quick_camera_icon">@drawable/quick_camera_dark</item>
         <item name="quick_mic_icon">@drawable/ic_mic_white_24dp</item>
-	<item name="recording_lock_background">@drawable/recording_lock_background_dark</item>
+	    <item name="recording_lock_background">@drawable/recording_lock_background_dark</item>
 
         <item name="menu_new_conversation_icon">@drawable/ic_add_white_24dp</item>
         <item name="menu_search_icon">@drawable/ic_search_white_24dp</item>
@@ -323,8 +317,6 @@
         <item name="conversation_list_item_background">@drawable/conversation_list_item_background_purple</item>
         <item name="pinned_list_item_background">@drawable/pinned_list_item_background_purple</item>
         <item name="ic_circle_checkbox">@drawable/ic_circle_checkbox_purple</item>
-        <item name="send_button_bg">@drawable/send_button_bg_purple</item>
-        <item name="button_bg">@drawable/button_bg_purple</item>
         <item name="fab_color">@color/purple_primary_lite</item>
         <item name="conversation_item_outgoing_bubble_color">@color/purple_outgoing_bubble</item>
         <item name="conversation_item_outgoing_text_secondary_color">@color/purple_outgoing_label</item>
@@ -350,12 +342,10 @@
         <item name="colorControlActivated">@color/purple_accent</item>
         <item name="colorControlHighlight">@color/purple_accent</item>
 
-	<item name="conversation_list_item_unreadcount_color">@color/purple_unreadcount</item>
+	    <item name="conversation_list_item_unreadcount_color">@color/purple_unreadcount</item>
         <item name="conversation_list_item_background">@drawable/conversation_list_item_background_purple</item>
         <item name="pinned_list_item_background">@drawable/pinned_list_item_background_purple</item>
         <item name="ic_circle_checkbox">@drawable/ic_circle_checkbox_purple</item>
-        <item name="send_button_bg">@drawable/send_button_bg_purple</item>
-        <item name="button_bg">@drawable/button_bg_purple</item>
         <item name="fab_color">@color/purple_primary_lite</item>
         <item name="conversation_item_outgoing_bubble_color">@color/black</item>
         <item name="conversation_item_outgoing_text_secondary_color">@color/purple_outgoing_label</item>
@@ -394,8 +384,6 @@
         <item name="conversation_list_item_background">@drawable/conversation_list_item_background_green</item>
         <item name="pinned_list_item_background">@drawable/pinned_list_item_background_green</item>
         <item name="ic_circle_checkbox">@drawable/ic_circle_checkbox_green</item>
-        <item name="send_button_bg">@drawable/send_button_bg_green</item>
-        <item name="button_bg">@drawable/button_bg_green</item>
         <item name="fab_color">@color/green_primary_lite</item>
         <item name="conversation_item_outgoing_bubble_color">@color/green_outgoing_bubble</item>
         <item name="conversation_item_outgoing_text_secondary_color">@color/green_outgoing_label</item>
@@ -425,8 +413,6 @@
         <item name="conversation_list_item_background">@drawable/conversation_list_item_background_green</item>
         <item name="pinned_list_item_background">@drawable/pinned_list_item_background_green</item>
         <item name="ic_circle_checkbox">@drawable/ic_circle_checkbox_green</item>
-        <item name="send_button_bg">@drawable/send_button_bg_green</item>
-        <item name="button_bg">@drawable/button_bg_green</item>
         <item name="fab_color">@color/green_primary_lite</item>
         <item name="conversation_item_outgoing_bubble_color">@color/black</item>
         <item name="conversation_item_outgoing_text_secondary_color">@color/green_outgoing_label</item>
@@ -466,8 +452,6 @@
         <item name="conversation_list_item_background">@drawable/conversation_list_item_background_blue</item>
         <item name="pinned_list_item_background">@drawable/pinned_list_item_background_blue</item>
         <item name="ic_circle_checkbox">@drawable/ic_circle_checkbox_blue</item>
-        <item name="send_button_bg">@drawable/send_button_bg_blue</item>
-        <item name="button_bg">@drawable/button_bg_blue</item>
         <item name="fab_color">@color/blue_primary_lite</item>
         <item name="conversation_item_outgoing_bubble_color">@color/blue_outgoing_bubble</item>
         <item name="conversation_item_outgoing_text_secondary_color">@color/blue_outgoing_label</item>
@@ -497,8 +481,6 @@
         <item name="conversation_list_item_background">@drawable/conversation_list_item_background_blue</item>
         <item name="pinned_list_item_background">@drawable/pinned_list_item_background_blue</item>
         <item name="ic_circle_checkbox">@drawable/ic_circle_checkbox_blue</item>
-        <item name="send_button_bg">@drawable/send_button_bg_blue</item>
-        <item name="button_bg">@drawable/button_bg_blue</item>
         <item name="fab_color">@color/blue_primary_lite</item>
         <item name="conversation_item_outgoing_bubble_color">@color/black</item>
         <item name="conversation_item_outgoing_text_secondary_color">@color/blue_outgoing_label</item>
@@ -537,8 +519,6 @@
         <item name="conversation_list_item_background">@drawable/conversation_list_item_background_red</item>
         <item name="pinned_list_item_background">@drawable/pinned_list_item_background_red</item>
         <item name="ic_circle_checkbox">@drawable/ic_circle_checkbox_red</item>
-        <item name="send_button_bg">@drawable/send_button_bg_red</item>
-        <item name="button_bg">@drawable/button_bg_red</item>
         <item name="fab_color">@color/red_primary_lite</item>
         <item name="conversation_item_outgoing_bubble_color">@color/red_outgoing_bubble</item>
         <item name="conversation_item_outgoing_text_secondary_color">@color/red_outgoing_label</item>
@@ -568,8 +548,6 @@
         <item name="conversation_list_item_background">@drawable/conversation_list_item_background_red</item>
         <item name="pinned_list_item_background">@drawable/pinned_list_item_background_red</item>
         <item name="ic_circle_checkbox">@drawable/ic_circle_checkbox_red</item>
-        <item name="send_button_bg">@drawable/send_button_bg_red</item>
-        <item name="button_bg">@drawable/button_bg_red</item>
         <item name="fab_color">@color/red_primary_lite</item>
         <item name="conversation_item_outgoing_bubble_color">@color/black</item>
         <item name="conversation_item_outgoing_text_secondary_color">@color/red_outgoing_label</item>
@@ -608,8 +586,6 @@
         <item name="conversation_list_item_background">@drawable/conversation_list_item_background_pink</item>
         <item name="pinned_list_item_background">@drawable/pinned_list_item_background_pink</item>
         <item name="ic_circle_checkbox">@drawable/ic_circle_checkbox_pink</item>
-        <item name="send_button_bg">@drawable/send_button_bg_pink</item>
-        <item name="button_bg">@drawable/button_bg_pink</item>
         <item name="fab_color">@color/pink_primary_lite</item>
         <item name="conversation_item_outgoing_bubble_color">@color/pink_outgoing_bubble</item>
         <item name="conversation_item_outgoing_text_secondary_color">@color/pink_outgoing_label</item>
@@ -639,8 +615,6 @@
         <item name="conversation_list_item_background">@drawable/conversation_list_item_background_pink</item>
         <item name="pinned_list_item_background">@drawable/pinned_list_item_background_pink</item>
         <item name="ic_circle_checkbox">@drawable/ic_circle_checkbox_pink</item>
-        <item name="send_button_bg">@drawable/send_button_bg_pink</item>
-        <item name="button_bg">@drawable/button_bg_pink</item>
         <item name="fab_color">@color/pink_primary_lite</item>
         <item name="conversation_item_outgoing_bubble_color">@color/black</item>
         <item name="conversation_item_outgoing_text_secondary_color">@color/pink_outgoing_label</item>
@@ -679,8 +653,6 @@
         <item name="conversation_list_item_background">@drawable/conversation_list_item_background_gray</item>
         <item name="pinned_list_item_background">@drawable/pinned_list_item_background_gray</item>
         <item name="ic_circle_checkbox">@drawable/ic_circle_checkbox_gray</item>
-        <item name="send_button_bg">@drawable/send_button_bg_gray</item>
-        <item name="button_bg">@drawable/button_bg_gray</item>
         <item name="fab_color">@color/gray_primary_lite</item>
         <item name="conversation_item_outgoing_bubble_color">@color/gray_outgoing_bubble</item>
         <item name="conversation_item_outgoing_text_secondary_color">@color/gray_outgoing_label</item>
@@ -710,8 +682,6 @@
         <item name="conversation_list_item_background">@drawable/conversation_list_item_background_gray</item>
         <item name="pinned_list_item_background">@drawable/pinned_list_item_background_gray</item>
         <item name="ic_circle_checkbox">@drawable/ic_circle_checkbox_gray</item>
-        <item name="send_button_bg">@drawable/send_button_bg_gray</item>
-        <item name="button_bg">@drawable/button_bg_gray</item>
         <item name="fab_color">@color/gray_primary_lite</item>
         <item name="conversation_item_outgoing_bubble_color">@color/black</item>
         <item name="conversation_item_outgoing_text_secondary_color">@color/gray_outgoing_label</item>

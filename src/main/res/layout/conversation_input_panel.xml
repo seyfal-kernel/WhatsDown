@@ -126,7 +126,7 @@
         android:layout_height="40dp"
         android:layout_marginLeft="12dp"
         android:layout_marginRight="12dp"
-        android:background="?attr/send_button_bg"
+        android:background="@drawable/send_button_bg"
         android:layout_gravity="center_vertical">
 
         <ImageButton
