@@ -296,6 +296,7 @@ public class DcContext {
     }
 
     public void restartIo() {
+      if (!isEnabled()) return;
       stopIo();
       startIo();
     }
