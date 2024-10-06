@@ -64,7 +64,6 @@ public class BackupProviderFragment extends Fragment implements DcEventCenter.Dc
         progressBar.setIndeterminate(true);
 
         dcContext = DcHelper.getContext(getActivity());
-        dcContext.assumeMultiDevice();
         DcHelper.getEventCenter(getActivity()).addObserver(DcContext.DC_EVENT_IMEX_PROGRESS, this);
 
         prepareThread = new Thread(() -> {
@@ -174,17 +173,8 @@ public class BackupProviderFragment extends Fragment implements DcEventCenter.Dc
             if (permille == 0) {
                 getTransferActivity().setTransferError("Sending Error");
                 hideQrCode = true;
-            } else if(permille <= 350) {
-                statusLineText = getString(R.string.preparing_account);
-            } else if(permille <= 400) {
-                statusLine.setVisibility(View.GONE);
-                progressBar.setVisibility(View.GONE);
-                statusLineText = getString(R.string.waiting_for_receiver);
-            } else if(permille <= 450) {
-                statusLineText = getString(R.string.receiver_connected);
-                hideQrCode = true;
             } else if (permille < 1000) {
-                percent = (permille-450)/5;
+                percent = permille/10;
                 percentMax = 100;
                 statusLineText = getString(R.string.transferring);
                 hideQrCode = true;

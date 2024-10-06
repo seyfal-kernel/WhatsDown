@@ -184,7 +184,6 @@ public class DcContext {
     public native int[]        searchMsgs           (int chat_id, String query);
     public native int[]        getFreshMsgs         ();
     public native int[]        getChatMedia         (int chat_id, int type1, int type2, int type3);
-    public native int          getNextMedia         (int msg_id, int dir, int type1, int type2, int type3);
     public native int[]        getChatContacts      (int chat_id);
     public native int          getChatEphemeralTimer (int chat_id);
     public native boolean      setChatEphemeralTimer (int chat_id, int timer);
@@ -250,6 +249,14 @@ public class DcContext {
       return ret.trim();
     }
 
+    public String getName() {
+      String displayname = getConfig("displayname");
+      if (displayname.isEmpty()) {
+        displayname = getContact(DcContact.DC_CONTACT_ID_SELF).getAddr();
+      }
+      return displayname;
+    }
+
     public boolean isCommunity() {
         return getConfigInt("is_community") == 1;
     }
@@ -279,21 +286,6 @@ public class DcContext {
       setConfigInt("is_muted", muted? 1 : 0);
     }
 
-    // Called for new profiles on chatmail servers that are "single device" initially;
-    // to save server disk space, we make use of that delete all messages immediately after download.
-    public void assumeSingleDevice() {
-      if (isChatmail()) {
-        setConfigInt("delete_server_after", 1 /*at once*/);
-      }
-    }
-
-    // Called when we get a hint that another device may be set up.
-    public void assumeMultiDevice() {
-      if (isChatmail() && getConfigInt("delete_server_after") == 1 /*at once*/) {
-        setConfigInt("delete_server_after", 0 /*never/automatic*/);
-      }
-    }
-
     public boolean isGmailOauth2Addr(String addr) {
       final String oauth2url = getOauth2Url(addr, "chat.delta:/foo");
       return isGmailOauth2Url(oauth2url);
@@ -301,6 +293,11 @@ public class DcContext {
 
     public boolean isGmailOauth2Url(String oauth2url) {
       return oauth2url.startsWith("https://accounts.google.com/");
+    }
+
+    public void restartIo() {
+      stopIo();
+      startIo();
     }
 
     /**
