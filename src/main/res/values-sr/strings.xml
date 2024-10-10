@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- common strings without special context -->
-    <string name="app_name">ArcaneChat</string>
+    <string name="app_name">Delta Chat</string>
     <string name="ok">У реду</string>
     <string name="cancel">Откажи</string>
    <string name="clear_search">Избриши претрагу</string>
@@ -39,7 +39,7 @@
     <string name="unarchive">Деархивирај</string>
     <string name="mute">Утишај</string>
     <string name="ephemeral_messages">Нестајуће поруке</string>
-    <string name="ephemeral_messages_hint">Односи се на све чланове овог ћаскања ако користе ArcaneChat; и даље могу да копирају, сниме и прослеђују поруке или да користе друге клијенте за е-пошту.</string>
+    <string name="ephemeral_messages_hint">Односи се на све чланове овог ћаскања ако користе Delta Chat; и даље могу да копирају, сниме и прослеђују поруке или да користе друге клијенте за е-пошту.</string>
     <string name="save">Сачувај</string>
     <string name="chat">Ћаскање</string>
     <string name="media">Медији</string>
@@ -309,7 +309,7 @@
     <string name="videochat_tap_to_open">Додирни да отвориш</string>
     <string name="videochat_instance">Инстанца видео ћаскања</string>
     <string name="videochat_instance_placeholder">Ваша инстанца видео ћаскања</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Примери: https://meet.jit.si/$ROOM или basicwebrtc:https://your-server</string>
     <string name="videochat_instance_explain_2">Ако је омогућено, можете започети видео ћаскање из сваког ћаскања. Ово захтева компатибилну апликацију или прегледач на оба краја.</string>
     <string name="videochat_instance_from_qr">Да ли желите да користите „%1$s“ да позовете друге у видео ћаскање?\n\nКада ово поставите, можете да започнете видео ћаскање из сваког ћаскања. Ово замењује све претходне поставке за видео ћаскање.</string>
@@ -380,7 +380,7 @@
         <item quantity="other">%d нових порука</item>
     </plurals>
     <!-- The placeholder will be replaced by the name of the recipient in a one-to-one chat. -->
-    <string name="chat_new_one_to_one_hint">Пошаљи поруку %1$s; они је могу примити и ако немају ArcaneChat.</string>
+    <string name="chat_new_one_to_one_hint">Пошаљи поруку %1$s; они је могу примити и ако немају Delta Chat.</string>
     <string name="chat_new_group_hint">Остали учесници ће видети ову групу само када пошаљете прву поруку.</string>
     <string name="chat_record_slide_to_cancel">Превуците за отказивање</string>
     <string name="chat_record_explain">Додирните и држите за снимање гласовне поруке, пустите за слање</string>
@@ -440,8 +440,6 @@
     <string name="search">Претрага</string>
     <string name="search_explain">Претражи ћаскања, контакте и поруке</string>
     <string name="search_no_result_for_x">Нема резултата за „%s“</string>
-
-
     <!-- create/edit groups, contact/group profile -->
     <string name="group_name">Назив групе</string>
     <string name="group_avatar">Слика групе</string>
@@ -527,7 +525,7 @@
     <string name="login_socks5_password">SOCKS5 лозинка</string>
 
     <string name="login_info_oauth2_title">Наставите са поједностављеним поставкама?</string>
-    <string name="login_info_oauth2_text">Унета е-адреса подржава поједностављено подешавање (OAuth 2.0).\n\nУ следећем кораку, дозволите ArcaneChat-у да  да дејствује као ваша апликација за ћаскање преко е-поште.\n\nArcaneChat нема сервере и ваши подаци остају на вашем уређају.</string>
+    <string name="login_info_oauth2_text">Унета е-адреса подржава поједностављено подешавање (OAuth 2.0).\n\nУ следећем кораку, дозволите Delta Chat-у да  да дејствује као ваша апликација за ћаскање преко е-поште.\n\nDelta Chat нема сервере и ваши подаци остају на вашем уређају.</string>
     <string name="login_certificate_checks">Провери сертификате</string>
     <string name="login_error_mail">Унесите важећу е-адресу</string>
     <string name="login_error_server">Унесите важеће име сервера или ИП адресу</string>
@@ -572,7 +570,7 @@
     <string name="pref_password_and_account_settings">Лозинка и налог</string>
     <string name="pref_who_can_see_profile_explain">Слика вашег профила, име и потпис ће бити послан заједно са вашом поруком када комуницирате са другим корисницима.</string>
     <string name="pref_your_name">Ваше име</string>
-    <!-- Translators: Visible only to recipients who DO NOT use ArcaneChat, so it's the last line in an E-mail and not a "Status". -->
+    <!-- Translators: Visible only to recipients who DO NOT use Delta Chat, so it's the last line in an E-mail and not a "Status". -->
     <string name="pref_default_status_label">Текст потписа</string>
     <string name="pref_enter_sends">Шаљи ЕНТЕР тастером</string>
     <string name="pref_enter_sends_explain">Притиском на ЕНТЕР тастер тексутале поруке ће бити послате</string>
@@ -609,7 +607,7 @@
     <string name="pref_read_receipts_explain">Уколико су извештаји читања онемогућени, нећете видети када неко прочита ваше поруке.</string>
     <string name="pref_manage_keys">Управљај кључевима</string>
     <string name="pref_use_system_emoji">Користи системски емоџи</string>
-    <string name="pref_use_system_emoji_explain">Искључи уграђене ArcaneChat-ове емоџије</string>
+    <string name="pref_use_system_emoji_explain">Искључи уграђене Delta Chat-ове емоџије</string>
     <string name="pref_app_access">Приступ апликацији</string>
     <string name="pref_chats">Ћаскања</string>
     <string name="pref_in_chat_sounds">Звуци ћаскања</string>
@@ -693,9 +691,9 @@
     <!-- %1$d will be replaced by the number of messages, you can assume plural/lots here. %2$s will be replaced by a timespan option. -->
     <string name="autodel_device_ask">Да ли желите да избришете %1$d поруке сада и све новопреузете поруке „%2$s“ у будућности?\n\n• Ово укључује све медије\n\n• Поруке ће бити избрисане без обзира да ли су виђене или не\n\n• \"Сачуване поруке\" неће бити избрисане на уређају</string>
     <!-- %1$d will be replaced by the number of messages, you can assume plural/lots here. %2$s will be replaced by a timespan option. -->
-    <string name="autodel_server_ask">Да ли желите да избришете %1$d поруке сада и све новопреузете поруке „%2$s“ у будућности?\n\n⚠️ Ово укључује све поруке е-поште, медије и „Сачуване поруке“ у свим директоријумима на серверу\n\n⚠️ Немојте користити ову функцију ако користите било које друге клијенте е-поште осим ArcaneChat-а</string>
+    <string name="autodel_server_ask">Да ли желите да избришете %1$d поруке сада и све новопреузете поруке „%2$s“ у будућности?\n\n⚠️ Ово укључује све поруке е-поште, медије и „Сачуване поруке“ у свим директоријумима на серверу\n\n⚠️ Немојте користити ову функцију ако користите било које друге клијенте е-поште осим Delta Chat-а</string>
     <!-- shown below enabled autodel_server-option, should be a summary of autodel_server_ask and remind about the impact -->
-    <string name="autodel_server_enabled_hint">Ово укључује све поруке е-поште, медије и „Сачуване поруке“ у свим директоријумима на серверу. Немојте користити ову функцију ако користите било које друге клијенте е-поште осим ArcaneChat-а.</string>
+    <string name="autodel_server_enabled_hint">Ово укључује све поруке е-поште, медије и „Сачуване поруке“ у свим директоријумима на серверу. Немојте користити ову функцију ако користите било које друге клијенте е-поште осим Delta Chat-а.</string>
     <string name="autodel_confirm">Разумем и желим да избришем све ове поруке</string>
     <!-- "At once" in the meaning of "Immediately", without any intervening time. -->
     <string name="autodel_at_once">Одмах</string>
@@ -798,7 +796,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ Складишни простор вашег имејл провајдера ће ускоро да понестане: %1$s%% већ се користи.\n\nМожда нећете моћи да примате поруке ако је складиште пунo.\n\n👉 Проверите да ли можете да избришете старе податке у веб интерфејсу провајдера и размислите да омогућите „Подешавања / Избриши старе поруке“ опцију. Можете да проверите тренутну употребу меморијског простора у било ком тренутку у „Подешавања / Повезивање“.</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ Изгледа да датум или време на вашем уређају нису тачни (%1$s).\n\nПодесите сат ⏰🔧 да бисте били сигурни да ће ваше поруке бити правилно примљене.</string>
-    <string name="devicemsg_update_reminder">⚠️ Ваша ArcaneChat верзија је можда застарела.\n\nОво може да изазове проблеме јер ваши контакти за ћаскање користе новије верзије - а вама недостају најновије функционалности 😳\nДа би ажурирали апликацију проверите https://github.com/ArcaneChat или продавницу за апликација.</string>
+    <string name="devicemsg_update_reminder">⚠️ Ваша Delta Chat верзија је можда застарела.\n\nОво може да изазове проблеме јер ваши контакти за ћаскање користе новије верзије - а вама недостају најновије функционалности 😳\nДа би ажурирали апликацију проверите https://get.delta.chat или продавницу за апликација.</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Унесите своју системску тајну да бисте наставили.</string>
@@ -889,9 +887,9 @@
     <string name="encrypted_message">Шифрована порука</string>
 
     <!-- strings introduced on desktop. we want to share strings between the os, in general, please do not add generic strings here -->
-    <string name="about_offical_app_desktop">Ово је званична ArcaneChat апликација за рачунар.</string>
+    <string name="about_offical_app_desktop">Ово је званична Delta Chat апликација за рачунар.</string>
     <string name="about_licensed_under_desktop">Овај програм је лиценциран под ГНУ ГПЛ верзија 3 лиценцом и изворни код је доступан на Гитхабу.</string>
-    <string name="welcome_desktop">Добродошли у ArcaneChat.</string>
+    <string name="welcome_desktop">Добродошли у Delta Chat.</string>
     <string name="global_menu_preferences_language_desktop">Језик</string>
     <string name="global_menu_file_desktop">Фајл</string>
     <string name="global_menu_file_quit_desktop">Излаз</string>
@@ -906,11 +904,11 @@
     <string name="global_menu_view_developer_desktop">Програмер</string>
     <string name="global_menu_view_developer_tools_desktop">Алати за развој</string>
     <string name="global_menu_help_desktop">Помоћ</string>
-    <string name="global_menu_help_learn_desktop">Научите више о ArcaneChat</string>
+    <string name="global_menu_help_learn_desktop">Научите више о Delta Chat</string>
     <string name="global_menu_help_contribute_desktop">Допринесите развоју на Гитхабу</string>
     <string name="global_menu_help_report_desktop">Пријавите проблем</string>
-    <string name="global_menu_help_about_desktop">О ArcaneChat</string>
-    <string name="global_menu_file_open_desktop">Отвори ArcaneChat</string>
+    <string name="global_menu_help_about_desktop">О Delta Chat</string>
+    <string name="global_menu_file_open_desktop">Отвори Delta Chat</string>
     <string name="global_menu_minimize_to_tray">Минимизуј</string>
     <string name="no_chat_selected_suggestion_desktop">Изабери ћаскање или направи ново ћаскање</string>
     <string name="write_message_desktop">Напишите поруку</string>
@@ -929,7 +927,7 @@
     <string name="message_detail_received_desktop">примљено</string>
     <string name="menu.view.developer.open.log.folder">Отвори директоријум где се налазе дневници</string>
     <string name="menu.view.developer.open.current.log.file">Отвори тренутни дневник</string>
-    <string name="explain_desktop_minimized_disabled_tray_pref" tools:ignore="TypographyDashes">Иконица на системској касети не може да се онемогући јер је ArcaneChat покренут са --minimized опцијом.</string>
+    <string name="explain_desktop_minimized_disabled_tray_pref" tools:ignore="TypographyDashes">Иконица на системској касети не може да се онемогући јер је Delta Chat покренут са --minimized опцијом.</string>
     <string name="no_spellcheck_suggestions_found">Нема предлога за исправке правописа.</string>
     <string name="show_window">Прикажи прозор</string>
     <string name="login_socks5_experimental_warning">SOCKS5 подршка је тренутно у експерименталној фази. Користе је на личну одговорност. Ако унесете е-адресу у поље за е-адресу, следи захтев за ДНС претрагу која неће ићи кроз SOCKS5 тунел.</string>
@@ -971,7 +969,7 @@
     <string name="import_device_contacts">Увезите контакте са уређаја</string>
     <string name="import_device_contacts_hint">Да би ћаскали са контактима са вашег уређаја отворите поставке и омогућите приступ контактима.</string>
     <!-- iOS notification settings -->
-    <string name="disabled_in_dc">Онемогућено у ArcaneChat</string>
+    <string name="disabled_in_dc">Онемогућено у Delta Chat</string>
     <string name="disabled_in_system_settings">Онемогућено у поставкама оперативног система</string>
     <string name="bg_app_refresh_disabled">„Освежавање апликације у позадини“ је онемогућено у поставкама оперативног система</string>
     <!-- iOS connectivity view, Adjective, used eg. as "Notifications: Delayed" -->
@@ -985,18 +983,18 @@
     <string name="shortcut_step1_tap_share_btn">Кликните на дугме за дељење</string>
     <string name="shortcut_step2_tap_add_to_home_screen">Изаберите „Додај на почетни екран“ да бисте апликацију додали на почетни екран.</string>
     <!-- iOS permissions, copy from "deltachat-ios/Info.plist", which is used on missing translations in "deltachat-ios/LANG.lproj/InfoPlist.strings" -->
-    <string name="InfoPlist_NSCameraUsageDescription">ArcaneChat користи вашу камеру за снимање и слање фотографија и видео записа и за очитавање бар-кôда.</string>
-    <string name="InfoPlist_NSContactsUsageDescription">ArcaneChat користи ваше контакте да прикаже листу е-адреса на које можете слати поруке. ArcaneChat нема сервер и ваши контакти се не шаљу нигде.</string>
-    <string name="InfoPlist_NSLocationAlwaysAndWhenInUseUsageDescription">ArcaneChat захтева дозволу за дељење вашег положаја током периода у коме сте омогућили дељење положаја.</string>
-    <string name="InfoPlist_NSLocationWhenInUseUsageDescription">ArcaneChat захтева дозволу за дељење вашег положаја током периода у коме сте омогућили дељење положаја.</string>
-    <string name="InfoPlist_NSMicrophoneUsageDescription">ArcaneChat користи микрофон да снима и шаље звучне поруке и видео записе са звуком.</string>
-    <string name="InfoPlist_NSPhotoLibraryUsageDescription">ArcaneChat ће вам дозволити да изаберете које од слика из вашег фото албума желите да пошаљете.</string>
-    <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">ArcaneChat жели да сними слике у ваш фото албум.</string>
+    <string name="InfoPlist_NSCameraUsageDescription">Delta Chat користи вашу камеру за снимање и слање фотографија и видео записа и за очитавање бар-кôда.</string>
+    <string name="InfoPlist_NSContactsUsageDescription">Delta Chat користи ваше контакте да прикаже листу е-адреса на које можете слати поруке. Delta Chat нема сервер и ваши контакти се не шаљу нигде.</string>
+    <string name="InfoPlist_NSLocationAlwaysAndWhenInUseUsageDescription">Delta Chat захтева дозволу за дељење вашег положаја током периода у коме сте омогућили дељење положаја.</string>
+    <string name="InfoPlist_NSLocationWhenInUseUsageDescription">Delta Chat захтева дозволу за дељење вашег положаја током периода у коме сте омогућили дељење положаја.</string>
+    <string name="InfoPlist_NSMicrophoneUsageDescription">Delta Chat користи микрофон да снима и шаље звучне поруке и видео записе са звуком.</string>
+    <string name="InfoPlist_NSPhotoLibraryUsageDescription">Delta Chat ће вам дозволити да изаберете које од слика из вашег фото албума желите да пошаљете.</string>
+    <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">Delta Chat жели да сними слике у ваш фото албум.</string>
 
 
-    <string name="pref_background_notifications_rationale">Да би сте одржавали везу са вашим сервером за е-пошту и да би сте примали поруке у позадини, игноришите оптимизације ефикасности батерије у следећем кораку.\n\nArcaneChat не користи много енергије и води рачуна да вам не испразни батерију.</string>
+    <string name="pref_background_notifications_rationale">Да би сте одржавали везу са вашим сервером за е-пошту и да би сте примали поруке у позадини, игноришите оптимизације ефикасности батерије у следећем кораку.\n\nDelta Chat не користи много енергије и води рачуна да вам не испразни батерију.</string>
     <!-- disabling "Reliable service" will hide a the maybe annoying permanent-notification with the drawback that new-message-notifications get potentially unreliable -->
-    <string name="perm_enable_bg_reminder_title">Додирните овде да би примали поруке када је ArcaneChat у позадини.</string>
-    <string name="perm_enable_bg_already_done">Ви сте већ омогућили ArcaneChat-у достављање порука у позадини.\n\nАко поруке и даље не стижу у позадини, погледајте поставке у оперативном систему.</string>
+    <string name="perm_enable_bg_reminder_title">Додирните овде да би примали поруке када је Delta Chat у позадини.</string>
+    <string name="perm_enable_bg_already_done">Ви сте већ омогућили Delta Chat-у достављање порука у позадини.\n\nАко поруке и даље не стижу у позадини, погледајте поставке у оперативном систему.</string>
 
     </resources>

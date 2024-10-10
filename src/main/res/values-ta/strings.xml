@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- common strings without special context -->
-    <string name="app_name">ArcaneChat</string>
+    <string name="app_name">Delta Chat</string>
     <string name="ok">சரி</string>
     <string name="cancel">ரத்து செய்</string>
    <string name="yes">ஆம்</string>
@@ -210,7 +210,7 @@
     <string name="pref_read_receipts">ரசீதுகளைப் படியுங்கள்</string>
     <string name="pref_read_receipts_explain">வாசிப்பு ரசீதுகள் முடக்கப்பட்டிருந்தால், மற்றவர்களிடமிருந்து வாசிப்பு ரசீதுகளை நீங்கள் </string>
     <string name="pref_use_system_emoji">கணினி ஈமோஜியைப் பயன்படுத்தவும்</string>
-    <string name="pref_use_system_emoji_explain">ArcaneChat உள்ளமைக்கப்பட்ட ஈமோஜி ஆதரவை முடக்கு</string>
+    <string name="pref_use_system_emoji_explain">Delta Chat உள்ளமைக்கப்பட்ட ஈமோஜி ஆதரவை முடக்கு</string>
     <string name="pref_app_access">பயன்பாடு அணுகல்</string>
     <string name="pref_chats">அரட்டைகள்</string>
     <string name="pref_in_chat_sounds">௨ள்ளார்ந்த செயலி அறிவிப்புகள்</string>
@@ -235,13 +235,13 @@
     <!-- dc_str_* resources -->
     <string name="encrypted_message">மறைகுறியாக்கப்பட்ட செய்தி</string>
 
-    <string name="welcome_desktop">ArcaneChat க்கு வரவேற்கிறது.</string>
+    <string name="welcome_desktop">Delta Chat க்கு வரவேற்கிறது.</string>
     <string name="global_menu_preferences_language_desktop">நிறவடிவமைப்பு</string>
     <string name="global_menu_file_desktop">கோப்பு</string>
     <string name="global_menu_edit_desktop">திருத்து</string>
     <string name="global_menu_view_desktop">பார்வை</string>
     <string name="global_menu_help_desktop">உதவி</string>
-    <string name="global_menu_help_about_desktop">ArcaneChat பற்றி</string>
+    <string name="global_menu_help_about_desktop">Delta Chat பற்றி</string>
     <string name="more_info_desktop">மேலும் தகவல்</string>
     <string name="remove_desktop">நீக்கு</string>
     <string name="save_desktop">சேமி</string>

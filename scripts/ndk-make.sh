@@ -38,6 +38,8 @@
 #
 # If anything doesn't work, please open an issue!!
 
+"$(dirname "$0")/rebrand.sh"
+
 set -e
 echo "starting time: `date`"
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- common strings without special context -->
-    <string name="app_name">ArcaneChat</string>
+    <string name="app_name">Delta Chat</string>
     <string name="ok">Oké</string>
     <string name="cancel">Annuleren</string>
-   <!-- the word "or" to separate blocks in the user interface that are mutually exclusive -->
+   <!-- deprecated, the word "or" to separate blocks in the user interface that are mutually exclusive -->
     <string name="or_separator">of</string>
     <string name="clear_search">Zoekopdracht wissen</string>
     <string name="yes">Ja</string>
@@ -44,7 +44,7 @@
     <string name="unarchive">De-archiveren</string>
     <string name="mute">Negeren</string>
     <string name="ephemeral_messages">Verdwijnende berichten</string>
-    <string name="ephemeral_messages_hint">Deze instellingen zijn van toepassing op alle deelnemers die ArcaneChat gebruiken. Ze kunnen echter wél berichten kopiëren, opslaan of doorsturen middels andere e-mailapps.</string>
+    <string name="ephemeral_messages_hint">Deze instellingen zijn van toepassing op alle deelnemers die Delta Chat gebruiken. Ze kunnen echter wél berichten kopiëren, opslaan of doorsturen middels andere e-mailapps.</string>
     <string name="save">Opslaan</string>
     <string name="chat">Gesprek</string>
     <string name="media">Media</string>
@@ -232,7 +232,7 @@
     <string name="share_invite_link">Uitnodigingslink versturen</string>
     <string name="invite_friends">Vrienden uitnodigen</string>
     <!-- %1$s is replaced by the user's invitation link ("https://i.delta.chat/...") -->
-    <string name="invite_friends_text">Neem contact met me op via ArcaneChat:\n%1$s</string>
+    <string name="invite_friends_text">Neem contact met me op via Delta Chat:\n%1$s</string>
     <string name="menu_copy_selection_to_clipboard">Selectie kopiëren</string>
     <string name="menu_copy_link_to_clipboard">Link kopiëren</string>
     <string name="menu_copy_text_to_clipboard">Tekst kopiëren</string>
@@ -331,7 +331,7 @@
     <string name="videochat_tap_to_open">Druk om te openen</string>
     <string name="videochat_instance">Videogespreksinstantie</string>
     <string name="videochat_instance_placeholder">Mijn videogespreksinstantie</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Voorbeeld: https://your-server.org/$ROOM</string>
     <string name="videochat_instance_explain_2">Schakel in om een videogesprek te starten vanuit een een-op-eengesprek. Zowel jij als je gesprekspartner hebben hiervoor een compatibele app of webbrowser nodig.</string>
     <string name="videochat_instance_from_qr">Wil je ‘%1$s’, gebruiken om anderen uit te nodigen voor videogesprekken?\n\nNa het instellen kun je een videogesprek starten vanuit elk een-op-eengesprek. Deze instelling vervangt de vorige videogespreksinstelling.</string>
@@ -466,6 +466,8 @@
     <string name="search_files">Bestanden doorzoeken</string>
     <string name="search_explain">Zoek naar gesprekken, contactpersonen en berichten</string>
     <string name="search_no_result_for_x">Er zijn geen resultaten voor “%s”</string>
+    <!-- Adjective, as in "Show Unread Messages" -->
+    <string name="search_unread">Ongelezen</string>
 
 
     <!-- create/edit groups, contact/group profile -->
@@ -510,9 +512,9 @@
     <string name="multidevice_title">Secundair apparaat toevoegen</string>
     <string name="multidevice_same_network_hint">Zorg ervoor dat beide apparaten verbonden zijn met hetzelfde (wifi)netwerk</string>
     <string name="multidevice_this_creates_a_qr_code">Hiermee wordt een QR-code samengesteld die door het tweede apparaat kan worden gescand om het account te kopiëren.</string>
-    <string name="multidevice_install_dc_on_other_device">Installeer ArcaneChat op je andere apparaat (https://github.com/ArcaneChat)</string>
+    <string name="multidevice_install_dc_on_other_device">Installeer Delta Chat op je andere apparaat (https://get.delta.chat)</string>
     <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
-    <string name="multidevice_tap_scan_on_other_device">Start ArcaneChat, druk op ‘Ik heb al een profiel → Toevoegen als secundair apparaat’ en scan de hier getoonde code</string>
+    <string name="multidevice_tap_scan_on_other_device">Start Delta Chat, druk op ‘Ik heb al een profiel → Toevoegen als secundair apparaat’ en scan de hier getoonde code</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
     <string name="multidevice_qr_subtitle">Scan om een secundair apparaat voor %1$s in te stellen</string>
     <string name="multidevice_receiver_title">Toevoegen als secundair apparaat</string>
@@ -524,9 +526,9 @@
     <string name="multidevice_transfer_done_devicemsg">ℹ️ Het account is overgezet naar je tweede apparaat.</string>
     <!-- Shown beside progress bar, stay short -->
     <string name="preparing_account">Bezig met voorbereiden…</string>
-    <!-- Shown beside progress bar, stay short -->
+    <!-- deprecated, shown beside progress bar, stay short -->
     <string name="waiting_for_receiver">Bezig met wachten op ontvanger…</string>
-    <!-- Shown beside progress bar, stay short -->
+    <!-- deprecated, shown beside progress bar, stay short -->
     <string name="receiver_connected">De ontvanger is verbonden…</string>
     <!-- Shown beside progress bar, stay short -->
     <string name="transferring">Bezig met overdragen…</string>
@@ -592,7 +594,7 @@
     <!-- for classic email, we use the classical term "Account" -->
     <string name="login_explain">Log in met een bestaand e-mailaccount.</string>
     <string name="login_subheader">Bij bekende e-mailproviders gaat het instellen vrijwel geheel automatisch. Soms moet je imap inschakelen in de webversie van je e-mailclient. Vraag je e-mailprovider of vrienden om hulp.</string>
-    <string name="login_no_servers_hint">Er is geen ArcaneChat-server; jóuw gegevens blijven op jóuw apparaat.</string>
+    <string name="login_no_servers_hint">Er is geen Delta Chat-server; jóuw gegevens blijven op jóuw apparaat.</string>
     <string name="login_inbox">Postvak in</string>
     <string name="login_imap_login">IMAP-inlognaam</string>
     <string name="login_imap_server">IMAP-server</string>
@@ -615,6 +617,7 @@
     <string name="proxy_list_header">Bewaarde proxy\'s</string>
     <string name="proxy_delete">Proxy verwijderen</string>
     <string name="proxy_delete_explain">Weet je zeker dat je ‘%1$s’ wilt verwijderen?</string>
+    <string name="proxy_use_proxy_confirm">Wil je gebruikmaken van de proxy ‘%1$s’?</string>
 
     <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
@@ -625,7 +628,7 @@
     <string name="login_socks5_password">SOCKS5-wachtwoord</string>
 
     <string name="login_info_oauth2_title">Wil je doorgaan met vereenvoudigd instellen?</string>
-    <string name="login_info_oauth2_text">Het ingevoerde e-mailadres ondersteunt vereenvoudigd instellen (OAuth2).\n\nTijdens de volgende stap moet je ArcaneChat toestaan te fungeren als je e-mailapp.\n\nArcaneChat heeft geen eigen servers; jóuw gegevens blijven op jóuw apparaat!</string>
+    <string name="login_info_oauth2_text">Het ingevoerde e-mailadres ondersteunt vereenvoudigd instellen (OAuth2).\n\nTijdens de volgende stap moet je Delta Chat toestaan te fungeren als je e-mailapp.\n\nDelta Chat heeft geen eigen servers; jóuw gegevens blijven op jóuw apparaat!</string>
     <string name="login_certificate_checks">Certificaatcontrole</string>
     <string name="login_error_mail">Voer een geldig e-mailadres in</string>
     <string name="login_error_server">Voer een geldig(e) ip-adres/server in</string>
@@ -670,7 +673,7 @@
     <string name="pref_password_and_account_settings">Wachtwoord en account</string>
     <string name="pref_who_can_see_profile_explain">Je profielfoto, -naam en handtekening worden naast je gespreksberichten getoond.</string>
     <string name="pref_your_name">Je naam</string>
-    <!-- Translators: Visible only to recipients who DO NOT use ArcaneChat, so it's the last line in an E-mail and not a "Status". -->
+    <!-- Translators: Visible only to recipients who DO NOT use Delta Chat, so it's the last line in an E-mail and not a "Status". -->
     <string name="pref_default_status_label">Handtekeningtekst</string>
     <string name="pref_enter_sends">Versturen met enter</string>
     <string name="pref_enter_sends_explain">Druk op de entertoets om tekstberichten te versturen</string>
@@ -709,7 +712,7 @@
     <string name="pref_encryption">Versleuteling</string>
     <string name="pref_manage_keys">Sleutels beheren</string>
     <string name="pref_use_system_emoji">Systeememoji gebruiken</string>
-    <string name="pref_use_system_emoji_explain">Schakel ArcaneChats ingebouwde emojiondersteuning uit</string>
+    <string name="pref_use_system_emoji_explain">Schakel Delta Chats ingebouwde emojiondersteuning uit</string>
     <string name="pref_use_inapp_camera">Ingebouwde camera gebruiken</string>
     <string name="pref_use_inapp_camera_explain">Let op: de ingebouwde camera beschikt over minder functies dan de systeemcamera</string>
     <string name="pref_show_system_contacts">Adresboek uitlezen</string>
@@ -783,7 +786,7 @@
     <string name="pref_edit_profile">Profiel bewerken</string>
     <string name="disable_imap_idle">IMAP IDLE uitschakelen</string>
     <string name="disable_imap_idle_explain">Maak geen gebruik van IMAP IDLE, zelfs niet als de server het ondersteunt. Schakel deze optie in om het ophalen van berichten te vertragen. Let op: gebruik deze optie alleen voor testdoeleinden.</string>
-    <string name="send_stats_to_devs">Statistieken delen met ArcaneChat-ontwikkelaars</string>
+    <string name="send_stats_to_devs">Statistieken delen met Delta Chat-ontwikkelaars</string>
 
 
     <!-- Emoji picker and categories -->
@@ -854,7 +857,7 @@
     <string name="systemmsg_read_receipt_subject">Leesbevestiging</string>
     <!-- deprecated -->
     <string name="systemmsg_read_receipt_body">Het door jou verstuurde bericht, “%1$s”, heeft het scherm van de ontvanger bereikt.\n\nDit betekent echter niet dat het ook gelezen is.</string>
-    <string name="systemmsg_cannot_decrypt">Dit bericht kan niet worden ontsleuteld.\n\n• Het kan helpen dit bericht te beantwoorden en de afzender te vragen het opnieuw te versturen.\n\n• Als je ArcaneChat of een andere e-mailapp opnieuw hebt geïnstalleerd, voeg het dan toe als tweede apparaat of importeer een reservekopie.</string>
+    <string name="systemmsg_cannot_decrypt">Dit bericht kan niet worden ontsleuteld.\n\n• Het kan helpen dit bericht te beantwoorden en de afzender te vragen het opnieuw te versturen.\n\n• Als je Delta Chat of een andere e-mailapp opnieuw hebt geïnstalleerd, voeg het dan toe als tweede apparaat of importeer een reservekopie.</string>
     <string name="systemmsg_unknown_sender_for_chat">Dit gesprek bevat een onbekende afzender. Zie ‘Informatie’ voor meer informatie.</string>
     <string name="systemmsg_subject_for_new_contact">Bericht van %1$s</string>
     <string name="systemmsg_failed_sending_to">Het bericht kan niet worden verstuurd aan %1$s.</string>
@@ -925,7 +928,7 @@
     <string name="chat_protection_enabled_tap_to_learn_more">Berichten zijn vanaf nu gegarandeerd van eind-tot-eindversleuteling voorzien. Druk hier voor meer informatie.</string>
     <string name="chat_protection_enabled_explanation">Alle berichten in dit gesprek zijn vanaf nu gegarandeerd van eind-tot-eindversleuteling voorzien.\n\nMet behulp van deze versleuteling blijven berichten tussen jou en je gesprekspartners geheim - zelfs je e-mailprovider kan ze niet uitlezen.</string>
     <string name="chat_protection_broken_tap_to_learn_more">%1$s heeft een bericht verstuurd vanaf een ander apparaat. Druk hier voor meer informatie.</string>
-    <string name="chat_protection_broken_explanation">Eind-tot-eindversleuteling kan niet meer worden gegarandeerd, omdat %1$s ArcaneChat opnieuw heeft geïnstalleerd of een bericht vanaf een ander apparaat heeft verstuurd.\n\nMaak een afspraak met hem/haar en scan de QR-code opnieuw om eind-tot-eindversleuteling weer in te schakelen.</string>
+    <string name="chat_protection_broken_explanation">Eind-tot-eindversleuteling kan niet meer worden gegarandeerd, omdat %1$s Delta Chat opnieuw heeft geïnstalleerd of een bericht vanaf een ander apparaat heeft verstuurd.\n\nMaak een afspraak met hem/haar en scan de QR-code opnieuw om eind-tot-eindversleuteling weer in te schakelen.</string>
     <string name="invalid_unencrypted_tap_to_learn_more">⚠️ Voor %1$s is eind-tot-eindversleuteling vereist, maar dit is nog niet ingesteld in het huidige gesprek. Druk voor meer informatie.</string>
     <string name="invalid_unencrypted_explanation">Spreek met elkaar af en scan elkaars QR-code om eind-tot-eindversleuteling op te zetten.</string>
     <string name="encryption_required_for_new_contact">Eind-tot-eindversleuteling is vereist, maar nog niet ingesteld op %1$s.\n\nJe kunt deze link alleen delen met personen die je kent of die je in het echt ontmoet en waarvan je de QR-code scant.</string>
@@ -936,7 +939,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ De opslagruimte die je provider biedt is bijna overschreden. Momenteel heb je %1$s%% ervan in gebruik.\n\nAls je geen ruimte meer hebt, kun je mogelijk geen berichten meer ontvangen.\n\n👉 Kijk of je oude gegevens kunt verwijderen in de webclient van je provider. Overweeg ook ‘Instellingen → Oude berichten verwijderen’ in te schakelen. Je kunt je huidige gebruik te allen tijde bekijken via ‘Instellingen → Verbindingen’.</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ De datum en tijd van je apparaat lijken niet te kloppen (%1$s).\n\nVerzet je klok ⏰🔧 om er zeker van te zijn dat je berichten kunt ontvangen.</string>
-    <string name="devicemsg_update_reminder">⚠️ Je versie van ArcaneChat is mogelijk verouderd.\n\nDit kan problemen veroorzaken aangezien je gesprekspartners nieuwe versies gebruiken. Bovendien mis je hierdoor enkele nieuwe functies. 😳\nGa naar https://github.com/ArcaneChat of de appwinkel van je apparaat om te controleren op updates.</string>
+    <string name="devicemsg_update_reminder">⚠️ Je versie van Delta Chat is mogelijk verouderd.\n\nDit kan problemen veroorzaken aangezien je gesprekspartners nieuwe versies gebruiken. Bovendien mis je hierdoor enkele nieuwe functies. 😳\nGa naar https://get.delta.chat of de appwinkel van je apparaat om te controleren op updates.</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Ontgrendelen om verder te gaan</string>
@@ -1023,11 +1026,11 @@
     <!-- permissions -->
     <string name="perm_required_title">Recht vereist</string>
     <string name="perm_continue">Doorgaan</string>
-    <string name="perm_explain_access_to_camera_denied">ArcaneChat wil foto\'s en video\'s kunnen maken. Ga naar de app-instellingen, kies ‘Rechten’ en schakel ‘Camera’ in.</string>
-    <string name="perm_explain_access_to_mic_denied">ArcaneChat wil spraakberichten versturen. Ga naar de app-instellingen, kies ‘Rechten’ en schakel ‘Microfoon’ in.</string>
-    <string name="perm_explain_access_to_storage_denied">ArcaneChat wil bestanden kunnen ontvangen en versturen. Ga naar de app-instellingen, kies ‘Rechten’ en schakel ‘Opslag’ in.</string>
-    <string name="perm_explain_access_to_location_denied">ArcaneChat wil je locatie kunnen delen. Ga naar de app-instellingen, kies ‘Rechten’ en schakel ‘Locatie’ in.</string>
-    <string name="perm_explain_access_to_notifications_denied">Open Systeeminstellingen → Apps → ArcaneChat en schakel meldingen in.</string>
+    <string name="perm_explain_access_to_camera_denied">Delta Chat wil foto\'s en video\'s kunnen maken. Ga naar de app-instellingen, kies ‘Rechten’ en schakel ‘Camera’ in.</string>
+    <string name="perm_explain_access_to_mic_denied">Delta Chat wil spraakberichten versturen. Ga naar de app-instellingen, kies ‘Rechten’ en schakel ‘Microfoon’ in.</string>
+    <string name="perm_explain_access_to_storage_denied">Delta Chat wil bestanden kunnen ontvangen en versturen. Ga naar de app-instellingen, kies ‘Rechten’ en schakel ‘Opslag’ in.</string>
+    <string name="perm_explain_access_to_location_denied">Delta Chat wil je locatie kunnen delen. Ga naar de app-instellingen, kies ‘Rechten’ en schakel ‘Locatie’ in.</string>
+    <string name="perm_explain_access_to_notifications_denied">Open Systeeminstellingen → Apps → Delta Chat en schakel meldingen in.</string>
 
     <!-- ImageEditorHud -->
     <string name="ImageEditorHud_draw_anywhere_to_blur">Teken met je vinger om vervaging toe te passen</string>
@@ -1043,9 +1046,9 @@
     <string name="encrypted_message">Versleuteld bericht</string>
 
     <!-- strings introduced on desktop. we want to share strings between the os, in general, please do not add generic strings here -->
-    <string name="about_offical_app_desktop">Dit is de officiële ArcaneChat-computerapp.</string>
+    <string name="about_offical_app_desktop">Dit is de officiële Delta Chat-computerapp.</string>
     <string name="about_licensed_under_desktop">Deze software is vrijgegeven onder de GNU GPL versie 3 en de broncode is beschikbaar op GitHub.</string>
-    <string name="welcome_desktop">Welkom bij ArcaneChat</string>
+    <string name="welcome_desktop">Welkom bij Delta Chat</string>
     <string name="global_menu_preferences_language_desktop">Taal</string>
     <string name="global_menu_file_desktop">Bestand</string>
     <string name="global_menu_file_quit_desktop">Afsluiten</string>
@@ -1060,11 +1063,11 @@
     <string name="global_menu_view_developer_desktop">Ontwikkelaar</string>
     <string name="global_menu_view_developer_tools_desktop">Ontwikkelaarshulpmiddelen</string>
     <string name="global_menu_help_desktop">Hulp</string>
-    <string name="global_menu_help_learn_desktop">Meer informatie over ArcaneChat</string>
+    <string name="global_menu_help_learn_desktop">Meer informatie over Delta Chat</string>
     <string name="global_menu_help_contribute_desktop">Draag bij op GitHub</string>
     <string name="global_menu_help_report_desktop">Meld een probleem</string>
-    <string name="global_menu_help_about_desktop">Over ArcaneChat</string>
-    <string name="global_menu_file_open_desktop">ArcaneChat openen</string>
+    <string name="global_menu_help_about_desktop">Over Delta Chat</string>
+    <string name="global_menu_file_open_desktop">Delta Chat openen</string>
     <string name="global_menu_minimize_to_tray">Minimaliseren</string>
     <string name="no_chat_selected_suggestion_desktop">Kies een gesprek of begin een gesprek</string>
     <string name="write_message_desktop">Schrijf een bericht</string>
@@ -1083,7 +1086,7 @@
     <string name="message_detail_received_desktop">ontvangen</string>
     <string name="menu.view.developer.open.log.folder">Map met logbestanden openen</string>
     <string name="menu.view.developer.open.current.log.file">Huidig logbestand openen</string>
-    <string name="explain_desktop_minimized_disabled_tray_pref" tools:ignore="TypographyDashes">Het systeemvakpictogram is uitgeschakeld omdat ArcaneChat is gestart met de optie --minimized</string>
+    <string name="explain_desktop_minimized_disabled_tray_pref" tools:ignore="TypographyDashes">Het systeemvakpictogram is uitgeschakeld omdat Delta Chat is gestart met de optie --minimized</string>
     <string name="no_spellcheck_suggestions_found">Geen suggesties gevonden.</string>
     <string name="show_window">Venster tonen</string>
     <string name="login_socks5_experimental_warning">De SOCKS5-ondersteuning is momenteel nog experimenteel - gebruik hiervan is op eigen risico. Als je een e-mailadres invoert, dan vindt er een dns-opzoeking plaats die niet wordt doorgesluisd via SOCKS5.</string>
@@ -1125,7 +1128,7 @@
     <string name="import_device_contacts">Importeer lokale contactpersonen</string>
     <string name="import_device_contacts_hint">Voor het voeren van gesprekken met contactpersonen is toegang vereist. Open de systeeminstellingen en verleen deze toegang.</string>
     <!-- iOS notification settings -->
-    <string name="disabled_in_dc">Uitgeschakeld in ArcaneChat</string>
+    <string name="disabled_in_dc">Uitgeschakeld in Delta Chat</string>
     <string name="disabled_in_system_settings">Uitgeschakeld in systeeminstellingen</string>
     <string name="bg_app_refresh_disabled">App op de achtergrond vernieuwen is uitgeschakeld in de systeeminstellingen</string>
     <!-- iOS connectivity view, Adjective, used eg. as "Notifications: Delayed" -->
@@ -1139,13 +1142,13 @@
     <string name="shortcut_step1_tap_share_btn">Druk op de deelknop</string>
     <string name="shortcut_step2_tap_add_to_home_screen">Kies ‘Toevoegen aan startscherm’ om de app in kwestie toe te voegen aan je startscherm.</string>
     <!-- iOS permissions, copy from "deltachat-ios/Info.plist", which is used on missing translations in "deltachat-ios/LANG.lproj/InfoPlist.strings" -->
-    <string name="InfoPlist_NSCameraUsageDescription">Geef ArcaneChat toegang tot je camera om foto\'s en video\'s te maken en QR-codes te scannen.</string>
-    <string name="InfoPlist_NSContactsUsageDescription">Geef ArcaneChat toegang tot je adresboek om gesprekken te voeren met contactpersonen. ArcaneChat heeft geen servers, dus ze worden niet aan ons opgestuurd.</string>
-    <string name="InfoPlist_NSLocationAlwaysAndWhenInUseUsageDescription">ArcaneChat heeft het locatietoegangsrecht nodig om je locatie te tonen en delen voor de door jou aangegeven duur.</string>
-    <string name="InfoPlist_NSLocationWhenInUseUsageDescription">ArcaneChat heeft het locatietoegangsrecht nodig om je locatie te tonen en delen voor de door jou aangegeven duur.</string>
-    <string name="InfoPlist_NSMicrophoneUsageDescription">Geef ArcaneChat toegang tot je microfoon om audio op te nemen voor spraakberichten en video\'s.</string>
-    <string name="InfoPlist_NSPhotoLibraryUsageDescription">Geef ArcaneChat toegang tot je foto\'s om afbeeldingen te versturen.</string>
-    <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">ArcaneChat wil afbeeldingen opslaan in je fotogalerij.</string>
+    <string name="InfoPlist_NSCameraUsageDescription">Geef Delta Chat toegang tot je camera om foto\'s en video\'s te maken en QR-codes te scannen.</string>
+    <string name="InfoPlist_NSContactsUsageDescription">Geef Delta Chat toegang tot je adresboek om gesprekken te voeren met contactpersonen. Delta Chat heeft geen servers, dus ze worden niet aan ons opgestuurd.</string>
+    <string name="InfoPlist_NSLocationAlwaysAndWhenInUseUsageDescription">Delta Chat heeft het locatietoegangsrecht nodig om je locatie te tonen en delen voor de door jou aangegeven duur.</string>
+    <string name="InfoPlist_NSLocationWhenInUseUsageDescription">Delta Chat heeft het locatietoegangsrecht nodig om je locatie te tonen en delen voor de door jou aangegeven duur.</string>
+    <string name="InfoPlist_NSMicrophoneUsageDescription">Geef Delta Chat toegang tot je microfoon om audio op te nemen voor spraakberichten en video\'s.</string>
+    <string name="InfoPlist_NSPhotoLibraryUsageDescription">Geef Delta Chat toegang tot je foto\'s om afbeeldingen te versturen.</string>
+    <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">Delta Chat wil afbeeldingen opslaan in je fotogalerij.</string>
 
 
     <!-- android specific strings, developers: please take care to remove strings that are no longer used! -->
@@ -1155,9 +1158,9 @@
     <string name="pref_reliable_service">Achtergrondverbinding afdwingen</string>
     <string name="pref_reliable_service_explain">Toont een permanente melding</string>
 
-    <string name="pref_background_notifications_rationale">Om een achtergrondverbinding naar je server op te zetten, dien je in de volgende stap alle accu-optimalisaties te negeren.\n\nArcaneChat gebruikt weinig systeembronnen en verhoogt je accuverbruik nauwelijks.</string>
+    <string name="pref_background_notifications_rationale">Om een achtergrondverbinding naar je server op te zetten, dien je in de volgende stap alle accu-optimalisaties te negeren.\n\nDelta Chat gebruikt weinig systeembronnen en verhoogt je accuverbruik nauwelijks.</string>
     <!-- disabling "Reliable service" will hide a the maybe annoying permanent-notification with the drawback that new-message-notifications get potentially unreliable -->
-    <string name="perm_enable_bg_reminder_title">Druk hier om berichten te ontvangen als ArcaneChat niet geopend is.</string>
+    <string name="perm_enable_bg_reminder_title">Druk hier om berichten te ontvangen als Delta Chat niet geopend is.</string>
     <string name="perm_enable_bg_already_done">Je hebt al toestemming gegeven voor het ophalen van berichten op de achtergrond.\n\nAls het nog steeds niet werkt, controleer dan de systeeminstellingen.</string>
 
     <!-- device messages for updates -->

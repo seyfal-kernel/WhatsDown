@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- common strings without special context -->
-    <string name="app_name">ArcaneChat</string>
+    <string name="app_name">Delta Chat</string>
     <string name="ok">OK</string>
     <string name="cancel">Anuloje</string>
-   <!-- the word "or" to separate blocks in the user interface that are mutually exclusive -->
+   <!-- deprecated, the word "or" to separate blocks in the user interface that are mutually exclusive -->
     <string name="or_separator">ose</string>
     <string name="clear_search">Spastroje Kërkimin</string>
     <string name="yes">Po</string>
@@ -44,7 +44,7 @@
     <string name="unarchive">Çarkivoje</string>
     <string name="mute">Heshtoje</string>
     <string name="ephemeral_messages">Mesazhe Që Zhduken</string>
-    <string name="ephemeral_messages_hint">Këto rregullime zbatohen mbi krejt pjesëmarrësit që përdorin ArcaneChat-in. Sidoqoftë, ata mund të kopjojnë, ruajnë dhe përcjellin mesazhe ose të përdorin klientë të tjerë email-i.</string>
+    <string name="ephemeral_messages_hint">Këto rregullime zbatohen mbi krejt pjesëmarrësit që përdorin Delta Chat-in. Sidoqoftë, ata mund të kopjojnë, ruajnë dhe përcjellin mesazhe ose të përdorin klientë të tjerë email-i.</string>
     <string name="save">Ruaje</string>
     <string name="chat">Fjalosje</string>
     <string name="media">Media</string>
@@ -229,7 +229,7 @@
     <string name="share_invite_link">Jepuni Lidhje Ftese</string>
     <string name="invite_friends">Ftoni Shokë</string>
     <!-- %1$s is replaced by the user's invitation link ("https://i.delta.chat/...") -->
-    <string name="invite_friends_text">Lidhuni me mua në ArcaneChat:\n%1$s</string>
+    <string name="invite_friends_text">Lidhuni me mua në Delta Chat:\n%1$s</string>
     <string name="menu_copy_selection_to_clipboard">Kopjoje Përzgjedhjen</string>
     <string name="menu_copy_link_to_clipboard">Kopjoje Lidhjen</string>
     <string name="menu_copy_text_to_clipboard">Kopjo Tekstin</string>
@@ -283,7 +283,7 @@
     <string name="title_share_location">Tregojua vendndodhjen krejt anëtarëve të grupit</string>
     <string name="device_talk">Mesazhe Pajisjeje</string>
     <string name="device_talk_subtitle">Mesazhe të prodhuar lokalisht</string>
-    <string name="device_talk_explain">Mesazhet në këtë fjalosje prodhohen lokalisht nga aplikacioni juaj ArcaneChat. Krijuesit e tij e përdorin për t’ju bërë të ditur përditësime dhe probleme gjatë përdorimit.</string>
+    <string name="device_talk_explain">Mesazhet në këtë fjalosje prodhohen lokalisht nga aplikacioni juaj Delta Chat. Krijuesit e tij e përdorin për t’ju bërë të ditur përditësime dhe probleme gjatë përdorimit.</string>
     <string name="device_talk_welcome_message2">Lidhuni!\n\n🙌 Prekni “Kod QR” te skena kryesore në të dyja pajisjet. Zgjidhni “Skano Kod QR” në një pajisje dhe drejtojani tjetrës\n\n🌍 Nëse s’gjenden në të njëjtën dhomë, skanojeni përmes një thirrjeje video, ose ndani një lidhje ftese që nga “Skanoni kod QR”\n\nMandej: Shijoni punimin e shkëmbyesit të mesazheve përmes rrjetit më të madh të decentralizuar që ka ekzistuar ndonjëherë: email-it. Dhe, në kontrast me aplikacione të tjera popullore, pa kontroll të centralizuar, apo gjurmim, apo shitje të dhënash tuajat, të shokëve, kolegëve apo familjes te ente të mëdha.</string>
     <string name="edit_contact">Përpunoni Kontaktin</string>
     <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
@@ -328,7 +328,7 @@
     <string name="videochat_tap_to_open">Prekeni që të Hapet</string>
     <string name="videochat_instance">Instancë Fjalosjeje me Video</string>
     <string name="videochat_instance_placeholder">Instanca juaj e Fjalosjes me Video</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Shembull: https://shërbyesi-juaj.org/$ROOM</string>
     <string name="videochat_instance_explain_2">Nëse është aktivizuar, mund të nisni një fjalosje me video prej secilës fjalosje. Kjo lyp në të dy skajet një aplikacion të përputhshëm, ose një shfletues të përputhshëm.</string>
     <string name="videochat_instance_from_qr">Të përdoret “%1$s” për të ftuar të tjerë në fjalosje me video?\n\nPasi të ujdiset kjo, mund të filloni një fjalosje me video që prej një fjalosjeje tek-për-tek. Kështu do të zëvendësohet rregullimi i mëparshëm për fjalosje video, në pastë.</string>
@@ -460,6 +460,8 @@
     <string name="search_files">Kërko në Kartela</string>
     <string name="search_explain">Kërkoni për fjalosje, kontakte dhe mesazhe.</string>
     <string name="search_no_result_for_x">S\’u gjetën përfundime për “%s”</string>
+    <!-- Adjective, as in "Show Unread Messages" -->
+    <string name="search_unread">Të palexuar</string>
 
 
     <!-- create/edit groups, contact/group profile -->
@@ -504,9 +506,9 @@
     <string name="multidevice_title">Shtoni Pajisje të Dytë</string>
     <string name="multidevice_same_network_hint">Sigurohuni se të dy pajisjet janë në të njëjtin rrjet Wi-Fi ose klasik</string>
     <string name="multidevice_this_creates_a_qr_code">Kjo krijon një kod QR që pajisja e dytë mund ta skanojë për të kopjuar llogarinë.</string>
-    <string name="multidevice_install_dc_on_other_device">Instaloni ArcaneChat-in në pajisjen tuaj tjetër (https://github.com/ArcaneChat)</string>
+    <string name="multidevice_install_dc_on_other_device">Instaloni Delta Chat-in në pajisjen tuaj tjetër (https://get.delta.chat)</string>
     <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
-    <string name="multidevice_tap_scan_on_other_device">Nisni ArcaneChat-in, prekni mbi “Shtoje si Pajisje të Dytë” dhe skanoni kodin e treguar këtu</string>
+    <string name="multidevice_tap_scan_on_other_device">Nisni Delta Chat-in, prekni mbi “Shtoje si Pajisje të Dytë” dhe skanoni kodin e treguar këtu</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
     <string name="multidevice_qr_subtitle">Skanojeni, që të ujdisni pajise të dytë për %1$s</string>
     <string name="multidevice_receiver_title">Shtoni Pajisje të Dytë</string>
@@ -518,9 +520,9 @@
     <string name="multidevice_transfer_done_devicemsg">ℹ️ Llogaria u shpërngul te pajisja juaj e dytë.</string>
     <!-- Shown beside progress bar, stay short -->
     <string name="preparing_account">Po përgatitet llogaria…</string>
-    <!-- Shown beside progress bar, stay short -->
+    <!-- deprecated, shown beside progress bar, stay short -->
     <string name="waiting_for_receiver">Po pritet për marrës…</string>
-    <!-- Shown beside progress bar, stay short -->
+    <!-- deprecated, shown beside progress bar, stay short -->
     <string name="receiver_connected">Marrësi u lidh…</string>
     <!-- Shown beside progress bar, stay short -->
     <string name="transferring">Po shpërngulet…</string>
@@ -586,7 +588,7 @@
     <!-- for classic email, we use the classical term "Account" -->
     <string name="login_explain">Hyni me një llogari email ekzistuese.</string>
     <string name="login_subheader">Për shërbime të njohura email-i, rregullimet shtesë caktohen automatikisht. Ndonjëherë shërbyesi IMAP lyp të aktivizohet te pjesa e dukshme web. Për ndihmë këshillohuni me shërbimin tuaj email ose shokë tuajt.</string>
-    <string name="login_no_servers_hint">S\’ka shërbyes ArcaneChat, të dhënat tuaja rrinë në pajisjen tuaj!</string>
+    <string name="login_no_servers_hint">S\’ka shërbyes Delta Chat, të dhënat tuaja rrinë në pajisjen tuaj!</string>
     <string name="login_inbox">Të marrë</string>
     <string name="login_imap_login">Emër Hyrjeje në IMAP</string>
     <string name="login_imap_server">Shërbyes IMAP</string>
@@ -609,6 +611,7 @@
     <string name="proxy_list_header">Ndërmjetës të Ruajtur</string>
     <string name="proxy_delete">Fshije Ndërmjetësin</string>
     <string name="proxy_delete_explain">Jeni i sigurt se doni të fshihet “%1$s”?</string>
+    <string name="proxy_use_proxy_confirm">Doni të përdore ndërmjetësi “%1$s”?</string>
 
     <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
@@ -619,7 +622,7 @@
     <string name="login_socks5_password">Fjalëkalim SOCKS5</string>
 
     <string name="login_info_oauth2_title">Të vazhdohet me rregullimin e thjeshtuar?</string>
-    <string name="login_info_oauth2_text">Adresa email e dhënë mbulon një ujdisje të thjeshtuar (OAuth 2.0).\n\nNë hapin pasues, ju lutemi, lejojeni ArcaneChat-in të veprojë si aplikacioni juaj për Fjalosje Përmes Email-i.\n\nS\’ka shërbyes ArcaneChat, të dhënat tuaja rrinë në pajisjen tuaj!</string>
+    <string name="login_info_oauth2_text">Adresa email e dhënë mbulon një ujdisje të thjeshtuar (OAuth 2.0).\n\nNë hapin pasues, ju lutemi, lejojeni Delta Chat-in të veprojë si aplikacioni juaj për Fjalosje Përmes Email-i.\n\nS\’ka shërbyes Delta Chat, të dhënat tuaja rrinë në pajisjen tuaj!</string>
     <string name="login_certificate_checks">Kontrolle Dëshmish</string>
     <string name="login_error_mail">Ju lutemi, jepni një adresë email të vlefshme</string>
     <string name="login_error_server">Ju lutemi, jepni një shërbyes / adresë IP të vlefshme</string>
@@ -664,7 +667,7 @@
     <string name="pref_password_and_account_settings">Fjalëkalim dhe Llogari</string>
     <string name="pref_who_can_see_profile_explain">Fotoja juaj e profilit, emri dhe nënshkrimi do të dërgohen tok me mesazhet tuaj, kur komunikoni me përdorues të tjerë.</string>
     <string name="pref_your_name">Emri juaj</string>
-    <!-- Translators: Visible only to recipients who DO NOT use ArcaneChat, so it's the last line in an E-mail and not a "Status". -->
+    <!-- Translators: Visible only to recipients who DO NOT use Delta Chat, so it's the last line in an E-mail and not a "Status". -->
     <string name="pref_default_status_label">Tekst Nënshkrimi</string>
     <string name="pref_enter_sends">Tasti Enter Dërgon</string>
     <string name="pref_enter_sends_explain">Shtypja e tastit Enter do të dërgojë mesazhe tekst</string>
@@ -703,7 +706,7 @@
     <string name="pref_encryption">Fshehtëzim</string>
     <string name="pref_manage_keys">Administroni Kyçe</string>
     <string name="pref_use_system_emoji">Përdor Emoji Sistemi</string>
-    <string name="pref_use_system_emoji_explain">Çaktivizo mbulimin e brendshëm ArcaneChat për emoji-t</string>
+    <string name="pref_use_system_emoji_explain">Çaktivizo mbulimin e brendshëm Delta Chat për emoji-t</string>
     <string name="pref_use_inapp_camera">Përdor Kamerën e Vetë Aplikacionit</string>
     <string name="pref_use_inapp_camera_explain">Kamera e vetë aplikacionit, zakonisht, ka më pak veçori se kamera e sistemit</string>
     <string name="pref_show_system_contacts">Të Lexojë Libër Adresash Sistemi</string>
@@ -775,7 +778,7 @@
     <string name="pref_edit_profile">Përpunoni Profil</string>
     <string name="disable_imap_idle">Çaktivizo IMAP IDLE</string>
     <string name="disable_imap_idle_explain">Mos e përdor zgjerimin IMAP IDLE, edhe kur shërbyesi e mbulon. Aktivizimi i kësaj mundësie do të vonojë marrjen e mesazheve, aktivizojeni vetëm për testime.</string>
-    <string name="send_stats_to_devs">Dërgojuni zhvilluesve të ArcaneChat-it statistika</string>
+    <string name="send_stats_to_devs">Dërgojuni zhvilluesve të Delta Chat-it statistika</string>
 
 
     <!-- Emoji picker and categories -->
@@ -807,9 +810,9 @@
     <!-- %1$d will be replaced by the number of messages, you can assume plural/lots here. %2$s will be replaced by a timespan option. -->
     <string name="autodel_device_ask">Doni të fshihen %1$d mesazhe tani dhe krejt mesazhet e prurë rishtazi “%2$s” në të ardhmen?\n\n• Kjo përfshin krejt mediat\n\n• Mesazhi do të fshihet, qoftë kur është parë, qoftë kur s’është parë\n\n• “Mesazhe të ruajtur” do të anashkalohen nga fshirja vendore</string>
     <!-- %1$d will be replaced by the number of messages, you can assume plural/lots here. %2$s will be replaced by a timespan option. -->
-    <string name="autodel_server_ask">Doni të fshihen tani %1$d mesazhe dhe krejt mesazhet e prurë rishtas “%2$s” më vonë në të ardhmen?\n\n⚠️ Kjo përfshin email-et, media dhe “Mesazhe të ruajtur” në krejt dosjet e shërbyesit\n\n⚠️ Mos e përdorni këtë funksion, nëse doni të mbani të dhënat në shërbyes\n\n⚠️ Mos e përdorni këtë funksion, nëse po përdorni klientë të tjerët përkrah ArcaneChat-it</string>
+    <string name="autodel_server_ask">Doni të fshihen tani %1$d mesazhe dhe krejt mesazhet e prurë rishtas “%2$s” më vonë në të ardhmen?\n\n⚠️ Kjo përfshin email-et, media dhe “Mesazhe të ruajtur” në krejt dosjet e shërbyesit\n\n⚠️ Mos e përdorni këtë funksion, nëse doni të mbani të dhënat në shërbyes\n\n⚠️ Mos e përdorni këtë funksion, nëse po përdorni klientë të tjerët përkrah Delta Chat-it</string>
     <!-- shown below enabled autodel_server-option, should be a summary of autodel_server_ask and remind about the impact -->
-    <string name="autodel_server_enabled_hint">Kjo përfshin email-et, media dhe “Mesazhe të ruajtur” në krejt dosjet e shërbyesit. Mos e përdorni këtë funksion, nëse doni të mbani të dhënat te shërbyesi ose nëse po përdorni klientë të tjerët përkrah ArcaneChat-it</string>
+    <string name="autodel_server_enabled_hint">Kjo përfshin email-et, media dhe “Mesazhe të ruajtur” në krejt dosjet e shërbyesit. Mos e përdorni këtë funksion, nëse doni të mbani të dhënat te shërbyesi ose nëse po përdorni klientë të tjerët përkrah Delta Chat-it</string>
     <string name="autodel_server_warn_multi_device_title">Aktivizoni fshirje të menjëhershme</string>
     <string name="autodel_server_warn_multi_device">Nëse aktivizoni fshirje të menjëhershme, s’mund të përdorni pajisje të shumta në këtë profil.</string>
     <string name="autodel_confirm">E kuptoj, fshiji krejt këto mesazhe</string>
@@ -846,7 +849,7 @@
     <string name="systemmsg_read_receipt_subject">Mesazhi u hap</string>
     <!-- deprecated -->
     <string name="systemmsg_read_receipt_body">Mesazhi “%1$s” që dërguat, u shfaq në ekranin e marrësit.\n\nKjo s’është garanci se lënda u lexua.</string>
-    <string name="systemmsg_cannot_decrypt">Ky mesazh s’mund të shfshehtëzohet.\n\n• Mundet t’ju ndihë thjesht t’i përgjigjeni këtij mesazhi dhe t’i kërkoni dërguesit ta ridërgojë mesazhin.\n\n• Nëse sapo riinstaluat ArcaneChat-in, atëherë më e mira është të riujdisni ArcaneChat-in tani dhe të zgjidhni “Shtoje si pajisje të dytë”, ose të importoni një kopjeruajtje.</string>
+    <string name="systemmsg_cannot_decrypt">Ky mesazh s’mund të shfshehtëzohet.\n\n• Mundet t’ju ndihë thjesht t’i përgjigjeni këtij mesazhi dhe t’i kërkoni dërguesit ta ridërgojë mesazhin.\n\n• Nëse sapo riinstaluat Delta Chat-in, atëherë më e mira është të riujdisni Delta Chat-in tani dhe të zgjidhni “Shtoje si pajisje të dytë”, ose të importoni një kopjeruajtje.</string>
     <string name="systemmsg_unknown_sender_for_chat">Dërgues i panjohur për këtë fjalosje. Për më tepër hollësi, shihni \'info\'.</string>
     <string name="systemmsg_subject_for_new_contact">Mesazh nga %1$s</string>
     <string name="systemmsg_failed_sending_to">S’u arrit të dërgohej mesazh te %1$s.</string>
@@ -917,7 +920,7 @@
     <string name="chat_protection_enabled_tap_to_learn_more">Nga sot e tutje për mesazhet garantohet fshehtëzimi skaj-më-skaj. Prekeni, që të mësoni më tepër.</string>
     <string name="chat_protection_enabled_explanation">Tanimë për mesazhet në këtë fjalosje garantohet fshehtëzimi skaj-më-skaj.\n\nFshehtëzimi skaj-më-skaj i mban private mesazhet mes jush dhe partnerëve tuaj të fjalosjes. Ato s’mund t’i lexojë as furnizuesi i shërbimit tuaj email.</string>
     <string name="chat_protection_broken_tap_to_learn_more">%1$s dërgoi një mesazh nga një pajisje tjetër. Prekeni, që të mësoni më tepër.</string>
-    <string name="chat_protection_broken_explanation">Fshehtëzimi skaj-më-skaj s’mund të garantohet më, ngaqë, sipas gjasash, %1$s riinstaloi ArcaneChat-in, ose dërgoi një mesazh nga një tjetër pajisje.\n\nMund ta takoni dhe të skanoni sërish KODIN e tij QR, që të rivendoset fshehtëzim skaj-më-skaj i garantuar.</string>
+    <string name="chat_protection_broken_explanation">Fshehtëzimi skaj-më-skaj s’mund të garantohet më, ngaqë, sipas gjasash, %1$s riinstaloi Delta Chat-in, ose dërgoi një mesazh nga një tjetër pajisje.\n\nMund ta takoni dhe të skanoni sërish KODIN e tij QR, që të rivendoset fshehtëzim skaj-më-skaj i garantuar.</string>
     <string name="invalid_unencrypted_tap_to_learn_more">⚠️ %1$s lyp fshehtëzim, i cili s’është ujdisur ende për këtë fjalosje. Që të mësoni më tepër, prekeni.</string>
     <string name="invalid_unencrypted_explanation">Për të vendosur fshehtëzim skaj-më-skaj, mund të takoheni personalisht me kontaktet dhe të skanoni kodin e tyre QR, për t’i pranuar.</string>
     <string name="encryption_required_for_new_contact">Është i domosdoshëm fshehtëzim skaj-më-skaj, por për %1$s s’është ujdisur ende i tillë.\n\nMund t’i jepni lidhjen e ftesës tuaj, ose të takoheni personalisht dhe të skanoni kodin e tij QR.</string>
@@ -928,7 +931,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ Po mbaron depozita e shërbimit tuaj, përdoren tashmë %1$s%%.\n\nKur depozita është 100%% e përdorur, mund të mos jeni në gjendje të merrni mesazhe.\n\n👉 Ju lutemi, shihni se mos mund të fshini të dhëna të vjetra që nga ndërfaqja web e furnizuesit të shërbimit dhe shihni mundësinë të aktivizoni “Rregullime / Fshi Mesazhe të Vjetër”. Se sa depozitë është aktualisht e përdorur mund ta kontrolloni kurdo, që nga \"Rregullime / Lidhje\".</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ Data ose koha e pajisjes tuaj duket të jetë e pasaktë (%1$s).\n\nRregulloni sahatin tuaj ⏰🔧 që të garantohet se mesazhet tuaj merren saktë.</string>
-    <string name="devicemsg_update_reminder">⚠️ Versioni juaj i ArcaneChat-it duket të jetë i vjetruar.\n\nKjo mund të shkaktojë probleme, ngaqë partnerët tuaj të fjalosjes përdorin versione të rinj - dhe ju mungojnë veçoritë më të reja 😳\nPër përditësime, ju lutemi, shihni te https://github.com/ArcaneChat ose te shitorja juaj e aplikacioneve.</string>
+    <string name="devicemsg_update_reminder">⚠️ Versioni juaj i Delta Chat-it duket të jetë i vjetruar.\n\nKjo mund të shkaktojë probleme, ngaqë partnerët tuaj të fjalosjes përdorin versione të rinj - dhe ju mungojnë veçoritë më të reja 😳\nPër përditësime, ju lutemi, shihni te https://get.delta.chat ose te shitorja juaj e aplikacioneve.</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Që të vazhdohet, shkyçeni</string>
@@ -1019,7 +1022,7 @@
     <string name="perm_explain_access_to_mic_denied">Që të mund të dërgohen mesazhe audio, kaloni te rregullime aplikacioni, përzgjidhni “Leje” dhe aktivizoni “Mikrofonin”.</string>
     <string name="perm_explain_access_to_storage_denied">Që të merren apo dërgohen kartela, kaloni te rregullime aplikacioni, përzgjidhni “Leje” dhe aktivizoni “Depozitimin”.</string>
     <string name="perm_explain_access_to_location_denied">Që të mund të bashkëngjitet një vendndodhje, kaloni te rregullimet e aplikacionit, përzgjidhni “Leje” dhe aktivizoni “Vendndodhjen”.</string>
-    <string name="perm_explain_access_to_notifications_denied">Që të merrni njoftime, kaloni te “Rregullime Sistemi / Aplikacione / ArcaneChat” dhe aktivizoni “Njoftime”.</string>
+    <string name="perm_explain_access_to_notifications_denied">Që të merrni njoftime, kaloni te “Rregullime Sistemi / Aplikacione / Delta Chat” dhe aktivizoni “Njoftime”.</string>
 
     <!-- ImageEditorHud -->
     <string name="ImageEditorHud_draw_anywhere_to_blur">Që të turbullohet, vizatoni kudo qoftë</string>
@@ -1035,9 +1038,9 @@
     <string name="encrypted_message">Mesazh i fshehtëzuar</string>
 
     <!-- strings introduced on desktop. we want to share strings between the os, in general, please do not add generic strings here -->
-    <string name="about_offical_app_desktop">Ky është aplikacioni zyrtar ArcaneChat Desktop.</string>
+    <string name="about_offical_app_desktop">Ky është aplikacioni zyrtar Delta Chat Desktop.</string>
     <string name="about_licensed_under_desktop">Ky program licencohet sipas GNU GPL version 3 dhe kodi burim mund të kihet që prej GitHub-i.</string>
-    <string name="welcome_desktop">Mirë se vini në ArcaneChat</string>
+    <string name="welcome_desktop">Mirë se vini në Delta Chat</string>
     <string name="global_menu_preferences_language_desktop">Gjuhë</string>
     <string name="global_menu_file_desktop">Kartelë</string>
     <string name="global_menu_file_quit_desktop">Dilni</string>
@@ -1052,11 +1055,11 @@
     <string name="global_menu_view_developer_desktop">Zhvillues</string>
     <string name="global_menu_view_developer_tools_desktop">Mjete Zhvilluesi</string>
     <string name="global_menu_help_desktop">Ndihmë</string>
-    <string name="global_menu_help_learn_desktop">Mësoni më tepër rreth ArcaneChat-it</string>
+    <string name="global_menu_help_learn_desktop">Mësoni më tepër rreth Delta Chat-it</string>
     <string name="global_menu_help_contribute_desktop">Jepni ndihmesë në GitHub</string>
     <string name="global_menu_help_report_desktop">Njoftoni një Problem</string>
-    <string name="global_menu_help_about_desktop">Rreth ArcaneChat-it</string>
-    <string name="global_menu_file_open_desktop">Hap ArcaneChat-in</string>
+    <string name="global_menu_help_about_desktop">Rreth Delta Chat-it</string>
+    <string name="global_menu_file_open_desktop">Hap Delta Chat-in</string>
     <string name="global_menu_minimize_to_tray">Minimizoje</string>
     <string name="no_chat_selected_suggestion_desktop">Përzgjidhni një fjalosje ose krijoni një të tillë të re</string>
     <string name="write_message_desktop">Shkruani një mesazh</string>
@@ -1075,7 +1078,7 @@
     <string name="message_detail_received_desktop">të marrë</string>
     <string name="menu.view.developer.open.log.folder">Hap Dosje Regjistrash</string>
     <string name="menu.view.developer.open.current.log.file">Hap Kartelën Regjistër të Tanishme</string>
-    <string name="explain_desktop_minimized_disabled_tray_pref" tools:ignore="TypographyDashes">Ikona e panelit s’mund të çaktivizohet, ngaqë ArcaneChat qe nisur me mundësinë --minimized.</string>
+    <string name="explain_desktop_minimized_disabled_tray_pref" tools:ignore="TypographyDashes">Ikona e panelit s’mund të çaktivizohet, ngaqë Delta Chat qe nisur me mundësinë --minimized.</string>
     <string name="no_spellcheck_suggestions_found">S’u gjetën sugjerimi drejtshkrimi.</string>
     <string name="show_window">Shfaq Dritare</string>
     <string name="login_socks5_experimental_warning">Mbulimi për SOCKS5 aktualisht është eksperimental. Ju lutemi, përdoreni duke pasur vetë përgjegjësinë. Nëse shtypni një adresë te fusha e email-it, do të ketë kërkim DNS që nuk do të kalohet përmes SOCKS5.</string>
@@ -1117,7 +1120,7 @@
     <string name="import_device_contacts">Importo kontakte pajisjeje</string>
     <string name="import_device_contacts_hint">Për t’u fjalosur me kontakte nga pajisja juaj, hapni Rregullime dhe aktivizoni Kontaktet.</string>
     <!-- iOS notification settings -->
-    <string name="disabled_in_dc">Çaktivizuar në ArcaneChat</string>
+    <string name="disabled_in_dc">Çaktivizuar në Delta Chat</string>
     <string name="disabled_in_system_settings">Çaktivizuar te rregullimet e sistemit</string>
     <string name="bg_app_refresh_disabled">“Rifreskim Aplikacionesh Në Prapaskenë” çaktivizuar te rregullimet e sistemit</string>
     <string name="notifications_avg_minutes">Mesatarisht çdo %1$d minuta</string>
@@ -1131,11 +1134,11 @@
     <!-- iOS permissions, copy from "deltachat-ios/Info.plist", which is used on missing translations in "deltachat-ios/LANG.lproj/InfoPlist.strings" -->
     <string name="InfoPlist_NSCameraUsageDescription">Lejimi i përdorimi të kamerës ju bën të mundur të bëni foto dhe video.</string>
     <string name="InfoPlist_NSContactsUsageDescription">Lejimi i përdorimi të librit tuaj të adresave ju bën të mundur të bisedoni me kontakte prej pajisjes tuaj.</string>
-    <string name="InfoPlist_NSLocationAlwaysAndWhenInUseUsageDescription">Që të mund t’u tregojë të tjerëve vendndodhjen tuaj, ArcaneChat lyp leje, për aq kohë sa keni aktivizuar tregim vendndodhjeje.</string>
-    <string name="InfoPlist_NSLocationWhenInUseUsageDescription">Që të mund t’u tregojë të tjerëve vendndodhjen tuaj, ArcaneChat lyp leje, për aq kohë sa keni aktivizuar tregim vendndodhjeje.</string>
-    <string name="InfoPlist_NSMicrophoneUsageDescription">ArcaneChat-i përdor mikrofonin tuaj për të incizuar dhe dërguar mesazhe zanorë dhe video me zë.</string>
-    <string name="InfoPlist_NSPhotoLibraryUsageDescription">ArcaneChat-i do t’ju lejojë të zgjidhni cilat foto të dërgohen nga fototeka juaj.</string>
-    <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">ArcaneChat dëshiron të ruajë figura në fototekën tuaj.</string>
+    <string name="InfoPlist_NSLocationAlwaysAndWhenInUseUsageDescription">Që të mund t’u tregojë të tjerëve vendndodhjen tuaj, Delta Chat lyp leje, për aq kohë sa keni aktivizuar tregim vendndodhjeje.</string>
+    <string name="InfoPlist_NSLocationWhenInUseUsageDescription">Që të mund t’u tregojë të tjerëve vendndodhjen tuaj, Delta Chat lyp leje, për aq kohë sa keni aktivizuar tregim vendndodhjeje.</string>
+    <string name="InfoPlist_NSMicrophoneUsageDescription">Delta Chat-i përdor mikrofonin tuaj për të incizuar dhe dërguar mesazhe zanorë dhe video me zë.</string>
+    <string name="InfoPlist_NSPhotoLibraryUsageDescription">Delta Chat-i do t’ju lejojë të zgjidhni cilat foto të dërgohen nga fototeka juaj.</string>
+    <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">Delta Chat dëshiron të ruajë figura në fototekën tuaj.</string>
 
 
     <!-- android specific strings, developers: please take care to remove strings that are no longer used! -->
@@ -1145,10 +1148,10 @@
     <string name="pref_reliable_service">Detyro Lidhje Në Prapaskenë</string>
     <string name="pref_reliable_service_explain">Shkakton një njoftim permanent</string>
 
-    <string name="pref_background_notifications_rationale">Që të ruhet lidhja me shërbyesin tuaj të email-eve dhe të merren mesazhe në prapaskenë, në hapin pasues shpërfillini optimizimet për baterinë.\n\nArcaneChat-i përdor pak burime dhe kujdeset të mos e shterojë baterinë tuaj.</string>
+    <string name="pref_background_notifications_rationale">Që të ruhet lidhja me shërbyesin tuaj të email-eve dhe të merren mesazhe në prapaskenë, në hapin pasues shpërfillini optimizimet për baterinë.\n\nDelta Chat-i përdor pak burime dhe kujdeset të mos e shterojë baterinë tuaj.</string>
     <!-- disabling "Reliable service" will hide a the maybe annoying permanent-notification with the drawback that new-message-notifications get potentially unreliable -->
-    <string name="perm_enable_bg_reminder_title">Prekeni këtu që të merrni mesazhe, teksa ArcaneChat rri në prapaskenë.</string>
-    <string name="perm_enable_bg_already_done">E keni lejuar tashmë ArcaneChat-in të marrë mesazhe në prapaskenë.\n\nNëse mesazhet prapë nuk mbërrijnë në prapaskenë, ju lutemi, kontrolloni edhe rregullimet e sistemit tuaj.</string>
+    <string name="perm_enable_bg_reminder_title">Prekeni këtu që të merrni mesazhe, teksa Delta Chat rri në prapaskenë.</string>
+    <string name="perm_enable_bg_already_done">E keni lejuar tashmë Delta Chat-in të marrë mesazhe në prapaskenë.\n\nNëse mesazhet prapë nuk mbërrijnë në prapaskenë, ju lutemi, kontrolloni edhe rregullimet e sistemit tuaj.</string>
 
     <!-- device messages for updates -->
     <string name="update_1_46_android">Hapa të Rinj Mirëseardhjeje 🐣 Etj.:\n\n⚡️ Regjistrohuni te shërbyes të siguruar, të shpejtë, chatmail-i (https://delta.chat/chatmail), ose përdorni shërbyes klasikë email-i\n\n👉 Njoftime PUSH për çfarëdo shërbyesi “chatmail”\n\n👤 Lidhuni me shokët tuaj në mënyrë të parrezik, përmes “Bashkëngjitni kontakte”\n\n🥰 Reagoni me çfarëdo emoxhi\n\n📌 Fiksoni fjalosje drejt e nga kërkimi … dhe PLOT të TJERA te %1$s</string>

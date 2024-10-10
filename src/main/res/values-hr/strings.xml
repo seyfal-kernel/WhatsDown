@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- common strings without special context -->
-    <string name="app_name">ArcaneChat</string>
+    <string name="app_name">Delta Chat</string>
     <string name="ok">OK</string>
     <string name="cancel">Otkaži</string>
    <string name="yes">Da</string>
@@ -157,8 +157,6 @@
     <!-- search -->
     <string name="search">Traži</string>
     <string name="search_no_result_for_x">Nema pronađenih rezultata za \"%s\"</string>
-
-
     <!-- create/edit groups, contact/group profile -->
     <string name="group_name">Naziv grupe</string>
     <string name="group_avatar">Grupni avatar</string>
@@ -209,7 +207,7 @@
     <string name="pref_read_receipts">Potvrde čitanja</string>
     <string name="pref_read_receipts_explain">Ukoliko ste onemogućili potvrdu čitanja kod sebe, nećete moći vidjeti potvrde čitanja od drugih.</string>
     <string name="pref_use_system_emoji">Koristi emotikone sustava</string>
-    <string name="pref_use_system_emoji_explain">Onemogući ugrađenu ArcaneChat podršku za emotikone</string>
+    <string name="pref_use_system_emoji_explain">Onemogući ugrađenu Delta Chat podršku za emotikone</string>
     <string name="pref_app_access">Pristup aplikaciji</string>
     <string name="pref_chats">Razgovori</string>
     <string name="pref_in_chat_sounds">Zvuk unutar razgovora</string>
@@ -235,7 +233,7 @@
     <!-- permissions -->
     <string name="perm_required_title">Potrebna je dozvola</string>
     <string name="perm_continue">Nastavi</string>
-    <string name="welcome_desktop">Dobro došli u ArcaneChat</string>
+    <string name="welcome_desktop">Dobro došli u Delta Chat</string>
     <string name="global_menu_preferences_language_desktop">Jezik</string>
     <string name="global_menu_file_desktop">Datoteka</string>
     <string name="global_menu_file_quit_desktop">Izlaz</string>

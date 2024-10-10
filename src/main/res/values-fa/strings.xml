@@ -4,7 +4,7 @@
     <string name="app_name">دلتاچت</string>
     <string name="ok">تأیید</string>
     <string name="cancel">لغو</string>
-   <!-- the word "or" to separate blocks in the user interface that are mutually exclusive -->
+   <!-- deprecated, the word "or" to separate blocks in the user interface that are mutually exclusive -->
     <string name="or_separator">یا</string>
     <string name="clear_search">پاک کردن جست‌وجو</string>
     <string name="yes">بله</string>
@@ -317,7 +317,7 @@
     <string name="videochat_tap_to_open">برای باز کردن ضربه بزنید. </string>
     <string name="videochat_instance">جلسه تماس تصویری</string>
     <string name="videochat_instance_placeholder">جلسه تماس تصویری شما</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">مثال‌: 
 https://meet.jit.si/$ROOM 
 یا
@@ -451,8 +451,6 @@ https://meet.jit.si/$ROOM
     <string name="search_files">جستجوی پرونده‌ها</string>
     <string name="search_explain">جست‌وجو برای گپ‌ها، مخاطبان و پیام‌ها</string>
     <string name="search_no_result_for_x">نتیجه‌ای برای \"%s\" پیدا نشد</string>
-
-
     <!-- create/edit groups, contact/group profile -->
     <string name="group_name">نام گروه</string>
     <string name="group_avatar">تصویر گروه</string>
@@ -491,7 +489,7 @@ https://meet.jit.si/$ROOM
     <string name="multidevice_title">افزودن دستگاه دوم</string>
     <string name="multidevice_same_network_hint">مطمئن شوید هر دو دستگاه در یک وای‌فای یا شبکه هستند</string>
     <string name="multidevice_this_creates_a_qr_code">این یک کد کیوآر ایجاد می‌کند که دستگاه دوم می‌تواند برای کپی حساب اسکن کند.</string>
-    <string name="multidevice_install_dc_on_other_device">دلتاچت را روی دستگاه دیگر خود نصب کنید (https://github.com/ArcaneChat)</string>
+    <string name="multidevice_install_dc_on_other_device">دلتاچت را روی دستگاه دیگر خود نصب کنید (https://get.delta.chat)</string>
     <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
     <string name="multidevice_tap_scan_on_other_device">دلتاچت را باز کنید، روی «افزودن به عنوان دستگاه دوم» بزنید و کد نشان داده شده در اینجا را اسکن کنید</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
@@ -505,9 +503,9 @@ https://meet.jit.si/$ROOM
     <string name="multidevice_transfer_done_devicemsg">ℹ️ حساب به دستگاه دوم شما منتقل شد.</string>
     <!-- Shown beside progress bar, stay short -->
     <string name="preparing_account">در حال آماده سازی حساب…</string>
-    <!-- Shown beside progress bar, stay short -->
+    <!-- deprecated, shown beside progress bar, stay short -->
     <string name="waiting_for_receiver">در انتظار گیرنده…</string>
-    <!-- Shown beside progress bar, stay short -->
+    <!-- deprecated, shown beside progress bar, stay short -->
     <string name="receiver_connected">گیرنده متصل شد…</string>
     <!-- Shown beside progress bar, stay short -->
     <string name="transferring">در حال انتقال…</string>
@@ -629,7 +627,7 @@ https://meet.jit.si/$ROOM
     <string name="pref_password_and_account_settings">رمزعبور و حساب کاربری</string>
     <string name="pref_who_can_see_profile_explain">وقتی با دیگر کاربران گپ می‌زنید، تصویر نمایه، نام و امضایتان در کنار پیام‌هایتان فرستاده می‌شوند.</string>
     <string name="pref_your_name">اسم شما</string>
-    <!-- Translators: Visible only to recipients who DO NOT use ArcaneChat, so it's the last line in an E-mail and not a "Status". -->
+    <!-- Translators: Visible only to recipients who DO NOT use Delta Chat, so it's the last line in an E-mail and not a "Status". -->
     <string name="pref_default_status_label">متن امضا</string>
     <string name="pref_enter_sends">ورود کلیدهای ارسال</string>
     <string name="pref_enter_sends_explain">فشاردادن کلید اینتر پیام‌ها را ارسال می‌کند</string>
@@ -889,7 +887,7 @@ https://meet.jit.si/$ROOM
 ساعت دستگاه خود را تنظیم کنید ⏰🔧 تا پیام‌ها به درستی دریافت شوند. </string>
     <string name="devicemsg_update_reminder">هشدار⚠️ ممکن است نسخه دلتاچت مورد استفاده قدیمی شده باشد. 
 این موضوع ممکن است مشکلاتی ایجاد کند چون مخاطبین شما از نسخه‌های جدیدتر استفاده می‌کنند. همچنین قابلیت‌های جدید را هم از دست می‌دهید😳
-لطفا برای دریافت نسخه جدید به app store یا https://github.com/ArcaneChat مراجعه کنید. </string>
+لطفا برای دریافت نسخه جدید به app store یا https://get.delta.chat مراجعه کنید. </string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">برای ادامه، لطفا رمز تعیین شده توسط سیستم خود را وارد کنید</string>

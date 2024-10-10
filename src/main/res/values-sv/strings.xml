@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- common strings without special context -->
-    <string name="app_name">ArcaneChat</string>
+    <string name="app_name">Delta Chat</string>
     <string name="ok">OK</string>
     <string name="cancel">Avbryt</string>
-   <!-- the word "or" to separate blocks in the user interface that are mutually exclusive -->
+   <!-- deprecated, the word "or" to separate blocks in the user interface that are mutually exclusive -->
     <string name="or_separator">eller</string>
     <string name="clear_search">Rensa sök</string>
     <string name="yes">Ja</string>
@@ -44,7 +44,7 @@
     <string name="unarchive">Avarkivera</string>
     <string name="mute">Tyst</string>
     <string name="ephemeral_messages">Försvinnande meddelanden</string>
-    <string name="ephemeral_messages_hint">Dessa inställningar tillämpas för alla deltagare som använder ArcaneChat. De kan dock kopiera, spara och vidarebefordra meddelanden eller använda andra e-postklienter.</string>
+    <string name="ephemeral_messages_hint">Dessa inställningar tillämpas för alla deltagare som använder Delta Chat. De kan dock kopiera, spara och vidarebefordra meddelanden eller använda andra e-postklienter.</string>
     <string name="save">Spara</string>
     <string name="chat">Chatt</string>
     <string name="media">Media</string>
@@ -232,7 +232,7 @@
     <string name="share_invite_link">Dela inbjudningslänk</string>
     <string name="invite_friends">Bjud in vänner</string>
     <!-- %1$s is replaced by the user's invitation link ("https://i.delta.chat/...") -->
-    <string name="invite_friends_text">Kontakta mig på ArcaneChat:\n%1$s</string>
+    <string name="invite_friends_text">Kontakta mig på Delta Chat:\n%1$s</string>
     <string name="menu_copy_selection_to_clipboard">Kopiera urval</string>
     <string name="menu_copy_link_to_clipboard">Kopiera länk</string>
     <string name="menu_copy_text_to_clipboard">Kopiera text</string>
@@ -282,7 +282,7 @@
     <string name="title_share_location">Dela plats med alla gruppmedlemmar</string>
     <string name="device_talk">Enhetsmeddelanden</string>
     <string name="device_talk_subtitle">Lokalt genererade meddelanden</string>
-    <string name="device_talk_explain">Meddelanden i denna chatt är lokalt genererade av din ArcaneChat-app. Dess skapare använder den för att informera om app-uppdateringar och problem vid användning.</string>
+    <string name="device_talk_explain">Meddelanden i denna chatt är lokalt genererade av din Delta Chat-app. Dess skapare använder den för att informera om app-uppdateringar och problem vid användning.</string>
     <string name="device_talk_welcome_message2">Ta kontakt!\n\n🙌 Tryck på \"QR-kod\" på huvudskärmen på båda enheterna. Välj \"Skanna QR-kod\" på en enhet och rikta den mot den andra\n\n🌍 Om du inte är i samma rum kan du skanna via videosamtal eller dela en inbjudningslänk från \"Skanna QR-kod\"\n\nEfter det: Njut av din meddelandeupplevelse via det största decentraliserade nätverket som någonsin har funnits. E-post! Och i motsats till andra populära appar, utan central kontroll eller spårning eller att sälja ut dig, vänner, kollegor eller familj till stora organisationer.</string>
     <string name="edit_contact">Redigera kontakt</string>
     <!-- Verb "to pin", making something sticky, not a noun or abbreviation for "pin number". -->
@@ -327,7 +327,7 @@
     <string name="videochat_tap_to_open">Tryck för att öppna</string>
     <string name="videochat_instance">Videochattinstans</string>
     <string name="videochat_instance_placeholder">Din videochattinstans</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Exempel: https://din-server.org/$RUM</string>
     <string name="videochat_instance_explain_2">Om det är aktiverat kan du starta en videochatt från varje chatt. Kräver en kompatibel app eller en webbläsare på båda sidor.</string>
     <string name="videochat_instance_from_qr">Vill du använda \"%1$s\" för att bjuda in andra till videochattar?\n\nNär det väl är inställt kan du starta en videochatt från vilken en-till-en-chatt som helst. Detta ersätter den tidigare inställningen för eventuella videochattar.</string>
@@ -394,7 +394,7 @@
     <!-- The placeholder will be replaced by the name of the recipient in a one-to-one chat. -->
     <string name="chat_new_one_to_one_hint">Skicka ett meddelande till %1$s.</string>
     <string name="chat_new_broadcast_hint">I en sändlista kommer mottagarna att få meddelanden i en skrivskyddad chatt med dig.</string>
-    <string name="chat_new_group_hint">Komponera det första meddelandet, så att andra kan svara inom denna grupp.\n\n• Det är okej om inte alla medlemmar använder ArcaneChat.\n\n• Det kan ta en stund innan det första meddelandet levereras.</string>
+    <string name="chat_new_group_hint">Komponera det första meddelandet, så att andra kan svara inom denna grupp.\n\n• Det är okej om inte alla medlemmar använder Delta Chat.\n\n• Det kan ta en stund innan det första meddelandet levereras.</string>
     <string name="chat_record_slide_to_cancel">Svep för att avbryta</string>
     <string name="chat_record_explain">Tryck och håll ner för att spela in ett röstmeddelande, släpp för att skicka.</string>
     <string name="chat_no_chats_yet_title">Tom inkorg.\nTryck på \"+\" för att starta en ny chatt.</string>
@@ -462,8 +462,6 @@
     <string name="search_files">Sök filer</string>
     <string name="search_explain">Sök efter chattar, kontakter och meddelanden</string>
     <string name="search_no_result_for_x">Inga resultat hittades för \" %s \"</string>
-
-
     <!-- create/edit groups, contact/group profile -->
     <string name="group_name">Gruppnamn</string>
     <string name="group_avatar">Gruppbild</string>
@@ -506,9 +504,9 @@
     <string name="multidevice_title">Lägg till en andra enhet</string>
     <string name="multidevice_same_network_hint">Tillse att bägge enheterna är på samma WiFi eller nätverk</string>
     <string name="multidevice_this_creates_a_qr_code">Detta skapar en QR-kod som den andra enheten kan skanna för att kopiera profilen.</string>
-    <string name="multidevice_install_dc_on_other_device">Installera ArcaneChat på din andra enhet (https://github.com/ArcaneChat)</string>
+    <string name="multidevice_install_dc_on_other_device">Installera Delta Chat på din andra enhet (https://get.delta.chat)</string>
     <!-- "I Already Have a Profile / Add as Second Device” should be the same text as defined by the keys onboarding_alternative_logins and multidevice_receiver_title -->
-    <string name="multidevice_tap_scan_on_other_device">Starta ArcaneChat, tryck på \"Jag har redan en profil / Lägg till som andra enhet\" och skanna koden som visas här.</string>
+    <string name="multidevice_tap_scan_on_other_device">Starta Delta Chat, tryck på \"Jag har redan en profil / Lägg till som andra enhet\" och skanna koden som visas här.</string>
     <!-- Shown inside a "QR code card" with very limited space; please formulate the text as short as possible therefore. The placeholder will be replaced by name and/or address eg. "Scan to set up second device for Alice (alice@example.org)" -->
     <string name="multidevice_qr_subtitle">Skanna för att ställa in en andra enhet för %1$s</string>
     <string name="multidevice_receiver_title">Lägg till som andra enhet</string>
@@ -520,9 +518,9 @@
     <string name="multidevice_transfer_done_devicemsg">ℹ️ Profilen överförd till din andra enhet.</string>
     <!-- Shown beside progress bar, stay short -->
     <string name="preparing_account">Förbereder profil...</string>
-    <!-- Shown beside progress bar, stay short -->
+    <!-- deprecated, shown beside progress bar, stay short -->
     <string name="waiting_for_receiver">Väntar på mottagare...</string>
-    <!-- Shown beside progress bar, stay short -->
+    <!-- deprecated, shown beside progress bar, stay short -->
     <string name="receiver_connected">Mottagare ansluten...</string>
     <!-- Shown beside progress bar, stay short -->
     <string name="transferring">Överför...</string>
@@ -588,7 +586,7 @@
     <!-- for classic email, we use the classical term "Account" -->
     <string name="login_explain">Logga in med ett befintligt e-postkonto</string>
     <string name="login_subheader">För kända e-postleverantörer installeras ytterligare inställningar automatiskt. Ibland måste IMAP aktiveras i webbinställningarna. Kontakta din e-postleverantör eller vänner för hjälp.</string>
-    <string name="login_no_servers_hint">Det finns ingen ArcaneChat-server, din data stannar på din enhet.</string>
+    <string name="login_no_servers_hint">Det finns ingen Delta Chat-server, din data stannar på din enhet.</string>
     <string name="login_inbox">Inkorg</string>
     <string name="login_imap_login">IMAP inloggningsnamn</string>
     <string name="login_imap_server">IMAP server</string>
@@ -610,7 +608,7 @@
     <string name="login_socks5_password">SOCKS5-lösenord</string>
 
     <string name="login_info_oauth2_title">Fortsätta med förenklad installation?</string>
-    <string name="login_info_oauth2_text">Den angivna e-postadressen stödjer förenklad inställning (OAuth 2.0).\n\nLåt ArcaneChat agera som ditt chatt-över-epost-program, i nästa steg.\n\nDet finns ingen ArcaneChat-server, din data stannar på din enhet.</string>
+    <string name="login_info_oauth2_text">Den angivna e-postadressen stödjer förenklad inställning (OAuth 2.0).\n\nLåt Delta Chat agera som ditt chatt-över-epost-program, i nästa steg.\n\nDet finns ingen Delta Chat-server, din data stannar på din enhet.</string>
     <string name="login_certificate_checks">Certifikatkontroller</string>
     <string name="login_error_mail">Ange en giltig e-postadress</string>
     <string name="login_error_server">Ange en giltig server/IP-adress</string>
@@ -655,7 +653,7 @@
     <string name="pref_password_and_account_settings">Lösenord och konto</string>
     <string name="pref_who_can_see_profile_explain">Din profilbild och ditt namn visas tillsammans med dina meddelanden när du kommunicerar med andra användare. Information som redan skickats kan inte tas bort eller flyttas.</string>
     <string name="pref_your_name">Ditt namn</string>
-    <!-- Translators: Visible only to recipients who DO NOT use ArcaneChat, so it's the last line in an E-mail and not a "Status". -->
+    <!-- Translators: Visible only to recipients who DO NOT use Delta Chat, so it's the last line in an E-mail and not a "Status". -->
     <string name="pref_default_status_label">Signaturtext</string>
     <string name="pref_enter_sends">Returtangenten skickar</string>
     <string name="pref_enter_sends_explain">Tryck på returtangenten för att skicka textmeddelanden</string>
@@ -694,7 +692,7 @@
     <string name="pref_encryption">Kryptering</string>
     <string name="pref_manage_keys">Hantera nycklar</string>
     <string name="pref_use_system_emoji">Använd systemets emojier</string>
-    <string name="pref_use_system_emoji_explain">Inaktivera ArcaneChat\'s inbyggda emojier</string>
+    <string name="pref_use_system_emoji_explain">Inaktivera Delta Chat\'s inbyggda emojier</string>
     <string name="pref_use_inapp_camera">Använd kameran i appen</string>
     <string name="pref_use_inapp_camera_explain">Kameran i appen har vanligtvis färre funktioner än systemkameran</string>
     <string name="pref_show_system_contacts">Läs systemets adressbok</string>
@@ -768,7 +766,7 @@
     <string name="pref_edit_profile">Redigera profil</string>
     <string name="disable_imap_idle">Avaktivera IMAP IDLE</string>
     <string name="disable_imap_idle_explain">Använd inte IMAP IDLE-tillägget även om servern stöder det. Om du aktiverar det här alternativet kommer hämtningen av meddelanden att fördröjas, aktivera det endast för testning.</string>
-    <string name="send_stats_to_devs">Skicka statistik till ArcaneChats utvecklare</string>
+    <string name="send_stats_to_devs">Skicka statistik till Delta Chats utvecklare</string>
 
 
     <!-- Emoji picker and categories -->
@@ -800,9 +798,9 @@
     <!-- %1$d will be replaced by the number of messages, you can assume plural/lots here. %2$s will be replaced by a timespan option. -->
     <string name="autodel_device_ask">Vill du ta bort %1$d meddelanden nu och alla kommande meddelanden \"%2$s\" i framtiden?\n\n• Detta inkluderar all mediafiler.\n\n• Meddelanden kommer att tas bort oavsett om de har lästs eller inte.\n\n• \"Sparade meddelanden\" undantas från lokal borttagning.</string>
     <!-- %1$d will be replaced by the number of messages, you can assume plural/lots here. %2$s will be replaced by a timespan option. -->
-    <string name="autodel_server_ask">Vill du ta bort %1$d meddelanden nu och alla nyligen hämtade meddelanden \"%2$s\" i framtiden?\n\n⚠️ Detta inkluderar e-post, media och \"Sparade meddelanden\" i alla servermappar\n\n⚠️ Använd inte den här funktionen om du vill behålla data på servern\n\n⚠️ Använd inte den här funktionen om du använder andra e-postklienter än ArcaneChat</string>
+    <string name="autodel_server_ask">Vill du ta bort %1$d meddelanden nu och alla nyligen hämtade meddelanden \"%2$s\" i framtiden?\n\n⚠️ Detta inkluderar e-post, media och \"Sparade meddelanden\" i alla servermappar\n\n⚠️ Använd inte den här funktionen om du vill behålla data på servern\n\n⚠️ Använd inte den här funktionen om du använder andra e-postklienter än Delta Chat</string>
     <!-- shown below enabled autodel_server-option, should be a summary of autodel_server_ask and remind about the impact -->
-    <string name="autodel_server_enabled_hint">Detta inkluderar e-post, media och \"Sparade meddelanden\" i alla servermappar. Använd inte den här funktionen om du vill spara data på servern eller om du använder andra e-postklienter än ArcaneChat.</string>
+    <string name="autodel_server_enabled_hint">Detta inkluderar e-post, media och \"Sparade meddelanden\" i alla servermappar. Använd inte den här funktionen om du vill spara data på servern eller om du använder andra e-postklienter än Delta Chat.</string>
     <string name="autodel_server_warn_multi_device_title">Slå på direktborttagning</string>
     <string name="autodel_server_warn_multi_device">Om du aktiverar direktborttagning kan du inte använda flera enheter på den här profilen.</string>
     <string name="autodel_confirm">Jag förstår! Ta bort alla dessa meddelanden.</string>
@@ -839,7 +837,7 @@
     <string name="systemmsg_read_receipt_subject">Meddelande öppnat</string>
     <!-- deprecated -->
     <string name="systemmsg_read_receipt_body">\"%1$s\" meddelandet du skickade visades på mottagarens skärm.\n\nDet är ingen garanti för att innehållet har lästs.</string>
-    <string name="systemmsg_cannot_decrypt">Det här meddelandet kan inte dekrypteras.\n\n- Det kan hjälpa att helt enkelt svara på det här meddelandet och be avsändaren att skicka meddelandet igen.\n\n- Om du just har installerat om ArcaneChat är det bäst om du konfigurerar om ArcaneChat nu och väljer \"Lägg till som en andra enhet\" eller importerar en säkerhetskopia.</string>
+    <string name="systemmsg_cannot_decrypt">Det här meddelandet kan inte dekrypteras.\n\n- Det kan hjälpa att helt enkelt svara på det här meddelandet och be avsändaren att skicka meddelandet igen.\n\n- Om du just har installerat om Delta Chat är det bäst om du konfigurerar om Delta Chat nu och väljer \"Lägg till som en andra enhet\" eller importerar en säkerhetskopia.</string>
     <string name="systemmsg_unknown_sender_for_chat">Okänd avsändare för denna chatt. Se info för fler detaljer.</string>
     <string name="systemmsg_subject_for_new_contact">Meddelande från %1$s</string>
     <string name="systemmsg_failed_sending_to">Kunde inte skicka meddelande till %1$s.</string>
@@ -910,7 +908,7 @@
     <string name="chat_protection_enabled_tap_to_learn_more">Meddelanden är garanterat totalsträckskrypterade från och med nu. Tryck för att få veta mer.</string>
     <string name="chat_protection_enabled_explanation">Det är nu garanterat att alla meddelanden i den här chatten är totalsträckskrypterade.\n\nTotalsträckskryptering håller meddelanden privata mellan dig och dina chattpartners. Inte ens din e-postleverantör kan läsa dem.</string>
     <string name="chat_protection_broken_tap_to_learn_more">%1$s skickade ett meddelande från en annan enhet. Tryck för att läsa mer.</string>
-    <string name="chat_protection_broken_explanation">Totalsträckskryptering kan inte garanteras längre, troligen för att %1$s installerade om ArcaneChat eller skickade ett meddelande från en annan enhet.\n\nDu kan träffa dem personligen och skanna deras QR-kod igen för att återupprätta garanterad totalsträckskryptering.</string>
+    <string name="chat_protection_broken_explanation">Totalsträckskryptering kan inte garanteras längre, troligen för att %1$s installerade om Delta Chat eller skickade ett meddelande från en annan enhet.\n\nDu kan träffa dem personligen och skanna deras QR-kod igen för att återupprätta garanterad totalsträckskryptering.</string>
     <string name="invalid_unencrypted_tap_to_learn_more">⚠️ %1$s kräver totalsträckskryptering som inte är kofigurerad för den här chatten ännu. Tryck för att lära dig mer.</string>
     <string name="invalid_unencrypted_explanation">För att skapa totalsträckskryptering kan du träffa kontakter personligen och skanna deras QR-kod för att introducera dem.</string>
     <string name="encryption_required_for_new_contact">Totalsträckskryptering krävs men det är ännu inte konfigurerat för %1$s.\n\nDu kan dela din inbjudningslänk med dem eller träffas personligen och skanna deras QR-kod.</string>
@@ -921,7 +919,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ Din leverantörs lagringsutrymme är snart slut: %1$s%% är redan använt.\n\nDu kanske inte kan ta emot meddelanden om lagringsutrymmet är fullt.\n\n👉 Kontrollera om du kan radera gammal data i leverantörens webbgränssnitt och överväg att aktivera \"Inställningar / Chattar och media / Ta bort gamla meddelanden\". Du kan kontrollera din aktuella lagringsanvändning när som helst under \"Inställningar / Anslutning\".</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ Datum eller tid på din enhet verkar vara felaktigt (%1$s).\n\nJustera din klocka ⏰🔧 för att säkerställa att dina meddelanden tas emot korrekt.</string>
-    <string name="devicemsg_update_reminder">⚠️ Din ArcaneChat-version kan vara föråldrad.\n\nDetta kan orsaka problem eftersom dina chattpartners använder nyare versioner - och du saknar de senaste funktionerna 😳\nSök efter uppdateringar på https://github.com/ArcaneChat eller i din appbutik.</string>
+    <string name="devicemsg_update_reminder">⚠️ Din Delta Chat-version kan vara föråldrad.\n\nDetta kan orsaka problem eftersom dina chattpartners använder nyare versioner - och du saknar de senaste funktionerna 😳\nSök efter uppdateringar på https://get.delta.chat eller i din appbutik.</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Lås upp för att fortsätta</string>
@@ -1012,7 +1010,7 @@
     <string name="perm_explain_access_to_mic_denied">Gå till programinställningarna och aktivera \"Mikrofon\" under \"Behörighet\", för att skicka röstmeddelanden.</string>
     <string name="perm_explain_access_to_storage_denied">Gå till programinställningarna och aktivera \"Lagring\" under \"Behörighet\", för att ta emot eller skicka filer.</string>
     <string name="perm_explain_access_to_location_denied">Gå till programinställningarna och aktivera \"Plats\" under \"Behörighet\", för att bifoga en plats.</string>
-    <string name="perm_explain_access_to_notifications_denied">För att få meddelanden, gå till \"Systeminställningar / Appar / ArcaneChat\" och aktivera \"Meddelanden\".</string>
+    <string name="perm_explain_access_to_notifications_denied">För att få meddelanden, gå till \"Systeminställningar / Appar / Delta Chat\" och aktivera \"Meddelanden\".</string>
 
     <!-- ImageEditorHud -->
     <string name="ImageEditorHud_draw_anywhere_to_blur">Rita var som helst för att smeta ut</string>
@@ -1028,9 +1026,9 @@
     <string name="encrypted_message">Krypterat meddelande</string>
 
     <!-- strings introduced on desktop. we want to share strings between the os, in general, please do not add generic strings here -->
-    <string name="about_offical_app_desktop">Detta är den officiella ArcaneChat skrivbordsappen.</string>
+    <string name="about_offical_app_desktop">Detta är den officiella Delta Chat skrivbordsappen.</string>
     <string name="about_licensed_under_desktop">Denna programvara är licensierad enligt GNU GPL version 3 och källkoden finns tillgänglig på GitHub.</string>
-    <string name="welcome_desktop">Välkommen till ArcaneChat</string>
+    <string name="welcome_desktop">Välkommen till Delta Chat</string>
     <string name="global_menu_preferences_language_desktop">Språk</string>
     <string name="global_menu_file_desktop">Arkiv</string>
     <string name="global_menu_file_quit_desktop">Avsluta</string>
@@ -1045,11 +1043,11 @@
     <string name="global_menu_view_developer_desktop">Utvecklare</string>
     <string name="global_menu_view_developer_tools_desktop">Utvecklingsverktyg</string>
     <string name="global_menu_help_desktop">Hjälp</string>
-    <string name="global_menu_help_learn_desktop">Lär dig mer om ArcaneChat</string>
+    <string name="global_menu_help_learn_desktop">Lär dig mer om Delta Chat</string>
     <string name="global_menu_help_contribute_desktop">Bidra på GitHub</string>
     <string name="global_menu_help_report_desktop">Rapportera ett ärende</string>
-    <string name="global_menu_help_about_desktop">Om ArcaneChat</string>
-    <string name="global_menu_file_open_desktop">Öppna ArcaneChat</string>
+    <string name="global_menu_help_about_desktop">Om Delta Chat</string>
+    <string name="global_menu_file_open_desktop">Öppna Delta Chat</string>
     <string name="global_menu_minimize_to_tray">Minimera</string>
     <string name="no_chat_selected_suggestion_desktop">Välj en chatt eller skapa en ny</string>
     <string name="write_message_desktop">Skriv ett meddelande</string>
@@ -1068,7 +1066,7 @@
     <string name="message_detail_received_desktop">mottaget</string>
     <string name="menu.view.developer.open.log.folder">Öppna loggmappen</string>
     <string name="menu.view.developer.open.current.log.file">Öppna aktuell loggfil</string>
-    <string name="explain_desktop_minimized_disabled_tray_pref" tools:ignore="TypographyDashes">Systemfältsikonen kan inte inaktiveras eftersom ArcaneChat startades med alternativet --minimized.</string>
+    <string name="explain_desktop_minimized_disabled_tray_pref" tools:ignore="TypographyDashes">Systemfältsikonen kan inte inaktiveras eftersom Delta Chat startades med alternativet --minimized.</string>
     <string name="no_spellcheck_suggestions_found">Inga stavningsförslag hittades.</string>
     <string name="show_window">Visa fönster</string>
     <string name="login_socks5_experimental_warning">SOCKS5-stöd är för närvarande experimentellt. Använd det på egen risk. Om du skriver in en adress i e-postfältet kommer det att ske en DNS-uppslagning som inte tunnlas genom SOCKS5.</string>
@@ -1110,7 +1108,7 @@
     <string name="import_device_contacts">Importera enhetens kontakter</string>
     <string name="import_device_contacts_hint">Om du vill chatta med kontakter från din enhet öppnar du Inställningar och aktiverar \"Kontakter\".</string>
     <!-- iOS notification settings -->
-    <string name="disabled_in_dc">Inaktiverad i ArcaneChat</string>
+    <string name="disabled_in_dc">Inaktiverad i Delta Chat</string>
     <string name="disabled_in_system_settings">Inaktiverad i systeminställningarna</string>
     <string name="bg_app_refresh_disabled">\"Appuppdatering i bakgrunden\" inaktiverad i systeminställningarna</string>
     <!-- iOS connectivity view, Adjective, used eg. as "Notifications: Delayed" -->
@@ -1124,13 +1122,13 @@
     <string name="shortcut_step1_tap_share_btn">Klicka på delningsknappen</string>
     <string name="shortcut_step2_tap_add_to_home_screen">Välj \"Lägg till på hemskärmen\" för att lägga till appen på din hemskärm.</string>
     <!-- iOS permissions, copy from "deltachat-ios/Info.plist", which is used on missing translations in "deltachat-ios/LANG.lproj/InfoPlist.strings" -->
-    <string name="InfoPlist_NSCameraUsageDescription">ArcaneChat använder din kamera för att ta och skicka foton och filmer, och för att skanna QR-koder.</string>
-    <string name="InfoPlist_NSContactsUsageDescription">ArcaneChat använder dina kontakter för att visa en lista över e-postadresser som du kan skriva till.m ArcaneChat har ingen server, dina kontakter skickas inte någonstans.</string>
-    <string name="InfoPlist_NSLocationAlwaysAndWhenInUseUsageDescription">ArcaneChat behöver tillstånd för att dela din plats under den tidsperiod som du har aktiverat platsdelning.</string>
-    <string name="InfoPlist_NSLocationWhenInUseUsageDescription">ArcaneChat behöver tillstånd för att dela din plats under den tidsperiod som du har aktiverat platsdelning.</string>
-    <string name="InfoPlist_NSMicrophoneUsageDescription">ArcaneChat använder din mikrofon för att spela in och skicka röstmeddelanden, och filmer med ljud.</string>
-    <string name="InfoPlist_NSPhotoLibraryUsageDescription">ArcaneChat låter dig välja vilka bilder från ditt galleri som du vill skicka.</string>
-    <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">ArcaneChat vill spara bilder i ditt fotogalleri.</string>
+    <string name="InfoPlist_NSCameraUsageDescription">Delta Chat använder din kamera för att ta och skicka foton och filmer, och för att skanna QR-koder.</string>
+    <string name="InfoPlist_NSContactsUsageDescription">Delta Chat använder dina kontakter för att visa en lista över e-postadresser som du kan skriva till.m Delta Chat har ingen server, dina kontakter skickas inte någonstans.</string>
+    <string name="InfoPlist_NSLocationAlwaysAndWhenInUseUsageDescription">Delta Chat behöver tillstånd för att dela din plats under den tidsperiod som du har aktiverat platsdelning.</string>
+    <string name="InfoPlist_NSLocationWhenInUseUsageDescription">Delta Chat behöver tillstånd för att dela din plats under den tidsperiod som du har aktiverat platsdelning.</string>
+    <string name="InfoPlist_NSMicrophoneUsageDescription">Delta Chat använder din mikrofon för att spela in och skicka röstmeddelanden, och filmer med ljud.</string>
+    <string name="InfoPlist_NSPhotoLibraryUsageDescription">Delta Chat låter dig välja vilka bilder från ditt galleri som du vill skicka.</string>
+    <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">Delta Chat vill spara bilder i ditt fotogalleri.</string>
 
 
     <!-- android specific strings, developers: please take care to remove strings that are no longer used! -->
@@ -1140,10 +1138,10 @@
     <string name="pref_reliable_service">Tvinga fram bakgrundsanslutning</string>
     <string name="pref_reliable_service_explain">Orsakar en permanent avisering</string>
 
-    <string name="pref_background_notifications_rationale">För att behålla anslutningen till din e-postserver och fortsätta ta emot meddelanden i bakgrunden, behöver du skippa batterioptimeringen i nästa steg.\n\nArcaneChat använder små resurser och ser till att inte dra ur ditt batteri.</string>
+    <string name="pref_background_notifications_rationale">För att behålla anslutningen till din e-postserver och fortsätta ta emot meddelanden i bakgrunden, behöver du skippa batterioptimeringen i nästa steg.\n\nDelta Chat använder små resurser och ser till att inte dra ur ditt batteri.</string>
     <!-- disabling "Reliable service" will hide a the maybe annoying permanent-notification with the drawback that new-message-notifications get potentially unreliable -->
-    <string name="perm_enable_bg_reminder_title">Tryck här för att ta emot meddelanden medan ArcaneChat är i bakgrunden.</string>
-    <string name="perm_enable_bg_already_done">Du har redan gett ArcaneChatt tillstånd att ta emot meddelanden i bakgrunden.\n\nKontrollera dina systeminställningar också, om det fortfarande inte kommer några meddelanden i bakgrunden.</string>
+    <string name="perm_enable_bg_reminder_title">Tryck här för att ta emot meddelanden medan Delta Chat är i bakgrunden.</string>
+    <string name="perm_enable_bg_already_done">Du har redan gett Delta Chatt tillstånd att ta emot meddelanden i bakgrunden.\n\nKontrollera dina systeminställningar också, om det fortfarande inte kommer några meddelanden i bakgrunden.</string>
 
     <!-- device messages for updates -->
     <string name="update_1_46_android">Ny onboarding 🐣 och mer:\n\n⚡️ Registrera dig för säkra snabba chatmailservrar (https://delta.chat/chatmail) eller använd klassiska e-postservrar\n\n👉 PUSH-meddelanden för alla chatmailservrar\n\n👤 Anslut dina vänner säkert via \"Bifoga kontakter\"\n\n🥰 Reagera med alla emoji\n\n📌 Fäst chattar direkt från sök ... och MER på %1$s</string>

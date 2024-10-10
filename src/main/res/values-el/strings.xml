@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- common strings without special context -->
-    <string name="app_name">ArcaneChat</string>
+    <string name="app_name">Delta Chat</string>
     <string name="ok">Εντάξει</string>
     <string name="cancel">Ακύρωση</string>
    <string name="clear_search">Αναζήτηση</string>
@@ -39,7 +39,7 @@
     <string name="unarchive">Αποαρχειοθ</string>
     <string name="mute">Σίγαση</string>
     <string name="ephemeral_messages">Μηνύματα που εξαφανίζονται</string>
-    <string name="ephemeral_messages_hint">Ισχύει για όλα τα μέλη της συνομιλίας αν χρησιμοποιούν ArcaneChat: έχουν την δυνατότητα αντιγραφής, αποθήκευσης, και κοινοποίησης μηνυμάτων ή χρήση άλλων  e-mail πελατών.</string>
+    <string name="ephemeral_messages_hint">Ισχύει για όλα τα μέλη της συνομιλίας αν χρησιμοποιούν Delta Chat: έχουν την δυνατότητα αντιγραφής, αποθήκευσης, και κοινοποίησης μηνυμάτων ή χρήση άλλων  e-mail πελατών.</string>
     <string name="save">Αποθήκευση</string>
     <string name="chat">Συνομιλία</string>
     <string name="media">Πολυμέσα</string>
@@ -289,7 +289,7 @@
     <string name="videochat_tap_to_open">Πατήστε για Άνοιγμα</string>
     <string name="videochat_instance">Παρουσία στη Βιντεοκλήση</string>
     <string name="videochat_instance_placeholder">Η παρουσία σας στη βιντεοκλήση</string>
-    <!-- Do not translate "$ROOM", since it is a fixed token ArcaneChat will replace with a generated room ID like "aOclju5eCky" -->
+    <!-- Do not translate "$ROOM", since it is a fixed token Delta Chat will replace with a generated room ID like "aOclju5eCky" -->
     <string name="videochat_instance_example">Παράδειγμα: https://meet.jit.si/$ROOM ή basicwebrtc:https://your-server</string>
     <string name="videochat_instance_explain_2">Αν είναι ενεργοποιημένο, μπορείτε να ξεκινήσετε μια συνομιλία μέσω βίντεο από κάθε συνομιλία. Απαιτεί μια συμβατή εφαρμογή ή ένα πρόγραμμα περιήγησης και στα δύο άκρα.</string>
     <string name="videochat_instance_from_qr">Χρήση \"%1$s\" για να προσκαλέσετε άλλους στη βιντεοκλήση;\n\nΑφού ρυθμιστεί, μπορείτε να ξεκινήσετε μια συνομιλία μέσω βίντεο από κάθε συνομιλία. Αυτό αντικαθιστά οποιαδήποτε προηγούμενη ρύθμιση για συνομιλίες μέσω βίντεο.</string>
@@ -414,8 +414,6 @@
     <string name="search">Αναζήτηση</string>
     <string name="search_explain">Αναζήτηση για συνομιλίες, επαφές, και μηνύματα</string>
     <string name="search_no_result_for_x">Δε βρέθηκαν αποτελέσματα για \"%s\"</string>
-
-
     <!-- create/edit groups, contact/group profile -->
     <string name="group_name">Όνομα ομάδας</string>
     <string name="group_avatar">Εικόνα Ομάδας</string>
@@ -479,7 +477,7 @@
     <!-- for classic email, we use the classical term "Account" -->
     <string name="login_explain">Συνδεθείτε με έναν υπάρχοντα λογαριασμό e-mail</string>
     <string name="login_subheader">Για γνωστούς παρόχους email ρυθμίζονται αυτόματα πρόσθετες ρυθμίσεις. Μερικές φορές το IMAP πρέπει να είναι ενεργοποιημένο στις ρυθμίσεις Ιστού. Συμβουλευτείτε τον πάροχο e-mail ή τους φίλους σας για βοήθεια.</string>
-    <string name="login_no_servers_hint">Δεν υπάρχουν διακομιστές ArcaneChat, τα δεδομένα σας παραμένουν στη συσκευή σας.</string>
+    <string name="login_no_servers_hint">Δεν υπάρχουν διακομιστές Delta Chat, τα δεδομένα σας παραμένουν στη συσκευή σας.</string>
     <string name="login_inbox">Εισερχόμενα</string>
     <string name="login_imap_login">Όνομα Σύνδεσης IMAP</string>
     <string name="login_imap_server">Διακομιστής IMAP</string>
@@ -501,7 +499,7 @@
     <string name="login_socks5_password">Κωδικός SOCKS5</string>
 
     <string name="login_info_oauth2_title">Συνέχεια με την απλοποιημένη ρύθμιση;</string>
-    <string name="login_info_oauth2_text">Η εισαγόμενη διεύθυνση e-mail υποστηρίζει μια απλοποιημένη ρύθμιση (OAuth 2.0).\n\nΣτο επόμενο βήμα, επιτρέψτε στο ArcaneChat να λειτουργεί ως η εφαρμογή Chat μέσω ηλεκτρονικού ταχυδρομείου.\n\nΔεν υπάρχουν διακομιστές ArcaneChat, τα δεδομένα σας παραμένει στη συσκευή σας.</string>
+    <string name="login_info_oauth2_text">Η εισαγόμενη διεύθυνση e-mail υποστηρίζει μια απλοποιημένη ρύθμιση (OAuth 2.0).\n\nΣτο επόμενο βήμα, επιτρέψτε στο Delta Chat να λειτουργεί ως η εφαρμογή Chat μέσω ηλεκτρονικού ταχυδρομείου.\n\nΔεν υπάρχουν διακομιστές Delta Chat, τα δεδομένα σας παραμένει στη συσκευή σας.</string>
     <string name="login_certificate_checks">Έλεγχοι Πιστοποιητικών</string>
     <string name="login_error_mail">Παρακαλώ εισάγετε μια έγκυρη διεύθυνση e-mail</string>
     <string name="login_error_server">Εισαγάγετε έναν έγκυρο διακομιστή / διεύθυνση IP</string>
@@ -546,7 +544,7 @@
     <string name="pref_password_and_account_settings">Κωδικός και Λογαριασμός</string>
     <string name="pref_who_can_see_profile_explain">Η εικόνα του προφίλ, το όνομα και η υπογραφή σας θα αποστέλλονται μαζί με τα μηνύματά σας κατά την επικοινωνία με άλλους χρήστες.</string>
     <string name="pref_your_name">Το όνομά σου</string>
-    <!-- Translators: Visible only to recipients who DO NOT use ArcaneChat, so it's the last line in an E-mail and not a "Status". -->
+    <!-- Translators: Visible only to recipients who DO NOT use Delta Chat, so it's the last line in an E-mail and not a "Status". -->
     <string name="pref_default_status_label">Υπογραφή</string>
     <string name="pref_enter_sends">Το Enter στέλνει</string>
     <string name="pref_enter_sends_explain">Τα μηνύματα θα στέλνονται με το πάτημα του Enter</string>
@@ -583,7 +581,7 @@
     <string name="pref_read_receipts_explain">Αν τα αποδεικτικά ανάγνωσης είναι απενεργοποιημένα, δε θα μπορείς να δεις αποδεικτικά ανάγνωσης από άλλους/ες.</string>
     <string name="pref_manage_keys">Διαχείριση Κλειδιών</string>
     <string name="pref_use_system_emoji">Χρήση emoji συστήματος</string>
-    <string name="pref_use_system_emoji_explain">Απενεργοποίηση της ενσωματωμένης υποστήριξης για emoji του ArcaneChat</string>
+    <string name="pref_use_system_emoji_explain">Απενεργοποίηση της ενσωματωμένης υποστήριξης για emoji του Delta Chat</string>
     <string name="pref_app_access">Πρόσβαση εφαρμογής</string>
     <string name="pref_chats">Συνομιλίες</string>
     <string name="pref_in_chat_sounds">Ήχοι μέσα στη συνομιλία</string>
@@ -667,9 +665,9 @@
     <!-- %1$d will be replaced by the number of messages, you can assume plural/lots here. %2$s will be replaced by a timespan option. -->
     <string name="autodel_device_ask">Θέλετε να διαγράψετε %1$d μηνύματα τώρα και όλα τα πρόσφατα ληφθέντα μηνύματα \"%2$s\" στο μέλλον;\n\n• Αυτό περιλαμβάνει όλα τα μέσα\n\n• Τα μηνύματα θα διαγραφούν είτε εμφανίστηκαν είτε όχι\n\n• \"Αποθηκευμένα μηνύματα \" θα παραλειφθεί από την τοπική διαγραφή</string>
     <!-- %1$d will be replaced by the number of messages, you can assume plural/lots here. %2$s will be replaced by a timespan option. -->
-    <string name="autodel_server_ask">Θέλετε να διαγράψετε %1$d μηνύματα τώρα και όλα τα πρόσφατα ληφθέντα μηνύματα \"%2$s\" στο μέλλον;\n\n⚠️ Αυτό περιλαμβάνει μηνύματα ηλεκτρονικού ταχυδρομείου, πολυμέσα και τα \"Αποθηκευμένα μηνύματα\" σε όλους τους φακέλους διακομιστή\n\n⚠️ Μην χρησιμοποιείτε αυτήν τη λειτουργία εάν θέλετε να διατηρήσετε δεδομένα στο διακομιστή\n\n⚠️ Μην χρησιμοποιείτε αυτήν τη λειτουργία εάν χρησιμοποιείτε άλλους πελάτες ηλεκτρονικού ταχυδρομείου εκτός από το ArcaneChat</string>
+    <string name="autodel_server_ask">Θέλετε να διαγράψετε %1$d μηνύματα τώρα και όλα τα πρόσφατα ληφθέντα μηνύματα \"%2$s\" στο μέλλον;\n\n⚠️ Αυτό περιλαμβάνει μηνύματα ηλεκτρονικού ταχυδρομείου, πολυμέσα και τα \"Αποθηκευμένα μηνύματα\" σε όλους τους φακέλους διακομιστή\n\n⚠️ Μην χρησιμοποιείτε αυτήν τη λειτουργία εάν θέλετε να διατηρήσετε δεδομένα στο διακομιστή\n\n⚠️ Μην χρησιμοποιείτε αυτήν τη λειτουργία εάν χρησιμοποιείτε άλλους πελάτες ηλεκτρονικού ταχυδρομείου εκτός από το Delta Chat</string>
     <!-- shown below enabled autodel_server-option, should be a summary of autodel_server_ask and remind about the impact -->
-    <string name="autodel_server_enabled_hint">Αυτό περιλαμβάνει e-mail, πολυμέσα και \"Αποθηκευμένα μηνύματα\" σε όλους τους φακέλους διακομιστή. Μην χρησιμοποιείτε αυτήν τη λειτουργία εάν θέλετε να διατηρήσετε δεδομένα στο διακομιστή ή εάν χρησιμοποιείτε άλλα προγράμματα-πελάτες ηλεκτρονικού ταχυδρομείου εκτός από το ArcaneChat.</string>
+    <string name="autodel_server_enabled_hint">Αυτό περιλαμβάνει e-mail, πολυμέσα και \"Αποθηκευμένα μηνύματα\" σε όλους τους φακέλους διακομιστή. Μην χρησιμοποιείτε αυτήν τη λειτουργία εάν θέλετε να διατηρήσετε δεδομένα στο διακομιστή ή εάν χρησιμοποιείτε άλλα προγράμματα-πελάτες ηλεκτρονικού ταχυδρομείου εκτός από το Delta Chat.</string>
     <string name="autodel_confirm">Καταλαβαίνω, διαγράψτε όλα αυτά τα μηνύματα</string>
     <!-- "At once" in the meaning of "Immediately", without any intervening time. -->
     <string name="autodel_at_once">Με τη μία</string>
@@ -772,7 +770,7 @@
     <string name="devicemsg_storage_exceeding">⚠️ Ο αποθηκευτικός χώρος του παρόχου σας πρόκειται να εξαντληθεί: %1$s %% χρησιμοποιούνται ήδη.\n\nΕνδέχεται να μην μπορείτε να λαμβάνετε μηνύματα εάν ο χώρος αποθήκευσης είναι πλήρης.\n\n👉 Ελέγξτε εάν μπορείτε να διαγράψετε παλιά δεδομένα στη διεπαφή ιστού του παρόχου και εξετάστε το ενδεχόμενο ενεργοποίηση \"Ρυθμίσεις / Διαγραφή παλαιών μηνυμάτων\". Μπορείτε να ελέγξετε την τρέχουσα χρήση αποθηκευτικού χώρου ανά πάσα στιγμή στις \"Ρυθμίσεις / Συνδεσιμότητα\".</string>
     <!-- %1%s will be replaced by date and time in some human-readable format -->
     <string name="devicemsg_bad_time">⚠️ Η ημερομηνία ή η ώρα στη συσκευή σας φαίνεται να είναι μην είναι ακριβής (%1$s).\n\nΠροσαρμόστε το ρολόι σας ⏰🔧 για να βεβαιωθείτε ότι τα μηνύματά σας λαμβάνονται σωστά.</string>
-    <string name="devicemsg_update_reminder">⚠️ Η έκδοση ArcaneChat μπορεί να είναι παλιά.\n\nΑυτό μπορεί να προκαλέσει προβλήματα επειδή οι συνεργάτες συνομιλίας σας χρησιμοποιούν νεότερες εκδόσεις - και δεν έχετε τις πιο πρόσφατες λειτουργίες 😳\nΕλέγξτε τη https://github.com/ArcaneChat ή το κατάστημα εφαρμογών σας για ενημερώσεις .</string>
+    <string name="devicemsg_update_reminder">⚠️ Η έκδοση Delta Chat μπορεί να είναι παλιά.\n\nΑυτό μπορεί να προκαλέσει προβλήματα επειδή οι συνεργάτες συνομιλίας σας χρησιμοποιούν νεότερες εκδόσεις - και δεν έχετε τις πιο πρόσφατες λειτουργίες 😳\nΕλέγξτε τη https://get.delta.chat ή το κατάστημα εφαρμογών σας για ενημερώσεις .</string>
 
     <!-- Some options as "Add Second Device" or "Backup" may require the system PIN/Fingerprint/Gesture/Etc. to be entered in a system dialog. This hint is added to the system dialog, below a title as "Add Second Device" or "Backup". -->
     <string name="enter_system_secret_to_continue">Εισαγάγετε το μυστικό που έχει οριστεί από το σύστημά σας για να συνεχίσετε.</string>
@@ -861,9 +859,9 @@
     <string name="encrypted_message">Κρυπτογραφημένο μήνυμα</string>
 
     <!-- strings introduced on desktop. we want to share strings between the os, in general, please do not add generic strings here -->
-    <string name="about_offical_app_desktop">Αυτή είναι η επίσημη εφαρμογή ArcaneChat Desktop.</string>
+    <string name="about_offical_app_desktop">Αυτή είναι η επίσημη εφαρμογή Delta Chat Desktop.</string>
     <string name="about_licensed_under_desktop">Αυτό το λογισμικό έχει άδεια χρήσης σύμφωνα με την GNU GPL έκδοση 3 και ο πηγαίος κώδικας είναι διαθέσιμος στο GitHub.</string>
-    <string name="welcome_desktop">Καλώς ήρθατε στο ArcaneChat</string>
+    <string name="welcome_desktop">Καλώς ήρθατε στο Delta Chat</string>
     <string name="global_menu_preferences_language_desktop">Γλώσσα</string>
     <string name="global_menu_file_desktop">Αρχείο</string>
     <string name="global_menu_file_quit_desktop">Κλείσιμο</string>
@@ -878,11 +876,11 @@
     <string name="global_menu_view_developer_desktop">Προγραμματιστής</string>
     <string name="global_menu_view_developer_tools_desktop">Εργαλεία Προγραμματιστή</string>
     <string name="global_menu_help_desktop">Βοήθεια</string>
-    <string name="global_menu_help_learn_desktop">Μάθετε περισσότερα για το ArcaneChat</string>
+    <string name="global_menu_help_learn_desktop">Μάθετε περισσότερα για το Delta Chat</string>
     <string name="global_menu_help_contribute_desktop">Συνεισφέρετε στο GitHub</string>
     <string name="global_menu_help_report_desktop">Αναφέρετε ένα πρόβλημα</string>
-    <string name="global_menu_help_about_desktop">Για το ArcaneChat</string>
-    <string name="global_menu_file_open_desktop">Ανοίξτε το ArcaneChat</string>
+    <string name="global_menu_help_about_desktop">Για το Delta Chat</string>
+    <string name="global_menu_file_open_desktop">Ανοίξτε το Delta Chat</string>
     <string name="global_menu_minimize_to_tray">Ελαχιστοποίηση</string>
     <string name="no_chat_selected_suggestion_desktop">Επιλέξτε μια συνομιλία ή δημιουργήστε μια νέα συνομιλία</string>
     <string name="write_message_desktop">Γράψτε ένα μήνυμα</string>
@@ -901,7 +899,7 @@
     <string name="message_detail_received_desktop">Παραλήφθηκε</string>
     <string name="menu.view.developer.open.log.folder">Άνοιγμα του φακέλου καταγραφής</string>
     <string name="menu.view.developer.open.current.log.file">Άνοιγμα του τρέχον αρχείου καταγραφής</string>
-    <string name="explain_desktop_minimized_disabled_tray_pref" tools:ignore="TypographyDashes">Το εικονίδιο του δίσκου δεν μπορεί να απενεργοποιηθεί καθώς το ArcaneChat ξεκίνησε με την επιλογή --ελαχιστοποιημένη.</string>
+    <string name="explain_desktop_minimized_disabled_tray_pref" tools:ignore="TypographyDashes">Το εικονίδιο του δίσκου δεν μπορεί να απενεργοποιηθεί καθώς το Delta Chat ξεκίνησε με την επιλογή --ελαχιστοποιημένη.</string>
     <string name="no_spellcheck_suggestions_found">Δεν βρέθηκαν προτάσεις ορθογραφίας.</string>
     <string name="show_window">Εμφάνιση παραθύρου</string>
     <string name="login_socks5_experimental_warning">Η SOCKS5 υποστήριξη είναι αυτή τη στιγμή πειραματική. Παρακαλούμε χρησιμοποιήστε με δική σας ευθύνη. Εάν πληκτρολογήσετε μια διεύθυνση στο πεδίο ηλεκτρονικού ταχυδρομείου, θα υπάρξει αναζήτηση DNS που δεν θα περάσει στο SOCKS5.</string>
@@ -943,7 +941,7 @@
     <string name="import_device_contacts">Εισαγωγή επαφών από συσκευή</string>
     <string name="import_device_contacts_hint">Για να συνομιλήσετε με επαφές από τη συσκευή σας, ανοίξτε τις Ρυθμίσεις και ενεργοποιήστε τις \"Επαφές\".</string>
     <!-- iOS notification settings -->
-    <string name="disabled_in_dc">Απενεργοποιήθηκε στο ArcaneChat</string>
+    <string name="disabled_in_dc">Απενεργοποιήθηκε στο Delta Chat</string>
     <string name="disabled_in_system_settings">Απενεργοποιήθηκε στις ρυθμίσεις συστήματος</string>
     <string name="bg_app_refresh_disabled">Η \"Ανανέωση εφαρμογών στο παρασκήνιο\" απενεργοποιήθηκε στις ρυθμίσεις συστήματος</string>
     <!-- iOS connectivity view, Adjective, used eg. as "Notifications: Delayed" -->
@@ -957,18 +955,18 @@
     <string name="shortcut_step1_tap_share_btn">Κάντε κλικ στο κουμπί κοινής χρήσης</string>
     <string name="shortcut_step2_tap_add_to_home_screen">Επιλέξτε \"Προσθήκη στην αρχική οθόνη\" για να προσθέσετε την εφαρμογή στην αρχική σας οθόνη.</string>
     <!-- iOS permissions, copy from "deltachat-ios/Info.plist", which is used on missing translations in "deltachat-ios/LANG.lproj/InfoPlist.strings" -->
-    <string name="InfoPlist_NSCameraUsageDescription">Το ArcaneChat χρησιμοποιεί την κάμερά σας για λήψη και αποστολή φωτογραφιών και βίντεο και για σάρωση κωδικών QR.</string>
-    <string name="InfoPlist_NSContactsUsageDescription">Το ArcaneChat χρησιμοποιεί τις επαφές σας για να εμφανίσει μια λίστα με διευθύνσεις e-mail στις οποίες μπορείτε να γράψετε. Το ArcaneChat δεν έχει διακομιστή, οι επαφές σας δεν αποστέλλονται πουθενά.</string>
-    <string name="InfoPlist_NSLocationAlwaysAndWhenInUseUsageDescription">Το ArcaneChat χρειάζεται άδεια για να μοιραστεί την τοποθεσία σας για το χρονικό διάστημα που έχετε ενεργοποιήσει την κοινή χρήση τοποθεσίας.</string>
-    <string name="InfoPlist_NSLocationWhenInUseUsageDescription">Το ArcaneChat χρειάζεται άδεια για να μοιραστεί την τοποθεσία σας για το χρονικό διάστημα που έχετε ενεργοποιήσει την κοινή χρήση τοποθεσίας.</string>
-    <string name="InfoPlist_NSMicrophoneUsageDescription">Το ArcaneChat χρησιμοποιεί το μικρόφωνό σας για εγγραφή και αποστολή φωνητικών μηνυμάτων και βίντεο με ήχο.</string>
-    <string name="InfoPlist_NSPhotoLibraryUsageDescription">Το ArcaneChat θα σας επιτρέψει να επιλέξετε ποιες φωτογραφίες από τη βιβλιοθήκη σας θα στείλετε.</string>
-    <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">Το ArcaneChat θέλει να αποθηκεύσει εικόνες στη συλλογή φωτογραφιών σας.</string>
+    <string name="InfoPlist_NSCameraUsageDescription">Το Delta Chat χρησιμοποιεί την κάμερά σας για λήψη και αποστολή φωτογραφιών και βίντεο και για σάρωση κωδικών QR.</string>
+    <string name="InfoPlist_NSContactsUsageDescription">Το Delta Chat χρησιμοποιεί τις επαφές σας για να εμφανίσει μια λίστα με διευθύνσεις e-mail στις οποίες μπορείτε να γράψετε. Το Delta Chat δεν έχει διακομιστή, οι επαφές σας δεν αποστέλλονται πουθενά.</string>
+    <string name="InfoPlist_NSLocationAlwaysAndWhenInUseUsageDescription">Το Delta Chat χρειάζεται άδεια για να μοιραστεί την τοποθεσία σας για το χρονικό διάστημα που έχετε ενεργοποιήσει την κοινή χρήση τοποθεσίας.</string>
+    <string name="InfoPlist_NSLocationWhenInUseUsageDescription">Το Delta Chat χρειάζεται άδεια για να μοιραστεί την τοποθεσία σας για το χρονικό διάστημα που έχετε ενεργοποιήσει την κοινή χρήση τοποθεσίας.</string>
+    <string name="InfoPlist_NSMicrophoneUsageDescription">Το Delta Chat χρησιμοποιεί το μικρόφωνό σας για εγγραφή και αποστολή φωνητικών μηνυμάτων και βίντεο με ήχο.</string>
+    <string name="InfoPlist_NSPhotoLibraryUsageDescription">Το Delta Chat θα σας επιτρέψει να επιλέξετε ποιες φωτογραφίες από τη βιβλιοθήκη σας θα στείλετε.</string>
+    <string name="InfoPlist_NSPhotoLibraryAddUsageDescription">Το Delta Chat θέλει να αποθηκεύσει εικόνες στη συλλογή φωτογραφιών σας.</string>
 
 
-    <string name="pref_background_notifications_rationale">Για να διατηρήσετε τη σύνδεση με τον διακομιστή e-mail σας και να λαμβάνετε μηνύματα στο παρασκήνιο, αγνοήστε τις βελτιστοποιήσεις μπαταρίας στο επόμενο βήμα.\n\nΤο ArcaneChat χρησιμοποιεί λίγους πόρους και φροντίζει να μην εξαντλήσει την μπαταρία σας.</string>
+    <string name="pref_background_notifications_rationale">Για να διατηρήσετε τη σύνδεση με τον διακομιστή e-mail σας και να λαμβάνετε μηνύματα στο παρασκήνιο, αγνοήστε τις βελτιστοποιήσεις μπαταρίας στο επόμενο βήμα.\n\nΤο Delta Chat χρησιμοποιεί λίγους πόρους και φροντίζει να μην εξαντλήσει την μπαταρία σας.</string>
     <!-- disabling "Reliable service" will hide a the maybe annoying permanent-notification with the drawback that new-message-notifications get potentially unreliable -->
-    <string name="perm_enable_bg_reminder_title">Πατήστε εδώ για να λαμβάνετε μηνύματα ενώ το ArcaneChat είναι στο παρασκήνιο.</string>
-    <string name="perm_enable_bg_already_done">Επιτρέψατε ήδη στο ArcaneChat να λαμβάνει μηνύματα στο παρασκήνιο.\n\nΕάν τα μηνύματα εξακολουθούν να μην φτάνουν στο παρασκήνιο, ελέγξτε τις ρυθμίσεις του συστήματός σας.</string>
+    <string name="perm_enable_bg_reminder_title">Πατήστε εδώ για να λαμβάνετε μηνύματα ενώ το Delta Chat είναι στο παρασκήνιο.</string>
+    <string name="perm_enable_bg_already_done">Επιτρέψατε ήδη στο Delta Chat να λαμβάνει μηνύματα στο παρασκήνιο.\n\nΕάν τα μηνύματα εξακολουθούν να μην φτάνουν στο παρασκήνιο, ελέγξτε τις ρυθμίσεις του συστήματός σας.</string>
 
     </resources>
