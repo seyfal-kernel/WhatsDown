@@ -460,7 +460,7 @@ public class AttachmentManager {
                .request(Permissions.galleryPermissions())
                .ifNecessary()
                .withPermanentDenialDialog(activity.getString(R.string.perm_explain_access_to_storage_denied))
-               .onAllGranted(() -> selectMediaType(activity, "image/*", new String[] {"image/*", "video/*"}, requestCode))
+               .onAllGranted(() -> selectMediaType(activity, "image/*", new String[] {"image/*", "video/*"}, requestCode, null, true))
                .execute();
   }
 
@@ -573,10 +573,14 @@ public class AttachmentManager {
   }
 
   public static void selectMediaType(Activity activity, @NonNull String type, @Nullable String[] extraMimeType, int requestCode) {
-    selectMediaType(activity, type, extraMimeType, requestCode, null);
+    selectMediaType(activity, type, extraMimeType, requestCode, null, false);
   }
 
   public static void selectMediaType(Activity activity, @NonNull String type, @Nullable String[] extraMimeType, int requestCode, @Nullable Uri initialUri) {
+    selectMediaType(activity, type, extraMimeType, requestCode, initialUri, false);
+  }
+
+  public static void selectMediaType(Activity activity, @NonNull String type, @Nullable String[] extraMimeType, int requestCode, @Nullable Uri initialUri, boolean allowMultiple) {
     final Intent intent = new Intent();
     intent.setType(type);
 
@@ -586,6 +590,10 @@ public class AttachmentManager {
 
     if (initialUri != null && Build.VERSION.SDK_INT >= 26) {
       intent.putExtra(DocumentsContract.EXTRA_INITIAL_URI, initialUri);
+    }
+
+    if (allowMultiple) {
+      intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
     }
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {

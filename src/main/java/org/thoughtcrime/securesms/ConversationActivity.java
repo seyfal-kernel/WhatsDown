@@ -27,7 +27,7 @@ import static org.thoughtcrime.securesms.util.RelayUtil.isSharing;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
-import android.content.Context;
+import android.content.ClipData;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
@@ -36,7 +36,6 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.provider.Browser;
@@ -346,14 +345,27 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
     switch (reqCode) {
     case PICK_GALLERY:
-      MediaType mediaType;
-      String mimeType = MediaUtil.getMimeType(this, data.getData());
-
-      if      (MediaUtil.isGif(mimeType))   mediaType = MediaType.GIF;
-      else if (MediaUtil.isVideo(mimeType)) mediaType = MediaType.VIDEO;
-      else                                  mediaType = MediaType.IMAGE;
-
-      setMedia(data.getData(), mediaType);
+      final Uri singleUri = data.getData();
+      if (singleUri != null) {
+        MediaType mediaType;
+        String mimeType = MediaUtil.getMimeType(this, singleUri);
+             if (MediaUtil.isGif(mimeType))   mediaType = MediaType.GIF;
+        else if (MediaUtil.isVideo(mimeType)) mediaType = MediaType.VIDEO;
+        else                                  mediaType = MediaType.IMAGE;
+        setMedia(singleUri, mediaType);
+      } else {
+        final ClipData multipleUris = data.getClipData();
+        if (multipleUris != null) {
+          final int uriCount = multipleUris.getItemCount();
+          if (uriCount > 0) {
+            ArrayList<Uri> uriList = new ArrayList<>(uriCount);
+            for (int i = 0; i < uriCount; i++) {
+              uriList.add(multipleUris.getItemAt(i).getUri());
+            }
+            askSendingFiles(uriList, () -> SendRelayedMessageUtil.sendMultipleMsgs(this, chatId, uriList, null));
+          }
+        }
+      }
       break;
 
     case PICK_DOCUMENT:
@@ -656,20 +668,24 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     }
   }
 
+  private void askSendingFiles(ArrayList<Uri> uriList, Runnable onConfirm) {
+    String message = String.format(getString(R.string.ask_send_files_to_chat), uriList.size(), dcChat.getName());
+    if (SendRelayedMessageUtil.containsVideoType(context, uriList)) {
+      message += "\n\n" + getString(R.string.videos_sent_without_recoding);
+    }
+    new AlertDialog.Builder(this)
+      .setMessage(message)
+      .setCancelable(false)
+      .setNegativeButton(android.R.string.cancel, null)
+      .setPositiveButton(R.string.menu_send, (dialog, which) -> onConfirm.run())
+      .show();
+  }
+
   private void handleSharing() {
     ArrayList<Uri> uriList =  RelayUtil.getSharedUris(this);
     int sharedContactId = RelayUtil.getSharedContactId(this);
     if (uriList.size() > 1) {
-      String message = String.format(getString(R.string.ask_send_files_to_selected_chat), uriList.size());
-      if (SendRelayedMessageUtil.containsVideoType(context, uriList)) {
-        message += "\n\n" + getString(R.string.videos_sent_without_recoding);
-      }
-      new AlertDialog.Builder(this)
-              .setMessage(message)
-              .setCancelable(false)
-              .setNegativeButton(android.R.string.cancel, ((dialog, which) -> finish()))
-              .setPositiveButton(R.string.menu_send, (dialog, which) -> SendRelayedMessageUtil.immediatelyRelay(this, chatId))
-              .show();
+      askSendingFiles(uriList, () -> SendRelayedMessageUtil.immediatelyRelay(this, chatId));
     } else {
       if (sharedContactId != 0) {
         addAttachmentContactInfo(sharedContactId);

@@ -87,15 +87,15 @@ public class AccountSelectionListFragment extends DialogFragment implements DcEv
   private void refreshData() {
     if (adapter == null) return;
 
-    DcAccounts accounts = DcHelper.getAccounts(requireActivity());
+    DcAccounts accounts = DcHelper.getAccounts(getActivity());
     int[] accountIds = accounts.getAll();
 
     int[] ids = new int[accountIds.length + 1];
-    ids[0] = DC_CONTACT_ID_ADD_ACCOUNT;
     int j = 0;
     for (int accountId : accountIds) {
-      ids[++j] = accountId;
+      ids[j++] = accountId;
     }
+    ids[j] = DC_CONTACT_ID_ADD_ACCOUNT;
     adapter.changeData(ids, accounts.getSelectedAccount().getAccountId());
   }
 
