@@ -180,10 +180,12 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="@dimen/message_bubble_horizontal_padding"
                 android:layout_marginRight="@dimen/message_bubble_horizontal_padding"
-                android:layout_marginBottom="@dimen/message_bubble_collapsed_footer_padding"
-                android:padding="@dimen/message_bubble_showmore_padding"
+                android:paddingTop="@dimen/message_bubble_showmore_padding"
+                android:paddingBottom="@dimen/message_bubble_showmore_padding"
                 android:minHeight="1dp"
                 android:minWidth="0dp"
+                android:background="@android:color/transparent"
+                android:textColor="?attr/colorAccent"
                 android:text="@string/show_full_message"
                 android:textAllCaps="false"/>
 
