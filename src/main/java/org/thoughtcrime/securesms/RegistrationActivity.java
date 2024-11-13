@@ -31,7 +31,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -59,6 +58,7 @@ import org.thoughtcrime.securesms.proxy.ProxySettingsActivity;
 import org.thoughtcrime.securesms.util.DynamicTheme;
 import org.thoughtcrime.securesms.util.IntentUtils;
 import org.thoughtcrime.securesms.util.Util;
+import org.thoughtcrime.securesms.util.ViewUtil;
 import org.thoughtcrime.securesms.util.views.ProgressDialog;
 
 import java.lang.ref.WeakReference;
@@ -185,7 +185,7 @@ public class RegistrationActivity extends BaseActionBarActivity implements DcEve
             expandAdvanced = expandAdvanced || !TextUtils.isEmpty(strVal);
 
             intVal = DcHelper.getInt(this, CONFIG_MAIL_SECURITY);
-            imapSecurity.setSelection(intVal);
+            imapSecurity.setSelection(ViewUtil.checkBounds(intVal, imapSecurity));
             expandAdvanced = expandAdvanced || intVal != 0;
 
             TextInputEditText smtpLoginInput = findViewById(R.id.smtp_login_text);
@@ -207,7 +207,7 @@ public class RegistrationActivity extends BaseActionBarActivity implements DcEve
             expandAdvanced = expandAdvanced || !TextUtils.isEmpty(strVal);
 
             intVal = DcHelper.getInt(this, CONFIG_SEND_SECURITY);
-            smtpSecurity.setSelection(intVal);
+            smtpSecurity.setSelection(ViewUtil.checkBounds(intVal, smtpSecurity));
             expandAdvanced = expandAdvanced || intVal != 0;
 
             int serverFlags = DcHelper.getInt(this, CONFIG_SERVER_FLAGS);
@@ -222,12 +222,15 @@ public class RegistrationActivity extends BaseActionBarActivity implements DcEve
               }
               // /remove gmail oauth2
             }
-            authMethod.setSelection(sel);
+            authMethod.setSelection(ViewUtil.checkBounds(sel, authMethod));
             expandAdvanced = expandAdvanced || sel != 0;
 
-            int certCheckFlags = DcHelper.getInt(this, "imap_certificate_checks");
-            certCheck.setSelection(certCheckFlags);
-            expandAdvanced = expandAdvanced || certCheckFlags != 0;
+            int imapCertificateChecks = DcHelper.getInt(this, "imap_certificate_checks");
+            if (imapCertificateChecks == 3) {
+              imapCertificateChecks = 2; // 3 is a deprecated alias for 2
+            }
+            certCheck.setSelection(ViewUtil.checkBounds(imapCertificateChecks, certCheck));
+            expandAdvanced = expandAdvanced || imapCertificateChecks != 0;
         } else if (getIntent() != null && getIntent().getBundleExtra(ACCOUNT_DATA) != null) {
           // Companion app might have sent account data
           Bundle b = getIntent().getBundleExtra(ACCOUNT_DATA);

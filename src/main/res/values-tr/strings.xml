@@ -446,9 +446,6 @@
     <string name="send_file_to">\"%1$s\" dosyasını gönder…</string>
     <!-- title shown above a list contacts where one should be selected (eg. when a webxdc attempts to send a message to a chat) -->
     <string name="send_message_to">İletiyi gönder…</string>
-    <string name="enable_realtime">Gerçek Zamanlı Webxdc Kanalları</string>
-    <string name="enable_realtime_explain">Aygıtlar arasında doğrudan bağlantılar oluşturmak için Webxdc gerçek zamanlı API\'lerini etkinleştirin.</string>
-
     <!-- map -->
     <string name="filter_map_on_time">Konumları zaman çerçevesinde göster</string>
     <string name="show_location_traces">İzleri göster</string>
@@ -621,13 +618,10 @@
     <string name="proxy_use_proxy">Proxy Kullan</string>
     <string name="proxy_add">Proxy Ekle</string>
     <string name="proxy_add_explain">Desteklenen proxy türleri: HTTP(S), SOCKS5 ve Shadowsocks.</string>
-    <string name="proxy_add_url_hint">Buraya proxy URL\'sini girin</string>
-    <string name="proxy_invalid">Geçersiz ya da desteklenmeyen proxy URL\'si</string>
     <string name="proxy_list_header">Kaydedilen Proxy\'ler</string>
     <string name="proxy_delete">Proxy\'yi Sil</string>
     <string name="proxy_delete_explain">\"%1$s\" proxy\'sini silmek istediğinizden emin misiniz?</string>
     <string name="proxy_use_proxy_confirm">\"%1$s\" proxy\'sini kullanmak istiyor musunuz?</string>
-
     <!-- deprecated -->
     <string name="login_socks5">SOCKS5</string>
     <string name="login_socks5_use_socks5">SOCKS5\'i Kullan</string>

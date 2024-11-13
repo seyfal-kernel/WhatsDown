@@ -48,7 +48,8 @@ the following steps are done in a PR called `prep-VERSION` (no leading "v"):
 6. build APKs:
    a) generate debug APK at "Build / Build Bundle(s)/APK / Build APK(s)"  
    b) generate release APK at "Build / Generate Signed Bundle or APK",
-      select "APK", add keys, flavor `gplayRelease`
+      select "APK", add keys, flavor `gplayRelease`.
+      this APK will go to the stores and is located at `gplay/release`
 
 
 ## Push Test Releases
@@ -79,15 +80,20 @@ only afterwards, push the APK to stores. **consider a blog post.**
 
 on <https://play.google.com/apps/publish/>:
 
-9. a) open "Delta Chat/Release/Production"
-      then "Create new release" and upload APK from above  
+9. a) open "Delta Chat / Test and release / Production"
+      then "Create new release" and upload APK from above
    b) fill out "Release details/Release notes" (500 chars), add the line
       "These features will roll out over the coming days. Thanks for using Delta Chat!";
       release name should be default ("123 (1.2.3)")  
-   c) click "Next", set "Rollout Percentage" to 1% (later 2%, 5%, 10%, 20%, 50%, 100%),
-      click "Save"
+   c) click "Next", set "Rollout Percentage" to 50%, click "Save"
    d) Go to "Publishing Overview", "Managed publishing" is usually off;
       click "Send change for review", confirm
+
+2 days later, change "Rollout Percentage" to 99%. Two more days later to 100%.
+Rollout is anyways slower in practise, however,
+only as long as we do not enter 100%, we can retract the version
+(Once we reach 100%, we have to submit a new version for approval.
+During these up to 4 days, sometimes longer, we cannot do anything on existing rollout)
 
 
 ## Tag for F-Droid and create Github release
@@ -111,9 +117,8 @@ on <https://developer.amazon.com/dashboard>:
 12. a) for "Delta Chat", select "Add upcoming version" on the left
     b) at "Step 1 / Existing file(s)" hit "Replace", upload the APK from above
     c) on the "Step 1" page, add "Release notes" from CHANGELOG.md, hit "Next"
-    d) on "Step 2" page: "Does your app collect or transfer user data to third parties?" -> No, then "Next"
-    e) on "Step 3" page: "Next"
-    f) on "Step 4" page: "Submit app"
+    d) on "Step 2" and "Step 3" pages, hit "Next"
+    e) on "Step 4" page: "Submit app"
 
 
 ## Release on Huawei AppGallery

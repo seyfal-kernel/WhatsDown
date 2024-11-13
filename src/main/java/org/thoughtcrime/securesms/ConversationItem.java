@@ -56,7 +56,6 @@ import org.thoughtcrime.securesms.components.DocumentView;
 import org.thoughtcrime.securesms.components.QuoteView;
 import org.thoughtcrime.securesms.components.VcardView;
 import org.thoughtcrime.securesms.components.WebxdcView;
-import org.thoughtcrime.securesms.components.emoji.EmojiTextView;
 import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.mms.AudioSlide;
 import org.thoughtcrime.securesms.mms.DocumentSlide;
@@ -69,6 +68,7 @@ import org.thoughtcrime.securesms.mms.StickerSlide;
 import org.thoughtcrime.securesms.mms.VcardSlide;
 import org.thoughtcrime.securesms.reactions.ReactionsConversationView;
 import org.thoughtcrime.securesms.recipients.Recipient;
+import org.thoughtcrime.securesms.util.Linkifier;
 import org.thoughtcrime.securesms.util.LongClickMovementMethod;
 import org.thoughtcrime.securesms.util.MarkdownUtil;
 import org.thoughtcrime.securesms.util.MediaUtil;
@@ -112,6 +112,7 @@ public class ConversationItem extends BaseConversationItem
   protected ViewGroup              contactPhotoHolder;
   private   ViewGroup              container;
   private   Button                 msgActionButton;
+  private   Button                 showFullButton;
 
   private @NonNull  Stub<ConversationItemThumbnail> mediaThumbnailStub;
   private @NonNull  Stub<AudioView>                 audioViewStub;
@@ -158,6 +159,7 @@ public class ConversationItem extends BaseConversationItem
     this.container               =            findViewById(R.id.container);
     this.replyView               =            findViewById(R.id.reply_icon);
     this.msgActionButton         =            findViewById(R.id.msg_action_button);
+    this.showFullButton          =            findViewById(R.id.show_full_button);
 
     setOnClickListener(new ClickListener(null));
 
@@ -399,7 +401,7 @@ public class ConversationItem extends BaseConversationItem
     else {
       Spannable spannable = (Spannable) MarkdownUtil.toMarkdown(context, text);
       if (batchSelected.isEmpty()) {
-        spannable = EmojiTextView.linkify(spannable);
+        spannable = Linkifier.linkify(spannable);
       }
       bodyText.setText(spannable);
       bodyText.setVisibility(View.VISIBLE);
@@ -407,6 +409,7 @@ public class ConversationItem extends BaseConversationItem
 
     int downloadState = messageRecord.getDownloadState();
     if (downloadState == DcMsg.DC_DOWNLOAD_AVAILABLE || downloadState == DcMsg.DC_DOWNLOAD_FAILURE || downloadState == DcMsg.DC_DOWNLOAD_IN_PROGRESS) {
+      showFullButton.setVisibility(View.GONE);
       msgActionButton.setVisibility(View.VISIBLE);
       if (downloadState==DcMsg.DC_DOWNLOAD_IN_PROGRESS) {
         msgActionButton.setEnabled(false);
@@ -427,6 +430,7 @@ public class ConversationItem extends BaseConversationItem
         }
       });
     } else if (messageRecord.getType() == DcMsg.DC_MSG_WEBXDC) {
+      showFullButton.setVisibility(View.GONE);
       msgActionButton.setVisibility(View.VISIBLE);
       msgActionButton.setEnabled(true);
       msgActionButton.setText(webxdcViewStub.get().isCommunity()? R.string.join: R.string.start_app);
@@ -439,10 +443,11 @@ public class ConversationItem extends BaseConversationItem
       });
     }
     else if (messageRecord.hasHtml()) {
-      msgActionButton.setVisibility(View.VISIBLE);
-      msgActionButton.setEnabled(true);
-      msgActionButton.setText(R.string.show_full_message);
-      msgActionButton.setOnClickListener(view -> {
+      msgActionButton.setVisibility(View.GONE);
+      showFullButton.setVisibility(View.VISIBLE);
+      showFullButton.setEnabled(true);
+      showFullButton.setText(R.string.show_full_message);
+      showFullButton.setOnClickListener(view -> {
         if (eventListener != null && batchSelected.isEmpty()) {
           eventListener.onShowFullClicked(messageRecord);
         } else {
@@ -451,6 +456,7 @@ public class ConversationItem extends BaseConversationItem
       });
     } else {
       msgActionButton.setVisibility(View.GONE);
+      showFullButton.setVisibility(View.GONE);
     }
   }
 

@@ -63,7 +63,7 @@
               />
         </RelativeLayout>
 
-        <org.thoughtcrime.securesms.components.emoji.EmojiTextView
+        <androidx.appcompat.widget.AppCompatTextView
             style="@style/TextSecure.TitleTextStyle"
             android:id="@+id/toolbar_title"
             android:layout_width="0dp"

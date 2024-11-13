@@ -29,12 +29,12 @@ android {
     //   > Task :stripFatDebugDebugSymbols
     //   Unable to strip the following libraries, packaging them as they are: libanimation-decoder-gif.so, libnative-utils.so.
     // See <https://issuetracker.google.com/issues/237187538> for details.
-    ndkVersion "23.2.8568313"
+    ndkVersion "27.0.12077973"
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        versionCode 30000694
-        versionName "1.48.2"
+        versionCode 30000695
+        versionName "1.48.4"
 
         applicationId "chat.delta.lite"
         multiDexEnabled true
@@ -206,7 +206,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel:2.6.2'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
     implementation 'androidx.work:work-runtime:2.9.1'
-    implementation 'androidx.emoji2:emoji2-emojipicker:1.4.0'
+    implementation 'androidx.emoji2:emoji2-emojipicker:1.5.0'
     implementation 'com.google.guava:guava:31.1-android'
     implementation 'com.google.android.exoplayer:exoplayer-core:2.19.1' // plays video and audio
     implementation 'com.google.android.exoplayer:exoplayer-ui:2.19.1'
