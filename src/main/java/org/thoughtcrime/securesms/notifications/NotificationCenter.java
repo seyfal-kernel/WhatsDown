@@ -20,16 +20,19 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.WorkerThread;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.app.RemoteInput;
 import androidx.core.app.TaskStackBuilder;
 
 import com.b44t.messenger.DcChat;
+import com.b44t.messenger.DcContact;
 import com.b44t.messenger.DcContext;
 import com.b44t.messenger.DcMsg;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
+import org.json.JSONObject;
 import org.thoughtcrime.securesms.ApplicationContext;
 import org.thoughtcrime.securesms.ConversationActivity;
 import org.thoughtcrime.securesms.ConversationListActivity;
@@ -40,6 +43,7 @@ import org.thoughtcrime.securesms.preferences.widgets.NotificationPrivacyPrefere
 import org.thoughtcrime.securesms.recipients.Recipient;
 import org.thoughtcrime.securesms.util.BitmapUtil;
 import org.thoughtcrime.securesms.util.IntentUtils;
+import org.thoughtcrime.securesms.util.JsonUtils;
 import org.thoughtcrime.securesms.util.Prefs;
 import org.thoughtcrime.securesms.util.Util;
 
@@ -331,17 +335,81 @@ public class NotificationCenter {
     // add notifications & co.
     // --------------------------------------------------------------------------------------------
 
-    public void addNotification(int accountId, int chatId, int msgId) {
-        Util.runOnAnyBackgroundThread(() -> {
+    public void notifyMessage(int accountId, int chatId, int msgId) {
+      Util.runOnAnyBackgroundThread(() -> {
+        DcContext dcContext = context.dcAccounts.getAccount(accountId);
+        DcChat dcChat = dcContext.getChat(chatId);
+
+        DcMsg dcMsg = dcContext.getMsg(msgId);
+        NotificationPrivacyPreference privacy = Prefs.getNotificationPrivacy(context);
+
+        String shortLine = privacy.isDisplayMessage()? dcMsg.getSummarytext(2000) : context.getString(R.string.notify_new_message);
+        if (dcChat.isMultiUser() && privacy.isDisplayContact()) {
+          shortLine = dcMsg.getSenderName(dcContext.getContact(dcMsg.getFromId())) + ": " + shortLine;
+        }
+        String tickerLine = shortLine;
+        if (!dcChat.isMultiUser() && privacy.isDisplayContact()) {
+          tickerLine = dcMsg.getSenderName(dcContext.getContact(dcMsg.getFromId())) + ": " + tickerLine;
+
+          if (dcMsg.getOverrideSenderName() != null) {
+            // There is an "overridden" display name on the message, so, we need to prepend the display name to the message,
+            // i.e. set the shortLine to be the same as the tickerLine.
+            shortLine = tickerLine;
+          }
+        }
+
+        DcMsg quotedMsg = dcMsg.getQuotedMsg();
+        boolean isMention = quotedMsg != null && dcChat.isMultiUser() && quotedMsg.isOutgoing();
+
+        maybeAddNotification(accountId, dcChat, msgId, shortLine, tickerLine, true, isMention);
+      });
+    }
+
+    public void notifyReaction(int accountId, int contactId, int msgId, String reaction) {
+      Util.runOnAnyBackgroundThread(() -> {
+        DcContext dcContext = context.dcAccounts.getAccount(accountId);
+        DcMsg dcMsg = dcContext.getMsg(msgId);
+
+        NotificationPrivacyPreference privacy = Prefs.getNotificationPrivacy(context);
+        if (!privacy.isDisplayContact() || !privacy.isDisplayMessage()) {
+          return; // showing "New Message" is wrong and showing "New Reaction" is already content. just do nothing.
+        }
+
+        DcContact sender = dcContext.getContact(contactId);
+        String shortLine = context.getString(R.string.reaction_by_other, sender.getDisplayName(), reaction, dcMsg.getSummarytext(2000));
+        maybeAddNotification(accountId, dcContext.getChat(dcMsg.getChatId()), msgId, shortLine, shortLine, false, false);
+      });
+    }
+
+    public void notifyWebxdc(int accountId, int contactId, int msgId, String text) {
+      Util.runOnAnyBackgroundThread(() -> {
+        NotificationPrivacyPreference privacy = Prefs.getNotificationPrivacy(context);
+        if (!privacy.isDisplayContact() || !privacy.isDisplayMessage()) {
+          return; // showing "New Message" is wrong, just do nothing.
+        }
+
+        DcContext dcContext = context.dcAccounts.getAccount(accountId);
+        DcMsg dcMsg = dcContext.getMsg(msgId);
+        JSONObject info;
+        if(dcMsg.getType() == DcMsg.DC_MSG_WEBXDC) {
+          info = dcMsg.getWebxdcInfo();
+        } else { // info message, get from parent xdc
+          info = dcMsg.getParent() != null? dcMsg.getParent().getWebxdcInfo() : new JSONObject();
+        }
+        final String name = JsonUtils.optString(info, "name");
+        String shortLine = name.isEmpty()? text : (name + ": " + text);
+        maybeAddNotification(accountId, dcContext.getChat(dcMsg.getChatId()), msgId, shortLine, shortLine, false, false);
+      });
+    }
+
+    @WorkerThread
+    private void maybeAddNotification(int accountId, DcChat dcChat, int msgId, String shortLine, String tickerLine, boolean playInChatSound, boolean isMention) {
 
             DcContext dcContext = context.dcAccounts.getAccount(accountId);
-            DcChat dcChat = dcContext.getChat(chatId);
-            DcMsg dcMsg = dcContext.getMsg(msgId);
-            DcMsg quotedMsg = dcMsg.getQuotedMsg();
-            boolean isGroupMention = quotedMsg != null && dcChat.isMultiUser() && quotedMsg.isOutgoing();
+            int chatId = dcChat.getId();
             ChatData chatData = new ChatData(accountId, chatId);
 
-            if (dcContext.isMuted() || (!isGroupMention &&  dcChat.isMuted())) {
+            if (dcContext.isMuted() || (!isMention &&  dcChat.isMuted())) {
                 return;
             }
 
@@ -351,21 +419,13 @@ public class NotificationCenter {
             }
 
             if (Util.equals(visibleChat, chatData)) {
-                if (Prefs.isInChatNotifications(context)) {
+                if (playInChatSound && Prefs.isInChatNotifications(context)) {
                     InChatSounds.getInstance(context).playIncomingSound();
                 }
                 return;
             }
 
-            // get notification text as a single line
             NotificationPrivacyPreference privacy = Prefs.getNotificationPrivacy(context);
-
-            String line = privacy.isDisplayMessage()? dcMsg.getSummarytext(2000) : context.getString(R.string.notify_new_message);
-            if (dcChat.isMultiUser() && privacy.isDisplayContact()) {
-                line = dcMsg.getSenderName(dcContext.getContact(dcMsg.getFromId()), false) + ": " + line;
-            }
-
-            // play signal?
             long now = System.currentTimeMillis();
             boolean signal = (now - lastAudibleNotification) > MIN_AUDIBLE_PERIOD_MILLIS;
             if (signal) {
@@ -383,7 +443,7 @@ public class NotificationCenter {
                     .setPriority(Prefs.getNotificationPriority(context))
                     .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                     .setOnlyAlertOnce(!signal)
-                    .setContentText(line)
+                    .setContentText(shortLine)
                     .setDeleteIntent(getMarkAsReadIntent(chatData, msgId, false))
                     .setContentIntent(getOpenChatIntent(chatData));
 
@@ -403,12 +463,6 @@ public class NotificationCenter {
                 }
             }
 
-            // if privacy allows, for better accessibility,
-            // prepend the sender in the ticker also for one-to-one chats (for group-chats, this is already done)
-            String tickerLine = line;
-            if (!dcChat.isMultiUser() && privacy.isDisplayContact()) {
-                line = dcMsg.getSenderName(dcContext.getContact(dcMsg.getFromId()), false) + ": " + line;
-            }
             builder.setTicker(tickerLine);
 
             // set sound, vibrate, led for systems that do not have notification channels
@@ -504,9 +558,9 @@ public class NotificationCenter {
                             lines = new ArrayList<>();
                             accountInbox.put(chatId, lines);
                         }
-                        lines.add(line);
+                        lines.add(shortLine);
 
-                        for (int l = lines.size() - 1; l >= 0; l--) {
+                        for (int l = 0; l < lines.size(); l++) {
                             inboxStyle.addLine(lines.get(l));
                         }
                     }
@@ -552,7 +606,6 @@ public class NotificationCenter {
                   Log.e(TAG, "cannot add notification summary", e);
                 }
             }
-        });
     }
 
     public void removeNotifications(int accountId, int chatId) {

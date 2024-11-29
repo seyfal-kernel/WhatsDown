@@ -24,7 +24,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -442,7 +441,7 @@ public class ConversationFragment extends MessageSelectorFragment
 
             if (msg.getFromId() != prevMsg.getFromId() && !singleMsg) {
                 DcContact contact = dcContext.getContact(msg.getFromId());
-                result.append(msg.getSenderName(contact, false)).append(":\n");
+                result.append(msg.getSenderName(contact)).append(":\n");
             }
             if (msg.getType() == DcMsg.DC_MSG_TEXT || (singleMsg && !msg.getText().isEmpty())) {
                 result.append(msg.getText());
@@ -810,7 +809,7 @@ public class ConversationFragment extends MessageSelectorFragment
                 DozeReminder.dozeReminderTapped(getContext());
             }
             else if(messageRecord.getInfoType() == DcMsg.DC_INFO_WEBXDC_INFO_MESSAGE) {
-                scrollMaybeSmoothToMsgId(messageRecord.getParent().getId());
+                WebxdcActivity.openWebxdcActivity(getContext(), messageRecord.getParent(), messageRecord.getWebxdcHref());
             }
             else {
                 String self_mail = dcContext.getConfig("configured_mail_user");
@@ -911,11 +910,9 @@ public class ConversationFragment extends MessageSelectorFragment
 
             mode.setTitle("1");
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                Window window = getActivity().getWindow();
-                statusBarColor = window.getStatusBarColor();
-                window.setStatusBarColor(getResources().getColor(R.color.action_mode_status_bar));
-            }
+            Window window = getActivity().getWindow();
+            statusBarColor = window.getStatusBarColor();
+            window.setStatusBarColor(getResources().getColor(R.color.action_mode_status_bar));
 
             setCorrectMenuVisibility(menu);
             ConversationAdaptiveActionsToolbar.adjustMenuActions(menu, 10, requireActivity().getWindow().getDecorView().getMeasuredWidth());
@@ -932,9 +929,7 @@ public class ConversationFragment extends MessageSelectorFragment
             ((ConversationAdapter)list.getAdapter()).clearSelection();
             list.getAdapter().notifyDataSetChanged();
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                getActivity().getWindow().setStatusBarColor(statusBarColor);
-            }
+            getActivity().getWindow().setStatusBarColor(statusBarColor);
 
             actionMode = null;
             hideAddReactionView();

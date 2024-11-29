@@ -148,6 +148,7 @@ public class DcMsg {
         return new JSONObject();
       }
     }
+    public native String  getWebxdcHref      ();
     public native boolean isForwarded        ();
     public native boolean isInfo             ();
     public native boolean isSetupMessage     ();
@@ -170,10 +171,10 @@ public class DcMsg {
     public native boolean isOutgoing();
     public native int     getSenderColor();
 
-    public String getSenderName(DcContact dcContact, boolean markOverride) {
+    public String getSenderName(DcContact dcContact) {
         String overrideName = getOverrideSenderName();
         if (overrideName != null) {
-            return (markOverride ? "~" : "") + overrideName;
+            return "~" + overrideName;
         } else {
             return dcContact.getDisplayName();
         }

@@ -2,16 +2,14 @@ package com.b44t.messenger;
 
 public class DcContext {
 
-    public final static int DC_PREF_DEFAULT_MDNS_ENABLED = 1;
-    public final static int DC_PREF_DEFAULT_TRIM_ENABLED = 0;
-    public final static int DC_PREF_DEFAULT_TRIM_LENGTH  = 500;
-
     public final static int DC_EVENT_INFO                        = 100;
     public final static int DC_EVENT_WARNING                     = 300;
     public final static int DC_EVENT_ERROR                       = 400;
     public final static int DC_EVENT_ERROR_SELF_NOT_IN_GROUP     = 410;
     public final static int DC_EVENT_MSGS_CHANGED                = 2000;
     public final static int DC_EVENT_REACTIONS_CHANGED           = 2001;
+    public final static int DC_EVENT_INCOMING_REACTION           = 2002;
+    public final static int DC_EVENT_INCOMING_WEBXDC_NOTIFY      = 2003;
     public final static int DC_EVENT_INCOMING_MSG                = 2005;
     public final static int DC_EVENT_MSGS_NOTICED                = 2008;
     public final static int DC_EVENT_MSG_DELIVERED               = 2010;
@@ -81,10 +79,6 @@ public class DcContext {
 
     public final static int DC_MEDIA_QUALITY_BALANCED = 0;
     public final static int DC_MEDIA_QUALITY_WORSE    = 1;
-
-    public final static int DC_DECISION_START_CHAT = 0;
-    public final static int DC_DECISION_BLOCK      = 1;
-    public final static int DC_DECISION_NOT_NOW    = 2;
 
     public final static int DC_CONNECTIVITY_NOT_CONNECTED = 1000;
     public final static int DC_CONNECTIVITY_CONNECTING = 2000;
@@ -204,7 +198,7 @@ public class DcContext {
     public native int          sendMsg              (int chat_id, DcMsg msg);
     public native int          sendTextMsg          (int chat_id, String text);
     public native int          sendVideochatInvitation(int chat_id);
-    public native boolean      sendWebxdcStatusUpdate(int msg_id, String payload, String descr);
+    public native boolean      sendWebxdcStatusUpdate(int msg_id, String payload);
     public native String       getWebxdcStatusUpdates(int msg_id, int last_known_serial);
     public native void         setWebxdcIntegration (String file);
     public native int          initWebxdcIntegration(int chat_id);
@@ -230,24 +224,6 @@ public class DcContext {
       } else {
         stopIo();
       }
-    }
-
-    public String getNameNAddr() {
-      String displayname = getConfig("displayname");
-      String addr = getConfig("addr");
-      String ret = "";
-
-      if (!displayname.isEmpty() && !addr.isEmpty()) {
-        ret = String.format("%s (%s)", displayname, addr);
-      } else if (!addr.isEmpty()) {
-        ret = addr;
-      }
-
-      if (ret.isEmpty() || isConfigured() == 0) {
-        ret += " (not configured)";
-      }
-
-      return ret.trim();
     }
 
     public String getName() {

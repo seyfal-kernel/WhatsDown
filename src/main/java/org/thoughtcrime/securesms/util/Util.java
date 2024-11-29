@@ -89,10 +89,6 @@ public class Util {
     return false;
   }
 
-  public static String QrDataToInviteURL(String qrData) {
-    return "https://" + INVITE_DOMAIN + "/#" + qrData.split(":", 2)[1].replaceFirst("#", "&");
-  }
-
   public static CharSequence getBoldedString(String value) {
     SpannableString spanned = new SpannableString(value);
     spanned.setSpan(new StyleSpan(Typeface.BOLD), 0,
@@ -261,12 +257,10 @@ public class Util {
     return Arrays.hashCode(objects);
   }
 
-  @TargetApi(VERSION_CODES.KITKAT)
   public static boolean isLowMemory(Context context) {
     ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
 
-    return (VERSION.SDK_INT >= VERSION_CODES.KITKAT && activityManager.isLowRamDevice()) ||
-           activityManager.getLargeMemoryClass() <= 64;
+    return activityManager.isLowRamDevice() || activityManager.getLargeMemoryClass() <= 64;
   }
 
   public static int clamp(int value, int min, int max) {
@@ -390,10 +384,7 @@ public class Util {
   }
 
   public static int getLayoutDirection(Context context) {
-    if (VERSION.SDK_INT >= VERSION_CODES.JELLY_BEAN_MR1) {
-      Configuration configuration = context.getResources().getConfiguration();
-      return configuration.getLayoutDirection();
-    }
-    return ViewCompat.LAYOUT_DIRECTION_LTR;
+    Configuration configuration = context.getResources().getConfiguration();
+    return configuration.getLayoutDirection();
   }
 }

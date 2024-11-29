@@ -708,7 +708,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     DcMsg draft = dcContext.getDraft(chatId);
     final String sharedText = RelayUtil.getSharedText(this);
 
-    if (draft == null) {
+    if (!draft.isOk()) {
       if (TextUtils.isEmpty(sharedText)) {
         composeText.setText("");
         future.set(false);
@@ -929,12 +929,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     case AttachmentTypeSelector.TAKE_PHOTO:
       attachmentManager.capturePhoto(this, TAKE_PHOTO); break;
     case AttachmentTypeSelector.RECORD_VIDEO:
-      if(VideoRecoder.canRecode()) {
-        attachmentManager.captureVideo(this, RECORD_VIDEO);
-      }
-      else {
-        Toast.makeText(this, "This device does not support video-compression (requires Android 4.4 KitKat)", Toast.LENGTH_LONG).show();
-      }
+      attachmentManager.captureVideo(this, RECORD_VIDEO);
       break;
     }
   }

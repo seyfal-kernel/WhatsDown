@@ -119,38 +119,11 @@ public class QrShowFragment extends Fragment implements DcEventCenter.DcEventDel
       return svg.replace("y=\"281.136\"", "y=\"296\"");
     }
 
-    public void shareQr() {
-        try {
-            File file = new File(requireActivity().getExternalCacheDir(), "share-qr.png");
-            file.createNewFile();
-            file.setReadable(true, false);
-            FileOutputStream stream = new FileOutputStream(file);
-            Bitmap bitmap = Bitmap.createBitmap(WIDTH, HEIGHT, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(bitmap);
-            canvas.drawARGB(0,255, 255, 255);  // Clear background
-            SVG svg = SVG.getFromString(fixSVG(dcContext.getSecurejoinQrSvg(chatId)));
-            svg.renderToCanvas(canvas);
-            bitmap.compress(Bitmap.CompressFormat.PNG, 90, stream);
-            stream.flush();
-            stream.close();
-            Uri uri = FileProviderUtil.getUriFor(requireActivity(), file);
-            Intent intent = new Intent(Intent.ACTION_SEND);
-            intent.setType("image/png");
-            intent.putExtra(Intent.EXTRA_STREAM, uri);
-            String inviteURL = Util.QrDataToInviteURL(dcContext.getSecurejoinQr(chatId));
-            intent.putExtra(Intent.EXTRA_TEXT, inviteURL);
-            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-            startActivity(Intent.createChooser(intent, getString(R.string.chat_share_with_title)));
-        } catch (Exception e) {
-            Log.e(TAG, "failed to share QR", e);
-        }
-    }
-
     public void shareInviteURL() {
         try {
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("text/plain");
-            String inviteURL = Util.QrDataToInviteURL(dcContext.getSecurejoinQr(chatId));
+            String inviteURL = dcContext.getSecurejoinQr(chatId);
             intent.putExtra(Intent.EXTRA_TEXT, inviteURL);
             startActivity(Intent.createChooser(intent, getString(R.string.chat_share_with_title)));
         } catch (Exception e) {
@@ -159,7 +132,7 @@ public class QrShowFragment extends Fragment implements DcEventCenter.DcEventDel
     }
 
     public void copyQrData() {
-        String inviteURL = Util.QrDataToInviteURL(dcContext.getSecurejoinQr(chatId));
+        String inviteURL = dcContext.getSecurejoinQr(chatId);
         Util.writeTextToClipboard(getActivity(), inviteURL);
         Toast.makeText(getActivity(), getString(R.string.copied_to_clipboard), Toast.LENGTH_SHORT).show();
     }
@@ -179,7 +152,7 @@ public class QrShowFragment extends Fragment implements DcEventCenter.DcEventDel
 
     public void showInviteLinkDialog() {
       View view = View.inflate(getActivity(), R.layout.dialog_share_invite_link, null);
-      String inviteURL = Util.QrDataToInviteURL(dcContext.getSecurejoinQr(chatId));
+      String inviteURL = dcContext.getSecurejoinQr(chatId);
       ((TextView)view.findViewById(R.id.invite_link)).setText(inviteURL);
       new AlertDialog.Builder(getActivity())
         .setView(view)
