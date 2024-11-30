@@ -697,6 +697,8 @@
     <string name="pref_screen_security_explain">Solicitar bloqueo de capturas de pantalla en la lista de recientes y dentro de la aplicación</string>
     <string name="pref_screen_security_please_restart_hint">Para aplicar la configuración de seguridad de la pantalla, reinicie la aplicación.</string>
     <string name="pref_notifications">Notificaciones </string>
+    <string name="pref_mention_notifications">Notificar menciones</string>
+    <string name="pref_mention_notifications_explain">Notificar mensajes en chats silenciados si están dirigidos a ti, como en respuestas o reacciones a tus mensajes</string>
     <string name="pref_notifications_show">Mostrar</string>
     <string name="pref_notifications_priority">Prioridad</string>
     <string name="pref_notifications_explain">Habilitar las notificaciones del sistema para nuevos mensajes</string>
