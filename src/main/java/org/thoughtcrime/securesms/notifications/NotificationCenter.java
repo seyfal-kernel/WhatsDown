@@ -361,7 +361,7 @@ public class NotificationCenter {
         }
 
         DcMsg quotedMsg = dcMsg.getQuotedMsg();
-        boolean isMention = quotedMsg != null && dcChat.isMultiUser() && quotedMsg.isOutgoing();
+        boolean isMention = dcChat.isMultiUser() && quotedMsg != null && quotedMsg.isOutgoing();
 
         maybeAddNotification(accountId, dcChat, msgId, shortLine, tickerLine, true, isMention);
       });
@@ -379,7 +379,8 @@ public class NotificationCenter {
 
         DcContact sender = dcContext.getContact(contactId);
         String shortLine = context.getString(R.string.reaction_by_other, sender.getDisplayName(), reaction, dcMsg.getSummarytext(2000));
-        maybeAddNotification(accountId, dcContext.getChat(dcMsg.getChatId()), msgId, shortLine, shortLine, false, true);
+        DcChat dcChat = dcContext.getChat(dcMsg.getChatId());
+        maybeAddNotification(accountId, dcChat, msgId, shortLine, shortLine, false, dcChat.isMultiUser());
       });
     }
 
@@ -406,7 +407,8 @@ public class NotificationCenter {
         JSONObject info = parentMsg.getWebxdcInfo();
         final String name = JsonUtils.optString(info, "name");
         String shortLine = name.isEmpty()? text : (name + ": " + text);
-        maybeAddNotification(accountId, dcContext.getChat(dcMsg.getChatId()), msgId, shortLine, shortLine, false, true);
+        DcChat dcChat = dcContext.getChat(dcMsg.getChatId());
+        maybeAddNotification(accountId, dcChat, msgId, shortLine, shortLine, false, dcChat.isMultiUser());
       });
     }
 
