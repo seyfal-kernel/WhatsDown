@@ -86,6 +86,7 @@ public class DcContext {
     public final static int DC_CONNECTIVITY_CONNECTED = 4000;
 
     private static final String CONFIG_ACCOUNT_ENABLED = "ui.enabled";
+    private static final String CONFIG_MENTION_NOTIF_ENABLED = "ui.notify_mentions";
 
     // when using DcAccounts, use DcAccounts.addAccount() instead
     public DcContext(String osName, String dbfile) {
@@ -224,6 +225,14 @@ public class DcContext {
       } else {
         stopIo();
       }
+    }
+
+    public boolean isMentionsEnabled() {
+      return !"0".equals(getConfig(CONFIG_MENTION_NOTIF_ENABLED));
+    }
+
+    public void setMentionsEnabled(boolean enabled) {
+      setConfigInt(CONFIG_MENTION_NOTIF_ENABLED, enabled? 1 : 0);
     }
 
     public String getName() {
