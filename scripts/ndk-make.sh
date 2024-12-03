@@ -38,8 +38,6 @@
 #
 # If anything doesn't work, please open an issue!!
 
-"$(dirname "$0")/rebrand.sh"
-
 set -e
 echo "starting time: `date`"
 
@@ -175,5 +173,8 @@ if test $1; then
 else
     rm -f ndkArch # Remove ndkArch, ignore if it doesn't exist
 fi
+
+"$(dirname "$0")/rebrand.sh"
+
 
 echo "ending time: `date`"
