@@ -675,15 +675,11 @@ public class NotificationCenter {
     }
 
     public void updateVisibleWebxdc(int accountId, int msgId) {
-        Util.runOnAnyBackgroundThread(() -> {
-
-            if (accountId != 0 && msgId != 0) {
-                visibleWebxdc = new Pair<>(accountId, msgId);
-            } else {
-                visibleWebxdc = null;
-            }
-
-        });
+        if (accountId != 0 && msgId != 0) {
+            visibleWebxdc = new Pair<>(accountId, msgId);
+        } else {
+            visibleWebxdc = null;
+        }
     }
 
     public void clearVisibleWebxdc() {
