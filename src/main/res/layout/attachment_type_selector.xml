@@ -78,58 +78,50 @@
 
             </LinearLayout>
 
-            <LinearLayout android:id="@+id/location_linear_layout"
-                          android:layout_width="match_parent"
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:gravity="center"
+                          android:layout_weight="1"
+                          android:orientation="vertical">
+
+                <org.thoughtcrime.securesms.components.CircleColorImageView
+                    android:id="@+id/document_button"
+                    android:layout_width="53dp"
+                    android:layout_height="53dp"
+                    android:src="@drawable/ic_insert_drive_file_white_24dp"
+                    android:scaleType="center"
+                    android:contentDescription="@string/file"
+                    app:circleColor="@color/document_icon"/>
+
+                <TextView android:layout_marginTop="10dp"
+                          style="@style/AttachmentTypeLabel"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/file"/>
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent"
                           android:layout_height="wrap_content"
                           android:layout_weight="1"
                           android:gravity="center"
                           android:orientation="vertical">
 
                 <org.thoughtcrime.securesms.components.CircleColorImageView
-                    android:id="@+id/location_button"
-                    android:layout_width="53dp"
-                    android:layout_height="53dp"
-                    android:src="@drawable/ic_location_on_white_24dp"
-                    android:scaleType="center"
-                    android:visibility="visible"
-                    android:contentDescription="@string/location"
-                    app:circleColor="@color/location_icon"/>
+                        android:id="@+id/webxdc_button"
+                        android:layout_width="53dp"
+                        android:layout_height="53dp"
+                        android:src="@drawable/baseline_apps_24"
+                        android:scaleType="center"
+                        android:contentDescription="@string/webxdc_apps"
+                        app:circleColor="@color/apps_icon"
+                        />
 
                 <TextView android:layout_marginTop="10dp"
-                          android:id="@+id/location_button_label"
                           android:layout_width="wrap_content"
                           android:layout_height="wrap_content"
-                          android:visibility="visible"
                           style="@style/AttachmentTypeLabel"
-                          android:text="@string/location"/>
-
-            </LinearLayout>
-
-            <LinearLayout android:id="@+id/apps_linear_layout"
-                          android:layout_width="match_parent"
-                          android:layout_height="wrap_content"
-                          android:layout_weight="1"
-                          android:gravity="center"
-                          android:orientation="vertical"
-                          android:visibility="invisible">
-
-                <org.thoughtcrime.securesms.components.CircleColorImageView
-                    android:id="@+id/apps_button"
-                    android:layout_width="53dp"
-                    android:layout_height="53dp"
-                    android:src="@drawable/ic_location_on_white_24dp"
-                    android:scaleType="center"
-                    android:visibility="visible"
-                    android:contentDescription="@string/location"
-                    app:circleColor="@color/location_icon"/>
-
-                <TextView android:layout_marginTop="10dp"
-                          android:id="@+id/apps_button_label"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:visibility="visible"
-                          style="@style/AttachmentTypeLabel"
-                          android:text="@string/location"/>
+                          android:text="@string/webxdc_apps"/>
 
             </LinearLayout>
 
@@ -169,26 +161,30 @@
 
             </LinearLayout>
 
-            <LinearLayout android:layout_width="match_parent"
+            <LinearLayout android:id="@+id/location_linear_layout"
+                          android:layout_width="match_parent"
                           android:layout_height="wrap_content"
-                          android:gravity="center"
                           android:layout_weight="1"
+                          android:gravity="center"
                           android:orientation="vertical">
 
                 <org.thoughtcrime.securesms.components.CircleColorImageView
-                    android:id="@+id/document_button"
+                    android:id="@+id/location_button"
                     android:layout_width="53dp"
                     android:layout_height="53dp"
-                    android:src="@drawable/ic_insert_drive_file_white_24dp"
+                    android:src="@drawable/ic_location_on_white_24dp"
                     android:scaleType="center"
-                    android:contentDescription="@string/file"
-                    app:circleColor="@color/document_icon"/>
+                    android:visibility="visible"
+                    android:contentDescription="@string/location"
+                    app:circleColor="@color/location_icon"/>
 
                 <TextView android:layout_marginTop="10dp"
-                          style="@style/AttachmentTypeLabel"
+                          android:id="@+id/location_button_label"
                           android:layout_width="wrap_content"
                           android:layout_height="wrap_content"
-                          android:text="@string/file"/>
+                          android:visibility="visible"
+                          style="@style/AttachmentTypeLabel"
+                          android:text="@string/location"/>
 
             </LinearLayout>
 
@@ -216,29 +212,13 @@
 
             </LinearLayout>
 
-            <LinearLayout android:layout_width="match_parent"
-                          android:layout_height="wrap_content"
-                          android:layout_weight="1"
-                          android:gravity="center"
-                          android:orientation="vertical">
-
-                <org.thoughtcrime.securesms.components.CircleColorImageView
-                        android:id="@+id/close_button"
-                        android:layout_width="53dp"
-                        android:layout_height="53dp"
-                        android:src="@drawable/ic_keyboard_arrow_down_white_24dp"
-                        android:scaleType="center"
-                        android:contentDescription="@string/cancel"
-                        app:circleColor="?attr/close_icon_color"/>
-
-                <TextView android:layout_marginTop="10dp"
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          style="@style/AttachmentTypeLabel"
-                          android:text=" "/>
-
+            <!-- fill the gap -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="invisible">
             </LinearLayout>
-
 
         </LinearLayout>
 

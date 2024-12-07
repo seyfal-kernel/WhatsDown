@@ -42,6 +42,7 @@ import org.thoughtcrime.securesms.connect.DcEventCenter;
 import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.mms.AttachmentManager;
 import org.thoughtcrime.securesms.permissions.Permissions;
+import org.thoughtcrime.securesms.util.Prefs;
 import org.thoughtcrime.securesms.util.ScreenLockUtil;
 import org.thoughtcrime.securesms.util.StorageUtil;
 import org.thoughtcrime.securesms.util.StreamUtil;
@@ -133,6 +134,10 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
     Preference webrtcInstance = this.findPreference("pref_webrtc_instance");
     webrtcInstance.setOnPreferenceClickListener(new WebrtcInstanceListener());
     updateWebrtcSummary();
+
+    Preference webxdcStore = this.findPreference(Prefs.WEBXDC_STORE_URL_PREF);
+    webxdcStore.setOnPreferenceClickListener(new WebxdcStoreUrlListener());
+    updateWebxdcStoreSummary();
 
     Preference developerModeEnabled = this.findPreference("pref_developer_mode_enabled");
     developerModeEnabled.setOnPreferenceChangeListener((preference, newValue) -> {
@@ -280,11 +285,41 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
     }
   }
 
+  private class WebxdcStoreUrlListener implements Preference.OnPreferenceClickListener {
+    @Override
+    public boolean onPreferenceClick(Preference preference) {
+      View gl = View.inflate(getActivity(), R.layout.single_line_input, null);
+      EditText inputField = gl.findViewById(R.id.input_field);
+      inputField.setHint(Prefs.DEFAULT_WEBXDC_STORE_URL);
+      inputField.setText(Prefs.getWebxdcStoreUrl(getActivity()));
+      inputField.setSelection(inputField.getText().length());
+      inputField.setInputType(TYPE_TEXT_VARIATION_URI);
+      new AlertDialog.Builder(getActivity())
+              .setTitle(R.string.webxdc_store_url)
+              .setMessage(R.string.webxdc_store_url_explain)
+              .setView(gl)
+              .setNegativeButton(android.R.string.cancel, null)
+              .setPositiveButton(android.R.string.ok, (dlg, btn) -> {
+                Prefs.setWebxdcStoreUrl(getActivity(), inputField.getText().toString());
+                updateWebxdcStoreSummary();
+              })
+              .show();
+      return true;
+    }
+  }
+
   private void updateWebrtcSummary() {
     Preference webrtcInstance = this.findPreference("pref_webrtc_instance");
     if (webrtcInstance != null) {
       webrtcInstance.setSummary(DcHelper.isWebrtcConfigOk(dcContext)?
               dcContext.getConfig(DcHelper.CONFIG_WEBRTC_INSTANCE) : getString(R.string.none));
+    }
+  }
+
+  private void updateWebxdcStoreSummary() {
+    Preference preference = this.findPreference(Prefs.WEBXDC_STORE_URL_PREF);
+    if (preference != null) {
+        preference.setSummary(Prefs.getWebxdcStoreUrl(getActivity()));
     }
   }
 
