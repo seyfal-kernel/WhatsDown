@@ -220,7 +220,12 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
     webView.setNetworkAvailable(internetAccess); // this does not block network but sets `window.navigator.isOnline` in js land
     webView.addJavascriptInterface(new InternalJSApi(), "InternalJSApi");
 
-    String href = b.getString(EXTRA_HREF, "");
+    String extraHref = b.getString(EXTRA_HREF, "");
+    if (TextUtils.isEmpty(extraHref)) {
+      extraHref = "index.html";
+    }
+
+    String href = baseURL + "/" + extraHref;
     String encodedHref = "";
     try {
       encodedHref = URLEncoder.encode(href, Charsets.UTF_8.name());
