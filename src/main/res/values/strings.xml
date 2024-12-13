@@ -6,7 +6,7 @@
   <string name="community_set_name_explain">Set a name that other will recognize.</string>
   <string name="could_not_open_file">Could not open file</string>
     <!-- common strings without special context -->
-    <string name="app_name">Delta Chat</string>
+    <string name="app_name">ArcaneChat</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
    <!-- deprecated, the word "or" to separate blocks in the user interface that are mutually exclusive -->
