@@ -46,6 +46,9 @@ window.webxdc = (() => {
     deltalab: InternalJSApi.arcanechat(),
 
     isCommunity: InternalJSApi.isCommunity(),
+    sendUpdateMaxSize: InternalJSApi.sendUpdateMaxSize(),
+
+    sendUpdateInterval: InternalJSApi.sendUpdateInterval(),
 
     selfAddr: InternalJSApi.selfAddr(),
 

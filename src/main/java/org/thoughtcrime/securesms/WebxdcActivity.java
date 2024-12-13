@@ -75,7 +75,9 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
   private DcMsg dcAppMsg;
   private String baseURL;
   private String sourceCodeUrl = "";
-  private String selfAddr = "";
+  private String selfAddr;
+  private int sendUpdateMaxSize;
+  private int sendUpdateInterval;
   private boolean internetAccess = false;
   private boolean hideActionBar = false;
 
@@ -203,7 +205,9 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
         // this is needed here because if the app is opened while already in landscape mode, onConfigurationChanged() is not triggered
         setScreenMode(getResources().getConfiguration());
     }
-    selfAddr = JsonUtils.optString(info, "self_addr");
+    selfAddr = info.optString("self_addr");
+    sendUpdateMaxSize = info.optInt("send_update_max_size");
+    sendUpdateInterval = info.optInt("send_update_interval");
 
     toggleFakeProxy(!internetAccess);
 
@@ -507,6 +511,16 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
     @JavascriptInterface
     public boolean isCommunity() {
       return dcContext.isCommunity();
+    }
+
+    @JavascriptInterface
+    public int sendUpdateMaxSize() {
+      return WebxdcActivity.this.sendUpdateMaxSize;
+    }
+
+    @JavascriptInterface
+    public int sendUpdateInterval() {
+      return WebxdcActivity.this.sendUpdateInterval;
     }
 
     @JavascriptInterface
