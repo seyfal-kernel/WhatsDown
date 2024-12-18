@@ -182,7 +182,7 @@
     <string name="video">Video</string>
     <string name="documents">Documentos</string>
     <string name="contact">Contacto</string>
-    <string name="bot">Bot</string>
+    <string name="bot">bot</string>
     <string name="camera">Cámara</string>
     <!-- As in "start a video recording" or "take a photo"; eg. the description of the "shutter button" in cameras -->
     <string name="capture">Capturar</string>
