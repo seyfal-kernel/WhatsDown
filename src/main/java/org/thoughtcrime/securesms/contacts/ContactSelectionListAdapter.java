@@ -34,6 +34,7 @@ import org.thoughtcrime.securesms.R;
 import org.thoughtcrime.securesms.connect.DcContactsLoader;
 import org.thoughtcrime.securesms.connect.DcHelper;
 import org.thoughtcrime.securesms.mms.GlideRequests;
+import org.thoughtcrime.securesms.util.DateUtils;
 import org.thoughtcrime.securesms.util.LRUCache;
 
 import java.lang.ref.SoftReference;
@@ -275,7 +276,18 @@ public class ContactSelectionListAdapter extends RecyclerView.Adapter
     } else {
       dcContact = getContact(i);
       name = dcContact.getDisplayName();
-      addr = dcContact.getAddr();
+      if (dcContact.isBot()) {
+        addr = context.getString(R.string.bot);
+      } else if (dcContact.wasSeenRecently()) {
+        addr = context.getString(R.string.online);
+      } else {
+        long timestamp = dcContact.getLastSeen();
+        if (timestamp == 0) {
+          addr = dcContact.getAddr();
+        } else {
+          addr = context.getString(R.string.last_seen_at, DateUtils.getExtendedTimeSpanString(context, timestamp));
+        }
+      }
     }
 
     ViewHolder holder = (ViewHolder) viewHolder;
