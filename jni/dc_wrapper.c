@@ -1658,6 +1658,12 @@ JNIEXPORT void Java_com_b44t_messenger_DcMsg_setFile(JNIEnv *env, jobject obj, j
 }
 
 
+JNIEXPORT void Java_com_b44t_messenger_DcMsg_forceSticker(JNIEnv *env, jobject obj)
+{
+    dc_msg_force_sticker(get_dc_msg(env, obj));
+}
+
+
 JNIEXPORT void Java_com_b44t_messenger_DcMsg_setDimension(JNIEnv *env, jobject obj, int width, int height)
 {
     dc_msg_set_dimension(get_dc_msg(env, obj), width, height);

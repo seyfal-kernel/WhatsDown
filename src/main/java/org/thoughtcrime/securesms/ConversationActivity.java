@@ -1296,6 +1296,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       msg.setQuote(quote.get().getQuotedMsg());
     }
     msg.setFile(path, null);
+    msg.forceSticker();
     dcContext.sendMsg(chatId, msg);
   }
 
