@@ -26,6 +26,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -810,6 +811,9 @@ public class ConversationFragment extends MessageSelectorFragment
             }
             else if(messageRecord.getInfoType() == DcMsg.DC_INFO_WEBXDC_INFO_MESSAGE) {
                 WebxdcActivity.openWebxdcActivity(getContext(), messageRecord.getParent(), messageRecord.getWebxdcHref());
+            }
+            else if (!TextUtils.isEmpty(messageRecord.getPOILocation()) && messageRecord.getType() == DcMsg.DC_MSG_TEXT && !messageRecord.hasHtml()) {
+                WebxdcActivity.openMaps(getContext(), getListAdapter().getChat().getId(), "index.html#"+messageRecord.getPOILocation());
             }
             else {
                 String self_mail = dcContext.getConfig("configured_mail_user");

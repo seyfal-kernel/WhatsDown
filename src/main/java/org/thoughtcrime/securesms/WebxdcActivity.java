@@ -82,8 +82,16 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
   private boolean hideActionBar = false;
 
   public static void openMaps(Context context, int chatId) {
+    openMaps(context, chatId, "");
+  }
+
+  public static void openMaps(Context context, int chatId, String href) {
     DcContext dcContext = DcHelper.getContext(context);
-    int msgId = dcContext.initWebxdcIntegration(chatId);
+    int msgId = 0;
+    final int mapsVersion = 2;
+    if (dcContext.getConfigInt("ui.maps_version") >= mapsVersion) {
+      msgId = dcContext.initWebxdcIntegration(chatId);
+    }
     if (msgId == 0) {
       try {
         InputStream inputStream = context.getResources().getAssets().open("webxdc/maps.xdc");
@@ -98,8 +106,9 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
          Toast.makeText(context, "Cannot get maps.xdc, see log for details.", Toast.LENGTH_LONG).show();
          return;
       }
+      dcContext.setConfigInt("ui.maps_version", mapsVersion);
     }
-    openWebxdcActivity(context, msgId, true, "");
+    openWebxdcActivity(context, msgId, true, href);
   }
 
   public static void openWebxdcActivity(Context context, DcMsg instance) {

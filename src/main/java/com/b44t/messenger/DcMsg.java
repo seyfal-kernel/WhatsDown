@@ -164,6 +164,7 @@ public class DcMsg {
     public native void    setDimension       (int width, int height);
     public native void    setDuration        (int duration);
     public native void    setLocation        (float latitude, float longitude);
+    public native String  getPOILocation     ();
     public void           setQuote           (DcMsg quote) { setQuoteCPtr(quote.msgCPtr); }
     public native String  getQuotedText      ();
     public native String  getError           ();

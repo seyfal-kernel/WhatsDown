@@ -1664,6 +1664,15 @@ JNIEXPORT void Java_com_b44t_messenger_DcMsg_forceSticker(JNIEnv *env, jobject o
 }
 
 
+JNIEXPORT jstring Java_com_b44t_messenger_DcMsg_getPOILocation(JNIEnv *env, jobject obj)
+{
+    char* temp = dc_msg_get_poi_location(get_dc_msg(env, obj));
+        jstring ret = JSTRING_NEW(temp);
+    dc_str_unref(temp);
+    return ret;
+}
+
+
 JNIEXPORT void Java_com_b44t_messenger_DcMsg_setDimension(JNIEnv *env, jobject obj, int width, int height)
 {
     dc_msg_set_dimension(get_dc_msg(env, obj), width, height);
