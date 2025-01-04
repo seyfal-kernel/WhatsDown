@@ -986,14 +986,6 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   protected static final int ACTION_SEND_OUT = 1;
   protected static final int ACTION_SAVE_DRAFT = 2;
 
-  private String getSelfReaction(int msgId) {
-    try {
-      final String [] selfReactions = rpc.getMsgReactions(dcContext.getAccountId(), msgId).getReactionsByContact().get(DcContact.DC_CONTACT_ID_SELF);
-      if (selfReactions != null && selfReactions.length > 0) return selfReactions[0];
-    } catch(Exception e) { e.printStackTrace(); }
-    return null;
-  }
-
   protected ListenableFuture<Integer> processComposeControls(int action) {
     return processComposeControls(action, composeText.getTextTrimmed(),
       attachmentManager.isAttachmentPresent() ?
