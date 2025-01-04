@@ -68,6 +68,7 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
   private static final String EXTRA_HIDE_ACTION_BAR = "hideActionBar";
   private static final String EXTRA_HREF = "href";
   private static final int REQUEST_CODE_FILE_PICKER = 51426;
+  private static long lastOpenTime = 0;
 
   private ValueCallback<Uri[]> filePathCallback;
   private DcContext dcContext;
@@ -270,6 +271,7 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
 
   @Override
   protected void onDestroy() {
+    lastOpenTime = System.currentTimeMillis();
     DcHelper.getEventCenter(this.getApplicationContext()).removeObservers(this);
     leaveRealtimeChannel();
     super.onDestroy();
