@@ -124,9 +124,6 @@ public class ApplicationContext extends MultiDexApplication {
           e.printStackTrace();
         }
       }
-      if ("deltafans@nine.testrun.org".equals(ac.getConfig("configured_addr")) && !ac.isCommunity()) {
-          ac.setCommunityMode(true);
-      }
     }
     if (allAccounts.length == 0) {
       dcAccounts.addAccount();
@@ -232,11 +229,10 @@ public class ApplicationContext extends MultiDexApplication {
             TimeUnit.MILLISECONDS)
             .setConstraints(constraints)
             .build();
-    try {
-      // in Android 4 this throws exception due to R8/shrinking
-      WorkManager.getInstance(this)
-        .enqueueUniquePeriodicWork("FetchWorker", ExistingPeriodicWorkPolicy.KEEP, fetchWorkRequest);
-    } catch (Throwable e) {}
+    WorkManager.getInstance(this).enqueueUniquePeriodicWork(
+            "FetchWorker",
+            ExistingPeriodicWorkPolicy.KEEP,
+            fetchWorkRequest);
     AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
 
     if (Prefs.isPushEnabled(this)) {

@@ -1364,12 +1364,6 @@ JNIEXPORT jint Java_com_b44t_messenger_DcMsg_getId(JNIEnv *env, jobject obj)
     return dc_msg_get_id(get_dc_msg(env, obj));
 }
 
-
-JNIEXPORT jboolean Java_com_b44t_messenger_DcMsg_isOutgoing(JNIEnv *env, jobject obj)
-{
-    return (jboolean)(dc_msg_is_outgoing(get_dc_msg(env, obj))!=0);
-}
-
 JNIEXPORT jint Java_com_b44t_messenger_DcMsg_getSenderColor(JNIEnv *env, jobject obj)
 {
   return dc_msg_get_sender_color(get_dc_msg(env, obj));

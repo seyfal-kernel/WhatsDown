@@ -169,7 +169,6 @@ public class DcMsg {
     public native String  getQuotedText      ();
     public native String  getError           ();
     public native String  getOverrideSenderName();
-    public native boolean isOutgoing();
     public native int     getSenderColor();
 
     public String getSenderName(DcContact dcContact) {
@@ -208,6 +207,10 @@ public class DcMsg {
             ids[i++] = dcMsg.getId();
         }
         return ids;
+    }
+
+    public boolean isOutgoing() {
+        return getFromId() == DcContact.DC_CONTACT_ID_SELF;
     }
 
     public String getDisplayBody()  {
