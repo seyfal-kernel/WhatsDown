@@ -28,7 +28,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:922391085500:android:6f54e2c4e49405673e2bb9",
         "android_client_info": {
-          "package_name": "chat.delta.lite.beta"
+          "package_name": "com.github.arcanechat.beta"
         }
       },
       "oauth_client": [],
@@ -47,7 +47,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:922391085500:android:aff82fbc40c8172e3e2bb9",
         "android_client_info": {
-          "package_name": "chat.delta.lite"
+          "package_name": "com.github.arcanechat"
         }
       },
       "oauth_client": [],
@@ -66,7 +66,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:922391085500:android:92b4cf12669cc2083e2bb9",
         "android_client_info": {
-          "package_name": "com.github.arcanechat"
+          "package_name": "chat.delta.lite"
         }
       },
       "oauth_client": [],
@@ -85,7 +85,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:922391085500:android:228a205b8aa2bacc3e2bb9",
         "android_client_info": {
-          "package_name": "com.github.arcanechat.beta"
+          "package_name": "chat.delta.lite.beta"
         }
       },
       "oauth_client": [],
