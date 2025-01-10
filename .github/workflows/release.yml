@@ -49,11 +49,12 @@ jobs:
       - name: Build APK
         run: |
           mkdir -p ~/.gradle
-          echo -n ${{ secrets.SIGNING_KEY }} | base64 -d >> ~/app.keystore
-          echo "DC_RELEASE_STORE_FILE=$HOME/app.keystore" >> ~/.gradle/gradle.properties
-          echo "DC_RELEASE_STORE_PASSWORD=${{ secrets.KEY_STORE_PASSWORD }}" >> ~/.gradle/gradle.properties
-          echo "DC_RELEASE_KEY_ALIAS=${{ secrets.ALIAS }}" >> ~/.gradle/gradle.properties
-          echo "DC_RELEASE_KEY_PASSWORD=${{ secrets.KEY_PASSWORD }}" >> ~/.gradle/gradle.properties
+          echo -n ${{ secrets.KEYSTORE_FILE }} | base64 -d >> ~/keystore.jks
+          echo "DC_RELEASE_STORE_FILE=$HOME/keystore.jks" >> ~/.gradle/gradle.properties
+          echo "DC_RELEASE_STORE_PASSWORD=${{ secrets.KEYSTORE_PASSWORD }}" >> ~/.gradle/gradle.properties
+          echo "DC_RELEASE_KEY_ALIAS_FDROID=${{ secrets.ALIAS_FDROID }}" >> ~/.gradle/gradle.properties
+          echo "DC_RELEASE_KEY_ALIAS_GPLAY=${{ secrets.ALIAS_GPLAY }}" >> ~/.gradle/gradle.properties
+          echo "DC_RELEASE_KEY_PASSWORD=${{ secrets.KEYSTORE_PASSWORD }}" >> ~/.gradle/gradle.properties
           ./gradlew assembleFossRelease
           rm build/outputs/apk/foss/release/*universal*
           ./gradlew assembleGplayRelease

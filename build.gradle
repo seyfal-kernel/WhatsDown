@@ -33,8 +33,8 @@ android {
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        versionCode 30000702
-        versionName "1.50.6"
+        versionCode 30000704
+        versionName "1.50.8"
 
         applicationId "chat.delta.lite"
         multiDexEnabled true
@@ -87,14 +87,36 @@ android {
                 storeFile file(DC_DEBUG_STORE_FILE )
             }
         }
-        release {
+        releaseFdroid {
             // can be defined at `~/.gradle/gradle.properties` or at "Build/Generate signed APK"
             if(project.hasProperty("DC_RELEASE_STORE_FILE")) {
                 storeFile file(DC_RELEASE_STORE_FILE)
                 storePassword DC_RELEASE_STORE_PASSWORD
-                keyAlias DC_RELEASE_KEY_ALIAS
+                keyAlias DC_RELEASE_KEY_ALIAS_FDROID
                 keyPassword DC_RELEASE_KEY_PASSWORD
             }
+        }
+        releaseGplay {
+            // can be defined at `~/.gradle/gradle.properties` or at "Build/Generate signed APK"
+            if(project.hasProperty("DC_RELEASE_STORE_FILE")) {
+                storeFile file(DC_RELEASE_STORE_FILE)
+                storePassword DC_RELEASE_STORE_PASSWORD
+                keyAlias DC_RELEASE_KEY_ALIAS_GPLAY
+                keyPassword DC_RELEASE_KEY_PASSWORD
+            }
+        }
+    }
+
+    productFlavors {
+        foss {
+            dimension "none"
+            buildConfigField "boolean", "USE_PLAY_SERVICES", "false"
+        }
+        gplay {
+            dimension "none"
+            apply plugin: "com.google.gms.google-services"
+            buildConfigField "boolean", "USE_PLAY_SERVICES", "true"
+            applicationId "com.github.arcanechat"
         }
     }
 
@@ -114,20 +136,9 @@ android {
             // nb: it is highly recommended to use the same settings in debug+release -
             // otherwise problems might be noticed delayed only
             minifyEnabled true
-            signingConfig signingConfigs.release
+            productFlavors.foss.signingConfig signingConfigs.releaseFdroid
+            productFlavors.gplay.signingConfig signingConfigs.releaseGplay
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-
-    productFlavors {
-        foss {
-            dimension "none"
-            buildConfigField "boolean", "USE_PLAY_SERVICES", "false"
-        }
-        gplay {
-            dimension "none"
-            apply plugin: "com.google.gms.google-services"
-            buildConfigField "boolean", "USE_PLAY_SERVICES", "true"
         }
     }
 
