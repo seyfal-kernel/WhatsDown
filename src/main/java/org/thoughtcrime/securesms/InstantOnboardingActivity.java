@@ -56,6 +56,7 @@ import org.thoughtcrime.securesms.profiles.ProfileMediaConstraints;
 import org.thoughtcrime.securesms.proxy.ProxySettingsActivity;
 import org.thoughtcrime.securesms.qr.RegistrationQrActivity;
 import org.thoughtcrime.securesms.scribbles.ScribbleActivity;
+import org.thoughtcrime.securesms.util.IntentUtils;
 import org.thoughtcrime.securesms.util.Prefs;
 import org.thoughtcrime.securesms.util.Util;
 import org.thoughtcrime.securesms.util.views.ProgressDialog;
@@ -333,14 +334,14 @@ public class InstantOnboardingActivity extends BaseActionBarActivity implements 
 
     privacyPolicyBtn.setOnClickListener(view -> {
       if (!isDcLogin) {
-        WebViewActivity.openUrlInBrowser(this, "https://" + providerHost + "/privacy.html");
+        IntentUtils.showInBrowser(this, "https://" + providerHost + "/privacy.html");
       }
     });
 
     signUpBtn.setOnClickListener(view -> createProfile());
 
     findViewById(R.id.use_other_server).setOnClickListener((v) -> {
-      WebViewActivity.openUrlInBrowser(this, INSTANCES_URL);
+      IntentUtils.showInBrowser(this, INSTANCES_URL);
     });
     findViewById(R.id.login_button).setOnClickListener((v) -> {
       startRegistrationActivity();
