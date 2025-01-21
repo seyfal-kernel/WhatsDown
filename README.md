@@ -1,6 +1,6 @@
 ## ArcaneChat Android Client
 
-A [Delta Chat](https://delta.chat/) client for Android.
+A [Delta Chat](https://delta.chat/) client for Android. Learn more at: https://arcanechat.me
 
 [<img src="store/get-it-on-fdroid.png" alt="Get it on F-Droid" height="48">](https://f-droid.org/packages/chat.delta.lite)
 [<img src="store/get-it-on-IzzyOnDroid.png" alt="Get it on IzzyOnDroid" height="48">](https://apt.izzysoft.de/fdroid/index/apk/chat.delta.lite)
