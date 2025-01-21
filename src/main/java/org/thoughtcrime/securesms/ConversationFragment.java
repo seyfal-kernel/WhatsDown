@@ -704,7 +704,7 @@ public class ConversationFragment extends MessageSelectorFragment
                 index++;
             }
         }
-        dcContext.markseenMsgs(ids);
+        Util.runOnAnyBackgroundThread(() -> dcContext.markseenMsgs(ids));
     }
 
 

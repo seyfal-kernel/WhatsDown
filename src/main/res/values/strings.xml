@@ -974,6 +974,7 @@
     <string name="chat_protection_broken_explanation">End-to-end encryption cannot be guaranteed anymore, likely because %1$s reinstalled Delta Chat or sent a message from another device.\n\nYou may meet them in person and scan their QR code again to reestablish guaranteed end-to-end encryption.</string>
     <string name="invalid_unencrypted_tap_to_learn_more">⚠️ %1$s requires end-to-end encryption which is not setup for this chat yet. Tap to learn more.</string>
     <string name="invalid_unencrypted_explanation">To establish end-to-end-encryption, you may meet contacts in person and scan their QR Code to introduce them.</string>
+    <!-- deprecated -->
     <string name="encryption_required_for_new_contact">End-to-end encryption is required but it is not setup for %1$s yet.\n\nYou may share your invite link with them or meet in person and scan their QR Code.</string>
     <string name="learn_more">Learn More</string>
 
@@ -1119,6 +1120,8 @@
     <string name="timestamp_format_m_desktop">MMM D</string>
     <string name="remove_desktop">Remove</string>
     <string name="save_desktop">Save</string>
+    <!-- Opposite of "Save". Undo a "Save" action. Similar to "Unmute", "Unpin". Could also be worded as "Save no longer" or so. -->
+    <string name="unsave">Unsave</string>
     <string name="name_desktop">Name</string>
     <string name="select_group_image_desktop">Select Group Image</string>
     <string name="export_backup_desktop">Export Backup</string>

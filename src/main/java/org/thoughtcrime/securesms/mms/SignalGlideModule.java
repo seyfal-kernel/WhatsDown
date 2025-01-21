@@ -15,8 +15,6 @@ import com.bumptech.glide.Registry;
 import com.bumptech.glide.annotation.GlideModule;
 import com.bumptech.glide.load.model.UnitModelLoader;
 import com.bumptech.glide.module.AppGlideModule;
-import com.bumptech.glide.request.RequestOptions;
-import com.github.penfeizhou.animation.glide.AnimationDecoderOption;
 
 import com.caverock.androidsvg.SVG;
 
@@ -42,7 +40,6 @@ public class SignalGlideModule extends AppGlideModule {
   @Override
   public void applyOptions(Context context, GlideBuilder builder) {
     builder.setLogLevel(Log.ERROR);
-    builder.setDefaultRequestOptions(new RequestOptions().set(AnimationDecoderOption.DISABLE_ANIMATION_APNG_DECODER, true));
 //    builder.setDiskCache(new NoopDiskCacheFactory());
   }
 
