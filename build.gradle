@@ -96,13 +96,21 @@ android {
                 keyPassword DC_RELEASE_KEY_PASSWORD
             }
         }
-        releaseGplay {
+        releaseApk {
             // can be defined at `~/.gradle/gradle.properties` or at "Build/Generate signed APK"
             if(project.hasProperty("DC_RELEASE_STORE_FILE")) {
                 storeFile file(DC_RELEASE_STORE_FILE)
                 storePassword DC_RELEASE_STORE_PASSWORD
                 keyAlias DC_RELEASE_KEY_ALIAS_GPLAY
                 keyPassword DC_RELEASE_KEY_PASSWORD
+            }
+        }
+        releaseBundle {
+            if(project.hasProperty("DC_BUNDLE_STORE_FILE")) {
+                storeFile file(DC_BUNDLE_STORE_FILE)
+                storePassword DC_BUNDLE_STORE_PASSWORD
+                keyAlias DC_BUNDLE_KEY_ALIAS
+                keyPassword DC_BUNDLE_STORE_PASSWORD
             }
         }
     }
@@ -137,7 +145,12 @@ android {
             // otherwise problems might be noticed delayed only
             minifyEnabled true
             productFlavors.foss.signingConfig signingConfigs.releaseFdroid
-            productFlavors.gplay.signingConfig signingConfigs.releaseGplay
+            productFlavors.gplay.signingConfig signingConfigs.releaseApk
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        store {
+            minifyEnabled true
+            productFlavors.gplay.signingConfig signingConfigs.releaseBundle
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
