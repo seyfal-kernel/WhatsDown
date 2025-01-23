@@ -68,6 +68,41 @@
         android:layout_marginTop="20dp"
         android:text="@string/instant_onboarding_create"/>
 
+    <LinearLayout
+        android:id="@+id/or_divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+      <View
+          android:layout_width="wrap_content"
+          android:layout_height="1dp"
+          android:layout_weight="1"
+          android:background="@drawable/divider_start"/>
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_marginLeft="5dp"
+          android:layout_marginRight="5dp"
+          android:layout_weight="0"
+          android:gravity="center"
+          android:text="@string/or_separator"
+          android:textSize="14sp"
+          android:fontFamily="sans-serif"
+          android:textColor="@color/gray50"/>
+
+      <View
+          android:layout_width="wrap_content"
+          android:layout_height="1dp"
+          android:layout_weight="1"
+          android:background="@drawable/divider_end"/>
+    </LinearLayout>
+
     <Button
         style="@style/ButtonSecondary"
         android:id="@+id/use_other_server"
@@ -75,7 +110,6 @@
         android:layout_height="wrap_content"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:layout_marginTop="16dp"
         android:text="@string/instant_onboarding_other_server"/>
 
     <Button

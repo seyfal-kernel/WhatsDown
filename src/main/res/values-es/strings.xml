@@ -8,6 +8,7 @@
     <string name="app_name">Delta Chat</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancelar</string>
+  <string name="or_separator">o</string>
     <string name="clear_search">Borrar búsqueda</string>
     <!-- a noun, used on a button, short for "show link" -->
     <string name="link">Enlace</string>

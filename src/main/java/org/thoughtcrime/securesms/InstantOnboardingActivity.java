@@ -72,7 +72,7 @@ public class InstantOnboardingActivity extends BaseActionBarActivity implements 
   private static final String DCACCOUNT = "dcaccount";
   private static final String DCLOGIN = "dclogin";
   private static final String INSTANCES_URL = "https://delta.chat/chatmail";
-  private static final String DEFAULT_CHATMAIL_HOST = "nine.testrun.org";
+  private static final String DEFAULT_CHATMAIL_HOST = "arcanechat.me";
 
   public static final String QR_ACCOUNT_EXTRA = "qr_account_extra";
   public static final String FROM_WELCOME = "from_welcome";
