@@ -62,16 +62,16 @@ public class LocalHelpActivity extends WebViewActivity
         webView.scrollTo(0, 0);
         return true;
       case R.id.learn_more:
-        openOnlineUrl("https://delta.chat");
+        openOnlineUrl("https://arcanechat.me");
         return true;
       case R.id.privacy_policy:
-        openOnlineUrl("https://delta.chat/gdpr");
+        openOnlineUrl("https://arcanechat.me/privacy.html");
         return true;
       case R.id.contribute:
-        openOnlineUrl("https://github.com/deltachat/deltachat-android");
+        openOnlineUrl("https://arcanechat.me/#contribute");
         return true;
       case R.id.report_issue:
-        openOnlineUrl("https://github.com/deltachat/deltachat-android/issues");
+        openOnlineUrl("https://github.com/ArcaneChat/android/issues");
         return true;
     }
     return false;
