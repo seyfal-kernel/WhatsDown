@@ -604,7 +604,7 @@
     <!-- Instant onboarding title (there is not more to do than to set name and avatar) -->
     <string name="instant_onboarding_title">Tu perfil</string>
     <!-- The placeholder will be replaced by the default onboarding server -->
-    <string name="instant_onboarding_agree_default2">Política de privacidad para %1$s</string>
+    <string name="instant_onboarding_agree_default2">Términos y política de privacidad para %1$s</string>
     <!-- The placeholder will be replaced by instance name, the whole text will link to the instance page -->
     <string name="instant_onboarding_agree_instance">Acerca de los perfiles en %1$s</string>
     <!-- Confirmation button on the instant onboarding screen -->
