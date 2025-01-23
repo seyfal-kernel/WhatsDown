@@ -148,11 +148,6 @@ android {
             productFlavors.gplay.signingConfig signingConfigs.releaseApk
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-        store {
-            minifyEnabled true
-            productFlavors.gplay.signingConfig signingConfigs.releaseBundle
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
     }
 
     if(!project.hasProperty("ABI_FILTER")) {
