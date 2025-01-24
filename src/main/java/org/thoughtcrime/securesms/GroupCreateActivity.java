@@ -17,7 +17,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.loader.app.LoaderManager;
 
 import com.b44t.messenger.DcChat;
@@ -221,22 +220,7 @@ public class GroupCreateActivity extends PassphraseRequiredActionBarActivity
           updateGroup(groupName);
         } else {
           verified = !broadcast && allMembersVerified();
-          if (verified && getAdapter().getContacts().size() == 1) {
-            new AlertDialog.Builder(this)
-              .setMessage(R.string.create_verified_group_ask)
-              .setNeutralButton(R.string.learn_more, (d, w) -> DcHelper.openHelp(this, "#e2eeguarantee"))
-              .setPositiveButton(R.string.yes, (d, w) -> {
-                  createGroup(groupName);
-              })
-              .setNegativeButton(R.string.no, (d, w) -> {
-                  verified = false;
-                  createGroup(groupName);
-              })
-              .setCancelable(true)
-              .show();
-          } else {
-            createGroup(groupName);
-          }
+          createGroup(groupName);
         }
 
         return true;
