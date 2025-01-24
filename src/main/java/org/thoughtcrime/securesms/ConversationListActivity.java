@@ -457,7 +457,7 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
         startActivity(new Intent(this, ProfileActivity.class));
         return true;
       case R.id.menu_public_bots:
-        handleShowBot("puente@buzon.uy", "OPENPGP4FPR:4B41E5AFAF78A0C71DB56138D5BEFED00A45F97A#a=puente%40buzon.uy&n=Public%20Bots&i=ZC_oaJtuvJP&s=5SE96rRovsK");
+        handleShowBot("botsindex@arcanechat.me", "https://i.delta.chat/#67889B0362BEDBFEE05ACD92C1D737FA632A9582&a=botsindex%40arcanechat.me&n=Public%20Bots&i=336MTEz38EH-RJxM9OKWygYK&s=TpVVGK6C4KrJmRG0bwHLalXt");
         return true;
     }
 
