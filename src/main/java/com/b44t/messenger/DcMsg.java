@@ -161,6 +161,7 @@ public class DcMsg {
     public native void    setHtml            (String text);
     public native void    setFile            (String file, String filemime);
     public native void    forceSticker       ();
+    public native void    setFileAndDeduplicate(String file, String name, String filemime);
     public native void    setDimension       (int width, int height);
     public native void    setDuration        (int duration);
     public native void    setLocation        (float latitude, float longitude);

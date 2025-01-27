@@ -30,7 +30,6 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.google.android.material.textfield.TextInputLayout;
-import com.soundcloud.android.crop.Crop;
 
 import org.thoughtcrime.securesms.components.AvatarSelector;
 import org.thoughtcrime.securesms.components.InputAwareLayout;
@@ -146,10 +145,6 @@ public class CreateProfileActivity extends BaseActionBarActivity {
 
       case ScribbleActivity.SCRIBBLE_REQUEST_CODE:
         setAvatarView(data.getData());
-        break;
-
-      case Crop.REQUEST_CROP:
-        setAvatarView(Crop.getOutput(data));
         break;
     }
   }

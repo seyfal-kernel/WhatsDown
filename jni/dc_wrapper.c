@@ -1667,6 +1667,18 @@ JNIEXPORT jstring Java_com_b44t_messenger_DcMsg_getPOILocation(JNIEnv *env, jobj
 }
 
 
+JNIEXPORT void Java_com_b44t_messenger_DcMsg_setFileAndDeduplicate(JNIEnv *env, jobject obj, jstring file, jstring name, jstring filemime)
+{
+    CHAR_REF(file);
+    CHAR_REF(name);
+    CHAR_REF(filemime);
+    dc_msg_set_file_and_deduplicate(get_dc_msg(env, obj), filePtr, namePtr, filemimePtr);
+    CHAR_UNREF(filemime);
+    CHAR_UNREF(name);
+    CHAR_UNREF(file);
+}
+
+
 JNIEXPORT void Java_com_b44t_messenger_DcMsg_setDimension(JNIEnv *env, jobject obj, int width, int height)
 {
     dc_msg_set_dimension(get_dc_msg(env, obj), width, height);
