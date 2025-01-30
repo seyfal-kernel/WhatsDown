@@ -544,6 +544,7 @@
     <string name="tab_audio_empty_hint">Здесь можно просмотреть аудиофайлы и голосовые сообщения, отправленные в этом чате.</string>
     <string name="tab_webxdc_empty_hint">Здесь можно просмотреть приложения, отправленные в этом чате.</string>
     <string name="tab_all_media_empty_hint">Здесь можно просмотреть медиафайлы, отправленные в любом чате.</string>
+    <string name="all_apps_empty_hint">Здесь можно просмотреть приложения, полученные или отправленные в любом чате.</string>
     <string name="media_preview">Предпросмотр медиафайлов</string>
     <!-- option to show images in the gallery with the correct width/height aspect (instead of square); other gallery apps may be a source of inspiration for translation :) -->
     <string name="aspect_ratio_grid">Сетка с соотношением сторон</string>
@@ -1120,8 +1121,10 @@
     <string name="global_menu_help_desktop">Справка</string>
     <!-- deprecated, use delta_chat_homepage instead -->
     <string name="global_menu_help_learn_desktop">Узнать больше о Delta Chat</string>
+    <string name="delta_chat_homepage">Домашняя страница Delta Chat</string>
     <!-- deprecated, use contribute instead -->
     <string name="global_menu_help_contribute_desktop">Присоединиться к разработке на GitHub</string>
+    <string name="contribute">Внести вклад</string>
     <string name="global_menu_help_report_desktop">Сообщить о проблеме</string>
     <string name="global_menu_help_about_desktop">О Delta Chat</string>
     <string name="global_menu_file_open_desktop">Открыть Delta Chat</string>
@@ -1198,8 +1201,6 @@
     <string name="system_settings">Настройки системы</string>
     <!-- shown below the button "System Settings" on the notification screen. this is a hint about what can be edited on System Settings' Notification page - eg. the notification type (banner, lock screen, notification centre), sound, badges and so on. no need to be exhaustive here, it is only to give the user an idea. -->
     <string name="system_settings_notify_explain_ios">Редактировать тип, значки, предпросмотр и другое</string>
-    <!-- iOS webxdc selector -->
-    <string name="webxdc_selector_empty_hint">Здесь можно просмотреть приложения, полученные или отправленные в любом чате. \"Файлы\" показывает только загруженные приложения.</string>
     <!-- iOS shortcut widget -->
     <!-- use the same translation for "Shortcuts" as the system is using, often the term "Shortcut" stays untranslated; check eg. how the "Shortcuts" system app is called in your locale -->
     <string name="shortcuts_widget_title">Ярлыки</string>
