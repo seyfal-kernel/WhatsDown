@@ -172,7 +172,7 @@ public class Prefs {
   }
 
   public static boolean isLocationStreamingEnabled(Context context) {
-    return true;
+    return false;
   }
 
   public static boolean isDeveloperModeEnabled(Context context) {
