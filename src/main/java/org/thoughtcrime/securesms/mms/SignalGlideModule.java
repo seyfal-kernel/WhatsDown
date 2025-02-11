@@ -4,6 +4,8 @@ import android.content.Context;
 import android.graphics.drawable.PictureDrawable;
 
 import androidx.annotation.NonNull;
+
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 
 import com.airbnb.lottie.LottieComposition;
@@ -15,6 +17,7 @@ import com.bumptech.glide.Registry;
 import com.bumptech.glide.annotation.GlideModule;
 import com.bumptech.glide.load.model.UnitModelLoader;
 import com.bumptech.glide.module.AppGlideModule;
+import com.github.penfeizhou.animation.webp.decode.WebPDecoder;
 
 import com.caverock.androidsvg.SVG;
 
@@ -24,6 +27,8 @@ import org.thoughtcrime.securesms.glide.lottie.LottieDecoder;
 import org.thoughtcrime.securesms.glide.lottie.LottieDrawableTranscoder;
 import org.thoughtcrime.securesms.glide.svg.SvgDecoder;
 import org.thoughtcrime.securesms.glide.svg.SvgDrawableTranscoder;
+import org.thoughtcrime.securesms.glide.webp.WebpDrawableTranscoder;
+import org.thoughtcrime.securesms.glide.webp.WebpLoader;
 import org.thoughtcrime.securesms.mms.DecryptableStreamUriLoader.DecryptableUri;
 
 import java.io.File;
@@ -59,6 +64,10 @@ public class SignalGlideModule extends AppGlideModule {
     registry.append(ContactPhoto.class, InputStream.class, new ContactPhotoLoader.Factory(context));
     registry.append(DecryptableUri.class, InputStream.class, new DecryptableStreamUriLoader.Factory(context));
     //registry.replace(GlideUrl.class, InputStream.class, new OkHttpUrlLoader.Factory());
+
+    registry
+        .prepend(InputStream.class, WebPDecoder.class, new WebpLoader())
+        .register(WebPDecoder.class, Drawable.class, new WebpDrawableTranscoder());
 
     registry
         .register(LottieComposition.class, LottieDrawable.class, new LottieDrawableTranscoder())
