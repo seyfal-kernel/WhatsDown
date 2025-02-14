@@ -52,7 +52,8 @@ public class DcContactsLoader extends AsyncLoader<DcContactsLoader.Ret> {
         }
         if (query == null && addCreateGroupLinks) {
             additional_items = Util.appendInt(additional_items, DcContact.DC_CONTACT_ID_NEW_GROUP);
-            additional_items = Util.appendInt(additional_items, DcContact.DC_CONTACT_ID_NEW_BROADCAST_LIST);
+            final boolean broadcastsEnabled = !dcContext.isChatmail();
+            if (broadcastsEnabled) additional_items = Util.appendInt(additional_items, DcContact.DC_CONTACT_ID_NEW_BROADCAST_LIST);
         }
         int all_ids[] = new int[contact_ids.length + additional_items.length];
         System.arraycopy(additional_items, 0, all_ids, 0, additional_items.length);
