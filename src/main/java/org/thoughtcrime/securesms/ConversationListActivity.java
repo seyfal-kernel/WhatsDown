@@ -123,7 +123,7 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
           // Util.copy(inputStream, new FileOutputStream(outputFile));
           // msg.setFile(outputFile, "image/jpeg");
 
-          msg.setText(getString(R.string.update_1_50_android, "https://raw.githubusercontent.com/ArcaneChat/android/refs/heads/main/CHANGELOG.md"));
+          msg.setText(getString(R.string.update_1_50_android, "https://lemmy.ml/c/ArcaneChat"));
         }
         dcContext.addDeviceMsg(deviceMsgLabel, msg);
 
