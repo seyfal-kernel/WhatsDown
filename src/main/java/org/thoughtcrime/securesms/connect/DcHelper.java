@@ -66,6 +66,7 @@ public class DcHelper {
     public static final String CONFIG_SELF_STATUS = "selfstatus";
     public static final String CONFIG_SELF_AVATAR = "selfavatar";
     public static final String CONFIG_E2EE_ENABLED = "e2ee_enabled";
+    public static final String CONFIG_FORCE_ENCRYPTION = "ui.force_encryption";
     public static final String CONFIG_QR_OVERLAY_LOGO = "qr_overlay_logo";
     public static final String CONFIG_INBOX_WATCH = "inbox_watch";
     public static final String CONFIG_MVBOX_WATCH = "mvbox_watch";

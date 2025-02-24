@@ -137,7 +137,8 @@ public class DcContext {
     public void                setConfigInt         (String key, int value) { setConfig(key, Integer.toString(value)); }
     public native boolean      setConfigFromQr      (String qr);
     public native String       getConfig            (String key);
-    public int                 getConfigInt         (String key) { try{return Integer.parseInt(getConfig(key));} catch(Exception e) {} return 0; }
+    public int                 getConfigInt         (String key) { return getConfigInt(key, 0); }
+    public int                 getConfigInt         (String key, int defValue) { try{return Integer.parseInt(getConfig(key));} catch(Exception e) {} return defValue; }
     public native String       getInfo              ();
     public native int          getConnectivity      ();
     public native String       getConnectivityHtml  ();

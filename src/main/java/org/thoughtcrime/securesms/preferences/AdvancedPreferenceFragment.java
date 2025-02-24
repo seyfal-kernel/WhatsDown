@@ -3,7 +3,7 @@ package org.thoughtcrime.securesms.preferences;
 import static android.app.Activity.RESULT_OK;
 import static android.text.InputType.TYPE_TEXT_VARIATION_URI;
 import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_BCC_SELF;
-import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_E2EE_ENABLED;
+import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_FORCE_ENCRYPTION;
 import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_MVBOX_MOVE;
 import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_ONLY_FETCH_MVBOX;
 import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_SHOW_EMAILS;
@@ -176,7 +176,8 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
     }));
 
     if (dcContext.isChatmail()) {
-      this.findPreference("pref_category_encryption").setVisible(false);
+      this.findPreference("pref_manage_keys").setVisible(false);
+      this.findPreference("pref_send_autocrypt_setup_message").setVisible(false);
       bccSelfCheckbox.setVisible(false);
       mvboxMoveCheckbox.setVisible(false);
       onlyFetchMvboxCheckbox.setVisible(false);
@@ -197,7 +198,7 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
     showEmails.setValue(value);
     updateListSummary(showEmails, value);
 
-    preferE2eeCheckbox.setChecked(0!=dcContext.getConfigInt(CONFIG_E2EE_ENABLED));
+    preferE2eeCheckbox.setChecked(0!=dcContext.getConfigInt(CONFIG_FORCE_ENCRYPTION, 1));
     bccSelfCheckbox.setChecked(0!=dcContext.getConfigInt(CONFIG_BCC_SELF));
     mvboxMoveCheckbox.setChecked(0!=dcContext.getConfigInt(CONFIG_MVBOX_MOVE));
     onlyFetchMvboxCheckbox.setChecked(0!=dcContext.getConfigInt(CONFIG_ONLY_FETCH_MVBOX));
@@ -367,7 +368,7 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
     @Override
     public boolean onPreferenceChange(final Preference preference, Object newValue) {
       boolean enabled = (Boolean) newValue;
-      dcContext.setConfigInt(CONFIG_E2EE_ENABLED, enabled? 1 : 0);
+      dcContext.setConfigInt(CONFIG_FORCE_ENCRYPTION, enabled? 1 : 0);
       return true;
     }
   }
