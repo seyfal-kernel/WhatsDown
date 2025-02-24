@@ -231,12 +231,6 @@ JNIEXPORT jboolean Java_com_b44t_messenger_DcAccounts_backgroundFetch(JNIEnv *en
 }
 
 
-JNIEXPORT jint Java_com_b44t_messenger_DcAccounts_addAccount(JNIEnv *env, jobject obj)
-{
-    return dc_accounts_add_account(get_dc_accounts(env, obj));
-}
-
-
 JNIEXPORT jint Java_com_b44t_messenger_DcAccounts_migrateAccount(JNIEnv *env, jobject obj, jstring dbfile)
 {
     CHAR_REF(dbfile);
@@ -1646,16 +1640,6 @@ JNIEXPORT void Java_com_b44t_messenger_DcMsg_setHtml(JNIEnv *env, jobject obj, j
     CHAR_REF(text);
         dc_msg_set_html(get_dc_msg(env, obj), textPtr);
     CHAR_UNREF(text);
-}
-
-
-JNIEXPORT void Java_com_b44t_messenger_DcMsg_setFile(JNIEnv *env, jobject obj, jstring file, jstring filemime)
-{
-    CHAR_REF(file);
-    CHAR_REF(filemime);
-        dc_msg_set_file(get_dc_msg(env, obj), filePtr, filemimePtr);
-    CHAR_UNREF(filemime);
-    CHAR_UNREF(file);
 }
 
 

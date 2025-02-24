@@ -48,6 +48,8 @@
     <string name="later">Later</string>
     <!-- "Resend" means "Sending the selected message(s) again to the same chat". The string is used in a menu and should be as short as possible. Resending may be needed after failures or to repost old messages to new members. -->
     <string name="resend">Resend</string>
+    <string name="edited">Edited</string>
+    <string name="edit_message">Edit Message</string>
     <!-- Verb "to archive", as in "put a chat in the archive", not a noun "The Archive". -->
     <string name="archive">Archive</string>
     <!-- Verb "to unarchive", as in "remove a chat from the archive", opposite of the previous string -->
@@ -374,11 +376,12 @@
     <!-- get confirmations -->
     <string name="ask_leave_group">Are you sure you want to leave this group?</string>
     <plurals name="ask_delete_chat">
-        <item quantity="one">Delete %d chat? It will no longer be shown in the chat list; its messages will remain on the server.</item>
-        <item quantity="other">Delete %d chats? They will no longer be shown in the chat list; their messages will remain on the server.</item>
+        <item quantity="one">Delete %d chat?</item>
+        <item quantity="other">Delete %d chats?</item>
     </plurals>
-    <string name="ask_delete_named_chat">Delete chat \"%1$s\"? It will no longer be shown in the chat list; its messages will remain on the server.</string>
+    <string name="ask_delete_named_chat">Delete chat \"%1$s\"?</string>
     <string name="ask_delete_message">Are you sure you want to delete this message?</string>
+    <!-- deprecated, use ask_delete_messages_simple -->
     <plurals name="ask_delete_messages">
         <item quantity="one">Delete %d message here and on the server?</item>
         <item quantity="other">Delete %d messages here and on the server?</item>
@@ -759,10 +762,6 @@
     <string name="pref_manage_keys">Manage Keys</string>
     <string name="pref_use_system_emoji">Use System Emoji</string>
     <string name="pref_use_system_emoji_explain">Turn off Delta Chat\'s built-in emoji support</string>
-    <!-- deprecated -->
-    <string name="pref_use_inapp_camera">Use In-App Camera</string>
-    <!-- deprecated -->
-    <string name="pref_use_inapp_camera_explain">In-app camera usually has less features than the system camera</string>
     <string name="pref_show_system_contacts">Read System Address Book</string>
     <string name="pref_show_system_contacts_explain">Offer to create chats with contacts from the address book. Some providers need end-to-end encryption setup first.</string>
     <string name="pref_app_access">App Access</string>
