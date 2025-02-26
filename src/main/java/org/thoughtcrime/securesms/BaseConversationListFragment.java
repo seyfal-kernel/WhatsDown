@@ -15,7 +15,6 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -410,14 +409,28 @@ public abstract class BaseConversationListFragment extends Fragment implements A
 
   @Override
   public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-    switch (item.getItemId()) {
-    case R.id.menu_select_all:       handleSelectAllThreads();   return true;
-    case R.id.menu_delete_selected:  handleDeleteAllSelected();  return true;
-    case R.id.menu_pin_selected:     handlePinAllSelected();     return true;
-    case R.id.menu_archive_selected: handleArchiveAllSelected(); return true;
-    case R.id.menu_mute_selected:    handleMuteAllSelected();    return true;
-    case R.id.menu_marknoticed_selected: handleMarknoticedSelected(); return true;
-    case R.id.menu_add_to_home_screen:  handleAddToHomeScreen(); return true;
+    int itemId = item.getItemId();
+    if (itemId == R.id.menu_select_all) {
+      handleSelectAllThreads();
+      return true;
+    } else if (itemId == R.id.menu_delete_selected) {
+      handleDeleteAllSelected();
+      return true;
+    } else if (itemId == R.id.menu_pin_selected) {
+      handlePinAllSelected();
+      return true;
+    } else if (itemId == R.id.menu_archive_selected) {
+      handleArchiveAllSelected();
+      return true;
+    } else if (itemId == R.id.menu_mute_selected) {
+      handleMuteAllSelected();
+      return true;
+    } else if (itemId == R.id.menu_marknoticed_selected) {
+      handleMarknoticedSelected();
+      return true;
+    } else if (itemId == R.id.menu_add_to_home_screen) {
+      handleAddToHomeScreen();
+      return true;
     }
 
     return false;

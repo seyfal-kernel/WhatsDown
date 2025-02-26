@@ -4,7 +4,6 @@ import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_PROXY_ENABLED;
 import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_PROXY_URL;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,7 +15,6 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.text.util.Linkify;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -158,14 +156,14 @@ public class InstantOnboardingActivity extends BaseActionBarActivity implements 
   public boolean onOptionsItemSelected(@NonNull MenuItem item) {
     super.onOptionsItemSelected(item);
 
-    switch (item.getItemId()) {
-    case android.R.id.home:
+    int itemId = item.getItemId();
+    if (itemId == android.R.id.home) {
       getOnBackPressedDispatcher().onBackPressed();
       return true;
-    case R.id.menu_proxy_settings:
+    } else if (itemId == R.id.menu_proxy_settings) {
       startActivity(new Intent(this, ProxySettingsActivity.class));
       return true;
-    case R.id.menu_view_log:
+    } else if (itemId == R.id.menu_view_log) {
       startActivity(new Intent(this, LogViewActivity.class));
       return true;
     }

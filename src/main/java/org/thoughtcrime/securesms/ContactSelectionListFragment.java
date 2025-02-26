@@ -26,7 +26,6 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.SparseIntArray;
@@ -149,16 +148,16 @@ public class ContactSelectionListFragment extends    Fragment
 
       @Override
       public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-        switch (menuItem.getItemId()) {
-          case R.id.menu_select_all:
-            handleSelectAll();
-            return true;
-          case R.id.menu_view_profile:
-            handleViewProfile();
-            return true;
-          case R.id.menu_delete_selected:
-            handleDeleteSelected();
-            return true;
+        int itemId = menuItem.getItemId();
+        if (itemId == R.id.menu_select_all) {
+          handleSelectAll();
+          return true;
+        } else if (itemId == R.id.menu_view_profile) {
+          handleViewProfile();
+          return true;
+        } else if (itemId == R.id.menu_delete_selected) {
+          handleDeleteSelected();
+          return true;
         }
         return false;
       }

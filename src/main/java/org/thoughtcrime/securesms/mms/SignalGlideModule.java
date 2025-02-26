@@ -2,11 +2,10 @@ package org.thoughtcrime.securesms.mms;
 
 import android.content.Context;
 import android.graphics.drawable.PictureDrawable;
-
-import androidx.annotation.NonNull;
-
 import android.graphics.drawable.Drawable;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
 
 import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.LottieDrawable;

@@ -105,17 +105,16 @@ public class FullMsgActivity extends WebViewActivity
 
   @Override
   public boolean onContextItemSelected(MenuItem item) {
-    switch (item.getItemId()) {
-      case R.id.action_export_image:
-        // TODO: extract image from "data:" link or download URL
-        return true;
-      case R.id.action_copy_link:
-        Util.writeTextToClipboard(this, imageUrl);
-        Toast.makeText(this, getString(R.string.copied_to_clipboard), Toast.LENGTH_SHORT).show();
-        return true;
-      default:
-        return super.onContextItemSelected(item);
+    int itemId = item.getItemId();
+    if (itemId == R.id.action_export_image) {
+      // TODO: extract image from "data:" link or download URL
+      return true;
+    } else if (itemId == R.id.action_copy_link) {
+      Util.writeTextToClipboard(this, imageUrl);
+      Toast.makeText(this, getString(R.string.copied_to_clipboard), Toast.LENGTH_SHORT).show();
+      return true;
     }
+    return super.onContextItemSelected(item);
   }
 
   private static void loadHtmlAsync(final WeakReference<FullMsgActivity> activityReference) {
@@ -157,40 +156,39 @@ public class FullMsgActivity extends WebViewActivity
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     super.onOptionsItemSelected(item);
-    switch (item.getItemId()) {
-      case R.id.load_remote_content:
-        AlertDialog.Builder builder = new AlertDialog.Builder(this)
-          .setTitle(R.string.load_remote_content)
-          .setMessage(R.string.load_remote_content_ask);
+    if (item.getItemId() == R.id.load_remote_content) {
+      AlertDialog.Builder builder = new AlertDialog.Builder(this)
+        .setTitle(R.string.load_remote_content)
+        .setMessage(R.string.load_remote_content_ask);
 
-        // we are using the buttons "[Always]  [Never][Once]" in that order.
-        // 1. Checkmarks before [Always] and [Never] show the current state.
-        // 2. [Once] is also shown in always-mode and disables always-mode if selected
-        //    (there was the idea to hide [Once] in always mode, but that looks more like a bug in the end)
-        // (maybe a usual Always-Checkbox and "[Cancel][OK]" buttons are an alternative, however, a [Once]
-        // would be required as well - probably as the leftmost button which is not that usable in
-        // not-always-mode where the dialog is used more often. Or [Ok] would mean "Once" as well as "Change checkbox setting",
-        // which is also a bit weird. Anyway, let's give the three buttons a try :)
-        final String checkmark = DynamicTheme.getCheckmarkEmoji(this) + " ";
-        String alwaysCheckmark = "";
-        String onceCheckmark = "";
-        String neverCheckmark = "";
-        if (!blockLoadingRemote && Prefs.getAlwaysLoadRemoteContent(this)) {
-          alwaysCheckmark = checkmark;
-        } else if (loadRemoteContent) {
-          onceCheckmark = checkmark;
-        } else {
-          neverCheckmark = checkmark;
-        }
+      // we are using the buttons "[Always]  [Never][Once]" in that order.
+      // 1. Checkmarks before [Always] and [Never] show the current state.
+      // 2. [Once] is also shown in always-mode and disables always-mode if selected
+      //    (there was the idea to hide [Once] in always mode, but that looks more like a bug in the end)
+      // (maybe a usual Always-Checkbox and "[Cancel][OK]" buttons are an alternative, however, a [Once]
+      // would be required as well - probably as the leftmost button which is not that usable in
+      // not-always-mode where the dialog is used more often. Or [Ok] would mean "Once" as well as "Change checkbox setting",
+      // which is also a bit weird. Anyway, let's give the three buttons a try :)
+      final String checkmark = DynamicTheme.getCheckmarkEmoji(this) + " ";
+      String alwaysCheckmark = "";
+      String onceCheckmark = "";
+      String neverCheckmark = "";
+      if (!blockLoadingRemote && Prefs.getAlwaysLoadRemoteContent(this)) {
+        alwaysCheckmark = checkmark;
+      } else if (loadRemoteContent) {
+        onceCheckmark = checkmark;
+      } else {
+        neverCheckmark = checkmark;
+      }
 
-        if (!blockLoadingRemote) {
-          builder.setNeutralButton(alwaysCheckmark + getString(R.string.always), (dialog, which) -> onChangeLoadRemoteContent(LoadRemoteContent.ALWAYS));
-        }
-        builder.setNegativeButton(neverCheckmark + getString(blockLoadingRemote ? R.string.no : R.string.never), (dialog, which) -> onChangeLoadRemoteContent(LoadRemoteContent.NEVER));
-        builder.setPositiveButton(onceCheckmark + getString(R.string.once), (dialog, which) -> onChangeLoadRemoteContent(LoadRemoteContent.ONCE));
+      if (!blockLoadingRemote) {
+        builder.setNeutralButton(alwaysCheckmark + getString(R.string.always), (dialog, which) -> onChangeLoadRemoteContent(LoadRemoteContent.ALWAYS));
+      }
+      builder.setNegativeButton(neverCheckmark + getString(blockLoadingRemote ? R.string.no : R.string.never), (dialog, which) -> onChangeLoadRemoteContent(LoadRemoteContent.NEVER));
+      builder.setPositiveButton(onceCheckmark + getString(R.string.once), (dialog, which) -> onChangeLoadRemoteContent(LoadRemoteContent.ONCE));
 
-        builder.show();
-        return true;
+      builder.show();
+      return true;
     }
     return false;
   }

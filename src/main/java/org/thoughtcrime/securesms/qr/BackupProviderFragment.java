@@ -18,9 +18,8 @@ import androidx.fragment.app.Fragment;
 import com.b44t.messenger.DcBackupProvider;
 import com.b44t.messenger.DcContext;
 import com.b44t.messenger.DcEvent;
-
-import com.caverock.androidsvg.SVGImageView;
 import com.caverock.androidsvg.SVG;
+import com.caverock.androidsvg.SVGImageView;
 import com.caverock.androidsvg.SVGParseException;
 
 import org.thoughtcrime.securesms.R;
@@ -143,14 +142,13 @@ public class BackupProviderFragment extends Fragment implements DcEventCenter.Dc
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
       super.onOptionsItemSelected(item);
 
-      switch (item.getItemId()) {
-        case R.id.copy:
-          if (dcBackupProvider != null) {
-              Util.writeTextToClipboard(getActivity(), dcBackupProvider.getQr());
-              Toast.makeText(getActivity(), getString(R.string.done), Toast.LENGTH_SHORT).show();
-              getTransferActivity().warnAboutCopiedQrCodeOnAbort = true;
-          }
-          return true;
+      if (item.getItemId() == R.id.copy) {
+        if (dcBackupProvider != null) {
+          Util.writeTextToClipboard(getActivity(), dcBackupProvider.getQr());
+          Toast.makeText(getActivity(), getString(R.string.done), Toast.LENGTH_SHORT).show();
+          getTransferActivity().warnAboutCopiedQrCodeOnAbort = true;
+        }
+        return true;
       }
 
       return false;

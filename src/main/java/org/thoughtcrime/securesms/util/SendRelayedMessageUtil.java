@@ -1,5 +1,15 @@
 package org.thoughtcrime.securesms.util;
 
+import static org.thoughtcrime.securesms.util.RelayUtil.getForwardedMessageIDs;
+import static org.thoughtcrime.securesms.util.RelayUtil.getSharedText;
+import static org.thoughtcrime.securesms.util.RelayUtil.getSharedSubject;
+import static org.thoughtcrime.securesms.util.RelayUtil.getSharedHtml;
+import static org.thoughtcrime.securesms.util.RelayUtil.getSharedType;
+import static org.thoughtcrime.securesms.util.RelayUtil.getSharedUris;
+import static org.thoughtcrime.securesms.util.RelayUtil.isForwarding;
+import static org.thoughtcrime.securesms.util.RelayUtil.isSharing;
+import static org.thoughtcrime.securesms.util.RelayUtil.resetRelayingMessageContent;
+
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -22,16 +32,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.util.ArrayList;
-
-import static org.thoughtcrime.securesms.util.RelayUtil.getForwardedMessageIDs;
-import static org.thoughtcrime.securesms.util.RelayUtil.getSharedText;
-import static org.thoughtcrime.securesms.util.RelayUtil.getSharedSubject;
-import static org.thoughtcrime.securesms.util.RelayUtil.getSharedHtml;
-import static org.thoughtcrime.securesms.util.RelayUtil.getSharedType;
-import static org.thoughtcrime.securesms.util.RelayUtil.getSharedUris;
-import static org.thoughtcrime.securesms.util.RelayUtil.isForwarding;
-import static org.thoughtcrime.securesms.util.RelayUtil.isSharing;
-import static org.thoughtcrime.securesms.util.RelayUtil.resetRelayingMessageContent;
 
 public class SendRelayedMessageUtil {
   private static final String TAG = SendRelayedMessageUtil.class.getSimpleName();

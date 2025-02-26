@@ -16,9 +16,9 @@
  */
 package org.thoughtcrime.securesms;
 
-import android.app.Activity;
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -43,7 +43,6 @@ import androidx.loader.content.Loader;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.b44t.messenger.DcChat;
 import com.b44t.messenger.DcContext;
 import com.b44t.messenger.DcMediaGalleryElement;
 import com.b44t.messenger.DcMsg;
@@ -390,14 +389,28 @@ public class MediaPreviewActivity extends PassphraseRequiredActionBarActivity
   public boolean onOptionsItemSelected(MenuItem item) {
     super.onOptionsItemSelected(item);
 
-    switch (item.getItemId()) {
-      case R.id.media_preview__edit:     editAvatar();   return true;
-      case R.id.media_preview__overview: showOverview(); return true;
-      case R.id.media_preview__share:    share();        return true;
-      case R.id.save:                    saveToDisk();   return true;
-      case R.id.delete:                  deleteMedia();  return true;
-      case R.id.show_in_chat:            showInChat();   return true;
-      case android.R.id.home:            finish();       return true;
+    int itemId = item.getItemId();
+    if (itemId == R.id.media_preview__edit) {
+      editAvatar();
+      return true;
+    } else if (itemId == R.id.media_preview__overview) {
+      showOverview();
+      return true;
+    } else if (itemId == R.id.media_preview__share) {
+      share();
+      return true;
+    } else if (itemId == R.id.save) {
+      saveToDisk();
+      return true;
+    } else if (itemId == R.id.delete) {
+      deleteMedia();
+      return true;
+    } else if (itemId == R.id.show_in_chat) {
+      showInChat();
+      return true;
+    } else if (itemId == android.R.id.home) {
+      finish();
+      return true;
     }
 
     return false;

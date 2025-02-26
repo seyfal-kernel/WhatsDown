@@ -1,5 +1,10 @@
 package org.thoughtcrime.securesms.util;
 
+import static org.thoughtcrime.securesms.ConversationActivity.TEXT_EXTRA;
+import static org.thoughtcrime.securesms.ConversationActivity.MSG_SUBJECT_EXTRA;
+import static org.thoughtcrime.securesms.ConversationActivity.MSG_TYPE_EXTRA;
+import static org.thoughtcrime.securesms.ConversationActivity.MSG_HTML_EXTRA;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -7,11 +12,6 @@ import android.net.Uri;
 import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
-
-import static org.thoughtcrime.securesms.ConversationActivity.TEXT_EXTRA;
-import static org.thoughtcrime.securesms.ConversationActivity.MSG_SUBJECT_EXTRA;
-import static org.thoughtcrime.securesms.ConversationActivity.MSG_TYPE_EXTRA;
-import static org.thoughtcrime.securesms.ConversationActivity.MSG_HTML_EXTRA;
 
 public class RelayUtil {
     private static final String FORWARDED_MESSAGE_IDS   = "forwarded_message_ids";

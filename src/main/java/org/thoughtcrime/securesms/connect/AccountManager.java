@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.preference.PreferenceManager;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentActivity;
@@ -22,8 +21,6 @@ import org.thoughtcrime.securesms.ConversationListActivity;
 import org.thoughtcrime.securesms.InstantOnboardingActivity;
 import org.thoughtcrime.securesms.WelcomeActivity;
 import org.thoughtcrime.securesms.accounts.AccountSelectionListFragment;
-import org.thoughtcrime.securesms.crypto.DatabaseSecret;
-import org.thoughtcrime.securesms.crypto.DatabaseSecretProvider;
 import org.thoughtcrime.securesms.providers.PersistentBlobProvider;
 
 import java.io.File;
