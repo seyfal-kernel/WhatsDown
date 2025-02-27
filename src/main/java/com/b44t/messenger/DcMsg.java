@@ -170,6 +170,7 @@ public class DcMsg {
     public native String  getError           ();
     public native String  getOverrideSenderName();
     public native int     getSenderColor();
+    public native boolean isEdited           ();
 
     public String getSenderName(DcContact dcContact) {
         String overrideName = getOverrideSenderName();

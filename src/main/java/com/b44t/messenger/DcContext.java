@@ -51,8 +51,8 @@ public class DcContext {
     public final static int DC_QR_FPR_MISMATCH      = 220;
     public final static int DC_QR_FPR_WITHOUT_ADDR  = 230;
     public final static int DC_QR_ACCOUNT           = 250;
-    public final static int DC_QR_BACKUP            = 251;
     public final static int DC_QR_BACKUP2           = 252;
+    public final static int DC_QR_BACKUP_TOO_NEW    = 255;
     public final static int DC_QR_WEBRTC            = 260;
     public final static int DC_QR_PROXY             = 271;
     public final static int DC_QR_ADDR              = 320;
@@ -188,6 +188,7 @@ public class DcContext {
     public native void         blockChat            (int chat_id);
     public native void         acceptChat           (int chat_id);
     public DcMsg               getMsg               (int msg_id) { return new DcMsg(getMsgCPtr(msg_id)); }
+    public native void         sendEditRequest      (int msg_id, String text);
     public native String       getMsgInfo           (int id);
     public native String       getMsgHtml           (int msg_id);
     public native void         downloadFullMsg      (int msg_id);

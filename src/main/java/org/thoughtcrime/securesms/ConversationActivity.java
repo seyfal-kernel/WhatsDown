@@ -195,6 +195,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
   private boolean    isDefaultSms             = true;
   private boolean    isSecurityInitialized    = false;
   private boolean successfulForwardingAttempt = false;
+  private boolean isEditing = false;
 
   @Override
   protected void onCreate(Bundle state, boolean ready) {
@@ -728,6 +729,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
    * @return
    */
   private ListenableFuture<Boolean> initializeDraft() {
+    isEditing = false;
     final SettableFuture<Boolean> future = new SettableFuture<>();
     DcMsg draft = dcContext.getDraft(chatId);
     final String sharedText = RelayUtil.getSharedText(this);
@@ -1013,12 +1015,25 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     DcMsg msg = null;
     Optional<QuoteModel> quote = inputPanel.getQuote();
     Integer recompress = 0;
+    boolean editing = isEditing;
 
     // for a quick ui feedback, we clear the related controls immediately on sending messages.
     // for drafts, however, we do not change the controls, the activity may be resumed.
     if (action==ACTION_SEND_OUT) {
       composeText.setText("");
       inputPanel.clearQuote();
+    }
+
+    if (editing) {
+      int msgId = quote.get().getQuotedMsg().getId();
+      Util.runOnAnyBackgroundThread(() -> {
+        if (action == ACTION_SEND_OUT) {
+          dcContext.sendEditRequest(msgId, body);
+        } else {
+          dcContext.setDraft(chatId, null);
+        }
+      });
+      return future;
     }
 
     if(slideDeck!=null) {
@@ -1159,7 +1174,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
       return;
     }
 
-    if (composeText.getText().length() == 0 && !attachmentManager.isAttachmentPresent()) {
+    if (!isEditing && composeText.getText().length() == 0 && !attachmentManager.isAttachmentPresent()) {
       buttonToggle.display(attachButton);
       quickAttachmentToggle.show();
     } else {
@@ -1277,9 +1292,16 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     }
   }
 
+  @Override
+  public void onQuoteDismissed() {
+    if (isEditing) composeText.setText("");
+    isEditing = false;
+  }
+
   // media selected by the system keyboard
   @Override
   public void onMediaSelected(@NonNull Uri uri, String contentType) {
+    if (isEditing) return;
     if (MediaUtil.isImageType(contentType)) {
       sendSticker(uri, contentType);
     } else if (MediaUtil.isVideoType(contentType)) {
@@ -1411,6 +1433,8 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
 
   @Override
   public void handleReplyMessage(DcMsg msg) {
+    if (isEditing) composeText.setText("");
+    isEditing = false;
     // If you modify these lines you may also want to modify ConversationItem.setQuote():
     Recipient author = new Recipient(this, dcContext.getContact(msg.getFromId()));
 
@@ -1426,8 +1450,29 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
             msg.getTimestamp(),
             author,
             text,
-            slideDeck);
+            slideDeck,
+            false);
 
+    inputPanel.clickOnComposeInput();
+  }
+
+  @Override
+  public void handleEditMessage(DcMsg msg) {
+    isEditing = true;
+    Recipient author = new Recipient(this, dcContext.getContact(msg.getFromId()));
+
+    SlideDeck slideDeck = new SlideDeck();
+    String text = msg.getSummarytext(500);
+
+    inputPanel.setQuote(GlideApp.with(this),
+            msg,
+            msg.getTimestamp(),
+            author,
+            text,
+            slideDeck,
+            true);
+
+    setDraftText(msg.getText());
     inputPanel.clickOnComposeInput();
   }
 
