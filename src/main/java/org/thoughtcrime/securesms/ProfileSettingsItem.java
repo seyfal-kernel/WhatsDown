@@ -31,9 +31,8 @@ public class ProfileSettingsItem extends LinearLayout {
     labelView.setText(label==null? "" : label);
     labelView.setCompoundDrawablesWithIntrinsicBounds(iconLeft, 0,0,0);
 
-    // we need different color getters as `labelColor` is `R.color.name` while default is `R.attr.name`
     if (labelColor != 0) {
-      labelView.setTextColor(ContextCompat.getColor(getContext(), labelColor));
+      labelView.setTextColor(labelColor);
     } else {
       labelView.setTextColor(ResUtil.getColor(getContext(), R.attr.emoji_text_color));
     }

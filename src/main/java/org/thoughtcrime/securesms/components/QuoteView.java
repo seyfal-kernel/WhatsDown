@@ -36,6 +36,7 @@ import org.thoughtcrime.securesms.recipients.Recipient;
 import org.thoughtcrime.securesms.recipients.RecipientForeverObserver;
 import org.thoughtcrime.securesms.util.MarkdownUtil;
 import org.thoughtcrime.securesms.util.MediaUtil;
+import org.thoughtcrime.securesms.util.ResUtil;
 import org.thoughtcrime.securesms.util.ThemeUtil;
 import org.thoughtcrime.securesms.util.Util;
 
@@ -285,6 +286,6 @@ public class QuoteView extends FrameLayout implements RecipientForeverObserver {
   }
 
   private int getEditColor() {
-    return getResources().getColor(R.color.delta_accent);
+    return ResUtil.getColor(getContext(), R.attr.colorAccent);
   }
 }
