@@ -88,10 +88,11 @@ public class AttachmentTypeSelector extends PopupWindow {
     this.webxdcButton.setOnClickListener(new PropagatingClickListener(ADD_WEBXDC));
     this.recentRail.setListener(new RecentPhotoSelectedListener());
 
-    if (!Prefs.isLocationStreamingEnabled(context)) {
+    // disable location streaming button for now
+    //if (!Prefs.isLocationStreamingEnabled(context)) {
       this.locationButton.setVisibility(View.GONE);
       ViewUtil.findById(layout, R.id.location_button_label).setVisibility(View.GONE);
-    }
+    //}
 
     if (!DcHelper.isWebrtcConfigOk(DcHelper.getContext(context))) {
       this.videoChatButton.setVisibility(View.GONE);
