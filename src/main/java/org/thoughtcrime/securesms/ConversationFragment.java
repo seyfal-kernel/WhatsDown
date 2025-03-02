@@ -324,7 +324,7 @@ public class ConversationFragment extends MessageSelectorFragment
         if (messageRecords.size() > 1) {
             menu.findItem(R.id.menu_context_details).setVisible(false);
             menu.findItem(R.id.menu_context_share).setVisible(false);
-            menu.findItem(R.id.menu_context_reply).setVisible(false);
+            //menu.findItem(R.id.menu_context_reply).setVisible(false);
             menu.findItem(R.id.menu_context_edit).setVisible(false);
             menu.findItem(R.id.menu_context_reply_privately).setVisible(false);
             menu.findItem(R.id.menu_add_to_home_screen).setVisible(false);
@@ -334,7 +334,7 @@ public class ConversationFragment extends MessageSelectorFragment
             menu.findItem(R.id.menu_context_details).setVisible(true);
             menu.findItem(R.id.menu_context_share).setVisible(messageRecord.hasFile());
             boolean canReply = canReplyToMsg(messageRecord);
-            menu.findItem(R.id.menu_context_reply).setVisible(chat.canSend() && canReply);
+            //menu.findItem(R.id.menu_context_reply).setVisible(chat.canSend() && canReply);
             boolean canEdit = canEditMsg(messageRecord);
             menu.findItem(R.id.menu_context_edit).setVisible(chat.canSend() && canEdit);
             boolean showReplyPrivately = !dcContext.isCommunity() && chat.isMultiUser() && !messageRecord.isOutgoing() && canReply;
@@ -995,10 +995,10 @@ public class ConversationFragment extends MessageSelectorFragment
           } else if (itemId == R.id.menu_context_save_attachment) {
             handleSaveAttachment(getListAdapter().getSelectedItems());
             return true;
-          } else if (itemId == R.id.menu_context_reply) {
-            handleReplyMessage(getSelectedMessageRecord(getListAdapter().getSelectedItems()));
-            actionMode.finish();
-            return true;
+          // } else if (itemId == R.id.menu_context_reply) {
+          //   handleReplyMessage(getSelectedMessageRecord(getListAdapter().getSelectedItems()));
+          //   actionMode.finish();
+          //   return true;
           } else if (itemId == R.id.menu_context_edit) {
             handleEditMessage(getSelectedMessageRecord(getListAdapter().getSelectedItems()));
             actionMode.finish();

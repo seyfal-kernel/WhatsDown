@@ -20,6 +20,11 @@
         android:icon="?menu_forward_icon"
         app:showAsAction="ifRoom" />
 
+  <item android:title="@string/delete"
+        android:id="@+id/menu_context_delete_message"
+        android:icon="?menu_trash_icon"
+        app:showAsAction="ifRoom" />
+
   <item android:title="@string/add_to_home_screen"
         android:id="@+id/menu_add_to_home_screen"
         android:visible="false"
@@ -34,9 +39,9 @@
         android:id="@+id/menu_context_details"
         app:showAsAction="never" />
 
-  <item android:title="@string/notify_reply_button"
-        android:id="@+id/menu_context_reply"
-        app:showAsAction="never" />
+  <!-- <item android:title="@string/notify_reply_button" -->
+  <!--       android:id="@+id/menu_context_reply" -->
+  <!--       app:showAsAction="never" /> -->
 
   <item android:title="@string/reply_privately"
         android:id="@+id/menu_context_reply_privately"
@@ -44,11 +49,6 @@
 
   <item android:title="@string/resend"
         android:id="@+id/menu_resend"
-        app:showAsAction="never" />
-
-  <item android:title="@string/delete"
-        android:id="@+id/menu_context_delete_message"
-        android:icon="?menu_trash_icon"
         app:showAsAction="never" />
 
   <!-- The `showAsAction` behaviors are managed by
