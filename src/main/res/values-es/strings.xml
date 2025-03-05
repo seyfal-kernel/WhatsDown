@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <!-- ArcaneChat strings -->
   <string name="community">Comunidad</string>
   <string name="description">Descripción</string>
   <string name="ask_join_community">¿Quieres unirte a la comunidad \"%1$s\"?</string>
   <string name="community_set_name_explain">Establece un nombre que otros puedan reconocer.</string>
+  <string name="or_separator">o</string>
+  <string name="online">en línea</string>
+  <string name="pink">Rosa</string>
+  <string name="gray">Gris</string>
+  <string name="share_location_for_12_hours">Por 12 horas</string>
+  <string name="super_group">Súper Grupo</string>
+  <string name="channel">Canal</string>
+  <string name="public_bots">🤖 Bots Públicos</string>
+  <!-- End of ArcaneChat strings -->
+
     <!-- common strings without special context -->
     <string name="app_name">Delta Chat</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancelar</string>
-  <string name="or_separator">o</string>
     <string name="clear_search">Borrar búsqueda</string>
     <!-- a noun, used on a button, short for "show link" -->
     <string name="link">Enlace</string>
@@ -112,7 +122,6 @@
     <!-- Refers to the time a contact was last seen. Shown below contact name in the profile. The placeholder will be replaced by a relative point in time as "3 minutes ago" (see https://momentjs.com for more examples and languages)-->
     <string name="last_seen_relative">últ. vez: %1$s</string>
     <string name="last_seen_unknown">últ. vez: Desconocido</string>
-    <string name="online">en línea</string>
     <!-- Shown beside messages that are "N minutes old". Prefer short strings, or well-known abbreviations. -->
     <plurals name="n_minutes">
         <item quantity="one">%d min</item>
@@ -219,8 +228,6 @@
     <string name="purple">Púrpura</string>
     <string name="magenta">Magenta</string>
     <string name="white">Blanco</string>
-    <string name="pink">Rosa</string>
-    <string name="gray">Gris</string>
 
     <string name="zoom">Zoom</string>
     <string name="extra_small">Muy pequeño</string>
@@ -352,7 +359,6 @@
     <string name="share_location_for_one_hour">Por 1 hora</string>
     <string name="share_location_for_two_hours">Por 2 horas</string>
     <string name="share_location_for_six_hours">Por 6 horas</string>
-    <string name="share_location_for_12_hours">Por 12 horas</string>
 
     <plurals name="ask_send_following_n_files_to">
         <item quantity="one">¿Enviar el  archivo a %s?</item>
@@ -462,12 +468,7 @@
 
     <!-- mailing lists -->
     <string name="mailing_list">Lista de correo</string>
-    <string name="super_group">Súper Grupo</string>
-    <string name="channel">Canal</string>
     <string name="mailing_list_profile_info">Los cambios en el nombre y la imagen de la lista de correo solo se aplican a este dispositivo.</string>
-
-    <!-- extra services -->
-    <string name="public_bots">🤖 Bots Públicos</string>
 
     <!-- webxdc -->
     <!-- "Start..." button for an app -->
@@ -519,8 +520,6 @@
     <string name="group_create_button">Crear grupo</string>
     <string name="group_please_enter_group_name">Por favor introduzca un nombre para el grupo.</string>
     <string name="group_add_members">Añadir miembros</string>
-    <string name="group_add_member">Añadir miembro</string>
-    <string name="group_remove_member">Eliminar miembro</string>
     <string name="group_self_not_in_group">Debes ser un miembro del grupo para realizar esta acción.</string>
     <string name="profile_encryption">Cifrado</string>
     <string name="profile_shared_chats">Chats compartidos</string>
@@ -882,7 +881,7 @@
     <string name="autocrypt_send_asm_explain_before">Un \"Mensaje de Configuración de Autocrypt\" comparte de forma segura su configuración de extremo a extremo con otras aplicaciones compatibles con Autocrypt.\n\nLa configuración se cifrará mediante un código de configuración que se muestra aquí y debe escribirse en el otro dispositivo.</string>
     <string name="autocrypt_send_asm_button">Enviar Mensaje de Configuración de Autocrypt</string>
     <string name="autocrypt_send_asm_explain_after">Se le ha enviado su configuración. Cambie al otro dispositivo y abra el mensaje de configuración. Se le debe solicitar un código de configuración. Escriba los siguientes dígitos:.\n\nUna vez que haya terminado, su otro dispositivo estará listo para usar Autocrypt.</string>
-    <string name="autocrypt_prefer_e2ee">Preferir el cifrado de extremo a extremo</string>
+    <string name="autocrypt_prefer_e2ee">Forzar el cifrado de extremo a extremo</string>
     <string name="autocrypt_asm_subject">Mensaje de Configuración de Autocrypt</string>
     <string name="autocrypt_asm_general_body">Este es el Mensaje de Configuración de Autocrypt utilizado para transferir su configuración de extremo a extremo entre clientes.\n\nPara descifrar y usar su configuración, abra el mensaje en un cliente compatible con Autocrypt e ingrese el código de configuración presentado en el dispositivo que lo generó.</string>
     <string name="autocrypt_asm_click_body">Este es el Mensaje de Configuración de Autocrypt utilizado para transferir su configuración de extremo a extremo entre clientes.\n\nPara descifrar y usar su configuración, toque o haga clic en este mensaje.</string>
