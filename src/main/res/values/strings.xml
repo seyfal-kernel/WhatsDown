@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <!-- ArcaneChat strings -->
+  <!-- custom strings -->
   <string name="community">Community</string>
   <string name="description">Description</string>
   <string name="ask_join_community">Do you want to join the Community \"%1$s\"?</string>
@@ -16,7 +16,7 @@
   <string name="channel">Channel</string>
   <string name="public_bots">🤖 Public Bots</string>
   <string name="share_location_for_12_hours">For 12 hours</string>
-  <!-- End of ArcaneChat strings -->
+  <!-- End of custom strings -->
 
     <!-- common strings without special context -->
     <string name="app_name">ArcaneChat</string>

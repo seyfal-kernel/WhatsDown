@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <!-- ArcaneChat strings -->
+  <!-- custom strings -->
   <string name="community">Comunidad</string>
   <string name="description">Descripción</string>
   <string name="ask_join_community">¿Quieres unirte a la comunidad \"%1$s\"?</string>
@@ -13,7 +13,7 @@
   <string name="super_group">Súper Grupo</string>
   <string name="channel">Canal</string>
   <string name="public_bots">🤖 Bots Públicos</string>
-  <!-- End of ArcaneChat strings -->
+  <!-- End of custom strings -->
 
     <!-- common strings without special context -->
     <string name="app_name">Delta Chat</string>
