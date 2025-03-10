@@ -1,4 +1,4 @@
-# ArcaneChat Android Changelog
+# Delta Chat Android Changelog
 
 ## v1.54.3
 2025-03
