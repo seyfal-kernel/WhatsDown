@@ -13,6 +13,8 @@
   <string name="super_group">Súper Grupo</string>
   <string name="channel">Canal</string>
   <string name="public_bots">🤖 Bots Públicos</string>
+  <string name="force_e2ee">Forzar el cifrado de extremo a extremo</string>
+  <string name="disable_force_e2ee_warning">⚠️ Si desactivas esta opción, no estarás protegido contra el envío accidental de mensajes no cifrados. Desactiva esta opción únicamente si quieres enviar correos electrónicos no cifrados con tu cuenta de correo electrónico clásica.</string>
   <!-- End of custom strings -->
 
     <!-- common strings without special context -->
@@ -905,7 +907,7 @@
     <string name="autocrypt_send_asm_explain_before">Un \"Mensaje de Configuración de Autocrypt\" comparte de forma segura su configuración de extremo a extremo con otras aplicaciones compatibles con Autocrypt.\n\nLa configuración se cifrará mediante un código de configuración que se muestra aquí y debe escribirse en el otro dispositivo.</string>
     <string name="autocrypt_send_asm_button">Enviar Mensaje de Configuración de Autocrypt</string>
     <string name="autocrypt_send_asm_explain_after">Se le ha enviado su configuración. Cambie al otro dispositivo y abra el mensaje de configuración. Se le debe solicitar un código de configuración. Escriba los siguientes dígitos:.\n\nUna vez que haya terminado, su otro dispositivo estará listo para usar Autocrypt.</string>
-    <string name="autocrypt_prefer_e2ee">Forzar el cifrado de extremo a extremo</string>
+    <string name="autocrypt_prefer_e2ee">Preferir el cifrado de extremo a extremo</string>
     <string name="autocrypt_asm_subject">Mensaje de Configuración de Autocrypt</string>
     <string name="autocrypt_asm_general_body">Este es el Mensaje de Configuración de Autocrypt utilizado para transferir su configuración de extremo a extremo entre clientes.\n\nPara descifrar y usar su configuración, abra el mensaje en un cliente compatible con Autocrypt e ingrese el código de configuración presentado en el dispositivo que lo generó.</string>
     <string name="autocrypt_asm_click_body">Este es el Mensaje de Configuración de Autocrypt utilizado para transferir su configuración de extremo a extremo entre clientes.\n\nPara descifrar y usar su configuración, toque o haga clic en este mensaje.</string>

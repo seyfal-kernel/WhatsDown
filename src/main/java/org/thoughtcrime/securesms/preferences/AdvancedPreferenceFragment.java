@@ -401,9 +401,21 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
   private class PreferE2eeListener implements Preference.OnPreferenceChangeListener {
     @Override
     public boolean onPreferenceChange(@NonNull final Preference preference, Object newValue) {
-      boolean enabled = (Boolean) newValue;
-      dcContext.setConfigInt(CONFIG_FORCE_ENCRYPTION, enabled? 1 : 0);
-      return true;
+      final boolean enabled = (Boolean) newValue;
+      if (enabled) {
+        dcContext.setConfigInt(CONFIG_FORCE_ENCRYPTION, 1);
+        return true;
+      } else {
+        new AlertDialog.Builder(requireContext())
+          .setMessage(R.string.disable_force_e2ee_warning)
+          .setPositiveButton(R.string.ok, (dialogInterface, i) -> {
+            dcContext.setConfigInt(CONFIG_FORCE_ENCRYPTION, 0);
+            ((CheckBoxPreference)preference).setChecked(false);
+          })
+          .setNegativeButton(R.string.cancel, null)
+          .show();
+        return false;
+      }
     }
   }
 

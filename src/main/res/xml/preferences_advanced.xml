@@ -45,7 +45,7 @@
         <org.thoughtcrime.securesms.components.SwitchPreferenceCompat
             android:defaultValue="true"
             android:key="pref_prefer_e2ee"
-            android:title="@string/autocrypt_prefer_e2ee"/>
+            android:title="@string/force_e2ee"/>
 
 
         <Preference android:key="pref_manage_keys"

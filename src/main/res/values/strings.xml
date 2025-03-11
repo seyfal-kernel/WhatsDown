@@ -16,6 +16,8 @@
   <string name="channel">Channel</string>
   <string name="public_bots">🤖 Public Bots</string>
   <string name="share_location_for_12_hours">For 12 hours</string>
+  <string name="force_e2ee">Force End-To-End Encryption</string>
+  <string name="disable_force_e2ee_warning">⚠️ If you disable this option, you will not be protected against sending unencrypted messages by accident. Only disable this if you want to send unencrypted e-mails with your classic e-mail account.</string>
   <!-- End of custom strings -->
 
     <!-- common strings without special context -->
@@ -892,7 +894,7 @@
     <string name="autocrypt_send_asm_explain_before">An Autocrypt Setup Message securely shares your end-to-end setup with other Autocrypt-compliant apps.\n\nThe setup will be encrypted by a setup code displayed here and must be typed on the other device.</string>
     <string name="autocrypt_send_asm_button">Send Autocrypt Setup Message</string>
     <string name="autocrypt_send_asm_explain_after">Your setup has been sent to yourself. Switch to the other device and open the setup message. You should be asked for a setup code. Enter the following digits:</string>
-    <string name="autocrypt_prefer_e2ee">Force End-To-End Encryption</string>
+    <string name="autocrypt_prefer_e2ee">Prefer End-To-End Encryption</string>
     <string name="autocrypt_asm_subject">Autocrypt Setup Message</string>
     <string name="autocrypt_asm_general_body">This is the Autocrypt Setup Message used to transfer your end-to-end setup between clients.\n\nTo decrypt and use your setup, open the message in an Autocrypt-compliant client and enter the setup code presented on the generating device.</string>
     <string name="autocrypt_asm_click_body">This is the Autocrypt Setup Message used to transfer your end-to-end setup between clients.\n\nTo decrypt and use your setup, tap or click on this message.</string>
