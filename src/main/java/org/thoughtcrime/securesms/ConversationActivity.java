@@ -1118,7 +1118,7 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
             doSend = VideoRecoder.prepareVideo(ConversationActivity.this, dcChat.getId(), msg);
             Util.runOnMain(() -> {
               try {
-                progressDialog.dismiss();
+                if (progressDialog != null) progressDialog.dismiss();
               } catch (final IllegalArgumentException e) {
                 // The activity is finishing/destroyed, do nothing.
               }

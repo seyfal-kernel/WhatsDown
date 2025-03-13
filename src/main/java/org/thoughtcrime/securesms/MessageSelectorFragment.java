@@ -66,7 +66,7 @@ public abstract class MessageSelectorFragment
     if (dcChat.canSend() && !dcChat.isSelfTalk()) {
       for(int msgId : messageIds) {
         DcMsg msg = dcContext.getMsg(msgId);
-        if (!msg.isOutgoing()) {
+        if (!msg.isOutgoing() || msg.isInfo()) {
           canDeleteForAll = false;
           break;
         }
@@ -75,7 +75,9 @@ public abstract class MessageSelectorFragment
       canDeleteForAll = false;
     }
 
-    String text = requireActivity().getResources().getQuantityString(R.plurals.ask_delete_messages, messageIds.length, messageIds.length);
+    String text = getActivity().getResources().getQuantityString(
+      dcChat.isDeviceTalk() ? R.plurals.ask_delete_messages_simple : R.plurals.ask_delete_messages,
+      messageIds.length, messageIds.length);
     int positiveBtnLabel = dcChat.isSelfTalk() ? R.string.delete : R.string.delete_for_me;
 
     AlertDialog.Builder builder = new AlertDialog.Builder(requireActivity())

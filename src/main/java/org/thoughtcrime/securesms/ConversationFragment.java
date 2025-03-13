@@ -321,6 +321,8 @@ public class ConversationFragment extends MessageSelectorFragment
             return;
         }
 
+        menu.findItem(R.id.menu_toggle_save).setVisible(false);
+
         if (messageRecords.size() > 1) {
             menu.findItem(R.id.menu_context_details).setVisible(false);
             menu.findItem(R.id.menu_context_share).setVisible(false);
@@ -328,6 +330,7 @@ public class ConversationFragment extends MessageSelectorFragment
             menu.findItem(R.id.menu_context_edit).setVisible(false);
             menu.findItem(R.id.menu_context_reply_privately).setVisible(false);
             menu.findItem(R.id.menu_add_to_home_screen).setVisible(false);
+            //menu.findItem(R.id.menu_toggle_save).setVisible(false);
         } else {
             DcMsg messageRecord = messageRecords.iterator().next();
             DcChat chat = getListAdapter().getChat();
@@ -340,6 +343,14 @@ public class ConversationFragment extends MessageSelectorFragment
             boolean showReplyPrivately = !dcContext.isCommunity() && chat.isMultiUser() && !messageRecord.isOutgoing() && canReply;
             menu.findItem(R.id.menu_context_reply_privately).setVisible(showReplyPrivately);
             menu.findItem(R.id.menu_add_to_home_screen).setVisible(messageRecord.getType() == DcMsg.DC_MSG_WEBXDC);
+
+            /*
+            boolean saved = messageRecord.getSavedMsgId() != 0;
+            MenuItem toggleSave = menu.findItem(R.id.menu_toggle_save);
+            toggleSave.setVisible(messageRecord.canSave() && !chat.isSelfTalk());
+            toggleSave.setIcon(saved? R.drawable.baseline_bookmark_remove_24 : R.drawable.baseline_bookmark_border_24);
+            toggleSave.setTitle(saved? R.string.unsave : R.string.save);
+            */
         }
 
         // if one of the selected items cannot be saved, disable saving.
@@ -508,6 +519,15 @@ public class ConversationFragment extends MessageSelectorFragment
             getActivity().startActivity(intent);
         } else {
             Log.e(TAG, "Activity was null");
+        }
+    }
+
+    private void handleToggleSave(final Set<DcMsg> messageRecords) {
+        DcMsg msg = getSelectedMessageRecord(messageRecords);
+        if (msg.getSavedMsgId() != 0) {
+          dcContext.deleteMsgs(new int[]{msg.getSavedMsgId()});
+        } else {
+          dcContext.saveMsgs(new int[]{msg.getId()});
         }
     }
 
@@ -1009,9 +1029,12 @@ public class ConversationFragment extends MessageSelectorFragment
           } else if (itemId == R.id.menu_resend) {
             handleResendMessage(getListAdapter().getSelectedItems());
             return true;
+          } else if (itemId == R.id.menu_toggle_save) {
+            handleToggleSave(getListAdapter().getSelectedItems());
+            actionMode.finish();
+            return true;
           }
-
-            return false;
+          return false;
         }
     }
 
