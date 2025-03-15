@@ -391,7 +391,7 @@ public class ConversationItem extends BaseConversationItem
   }
 
   private boolean hasDocument(DcMsg dcMsg) {
-    return dcMsg.getType()==DcMsg.DC_MSG_FILE && !dcMsg.isSetupMessage();
+    return dcMsg.getType()==DcMsg.DC_MSG_FILE;
   }
 
   private void setBodyText(DcMsg messageRecord) {
@@ -400,11 +400,7 @@ public class ConversationItem extends BaseConversationItem
 
     String text = messageRecord.getText();
 
-    if (messageRecord.isSetupMessage()) {
-      bodyText.setText(context.getString(R.string.autocrypt_asm_click_body));
-      bodyText.setVisibility(View.VISIBLE);
-    }
-    else if (text.isEmpty()) {
+    if (text.isEmpty()) {
       bodyText.setVisibility(View.GONE);
     }
     else {

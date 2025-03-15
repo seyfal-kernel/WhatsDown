@@ -10,13 +10,11 @@ import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_SHOW_EMAILS;
 import static org.thoughtcrime.securesms.connect.DcHelper.CONFIG_WEBXDC_REALTIME_ENABLED;
 import static org.thoughtcrime.securesms.connect.DcHelper.getRpc;
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,7 +28,6 @@ import androidx.preference.CheckBoxPreference;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 
-import com.b44t.messenger.DcContext;
 import com.b44t.messenger.rpc.RpcException;
 
 import org.thoughtcrime.securesms.ApplicationPreferencesActivity;
@@ -40,12 +37,9 @@ import org.thoughtcrime.securesms.R;
 import org.thoughtcrime.securesms.RegistrationActivity;
 import org.thoughtcrime.securesms.connect.DcEventCenter;
 import org.thoughtcrime.securesms.connect.DcHelper;
-import org.thoughtcrime.securesms.mms.AttachmentManager;
-import org.thoughtcrime.securesms.permissions.Permissions;
 import org.thoughtcrime.securesms.proxy.ProxySettingsActivity;
 import org.thoughtcrime.securesms.util.Prefs;
 import org.thoughtcrime.securesms.util.ScreenLockUtil;
-import org.thoughtcrime.securesms.util.StorageUtil;
 import org.thoughtcrime.securesms.util.StreamUtil;
 import org.thoughtcrime.securesms.util.Util;
 
@@ -61,10 +55,9 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
                                         implements DcEventCenter.DcEventDelegate
 {
   private static final String TAG = AdvancedPreferenceFragment.class.getSimpleName();
-  public static final int PICK_SELF_KEYS = 29923;
 
   private ListPreference showEmails;
-  CheckBoxPreference preferE2eeCheckbox;
+  CheckBoxPreference forceE2eeCheckbox;
   CheckBoxPreference bccSelfCheckbox;
   CheckBoxPreference mvboxMoveCheckbox;
   CheckBoxPreference onlyFetchMvboxCheckbox;
@@ -88,9 +81,9 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
       sendAsm.setOnPreferenceClickListener(new SendAsmListener());
     }
 
-    preferE2eeCheckbox = (CheckBoxPreference) this.findPreference("pref_prefer_e2ee");
-    if (preferE2eeCheckbox != null) {
-      preferE2eeCheckbox.setOnPreferenceChangeListener(new PreferE2eeListener());
+    forceE2eeCheckbox = (CheckBoxPreference) this.findPreference("pref_prefer_e2ee");
+    if (forceE2eeCheckbox != null) {
+      forceE2eeCheckbox.setOnPreferenceChangeListener(new PreferE2eeListener());
     }
 
     bccSelfCheckbox = (CheckBoxPreference) this.findPreference("pref_bcc_self");
@@ -139,11 +132,6 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
         dcContext.setConfigInt(CONFIG_WEBXDC_REALTIME_ENABLED, enabled? 1 : 0);
         return true;
       });
-    }
-
-    Preference manageKeys = this.findPreference("pref_manage_keys");
-    if (manageKeys != null) {
-      manageKeys.setOnPreferenceClickListener(new ManageKeysListener());
     }
 
     Preference submitDebugLog = this.findPreference("pref_view_log");
@@ -209,8 +197,7 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
     }
 
     if (dcContext.isChatmail()) {
-      this.findPreference("pref_manage_keys").setVisible(false);
-      this.findPreference("pref_send_autocrypt_setup_message").setVisible(false);
+      sendAsm.setVisible(false);
       bccSelfCheckbox.setVisible(false);
       mvboxMoveCheckbox.setVisible(false);
       onlyFetchMvboxCheckbox.setVisible(false);
@@ -231,7 +218,7 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
     showEmails.setValue(value);
     updateListSummary(showEmails, value);
 
-    preferE2eeCheckbox.setChecked(0!=dcContext.getConfigInt(CONFIG_FORCE_ENCRYPTION, 1));
+    forceE2eeCheckbox.setChecked(0!=dcContext.getConfigInt(CONFIG_FORCE_ENCRYPTION, 1));
     bccSelfCheckbox.setChecked(0!=dcContext.getConfigInt(CONFIG_BCC_SELF));
     mvboxMoveCheckbox.setChecked(0!=dcContext.getConfigInt(CONFIG_MVBOX_MOVE));
     onlyFetchMvboxCheckbox.setChecked(0!=dcContext.getConfigInt(CONFIG_ONLY_FETCH_MVBOX));
@@ -241,24 +228,7 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
   @Override
   public void onActivityResult(int requestCode, int resultCode, Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
-    if (resultCode != RESULT_OK) return;
-    if (requestCode == REQUEST_CODE_CONFIRM_CREDENTIALS_KEYS) {
-        manageKeys();
-    } else if (requestCode == PICK_SELF_KEYS) {
-        Uri uri = (data != null ? data.getData() : null);
-        if (uri == null) {
-            Log.e(TAG, " Can't import null URI");
-            return;
-        }
-      try {
-        String name = AttachmentManager.getFileName(getContext(), uri);
-        if (name == null || name.isEmpty()) name = "FILE";
-        File file = copyToCacheDir(uri);
-        showImportKeysDialog(file.getAbsolutePath(), name);
-      } catch (IOException e) {
-        Log.e(TAG, "Error calling copyToCacheDir()", e);
-      }
-    } else if (requestCode == REQUEST_CODE_CONFIRM_CREDENTIALS_ACCOUNT) {
+    if (resultCode == RESULT_OK && requestCode == REQUEST_CODE_CONFIRM_CREDENTIALS_ACCOUNT) {
       openRegistrationActivity();
     }
   }
@@ -417,68 +387,5 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
         return false;
       }
     }
-  }
-
-  /***********************************************************************************************
-   * Key Import/Export
-   **********************************************************************************************/
-  protected void showImportKeysDialog(String imexPath, String pathAsDisplayedToUser) {
-    new AlertDialog.Builder(requireActivity())
-      .setTitle(R.string.pref_managekeys_import_secret_keys)
-      .setMessage(requireActivity().getString(R.string.pref_managekeys_import_explain, pathAsDisplayedToUser))
-      .setNegativeButton(android.R.string.cancel, null)
-      .setPositiveButton(android.R.string.ok, (dialogInterface2, i2) -> startImexOne(DcContext.DC_IMEX_IMPORT_SELF_KEYS, imexPath, pathAsDisplayedToUser))
-      .show();
-  }
-
-  private class ManageKeysListener implements Preference.OnPreferenceClickListener {
-    @Override
-    public boolean onPreferenceClick(@NonNull Preference preference) {
-      boolean result = ScreenLockUtil.applyScreenLock(requireActivity(), getString(R.string.pref_manage_keys), getString(R.string.enter_system_secret_to_continue), REQUEST_CODE_CONFIRM_CREDENTIALS_KEYS);
-      if (!result) {
-        manageKeys();
-      }
-      return true;
-    }
-  }
-
-  private void manageKeys() {
-    Activity activity = requireActivity();
-    Permissions.with(activity)
-        .request(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
-        .alwaysGrantOnSdk30()
-        .ifNecessary()
-        .withPermanentDenialDialog(getString(R.string.perm_explain_access_to_storage_denied))
-        .onAllGranted(() -> {
-          new AlertDialog.Builder(activity)
-              .setTitle(R.string.pref_managekeys_menu_title)
-              .setItems(new CharSequence[]{
-                      activity.getString(R.string.pref_managekeys_export_secret_keys),
-                      activity.getString(R.string.pref_managekeys_import_secret_keys)
-                  },
-                  (dialogInterface, i) -> {
-                    if (i==0) {
-                      new AlertDialog.Builder(activity)
-                          .setTitle(R.string.pref_managekeys_export_secret_keys)
-                          .setMessage(activity.getString(R.string.pref_managekeys_export_explain, DcHelper.getImexDir().getAbsolutePath()))
-                          .setNegativeButton(android.R.string.cancel, null)
-                          .setPositiveButton(android.R.string.ok, (dialogInterface2, i2) -> startImexOne(DcContext.DC_IMEX_EXPORT_SELF_KEYS))
-                          .show();
-                    }
-                    else {
-                      if (Build.VERSION.SDK_INT >= 30) {
-                        AttachmentManager.selectMediaType(activity, "*/*", null, PICK_SELF_KEYS, StorageUtil.getDownloadUri());
-                      } else {
-                        String path = DcHelper.getImexDir().getAbsolutePath();
-                        showImportKeysDialog(path, path);
-                      }
-                    }
-                  }
-              )
-              .setNegativeButton(R.string.cancel, null)
-              .setNeutralButton(R.string.learn_more, (d, w) -> DcHelper.openHelp(activity, "#importkey"))
-              .show();
-        })
-        .execute();
   }
 }
