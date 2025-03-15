@@ -73,8 +73,8 @@
         android:id="@+id/or_divider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="30dp"
-        android:paddingBottom="30dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp"
         android:gravity="center"
         android:orientation="horizontal">
 
