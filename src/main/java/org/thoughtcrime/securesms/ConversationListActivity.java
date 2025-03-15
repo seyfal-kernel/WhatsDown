@@ -112,7 +112,7 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
     // it is not needed to keep all past update messages, however, when deleted, also the strings should be deleted.
     try {
       DcContext dcContext = DcHelper.getContext(this);
-      final String deviceMsgLabel = "update_1_50_0_android";
+      final String deviceMsgLabel = "update_1_56_0_android";
       if (!dcContext.wasDeviceMsgEverAdded(deviceMsgLabel)) {
         DcMsg msg = null;
         if (!getIntent().getBooleanExtra(FROM_WELCOME, false)) {
@@ -123,7 +123,8 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
           // Util.copy(inputStream, new FileOutputStream(outputFile));
           // msg.setFile(outputFile, "image/jpeg");
 
-          msg.setText(getString(R.string.update_1_50_android, "https://lemmy.ml/c/ArcaneChat"));
+          // full changelog link: "https://lemmy.ml/c/ArcaneChat"
+          msg.setText(getString(R.string.update_1_56_android, "https://arcanechat.me/#contribute"));
         }
         dcContext.addDeviceMsg(deviceMsgLabel, msg);
 
