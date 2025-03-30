@@ -767,7 +767,10 @@ public class ConversationFragment extends MessageSelectorFragment
                 DozeReminder.dozeReminderTapped(getContext());
             }
             else if(messageRecord.getInfoType() == DcMsg.DC_INFO_WEBXDC_INFO_MESSAGE) {
-                WebxdcActivity.openWebxdcActivity(getContext(), messageRecord.getParent(), messageRecord.getWebxdcHref());
+                if (messageRecord.getParent() != null) {
+                    // if the parent webxdc message still exists
+                    WebxdcActivity.openWebxdcActivity(getContext(), messageRecord.getParent(), messageRecord.getWebxdcHref());
+                }
             }
             else if (!TextUtils.isEmpty(messageRecord.getPOILocation()) && messageRecord.getType() == DcMsg.DC_MSG_TEXT && !messageRecord.hasHtml()) {
                 WebxdcActivity.openMaps(getContext(), getListAdapter().getChat().getId(), "index.html#"+messageRecord.getPOILocation());
