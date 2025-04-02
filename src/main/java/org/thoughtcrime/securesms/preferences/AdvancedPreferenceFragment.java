@@ -198,6 +198,7 @@ public class AdvancedPreferenceFragment extends ListSummaryPreferenceFragment
 
     if (dcContext.isChatmail()) {
       sendAsm.setVisible(false);
+      showEmails.setVisible(false);
       bccSelfCheckbox.setVisible(false);
       mvboxMoveCheckbox.setVisible(false);
       onlyFetchMvboxCheckbox.setVisible(false);

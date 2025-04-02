@@ -1,5 +1,11 @@
 # Delta Chat Android Changelog
 
+## Unreleased
+
+* hide superfluous "Show Classic E-mails" advanced setting for chatmail
+* remove mostly non-telling transport addresses when referring to a contact;
+  the contact's profile gives a much better overview
+
 ## v1.56.1
 2025-03
 
