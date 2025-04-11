@@ -167,6 +167,10 @@ public class Prefs {
     return getBooleanPreference(context, "pref_developer_mode_enabled", false);
   }
 
+  public static boolean isNewBroadcastListAvailable(Context context) {
+    return true;
+  }
+
   // ringtone
 
   public static @NonNull Uri getNotificationRingtone(Context context) {
