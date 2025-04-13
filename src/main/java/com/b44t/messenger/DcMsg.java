@@ -123,6 +123,7 @@ public class DcMsg {
     private native int    getViewType        ();
     public int            getType            () { return getDownloadState()==DC_DOWNLOAD_DONE? getViewType() : DC_MSG_TEXT; }
     public native int     getInfoType        ();
+    public native int     getInfoContactId   ();
     public native int     getState           ();
     public native int     getDownloadState   ();
     public native int     getChatId          ();
