@@ -1,7 +1,9 @@
 # Delta Chat Android Changelog
 
-## Unreleased
+## v1.58.0
+2025-04
 
+* tapping info messages with contacts open the contact's profile
 * hide superfluous "Show Classic E-mails" advanced setting for chatmail
 * show profile bio/status under name in main settings screen
 * remove mostly non-telling transport addresses when referring to a contact;
