@@ -25,12 +25,14 @@ import static org.thoughtcrime.securesms.util.RelayUtil.isForwarding;
 import static org.thoughtcrime.securesms.util.RelayUtil.isSharing;
 
 import android.Manifest;
+import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.ClipData;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -52,6 +54,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
 import android.view.View.OnKeyListener;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.FrameLayout;
@@ -109,7 +112,6 @@ import org.thoughtcrime.securesms.permissions.Permissions;
 import org.thoughtcrime.securesms.providers.PersistentBlobProvider;
 import org.thoughtcrime.securesms.recipients.Recipient;
 import org.thoughtcrime.securesms.scribbles.ScribbleActivity;
-import org.thoughtcrime.securesms.util.DynamicTheme;
 import org.thoughtcrime.securesms.util.MediaUtil;
 import org.thoughtcrime.securesms.util.Prefs;
 import org.thoughtcrime.securesms.util.RelayUtil;
@@ -907,10 +909,25 @@ public class ConversationActivity extends PassphraseRequiredActionBarActivity
     supportActionBar.setCustomView(R.layout.conversation_title_view);
     supportActionBar.setDisplayShowCustomEnabled(true);
     supportActionBar.setDisplayShowTitleEnabled(false);
+    //supportActionBar.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.conversation_tile_view_background));
 
     Toolbar parent = (Toolbar) supportActionBar.getCustomView().getParent();
     parent.setPadding(0,0,0,0);
     parent.setContentInsetsAbsolute(0,0);
+
+    View titleContent = parent.findViewById(R.id.title_content);
+    int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels * 80 / 100;
+
+    ValueAnimator animator = ValueAnimator.ofInt(0, screenWidth);
+    animator.setDuration(1000);
+    animator.addUpdateListener(valueAnimator -> {
+      int value = (Integer) valueAnimator.getAnimatedValue();
+      ViewGroup.LayoutParams layoutParams = titleContent.getLayoutParams();
+      layoutParams.width = value;
+      titleContent.setLayoutParams(layoutParams);
+    });
+
+    animator.start();
   }
 
   private void initializeResources() {
