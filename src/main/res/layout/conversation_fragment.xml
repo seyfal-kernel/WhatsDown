@@ -31,7 +31,8 @@
           android:layout_height="2dp"
           android:layout_gravity="bottom"
           android:background="@drawable/compose_divider_background"
-          android:alpha="1" />
+          android:alpha="1"
+          android:visibility="gone"/>
 
     <ImageButton
         android:id="@+id/floating_location_button"
