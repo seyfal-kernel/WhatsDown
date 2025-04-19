@@ -1,13 +1,23 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
   <!-- DEFAULT -->
-  <color name="def_primary">@color/purple_primary</color>
-  <color name="def_primary_lite">@color/purple_primary_lite</color>
-  <color name="def_primary_alpha33">@color/purple_primary_alpha33</color>
-  <color name="def_accent">@color/purple_accent</color>
-  <color name="def_outgoing_bubble">@color/purple_outgoing_bubble</color>
-  <color name="def_outgoing_label">@color/purple_outgoing_label</color>
-  <color name="def_unreadcount">@color/purple_unreadcount</color>
+  <color name="def_primary">@color/modern_primary</color>
+  <color name="def_primary_lite">@color/modern_primary_lite</color>
+  <color name="def_primary_alpha33">@color/modern_primary_alpha33</color>
+  <color name="def_accent">@color/modern_accent</color>
+  <color name="def_outgoing_bubble">@color/modern_outgoing_bubble</color>
+  <color name="def_outgoing_label">@color/modern_outgoing_label</color>
+  <color name="def_unreadcount">@color/modern_unreadcount</color>
+  <!-- ========== -->
+
+  <!-- MODERN -->
+  <color name="modern_primary">#328E6E</color>
+  <color name="modern_primary_lite">#67AE6E</color>
+  <color name="modern_primary_alpha33">#557b00c8</color>
+  <color name="modern_accent">#9646c8</color>
+  <color name="modern_outgoing_bubble">#D8FDD2</color>
+  <color name="modern_outgoing_label">#ff7b00c8</color>
+  <color name="modern_unreadcount">#7b00c8</color>
   <!-- ========== -->
 
   <!-- PURPLE -->

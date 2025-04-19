@@ -64,7 +64,7 @@
         <item name="floating_mini_bg">@drawable/floating_mini_bg_light</item>
 
         <item name="fab_color">@color/def_primary_lite</item>
-        <item name="input_panel_bg_color">@color/white</item>
+        <item name="input_panel_bg_color">@drawable/input_panel_bg</item>
         <item name="close_icon_color">#A4A6A9</item>
 
         <!-- light theme -->
