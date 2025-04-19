@@ -1,6 +1,6 @@
 plugins {
     id 'com.android.application' version '8.5.2'
-    id 'com.google.gms.google-services' version '4.4.1'
+    id 'com.google.gms.google-services' version '4.4.2'
 }
 
 repositories {
@@ -33,10 +33,10 @@ android {
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        versionCode 30000717
-        versionName "1.56.1"
+        versionCode 1
+        versionName "1.58.0"
 
-        applicationId "chat.delta.lite"
+        applicationId "com.seyfal.whatsdown"
         multiDexEnabled true
 
         minSdkVersion 21
@@ -124,7 +124,7 @@ android {
             dimension "none"
             apply plugin: "com.google.gms.google-services"
             buildConfigField "boolean", "USE_PLAY_SERVICES", "true"
-            applicationId "com.github.arcanechat"
+            applicationId "com.github.whatsdown"
         }
     }
 
@@ -166,7 +166,7 @@ android {
     android.applicationVariants.all { variant ->
         variant.outputs.all { output ->
             output.outputFileName = output.outputFileName
-                .replace("android", "ArcaneChat")
+                .replace("android", "WhatsDown")
                 .replace("-release", "")
                 .replace(".apk", "-${variant.versionName}.apk")
             if(project.hasProperty("ABI_FILTER")) {
@@ -209,7 +209,7 @@ dependencies {
     implementation 'com.airbnb.android:lottie:4.2.2' // Lottie animations support.
 
     implementation 'androidx.sharetarget:sharetarget:1.2.0'
-    implementation 'androidx.webkit:webkit:1.12.1'
+    implementation 'androidx.webkit:webkit:1.13.0'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'com.google.android.material:material:1.12.0'
@@ -219,10 +219,10 @@ dependencies {
         exclude group: 'androidx.lifecycle', module:'lifecycle-viewmodel-ktx'
     }
     implementation 'androidx.legacy:legacy-preference-v14:1.0.0'
-    implementation 'androidx.exifinterface:exifinterface:1.3.7'
+    implementation 'androidx.exifinterface:exifinterface:1.4.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'androidx.lifecycle:lifecycle-common-java8:2.6.2'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-common-java8:2.8.7'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.8.7'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
     implementation 'androidx.work:work-runtime:2.9.1'
     implementation 'androidx.emoji2:emoji2-emojipicker:1.5.0'
