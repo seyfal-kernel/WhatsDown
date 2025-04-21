@@ -302,6 +302,7 @@ public class ConversationListActivity extends PassphraseRequiredActionBarActivit
       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     } else {
       title.setText(DcHelper.getContext(this).getName());
+      // refreshTitle is called by ConversationListFragment when connectivity changes so update connectivity dot here
       selfAvatar.setConnectivity(DcHelper.getContext(this).getConnectivity());
       getSupportActionBar().setDisplayHomeAsUpEnabled(false);
     }

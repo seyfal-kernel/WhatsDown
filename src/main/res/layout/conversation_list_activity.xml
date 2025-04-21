@@ -50,17 +50,16 @@
               android:clickable="true"
               app:inverted="true"
               android:contentDescription="@string/pref_profile_info_headline" />
-          <ImageView
-              android:id="@+id/unread_indicator"
-              android:layout_width="20dp"
-              android:layout_height="20dp"
-              android:layout_marginLeft="20dp"
-              android:layout_marginStart="20dp"
-              app:layout_constraintTop_toTopOf="parent"
-              android:layout_marginBottom="16dp"
-              android:contentDescription="@null"
-              android:visibility="gone"
-              />
+          <ImageView android:id="@+id/unread_indicator"
+                     android:layout_width="20dp"
+                     android:layout_height="20dp"
+                     android:layout_marginLeft="20dp"
+                     android:layout_marginStart="20dp"
+                     app:layout_constraintTop_toTopOf="parent"
+                     android:layout_marginBottom="16dp"
+                     android:contentDescription="@null"
+                     android:visibility="gone"
+                     />
         </RelativeLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
