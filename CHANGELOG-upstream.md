@@ -1,5 +1,15 @@
 # Delta Chat Android Changelog
 
+## Unreleased
+
+* fix: webxdc.selfName uses the name otherwise displayed
+
+## v1.58.2
+2025-04
+
+* fix draft writing area disappearing for some chats
+* update to core 1.159.2
+
 ## v1.58.1
 2025-04
 
