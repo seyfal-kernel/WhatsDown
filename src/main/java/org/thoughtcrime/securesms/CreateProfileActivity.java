@@ -60,7 +60,6 @@ public class CreateProfileActivity extends BaseActionBarActivity {
   private InputAwareLayout       container;
   private ImageView              avatar;
   private EditText               name;
-  private EditText               overridenName;
   private EditText               statusView;
 
   private boolean fromWelcome;
@@ -184,27 +183,14 @@ public class CreateProfileActivity extends BaseActionBarActivity {
     TextView loginSuccessText              = ViewUtil.findById(this, R.id.login_success_text);
     this.avatar       = ViewUtil.findById(this, R.id.avatar);
     this.name         = ViewUtil.findById(this, R.id.name_text);
-    this.overridenName = ViewUtil.findById(this, R.id.overriden_name);
     this.container    = ViewUtil.findById(this, R.id.container);
     this.statusView   = ViewUtil.findById(this, R.id.status_text);
 
     if (fromWelcome) {
-      if (DcHelper.getContext(this).isCommunity()) {
-        ViewUtil.findById(this, R.id.community_user_container).setVisibility(View.VISIBLE);
-        loginSuccessText.setText(R.string.community_set_name_explain);
-        ViewUtil.findById(this, R.id.avatar_and_name).setVisibility(View.GONE);
-      } else {
-        loginSuccessText.setText(R.string.set_name_and_avatar_explain);
-      }
+      loginSuccessText.setText(R.string.set_name_and_avatar_explain);
       ViewUtil.findById(this, R.id.status_text_layout).setVisibility(View.GONE);
       ViewUtil.findById(this, R.id.information_label).setVisibility(View.GONE);
     } else {
-      if (DcHelper.getContext(this).isCommunity()) {
-        ViewUtil.findById(this, R.id.community_user_container).setVisibility(View.VISIBLE);
-        ViewUtil.findById(this, R.id.information_label).setVisibility(View.GONE);
-        ((TextInputLayout)ViewUtil.findById(this, R.id.name)).setHint(R.string.community);
-        ((TextInputLayout)ViewUtil.findById(this, R.id.status_text_layout)).setHint(R.string.description);
-      }
       loginSuccessText.setVisibility(View.GONE);
     }
   }
@@ -214,10 +200,6 @@ public class CreateProfileActivity extends BaseActionBarActivity {
     if (!TextUtils.isEmpty(profileName)) {
       name.setText(profileName);
       name.setSelection(profileName.length(), profileName.length());
-    }
-    DcContext dcContext = DcHelper.getContext(this);
-    if (dcContext.isCommunity()) {
-      overridenName.setText(dcContext.getCommunityUser());
     }
   }
 
@@ -245,22 +227,16 @@ public class CreateProfileActivity extends BaseActionBarActivity {
   }
 
   private void updateProfile() {
-    boolean isCommunity = DcHelper.getContext(this).isCommunity();
-    if (TextUtils.isEmpty(this.name.getText()) && !(isCommunity && fromWelcome)) {
+    if (TextUtils.isEmpty(this.name.getText())) {
       Toast.makeText(this, R.string.please_enter_name, Toast.LENGTH_LONG).show();
       return;
     }
-
     final String name = this.name.getText().toString();
-    final String ovName = this.overridenName.getText().toString().trim();
 
     new AsyncTask<Void, Void, Boolean>() {
       @Override
       protected Boolean doInBackground(Void... params) {
         Context context    = CreateProfileActivity.this;
-        if (isCommunity) {
-          DcHelper.getContext(context).setCommunityUser(ovName);
-        }
         DcHelper.set(context, DcHelper.CONFIG_DISPLAY_NAME, name);
         setStatusText();
 

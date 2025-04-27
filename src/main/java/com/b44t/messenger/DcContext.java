@@ -245,23 +245,6 @@ public class DcContext {
       return displayname;
     }
 
-    public boolean isCommunity() {
-        return getConfigInt("is_community") == 1;
-    }
-
-    public void setCommunityMode(boolean enable) {
-        setConfig("is_community", enable? "1" : null);
-    }
-
-    public String getCommunityUser() {
-        String name = getConfig("ui.community.selfname");
-        return name == null? "" : name;
-    }
-
-    public void setCommunityUser(String name) {
-        setConfig("ui.community.selfname", name);
-    }
-
     public boolean isChatmail() {
       return getConfigInt("is_chatmail") == 1;
     }

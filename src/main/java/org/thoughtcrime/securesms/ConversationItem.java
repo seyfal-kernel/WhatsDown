@@ -178,7 +178,7 @@ public class ConversationItem extends BaseConversationItem
   {
     bind(messageRecord, dcChat, batchSelected, pulseHighlight, recipients);
     this.glideRequests          = glideRequests;
-    this.showSender             = dcContext.isCommunity() || ((dcChat.isMultiUser() || dcChat.isSelfTalk()) && !messageRecord.isOutgoing()) || messageRecord.getOverrideSenderName() != null;
+    this.showSender             = ((dcChat.isMultiUser() || dcChat.isSelfTalk()) && !messageRecord.isOutgoing()) || messageRecord.getOverrideSenderName() != null;
 
     if (showSender) {
       this.dcContact = dcContext.getContact(messageRecord.getFromId());
@@ -437,10 +437,10 @@ public class ConversationItem extends BaseConversationItem
       showFullButton.setVisibility(View.GONE);
       msgActionButton.setVisibility(View.VISIBLE);
       msgActionButton.setEnabled(true);
-      msgActionButton.setText(webxdcViewStub.get().isCommunity()? R.string.join: R.string.start_app);
+      msgActionButton.setText(R.string.start_app);
       msgActionButton.setOnClickListener(view -> {
         if (batchSelected.isEmpty()) {
-          DcHelper.openWebxdc(getContext(), messageRecord);
+          WebxdcActivity.openWebxdcActivity(getContext(), messageRecord);
         } else {
           passthroughClickListener.onClick(view);
         }
@@ -674,9 +674,7 @@ public class ConversationItem extends BaseConversationItem
     if (!showSender || dcContact ==null) {
       contactPhoto.setVisibility(View.GONE);
     } else {
-      int color = messageRecord.getSenderColor();
-      Recipient recipient = new Recipient(context, dcContact, messageRecord.getSenderName(dcContact), color);
-      contactPhoto.setAvatar(glideRequests, recipient, true);
+      contactPhoto.setAvatar(glideRequests, new Recipient(context, dcContact), true);
       contactPhoto.setVisibility(View.VISIBLE);
     }
   }
@@ -701,7 +699,7 @@ public class ConversationItem extends BaseConversationItem
     Recipient author = null;
     SlideDeck slideDeck = new SlideDeck();
     if (msg != null) {
-      author = new Recipient(context, dcContext.getContact(msg.getFromId()), msg.getSenderColor());
+      author = new Recipient(context, dcContext.getContact(msg.getFromId()));
       if (msg.getType() != DcMsg.DC_MSG_TEXT) {
         Slide slide = MediaUtil.getSlideForMsg(context, msg);
         if (slide != null) {
@@ -809,8 +807,7 @@ public class ConversationItem extends BaseConversationItem
     }
     else if (showSender && dcContact !=null) {
       this.groupSender.setText(messageRecord.getSenderName(dcContact));
-      int color = messageRecord.getSenderColor();
-      this.groupSender.setTextColor(Util.rgbToArgbColor(color!=0? color : dcContact.getColor()));
+      this.groupSender.setTextColor(Util.rgbToArgbColor(dcContact.getColor()));
     }
   }
 
@@ -893,7 +890,7 @@ public class ConversationItem extends BaseConversationItem
       if (shouldInterceptClicks(messageRecord) || !batchSelected.isEmpty()) {
         performClick();
       } else if (slide.isWebxdcDocument()) {
-        msgActionButton.performClick();
+        WebxdcActivity.openWebxdcActivity(context, messageRecord);
       } else if (slide.isVcard()) {
         try {
           String path = slide.asAttachment().getRealPath(context);

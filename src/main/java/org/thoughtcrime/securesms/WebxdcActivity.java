@@ -520,11 +520,6 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
     }
 
     @JavascriptInterface
-    public boolean isCommunity() {
-      return dcContext.isCommunity();
-    }
-
-    @JavascriptInterface
     public int sendUpdateMaxSize() {
       return WebxdcActivity.this.sendUpdateMaxSize;
     }
@@ -536,10 +531,6 @@ public class WebxdcActivity extends WebViewActivity implements DcEventCenter.DcE
 
     @JavascriptInterface
     public String selfAddr() {
-      if (dcContext.isCommunity() && !TextUtils.isEmpty(dcContext.getCommunityUser())) {
-        int flags = Base64.NO_WRAP | Base64.NO_PADDING | Base64.URL_SAFE;
-        return Base64.encodeToString(dcContext.getCommunityUser().getBytes(), flags);
-      }
       return WebxdcActivity.this.selfAddr;
     }
 

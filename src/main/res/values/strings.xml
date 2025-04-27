@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- custom strings -->
-  <string name="community">Community</string>
   <string name="description">Description</string>
-  <string name="ask_join_community">Do you want to join the Community \"%1$s\"?</string>
-  <string name="community_set_name_explain">Set a name that other will recognize.</string>
   <string name="could_not_open_file">Could not open file</string>
   <string name="menu_export_image">Export Image</string>
   <!-- the word "or" to separate blocks in the user interface that are mutually exclusive -->
