@@ -18,7 +18,6 @@ import androidx.appcompat.app.AlertDialog;
 import org.thoughtcrime.securesms.ApplicationPreferencesActivity;
 import org.thoughtcrime.securesms.BaseActionBarActivity;
 import org.thoughtcrime.securesms.ConversationListActivity;
-import org.thoughtcrime.securesms.CreateProfileActivity;
 import org.thoughtcrime.securesms.LogViewActivity;
 import org.thoughtcrime.securesms.R;
 import org.thoughtcrime.securesms.connect.DcHelper;
@@ -183,14 +182,7 @@ public class BackupTransferActivity extends BaseActionBarActivity {
         notificationControllerClosed = true;
 
         if (transferMode == TransferMode.RECEIVER_SCAN_QR && transferState == TransferState.TRANSFER_SUCCESS) {
-            if (DcHelper.getContext(this).isCommunity()) {
-                DcHelper.getContext(this).setCommunityUser(null);
-                Intent intent = new Intent(getApplicationContext(), CreateProfileActivity.class);
-                intent.putExtra(CreateProfileActivity.FROM_WELCOME, true);
-                startActivity(intent);
-            } else {
-                startActivity(new Intent(getApplicationContext(), ConversationListActivity.class));
-            }
+            startActivity(new Intent(getApplicationContext(), ConversationListActivity.class));
         } else if (transferMode == TransferMode.SENDER_SHOW_QR) {
             // restart the activities that were removed when BackupTransferActivity was started at (**2)
             // (we removed the activity backstack as otherwise a tap on the ArcaneChat icon on the home screen would

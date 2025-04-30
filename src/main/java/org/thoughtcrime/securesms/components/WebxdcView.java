@@ -32,7 +32,6 @@ public class WebxdcView extends FrameLayout {
   private final @NonNull TextView           appSubtitle;
 
   private @Nullable SlideClickListener viewListener;
-  private boolean isCommunity;
 
   public WebxdcView(@NonNull Context context) {
     this(context, null);
@@ -67,7 +66,6 @@ public class WebxdcView extends FrameLayout {
   public void setWebxdc(final @NonNull DcMsg dcMsg, String defaultSummary)
   {
     JSONObject info = dcMsg.getWebxdcInfo();
-    isCommunity = JsonUtils.optBoolean(info, "community");
     setOnClickListener(new OpenClickedListener(getContext(), dcMsg));
 
     // icon
@@ -86,17 +84,13 @@ public class WebxdcView extends FrameLayout {
     // subtitle
     String summary = info.optString("summary");
     if (summary.isEmpty()) {
-      summary = isCommunity? getContext().getString(R.string.community) : defaultSummary;
+      summary = defaultSummary;
     }
     appSubtitle.setText(summary);
   }
 
-  public boolean isCommunity() {
-    return isCommunity;
-  }
-
   public String getDescription() {
-    String type = getContext().getString(isCommunity? R.string.community : R.string.webxdc_app);
+    String type = getContext().getString( R.string.webxdc_app);
     String desc = type;
     desc += "\n" + appName.getText();
     if (appSubtitle.getText() != null && !appSubtitle.getText().toString().isEmpty() && !appSubtitle.getText().toString().equals(type)) {

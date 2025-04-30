@@ -99,10 +99,7 @@ public class ConversationTitleView extends RelativeLayout {
       }
     } else if( dcChat.isMultiUser() ) {
       if (!profileView) {
-        if (dcContext.isCommunity() && chatContacts.length == 1)
-          subtitleStr = context.getString(R.string.super_group);
-        else
-          subtitleStr = context.getResources().getQuantityString(R.plurals.n_members, chatContacts.length, chatContacts.length);
+        subtitleStr = context.getResources().getQuantityString(R.plurals.n_members, chatContacts.length, chatContacts.length);
       }
     } else if( chatContacts.length>=1 ) {
       if( dcChat.isSelfTalk() ) {

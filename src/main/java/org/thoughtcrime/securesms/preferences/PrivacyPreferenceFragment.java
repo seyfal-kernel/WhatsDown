@@ -154,10 +154,8 @@ public class PrivacyPreferenceFragment extends ListSummaryPreferenceFragment {
                 .setView(gl)
                 .setPositiveButton(android.R.string.ok, (dialog, whichButton) -> {
                   if (confirmCheckbox.isChecked()) {
-                    if (!dcContext.isCommunity() || timeout >= 86400) {
-                      dcContext.setConfigInt(coreKey, timeout);
-                      initAutodelFromCore();
-                    }
+                    dcContext.setConfigInt(coreKey, timeout);
+                    initAutodelFromCore();
                   } else {
                     onPreferenceChange(preference, newValue);
                   }

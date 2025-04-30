@@ -336,7 +336,7 @@ public class ConversationFragment extends MessageSelectorFragment
             menu.findItem(R.id.menu_context_reply).setVisible(chat.canSend() && canReply);
             boolean canEdit = canEditMsg(messageRecord);
             menu.findItem(R.id.menu_context_edit).setVisible(chat.canSend() && canEdit);
-            boolean showReplyPrivately = !dcContext.isCommunity() && chat.isMultiUser() && !messageRecord.isOutgoing() && canReply;
+            boolean showReplyPrivately = chat.isMultiUser() && !messageRecord.isOutgoing() && canReply;
             menu.findItem(R.id.menu_context_reply_privately).setVisible(showReplyPrivately);
             menu.findItem(R.id.menu_add_to_home_screen).setVisible(messageRecord.getType() == DcMsg.DC_MSG_WEBXDC);
 
@@ -801,9 +801,6 @@ public class ConversationFragment extends MessageSelectorFragment
                 list.getAdapter().notifyDataSetChanged();
 
                 actionMode = ((AppCompatActivity)getActivity()).startSupportActionMode(actionModeCallback);
-
-                if (dcContext.isCommunity()) return;
-
                 addReactionView.show(messageRecord, view, () -> {
                     if (actionMode != null) {
                         actionMode.finish();

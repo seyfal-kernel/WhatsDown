@@ -179,7 +179,7 @@ public class ProfileDocumentsFragment
     }
 
     if (dcMsg.getType() == DcMsg.DC_MSG_WEBXDC) {
-      DcHelper.openWebxdc(context, dcMsg);
+      WebxdcActivity.openWebxdcActivity(context, dcMsg);
     } else {
       DcHelper.openForViewOrShare(getActivity(), dcMsg.getId(), Intent.ACTION_VIEW);
     }
