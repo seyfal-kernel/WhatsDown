@@ -49,6 +49,7 @@ import org.thoughtcrime.securesms.ApplicationContext;
 import org.thoughtcrime.securesms.MediaPreviewActivity;
 import org.thoughtcrime.securesms.R;
 import org.thoughtcrime.securesms.ShareLocationDialog;
+import org.thoughtcrime.securesms.WebxdcActivity;
 import org.thoughtcrime.securesms.WebxdcStoreActivity;
 import org.thoughtcrime.securesms.attachments.Attachment;
 import org.thoughtcrime.securesms.attachments.UriAttachment;
@@ -313,7 +314,7 @@ public class AttachmentManager {
               DcMsg instance = msg != null ? msg : DcHelper.getContext(context).getMsg(slide.dcMsgId);
               webxdcView.setWebxdc(instance, context.getString(R.string.videochat_tap_to_open));
               webxdcView.setWebxdcClickListener((v, s) -> {
-                DcHelper.openWebxdc(context, instance);
+                WebxdcActivity.openWebxdcActivity(context, instance);
               });
               removableMediaView.display(webxdcView, false);
             } else {

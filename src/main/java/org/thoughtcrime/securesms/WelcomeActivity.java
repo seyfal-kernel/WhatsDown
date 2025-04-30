@@ -49,7 +49,6 @@ import java.io.OutputStream;
 
 public class WelcomeActivity extends BaseActionBarActivity implements DcEventCenter.DcEventDelegate {
     public static final String BACKUP_QR_EXTRA = "backup_qr_extra";
-    public static final String COMMUNITY_EXTRA = "community_extra";
     public static final int PICK_BACKUP = 20574;
     private final static String TAG = WelcomeActivity.class.getSimpleName();
     public static final String TMP_BACKUP_FILE = "tmp-backup-file";
@@ -59,7 +58,6 @@ public class WelcomeActivity extends BaseActionBarActivity implements DcEventCen
     private boolean imexUserAborted;
     DcContext dcContext;
     private NotificationController notificationController;
-    private Uri communityUri;
 
     @Override
     public void onCreate(Bundle bundle) {
@@ -120,10 +118,6 @@ public class WelcomeActivity extends BaseActionBarActivity implements DcEventCen
     @Override
     public void onStart() {
         super.onStart();
-        communityUri = getIntent().getParcelableExtra(COMMUNITY_EXTRA);
-        if (communityUri != null) {
-            startImport(null, communityUri);
-        }
         String backupQr = getIntent().getStringExtra(BACKUP_QR_EXTRA);
         if (backupQr != null) {
             getIntent().removeExtra(BACKUP_QR_EXTRA);
@@ -263,15 +257,9 @@ public class WelcomeActivity extends BaseActionBarActivity implements DcEventCen
     private void progressSuccess() {
         DcHelper.getEventCenter(this).endCaptureNextError();
         progressDialog.dismiss();
-        if (dcContext.isCommunity()) {
-            Intent intent = new Intent(getApplicationContext(), CreateProfileActivity.class);
-            intent.putExtra(CreateProfileActivity.FROM_WELCOME, true);
-            startActivity(intent);
-        } else {
-            Intent intent = new Intent(getApplicationContext(), ConversationListActivity.class);
-            intent.putExtra(ConversationListActivity.FROM_WELCOME, true);
-            startActivity(intent);
-        }
+        Intent intent = new Intent(getApplicationContext(), ConversationListActivity.class);
+        intent.putExtra(ConversationListActivity.FROM_WELCOME, true);
+        startActivity(intent);
         finish();
     }
 
@@ -318,10 +306,6 @@ public class WelcomeActivity extends BaseActionBarActivity implements DcEventCen
                 notificationController.setProgress(1000, progress, String.format(" %d%%", (int) progress / 10));
             }
             else if (progress==1000/*done*/) {
-                if (communityUri != null) dcContext.setCommunityMode(true);
-                if (dcContext.isCommunity()) {
-                    dcContext.setCommunityUser(null);
-                }
                 DcHelper.getAccounts(this).startIo();
                 progressSuccess();
                 notificationController.close();

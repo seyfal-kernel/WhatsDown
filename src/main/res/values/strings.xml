@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- custom strings -->
-  <string name="community">Community</string>
   <string name="description">Description</string>
-  <string name="ask_join_community">Do you want to join the Community \"%1$s\"?</string>
-  <string name="community_set_name_explain">Set a name that other will recognize.</string>
   <string name="could_not_open_file">Could not open file</string>
   <string name="menu_export_image">Export Image</string>
   <!-- the word "or" to separate blocks in the user interface that are mutually exclusive -->
@@ -1024,7 +1021,7 @@
     <string name="secure_join_wait">Establishing guaranteed end-to-end encryption, please wait…</string>
     <!-- deprecated -->
     <string name="secure_join_wait_timeout">Could not yet establish guaranteed end-to-end encryption, but you may already send a message.</string>
-    <string name="secure_join_takes_longer">That seems to take longer, maybe the contact or you are offline.\n\nHowever, the process continues in background, you can do something else…</string>
+    <string name="secure_join_takes_longer">The contact must be online to proceed.\n\nThis process will continue automatically in background.</string>
     <string name="contact_verified">%1$s introduced.</string>
     <string name="contact_not_verified">Cannot establish guaranteed end-to-end encryption with %1$s.</string>
     <!-- Shown in contact profile. The placeholder will be replaced by the name of the contact that introduced the contact. -->
@@ -1060,7 +1057,8 @@
     <string name="perm_required_title">Permission required</string>
     <string name="perm_continue">Continue</string>
     <string name="perm_explain_access_to_camera_denied">To take photos or capture videos, go to the app settings, select \"Permissions\", and enable \"Camera\".</string>
-    <string name="perm_explain_access_to_mic_denied">To send audio messages, go to the app settings, select \"Permissions\", and enable \"Microphone\".</string>
+    <!-- give the user an idea where to find the "Microphone" option. the hint is only shown if access was initially denied by the user. pick up wordings really used on the systems, but do not be overly precise: things shift around often and there are too many system we support to track every detail and click path -->
+    <string name="perm_explain_access_to_mic_denied">To send audio messages, go to system or app settings, select "Permissions" or "Privacy &amp; Security", and enable \"Microphone\".</string>
     <string name="perm_explain_access_to_storage_denied">To receive or send files, go to the app settings, select \"Permissions\", and enable \"Storage\".</string>
     <string name="perm_explain_access_to_location_denied">To attach a location, go to the app settings, select \"Permissions\", and enable \"Location\".</string>
     <string name="perm_explain_access_to_notifications_denied">To receive notifications, go to \"System Settings / Apps / Delta Chat\" and enable \"Notifications\".</string>

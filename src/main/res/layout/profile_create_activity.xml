@@ -24,33 +24,7 @@
         android:textSize="16sp"
         android:textColor="?android:attr/textColorPrimary" />
 
-    <LinearLayout
-        android:id="@+id/community_user_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="40dp"
-        android:orientation="horizontal"
-        android:visibility="gone">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp">
-
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/overriden_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/pref_your_name"
-                    android:inputType="textCapWords" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </LinearLayout>
-
-        <LinearLayout android:id="@+id/avatar_and_name"
-                      android:layout_width="match_parent"
+        <LinearLayout android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:layout_marginLeft="16dp"
                       android:layout_marginRight="16dp"

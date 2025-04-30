@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
   <!-- custom strings -->
-  <string name="community">Comunidad</string>
   <string name="description">Descripción</string>
-  <string name="ask_join_community">¿Quieres unirte a la comunidad \"%1$s\"?</string>
-  <string name="community_set_name_explain">Establece un nombre que otros puedan reconocer.</string>
   <string name="or_separator">o</string>
   <string name="online">en línea</string>
   <string name="pink">Rosa</string>

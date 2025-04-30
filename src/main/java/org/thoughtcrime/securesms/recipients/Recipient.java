@@ -66,7 +66,6 @@ public class Recipient {
 
   private final @Nullable DcChat dcChat;
   private @Nullable DcContact dcContact;
-  private int color = 0;
   private final @Nullable VcardContact vContact;
 
   public static @NonNull Recipient fromChat(@NonNull Context context, int dcMsgId) {
@@ -104,17 +103,8 @@ public class Recipient {
     this(context, null, dcContact, null, null);
   }
 
-  public Recipient(@NonNull Context context, @NonNull DcContact dcContact, int color) {
-    this(context, dcContact, null, color);
-  }
-
   public Recipient(@NonNull Context context, @NonNull DcContact dcContact, @NonNull String profileName) {
     this(context, null, dcContact, profileName, null);
-  }
-
-  public Recipient(@NonNull Context context, @NonNull DcContact dcContact, @NonNull String profileName, int color) {
-    this(context, null, dcContact, profileName, null);
-    this.color = color;
   }
 
   private Recipient(@NonNull Context context, @Nullable DcChat dcChat, @Nullable DcContact dcContact, @Nullable String profileName, @Nullable VcardContact vContact) {
@@ -205,9 +195,6 @@ public class Recipient {
     if(dcChat!=null) {
       rgb = dcChat.getColor();
     }
-    else if(color!=0) {
-        rgb = color;
-    }
     else if(dcContact!=null) {
       rgb = dcContact.getColor();
     }
@@ -233,10 +220,6 @@ public class Recipient {
   }
 
   public synchronized @Nullable ContactPhoto getContactPhoto(Context context) {
-    if (color != 0) { // community nick
-      return null;
-    }
-
     LocalFileContactPhoto contactPhoto = null;
     if (dcChat!=null) {
       contactPhoto = new GroupRecordContactPhoto(context, address, dcChat);
@@ -313,11 +296,6 @@ public class Recipient {
   public DcChat getChat()
   {
     return dcChat!=null? dcChat : new DcChat(0, 0);
-  }
-
-  public int getColor()
-  {
-    return color;
   }
 
   @NonNull
