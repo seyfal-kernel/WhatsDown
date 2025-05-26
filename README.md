@@ -2,8 +2,8 @@
 
 A [Arcane Chat](https://arcanechat.me) client for Android from [Delta Chat](https://delta.chat/).
 
-[<img src="store/get-it-on-fdroid.png" alt="Get it on F-Droid" height="48">](https://f-droid.org/packages/chat.delta.lite)
-[<img src="store/get-it-on-github.png" alt="Get it on GitHub" height="48">](https://github.com/ArcaneChat/android/releases/latest/download/ArcaneChat-gplay.apk)
+[<img src="store/get-it-on-fdroid.png" alt="Get it on F-Droid" height="48">](https://f-droid.org/packages/com.seyfal.whatsdown/)
+[<img src="store/get-it-on-github.png" alt="Get it on GitHub" height="48">](https://github.com/seyfal-kernel/WhatsDown/releases/latest)
 
 
 <img alt="Screenshot" src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="298" /> <img alt="Screenshot" src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="298" />
